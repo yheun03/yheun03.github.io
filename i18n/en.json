@@ -70,7 +70,7 @@
         "careerEyebrow": "Works archive",
         "careerTitle": "Client Works",
         "indexLabel": "INDEX",
-        "detailLabel": "DETAIL",
+        "detailLabel": "PROJECT AT A GLANCE",
         "viewEntry": "Open project detail page",
         "viewLegend": "View",
         "viewAriaLabel": "List layout",
@@ -87,8 +87,8 @@
         "projectList": "Project list",
         "otherProjects": "Projects without a year",
         "languages": "Languages & core stack",
-        "captures": "Screenshots",
-        "overview": "Overview",
+        "captures": "See It in Action",
+        "overview": "In plain English",
         "role": "Role",
         "breadcrumbLabel": "Breadcrumb",
         "backToCareerList": "Back to client works",
@@ -125,9 +125,12 @@
         "openPage": "Open page",
         "emptyCaptureTitle": "Image pending",
         "emptyCaptureDescription": "The context is already open.",
-        "contributions": "My Contributions",
-        "results": "Results",
-        "points": "Key Points"
+        "contributions": "What I Took Ownership Of",
+        "results": "What Changed",
+        "points": "The Detail That Made It Work",
+        "solutionLabel": "How I approached the problem",
+        "storyGuide": "A quick read on why it was built this way, what I owned, and what changed as a result.",
+        "captureGuide": "The thinking did not stop at the description. Here is how it showed up in the actual screens."
     },
     "journey": {
         "title": "A growth path built through delivery",
@@ -1419,7 +1422,10 @@
                     "points": ["Multi-version structure handling", "React component adaptation"],
                     "pin": false,
                     "duration": "~6 months",
-                    "captures": ["/assets/images/projects/scm-daeyang-board/image-01.webp", "/assets/images/projects/scm-daeyang-board/image-02.webp"],
+                    "captures": [
+                        "/assets/images/projects/scm-daeyang-board/image-01.webp",
+                        "/assets/images/projects/scm-daeyang-board/image-02.webp"
+                    ],
                     "languages": ["HTML", "SCSS", "React"]
                 },
                 {
@@ -1440,7 +1446,10 @@
                     "points": ["End-to-end plan, build, and operate", "Contributed to brand trust"],
                     "pin": false,
                     "duration": "~3 months",
-                    "captures": ["/assets/images/projects/company-renewal-2022/image-01.webp", "/assets/images/projects/company-renewal-2022/image-02.webp"],
+                    "captures": [
+                        "/assets/images/projects/company-renewal-2022/image-01.webp",
+                        "/assets/images/projects/company-renewal-2022/image-02.webp"
+                    ],
                     "languages": ["HTML", "CSS", "jQuery"]
                 },
                 {

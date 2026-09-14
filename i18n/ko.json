@@ -15,29 +15,29 @@
         "how": "작업 방식"
     },
     "hero": {
-        "title": "기분 좋은 인터랙션과 탄탄한 구조를 함께 만드는 웹 퍼블리셔",
-        "subtitle": "기업 홈페이지, 스마트팩토리 / 물류 시스템, 자사 솔루션 등 다양한 프로젝트에서 운영부터 신규 구축, 내부 리뉴얼까지 경험했습니다.",
-        "branding": "Publishing에서 Frontend까지, UI를 중심에 두고 일합니다",
+        "title": "사람은 편하게 쓰고, 팀은 오래 고칠 수 있는 화면을 만듭니다",
+        "subtitle": "기업 홈페이지부터 스마트팩토리와 물류 시스템, 자사 솔루션까지. 새로 만들고, 고쳐 만들고, 오래 운영해 본 7년차 웹 퍼블리셔입니다.",
+        "branding": "퍼블리싱의 기본기 위에 프론트엔드의 이해를 더합니다",
         "kicker": "핵심부터.",
-        "essentialsLead": "화면 목적부터 구현 기준까지 한 흐름으로 맞춥니다.",
+        "essentialsLead": "화면의 목적을 먼저 읽고, 구현 기준은 끝까지 맞춥니다.",
         "ctaWorks": "웹 퍼블리셔 실무 프로젝트 보기",
         "ctaToolbox": "Vue 3 / SCSS UI 개발 역량 보기",
         "ctaContact": "연락하기",
         "scrollCue": "Scroll",
         "scrollCueLabel": "다음 섹션으로 이동",
-        "displayLine1": "정보는 또렷하게",
-        "displayLine2": "조작은 빠르게",
-        "displayLine3": "구현합니다",
-        "lead": "시맨틱 HTML과 SCSS 컴포넌트로 웹 접근성과 반응형을 지키고, SEO·GEO·AEO를 고려한 검색 구조까지 함께 설계합니다.",
+        "displayLine1": "정보는 한눈에",
+        "displayLine2": "조작은 망설임 없이",
+        "displayLine3": "코드는 오래가게",
+        "lead": "시맨틱 HTML과 SCSS 컴포넌트로 접근성과 반응형을 챙깁니다. 검색엔진과 AI가 내용을 정확히 읽을 수 있도록 콘텐츠 구조와 메타데이터도 함께 설계합니다.",
         "actionsAriaLabel": "주요 포트폴리오 섹션 바로가기"
     },
     "about": {
-        "title": "감각과 구조를 함께 설계하는 방식",
-        "intro": "요구사항을 읽고, 화면의 우선순위와 사용 흐름까지 함께 맞추는 일을 해왔습니다.",
-        "direction": "Vue 3와 Nuxt 기반 화면도 실제 프로젝트 흐름 안에서 꾸준히 다루고 있습니다.",
+        "title": "예쁘게 보이는 데서 멈추지 않는 화면",
+        "intro": "요구사항을 그대로 옮기기보다, 사용자가 먼저 봐야 할 정보와 다음에 할 행동까지 화면에 정리합니다.",
+        "direction": "HTML과 SCSS의 기본기를 바탕으로 Vue 3와 Nuxt에서도 실제 서비스에 필요한 화면을 꾸준히 구현하고 있습니다.",
         "kicker": "조금 더.",
         "workflowTitle": "작업 흐름",
-        "tagline": "제목·본문·동작의 정보 위계를 분명히 해 사람과 검색엔진, AI가 모두 이해하기 쉬운 화면을 만듭니다.",
+        "tagline": "제목은 길을 알려주고, 본문은 핵심을 설명하고, 버튼은 다음 행동을 분명히 안내해야 합니다. 사람은 물론 검색엔진과 AI도 이해하기 쉬운 화면을 만듭니다.",
         "displayLine1": "읽는 순서는",
         "displayLine2": "명확하게",
         "displayLine3": "사용은 빠르게",
@@ -51,9 +51,9 @@
         "all": "전체",
         "detail": "프로젝트 상세 보기",
         "fullArchiveLink": "전체 실무 프로젝트 {total}개 보기",
-        "sectionDescription": "SI / SM / 솔루션 프로젝트 중 화면 설계, 운영 대응, JavaScript / Vue 3 경험이 드러나는 핵심 사례입니다.",
+        "sectionDescription": "신규 구축, 운영, 솔루션 개발 프로젝트 가운데 화면 설계와 유지보수 대응, JavaScript와 Vue 3 활용 경험이 잘 드러나는 사례를 골랐습니다.",
         "archiveCountLabel": "개 실무 프로젝트 아카이브",
-        "archiveSummary": "현재 탭의 대표 {pinned}건을 메인에 두었고, 전체 {total}건은 갤러리에 정리해 두었습니다.",
+        "archiveSummary": "먼저 볼 만한 대표 {pinned}건을 꺼내 두었습니다. 전체 {total}건은 갤러리에서 빠짐없이 확인할 수 있습니다.",
         "showMore": "프로젝트 더 보기",
         "collapse": "프로젝트 접기",
         "visibleCount": "{visible} / {total}개 대표 사례 표시 중"
@@ -70,7 +70,7 @@
         "careerEyebrow": "Works archive",
         "careerTitle": "실무 프로젝트",
         "indexLabel": "인덱스",
-        "detailLabel": "한눈에 보는 프로젝트",
+        "detailLabel": "프로젝트 한눈에 보기",
         "viewEntry": "프로젝트 상세 페이지로 이동",
         "viewLegend": "보기",
         "viewAriaLabel": "목록 표시 방식",
@@ -93,7 +93,7 @@
         "breadcrumbLabel": "현재 위치",
         "backToCareerList": "실무 목록으로",
         "backToPersonalList": "개인 목록으로",
-        "detailEndLine": "긴 이야기의 마침표입니다. 끝까지 읽어 주셔서 고마워요.",
+        "detailEndLine": "프로젝트 이야기는 여기까지입니다. 끝까지 읽어 주셔서 고맙습니다.",
         "detailEndBackCareer": "다 읽었다면 실무 페이지로 돌아가기",
         "detailEndBackPersonal": "다 읽었다면 개인 프로젝트 목록으로",
         "sortStart": "시작시간",
@@ -101,9 +101,9 @@
         "sortLegend": "정렬",
         "archive": "아카이브",
         "result": "결과",
-        "careerLead": "실무 / 내부 프로젝트 {total}건을 캡처 / 소요 시간 / 언어 스택과 함께 정리했습니다.",
+        "careerLead": "실무와 사내 프로젝트 {total}건을 실제 화면, 작업 기간, 핵심 기술과 함께 정리했습니다.",
         "personalLead": "개인 프로젝트 {total}건을 아카이브로 정리했습니다.",
-        "stats": "{total}건 • 캡처 • 스택",
+        "stats": "프로젝트 {total}건, 실제 화면과 핵심 기술 포함",
         "totalProjects": "총 {total}개 프로젝트",
         "careerSortLabel": "프로젝트 정렬 기준",
         "personalSortLabel": "개인 프로젝트 정렬 기준",
@@ -124,19 +124,19 @@
         "projectLinkLabel": "{title} {label}",
         "openPage": "페이지 이동하기",
         "emptyCaptureTitle": "이미지 준비 중",
-        "emptyCaptureDescription": "대신 설명은 먼저 열어뒀어요.",
-        "contributions": "제가 맡은 건 여기부터 여기까지",
-        "results": "그래서 무엇이 달라졌나",
-        "points": "이 프로젝트의 한 끗",
+        "emptyCaptureDescription": "이미지는 준비 중이지만, 작업 이야기는 먼저 열어 두었습니다.",
+        "contributions": "제가 맡고 끝까지 책임진 일",
+        "results": "그래서 실제로 달라진 점",
+        "points": "이 프로젝트에서 눈여겨볼 점",
         "solutionLabel": "문제를 이렇게 풀었습니다",
-        "storyGuide": "무엇을 만들었는지보다, 왜 그렇게 만들었고 어떤 변화를 남겼는지 순서대로 정리했습니다.",
-        "captureGuide": "설명만 그럴듯한 프로젝트는 아닙니다. 실제 화면에서 고민의 결과를 확인해 보세요."
+        "storyGuide": "완성 화면만 나열하지 않았습니다. 왜 그렇게 만들었고 어떤 변화를 남겼는지 차례대로 설명합니다.",
+        "captureGuide": "말보다 화면이 빠를 때가 있습니다. 실제 결과물에서 구현의 디테일을 확인해 보세요."
     },
     "journey": {
-        "title": "경험이 쌓인 성장의 흐름",
-        "summary": "학교 웹 제작에서 출발해 회사 실무와 전공 학습을 병행하며 이어 온 흐름입니다.",
+        "title": "만들고 배우며 쌓아 온 시간",
+        "summary": "학교에서 처음 만든 웹 페이지가 회사의 실제 서비스로 이어졌습니다. 일과 전공 공부를 함께 해 온 성장 과정을 정리했습니다.",
         "archiveLabel": "Career log / 계속 업데이트 중",
-        "stats": "{chapters}개 챕터 · {milestones}개 장면",
+        "stats": "{chapters}개 챕터, {milestones}개의 기록",
         "status": "일하고, 배우고, 결국 화면에 남긴 기록.",
         "kicker": "일 → 배움 → 다시 화면. 어떤 순서로 볼까요?",
         "viewLegend": "여정 보기 방식",
@@ -150,11 +150,11 @@
     },
     "toolbox": {
         "title": "실무에서 검증한 도구와 방법",
-        "copy": "웹 접근성과 반응형을 기본으로 지키고, SEO·GEO·AEO에 필요한 콘텐츠 구조와 메타데이터까지 함께 설계합니다.",
+        "copy": "접근성과 반응형은 기본으로 지킵니다. 검색엔진과 AI 답변에 내용이 정확히 쓰일 수 있도록 콘텐츠 구조와 메타데이터까지 함께 설계합니다.",
         "kicker": "영역별로."
     },
     "highlights": {
-        "title": "성과와 전문성 한눈에 보기",
+        "title": "말보다 기록이 빠른 순간들",
         "awards": "수상",
         "certifications": "자격/인증",
         "roles": "전문 역할",
@@ -166,9 +166,9 @@
     },
     "contact": {
         "title": "프로젝트 문의",
-        "description": "퍼블리싱 / UI 구현이 필요하시면 메일로 연락 주세요. 먼저 맞춰야 할 화면부터 함께 보면 됩니다.",
+        "description": "퍼블리싱이나 UI 구현이 필요하다면 메일로 알려 주세요. 해결할 화면과 우선순위부터 함께 맞춰 보겠습니다.",
         "kicker": "메일 주소.",
-        "note": "범위와 일정을 먼저 맞추고, 유지하기 쉬운 화면부로 작업합니다.",
+        "note": "범위와 일정을 먼저 분명히 하고, 다음 사람이 이어서 고치기 쉬운 화면으로 작업합니다.",
         "profileLabel": "새 프로젝트 문의 환영",
         "email": "메일 보내기",
         "github": "은영환 GitHub 프로필 보기",
@@ -295,7 +295,7 @@
     },
     "meta": {
         "title": "웹 퍼블리셔 은영환 | 2026 포트폴리오",
-        "description": "HTML / SCSS 기반 7년차 웹 퍼블리셔 은영환의 2026 포트폴리오입니다. Vue 3와 JavaScript로 구현한 반응형 UI, 기업 홈페이지, 스마트팩토리·물류 시스템, CMS 운영 및 실무 프로젝트를 통해 구조적인 마크업과 사용자 중심 프론트엔드 개발 경험을 소개합니다.",
+        "description": "HTML과 SCSS 기반 7년차 웹 퍼블리셔 은영환의 2026 포트폴리오입니다. Vue 3와 JavaScript로 구현한 반응형 UI, 기업 홈페이지, 스마트팩토리와 물류 시스템, CMS 운영 프로젝트를 통해 구조적인 마크업과 사용자 중심의 UI 개발 경험을 소개합니다.",
         "ogTitle": "7년차 웹 퍼블리셔 은영환 2026 포트폴리오",
         "ogDescription": "HTML / SCSS 실무 경험과 필요한 만큼의 Vue 3를 활용한 UI 작업을 정리한 은영환 포트폴리오"
     },
@@ -307,7 +307,7 @@
         "proofLinkHighlights": "수상 / 자격 기록 보기",
         "proofLinkJourney": "성장 여정 보기",
         "featuredBadge": "대표작",
-        "howDescription": "요구사항을 화면 단위로 나누고, 마크업 / 스타일 / 동작을 순서대로 맞춥니다.",
+        "howDescription": "요구사항을 화면 단위로 풀어낸 뒤, 구조와 스타일, 동작을 차례로 맞춥니다. 순서는 단순하지만 기준은 꼼꼼합니다.",
         "galleriesAriaLabel": "프로젝트 갤러리 바로가기",
         "techStackAriaLabel": "사용 기술",
         "proofMetricsAriaLabel": "핵심 지표",
@@ -538,7 +538,7 @@
             "deliveryPillars": [
                 "Design-to-code 정합성",
                 "유지보수 가능한 UI 시스템",
-                "웹 접근성과 SEO·GEO·AEO를 고려한 마크업",
+                "웹 접근성과 검색엔진, AI 노출을 고려한 마크업",
                 "운영 환경에 강한 구조"
             ],
             "stats": [
@@ -570,11 +570,11 @@
             }
         },
         "about": {
-            "intro": "안녕하세요, 은영환입니다. 요구사항을 실제 사용 흐름에 맞는 화면으로 옮기고, 이후 수정까지 고려해 구현합니다.",
+            "intro": "안녕하세요, 은영환입니다. 복잡한 요구사항을 사용자가 이해하기 쉬운 화면으로 정리하고, 동료가 나중에 고치기 쉬운 코드로 구현합니다.",
             "paragraphs": [
-                "조앤소프트 DX 솔루션 2팀 대리로 6년 이상 다양한 웹 시스템 구축과 운영 프로젝트에 참여하며, 요구사항 분석부터 마크업 구조 설계, CMS 커스터마이징, 반응형 구현, 운영 유지보수까지 프로젝트 전 주기에 관여해 왔습니다.",
-                "HTML, SCSS, JavaScript를 기반으로 Vue.js / React.js 환경에 적응하며 컴포넌트 기반 구조 설계 경험을 쌓았고, ICE CMS, WebSquare, Nexacro 등 다양한 CMS / 솔루션 환경에서도 퍼블리싱 품질을 안정적으로 맞춰왔습니다.",
-                "SCSS 컴포넌트화로 공수를 최대 60% 절감하고, 문서화 / 교육 체계 구축으로 협업 효율을 약 30% 높인 경험이 있습니다. 앞으로도 Vue 3 등 최신 프론트엔드 환경에서 구조와 품질을 함께 책임지는 UI 개발자로 성장하고 있습니다."
+                "조앤소프트 DX 솔루션 2팀 대리로 6년 이상 웹 시스템 구축과 운영 프로젝트에 참여했습니다. 요구사항 분석부터 마크업 설계, CMS 커스터마이징, 반응형 구현, 유지보수까지 화면이 만들어지고 운영되는 전 과정을 경험했습니다.",
+                "HTML, SCSS, JavaScript를 중심으로 Vue.js와 React.js 환경의 컴포넌트 구조를 다뤘습니다. ICE CMS, WebSquare, Nexacro처럼 제약이 서로 다른 도구에서도 프로젝트 기준에 맞는 품질을 꾸준히 유지했습니다.",
+                "SCSS 컴포넌트화로 작업 시간을 최대 60% 줄였고, 문서와 교육 체계를 만들어 협업 효율을 약 30% 높였습니다. 화면을 빠르게 완성하는 데서 끝내지 않고, 팀이 오래 운영할 수 있는 구조까지 책임지는 UI 개발자로 성장하고 있습니다."
             ],
             "keywords": ["꼼꼼함", "성실함", "구조적 사고", "사용자 중심", "유지보수성", "협업 친화성", "실행력", "리더십"],
             "principles": [
@@ -584,33 +584,33 @@
                 },
                 {
                     "title": "유지보수 가능한 구조",
-                    "description": "프로젝트가 길어질수록 기준의 힘이 중요합니다. 반복 화면은 재사용 가능한 단위로 묶습니다."
+                    "description": "프로젝트가 길어질수록 코드보다 기준이 오래갑니다. 반복 화면은 이해하기 쉬운 공통 단위로 묶습니다."
                 },
                 {
                     "title": "명확한 커뮤니케이션",
-                    "description": "디자이너 / 개발자 / 고객의 언어를 연결하며 설명 가능한 산출물을 지향합니다."
+                    "description": "디자이너와 개발자, 고객이 같은 화면을 다른 말로 설명할 때 그 사이를 연결합니다. 결정한 기준은 누구나 다시 확인할 수 있게 남깁니다."
                 }
             ],
             "workflow": [
                 {
                     "label": "파악",
-                    "description": "요구사항과 화면 목적을 먼저 파악합니다."
+                    "description": "누가 왜 쓰는 화면인지부터 확인합니다."
                 },
                 {
                     "label": "정리",
-                    "description": "레이아웃과 공통 요소를 먼저 나눕니다."
+                    "description": "정보의 우선순위와 반복되는 UI를 나눕니다."
                 },
                 {
                     "label": "구현",
-                    "description": "스타일과 동작을 화면 단위로 구현합니다."
+                    "description": "구조를 세우고 스타일과 동작을 화면 단위로 구현합니다."
                 },
                 {
                     "label": "검증",
-                    "description": "키보드 사용, 제목 구조, 메타데이터와 검색 노출 기준을 확인합니다."
+                    "description": "반응형 화면, 키보드 사용, 제목 구조, 메타데이터를 실제 사용 흐름대로 확인합니다."
                 },
                 {
                     "label": "품질",
-                    "description": "빠른 납기에서도 품질 우선순위를 유지합니다."
+                    "description": "마감이 빨라도 반드시 지켜야 할 품질 기준은 놓치지 않습니다."
                 }
             ],
             "direction": "퍼블리싱 경험을 바탕으로 컴포넌트 설계와 프론트엔드 이해도를 넓혀, UI 개발 전반을 더 안정적으로 맡는 것이 목표입니다."
@@ -621,14 +621,14 @@
                 "icon": "</>",
                 "title": "Markup",
                 "items": ["HTML5", "시맨틱 마크업", "웹표준", "웹접근성", "크로스브라우징"],
-                "description": "시맨틱한 HTML과 브라우저 기본기를 바탕으로 화면 뼈대를 잡습니다."
+                "description": "내용의 순서와 의미가 코드에서도 드러나도록 HTML 구조를 잡고, 여러 브라우저에서 같은 흐름으로 사용할 수 있게 만듭니다."
             },
             {
                 "key": "style",
                 "icon": "◈",
                 "title": "Style",
                 "items": ["CSS3", "SCSS", "반응형 웹", "컴포넌트 스타일링", "유지보수형 구조"],
-                "description": "반복되는 스타일을 규칙화해 수정 범위를 작게 유지합니다."
+                "description": "반복되는 스타일을 SCSS 규칙으로 묶어, 한 곳을 고쳤다가 다른 화면이 놀라지 않게 관리합니다."
             },
             {
                 "key": "interaction",
@@ -642,28 +642,28 @@
                 "icon": "⬡",
                 "title": "Framework",
                 "items": ["Vue 3", "React.js", "컴포넌트 구조", "프론트엔드 확장 학습"],
-                "description": "라우팅, 상태, props 흐름을 화면 구현 안에서 필요한 수준으로 다룹니다."
+                "description": "Vue 화면에 필요한 페이지 이동, 상태, props 흐름을 이해하고 실제 UI에 연결합니다."
             },
             {
                 "key": "cms",
                 "icon": "▦",
                 "title": "CMS / Solution",
                 "items": ["ICE CMS", "WebSquare", "Nexacro", "eGovFrame", "커스터마이징"],
-                "description": "CMS와 업무 솔루션마다 다른 제약을 파악해 화면을 맞춥니다."
+                "description": "CMS와 업무 솔루션마다 다른 규칙과 제약을 먼저 파악하고, 그 환경에서 안정적으로 운영되는 화면을 만듭니다."
             },
             {
                 "key": "search",
                 "icon": "◎",
                 "title": "Accessibility / Search",
                 "items": ["웹 접근성", "SEO", "GEO", "AEO", "메타데이터", "JSON-LD", "Sitemap"],
-                "description": "시맨틱 마크업과 구조화된 콘텐츠로 사용자 접근성과 검색·AI 답변 노출 기반을 함께 개선합니다."
+                "description": "시맨틱 마크업과 구조화된 콘텐츠로 사용자의 접근성을 높이고, 검색엔진과 AI가 내용을 정확히 찾고 인용할 수 있는 기반을 만듭니다."
             },
             {
                 "key": "collaboration",
                 "icon": "✦",
                 "title": "Design / Collaboration",
                 "items": ["Figma", "Zeplin", "Photoshop", "Illustrator", "Git", "문서화", "교육 지원"],
-                "description": "디자인 시안, 산출물, 이슈를 이해하기 쉬운 기준으로 공유합니다."
+                "description": "디자인 시안과 개발 이슈를 팀이 바로 판단할 수 있는 말과 문서로 정리합니다."
             }
         ],
         "journey": [

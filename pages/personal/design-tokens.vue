@@ -1,13 +1,20 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
-        :footer-text="t('footer.copyright')" :show-app-dock="true">
+    <AppLayout
+        :links="layoutLinks"
+        active-id=""
+        brand-href="/"
+        active-path="/personal"
+        page-variant="archive-personal"
+        :footer-text="t('footer.copyright')"
+        :show-app-dock="true"
+    >
         <article class="token-page section" aria-labelledby="token-page-title">
-            <header class="token-hero">
+            <header class="token-hero" data-reveal="hero">
                 <p class="base-label base-label--technical">{{ t('tokens.pageLabel') }}</p>
                 <h1 id="token-page-title">{{ t('tokens.title') }}</h1>
                 <p>
-                    {{ t('tokens.introBefore') }} <code>assets/style/abstracts/_theme.scss</code>,
-                    {{ t('tokens.introMiddle') }} <code>_tokens.scss</code>{{ t('tokens.introAfter') }}
+                    {{ t('tokens.introBefore') }} <code>assets/style/abstracts/_theme.scss</code>, {{ t('tokens.introMiddle') }}
+                    <code>_tokens.scss</code>{{ t('tokens.introAfter') }}
                 </p>
                 <nav class="token-hero__actions" :aria-label="t('tokens.navigation')">
                     <BaseButton :label="t('tokens.viewCatalog')" href="/personal/components" variant="ghost" />
@@ -16,14 +23,14 @@
                 </nav>
             </header>
 
-            <section class="token-section" aria-labelledby="color-token-title">
+            <section class="token-section" data-reveal="up" aria-labelledby="color-token-title">
                 <div class="token-section__head">
                     <p class="base-label base-label--technical">Color</p>
                     <h2 id="color-token-title">{{ t('tokens.colorTitle') }}</h2>
                     <p>{{ t('tokens.colorDescription') }}</p>
                 </div>
                 <div class="token-grid token-grid--colors">
-                    <article v-for="token in colorTokens" :key="token.name" class="token-card">
+                    <article v-for="token in colorTokens" :key="token.name" class="token-card" data-reveal="scale">
                         <span class="token-swatch" :style="{ background: token.value }" aria-hidden="true" />
                         <div>
                             <h3>{{ token.name }}</h3>
@@ -34,7 +41,7 @@
                 </div>
             </section>
 
-            <section class="token-section" aria-labelledby="space-token-title">
+            <section class="token-section" data-reveal="up" aria-labelledby="space-token-title">
                 <div class="token-section__head">
                     <p class="base-label base-label--technical">Spacing</p>
                     <h2 id="space-token-title">{{ t('tokens.spacingTitle') }}</h2>
@@ -54,14 +61,14 @@
                 </div>
             </section>
 
-            <section class="token-section" aria-labelledby="type-token-title">
+            <section class="token-section" data-reveal="up" aria-labelledby="type-token-title">
                 <div class="token-section__head">
                     <p class="base-label base-label--technical">Typography</p>
                     <h2 id="type-token-title">{{ t('tokens.typeTitle') }}</h2>
                     <p>{{ t('tokens.typeDescription') }}</p>
                 </div>
                 <div class="type-list">
-                    <article v-for="token in typographyTokens" :key="token.name" class="type-item">
+                    <article v-for="token in typographyTokens" :key="token.name" class="type-item" data-reveal="up">
                         <div>
                             <h3>{{ token.name }}</h3>
                             <p class="type-item__meta">{{ token.value }}</p>
@@ -72,14 +79,14 @@
                 </div>
             </section>
 
-            <section class="token-section" aria-labelledby="shape-token-title">
+            <section class="token-section" data-reveal="up" aria-labelledby="shape-token-title">
                 <div class="token-section__head">
                     <p class="base-label base-label--technical">Shape & Effect</p>
                     <h2 id="shape-token-title">{{ t('tokens.shapeTitle') }}</h2>
                     <p>{{ t('tokens.shapeDescription') }}</p>
                 </div>
                 <div class="token-grid">
-                    <article v-for="token in shapeTokens" :key="token.name" class="token-card token-card--shape">
+                    <article v-for="token in shapeTokens" :key="token.name" class="token-card token-card--shape" data-reveal="scale">
                         <span class="shape-demo" :class="token.demoClass" aria-hidden="true" />
                         <div>
                             <h3>{{ token.name }}</h3>

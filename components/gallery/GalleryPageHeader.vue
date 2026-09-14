@@ -1,16 +1,35 @@
 <template>
-    <div class="gallery-editorial__header">
-        <BaseEditorialMasthead title-id="gallery-poster-title" :title="title"
-            :kicker="kicker" :stats="stats" :description="dek" :figure="heroNumber"
-            :figure-aria-label="heroAriaLabel" :status="statusLabel" />
+    <div class="gallery-editorial__header" data-reveal="hero">
+        <BaseEditorialMasthead
+            title-id="gallery-poster-title"
+            :title="title"
+            :kicker="kicker"
+            :stats="stats"
+            :description="dek"
+            :figure="heroNumber"
+            :figure-aria-label="heroAriaLabel"
+            :status="statusLabel"
+        />
 
         <nav class="gallery-page__toolbar" :aria-label="toolbarAriaLabel">
-            <BaseSegmentControl v-if="viewOptions.length" :model-value="viewMode" :options="viewOptions"
-                :label-text="viewLegend" :label-id="viewLabelId" label-hidden
-                @update:model-value="emit('update:viewMode', $event as GalleryViewMode)" />
-            <BaseSegmentControl v-if="sortOptions.length" :model-value="sortMode" :options="sortOptions"
-                :label-text="sortLegend" :label-id="sortLabelId" label-hidden
-                @update:model-value="emit('update:sortMode', $event as WorkSortMode)" />
+            <BaseSegmentControl
+                v-if="viewOptions.length"
+                :model-value="viewMode"
+                :options="viewOptions"
+                :label-text="viewLegend"
+                :label-id="viewLabelId"
+                label-hidden
+                @update:model-value="emit('update:viewMode', $event as GalleryViewMode)"
+            />
+            <BaseSegmentControl
+                v-if="sortOptions.length"
+                :model-value="sortMode"
+                :options="sortOptions"
+                :label-text="sortLegend"
+                :label-id="sortLabelId"
+                label-hidden
+                @update:model-value="emit('update:sortMode', $event as WorkSortMode)"
+            />
         </nav>
     </div>
 </template>

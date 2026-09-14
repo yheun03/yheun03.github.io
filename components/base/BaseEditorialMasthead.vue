@@ -26,18 +26,21 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
-    titleId: string;
-    title: string;
-    kicker?: string;
-    stats?: string;
-    eyebrow?: string;
-    description?: string;
-    figure?: string;
-    figureAriaLabel?: string;
-    status?: string;
-    headingTag?: 'h1' | 'h2';
-}>(), {
-    headingTag: 'h1',
-});
+withDefaults(
+    defineProps<{
+        titleId: string;
+        title: string;
+        kicker?: string;
+        stats?: string;
+        eyebrow?: string;
+        description?: string;
+        figure?: string;
+        figureAriaLabel?: string;
+        status?: string;
+        headingTag?: 'h1' | 'h2';
+    }>(),
+    {
+        headingTag: 'h1',
+    },
+);
 </script>

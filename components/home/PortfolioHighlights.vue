@@ -1,17 +1,27 @@
 <template>
     <section id="highlights" class="section section--highlights highlights" aria-labelledby="section-highlights-title">
         <div class="highlights__title-col">
-            <BaseSectionTitle title-id="section-highlights-title" :eyebrow="t('nav.highlights')"
-                :title="t('highlights.title')" />
-            <BaseTabList :model-value="activeTab" :items="tabs" tab-id-prefix="highlights-tab-"
-                panel-id-prefix="highlights-panel" :list-label="t('highlights.categoriesAriaLabel')"
-                class="highlights__filters" @update:model-value="handleHighlightTabChange" />
+            <BaseSectionTitle title-id="section-highlights-title" :eyebrow="t('nav.highlights')" :title="t('highlights.title')" />
+            <BaseTabList
+                :model-value="activeTab"
+                :items="tabs"
+                tab-id-prefix="highlights-tab-"
+                panel-id-prefix="highlights-panel"
+                :list-label="t('highlights.categoriesAriaLabel')"
+                class="highlights__filters"
+                @update:model-value="handleHighlightTabChange"
+            />
         </div>
 
         <div class="highlights__workspace" data-animate>
-            <HighlightsTabPanelRenderer :active-tab="activeTab" :panel-render-key="activeTab"
-                :active-tab-index="activeTabIndex" :active-tab-label="activeTabLabel"
-                :active-description="activeDescription" :active-items="activeItems" />
+            <HighlightsTabPanelRenderer
+                :active-tab="activeTab"
+                :panel-render-key="activeTab"
+                :active-tab-index="activeTabIndex"
+                :active-tab-label="activeTabLabel"
+                :active-description="activeDescription"
+                :active-items="activeItems"
+            />
         </div>
     </section>
 </template>

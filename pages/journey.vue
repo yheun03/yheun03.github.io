@@ -1,6 +1,5 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/journey" page-variant="journey"
-        :footer-text="t('footer.copyright')">
+    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/journey" page-variant="journey" :footer-text="t('footer.copyright')">
         <PortfolioJourney heading-tag="h1" />
         <PortfolioHighlights />
     </AppLayout>

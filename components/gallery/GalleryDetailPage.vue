@@ -1,29 +1,42 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" :active-path="config.basePath"
-        :page-variant="`archive-${variant}`" :footer-text="t('footer.copyright')" :show-app-dock="true">
+    <AppLayout
+        :links="layoutLinks"
+        active-id=""
+        brand-href="/"
+        :active-path="config.basePath"
+        :page-variant="`archive-${variant}`"
+        :footer-text="t('footer.copyright')"
+        :show-app-dock="true"
+    >
         <article class="gallery-detail gallery-page--editorial section" :class="galleryVariantClass">
-            <nav class="gallery-detail__breadcrumb" :aria-label="t('gallery.breadcrumbLabel')">
-                <NuxtLink :to="config.basePath" class="gallery-detail__breadcrumb-link">
-                    ← {{ t(config.listLabelKey) }}
-                </NuxtLink>
+            <nav class="gallery-detail__breadcrumb" data-reveal="up" :aria-label="t('gallery.breadcrumbLabel')">
+                <NuxtLink :to="config.basePath" class="gallery-detail__breadcrumb-link"> ← {{ t(config.listLabelKey) }} </NuxtLink>
             </nav>
 
             <header class="gallery-detail__header gallery-detail__hero">
-                <figure class="gallery-detail__cover"
-                    :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }">
+                <figure
+                    class="gallery-detail__cover"
+                    data-reveal="scale"
+                    :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }"
+                >
                     <GalleryEmptyCapture v-if="isPlaceholderCapture(coverCapture)" />
                     <img v-else :src="resolveAppPath(coverCapture)" :alt="captureAlt(0)" width="1200" height="675" />
                 </figure>
-                <div class="gallery-detail__hero-copy">
+                <div class="gallery-detail__hero-copy" data-reveal="right" data-reveal-delay="100">
                     <p class="gallery-editorial__kicker">{{ t('gallery.detailLabel') }}</p>
                     <h1 class="gallery-detail__title">{{ work.title }}</h1>
                     <p class="gallery-detail__plain-label">{{ t('gallery.overview') }}</p>
                     <p class="gallery-detail__intro">{{ work.introduction }}</p>
                     <p class="gallery-detail__stack-line">{{ work.tech.join(' / ') }}</p>
                     <p v-if="work.links?.length" class="gallery-detail__links">
-                        <BaseButton v-for="link in work.links" :key="link.href" :label="projectLinkLabel(link)"
-                            :href="link.href" :aria-label="projectLinkAriaLabel(link)"
-                            :variant="isGithubLink(link.href) ? 'ghost' : 'primary'" />
+                        <BaseButton
+                            v-for="link in work.links"
+                            :key="link.href"
+                            :label="projectLinkLabel(link)"
+                            :href="link.href"
+                            :aria-label="projectLinkAriaLabel(link)"
+                            :variant="isGithubLink(link.href) ? 'ghost' : 'primary'"
+                        />
                     </p>
                     <dl class="gallery-detail__hero-meta">
                         <div>
@@ -47,26 +60,26 @@
             </header>
 
             <section class="gallery-detail__brief" :aria-labelledby="briefTitleId">
-                <header class="gallery-detail__section-intro">
+                <header class="gallery-detail__section-intro" data-reveal="up">
                     <p class="gallery-detail__section-index">01 / PROJECT NOTE</p>
                     <h2 :id="briefTitleId">{{ t('gallery.contributions') }}</h2>
                     <p>{{ t('gallery.storyGuide') }}</p>
                 </header>
 
                 <div class="gallery-detail__brief-grid">
-                    <section class="gallery-detail__brief-card gallery-detail__brief-card--wide">
+                    <section class="gallery-detail__brief-card gallery-detail__brief-card--wide" data-reveal="up">
                         <p class="gallery-detail__brief-label">{{ t('gallery.solutionLabel') }}</p>
                         <ul>
                             <li v-for="item in work.myWorks" :key="item">{{ item }}</li>
                         </ul>
                     </section>
-                    <section v-if="work.achievements.length" class="gallery-detail__brief-card">
+                    <section v-if="work.achievements.length" class="gallery-detail__brief-card" data-reveal="up">
                         <p class="gallery-detail__brief-label">{{ t('gallery.results') }}</p>
                         <ul>
                             <li v-for="item in work.achievements" :key="item">{{ item }}</li>
                         </ul>
                     </section>
-                    <section class="gallery-detail__brief-card">
+                    <section class="gallery-detail__brief-card" data-reveal="up" data-reveal-delay="80">
                         <p class="gallery-detail__brief-label">{{ t('gallery.points') }}</p>
                         <ul>
                             <li v-for="item in work.points" :key="item">{{ item }}</li>
@@ -76,18 +89,23 @@
             </section>
 
             <section :id="capturesTitleId" class="gallery-detail__story" :aria-label="t('gallery.captures')">
-                <header class="gallery-detail__section-intro gallery-detail__section-intro--story">
+                <header class="gallery-detail__section-intro gallery-detail__section-intro--story" data-reveal="up">
                     <p class="gallery-detail__section-index">02 / SCREENS</p>
                     <h2>{{ t('gallery.captures') }}</h2>
                     <p>{{ t('gallery.captureGuide') }}</p>
                 </header>
-                <article v-for="(capture, index) in galleryCaptures" :key="capture || index"
-                    class="gallery-detail__story-block">
-                    <figure class="gallery-detail__figure"
-                        :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(capture) }">
+                <article v-for="(capture, index) in galleryCaptures" :key="capture || index" class="gallery-detail__story-block" data-reveal="scale">
+                    <figure class="gallery-detail__figure" :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(capture) }">
                         <GalleryEmptyCapture v-if="isPlaceholderCapture(capture)" />
-                        <img v-else :src="resolveAppPath(capture)" :alt="captureAlt(index)" loading="lazy"
-                            decoding="async" width="1200" height="675" />
+                        <img
+                            v-else
+                            :src="resolveAppPath(capture)"
+                            :alt="captureAlt(index)"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="675"
+                        />
                         <figcaption v-if="!isPlaceholderCapture(capture)">
                             <span>{{ String(index + 1).padStart(2, '0') }}</span>
                             {{ captureCaption(index) }}
@@ -96,29 +114,24 @@
                 </article>
             </section>
 
-            <footer class="gallery-detail__end">
+            <footer class="gallery-detail__end" data-reveal="up">
                 <p class="gallery-detail__section-index">03 / KEEP EXPLORING</p>
                 <h2 class="gallery-detail__next-title">{{ navLabels.next }}</h2>
                 <nav class="gallery-detail__next-list" :aria-label="navLabels.next">
                     <NuxtLink v-for="item in nextWorks" :key="item.id" :to="`${config.basePath}/${item.id}`">
-                        <span>{{ item.title }}</span><span aria-hidden="true">↗</span>
+                        <span>{{ item.title }}</span
+                        ><span aria-hidden="true">↗</span>
                     </NuxtLink>
                 </nav>
                 <BaseButton :to="config.basePath" :label="`← ${t(detailEndCtaKey)}`" variant="ghost" />
             </footer>
-
         </article>
     </AppLayout>
 </template>
 
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
-import {
-    type GalleryArchiveVariant,
-    getGalleryVariantConfig,
-    isPlaceholderCapture,
-    useGalleryRouteWorks,
-} from '~/composables/gallery/useGallery';
+import { type GalleryArchiveVariant, getGalleryVariantConfig, isPlaceholderCapture, useGalleryRouteWorks } from '~/composables/gallery/useGallery';
 import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 const props = defineProps<{
@@ -134,17 +147,16 @@ const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 const capturesTitleId = `gallery-${props.variant}-captures`;
 const briefTitleId = `gallery-${props.variant}-brief`;
 
-const detailEndCtaKey = computed(() =>
-    props.variant === 'career' ? 'gallery.detailEndBackCareer' : 'gallery.detailEndBackPersonal',
-);
+const detailEndCtaKey = computed(() => (props.variant === 'career' ? 'gallery.detailEndBackCareer' : 'gallery.detailEndBackPersonal'));
 const galleryCaptures = computed(() => (props.work.captures.length ? props.work.captures : ['']));
 const coverCapture = computed(() => props.work.thumbnail || galleryCaptures.value[0] || '');
 const works = useGalleryRouteWorks(props.variant);
 const currentWorkIndex = computed(() => works.value.findIndex((item) => item.id === props.work.id));
 const nextWorks = computed(() => {
     if (works.value.length < 2 || currentWorkIndex.value < 0) return [];
-    return Array.from({ length: Math.min(4, works.value.length - 1) }, (_, offset) =>
-        works.value[(currentWorkIndex.value + offset + 1) % works.value.length],
+    return Array.from(
+        { length: Math.min(4, works.value.length - 1) },
+        (_, offset) => works.value[(currentWorkIndex.value + offset + 1) % works.value.length],
     );
 });
 const metaLabels = computed(() => ({
@@ -156,8 +168,7 @@ const navLabels = computed(() => ({
 }));
 
 function captureCaption(index: number) {
-    const copy = props.work.points[index % props.work.points.length]
-        || props.work.myWorks[index % props.work.myWorks.length];
+    const copy = props.work.points[index % props.work.points.length] || props.work.myWorks[index % props.work.myWorks.length];
     return copy || captureAlt(index);
 }
 

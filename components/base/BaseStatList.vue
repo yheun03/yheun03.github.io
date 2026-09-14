@@ -1,7 +1,7 @@
 <template>
     <dl class="base-stat-list" :aria-label="ariaLabel">
         <div v-for="(stat, index) in stats" :key="stat.label" :style="{ '--stagger-i': index }" data-stagger>
-            <dd>{{ stat.value }}{{ stat.suffix ?? "" }}</dd>
+            <dd>{{ stat.value }}{{ stat.suffix ?? '' }}</dd>
             <dt>{{ stat.label }}</dt>
         </div>
     </dl>

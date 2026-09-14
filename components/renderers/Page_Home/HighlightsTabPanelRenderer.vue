@@ -1,6 +1,11 @@
 <template>
-    <article :id="`highlights-panel-${activeTab}`" :key="panelRenderKey" class="highlights__panel" role="tabpanel"
-        :aria-labelledby="`highlights-tab-${activeTab}`">
+    <article
+        :id="`highlights-panel-${activeTab}`"
+        :key="panelRenderKey"
+        class="highlights__panel"
+        role="tabpanel"
+        :aria-labelledby="`highlights-tab-${activeTab}`"
+    >
         <div class="highlights__panel-aside">
             <p class="highlights__panel-index">{{ activeTabIndex }}</p>
             <h3 class="highlights__panel-title">{{ activeTabLabel }}</h3>

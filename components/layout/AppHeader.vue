@@ -4,28 +4,51 @@
             <span aria-hidden="true">Eun</span>
         </BaseLink>
         <nav class="app-header__nav" :aria-label="t('a11y.primaryNavigation')">
-            <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-header__link"
-                :class="{ 'app-header__link--active': isActive(link.href) }" :aria-current="getAriaCurrent(link.href)">
+            <BaseLink
+                v-for="link in links"
+                :key="link.href"
+                :href="link.href"
+                class="app-header__link"
+                :class="{ 'app-header__link--active': isActive(link.href) }"
+                :aria-current="getAriaCurrent(link.href)"
+            >
                 {{ link.label }}
             </BaseLink>
         </nav>
         <div class="app-header__actions">
             <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">{{ statusMessage }}</p>
-            <BaseButton class="app-header__theme-toggle" variant="ghost" :label="themeToggleLabel"
-                :aria-label="themeToggleAriaLabel" @click="handleThemeToggle">
+            <BaseButton
+                class="app-header__theme-toggle"
+                variant="ghost"
+                :label="themeToggleLabel"
+                :aria-label="themeToggleAriaLabel"
+                @click="handleThemeToggle"
+            >
                 <Transition name="toggle-swap" mode="out-in">
                     <span :key="themeToggleLabel" class="toggle-swap">{{ themeToggleLabel }}</span>
                 </Transition>
             </BaseButton>
-            <BaseButton class="app-header__language-toggle" variant="ghost" :label="localeLabel"
-                :aria-label="languageToggleAriaLabel" @click="handleLocaleToggle">
+            <BaseButton
+                class="app-header__language-toggle"
+                variant="ghost"
+                :label="localeLabel"
+                :aria-label="languageToggleAriaLabel"
+                @click="handleLocaleToggle"
+            >
                 <Transition name="toggle-swap" mode="out-in">
                     <span :key="localeLabel" class="toggle-swap">{{ localeLabel }}</span>
                 </Transition>
             </BaseButton>
-            <button ref="menuButtonRef" type="button" class="app-header__menu-btn"
-                :aria-label="t(menuOpen ? 'a11y.mobileMenuClose' : 'a11y.mobileMenuOpen')" :aria-expanded="menuOpen"
-                aria-controls="app-lnb-panel" aria-haspopup="dialog" @click="handleAppLnbToggle">
+            <button
+                ref="menuButtonRef"
+                type="button"
+                class="app-header__menu-btn"
+                :aria-label="t(menuOpen ? 'a11y.mobileMenuClose' : 'a11y.mobileMenuOpen')"
+                :aria-expanded="menuOpen"
+                aria-controls="app-lnb-panel"
+                aria-haspopup="dialog"
+                @click="handleAppLnbToggle"
+            >
                 <span class="app-header__menu-icon" aria-hidden="true">
                     <span />
                     <span />
@@ -36,8 +59,7 @@
                 </span>
             </button>
         </div>
-        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId"
-            @close="closeMobileMenu" />
+        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId" @close="closeMobileMenu" />
     </header>
 </template>
 
@@ -55,13 +77,9 @@ const { locale, toggleLocale, t } = useLocale();
 const { isDarkTheme, toggleTheme } = useTheme();
 
 const localeLabel = computed(() => locale.value.toUpperCase());
-const languageToggleAriaLabel = computed(() =>
-    locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo'),
-);
+const languageToggleAriaLabel = computed(() => (locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo')));
 const themeToggleLabel = computed(() => (isDarkTheme.value ? 'Light' : 'Dark'));
-const themeToggleAriaLabel = computed(() =>
-    isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme'),
-);
+const themeToggleAriaLabel = computed(() => (isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme')));
 
 function handleLocaleToggle() {
     const switchingToEn = locale.value === 'ko';
@@ -88,8 +106,8 @@ const props = withDefaults(
         activePath?: string;
     }>(),
     {
-        brandHref: "#hello",
-    }
+        brandHref: '#hello',
+    },
 );
 
 const { isActive, getAriaCurrent } = useNavLinkState({
@@ -109,19 +127,19 @@ watch(
     () => menuOpen.value,
     (open) => {
         if (!import.meta.client) return;
-        document.documentElement.classList.toggle("app--menu-open", open);
-    }
+        document.documentElement.classList.toggle('app--menu-open', open);
+    },
 );
 
 onMounted(() => {
-    window.addEventListener("keydown", handleEscapeKeydown);
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('keydown', handleEscapeKeydown);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 });
 
 onBeforeUnmount(() => {
-    document.documentElement.classList.remove("app--menu-open");
-    window.removeEventListener("keydown", handleEscapeKeydown);
-    window.removeEventListener("scroll", handleScroll);
+    document.documentElement.classList.remove('app--menu-open');
+    window.removeEventListener('keydown', handleEscapeKeydown);
+    window.removeEventListener('scroll', handleScroll);
 });
 </script>

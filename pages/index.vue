@@ -1,6 +1,5 @@
 <template>
-    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId" page-variant="home"
-        :footer-text="t('footer.copyright')">
+    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId" page-variant="home" :footer-text="t('footer.copyright')">
         <PortfolioHero />
         <PortfolioAboutIntro />
         <PortfolioWhyList />
@@ -28,41 +27,12 @@ const appDockLinks = computed(() =>
     sectionIds.map((id) => ({
         href: `#${id}`,
         label: t(`nav.${id}`),
-    }))
+    })),
 );
 
 const headerNavLinks = useSubpageLinks();
 
 const activeId = '';
-let sectionObserver: IntersectionObserver | null = null;
-
-onMounted(() => {
-    const sections = document.querySelectorAll<HTMLElement>(
-        '.portfolio-page--home > .section:not(.section--hero)',
-    );
-
-    const revealSection = (section: Element) => {
-        section.querySelectorAll<HTMLElement>('[data-animate]')
-            .forEach((target) => target.classList.add('animate--visible'));
-    };
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        sections.forEach(revealSection);
-        return;
-    }
-
-    sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            revealSection(entry.target);
-            sectionObserver?.unobserve(entry.target);
-        });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
-
-    sections.forEach((section) => sectionObserver?.observe(section));
-});
-
-onBeforeUnmount(() => sectionObserver?.disconnect());
 
 usePortfolioSeo(() => ({
     title: t('meta.title'),
@@ -77,5 +47,4 @@ usePortfolioSeo(() => ({
     relatedLinks: ['/projects/', '/personal/', '/journey/'],
     significantLinks: ['/projects/', '/journey/'],
 }));
-
 </script>

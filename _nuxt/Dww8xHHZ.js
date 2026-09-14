@@ -1,1 +1,0 @@
-import{_ as a}from"./h2PrfQLi.js";import{d as t,B as s,h as n,e as p,o as c}from"./C4En5qEl.js";import{u as m}from"./BYc6DqLo.js";import"./CGAwBAng.js";const w=t({__name:"[id]",setup(_){const o=s(),e=m("personal",o.params.id);return(l,u)=>{const r=a;return c(),n(r,{variant:"personal",work:p(e)},null,8,["work"])}}});export{w as default};

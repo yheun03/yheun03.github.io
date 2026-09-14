@@ -6,4 +6,5 @@ Disallow: /personal/design-tokens
 Disallow: /personal/components
 
 Sitemap: https://yheun03.github.io/sitemap.xml
+Sitemap: https://yheun03.github.io/sitemap.txt
 LLMs: https://yheun03.github.io/llms.txt

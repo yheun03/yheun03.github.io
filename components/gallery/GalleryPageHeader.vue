@@ -1,21 +1,8 @@
 <template>
-    <header class="gallery-editorial__masthead">
-        <div class="gallery-editorial__poster">
-            <div class="gallery-editorial__poster-top">
-                <p class="gallery-editorial__kicker">{{ kicker }}</p>
-                <p class="gallery-editorial__stats">{{ stats }}</p>
-            </div>
-
-            <div class="gallery-editorial__poster-hero">
-                <h1 id="gallery-poster-title" class="gallery-editorial__headline">{{ title }}</h1>
-                <span class="gallery-editorial__rule" aria-hidden="true" />
-                <p class="gallery-editorial__hero-num" aria-hidden="true">{{ heroNumber }}</p>
-                <p v-if="heroAriaLabel" class="visually-hidden">{{ heroAriaLabel }}</p>
-                <p class="gallery-editorial__status">{{ statusLabel }}</p>
-            </div>
-
-            <p class="gallery-editorial__dek">{{ dek }}</p>
-        </div>
+    <div class="gallery-editorial__header">
+        <BaseEditorialMasthead title-id="gallery-poster-title" :title="title"
+            :kicker="kicker" :stats="stats" :description="dek" :figure="heroNumber"
+            :figure-aria-label="heroAriaLabel" :status="statusLabel" />
 
         <nav class="gallery-page__toolbar" :aria-label="toolbarAriaLabel">
             <BaseSegmentControl v-if="viewOptions.length" :model-value="viewMode" :options="viewOptions"
@@ -25,7 +12,7 @@
                 :label-text="sortLegend" :label-id="sortLabelId" label-hidden
                 @update:model-value="emit('update:sortMode', $event as WorkSortMode)" />
         </nav>
-    </header>
+    </div>
 </template>
 
 <script setup lang="ts">

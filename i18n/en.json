@@ -135,10 +135,16 @@
     "journey": {
         "title": "A growth path built through delivery",
         "summary": "From a middle-school council site through high school and university to parallel publishing work at a company.",
-        "kicker": "By company, or by year.",
+        "archiveLabel": "Career log / Still shipping",
+        "stats": "{chapters} chapters · {milestones} scenes",
+        "status": "Worked, learned, and left the evidence on screen.",
+        "kicker": "Work → learn → ship. Pick a route.",
         "viewLegend": "Timeline view",
         "viewAffiliation": "By company",
         "viewChronological": "By year",
+        "showChapter": "Show {count} milestones",
+        "hideChapter": "Hide {count} milestones",
+        "moreClients": "+{count} more",
         "tempLabel": "Sample data",
         "clientsAriaLabel": "Clients served"
     },
@@ -149,7 +155,6 @@
     },
     "highlights": {
         "title": "Achievements and expertise at a glance",
-        "summary": "Awards, certifications, roles, and activities.",
         "awards": "Awards",
         "certifications": "Certifications",
         "roles": "Professional Roles",
@@ -157,11 +162,7 @@
         "showMore": "Show more highlights",
         "collapse": "Collapse highlights",
         "visibleCount": "{visible} of {total} shown",
-        "tabSummary": "{visible} in this category of {total} highlights total.",
-        "totalCount": "{total} total",
-        "countSummary": "{awards} awards / {certifications} certs / {roles} roles / {activities} activities",
-        "categoriesAriaLabel": "Highlight categories",
-        "summaryAriaLabel": "Highlights summary"
+        "categoriesAriaLabel": "Highlight categories"
     },
     "contact": {
         "title": "Project inquiries",

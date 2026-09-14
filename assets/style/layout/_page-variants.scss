@@ -31,14 +31,15 @@
 
     >.section.section--journey,
     >.section.section--highlights {
-        width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
-        max-width: var(--layout-content-max);
+        width: min(100%, 1560px);
+        max-width: 1560px;
         margin-inline: auto;
-        padding-block: clamp(88px, 11vw, 168px);
-        padding-inline: 0;
+        padding: clamp(72px, 8vw, 120px) var(--page-pad-x) clamp(96px, 11vw, 176px);
+        box-sizing: border-box;
     }
 
-    .section-title__eyebrow {
+    .section-title__eyebrow,
+    .editorial-masthead__eyebrow {
         letter-spacing: 0.16em;
     }
 
@@ -53,7 +54,17 @@
         >.section.section--journey,
         >.section.section--highlights {
             width: 100%;
-            padding: var(--section-pad-y) var(--page-pad-x);
+            padding: clamp(64px, 9vw, 96px) var(--page-pad-x) clamp(88px, 12vw, 128px);
+        }
+    }
+}
+
+@media (max-width: $bp-max-mobile) {
+    .portfolio-page--journey {
+
+        >.section.section--journey,
+        >.section.section--highlights {
+            padding: 48px var(--page-pad-x) 96px;
         }
     }
 }

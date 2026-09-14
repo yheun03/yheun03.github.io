@@ -59,3 +59,193 @@
         font-size: 1.125rem;
     }
 }
+
+/* Shared editorial masthead */
+.editorial-masthead {
+    --editorial-ink: var(--color-text-strong);
+    --editorial-body: var(--color-text-muted);
+    --editorial-muted: var(--color-text-muted);
+    --editorial-accent: var(--color-primary);
+    width: 100%;
+    max-width: none;
+}
+
+.editorial-masthead__top {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-3) var(--space-6);
+    padding-bottom: clamp(26px, 4vw, 42px);
+    border-bottom: 1px solid var(--editorial-ink);
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--editorial-accent);
+        box-shadow: 0 0 0 5px color-mix(in srgb, var(--editorial-accent) 12%, transparent);
+    }
+}
+
+.editorial-masthead__kicker,
+.editorial-masthead__stats,
+.editorial-masthead__foot p {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.editorial-masthead__kicker {
+    color: var(--editorial-accent);
+}
+
+.editorial-masthead__stats {
+    color: var(--editorial-muted);
+    text-align: end;
+}
+
+.editorial-masthead__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(32px, 7vw, 112px);
+    align-items: end;
+    padding-block: clamp(36px, 5vw, 68px) clamp(30px, 4vw, 52px);
+}
+
+.editorial-masthead__copy {
+    display: grid;
+    justify-items: start;
+    max-width: 880px;
+}
+
+.editorial-masthead__eyebrow {
+    margin: 0 0 clamp(12px, 2vw, 20px);
+    color: var(--editorial-accent);
+    @include font(label, $font-weight-semibold);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.editorial-masthead__title {
+    max-width: 12ch;
+    margin: 0;
+    color: var(--editorial-ink);
+    font-family: var(--font-display);
+    font-size: clamp(3.25rem, 6vw, 6.75rem);
+    font-weight: 900;
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+    text-wrap: balance;
+}
+
+.editorial-masthead__description {
+    max-width: 64ch;
+    margin: clamp(24px, 3vw, 38px) 0 0;
+    color: var(--editorial-body);
+    font-size: clamp(1rem, 1.4vw, 1.18rem);
+    line-height: 1.8;
+}
+
+.editorial-masthead__figure {
+    align-self: center;
+    justify-self: end;
+    margin: 0;
+    color: transparent;
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 10vw, 10rem);
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+    white-space: nowrap;
+    -webkit-text-stroke: 1px color-mix(in srgb, var(--editorial-muted) 30%, transparent);
+    opacity: 0.75;
+}
+
+.editorial-masthead__foot {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    span {
+        flex: 0 0 30px;
+        height: 2px;
+        background: var(--editorial-accent);
+    }
+
+    p {
+        color: var(--editorial-muted);
+    }
+}
+
+@media (max-width: #{$bp-max-tablet}) {
+    .editorial-masthead__hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-8);
+    }
+
+    .editorial-masthead__figure {
+        justify-self: end;
+        font-size: clamp(3.5rem, 12vw, 6rem);
+    }
+}
+
+@media (max-width: #{$bp-max-mobile}) {
+    .editorial-masthead__top {
+        display: grid;
+        padding-bottom: 18px;
+    }
+
+    .editorial-masthead__stats {
+        min-width: 0;
+        text-align: start;
+    }
+
+    .editorial-masthead__hero {
+        gap: 24px;
+        padding-block: 28px 24px;
+    }
+
+    .editorial-masthead__eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .editorial-masthead__title {
+        font-size: clamp(2.65rem, 13vw, 4.5rem);
+        line-height: 1.04;
+    }
+
+    .editorial-masthead__description {
+        margin-top: 14px;
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .editorial-masthead__figure {
+        justify-self: start;
+        font-size: clamp(2.55rem, 14vw, 4.5rem);
+        letter-spacing: -0.075em;
+    }
+
+    .editorial-masthead__foot {
+        align-items: flex-start;
+
+        span {
+            margin-top: 0.62em;
+        }
+
+        p {
+            font-size: 0.72rem;
+        }
+    }
+}

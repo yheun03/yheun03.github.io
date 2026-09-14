@@ -135,10 +135,16 @@
     "journey": {
         "title": "경험이 쌓인 성장의 흐름",
         "summary": "학교 웹 제작에서 출발해 회사 실무와 전공 학습을 병행하며 이어 온 흐름입니다.",
-        "kicker": "소속별, 또는 시간순으로.",
+        "archiveLabel": "Career log / 계속 업데이트 중",
+        "stats": "{chapters}개 챕터 · {milestones}개 장면",
+        "status": "일하고, 배우고, 결국 화면에 남긴 기록.",
+        "kicker": "일 → 배움 → 다시 화면. 어떤 순서로 볼까요?",
         "viewLegend": "여정 보기 방식",
         "viewAffiliation": "소속순",
         "viewChronological": "시간순",
+        "showChapter": "연도별 기록 {count}개 펼치기",
+        "hideChapter": "연도별 기록 {count}개 접기",
+        "moreClients": "외 {count}곳",
         "tempLabel": "임시 예시 데이터",
         "clientsAriaLabel": "참여 고객사"
     },
@@ -149,7 +155,6 @@
     },
     "highlights": {
         "title": "성과와 전문성 한눈에 보기",
-        "summary": "수상, 자격, 역할, 활동을 분야별 기록으로 모았습니다.",
         "awards": "수상",
         "certifications": "자격/인증",
         "roles": "전문 역할",
@@ -157,11 +162,7 @@
         "showMore": "하이라이트 항목 더 보기",
         "collapse": "하이라이트 항목 접기",
         "visibleCount": "대표 {visible} / {total}건",
-        "tabSummary": "전체 {total}건 중 이 카테고리 {visible}건",
-        "totalCount": "총 {total}건",
-        "countSummary": "수상 {awards} / 자격 {certifications} / 역할 {roles} / 활동 {activities}",
-        "categoriesAriaLabel": "하이라이트 카테고리",
-        "summaryAriaLabel": "하이라이트 요약"
+        "categoriesAriaLabel": "하이라이트 카테고리"
     },
     "contact": {
         "title": "프로젝트 문의",

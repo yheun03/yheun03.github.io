@@ -55,7 +55,6 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const robots = page.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
         const naverVerification = String(config.naverSiteVerification ?? '').trim();
         const personId = `${SITE_URL}#person`;
-        const organizationId = `${SITE_URL}#organization`;
         const websiteId = `${SITE_URL}#website`;
         const webpageId = `${canonical}#webpage`;
         const imageId = `${canonical}#primaryimage`;
@@ -63,12 +62,14 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             '@type': 'Person',
             '@id': personId,
             name: profile.name,
+            alternateName: 'Eunyounghwan',
             url: SITE_URL,
             jobTitle: seo.jobTitle,
             description: seo.description,
             email: `mailto:${profile.contacts.email}`,
             sameAs: [profile.contacts.github],
             knowsAbout: profile.keywords,
+            knowsLanguage: ['ko', 'en'],
         };
         const webpage: Record<string, unknown> = {
             '@type': page.schemaType ?? (pagePath === '/' ? 'ProfilePage' : 'WebPage'),
@@ -79,7 +80,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             inLanguage: page.locale,
             isPartOf: { '@id': websiteId },
             about: { '@id': personId },
-            publisher: { '@id': organizationId },
+            publisher: { '@id': personId },
             primaryImageOfPage: { '@id': imageId },
         };
 
@@ -102,15 +103,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 name: seo.websiteName,
                 description: seo.description,
                 inLanguage: ['ko', 'en'],
-                publisher: { '@id': organizationId },
-            },
-            {
-                '@type': 'Organization',
-                '@id': organizationId,
-                name: seo.websiteName,
-                url: SITE_URL,
-                founder: { '@id': personId },
-                sameAs: [profile.contacts.github],
+                publisher: { '@id': personId },
             },
             person,
             {
@@ -136,6 +129,27 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 })),
             });
             webpage.breadcrumb = { '@id': `${canonical}#breadcrumb` };
+        }
+
+        if (pagePath === '/' && seo.questions.length) {
+            const faqId = `${canonical}#faq`;
+            graph.push({
+                '@type': 'FAQPage',
+                '@id': faqId,
+                url: `${canonical}#answers`,
+                inLanguage: page.locale,
+                about: { '@id': personId },
+                isPartOf: { '@id': websiteId },
+                mainEntity: seo.questions.map((question) => ({
+                    '@type': 'Question',
+                    name: question.name,
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: question.acceptedAnswer,
+                    },
+                })),
+            });
+            webpage.subjectOf = { '@id': faqId };
         }
 
         const structuredData = JSON.stringify({

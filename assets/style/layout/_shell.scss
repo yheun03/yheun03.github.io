@@ -86,6 +86,7 @@
 
 // data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
 @media (prefers-color-scheme: dark) {
+
     :root:not([data-theme='light']) .section--about-intro,
     :root:not([data-theme='light']) .section--why-list {
         @include editorial-panel-about;
@@ -155,8 +156,12 @@
     --section-index: '05';
 }
 
-.section--contact {
+.section--answers {
     --section-index: '06';
+}
+
+.section--contact {
+    --section-index: '07';
 }
 
 /* 독립 페이지 섹션 — 단독 노출이므로 01 고정 */

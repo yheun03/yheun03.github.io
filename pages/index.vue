@@ -1,5 +1,6 @@
 <template>
-    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId" page-variant="home" :footer-text="t('footer.copyright')">
+    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" :active-id="activeId" page-variant="home"
+        :footer-text="t('footer.copyright')">
         <PortfolioHero />
         <PortfolioAboutIntro />
         <PortfolioWhyList />
@@ -7,6 +8,7 @@
         <PortfolioProof />
         <PortfolioHow />
         <PortfolioToolbox />
+        <PortfolioAnswers />
         <PortfolioContact />
     </AppLayout>
 </template>
@@ -19,9 +21,10 @@ import PortfolioShowcase from '~/components/home/PortfolioShowcase.vue';
 import PortfolioProof from '~/components/home/PortfolioProof.vue';
 import PortfolioHow from '~/components/home/PortfolioHow.vue';
 import PortfolioToolbox from '~/components/home/PortfolioToolbox.vue';
+import PortfolioAnswers from '~/components/home/PortfolioAnswers.vue';
 import PortfolioContact from '~/components/home/PortfolioContact.vue';
 const { t, locale } = useLocale();
-const sectionIds = ['hello', 'about', 'works', 'proof', 'how', 'toolbox', 'contact'] as const;
+const sectionIds = ['hello', 'about', 'works', 'proof', 'how', 'toolbox', 'answers', 'contact'] as const;
 
 const appDockLinks = computed(() =>
     sectionIds.map((id) => ({
@@ -43,7 +46,7 @@ usePortfolioSeo(() => ({
     locale: locale.value,
     imageAlt: t('meta.ogTitle'),
     dateCreated: '2026-04-16T17:24:07+09:00',
-    dateModified: '2026-09-12T01:39:00+09:00',
+    dateModified: '2026-09-15T00:00:00+09:00',
     relatedLinks: ['/projects/', '/personal/', '/journey/'],
     significantLinks: ['/projects/', '/journey/'],
 }));

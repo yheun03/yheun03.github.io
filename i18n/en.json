@@ -12,7 +12,8 @@
         "highlights": "Highlights",
         "contact": "Say Hi",
         "proof": "Proof",
-        "how": "Process"
+        "how": "Process",
+        "answers": "Quick Answers"
     },
     "hero": {
         "title": "A web publisher who creates delightful interaction with solid structure",
@@ -153,6 +154,11 @@
         "title": "Tools and practices proven in production",
         "copy": "Accessibility and responsive UI come first, supported by content structure and metadata for SEO, GEO, and AEO.",
         "kicker": "By discipline."
+    },
+    "answers": {
+        "eyebrow": "Asked and answered",
+        "title": "Three things search engines and interviewers ask",
+        "description": "Role, strengths, and contact details—answered before a long portfolio turns into a scavenger hunt. Less scrolling, more signal."
     },
     "highlights": {
         "title": "Achievements and expertise at a glance",
@@ -296,9 +302,9 @@
     },
     "meta": {
         "title": "Eunyounghwan | Web Publisher Portfolio 2026",
-        "description": "Eunyounghwan’s 2026 portfolio covers seven years of HTML and SCSS publishing, Vue 3 and JavaScript UI, and frontend projects.",
+        "description": "Strong HTML and SCSS fundamentals, with Vue 3 used where it earns its keep. Explore Eunyounghwan’s seven years of responsive UI, enterprise sites, smart-factory, logistics, and CMS work.",
         "ogTitle": "Eunyounghwan, 7-Year Web Publisher Portfolio 2026",
-        "ogDescription": "A portfolio of production HTML and SCSS work with practical, lightweight use of Vue 3 for UI structure."
+        "ogDescription": "Polished screens are expected; maintainable code is the rule. Explore production UI built with HTML, SCSS, JavaScript, and Vue 3."
     },
     "story": {
         "showcaseTitle": "Three highlights, with every project in the archive",
@@ -348,15 +354,15 @@
             "questions": [
                 {
                     "name": "What does Eunyounghwan do?",
-                    "acceptedAnswer": "Eunyounghwan is a web publisher and web frontend developer focused on HTML, SCSS, JavaScript, Vue 3 UI implementation, responsive web, accessibility, and SEO."
+                    "acceptedAnswer": "Eunyounghwan turns complex requirements into interfaces people can use and teams can maintain. He is a seven-year web publisher working with HTML, SCSS, JavaScript, Vue 3, responsive UI, accessibility, SEO, GEO, and AEO."
                 },
                 {
-                    "name": "What skills are shown in this portfolio?",
-                    "acceptedAnswer": "The portfolio highlights production projects, personal projects, Vue 3 and SCSS component structure, CMS customization, maintainable UI architecture, documentation, and collaboration."
+                    "name": "What does he do beyond making screens look good?",
+                    "acceptedAnswer": "He builds Vue 3 and SCSS component systems, customizes CMS platforms, handles responsive implementation, and improves maintainability, documentation, and collaboration. The interface can sparkle; the code stays calm."
                 },
                 {
                     "name": "How can I contact Eunyounghwan for a project?",
-                    "acceptedAnswer": "Use the contact section or resume link in the portfolio. The primary email contact is eyh208@naver.com."
+                    "acceptedAnswer": "Email eyh208@naver.com with the screens you need and your preferred timeline. A one-line brief is fine; the useful questions can come next."
                 }
             ]
         },

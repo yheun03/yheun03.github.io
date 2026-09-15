@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 .hero {
     &.section--hero {
@@ -8,7 +8,7 @@
     &__poster {
         position: relative;
         display: grid;
-        grid-template-areas: "meta" "stage" "actions";
+        grid-template-areas: 'meta' 'stage' 'actions';
         gap: clamp(32px, 4.5vw, 56px);
         align-items: start;
         padding: 0;
@@ -50,9 +50,7 @@
             width: clamp(256px, 34vw, 544px);
             aspect-ratio: 1;
             opacity: 0.38;
-            background: radial-gradient(circle at 32% 32%,
-                    color-mix(in srgb, var(--color-primary) 52%, transparent),
-                    transparent 70%);
+            background: radial-gradient(circle at 32% 32%, color-mix(in srgb, var(--color-primary) 52%, transparent), transparent 70%);
         }
 
         &--b {
@@ -61,9 +59,11 @@
             width: clamp(208px, 26vw, 416px);
             aspect-ratio: 1;
             opacity: 0.26;
-            background: radial-gradient(circle at 60% 40%,
-                    color-mix(in srgb, var(--accent-mint, var(--color-primary)) 46%, transparent),
-                    transparent 72%);
+            background: radial-gradient(
+                circle at 60% 40%,
+                color-mix(in srgb, var(--accent-mint, var(--color-primary)) 46%, transparent),
+                transparent 72%
+            );
             animation-duration: 28s;
             animation-delay: -8s;
         }
@@ -74,9 +74,11 @@
             width: clamp(144px, 18vw, 288px);
             aspect-ratio: 1;
             opacity: 0.2;
-            background: radial-gradient(circle at 50% 50%,
-                    color-mix(in srgb, var(--accent-hot, var(--color-primary)) 40%, transparent),
-                    transparent 70%);
+            background: radial-gradient(
+                circle at 50% 50%,
+                color-mix(in srgb, var(--accent-hot, var(--color-primary)) 40%, transparent),
+                transparent 70%
+            );
             animation-duration: 18s;
             animation-delay: -14s;
         }
@@ -89,9 +91,11 @@
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.6s ease;
-        background: radial-gradient(576px circle at var(--glow-x, 50%) var(--glow-y, 30%),
-                color-mix(in srgb, var(--color-primary) 8%, transparent),
-                transparent 70%);
+        background: radial-gradient(
+            576px circle at var(--glow-x, 50%) var(--glow-y, 30%),
+            color-mix(in srgb, var(--color-primary) 8%, transparent),
+            transparent 70%
+        );
         mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
         -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
     }
@@ -136,7 +140,7 @@
         background: color-mix(in srgb, var(--color-border) 85%, transparent);
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             inset: 0;
             background: var(--gradient-accent);

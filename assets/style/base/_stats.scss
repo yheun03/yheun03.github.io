@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 .base-stat-list {
     display: grid;
@@ -13,7 +13,7 @@
         gap: clamp(20px, 5vw, 32px);
     }
 
-    >div {
+    > div {
         position: relative;
         display: grid;
         gap: 8px;
@@ -21,7 +21,7 @@
         padding-inline-start: clamp(16px, 2vw, 24px);
 
         &:not(:first-child)::before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             top: 5px;
@@ -52,7 +52,7 @@
     }
 
     @media (hover: hover) {
-        >div:hover dd {
+        > div:hover dd {
             translate: 0 -3px;
         }
     }

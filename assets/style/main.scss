@@ -1,36 +1,36 @@
-@use "abstracts/tokens" as *;
-@use "abstracts/theme";
+@use 'abstracts/tokens' as *;
+@use 'abstracts/theme';
 
 /* Foundations */
-@use "base/reset";
-@use "base/buttons";
-@use "base/labels";
-@use "base/badges";
-@use "base/chips";
-@use "base/stats";
-@use "base/cards";
-@use "base/sections";
-@use "base/year-timeline";
-@use "base/segment-control";
+@use 'base/reset';
+@use 'base/buttons';
+@use 'base/labels';
+@use 'base/badges';
+@use 'base/chips';
+@use 'base/stats';
+@use 'base/cards';
+@use 'base/sections';
+@use 'base/year-timeline';
+@use 'base/segment-control';
 
 /* Layout shell */
-@use "layout/header";
-@use "layout/footer";
-@use "layout/shell";
-@use "layout/dock";
-@use "layout/page-variants";
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/shell';
+@use 'layout/dock';
+@use 'layout/page-variants';
 
 /* Motion */
-@use "motion/scroll-driven";
+@use 'motion/scroll-driven';
 
 /* Home sections */
-@use "home/hero";
-@use "home/story";
-@use "home/shared";
-@use "home/journey";
-@use "home/highlights";
-@use "home/contact";
-@use "home/responsive";
+@use 'home/hero';
+@use 'home/story';
+@use 'home/shared';
+@use 'home/journey';
+@use 'home/highlights';
+@use 'home/contact';
+@use 'home/responsive';
 
 /* Route-level pages */
-@use "pages/error";
+@use 'pages/error';

@@ -80,8 +80,15 @@
 
     /* Gradients and shadows */
     --gradient-accent: linear-gradient(118deg, #337fff 0%, #0050ff 52%, #0040cc 100%);
-    --gradient-accent-soft: linear-gradient(135deg, color-mix(in srgb, var(--primary-400) 14%, transparent), color-mix(in srgb, var(--accent-mint) 10%, transparent));
-    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-300) 18%, transparent), transparent 42%), radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%), radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 11%, transparent), transparent 45%);
+    --gradient-accent-soft: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--primary-400) 14%, transparent),
+        color-mix(in srgb, var(--accent-mint) 10%, transparent)
+    );
+    --gradient-hero-mesh:
+        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-300) 18%, transparent), transparent 42%),
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%),
+        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 11%, transparent), transparent 45%);
     --gradient-noise: linear-gradient(185deg, #fff 0%, #f2f4f6 48%, #e8ecf1 100%);
     --gradient-surface: linear-gradient(168deg, var(--color-surface) 0%, var(--grayscale-50) 58%, var(--grayscale-100) 100%);
     --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--color-border) 50%, transparent) inset;
@@ -168,8 +175,15 @@
     --color-accent-hot: var(--accent-hot);
     --color-accent-mint: var(--accent-mint);
     --gradient-accent: linear-gradient(118deg, #669fff 0%, #337fff 48%, #0050ff 100%);
-    --gradient-accent-soft: linear-gradient(135deg, color-mix(in srgb, var(--primary-600) 20%, transparent), color-mix(in srgb, var(--accent-mint) 11%, transparent));
-    --gradient-hero-mesh: radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 14%, transparent), transparent 42%), radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 9%, transparent), transparent 38%), radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 9%, transparent), transparent 45%);
+    --gradient-accent-soft: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--primary-600) 20%, transparent),
+        color-mix(in srgb, var(--accent-mint) 11%, transparent)
+    );
+    --gradient-hero-mesh:
+        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 14%, transparent), transparent 42%),
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 9%, transparent), transparent 38%),
+        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 9%, transparent), transparent 45%);
     --gradient-noise: linear-gradient(185deg, #0a0e14 0%, #111827 50%, #17171c 100%);
     --gradient-surface: linear-gradient(168deg, #17171c 0%, #1c1c22 58%, #232329 100%);
     --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--color-border) 58%, transparent) inset;
@@ -203,12 +217,12 @@
     }
 }
 
-:root[data-theme="light"] {
+:root[data-theme='light'] {
     color-scheme: light;
     @include theme-light-palette;
 }
 
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
     @include dark-theme;
 }
 

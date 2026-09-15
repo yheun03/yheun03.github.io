@@ -37,6 +37,7 @@
         "direction": "I keep growing in Vue 3 component structure and frontend design.",
         "kicker": "A closer look.",
         "workflowTitle": "Workflow",
+        "howTitle": "Clear screens, built with purpose.",
         "tagline": "Clear hierarchy helps people, search engines, and AI systems understand each screen with less friction.",
         "displayLine1": "Clear reading",
         "displayLine2": "order",
@@ -637,18 +638,11 @@
                 "description": "Improves maintainability and reuse through SCSS componentization."
             },
             {
-                "key": "interaction",
-                "icon": "⚡",
-                "title": "Interaction",
-                "items": ["JavaScript", "jQuery", "Dynamic UI", "Interaction Implementation"],
-                "description": "Experienced in practical interaction and dynamic UI delivery."
-            },
-            {
                 "key": "framework",
-                "icon": "⬡",
-                "title": "Framework",
-                "items": ["Vue 3", "React.js", "Component Architecture", "Frontend Growth Learning"],
-                "description": "Growing frontend depth with Vue-centered component architecture."
+                "icon": "⚡",
+                "title": "Frontend",
+                "items": ["Vue 3", "JavaScript", "jQuery", "React.js", "Dynamic UI"],
+                "description": "Builds service-ready interactions and dynamic UI with a clear understanding of Vue components and data flow."
             },
             {
                 "key": "cms",

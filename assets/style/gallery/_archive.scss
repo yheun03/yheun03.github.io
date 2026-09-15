@@ -1,5 +1,5 @@
-@use "../abstracts/tokens" as *;
-@use "vars" as *;
+@use '../abstracts/tokens' as *;
+@use 'vars' as *;
 
 /* Gallery archive — open case-study layout */
 .gallery-page.gallery-page--editorial.section {
@@ -57,7 +57,7 @@
     position: relative;
     color: var(--gallery-body);
 
-    >* {
+    > * {
         position: relative;
         z-index: 1;
     }
@@ -132,10 +132,10 @@
         display: grid;
         grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
         grid-template-areas:
-            "media media"
-            "kicker kicker"
-            "hero dek"
-            "hero tags";
+            'media media'
+            'kicker kicker'
+            'hero dek'
+            'hero tags';
         gap: 16px clamp(48px, 7vw, 112px);
         min-width: 0;
     }
@@ -152,7 +152,7 @@
         line-height: 1.5;
         text-transform: uppercase;
 
-        span[aria-hidden="true"] {
+        span[aria-hidden='true'] {
             margin-inline: 5px;
             opacity: 0.55;
         }
@@ -227,7 +227,7 @@
             line-height: var(--line-height-ui);
             text-transform: uppercase;
 
-            &+li::before {
+            & + li::before {
                 margin-inline: 8px;
                 color: color-mix(in srgb, var(--gallery-muted) 52%, transparent);
                 content: '/';
@@ -351,7 +351,7 @@
             font-weight: 700;
             text-transform: uppercase;
 
-            &+li::before {
+            & + li::before {
                 margin-inline: 7px;
                 content: '/';
             }
@@ -373,8 +373,14 @@
     color: var(--gallery-body-soft);
     background:
         linear-gradient(90deg, color-mix(in srgb, var(--gallery-muted) 8%, transparent) 1px, transparent 1px),
-        linear-gradient(180deg, color-mix(in srgb, var(--gallery-bg-elevated) 86%, transparent), color-mix(in srgb, var(--gallery-bg) 92%, transparent));
-    background-size: 48px 100%, auto;
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--gallery-bg-elevated) 86%, transparent),
+            color-mix(in srgb, var(--gallery-bg) 92%, transparent)
+        );
+    background-size:
+        48px 100%,
+        auto;
     text-align: center;
 }
 
@@ -430,11 +436,11 @@
         &__entry-poster {
             grid-template-columns: minmax(0, 1fr);
             grid-template-areas:
-                "media"
-                "kicker"
-                "hero"
-                "dek"
-                "tags";
+                'media'
+                'kicker'
+                'hero'
+                'dek'
+                'tags';
             gap: 14px;
         }
 
@@ -450,7 +456,6 @@
 }
 
 @media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
-
     html:has(.portfolio-page--archive-career),
     html:has(.portfolio-page--archive-personal) {
         scroll-snap-type: y proximity;

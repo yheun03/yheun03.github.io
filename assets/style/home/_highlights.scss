@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 .highlights {
     &__workspace {
@@ -58,7 +58,9 @@
             font-weight: var(--font-weight-semibold);
             line-height: var(--line-height-body);
             text-wrap: pretty;
-            transition: color 0.2s ease, padding-inline-start 0.24s ease;
+            transition:
+                color 0.2s ease,
+                padding-inline-start 0.24s ease;
 
             &:first-child {
                 border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);

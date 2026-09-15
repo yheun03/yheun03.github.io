@@ -37,6 +37,7 @@
         "direction": "HTML과 SCSS의 기본기를 바탕으로 Vue 3와 Nuxt에서도 실제 서비스에 필요한 화면을 꾸준히 구현하고 있습니다.",
         "kicker": "조금 더.",
         "workflowTitle": "작업 흐름",
+        "howTitle": "이해하기 쉬운 화면을 만듭니다.",
         "tagline": "제목은 길을 알려주고, 본문은 핵심을 설명하고, 버튼은 다음 행동을 분명히 안내해야 합니다. 사람은 물론 검색엔진과 AI도 이해하기 쉬운 화면을 만듭니다.",
         "displayLine1": "읽는 순서는",
         "displayLine2": "명확하게",
@@ -631,18 +632,11 @@
                 "description": "반복되는 스타일을 SCSS 규칙으로 묶어, 한 곳을 고쳤다가 다른 화면이 놀라지 않게 관리합니다."
             },
             {
-                "key": "interaction",
-                "icon": "⚡",
-                "title": "Interaction",
-                "items": ["JavaScript", "jQuery", "동적 UI", "인터랙션 구현"],
-                "description": "탭, 모달, 폼, 데이터 UI처럼 실제 서비스에 필요한 동작을 구현합니다."
-            },
-            {
                 "key": "framework",
-                "icon": "⬡",
-                "title": "Framework",
-                "items": ["Vue 3", "React.js", "컴포넌트 구조", "프론트엔드 확장 학습"],
-                "description": "Vue 화면에 필요한 페이지 이동, 상태, props 흐름을 이해하고 실제 UI에 연결합니다."
+                "icon": "⚡",
+                "title": "Frontend",
+                "items": ["Vue 3", "JavaScript", "jQuery", "React.js", "동적 UI"],
+                "description": "Vue 화면의 컴포넌트와 데이터 흐름을 이해하고, 서비스에 필요한 인터랙션과 동적 UI를 구현합니다."
             },
             {
                 "key": "cms",

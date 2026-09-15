@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* Page */
 .portfolio-page--home {
@@ -11,7 +11,7 @@ html:has(.portfolio-page--home) {
     scroll-snap-type: y mandatory;
 }
 
-.portfolio-page.portfolio-page--home>.section {
+.portfolio-page.portfolio-page--home > .section {
     scroll-margin-top: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -22,7 +22,6 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (max-width: #{$bp-max-tablet}) {
-
     .section--hero,
     .hero.section--hero {
         padding: var(--section-pad-y) var(--page-pad-x);
@@ -30,7 +29,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .portfolio-page.portfolio-page--home>.section {
+    .portfolio-page.portfolio-page--home > .section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -41,7 +40,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: #{$bp-min-tablet}) {
-    .portfolio-page.portfolio-page--home>.section {
+    .portfolio-page.portfolio-page--home > .section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -49,7 +48,6 @@ html:has(.portfolio-page--home) .app-footer {
 
 /* Cards */
 @media (max-width: #{$bp-max-tablet}) {
-
     .surface-card,
     .feature-card,
     .base-card {
@@ -135,7 +133,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: 1920px) {
-    .portfolio-page--home>.hero.section--hero {
+    .portfolio-page--home > .hero.section--hero {
         padding-block: 72px;
     }
 
@@ -168,7 +166,6 @@ html:has(.portfolio-page--home) .app-footer {
 
 /* About */
 @media (min-width: #{$bp-min-laptop}) {
-
     .section.section--about-intro,
     .section.section--why-list {
         padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
@@ -176,7 +173,6 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: 1920px) {
-
     .section.section--about-intro,
     .section.section--why-list {
         display: flex;
@@ -228,38 +224,12 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: #{$bp-min-laptop}) {
-    .showcase__item--featured .story-case {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        grid-template-areas: "head head" "title summary" "stack summary" "cta summary";
-        column-gap: clamp(32px, 4vw, 56px);
-        align-items: start;
-        min-height: clamp(272px, 26vw, 368px);
+    .showcase__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
-        .story-case__head {
-            grid-area: head;
-        }
-
-        h3 {
-            grid-area: title;
-            max-width: 18ch;
-            @include font(display-4);
-        }
-
-        .story-case__summary {
-            grid-area: summary;
-            max-width: 52ch;
-            font-size: var(--font-size-md);
-            -webkit-line-clamp: 6;
-        }
-
-        .base-chip-list {
-            grid-area: stack;
-            align-self: end;
-        }
-
-        .story-case__cta {
-            grid-area: cta;
-        }
+    .showcase__item--featured {
+        grid-column: auto;
     }
 }
 
@@ -447,9 +417,9 @@ html:has(.portfolio-page--home) .app-footer {
         position: relative;
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas:
-            "period"
-            "title"
-            "description";
+            'period'
+            'title'
+            'description';
         gap: 8px;
         padding: var(--space-6) 0;
         padding-inline-start: var(--space-4);
@@ -457,7 +427,7 @@ html:has(.portfolio-page--home) .app-footer {
         border-bottom: 0;
 
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             top: 22px;
             left: calc(-1 * var(--space-6) + 2px);
@@ -497,9 +467,9 @@ html:has(.portfolio-page--home) .app-footer {
     .section--journey .year-timeline .timeline-item {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas:
-            "affiliation"
-            "title"
-            "description";
+            'affiliation'
+            'title'
+            'description';
 
         &::before {
             display: none;
@@ -810,11 +780,11 @@ html:has(.portfolio-page--home) .app-footer {
         --font-size-contact: var(--font-size-display-2);
     }
 
-    .portfolio-page.portfolio-page--home>.section,
-    .portfolio-page--home>.hero.section--hero,
-    .portfolio-page--home>.section.section--about-intro,
-    .portfolio-page--home>.section.section--why-list,
-    .portfolio-page--home>.section.section--contact {
+    .portfolio-page.portfolio-page--home > .section,
+    .portfolio-page--home > .hero.section--hero,
+    .portfolio-page--home > .section.section--about-intro,
+    .portfolio-page--home > .section.section--why-list,
+    .portfolio-page--home > .section.section--contact {
         padding-block: var(--section-pad-y);
     }
 

@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* Card */
 .base-card {
@@ -16,14 +16,16 @@
     --card-list-gap: #{$space-3};
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
         z-index: -1;
-        background: linear-gradient(145deg,
-                color-mix(in srgb, $primary-600 8%, transparent) 0%,
-                transparent 42%,
-                color-mix(in srgb, $accent-mint 5%, transparent) 100%);
+        background: linear-gradient(
+            145deg,
+            color-mix(in srgb, $primary-600 8%, transparent) 0%,
+            transparent 42%,
+            color-mix(in srgb, $accent-mint 5%, transparent) 100%
+        );
         opacity: 0.55;
         pointer-events: none;
     }
@@ -32,20 +34,20 @@
         margin-bottom: 0;
     }
 
-    > :where(.base-label, .base-label--technical)+ :where(h2, h3, p, ul, ol) {
+    > :where(.base-label, .base-label--technical) + :where(h2, h3, p, ul, ol) {
         margin-top: var(--card-flow-label);
     }
 
-    > :where(h2, h3)+ :where(p, ul, ol) {
+    > :where(h2, h3) + :where(p, ul, ol) {
         margin-top: var(--card-flow-title);
     }
 
-    > :where(p, ul, ol)+ :where(p, ul, ol),
-    >.contact__profile+ :where(p, ul, ol, div) {
+    > :where(p, ul, ol) + :where(p, ul, ol),
+    > .contact__profile + :where(p, ul, ol, div) {
         margin-top: var(--card-flow-content);
     }
 
-    >.contact__profile {
+    > .contact__profile {
         margin-top: var(--card-flow-content);
     }
 
@@ -222,7 +224,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .surface-card,
     .feature-card {
         transition: none;

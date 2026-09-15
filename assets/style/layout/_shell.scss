@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* =========================================
    Portfolio Pages
@@ -36,7 +36,7 @@
     mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, var(--theme-black) 20%, transparent 72%);
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
         pointer-events: none;
@@ -77,10 +77,7 @@
 }
 
 @mixin editorial-panel-contact {
-    @include editorial-panel-base($surface: #161c27,
-        $border: #252e42,
-        $glass-2: rgba(22, 28, 39, 0.78),
-        $glass-2-strong: rgba(30, 37, 56, 0.86));
+    @include editorial-panel-base($surface: #161c27, $border: #252e42, $glass-2: rgba(22, 28, 39, 0.78), $glass-2-strong: rgba(30, 37, 56, 0.86));
 
     --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.48);
     --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.58);
@@ -89,23 +86,22 @@
 
 // data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
 @media (prefers-color-scheme: dark) {
-
-    :root:not([data-theme="light"]) .section--about-intro,
-    :root:not([data-theme="light"]) .section--why-list {
+    :root:not([data-theme='light']) .section--about-intro,
+    :root:not([data-theme='light']) .section--why-list {
         @include editorial-panel-about;
     }
 
-    :root:not([data-theme="light"]) .section--contact {
+    :root:not([data-theme='light']) .section--contact {
         @include editorial-panel-contact;
     }
 }
 
-:root[data-theme="dark"] .section--about-intro,
-:root[data-theme="dark"] .section--why-list {
+:root[data-theme='dark'] .section--about-intro,
+:root[data-theme='dark'] .section--why-list {
     @include editorial-panel-about;
 }
 
-:root[data-theme="dark"] .section--contact {
+:root[data-theme='dark'] .section--contact {
     @include editorial-panel-contact;
 }
 
@@ -124,7 +120,7 @@
         gap: var(--section-gap);
 
         .section-title::before {
-            content: var(--section-index, "00");
+            content: var(--section-index, '00');
             display: block;
             margin-bottom: var(--space-3);
             font-family: var(--font-mono);
@@ -140,43 +136,41 @@
 }
 
 .section--about-intro {
-    --section-index: "01";
+    --section-index: '01';
 }
 
 .section--works {
-    --section-index: "02";
+    --section-index: '02';
 }
 
 .section--proof {
-    --section-index: "03";
+    --section-index: '03';
 }
 
 .section--how {
-    --section-index: "04";
+    --section-index: '04';
 }
 
 .section--toolbox {
-    --section-index: "05";
+    --section-index: '05';
 }
 
 .section--contact {
-    --section-index: "06";
+    --section-index: '06';
 }
 
 /* 독립 페이지 섹션 — 단독 노출이므로 01 고정 */
 .section--journey,
 .section--personal {
-    --section-index: "01";
+    --section-index: '01';
 }
 
 /* 여정 페이지 두 번째 섹션 */
 .section--highlights {
-    --section-index: "02";
+    --section-index: '02';
 }
 
-
 .app-header__link:focus-visible,
-.app-lnb__close:focus-visible,
 .app-lnb__link:focus-visible,
 .app-dock__item:focus-visible,
 .app-footer__links a:focus-visible,

@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* Year timeline — 연도 sticky + era 항목 목록 (BaseYearTimeline) */
 .year-timeline {
@@ -84,7 +84,6 @@
         font-synthesis: none;
         text-transform: none;
         font-variant-numeric: tabular-nums;
-
     }
 
     &__entries {
@@ -112,7 +111,6 @@
             position: static;
             font-size: clamp(2.5rem, 12vw, 4rem);
             margin-bottom: var(--space-2);
-
         }
 
         &__entries {

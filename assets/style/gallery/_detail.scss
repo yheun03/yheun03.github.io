@@ -1,5 +1,5 @@
-@use "../abstracts/tokens" as *;
-@use "vars" as *;
+@use '../abstracts/tokens' as *;
+@use 'vars' as *;
 
 /* Project detail — clean case-study layout */
 .gallery-detail.gallery-page--editorial.section {
@@ -172,7 +172,7 @@
             line-height: 1.18;
         }
 
-        >p:last-child {
+        > p:last-child {
             margin: 0;
             color: var(--gallery-body);
             font-size: var(--font-size-sm);

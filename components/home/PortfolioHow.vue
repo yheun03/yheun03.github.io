@@ -4,7 +4,7 @@
         section-class="section--how"
         title-id="section-how-title"
         :eyebrow="t('nav.how')"
-        :title="t('about.tagline')"
+        :title="t('about.howTitle')"
         :description="t('story.howDescription')"
     >
         <SurfaceCard class="how__steps-card" flow data-animate :aria-label="t('about.workflowAriaLabel')" :title="t('about.workflowTitle')">

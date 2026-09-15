@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* Badge */
 .base-badge {
@@ -21,10 +21,12 @@
     font-weight: var(--badge-font-weight);
     color: var(--badge-color);
     box-shadow: $shadow-glow;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
 
     &::before {
-        content: "";
+        content: '';
         width: 6px;
         height: 6px;
         border-radius: 999px;
@@ -68,4 +70,5 @@
     color: var(--color-on-primary, #fff);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
+    white-space: nowrap;
 }

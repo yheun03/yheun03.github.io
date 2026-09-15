@@ -1,1 +1,0 @@
-import{_ as o}from"./vX2tIaHd.js";import{_ as e}from"./DlAUqK2U.js";import{h as t,o as c}from"./CRQgOExt.js";import"./BXhaqJlX.js";import"./DaUjMehr.js";import"./DFI8ldZo.js";const a={};function n(_,i){const r=o;return c(),t(r,{variant:"career"})}const x=e(a,[["render",n]]);export{x as default};

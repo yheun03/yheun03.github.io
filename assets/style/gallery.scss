@@ -1,3 +1,6 @@
 /* 갤러리 라우트 전용 — 홈 초기 CSS 페이로드에서 분리 */
+@use '@fontsource/roboto-slab/latin-400.css';
+@use '@fontsource/roboto-slab/latin-700.css';
+@use '@fontsource/roboto-slab/latin-900.css';
 @use 'gallery/archive';
 @use 'gallery/detail';

@@ -1,11 +1,7 @@
 <template>
-    <NuxtLink
-        :to="to"
-        class="gallery-card"
-        data-reveal="up"
+    <NuxtLink :to="to" class="gallery-card" data-reveal="up"
         :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
-        :aria-label="cardAriaLabel"
-    >
+        :aria-label="cardAriaLabel">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <p class="gallery-editorial__entry-kicker">
@@ -24,23 +20,16 @@
 
                 <p class="gallery-editorial__entry-dek">{{ work.introduction }}</p>
 
-                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags" :aria-label="t('gallery.languages')">
+                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags"
+                    :aria-label="t('gallery.languages')">
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
                 </ul>
 
                 <div class="gallery-editorial__entry-media">
                     <GalleryEmptyCapture v-if="isPlaceholderCover" />
                     <span v-else class="gallery-editorial__entry-screen">
-                        <img
-                            :src="coverSrc"
-                            :alt="coverAlt"
-                            :aria-hidden="isPlaceholderCover ? true : undefined"
-                            :loading="imageLoading"
-                            decoding="async"
-                            :fetchpriority="imageFetchPriority"
-                            width="1200"
-                            height="675"
-                        />
+                        <BaseMediaImage :src="coverSrc" :alt="coverAlt"
+                            :aria-hidden="isPlaceholderCover ? true : undefined" :priority="priority" />
                     </span>
                 </div>
             </div>
@@ -49,16 +38,8 @@
             <div class="gallery-card__media">
                 <GalleryEmptyCapture v-if="isPlaceholderCover" />
                 <span v-else class="gallery-card__screen">
-                    <img
-                        :src="coverSrc"
-                        :alt="coverAlt"
-                        :aria-hidden="isPlaceholderCover ? true : undefined"
-                        :loading="imageLoading"
-                        decoding="async"
-                        :fetchpriority="imageFetchPriority"
-                        width="1200"
-                        height="675"
-                    />
+                    <BaseMediaImage :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
+                        :priority="priority" />
                 </span>
             </div>
             <div class="gallery-card__body">
@@ -122,6 +103,4 @@ const coverAlt = computed(() => {
     return t('gallery.captureCardAlt').replace('{title}', title);
 });
 
-const imageLoading = computed(() => (props.priority ? 'eager' : 'lazy'));
-const imageFetchPriority = computed(() => (props.priority ? 'high' : 'low'));
 </script>

@@ -1,106 +1,63 @@
 import type { Ref } from 'vue';
 
-type RevealPreset = 'up' | 'left' | 'right' | 'scale' | 'hero';
+const motionSelector = '[data-animate], [data-reveal]';
 
-const revealFrom: Record<RevealPreset, { x?: number; y?: number; scale?: number; rotate?: number }> = {
-    up: { y: 34 },
-    left: { x: -32 },
-    right: { x: 32 },
-    scale: { y: 18, scale: 0.965 },
-    hero: { y: 24, scale: 0.985 },
-};
+function reveal(element: HTMLElement) {
+    if (element.hasAttribute('data-animate')) element.classList.add('animate--visible');
+    if (element.hasAttribute('data-reveal')) element.classList.add('reveal--visible');
+}
 
-/**
- * 페이지 전역의 data-animate와 data-reveal 요소를 한 번만 노출한다.
- * 목록 보기 전환처럼 뒤늦게 추가되는 DOM도 동일한 규칙으로 처리한다.
- */
+/** 현재 페이지와 보기 전환으로 추가되는 요소를 네이티브 Observer로 한 번만 노출한다. */
 export function usePageMotion(root: Ref<HTMLElement | null>) {
     let dispose: (() => void) | undefined;
 
-    onMounted(async () => {
+    onMounted(() => {
         const container = root.value;
         if (!container) return;
 
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reducedMotion) {
-            container.querySelectorAll<HTMLElement>('[data-animate]').forEach((element) => {
-                element.classList.add('animate--visible');
-            });
-            return;
-        }
-
-        const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
-        gsap.registerPlugin(ScrollTrigger);
-
         const initialized = new WeakSet<Element>();
-        const animations: gsap.core.Animation[] = [];
-        const triggers: InstanceType<typeof ScrollTrigger>[] = [];
-        let syncFrame = 0;
+        const intersectionObserver = reducedMotion
+            ? undefined
+            : new IntersectionObserver(
+                  (entries, observer) => {
+                      entries.forEach((entry) => {
+                          if (!entry.isIntersecting) return;
+                          reveal(entry.target as HTMLElement);
+                          observer.unobserve(entry.target);
+                      });
+                  },
+                  { rootMargin: '0px 0px -12% 0px', threshold: 0.01 },
+              );
 
         const setupElement = (element: HTMLElement) => {
             if (initialized.has(element)) return;
             initialized.add(element);
 
-            if (element.hasAttribute('data-animate')) {
-                const trigger = ScrollTrigger.create({
-                    trigger: element,
-                    start: 'top 88%',
-                    once: true,
-                    onEnter: () => element.classList.add('animate--visible'),
+            const delay = Number(element.dataset.revealDelay || 0);
+            if (delay > 0) element.style.setProperty('--reveal-delay', `${delay}ms`);
+
+            if (reducedMotion) reveal(element);
+            else intersectionObserver?.observe(element);
+        };
+
+        const setupTree = (root: ParentNode) => root.querySelectorAll<HTMLElement>(motionSelector).forEach(setupElement);
+        setupTree(container);
+
+        const mutationObserver = new MutationObserver((records) => {
+            records.forEach((record) => {
+                record.addedNodes.forEach((node) => {
+                    if (!(node instanceof HTMLElement)) return;
+                    if (node.matches(motionSelector)) setupElement(node);
+                    setupTree(node);
                 });
-                triggers.push(trigger);
-                return;
-            }
-
-            const preset = (element.dataset.reveal || 'up') as RevealPreset;
-            const from = revealFrom[preset] ?? revealFrom.up;
-            const delay = Number(element.dataset.revealDelay || 0) / 1000;
-            const duration = preset === 'hero' ? 1 : 0.82;
-            const animation = gsap.fromTo(
-                element,
-                { opacity: 0, ...from },
-                {
-                    opacity: 1,
-                    x: 0,
-                    y: 0,
-                    scale: 1,
-                    rotate: 0,
-                    duration,
-                    delay,
-                    ease: 'power3.out',
-                    clearProps: 'transform,opacity',
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 88%',
-                        once: true,
-                    },
-                },
-            );
-            animations.push(animation);
-        };
-
-        const syncElements = () => {
-            container.querySelectorAll<HTMLElement>('[data-animate], [data-reveal]').forEach(setupElement);
-            ScrollTrigger.refresh();
-        };
-
-        syncElements();
-
-        const observer = new MutationObserver(() => {
-            cancelAnimationFrame(syncFrame);
-            syncFrame = requestAnimationFrame(syncElements);
+            });
         });
-        observer.observe(container, { childList: true, subtree: true });
+        mutationObserver.observe(container, { childList: true, subtree: true });
 
         dispose = () => {
-            observer.disconnect();
-            cancelAnimationFrame(syncFrame);
-            triggers.forEach((trigger) => trigger.kill());
-            animations.forEach((animation) => {
-                const tween = animation as gsap.core.Tween & { scrollTrigger?: InstanceType<typeof ScrollTrigger> };
-                tween.scrollTrigger?.kill();
-                animation.kill();
-            });
+            mutationObserver.disconnect();
+            intersectionObserver?.disconnect();
         };
     });
 

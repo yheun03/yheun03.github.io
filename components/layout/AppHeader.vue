@@ -4,51 +4,28 @@
             <span aria-hidden="true">Eun</span>
         </BaseLink>
         <nav class="app-header__nav" :aria-label="t('a11y.primaryNavigation')">
-            <BaseLink
-                v-for="link in links"
-                :key="link.href"
-                :href="link.href"
-                class="app-header__link"
-                :class="{ 'app-header__link--active': isActive(link.href) }"
-                :aria-current="getAriaCurrent(link.href)"
-            >
+            <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-header__link"
+                :class="{ 'app-header__link--active': isActive(link.href) }" :aria-current="getAriaCurrent(link.href)">
                 {{ link.label }}
             </BaseLink>
         </nav>
         <div class="app-header__actions">
             <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">{{ statusMessage }}</p>
-            <BaseButton
-                class="app-header__theme-toggle"
-                variant="ghost"
-                :label="themeToggleLabel"
-                :aria-label="themeToggleAriaLabel"
-                @click="handleThemeToggle"
-            >
+            <BaseButton class="app-header__theme-toggle" variant="ghost" :label="themeToggleLabel"
+                :aria-label="themeToggleAriaLabel" @click="handleThemeToggle">
                 <Transition name="toggle-swap" mode="out-in">
                     <span :key="themeToggleLabel" class="toggle-swap">{{ themeToggleLabel }}</span>
                 </Transition>
             </BaseButton>
-            <BaseButton
-                class="app-header__language-toggle"
-                variant="ghost"
-                :label="localeLabel"
-                :aria-label="languageToggleAriaLabel"
-                @click="handleLocaleToggle"
-            >
+            <BaseButton class="app-header__language-toggle" variant="ghost" :label="localeLabel"
+                :aria-label="languageToggleAriaLabel" @click="handleLocaleToggle">
                 <Transition name="toggle-swap" mode="out-in">
                     <span :key="localeLabel" class="toggle-swap">{{ localeLabel }}</span>
                 </Transition>
             </BaseButton>
-            <button
-                ref="menuButtonRef"
-                type="button"
-                class="app-header__menu-btn"
-                :aria-label="t(menuOpen ? 'a11y.mobileMenuClose' : 'a11y.mobileMenuOpen')"
-                :aria-expanded="menuOpen"
-                aria-controls="app-lnb-panel"
-                aria-haspopup="dialog"
-                @click="handleAppLnbToggle"
-            >
+            <button ref="menuButtonRef" type="button" class="app-header__menu-btn"
+                :aria-label="t(menuOpen ? 'a11y.mobileMenuClose' : 'a11y.mobileMenuOpen')" :aria-expanded="menuOpen"
+                aria-controls="app-lnb-panel" aria-haspopup="dialog" @click="handleAppLnbToggle">
                 <span class="app-header__menu-icon" aria-hidden="true">
                     <span />
                     <span />
@@ -59,7 +36,8 @@
                 </span>
             </button>
         </div>
-        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId" @close="closeMobileMenu" />
+        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId"
+            @close="closeMobileMenu" />
     </header>
 </template>
 
@@ -67,9 +45,15 @@
 const menuOpen = ref(false);
 const menuButtonRef = ref<HTMLButtonElement | null>(null);
 const isScrolled = ref(false);
+let scrollFrame = 0;
 
 const handleScroll = () => {
-    isScrolled.value = window.scrollY > 48;
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+        const nextScrolled = window.scrollY > 48;
+        if (isScrolled.value !== nextScrolled) isScrolled.value = nextScrolled;
+        scrollFrame = 0;
+    });
 };
 
 const statusMessage = ref('');
@@ -138,6 +122,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
+    cancelAnimationFrame(scrollFrame);
     document.documentElement.classList.remove('app--menu-open');
     window.removeEventListener('keydown', handleEscapeKeydown);
     window.removeEventListener('scroll', handleScroll);

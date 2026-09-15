@@ -79,12 +79,7 @@ export default defineNuxtConfig({
         },
     },
 
-    css: [
-        '@fontsource/roboto-slab/latin-400.css',
-        '@fontsource/roboto-slab/latin-700.css',
-        '@fontsource/roboto-slab/latin-900.css',
-        '~/assets/style/main.scss',
-    ],
+    css: ['~/assets/style/main.scss'],
 
     alias: {
         '@data': fileURLToPath(new URL('./data', import.meta.url)),

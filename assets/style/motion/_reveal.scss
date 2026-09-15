@@ -1,0 +1,40 @@
+@use '../abstracts/tokens' as *;
+
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(34px);
+    transition:
+        opacity 0.82s var(--ease-out-soft) var(--reveal-delay, 0ms),
+        transform 0.82s var(--ease-out-soft) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+[data-reveal='left'] {
+    transform: translateX(-32px);
+}
+
+[data-reveal='right'] {
+    transform: translateX(32px);
+}
+
+[data-reveal='scale'] {
+    transform: translateY(18px) scale(0.965);
+}
+
+[data-reveal='hero'] {
+    transform: translateY(24px) scale(0.985);
+    transition-duration: 1s;
+}
+
+[data-reveal].reveal--visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

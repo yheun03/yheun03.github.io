@@ -172,7 +172,7 @@
             line-height: 1.18;
         }
 
-        > p:last-child {
+        >p:last-child {
             margin: 0;
             color: var(--gallery-body);
             font-size: var(--font-size-sm);
@@ -279,6 +279,8 @@
 
     &.gallery-page--editorial &__story-block {
         min-width: 0;
+        content-visibility: auto;
+        contain-intrinsic-size: auto 720px;
 
         &:first-child,
         &:last-child:nth-child(odd) {

@@ -150,6 +150,18 @@
         "tempLabel": "Sample data",
         "clientsAriaLabel": "Clients served"
     },
+    "journeyPreview": {
+        "eyebrow": "06 / The next chapter",
+        "titleLine1": "Every screen built",
+        "titleLine2": "became experience",
+        "titleLine3": "and a better standard.",
+        "description": "A year-by-year record of learning the web, balancing work with school, taking on wider roles, and setting new standards along the way.",
+        "cta": "View Eunyounghwan's journey",
+        "timelineLabel": "Journey milestones",
+        "milestoneStart": "The moment the web journey began",
+        "milestoneWork": "Starting work as a web publisher",
+        "milestoneNow": "Growing from publishing into UI development"
+    },
     "toolbox": {
         "title": "Tools and practices proven in production",
         "copy": "Accessibility and responsive UI come first, supported by content structure and metadata for SEO, GEO, and AEO.",
@@ -351,20 +363,7 @@
             "jobTitle": "7-Year Web Publisher, Vue UI Development",
             "description": "Eunyounghwan is a seven-year web publisher centered on HTML and SCSS, using Vue 3 templates, props, v-if, v-for, and Teleport only where they help the UI.",
             "websiteName": "Eunyounghwan Frontend Developer Portfolio 2026",
-            "questions": [
-                {
-                    "name": "What does Eunyounghwan do?",
-                    "acceptedAnswer": "Eunyounghwan turns complex requirements into interfaces people can use and teams can maintain. He is a seven-year web publisher working with HTML, SCSS, JavaScript, Vue 3, responsive UI, accessibility, SEO, GEO, and AEO."
-                },
-                {
-                    "name": "What does he do beyond making screens look good?",
-                    "acceptedAnswer": "He builds Vue 3 and SCSS component systems, customizes CMS platforms, handles responsive implementation, and improves maintainability, documentation, and collaboration. The interface can sparkle; the code stays calm."
-                },
-                {
-                    "name": "How can I contact Eunyounghwan for a project?",
-                    "acceptedAnswer": "Email eyh208@naver.com with the screens you need and your preferred timeline. A one-line brief is fine; the useful questions can come next."
-                }
-            ]
+            "questions": []
         },
         "componentCatalogSamples": {
             "tech": ["Vue 3", "Nuxt 3", "TypeScript", "SCSS"],

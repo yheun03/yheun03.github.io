@@ -2,8 +2,8 @@
 
 /* Page */
 .portfolio-page--home {
-    --home-fullpage-height: 100vh;
-    --home-fullpage-height: 100dvh;
+    --home-fullpage-height: calc(100vh - var(--layout-header-height));
+    --home-fullpage-height: calc(100dvh - var(--layout-header-height));
 }
 
 html:has(.portfolio-page--home) {
@@ -11,7 +11,7 @@ html:has(.portfolio-page--home) {
     scroll-snap-type: y mandatory;
 }
 
-.portfolio-page.portfolio-page--home > .section {
+.portfolio-page.portfolio-page--home>.section {
     scroll-margin-top: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -22,6 +22,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (max-width: #{$bp-max-tablet}) {
+
     .section--hero,
     .hero.section--hero {
         padding: var(--section-pad-y) var(--page-pad-x);
@@ -29,7 +30,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .portfolio-page.portfolio-page--home > .section {
+    .portfolio-page.portfolio-page--home>.section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -40,7 +41,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: #{$bp-min-tablet}) {
-    .portfolio-page.portfolio-page--home > .section {
+    .portfolio-page.portfolio-page--home>.section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -48,6 +49,7 @@ html:has(.portfolio-page--home) .app-footer {
 
 /* Cards */
 @media (max-width: #{$bp-max-tablet}) {
+
     .surface-card,
     .feature-card,
     .base-card {
@@ -133,7 +135,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: 1920px) {
-    .portfolio-page--home > .hero.section--hero {
+    .portfolio-page--home>.hero.section--hero {
         padding-block: 72px;
     }
 
@@ -166,6 +168,7 @@ html:has(.portfolio-page--home) .app-footer {
 
 /* About */
 @media (min-width: #{$bp-min-laptop}) {
+
     .section.section--about-intro,
     .section.section--why-list {
         padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
@@ -173,6 +176,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: 1920px) {
+
     .section.section--about-intro,
     .section.section--why-list {
         display: flex;
@@ -732,7 +736,8 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 /* Compact one-screen layout for MacBook-sized desktop viewports */
-@media (min-width: #{$bp-min-laptop}) and (max-height: 1080px) {
+@media (min-width: #{$bp-min-laptop}) and (max-height: 1080px),
+(min-width: 1920px) and (max-height: 1440px) {
     .portfolio-page--home {
         --space-1: 3px;
         --space-2: 5px;
@@ -780,11 +785,11 @@ html:has(.portfolio-page--home) .app-footer {
         --font-size-contact: var(--font-size-display-2);
     }
 
-    .portfolio-page.portfolio-page--home > .section,
-    .portfolio-page--home > .hero.section--hero,
-    .portfolio-page--home > .section.section--about-intro,
-    .portfolio-page--home > .section.section--why-list,
-    .portfolio-page--home > .section.section--contact {
+    .portfolio-page.portfolio-page--home>.section,
+    .portfolio-page--home>.hero.section--hero,
+    .portfolio-page--home>.section.section--about-intro,
+    .portfolio-page--home>.section.section--why-list,
+    .portfolio-page--home>.section.section--contact {
         padding-block: var(--section-pad-y);
     }
 
@@ -837,6 +842,14 @@ html:has(.portfolio-page--home) .app-footer {
         gap: clamp(12px, 2vh, 18px);
     }
 
+    .section.section--works {
+        gap: clamp(12px, 2vh, 18px);
+    }
+
+    .section--works>.section-title {
+        margin-bottom: 0;
+    }
+
     .feature-card,
     .surface-card--flow,
     .how__steps-card {
@@ -862,5 +875,46 @@ html:has(.portfolio-page--home) .app-footer {
     .contact__poster,
     .contact__head {
         gap: var(--section-gap);
+    }
+}
+
+@media (min-width: #{$bp-min-laptop}) and (max-height: 800px) {
+    .portfolio-page.portfolio-page--home>.section.section--toolbox {
+        gap: clamp(10px, 1.8vh, 14px);
+        padding-block: clamp(14px, 2vh, 20px);
+    }
+
+    .section--toolbox {
+
+        .section-head,
+        .spotlight-block,
+        .toolbox__grid {
+            gap: clamp(8px, 1.4vh, 12px);
+        }
+
+        .section-title__description {
+            margin-top: clamp(8px, 1.4vh, 12px);
+        }
+
+        .section-head>.section-title__description {
+            display: none;
+        }
+
+        .spotlight__kicker {
+            font-size: var(--font-size-display-6);
+        }
+
+        .feature-card--skill {
+            min-height: 0;
+            gap: clamp(5px, 1vh, 8px);
+            padding: clamp(12px, 2vh, 16px);
+        }
+
+        .feature-card__description {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
     }
 }

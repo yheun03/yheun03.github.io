@@ -8,7 +8,7 @@
         <PortfolioProof />
         <PortfolioHow />
         <PortfolioToolbox />
-        <PortfolioAnswers />
+        <PortfolioJourneyPreview />
         <PortfolioContact />
     </AppLayout>
 </template>
@@ -21,10 +21,10 @@ import PortfolioShowcase from '~/components/home/PortfolioShowcase.vue';
 import PortfolioProof from '~/components/home/PortfolioProof.vue';
 import PortfolioHow from '~/components/home/PortfolioHow.vue';
 import PortfolioToolbox from '~/components/home/PortfolioToolbox.vue';
-import PortfolioAnswers from '~/components/home/PortfolioAnswers.vue';
+import PortfolioJourneyPreview from '~/components/home/PortfolioJourneyPreview.vue';
 import PortfolioContact from '~/components/home/PortfolioContact.vue';
 const { t, locale } = useLocale();
-const sectionIds = ['hello', 'about', 'works', 'proof', 'how', 'toolbox', 'answers', 'contact'] as const;
+const sectionIds = ['hello', 'about', 'works', 'proof', 'how', 'toolbox', 'journey', 'contact'] as const;
 
 const appDockLinks = computed(() =>
     sectionIds.map((id) => ({

@@ -150,6 +150,18 @@
         "tempLabel": "임시 예시 데이터",
         "clientsAriaLabel": "참여 고객사"
     },
+    "journeyPreview": {
+        "eyebrow": "06 / 다음 장면으로",
+        "titleLine1": "화면을 만들며",
+        "titleLine2": "쌓인 시간은",
+        "titleLine3": "다음 기준이 됐습니다.",
+        "description": "처음 웹을 배운 순간부터 회사와 학교를 병행한 시간, 역할이 넓어진 계기와 그때마다 새로 세운 기준을 연도별로 기록했습니다.",
+        "cta": "은영환의 여정 보기",
+        "timelineLabel": "여정 주요 시점",
+        "milestoneStart": "웹을 처음 배우기 시작한 순간",
+        "milestoneWork": "웹 퍼블리셔 실무자로 전환한 시기",
+        "milestoneNow": "퍼블리싱을 넘어 UI 개발로 확장 중"
+    },
     "toolbox": {
         "title": "실무에서 검증한 도구와 방법",
         "copy": "접근성과 반응형은 기본으로 지킵니다. 검색엔진과 AI 답변에 내용이 정확히 쓰일 수 있도록 콘텐츠 구조와 메타데이터까지 함께 설계합니다.",
@@ -354,20 +366,7 @@
             "jobTitle": "7년차 웹 퍼블리셔, Vue 기반 UI 개발",
             "description": "HTML과 SCSS를 중심으로 실무 웹 UI를 만들고, Vue 3의 template, props, v-if, v-for, Teleport를 필요한 만큼 활용하는 7년차 웹 퍼블리셔 은영환입니다.",
             "websiteName": "웹 퍼블리셔 은영환 2026 포트폴리오",
-            "questions": [
-                {
-                    "name": "은영환은 어떤 일을 하나요?",
-                    "acceptedAnswer": "복잡한 요구사항을 사람이 바로 쓰고 팀이 오래 고칠 수 있는 화면으로 바꿉니다. HTML, SCSS, JavaScript, Vue 3를 기반으로 반응형 UI와 웹 접근성, SEO·GEO·AEO까지 함께 챙기는 7년차 웹 퍼블리셔입니다."
-                },
-                {
-                    "name": "예쁜 화면 말고 무엇을 잘하나요?",
-                    "acceptedAnswer": "Vue 3와 SCSS 컴포넌트 설계, CMS 커스터마이징, 반응형 구현, 유지보수 구조, 문서화와 협업을 잘합니다. 화면은 반짝여도 코드는 차분하게, 다음 작업자가 한숨 쉬지 않게 만듭니다."
-                },
-                {
-                    "name": "은영환에게 프로젝트 문의는 어떻게 하나요?",
-                    "acceptedAnswer": "eyh208@naver.com으로 해결할 화면과 희망 일정을 보내 주세요. 요구사항이 아직 한 문장이어도 괜찮습니다. 질문표를 던지기보다 핵심부터 함께 정리하겠습니다."
-                }
-            ]
+            "questions": []
         },
         "componentCatalogSamples": {
             "tech": ["Vue 3", "Nuxt 3", "TypeScript", "SCSS"],

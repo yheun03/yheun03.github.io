@@ -160,7 +160,7 @@
     align-self: center;
     justify-self: end;
     margin: 0;
-    color: transparent;
+    color: color-mix(in srgb, var(--editorial-accent) 16%, transparent);
     font-family: var(--font-display);
     font-size: clamp(5rem, 10vw, 10rem);
     font-weight: 900;
@@ -168,8 +168,6 @@
     letter-spacing: -0.04em;
     line-height: 0.85;
     white-space: nowrap;
-    -webkit-text-stroke: 1px color-mix(in srgb, var(--editorial-muted) 30%, transparent);
-    opacity: 0.75;
 }
 
 .editorial-masthead__foot {

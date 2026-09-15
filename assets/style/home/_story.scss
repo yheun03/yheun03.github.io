@@ -114,9 +114,8 @@
         font-weight: 900;
         line-height: 1;
         letter-spacing: -0.05em;
-        color: transparent;
-        -webkit-text-stroke: 1px color-mix(in srgb, var(--color-primary) 24%, transparent);
-        opacity: 0.5;
+        color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+        opacity: 0.72;
         transition:
             opacity 0.45s ease,
             translate 0.45s cubic-bezier(0.22, 1, 0.36, 1);

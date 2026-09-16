@@ -42,12 +42,7 @@
         margin-top: var(--card-flow-title);
     }
 
-    > :where(p, ul, ol) + :where(p, ul, ol),
-    > .contact__profile + :where(p, ul, ol, div) {
-        margin-top: var(--card-flow-content);
-    }
-
-    > .contact__profile {
+    > :where(p, ul, ol) + :where(p, ul, ol) {
         margin-top: var(--card-flow-content);
     }
 
@@ -74,15 +69,8 @@
     transform-origin: center center;
     @include pointer-glow;
 
-    &.card--tilted {
-        transition:
-            transform 0.1s ease,
-            border-color 0.32s ease,
-            box-shadow 0.32s ease;
-    }
-
     @media (hover: hover) {
-        &:hover:not(.card--tilted) {
+        &:hover {
             border-color: color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
             box-shadow:
                 0 1px 0 color-mix(in srgb, var(--color-surface) 92%, var(--color-primary)),
@@ -98,14 +86,6 @@
 }
 
 .surface-card {
-    &--metrics {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(24px, 4vw, 56px);
-        align-items: flex-end;
-        padding: clamp(20px, 2.5vw, 32px) clamp(24px, 3vw, 40px);
-    }
-
     &--flow {
         display: grid;
         gap: clamp(20px, 3vw, 32px);
@@ -170,15 +150,10 @@
     }
 }
 
-.spotlight {
-    display: grid;
-    gap: clamp(28px, 4vw, 48px);
-
-    &__kicker {
-        margin: 0;
-        max-width: 14ch;
-        @include font(display-4);
-    }
+.spotlight__kicker {
+    margin: 0;
+    max-width: 14ch;
+    @include font(display-4);
 }
 
 .feature-grid {
@@ -189,10 +164,6 @@
     margin: 0;
     overflow: visible;
     list-style: none;
-
-    &--highlights {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
 
     &--toolbox {
         grid-template-columns: repeat(2, minmax(0, 1fr));

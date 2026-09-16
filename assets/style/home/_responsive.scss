@@ -704,12 +704,6 @@ html:has(.portfolio-page--home) .app-footer {
         overflow-wrap: normal;
     }
 
-    .surface-card--metrics {
-        display: grid;
-        gap: var(--space-5);
-        align-items: start;
-    }
-
     :where(.base-label, .base-label--technical) {
         max-width: 100%;
         white-space: normal;
@@ -854,11 +848,6 @@ html:has(.portfolio-page--home) .app-footer {
     .surface-card--flow,
     .how__steps-card {
         gap: var(--block-gap);
-    }
-
-    .surface-card--metrics {
-        gap: var(--block-gap);
-        padding: var(--card-padding);
     }
 
     .base-button {

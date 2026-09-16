@@ -165,8 +165,7 @@
 }
 
 /* 독립 페이지 섹션 — 단독 노출이므로 01 고정 */
-.section--journey,
-.section--personal {
+.section--journey {
     --section-index: '01';
 }
 
@@ -181,8 +180,6 @@
 .app-footer__links a:focus-visible,
 .tab-list .tab-list__tab:focus-visible,
 .highlights__filters .tab-list__tab:focus-visible,
-.gallery-page__segment:focus-visible,
-.journey__segment:focus-visible,
 .gallery-card:focus-visible,
 .gallery-editorial__entry:focus-visible {
     outline: 2px solid var(--color-primary);

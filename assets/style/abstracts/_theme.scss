@@ -56,8 +56,6 @@
     --color-surface-strong: #e5e8eb;
     --color-glass-2: color-mix(in srgb, var(--color-surface) 78%, transparent);
     --color-glass-2-strong: color-mix(in srgb, var(--color-surface) 90%, transparent);
-    --color-accent-hot: var(--accent-hot);
-    --color-accent-mint: var(--accent-mint);
 
     /* Foreground on filled/accent surfaces */
     --color-on-primary: var(--theme-white);
@@ -72,19 +70,11 @@
     --state-warning: #b45309;
     /* 5.02:1 on surface */
 
-    /* Shared overlays */
+    /* Shared overlay */
     --color-scrim: color-mix(in srgb, var(--grayscale-950) 62%, transparent);
-    --color-light-sheen: color-mix(in srgb, var(--theme-white) 22%, transparent);
-    --color-shadow-strong: var(--theme-black);
-    --color-overlay: color-mix(in srgb, var(--grayscale-950) 64%, transparent);
 
     /* Gradients and shadows */
     --gradient-accent: linear-gradient(118deg, #337fff 0%, #0050ff 52%, #0040cc 100%);
-    --gradient-accent-soft: linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--primary-400) 14%, transparent),
-        color-mix(in srgb, var(--accent-mint) 10%, transparent)
-    );
     --gradient-hero-mesh:
         radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-300) 18%, transparent), transparent 42%),
         radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%),
@@ -98,13 +88,10 @@
 
     /* Gallery aliases */
     --gallery-accent: var(--color-primary);
-    --gallery-active-bg: var(--gradient-accent);
-    --gallery-active-fg: var(--color-on-accent);
     --gallery-bg: var(--color-bg);
     --gallery-bg-elevated: var(--color-surface);
     --gallery-body: var(--color-text);
     --gallery-body-soft: color-mix(in srgb, var(--color-text) 78%, var(--color-text-muted));
-    --gallery-frame: color-mix(in srgb, var(--color-border) 82%, transparent);
     --gallery-ink: var(--color-text);
     --gallery-muted: var(--color-text-muted);
 
@@ -166,20 +153,10 @@
     --state-warning: #f59e0b;
     /* 9.01:1 on bg */
 
-    --color-overlay: color-mix(in srgb, #020407 82%, transparent);
     --color-scrim: color-mix(in srgb, #020407 78%, transparent);
-    --color-light-sheen: color-mix(in srgb, var(--theme-white) 10%, transparent);
-    --color-shadow-strong: #020407;
     --color-glass-2: color-mix(in srgb, var(--color-surface) 78%, transparent);
     --color-glass-2-strong: color-mix(in srgb, var(--color-surface-strong) 86%, transparent);
-    --color-accent-hot: var(--accent-hot);
-    --color-accent-mint: var(--accent-mint);
     --gradient-accent: linear-gradient(118deg, #669fff 0%, #337fff 48%, #0050ff 100%);
-    --gradient-accent-soft: linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--primary-600) 20%, transparent),
-        color-mix(in srgb, var(--accent-mint) 11%, transparent)
-    );
     --gradient-hero-mesh:
         radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 14%, transparent), transparent 42%),
         radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 9%, transparent), transparent 38%),
@@ -191,13 +168,10 @@
     --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 28%, transparent);
     --shadow-soft: 0 20px 54px color-mix(in srgb, #020407 42%, transparent);
     --gallery-accent: var(--color-primary);
-    --gallery-active-bg: var(--gradient-accent);
-    --gallery-active-fg: var(--color-on-accent);
     --gallery-bg: var(--color-bg);
     --gallery-bg-elevated: var(--color-surface);
     --gallery-body: var(--color-text);
     --gallery-body-soft: color-mix(in srgb, var(--color-text) 78%, var(--color-text-muted));
-    --gallery-frame: color-mix(in srgb, var(--color-border) 82%, transparent);
     --gallery-ink: var(--color-text);
     --gallery-muted: var(--color-text-muted);
     --shell-skip-bg: var(--color-surface-strong);

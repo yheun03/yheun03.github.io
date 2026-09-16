@@ -1,19 +1,13 @@
 <template>
-    <AppLayout
-        :links="layoutLinks"
-        active-id=""
-        brand-href="/"
-        active-path="/personal"
-        page-variant="archive-personal"
-        :footer-text="t('footer.copyright')"
-        :show-app-dock="true"
-    >
+    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
+        :footer-text="t('footer.copyright')">
         <article class="token-page section" aria-labelledby="token-page-title">
             <header class="token-hero" data-reveal="hero">
                 <p class="base-label base-label--technical">{{ t('tokens.pageLabel') }}</p>
                 <h1 id="token-page-title">{{ t('tokens.title') }}</h1>
                 <p>
-                    {{ t('tokens.introBefore') }} <code>assets/style/abstracts/_theme.scss</code>, {{ t('tokens.introMiddle') }}
+                    {{ t('tokens.introBefore') }} <code>assets/style/abstracts/_theme.scss</code>, {{
+                        t('tokens.introMiddle') }}
                     <code>_tokens.scss</code>{{ t('tokens.introAfter') }}
                 </p>
                 <nav class="token-hero__actions" :aria-label="t('tokens.navigation')">
@@ -86,7 +80,8 @@
                     <p>{{ t('tokens.shapeDescription') }}</p>
                 </div>
                 <div class="token-grid">
-                    <article v-for="token in shapeTokens" :key="token.name" class="token-card token-card--shape" data-reveal="scale">
+                    <article v-for="token in shapeTokens" :key="token.name" class="token-card token-card--shape"
+                        data-reveal="scale">
                         <span class="shape-demo" :class="token.demoClass" aria-hidden="true" />
                         <div>
                             <h3>{{ token.name }}</h3>
@@ -101,8 +96,6 @@
 </template>
 
 <script setup lang="ts">
-import BaseButton from '~/components/base/BaseButton.vue';
-
 const { t, content, locale } = useLocale();
 
 const layoutLinks = useSubpageLinks();

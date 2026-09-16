@@ -155,7 +155,6 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
     const heroAriaLabel = computed(() => t('gallery.totalProjects').replace('{total}', String(works.value.length)));
 
     const sortLegend = computed(() => t('gallery.sortLegend'));
-    const sortAriaLabel = computed(() => t(variant === 'career' ? 'gallery.careerSortLabel' : 'gallery.personalSortLabel'));
 
     const viewOptions = computed(() => [
         { value: 'editorial' as const, label: t('gallery.viewEditorial') },
@@ -163,7 +162,6 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
     ]);
 
     const viewLegend = computed(() => t('gallery.viewLegend'));
-    const viewAriaLabel = computed(() => t('gallery.viewAriaLabel'));
     const toolbarAriaLabel = computed(() => t('gallery.toolbarAriaLabel'));
 
     usePortfolioSeo(() => ({
@@ -203,9 +201,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
         heroNumber,
         heroAriaLabel,
         sortLegend,
-        sortAriaLabel,
         viewLegend,
-        viewAriaLabel,
         toolbarAriaLabel,
         titleKey: config.titleKey,
         basePath: config.basePath,

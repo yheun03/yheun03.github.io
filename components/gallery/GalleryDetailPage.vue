@@ -110,7 +110,6 @@
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
 import { type GalleryArchiveVariant, getGalleryVariantConfig, isPlaceholderCapture, useGalleryRouteWorks } from '~/composables/gallery/useGallery';
-import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;

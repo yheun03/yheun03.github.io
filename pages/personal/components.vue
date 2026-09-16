@@ -1,13 +1,6 @@
 <template>
-    <AppLayout
-        :links="layoutLinks"
-        active-id=""
-        brand-href="/"
-        active-path="/personal"
-        page-variant="archive-personal"
-        :footer-text="t('footer.copyright')"
-        :show-app-dock="true"
-    >
+    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
+        :footer-text="t('footer.copyright')">
         <article class="catalog-page section" aria-labelledby="catalog-page-title">
             <header class="catalog-hero" data-reveal="hero">
                 <BaseLabel tone="technical">{{ t('catalog.pageLabel') }}</BaseLabel>
@@ -74,8 +67,7 @@
                 <div class="catalog-row catalog-row--wrap">
                     <BaseIndexLabel value="01" />
                     <BaseIndexLabel value="02" />
-                    <BaseIndexLabel variant="tag"
-                        >SI PROJECT
+                    <BaseIndexLabel variant="tag">SI PROJECT
                         <BaseAccentBadge :label="t('story.featuredBadge')" />
                     </BaseIndexLabel>
                 </div>
@@ -105,13 +97,9 @@
                     <h2 id="section-title-section-title">{{ t('catalog.sectionTitle') }}</h2>
                     <p>{{ t('catalog.sectionDescription') }}</p>
                 </header>
-                <BaseSectionTitle
-                    title-id="catalog-section-title-demo"
-                    eyebrow="Works"
-                    :title="t('catalog.sectionDemoTitle')"
-                    :description="t('catalog.sectionDemoDescription')"
-                    :animate="false"
-                />
+                <BaseSectionTitle title-id="catalog-section-title-demo" eyebrow="Works"
+                    :title="t('catalog.sectionDemoTitle')" :description="t('catalog.sectionDemoDescription')"
+                    :animate="false" />
             </section>
 
             <section class="catalog-section" data-reveal="up" aria-labelledby="card-section-title">
@@ -126,20 +114,11 @@
                         <h3>BaseCard</h3>
                         <p>{{ t('catalog.baseCardDescription') }}</p>
                     </BaseCard>
-                    <StoryCaseCard
-                        to="/projects/toms"
-                        :link-label="t('catalog.caseAria')"
-                        index-label="01"
-                        :tag="t('catalog.caseTag')"
-                        period="2024.03 – 2024.11"
-                        :title="t('catalog.caseTitle')"
-                        :summary="t('catalog.caseSummary')"
-                        :tech="['Vue 3', 'TypeScript', 'SCSS']"
-                        :cta-label="t('catalog.caseCta')"
-                        :tech-aria-label="t('catalog.caseTech')"
-                        featured
-                        :featured-badge="t('story.featuredBadge')"
-                    />
+                    <StoryCaseCard to="/projects/toms" :link-label="t('catalog.caseAria')" index-label="01"
+                        :tag="t('catalog.caseTag')" period="2024.03 – 2024.11" :title="t('catalog.caseTitle')"
+                        :summary="t('catalog.caseSummary')" :tech="['Vue 3', 'TypeScript', 'SCSS']"
+                        :cta-label="t('catalog.caseCta')" :tech-aria-label="t('catalog.caseTech')" featured
+                        :featured-badge="t('story.featuredBadge')" />
                 </div>
             </section>
         </article>

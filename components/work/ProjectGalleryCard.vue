@@ -28,8 +28,7 @@
                 <div class="gallery-editorial__entry-media">
                     <GalleryEmptyCapture v-if="isPlaceholderCover" />
                     <span v-else class="gallery-editorial__entry-screen">
-                        <BaseMediaImage :src="coverSrc" :alt="coverAlt"
-                            :aria-hidden="isPlaceholderCover ? true : undefined" :priority="priority" />
+                        <BaseMediaImage :src="coverSrc" :alt="coverAlt" :priority="priority" />
                     </span>
                 </div>
             </div>
@@ -38,8 +37,7 @@
             <div class="gallery-card__media">
                 <GalleryEmptyCapture v-if="isPlaceholderCover" />
                 <span v-else class="gallery-card__screen">
-                    <BaseMediaImage :src="coverSrc" :alt="coverAlt" :aria-hidden="isPlaceholderCover ? true : undefined"
-                        :priority="priority" />
+                    <BaseMediaImage :src="coverSrc" :alt="coverAlt" :priority="priority" />
                 </span>
             </div>
             <div class="gallery-card__body">
@@ -61,11 +59,6 @@
 <script setup lang="ts">
 import type { WorkItem } from '@data/works';
 import { type GalleryViewMode, isPlaceholderCapture } from '~/composables/gallery/useGallery';
-import GalleryEmptyCapture from '~/components/work/GalleryEmptyCapture.vue';
-
-type WorkItemWithThumbnail = WorkItem & {
-    thumbnail?: string;
-};
 
 const props = withDefaults(
     defineProps<{
@@ -93,8 +86,8 @@ const cardAriaLabel = computed(() => {
     return `${title}, ${entryLabel.value}`;
 });
 
-const coverCapture = computed(() => (props.work as WorkItemWithThumbnail).thumbnail ?? props.work.captures[0] ?? '');
-const coverSrc = computed(() => resolveAppPath(coverCapture.value || '/assets/images/projects/placeholder.svg'));
+const coverCapture = computed(() => props.work.thumbnail ?? props.work.captures[0] ?? '');
+const coverSrc = computed(() => resolveAppPath(coverCapture.value));
 const isPlaceholderCover = computed(() => isPlaceholderCapture(coverCapture.value));
 
 const coverAlt = computed(() => {

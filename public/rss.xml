@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>은영환 웹 퍼블리셔 포트폴리오</title>
+    <link>https://yheun03.github.io/</link>
+    <description>Vue 3, Nuxt 3, SCSS, JavaScript로 구현한 실무·개인 프로젝트와 웹 퍼블리싱 경험을 정리한 포트폴리오입니다.</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Wed, 16 Sep 2026 00:00:00 +0900</lastBuildDate>
+    <ttl>1440</ttl>
+    <generator>Nuxt 3</generator>
+    <atom:link href="https://yheun03.github.io/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>은영환 웹 퍼블리셔 포트폴리오</title>
+      <link>https://yheun03.github.io/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/</guid>
+      <description>기업 홈페이지부터 스마트팩토리와 물류 시스템, 자사 솔루션까지 구축·운영해 온 7년차 웹 퍼블리셔의 포트폴리오입니다.</description>
+      <category>포트폴리오</category>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>포트폴리오 웹사이트 2026</title>
+      <link>https://yheun03.github.io/personal/jonsoft-framework-portfolio/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/personal/jonsoft-framework-portfolio/</guid>
+      <description>시맨틱 HTML과 SCSS를 기반으로 Vue 컴포넌트, 상태 관리, 다국어 콘텐츠 구조를 적용한 Nuxt 3 포트폴리오입니다.</description>
+      <category>개인 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>삼화페인트 생태공장 대시보드</title>
+      <link>https://yheun03.github.io/projects/samhwa-eco-dashboard/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/projects/samhwa-eco-dashboard/</guid>
+      <description>공정·환경 데이터를 빠르게 파악할 수 있도록 카드, 상태 표시, 차트의 시각 규칙을 정리한 Vue 대시보드 퍼블리싱 사례입니다.</description>
+      <category>실무 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>오알켐 MES 리뉴얼</title>
+      <link>https://yheun03.github.io/projects/orchem-mes/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/projects/orchem-mes/</guid>
+      <description>Vue 3와 Vite 기반 MES에서 공통 컴포넌트, AG Grid 테이블 UX, 태블릿 반응형 UI를 구현·개선한 프로젝트입니다.</description>
+      <category>실무 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>한진칼 및 계열사 리뉴얼</title>
+      <link>https://yheun03.github.io/projects/hanjinkal/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/projects/hanjinkal/</guid>
+      <description>Vue 컴포넌트를 ICE 5.0 CMS 구조에 맞게 재구성하고 개발·세팅 가이드와 대외 커뮤니케이션을 담당한 사례입니다.</description>
+      <category>실무 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>깨끗한나라 OMS 리뉴얼</title>
+      <link>https://yheun03.github.io/projects/oms/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/projects/oms/</guid>
+      <description>Vue 기반 OMS의 전체 화면을 퍼블리싱하고 컴포넌트 개발과 UI·UX 개선에 참여한 시스템 리뉴얼 프로젝트입니다.</description>
+      <category>실무 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>카카오톡 클론</title>
+      <link>https://yheun03.github.io/personal/clone-kakaotalk/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/personal/clone-kakaotalk/</guid>
+      <description>채팅, 친구, 설정 화면을 Vue 3 기반 SPA로 재구현하고 라우팅·공통 UI·배포 환경을 구조화한 개인 프로젝트입니다.</description>
+      <category>개인 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>Flighty 클론</title>
+      <link>https://yheun03.github.io/personal/clone-flighty/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/personal/clone-flighty/</guid>
+      <description>모바일 사용성과 디자인 시스템을 기준으로 Flighty의 항공 정보 UI를 Vue 3와 Nuxt 3로 재해석한 클론 프로젝트입니다.</description>
+      <category>개인 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>포트폴리오 웹사이트 2025</title>
+      <link>https://yheun03.github.io/personal/portfolio-2025/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/personal/portfolio-2025/</guid>
+      <description>HTML, SCSS, JavaScript로 반응형 레이아웃, 다크 모드, 슬라이드와 모달 인터랙션을 구현한 정적 포트폴리오입니다.</description>
+      <category>개인 프로젝트</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>만들고 배우며 쌓아 온 시간</title>
+      <link>https://yheun03.github.io/journey/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/journey/</guid>
+      <description>학교에서 처음 만든 웹 페이지부터 회사의 실제 서비스까지, 일과 전공 공부를 함께해 온 성장 과정입니다.</description>
+      <category>커리어</category>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
+    </item>
+  </channel>
+</rss>

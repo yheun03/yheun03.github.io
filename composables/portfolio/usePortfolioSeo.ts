@@ -1,7 +1,5 @@
-import ko from '@i18n/ko.json';
-import en from '@i18n/en.json';
-
 type SeoLocale = 'ko' | 'en';
+type SeoQuestion = { name: string; acceptedAnswer: string };
 
 type PortfolioSeoOptions = {
     title: string;
@@ -26,8 +24,6 @@ type PortfolioSeoOptions = {
 
 const SITE_URL = 'https://yheun03.github.io/';
 const DEFAULT_IMAGE = '/assets/images/common/og/og-image-2026.jpg';
-const contentByLocale = { ko: ko.content, en: en.content };
-
 export function getPortfolioAbsoluteUrl(path = '/') {
     return new URL(path.startsWith('/') ? path.slice(1) : path, SITE_URL).toString();
 }
@@ -41,10 +37,12 @@ function getImageMimeType(path: string) {
 
 export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) {
     const { public: config } = useRuntimeConfig();
+    const { content } = useLocale();
 
     useHead(() => {
         const page = toValue(options);
-        const { profile, seo } = contentByLocale[page.locale];
+        const { profile, seo } = content.value;
+        const questions: SeoQuestion[] = seo.questions;
         const pagePath = page.path ?? '/';
         const canonicalPath = pagePath === '/' || pagePath.endsWith('/') ? pagePath : `${pagePath}/`;
         const canonical = getPortfolioAbsoluteUrl(canonicalPath);
@@ -131,7 +129,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             webpage.breadcrumb = { '@id': `${canonical}#breadcrumb` };
         }
 
-        if (pagePath === '/' && seo.questions.length) {
+        if (pagePath === '/' && questions.length) {
             const faqId = `${canonical}#faq`;
             graph.push({
                 '@type': 'FAQPage',
@@ -140,7 +138,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 inLanguage: page.locale,
                 about: { '@id': personId },
                 isPartOf: { '@id': websiteId },
-                mainEntity: seo.questions.map((question) => ({
+                mainEntity: questions.map((question) => ({
                     '@type': 'Question',
                     name: question.name,
                     acceptedAnswer: {

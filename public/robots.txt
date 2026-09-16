@@ -8,4 +8,3 @@ Disallow: /personal/components
 Sitemap: https://yheun03.github.io/sitemap.xml
 Sitemap: https://yheun03.github.io/sitemap.txt
 Sitemap: https://yheun03.github.io/rss.xml
-LLMs: https://yheun03.github.io/llms.txt

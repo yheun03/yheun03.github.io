@@ -10,6 +10,7 @@ const iconsDir = fileURLToPath(new URL('./assets/icons', import.meta.url));
 const faviconHref = joinURL(resolvedBaseURL, 'assets/icons/favicon.svg');
 const sitemapHref = joinURL(resolvedBaseURL, 'sitemap.xml');
 const rssHref = joinURL(resolvedBaseURL, 'rss.xml');
+const llmsHref = joinURL(resolvedBaseURL, 'llms.txt');
 const googleSiteVerification = process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ?? '';
 const isAnalyticsEnabled = process.env.ANALYTICS_ENABLED === 'true';
 const naverAnalyticsId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_NAVER_ANALYTICS_ID?.trim() ?? '') : '';
@@ -48,6 +49,7 @@ export default defineNuxtConfig({
                 { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
                 { rel: 'sitemap', type: 'application/xml', href: sitemapHref },
                 { rel: 'alternate', type: 'application/rss+xml', title: '은영환 포트폴리오 RSS', href: rssHref },
+                { rel: 'alternate', type: 'text/plain', title: 'AI-readable portfolio summary', href: llmsHref },
             ],
             script: [
                 ...(googleTagManagerId

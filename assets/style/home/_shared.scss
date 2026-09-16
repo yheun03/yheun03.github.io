@@ -10,7 +10,12 @@
     --reveal-side-distance: 56px;
 }
 
-.portfolio-page--home > .section:not(.section--hero) [data-animate] {
+.portfolio-page--home>.section:not(.section--hero) {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 900px;
+}
+
+.portfolio-page--home>.section:not(.section--hero) [data-animate] {
     opacity: 0;
     transform: translateY(var(--reveal-distance));
     transition:
@@ -20,34 +25,31 @@
     will-change: opacity, transform;
 }
 
-.portfolio-page--home > .section:not(.section--hero) [data-animate] [data-animate],
-.portfolio-page--home > .section:not(.section--hero) :is(.section-title, .about__intro)[data-animate],
-.portfolio-page--home > .section.section--why-list .why__list > li[data-animate] {
+.portfolio-page--home>.section:not(.section--hero) [data-animate] [data-animate],
+.portfolio-page--home>.section:not(.section--hero) :is(.section-title, .about__intro)[data-animate],
+.portfolio-page--home>.section.section--why-list .why__list>li[data-animate] {
     opacity: 1;
     transform: none;
     transition: none;
 }
 
-.portfolio-page--home > .section:not(.section--hero) [data-animate='zoom'] {
+.portfolio-page--home>.section:not(.section--hero) [data-animate='zoom'] {
     transform: translateY(20px) scale(0.95);
 }
 
-.portfolio-page--home > .section:not(.section--hero) [data-animate].animate--visible {
+.portfolio-page--home>.section:not(.section--hero) [data-animate].animate--visible {
     opacity: 1;
     transform: none;
 }
 
-.portfolio-page--home > .section:not(.section--hero) [data-animate].animate--visible [data-stagger] {
+.portfolio-page--home>.section:not(.section--hero) [data-animate].animate--visible [data-stagger] {
     animation-duration: var(--reveal-duration);
 }
 
-.portfolio-page--home
-    > .section:not(.section--hero)
-    .section-title[data-animate]
-    > :is(.section-title__eyebrow, .section-title__title, .section-title__description),
-.portfolio-page--home > .section.section--about-intro .about__intro[data-animate] > :is(.section-title__eyebrow, .about__lead),
-.portfolio-page--home > .section.section--about-intro .about__intro[data-animate] .about__display-line,
-.portfolio-page--home > .section.section--why-list .why__list > li[data-animate] > * {
+.portfolio-page--home>.section:not(.section--hero) .section-title[data-animate]> :is(.section-title__eyebrow, .section-title__title, .section-title__description),
+.portfolio-page--home>.section.section--about-intro .about__intro[data-animate]> :is(.section-title__eyebrow, .about__lead),
+.portfolio-page--home>.section.section--about-intro .about__intro[data-animate] .about__display-line,
+.portfolio-page--home>.section.section--why-list .why__list>li[data-animate]>* {
     opacity: 0;
     transform: translateY(var(--reveal-distance));
     transition:
@@ -57,37 +59,37 @@
     will-change: opacity, transform;
 }
 
-.portfolio-page--home > .section.section--why-list .why__list > li:first-child[data-animate] > * {
+.portfolio-page--home>.section.section--why-list .why__list>li:first-child[data-animate]>* {
     transform: translateX(calc(0px - var(--reveal-side-distance)));
 }
 
-.portfolio-page--home > .section.section--why-list .why__list > li:last-child[data-animate] > * {
+.portfolio-page--home>.section.section--why-list .why__list>li:last-child[data-animate]>* {
     transform: translateX(var(--reveal-side-distance));
 }
 
-.portfolio-page--home > .section:not(.section--hero) .section-title[data-animate].animate--visible > *,
-.portfolio-page--home > .section.section--about-intro .about__intro[data-animate].animate--visible > :is(.section-title__eyebrow, .about__lead),
-.portfolio-page--home > .section.section--about-intro .about__intro[data-animate].animate--visible .about__display-line,
-.portfolio-page--home > .section.section--why-list .why__list > li[data-animate].animate--visible > *,
-.portfolio-page--home > .section.section--why-list .why__list > li:first-child[data-animate].animate--visible > *,
-.portfolio-page--home > .section.section--why-list .why__list > li:last-child[data-animate].animate--visible > * {
+.portfolio-page--home>.section:not(.section--hero) .section-title[data-animate].animate--visible>*,
+.portfolio-page--home>.section.section--about-intro .about__intro[data-animate].animate--visible> :is(.section-title__eyebrow, .about__lead),
+.portfolio-page--home>.section.section--about-intro .about__intro[data-animate].animate--visible .about__display-line,
+.portfolio-page--home>.section.section--why-list .why__list>li[data-animate].animate--visible>*,
+.portfolio-page--home>.section.section--why-list .why__list>li:first-child[data-animate].animate--visible>*,
+.portfolio-page--home>.section.section--why-list .why__list>li:last-child[data-animate].animate--visible>* {
     opacity: 1;
     transform: translate(0, 0);
 }
 
-.portfolio-page--home .section-title[data-animate] > .section-title__eyebrow,
-.portfolio-page--home .section--about-intro .about__intro[data-animate] > .section-title__eyebrow,
-.portfolio-page--home .section--why-list .why__list > li[data-animate] > :first-child {
+.portfolio-page--home .section-title[data-animate]>.section-title__eyebrow,
+.portfolio-page--home .section--about-intro .about__intro[data-animate]>.section-title__eyebrow,
+.portfolio-page--home .section--why-list .why__list>li[data-animate]> :first-child {
     --reveal-delay: var(--reveal-delay-base);
 }
 
-.portfolio-page--home .section-title[data-animate] > .section-title__title,
-.portfolio-page--home .section--why-list .why__list > li[data-animate] > h3 {
+.portfolio-page--home .section-title[data-animate]>.section-title__title,
+.portfolio-page--home .section--why-list .why__list>li[data-animate]>h3 {
     --reveal-delay: calc(var(--reveal-delay-base) + var(--reveal-delay-step));
 }
 
-.portfolio-page--home .section-title[data-animate] > .section-title__description,
-.portfolio-page--home .section--why-list .why__list > li[data-animate] > p {
+.portfolio-page--home .section-title[data-animate]>.section-title__description,
+.portfolio-page--home .section--why-list .why__list>li[data-animate]>p {
     --reveal-delay: calc(var(--reveal-delay-base) + var(--reveal-delay-step) + var(--reveal-delay-step));
 }
 
@@ -118,7 +120,7 @@
 .section--toolbox .section-head {
     gap: clamp(16px, 2vw, 24px);
 
-    > .section-title__description {
+    >.section-title__description {
         margin-top: 0;
     }
 }

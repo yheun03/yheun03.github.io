@@ -1,6 +1,6 @@
 <template>
     <img :src="src" :alt="alt" :width="width" :height="height" :loading="priority ? 'eager' : 'lazy'" decoding="async"
-        :fetchpriority="priority ? 'high' : 'low'" />
+        :fetchpriority="priority ? 'high' : undefined" />
 </template>
 
 <script setup lang="ts">

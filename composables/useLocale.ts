@@ -1,13 +1,22 @@
 // 현재 언어의 문구와 콘텐츠, 언어 전환 기능 제공
 import ko from '@i18n/ko.json';
-import en from '@i18n/en.json';
 
 export type Locale = 'ko' | 'en';
 
 export type PortfolioContent = typeof ko.content;
 
-const messages = { ko, en };
 const STORAGE_KEY = 'portfolio-locale';
+let englishMessages: typeof ko | undefined;
+
+function getMessages(locale: Locale) {
+    return locale === 'en' ? (englishMessages ?? ko) : ko;
+}
+
+async function loadMessages(locale: Locale) {
+    if (locale !== 'en' || englishMessages) return;
+    const { default: messages } = await import('@i18n/en.json');
+    englishMessages = messages as unknown as typeof ko;
+}
 
 function isLocale(value: string | null): value is Locale {
     return value === 'ko' || value === 'en';
@@ -23,13 +32,14 @@ function getByPath(obj: unknown, path: string): string {
 
 export function useLocale() {
     const locale = useState<Locale>('locale', () => 'ko');
-    const content = computed(() => messages[locale.value].content as PortfolioContent);
+    const content = computed(() => getMessages(locale.value).content as PortfolioContent);
 
     function t(key: string) {
-        return getByPath(messages[locale.value], key);
+        return getByPath(getMessages(locale.value), key);
     }
 
-    function setLocale(value: Locale) {
+    async function setLocale(value: Locale) {
+        await loadMessages(value);
         locale.value = value;
         if (import.meta.client) {
             localStorage.setItem(STORAGE_KEY, value);
@@ -37,14 +47,14 @@ export function useLocale() {
         }
     }
 
-    function initLocale() {
+    async function initLocale() {
         if (!import.meta.client) return;
         const saved = localStorage.getItem(STORAGE_KEY);
-        setLocale(isLocale(saved) ? saved : 'ko');
+        await setLocale(isLocale(saved) ? saved : 'ko');
     }
 
-    function toggleLocale() {
-        setLocale(locale.value === 'ko' ? 'en' : 'ko');
+    async function toggleLocale() {
+        await setLocale(locale.value === 'ko' ? 'en' : 'ko');
     }
 
     return { locale, t, content, initLocale, toggleLocale };

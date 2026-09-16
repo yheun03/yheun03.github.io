@@ -61,13 +61,17 @@ const { locale, toggleLocale, t } = useLocale();
 const { isDarkTheme, toggleTheme } = useTheme();
 
 const localeLabel = computed(() => locale.value.toUpperCase());
-const languageToggleAriaLabel = computed(() => (locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo')));
+const languageToggleAriaLabel = computed(
+    () => `${localeLabel.value}: ${locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo')}`,
+);
 const themeToggleLabel = computed(() => (isDarkTheme.value ? 'Light' : 'Dark'));
-const themeToggleAriaLabel = computed(() => (isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme')));
+const themeToggleAriaLabel = computed(
+    () => `${themeToggleLabel.value}: ${isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme')}`,
+);
 
-function handleLocaleToggle() {
+async function handleLocaleToggle() {
     const switchingToEn = locale.value === 'ko';
-    toggleLocale();
+    await toggleLocale();
     statusMessage.value = t(switchingToEn ? 'a11y.localeChangedEn' : 'a11y.localeChangedKo');
 }
 

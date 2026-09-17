@@ -58,7 +58,6 @@
     --radius-md: 14px;
     --radius-pill: 999px;
     --radius-xl: 26px;
-    --space-0: 0;
     --space-1: 4px;
     --space-10: 42px;
     --space-11: 54px;
@@ -184,97 +183,113 @@ $size-touch: var(--size-touch);
 $layout-header-height: var(--layout-header-height);
 
 $font-presets: (
-    display-1: (family: $font-display,
+    display-1: (
+        family: $font-display,
         size: $font-size-display-1,
         weight: $font-weight-black,
         line-height: $line-height-tight,
         letter-spacing: $tracking-tight,
     ),
-    display-2: (family: $font-display,
+    display-2: (
+        family: $font-display,
         size: $font-size-display-2,
         weight: $font-weight-black,
         line-height: $line-height-display,
         letter-spacing: $tracking-tight,
     ),
-    display-3: (family: $font-display,
+    display-3: (
+        family: $font-display,
         size: $font-size-display-3,
         weight: $font-weight-black,
         line-height: $line-height-display,
         letter-spacing: $tracking-tight,
     ),
-    display-4: (family: $font-display,
+    display-4: (
+        family: $font-display,
         size: $font-size-display-4,
         weight: $font-weight-black,
         line-height: $line-height-heading,
         letter-spacing: $tracking-tight,
     ),
-    display-5: (family: $font-display,
+    display-5: (
+        family: $font-display,
         size: $font-size-display-5,
         weight: $font-weight-black,
         line-height: $line-height-heading,
         letter-spacing: $tracking-heading,
     ),
-    display-6: (family: $font-display,
+    display-6: (
+        family: $font-display,
         size: $font-size-display-6,
         weight: $font-weight-bold,
         line-height: $line-height-title,
         letter-spacing: $tracking-heading,
     ),
-    title-1: (family: $font-display,
+    title-1: (
+        family: $font-display,
         size: $font-size-title-1,
         weight: $font-weight-bold,
         line-height: $line-height-title,
         letter-spacing: $tracking-heading,
     ),
-    title-2: (family: $font-display,
+    title-2: (
+        family: $font-display,
         size: $font-size-title-2,
         weight: $font-weight-semibold,
         line-height: $line-height-title,
         letter-spacing: $tracking-ui,
     ),
-    title-3: (family: $font-display,
+    title-3: (
+        family: $font-display,
         size: $font-size-title-3,
         weight: $font-weight-semibold,
         line-height: $line-height-title,
         letter-spacing: $tracking-ui,
     ),
-    body-1: (family: $font-body,
+    body-1: (
+        family: $font-body,
         size: $font-size-body-1,
         weight: $font-weight-regular,
         line-height: $line-height-body,
         letter-spacing: 0,
     ),
-    body-2: (family: $font-body,
+    body-2: (
+        family: $font-body,
         size: $font-size-body-2,
         weight: $font-weight-regular,
         line-height: $line-height-body,
         letter-spacing: 0,
     ),
-    caption-1: (family: $font-body,
+    caption-1: (
+        family: $font-body,
         size: $font-size-body-2,
         weight: $font-weight-medium,
         line-height: $line-height-ui,
         letter-spacing: $tracking-ui,
     ),
-    caption-2: (family: $font-body,
+    caption-2: (
+        family: $font-body,
         size: $font-size-label,
         weight: $font-weight-semibold,
         line-height: $line-height-ui,
         letter-spacing: $tracking-label,
     ),
-    label: (family: $font-mono,
+    label: (
+        family: $font-mono,
         size: $font-size-label,
         weight: $font-weight-semibold,
         line-height: $line-height-ui,
         letter-spacing: $tracking-label,
     ),
-    chip: (family: $font-body,
+    chip: (
+        family: $font-body,
         size: $font-size-chip,
         weight: $font-weight-semibold,
         line-height: $line-height-ui,
         letter-spacing: $tracking-ui,
     ),
-    button: (family: $font-display,
+    button: (
+        family: $font-display,
         size: $font-size-body-1,
         weight: $font-weight-semibold,
         line-height: $line-height-title,
@@ -432,16 +447,14 @@ $font-presets: (
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background: radial-gradient(#{$size} circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        background: radial-gradient(
+            #{$size} circle at var(--glow-x, 50%) var(--glow-y, 50%),
             color-mix(in srgb, var(--color-primary) 9%, transparent),
-            transparent 65%);
+            transparent 65%
+        );
         opacity: 0;
         transition: opacity 0.4s ease;
         pointer-events: none;
-    }
-
-    &.is-glow::#{$pseudo} {
-        opacity: 1;
     }
 
     @media (hover: hover) {
@@ -469,15 +482,14 @@ $font-presets: (
         box-shadow:
             0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
             0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
-    }
-
-    @else {
+    } @else {
         box-shadow: 0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
     }
 
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.32s ease,
-    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.32s ease,
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @mixin scroll-rail($snap: mandatory) {

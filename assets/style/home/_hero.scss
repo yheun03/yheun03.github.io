@@ -59,9 +59,11 @@
             width: clamp(208px, 26vw, 416px);
             aspect-ratio: 1;
             opacity: 0.26;
-            background: radial-gradient(circle at 60% 40%,
-                    color-mix(in srgb, var(--accent-mint, var(--color-primary)) 46%, transparent),
-                    transparent 72%);
+            background: radial-gradient(
+                circle at 60% 40%,
+                color-mix(in srgb, var(--accent-mint, var(--color-primary)) 46%, transparent),
+                transparent 72%
+            );
             animation-duration: 28s;
             animation-delay: -8s;
         }
@@ -72,30 +74,14 @@
             width: clamp(144px, 18vw, 288px);
             aspect-ratio: 1;
             opacity: 0.2;
-            background: radial-gradient(circle at 50% 50%,
-                    color-mix(in srgb, var(--accent-hot, var(--color-primary)) 40%, transparent),
-                    transparent 70%);
+            background: radial-gradient(
+                circle at 50% 50%,
+                color-mix(in srgb, var(--accent-hot, var(--color-primary)) 40%, transparent),
+                transparent 70%
+            );
             animation-duration: 18s;
             animation-delay: -14s;
         }
-    }
-
-    &__spotlight {
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.6s ease;
-        background: radial-gradient(576px circle at var(--glow-x, 50%) var(--glow-y, 30%),
-                color-mix(in srgb, var(--color-primary) 8%, transparent),
-                transparent 70%);
-        mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 86%, transparent 100%);
-    }
-
-    &.is-glow .hero__spotlight {
-        opacity: 1;
     }
 
     &__cue {

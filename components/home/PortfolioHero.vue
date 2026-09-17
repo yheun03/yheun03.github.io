@@ -5,7 +5,6 @@
             <span class="hero__orb hero__orb--b"></span>
             <span class="hero__orb hero__orb--c"></span>
         </div>
-        <div class="hero__spotlight" aria-hidden="true"></div>
         <div class="hero__poster">
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>

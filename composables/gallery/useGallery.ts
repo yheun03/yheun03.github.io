@@ -182,7 +182,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
                 '@type': 'ListItem',
                 position: index + 1,
                 name: work.title,
-                url: getPortfolioAbsoluteUrl(`${config.basePath}/${work.id}`),
+                url: getPortfolioAbsoluteUrl(`${config.basePath}/${work.id}/`),
             })),
         },
     }));

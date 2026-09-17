@@ -172,11 +172,13 @@ function projectLinkLabel(link: NonNullable<WorkItem['links']>[number]) {
 
 usePortfolioSeo(() => {
     const coverImage = props.work.captures.find((src) => !isPlaceholderCapture(src));
+    const workPath = `${config.basePath}/${props.work.id}/`;
+    const workUrl = getPortfolioAbsoluteUrl(workPath);
 
     return {
         title: `${props.work.title} | ${t(config.metaTitleKey)}`,
         description: props.work.introduction,
-        path: `${config.basePath}/${props.work.id}`,
+        path: workPath,
         locale: locale.value,
         type: 'article',
         image: coverImage,
@@ -185,12 +187,12 @@ usePortfolioSeo(() => {
         breadcrumbs: [
             { name: t('footer.homeLink'), path: '/' },
             { name: t(config.titleKey), path: config.basePath },
-            { name: props.work.title, path: `${config.basePath}/${props.work.id}` },
+            { name: props.work.title, path: workPath },
         ],
         mainEntity: {
             '@type': 'CreativeWork',
-            '@id': `${getPortfolioAbsoluteUrl(`${config.basePath}/${props.work.id}`)}#project`,
-            url: getPortfolioAbsoluteUrl(`${config.basePath}/${props.work.id}`),
+            '@id': `${workUrl}#project`,
+            url: workUrl,
             name: props.work.title,
             abstract: props.work.introduction,
             creator: { '@id': 'https://yheun03.github.io/#person' },

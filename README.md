@@ -43,4 +43,4 @@ npm run generate
 npm run deploy
 ```
 
-이력서는 [`public/files/Resume.pdf`](public/files/Resume.pdf)에서 확인할 수 있으며, 2025년 포트폴리오는 `public/ver.2025/`에 보관되어 있습니다.
+공개 이력서는 [`RESUME.md`](RESUME.md)에서 확인할 수 있으며, 2025년 포트폴리오는 `public/ver.2025/`에 보관되어 있습니다.

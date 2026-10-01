@@ -2,13 +2,15 @@
     <GalleryLayout :variant="variant" :base-path="config.basePath">
         <article class="gallery-detail gallery-page--editorial section" :class="galleryVariantClass">
             <nav class="gallery-detail__breadcrumb" data-reveal="up" :aria-label="t('gallery.breadcrumbLabel')">
-                <NuxtLink :to="config.basePath" class="gallery-detail__breadcrumb-link"> ← {{ t(config.listLabelKey) }}
-                </NuxtLink>
+                <NuxtLink :to="config.basePath" class="gallery-detail__breadcrumb-link"> ← {{ t(config.listLabelKey) }} </NuxtLink>
             </nav>
 
             <header class="gallery-detail__header gallery-detail__hero">
-                <figure class="gallery-detail__cover" data-reveal="scale"
-                    :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }">
+                <figure
+                    class="gallery-detail__cover"
+                    data-reveal="scale"
+                    :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }"
+                >
                     <GalleryEmptyCapture v-if="isPlaceholderCapture(coverCapture)" />
                     <BaseMediaImage v-else :src="resolveAppPath(coverCapture)" :alt="captureAlt(0)" priority />
                 </figure>
@@ -19,9 +21,14 @@
                     <p class="gallery-detail__intro">{{ work.introduction }}</p>
                     <p class="gallery-detail__stack-line">{{ work.tech.join(' / ') }}</p>
                     <p v-if="work.links?.length" class="gallery-detail__links">
-                        <BaseButton v-for="link in work.links" :key="link.href" :label="projectLinkLabel(link)"
-                            :href="link.href" :aria-label="projectLinkAriaLabel(link)"
-                            :variant="isGithubLink(link.href) ? 'ghost' : 'primary'" />
+                        <BaseButton
+                            v-for="link in work.links"
+                            :key="link.href"
+                            :label="projectLinkLabel(link)"
+                            :href="link.href"
+                            :aria-label="projectLinkAriaLabel(link)"
+                            :variant="isGithubLink(link.href) ? 'ghost' : 'primary'"
+                        />
                     </p>
                     <dl class="gallery-detail__hero-meta">
                         <div>
@@ -48,7 +55,6 @@
                 <header class="gallery-detail__section-intro" data-reveal="up">
                     <p class="gallery-detail__section-index">01 / PROJECT NOTE</p>
                     <h2 :id="briefTitleId">{{ t('gallery.contributions') }}</h2>
-                    <p>{{ t('gallery.storyGuide') }}</p>
                 </header>
 
                 <div class="gallery-detail__brief-grid">
@@ -77,12 +83,9 @@
                 <header class="gallery-detail__section-intro gallery-detail__section-intro--story" data-reveal="up">
                     <p class="gallery-detail__section-index">02 / SCREENS</p>
                     <h2>{{ t('gallery.captures') }}</h2>
-                    <p>{{ t('gallery.captureGuide') }}</p>
                 </header>
-                <article v-for="(capture, index) in galleryCaptures" :key="capture || index"
-                    class="gallery-detail__story-block" data-reveal="scale">
-                    <figure class="gallery-detail__figure"
-                        :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(capture) }">
+                <article v-for="(capture, index) in galleryCaptures" :key="capture || index" class="gallery-detail__story-block" data-reveal="scale">
+                    <figure class="gallery-detail__figure" :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(capture) }">
                         <GalleryEmptyCapture v-if="isPlaceholderCapture(capture)" />
                         <BaseMediaImage v-else :src="resolveAppPath(capture)" :alt="captureAlt(index)" />
                         <figcaption v-if="!isPlaceholderCapture(capture)">
@@ -98,7 +101,8 @@
                 <h2 class="gallery-detail__next-title">{{ navLabels.next }}</h2>
                 <nav class="gallery-detail__next-list" :aria-label="navLabels.next">
                     <NuxtLink v-for="item in nextWorks" :key="item.id" :to="`${config.basePath}/${item.id}`">
-                        <span>{{ item.title }}</span><span aria-hidden="true">↗</span>
+                        <span>{{ item.title }}</span
+                        ><span aria-hidden="true">↗</span>
                     </NuxtLink>
                 </nav>
                 <BaseButton :to="config.basePath" :label="`← ${t(detailEndCtaKey)}`" variant="ghost" />

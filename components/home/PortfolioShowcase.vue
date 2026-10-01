@@ -43,7 +43,8 @@
 import type { WorkItem } from '@data/works';
 
 const { t, content } = useLocale();
-const showcaseIds = ['samhwa-eco-dashboard', 'orchem-mes', 'hanjinkal'];
+// 퍼블리싱 실무를 출발점으로 운영 문제 해결과 Vue 구조 설계까지 넓어진 흐름을 보여준다.
+const showcaseIds = ['samhwa-eco-dashboard', 'tms-maintenance', 'framework'];
 const homeShowcaseWorks = computed(() => {
     const works = content.value.works.career as unknown as WorkItem[];
     return showcaseIds.map((id) => works.find((work) => work.id === id)).filter((work): work is WorkItem => Boolean(work));

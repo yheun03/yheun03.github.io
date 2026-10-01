@@ -1,7 +1,12 @@
 <template>
-    <NuxtLink :to="to" class="gallery-card" data-reveal="up"
+    <NuxtLink
+        :to="to"
+        class="gallery-card"
+        data-reveal="up"
+        :data-reveal-delay="revealDelay"
         :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
-        :aria-label="cardAriaLabel">
+        :aria-label="cardAriaLabel"
+    >
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <p class="gallery-editorial__entry-kicker">
@@ -20,8 +25,7 @@
 
                 <p class="gallery-editorial__entry-dek">{{ work.introduction }}</p>
 
-                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags"
-                    :aria-label="t('gallery.languages')">
+                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags" :aria-label="t('gallery.languages')">
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
                 </ul>
 
@@ -68,11 +72,13 @@ const props = withDefaults(
         entryLabel?: string;
         priority?: boolean;
         headingTag?: 'h2' | 'h3';
+        revealDelay?: number;
     }>(),
     {
         viewMode: 'editorial',
         priority: false,
         headingTag: 'h2',
+        revealDelay: 0,
     },
 );
 
@@ -95,5 +101,4 @@ const coverAlt = computed(() => {
     const title = props.work.title;
     return t('gallery.captureCardAlt').replace('{title}', title);
 });
-
 </script>

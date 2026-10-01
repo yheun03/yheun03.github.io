@@ -14,6 +14,7 @@
                     label: stat.label,
                     value: stat.value,
                     suffix: stat.suffix,
+                    description: stat.description,
                 }))
             "
             :aria-label="t('story.proofMetricsAriaLabel')"

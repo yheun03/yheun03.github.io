@@ -9,7 +9,7 @@
             :aria-labelledby="era.year ? yearHeadingId(era) : undefined"
             :aria-label="!era.year ? flatAriaLabel : undefined"
         >
-            <div v-if="era.year" class="year-timeline__year" data-reveal="left">
+            <div v-if="era.year" class="year-timeline__year" data-reveal="left" :data-reveal-delay="Math.min(index * 60, 240)">
                 <h2 :id="yearHeadingId(era)" class="year-timeline__year-title" :class="`year-timeline__year-title--${variant}`">{{ era.year }}</h2>
             </div>
             <component :is="entriesTag" class="year-timeline__entries">

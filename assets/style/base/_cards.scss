@@ -131,7 +131,6 @@
 
     &__description {
         margin: 0;
-        max-width: 34ch;
         color: var(--color-text-muted);
         @include font(body-2);
     }

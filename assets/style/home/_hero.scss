@@ -176,6 +176,7 @@
 
     &__lead {
         @include editorial-lead;
+        max-width: 44ch;
     }
 
     &__actions {

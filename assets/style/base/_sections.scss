@@ -35,7 +35,7 @@
     }
 
     &__description {
-        max-width: 44ch;
+        max-width: 68ch;
         margin-top: clamp(28px, 4vw, 44px);
         color: var(--color-text-muted);
         @include font(body-1, $line-height: $line-height-body);

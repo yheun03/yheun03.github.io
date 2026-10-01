@@ -4,6 +4,7 @@ import type { WorkItem } from '@data/works';
 export type GalleryViewMode = 'editorial' | 'grid';
 export type GalleryArchiveVariant = 'career' | 'personal';
 export type WorkSortMode = 'start' | 'title';
+export type WorkFilterMode = 'featured' | 'problem' | 'frontend' | 'operation' | 'cms';
 
 export type WorkYearEntry = { type: 'year'; key: string; year: string } | { type: 'work'; key: string; work: WorkItem; firstWork?: boolean };
 
@@ -109,6 +110,7 @@ function useGalleryViewMode() {
 export function useGalleryArchive(variant: GalleryArchiveVariant, works: ComputedRef<WorkItem[]>) {
     const { t, locale } = useLocale();
     const sortMode = ref<WorkSortMode>('start');
+    const filterModes = ref<WorkFilterMode[]>([]);
     const { viewMode } = useGalleryViewMode();
     const editorialYear = new Date().getFullYear();
     const config = getGalleryVariantConfig(variant);
@@ -129,10 +131,24 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
         ),
     );
 
+    const filterOptions = computed<{ value: WorkFilterMode; label: string }[]>(() =>
+        variant === 'career'
+            ? [
+                  { value: 'featured', label: t('gallery.filterFeatured') },
+                  { value: 'problem', label: t('gallery.filterProblem') },
+                  { value: 'frontend', label: t('gallery.filterFrontend') },
+                  { value: 'operation', label: t('gallery.filterOperation') },
+                  { value: 'cms', label: t('gallery.filterCms') },
+              ]
+            : [],
+    );
+
+    const filteredWorks = computed(() => sortedWorks.value.filter((work) => matchesFilters(work, filterModes.value)));
+
     const galleryEntries = computed(() =>
         sortMode.value === 'start'
-            ? createWorkYearEntries(sortedWorks.value)
-            : sortedWorks.value.map((work, index) => ({
+            ? createWorkYearEntries(filteredWorks.value)
+            : filteredWorks.value.map((work, index) => ({
                   type: 'work' as const,
                   key: work.id,
                   work,
@@ -155,6 +171,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
     const heroAriaLabel = computed(() => t('gallery.totalProjects').replace('{total}', String(works.value.length)));
 
     const sortLegend = computed(() => t('gallery.sortLegend'));
+    const filterLegend = computed(() => t('gallery.filterLegend'));
 
     const viewOptions = computed(() => [
         { value: 'editorial' as const, label: t('gallery.viewEditorial') },
@@ -190,8 +207,10 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
     return {
         t,
         sortMode,
+        filterModes,
         viewMode,
         sortOptions,
+        filterOptions,
         viewOptions,
         galleryEntries,
         editorialYearGroups,
@@ -201,11 +220,25 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
         heroNumber,
         heroAriaLabel,
         sortLegend,
+        filterLegend,
         viewLegend,
         toolbarAriaLabel,
         titleKey: config.titleKey,
         basePath: config.basePath,
     };
+}
+
+function matchesFilter(work: WorkItem, filter: WorkFilterMode) {
+    if (filter === 'featured') return work.pin;
+    if (filter === 'problem') return ['tms-maintenance', 'hanjinkal', 'oms', 'company-renewal'].includes(work.id);
+    if (filter === 'frontend') return ['framework', 'orchem-mes', 'infra', 'samhwa-eco-dashboard'].includes(work.id);
+    if (filter === 'operation') return work.category === 'operation' || ['hanon', 'tms-maintenance'].includes(work.id);
+    if (filter === 'cms') return ['hanjinkal', 'company-renewal', 'company-renewal-2022', 'kyungdongwon-cms'].includes(work.id);
+    return true;
+}
+
+function matchesFilters(work: WorkItem, filters: readonly WorkFilterMode[]) {
+    return filters.length === 0 || filters.some((filter) => matchesFilter(work, filter));
 }
 
 export function useGalleryRouteWorks(variant: GalleryArchiveVariant) {

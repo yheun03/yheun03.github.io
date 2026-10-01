@@ -11,6 +11,154 @@
     box-sizing: border-box;
 }
 
+.gallery-filter {
+    position: relative;
+    width: min(300px, 100%);
+
+    &[open] .gallery-filter__chevron {
+        transform: rotate(180deg);
+    }
+
+    &[open] .gallery-filter__panel {
+        animation: gallery-filter-in 0.28s var(--ease-out-soft) both;
+    }
+
+    &__trigger {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        gap: 10px;
+        align-items: center;
+        min-height: 48px;
+        padding: 10px 14px;
+        color: var(--gallery-body);
+        background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
+        }
+
+        strong {
+            color: var(--color-primary);
+            font-size: var(--font-size-xs);
+        }
+    }
+
+    &__trigger-label {
+        overflow: hidden;
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-bold);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__chevron {
+        transition: transform var(--dur-fast) ease;
+    }
+
+    &__panel {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        z-index: 20;
+        display: grid;
+        gap: 6px;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-soft);
+    }
+
+    &__clear,
+    &__option {
+        display: grid;
+        grid-template-columns: 20px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        min-height: 42px;
+        padding: 8px 10px;
+        color: var(--gallery-body);
+        font: inherit;
+        font-size: var(--font-size-sm);
+        text-align: start;
+        background: transparent;
+        border: 0;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+
+        &:hover {
+            background: color-mix(in srgb, var(--color-primary) 9%, transparent);
+        }
+    }
+
+    &__clear {
+        width: 100%;
+
+        &::before {
+            content: '×';
+            color: var(--color-text-muted);
+            font-weight: 800;
+            text-align: center;
+        }
+
+        &--active {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+        }
+    }
+
+    &__option {
+        position: relative;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        > span {
+            width: 18px;
+            height: 18px;
+            border: 1px solid var(--color-border-strong, var(--color-border));
+            border-radius: 5px;
+        }
+
+        input:focus-visible + span {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        input:checked + span {
+            border-color: var(--color-primary);
+            background: var(--color-primary);
+            box-shadow: inset 0 0 0 4px var(--color-surface);
+        }
+    }
+}
+
+@keyframes gallery-filter-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .gallery-page {
     &__toolbar {
         display: flex;
@@ -62,34 +210,8 @@
         z-index: 1;
     }
 
-    .year-timeline {
-        gap: clamp(96px, 12vw, 176px);
-    }
-
-    .year-timeline__era {
-        grid-template-columns: minmax(120px, 0.18fr) minmax(0, 1fr);
-        gap: clamp(32px, 5vw, 80px);
-    }
-
-    .year-timeline__year {
-        width: auto;
-        min-width: 0;
-        max-width: none;
-    }
-
-    .year-timeline__year-title {
-        color: var(--gallery-muted);
-        font-family: var(--font-mono);
-        font-size: clamp(1rem, 2vw, 1.5rem);
-        font-weight: 750;
-        letter-spacing: 0.02em;
-        line-height: 1;
-    }
-
-    .year-timeline__era--gallery .year-timeline__entries {
+    .year-timeline__entries {
         gap: clamp(88px, 10vw, 152px);
-        padding: 0;
-        border-inline-start: 0;
     }
 }
 
@@ -421,13 +543,7 @@
     }
 
     .gallery-page--editorial {
-        .year-timeline__era {
-            grid-template-columns: minmax(0, 1fr);
-            gap: 34px;
-        }
-
-        .year-timeline__entries,
-        .year-timeline__era--gallery .year-timeline__entries {
+        .year-timeline__entries {
             gap: 80px;
         }
     }

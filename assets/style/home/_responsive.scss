@@ -311,10 +311,6 @@ html:has(.portfolio-page--home) .app-footer {
         .feature-card__tags {
             gap: 6px;
         }
-
-        .feature-card__description {
-            line-height: 1.5;
-        }
     }
 }
 
@@ -380,8 +376,7 @@ html:has(.portfolio-page--home) .app-footer {
         white-space: normal;
     }
 
-    .journey__chapter .journey__steps,
-    .year-timeline__entries {
+    .journey__chapter .journey__steps {
         position: relative;
         display: grid;
         gap: 0;
@@ -389,10 +384,6 @@ html:has(.portfolio-page--home) .app-footer {
         margin: 0;
         border-inline-start: 2px solid var(--timeline-rail-color, color-mix(in srgb, var(--color-primary) 42%, var(--color-border)));
         list-style: none;
-    }
-
-    .year-timeline__entries {
-        --timeline-rail-color: var(--year-timeline-rail, color-mix(in srgb, var(--color-primary) 42%, var(--color-border)));
     }
 
     .journey__chapter .journey__steps .timeline-item,
@@ -562,8 +553,7 @@ html:has(.portfolio-page--home) .app-footer {
         }
     }
 
-    .journey__chapter .journey__steps,
-    .year-timeline__entries {
+    .journey__chapter .journey__steps {
         padding-inline-start: 0;
         border-inline-start: 0;
     }

@@ -389,9 +389,6 @@
 }
 
 .section--journey .year-timeline__entries {
-    gap: 0;
-    padding-inline-start: 0;
-    border-inline-start: 0;
     counter-reset: journey-step;
 }
 

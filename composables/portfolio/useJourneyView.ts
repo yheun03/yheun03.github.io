@@ -107,7 +107,7 @@ function buildYearGroups(companies: readonly JourneyCompanyBlock[]): JourneyYear
 
 export function useJourneyView() {
     const { content } = useLocale();
-    const viewMode = ref<JourneyViewMode>('affiliation');
+    const viewMode = ref<JourneyViewMode>('chronological');
 
     const viewOptions = computed(() => [
         { value: 'affiliation' as const, labelKey: 'journey.viewAffiliation' },

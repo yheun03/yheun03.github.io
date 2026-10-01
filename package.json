@@ -12,7 +12,7 @@
         "not op_mini all"
     ],
     "scripts": {
-        "clean": "rm -rf .nuxt .output .nitro node_modules/.vite node_modules/.cache",
+        "clean": "rm -rf .nuxt .nuxt-build .output .nitro node_modules/.vite node_modules/.cache",
         "dev": "nuxt dev --host 0.0.0.0",
         "generate": "nuxt generate",
         "postgenerate": "node scripts/generate-legacy-redirects.mjs",

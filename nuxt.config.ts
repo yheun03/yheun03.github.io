@@ -18,6 +18,11 @@ const googleTagManagerId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_GOOGLE_
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
+    // 개발 서버 실행 중 generate를 돌려도 개발용 .nuxt를 덮어쓰지 않는다.
+    $production: {
+        buildDir: '.nuxt-build',
+    },
+    ignore: ['.nuxt-build/**'],
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
     experimental: {
         appManifest: false,

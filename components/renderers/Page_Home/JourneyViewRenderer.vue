@@ -63,14 +63,7 @@
     </section>
 
     <!-- @vue-generic {import('~/composables/portfolio/useJourneyView').JourneyYearGroup} -->
-    <BaseYearTimeline
-        v-else
-        variant="home"
-        :ariaLabel="chronologicalAriaLabel"
-        :eras="chronologicalYearGroups"
-        id-prefix="journey-year"
-        entries-tag="ol"
-    >
+    <BaseYearTimeline v-else :ariaLabel="chronologicalAriaLabel" :eras="chronologicalYearGroups" id-prefix="journey-year" entries-tag="ol">
         <template #era="{ era: group }">
             <TimelineItem
                 v-for="entry in group.entries"

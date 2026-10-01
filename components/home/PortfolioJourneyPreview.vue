@@ -32,7 +32,7 @@
 const { t } = useLocale();
 const timeline = computed(() => [
     { year: '2018', label: t('journeyPreview.milestoneStart') },
-    { year: '2019', label: t('journeyPreview.milestoneWork') },
+    { year: '2020', label: t('journeyPreview.milestoneWork') },
     { year: 'NOW', label: t('journeyPreview.milestoneNow') },
 ]);
 </script>

@@ -3,7 +3,7 @@
         <summary class="gallery-filter__trigger">
             <span class="gallery-filter__trigger-label">{{ triggerLabel }}</span>
             <strong>{{ selectionLabel }}</strong>
-            <span class="gallery-filter__chevron" aria-hidden="true">⌄</span>
+            <span class="gallery-filter__chevron" aria-hidden="true" />
         </summary>
 
         <fieldset class="gallery-filter__panel">

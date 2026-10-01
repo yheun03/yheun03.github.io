@@ -1,16 +1,16 @@
 <template>
-    <div class="year-timeline" :class="`year-timeline--${variant}`" role="list" :aria-label="ariaLabel">
+    <div class="year-timeline" role="list" :aria-label="ariaLabel">
         <section
             v-for="(era, index) in eras"
             :key="era.key"
             class="year-timeline__era"
-            :class="eraClasses(era)"
+            :class="{ 'year-timeline__era--flat': !era.year }"
             role="listitem"
             :aria-labelledby="era.year ? yearHeadingId(era) : undefined"
             :aria-label="!era.year ? flatAriaLabel : undefined"
         >
             <div v-if="era.year" class="year-timeline__year" data-reveal="left" :data-reveal-delay="Math.min(index * 60, 240)">
-                <h2 :id="yearHeadingId(era)" class="year-timeline__year-title" :class="`year-timeline__year-title--${variant}`">{{ era.year }}</h2>
+                <h2 :id="yearHeadingId(era)" class="year-timeline__year-title">{{ era.year }}</h2>
             </div>
             <component :is="entriesTag" class="year-timeline__entries">
                 <slot name="era" :era="era" :index="index" />
@@ -29,13 +29,11 @@ const props = withDefaults(
     defineProps<{
         eras: readonly TEra[];
         ariaLabel: string;
-        variant?: 'home' | 'gallery';
         idPrefix?: string;
         flatAriaLabel?: string;
         entriesTag?: 'ol' | 'ul' | 'div';
     }>(),
     {
-        variant: 'home',
         idPrefix: 'year-timeline',
         entriesTag: 'div',
     },
@@ -47,9 +45,5 @@ defineSlots<{
 
 function yearHeadingId(era: EditorialYearEraItem) {
     return `${props.idPrefix}-${era.key}`;
-}
-
-function eraClasses(era: EditorialYearEraItem) {
-    return [{ 'year-timeline__era--flat': !era.year }, `year-timeline__era--${props.variant}`];
 }
 </script>

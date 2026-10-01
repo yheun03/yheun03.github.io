@@ -2,7 +2,6 @@
     <!-- @vue-generic {import('~/composables/gallery/useGallery').WorkYearGroup} -->
     <BaseYearTimeline
         v-if="viewMode === 'editorial'"
-        variant="home"
         :ariaLabel="listAriaLabel"
         :eras="editorialYearGroups"
         id-prefix="gallery-era"

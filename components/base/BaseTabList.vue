@@ -1,20 +1,10 @@
 <template>
     <div ref="tabListRef" role="tablist" class="tab-list tab-list--rail" :class="$attrs.class" :aria-label="listLabel">
-        <button
-            v-for="item in items"
-            :key="item.key"
-            :id="`${tabIdPrefix}${item.key}`"
-            type="button"
-            role="tab"
-            :aria-controls="`${panelIdPrefix}-${item.key}`"
-            :aria-selected="modelValue === item.key"
-            :tabindex="modelValue === item.key ? 0 : -1"
-            class="tab-list__tab"
-            :class="{ 'tab-list__tab--active': modelValue === item.key }"
-            @click="handleTabSelect(item.key)"
-            @focus="handleTabFocus"
-            @keydown="handleTabKeydown($event, item.key)"
-        >
+        <button v-for="item in items" :key="item.key" :id="`${tabIdPrefix}${item.key}`" type="button" role="tab"
+            :aria-controls="`${panelIdPrefix}-${item.key}`" :aria-selected="modelValue === item.key"
+            :tabindex="modelValue === item.key ? 0 : -1" class="tab-list__tab"
+            :class="{ 'tab-list__tab--active': modelValue === item.key }" @click="handleTabSelect(item.key)"
+            @focus="handleTabFocus" @keydown="handleTabKeydown($event, item.key)">
             <slot name="tab" :item="item" :active="modelValue === item.key">
                 {{ item.label }}
             </slot>
@@ -73,10 +63,11 @@ function handleTabFocus(event: FocusEvent) {
     if (!tab || !tabList) return;
 
     const scrollPaddingStart = Number.parseFloat(getComputedStyle(tabList).getPropertyValue('scroll-padding-inline-start')) || 0;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     tabList.scrollTo({
         left: Math.max(0, tab.offsetLeft - scrollPaddingStart),
-        behavior: 'smooth',
+        behavior: reducedMotion ? 'auto' : 'smooth',
     });
 }
 </script>

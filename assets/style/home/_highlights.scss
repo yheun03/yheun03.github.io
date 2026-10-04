@@ -16,6 +16,11 @@
         @include glass-panel(var(--radius-2xl));
         background: color-mix(in srgb, var(--color-surface) 92%, transparent);
         box-shadow: none;
+
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 4px;
+        }
     }
 
     &__panel-aside {

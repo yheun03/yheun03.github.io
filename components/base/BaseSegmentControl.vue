@@ -1,19 +1,13 @@
 <template>
     <div class="segment-control">
-        <span :id="labelId" class="segment-control__label" :class="{ 'visually-hidden': labelHidden }">{{ labelText }}</span>
-        <div class="segment-control__group" role="radiogroup" :aria-labelledby="labelId" :style="{ '--segment-count': options.length }">
-            <button
-                v-for="option in options"
-                :key="option.value"
-                type="button"
-                class="segment-control__button"
-                :class="{ 'segment-control__button--active': modelValue === option.value }"
-                role="radio"
-                :aria-checked="modelValue === option.value"
-                :tabindex="modelValue === option.value ? 0 : -1"
-                @click="emit('update:modelValue', option.value)"
-                @keydown="handleKeydown($event, option.value)"
-            >
+        <span :id="labelId" class="segment-control__label" :class="{ 'visually-hidden': labelHidden }">{{ labelText
+        }}</span>
+        <div class="segment-control__group" role="radiogroup" aria-orientation="horizontal" :aria-labelledby="labelId"
+            :style="{ '--segment-count': options.length }">
+            <button v-for="option in options" :key="option.value" type="button" class="segment-control__button"
+                :class="{ 'segment-control__button--active': modelValue === option.value }" role="radio"
+                :aria-checked="modelValue === option.value" :tabindex="modelValue === option.value ? 0 : -1"
+                @click="emit('update:modelValue', option.value)" @keydown="handleKeydown($event, option.value)">
                 {{ option.label }}
             </button>
         </div>
@@ -39,7 +33,7 @@ const emit = defineEmits<{
 }>();
 
 function handleKeydown(event: KeyboardEvent, current: string) {
-    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
 
     event.preventDefault();
     const list = props.options.map((o) => o.value);
@@ -49,8 +43,8 @@ function handleKeydown(event: KeyboardEvent, current: string) {
     let nextIndex = index;
     if (event.key === 'Home') nextIndex = 0;
     else if (event.key === 'End') nextIndex = list.length - 1;
-    else if (event.key === 'ArrowRight') nextIndex = (index + 1) % list.length;
-    else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + list.length) % list.length;
+    else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % list.length;
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + list.length) % list.length;
 
     const next = list[nextIndex];
     if (!next) return;

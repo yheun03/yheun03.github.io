@@ -16,11 +16,11 @@
         "answers": "Quick Answers"
     },
     "hero": {
-        "title": "A web publisher who creates delightful interaction with solid structure",
-        "subtitle": "I am a web publisher in my seventh year, building web UI with HTML and SCSS. My work spans corporate websites, smart-factory systems, and logistics products, and is now expanding into Vue-based frontend development.",
+        "title": "I turn complex requirements into UI that users understand and teams can maintain",
+        "subtitle": "I am a web publisher in my seventh year, with experience delivering and operating 20+ corporate websites, smart-factory systems, and logistics products using HTML and SCSS. My role now extends into Vue 3 components, state, routing, and API integration.",
         "branding": "Web publishing at the core, expanding into Vue frontend development",
         "kicker": "The essentials.",
-        "essentialsLead": "Structure, publishing, and collaboration in one flow.",
+        "essentialsLead": "I translate requirements into structure and own the work through implementation, QA, and operations.",
         "ctaWorks": "Web publishing case studies",
         "ctaToolbox": "Vue 3 & SCSS UI skills",
         "ctaContact": "Contact",
@@ -29,17 +29,17 @@
         "displayLine1": "Clear to read",
         "displayLine2": "fast to use",
         "displayLine3": "solidly built",
-        "lead": "I build accessible, responsive UI with semantic HTML and SCSS, then turn recurring screen patterns into Vue components and shared frontend conventions.",
+        "lead": "I build accessible, responsive UI with semantic HTML and SCSS, then turn recurring patterns into Vue components and shared conventions. Every screen is structured for the teammates who will review, operate, and extend it next.",
         "actionsAriaLabel": "Primary portfolio sections"
     },
     "about": {
-        "title": "How I design with taste and structure",
-        "intro": "I treat publishing as more than visuals: it connects UX, architecture, and collaboration.",
-        "direction": "I keep growing in Vue 3 component structure and frontend design.",
+        "title": "From design implementation to production-ready UI",
+        "intro": "I structure more than the supplied design: the information users need first, the action that follows, and the areas operators will maintain.",
+        "direction": "I am extending an HTML and SCSS publishing foundation into Vue 3 and Nuxt components, state, routing, and API architecture.",
         "kicker": "A closer look.",
         "workflowTitle": "Turning a solved problem into the next project's baseline",
         "howTitle": "Three recurring production problems I turned into systems",
-        "tagline": "Clear hierarchy guides users. Maintainable markup and components help operations and development teams keep the interface moving.",
+        "tagline": "Hierarchy and interaction should keep users moving; markup and components should help teammates understand the interface quickly. I treat design fidelity and maintainability as one delivery standard.",
         "displayLine1": "Clear reading",
         "displayLine2": "order",
         "displayLine3": "faster use",
@@ -52,9 +52,9 @@
         "cardLabel": "Case Study",
         "all": "All",
         "detail": "View project details",
-        "fullArchiveLink": "View all {total} client projects",
-        "sectionDescription": "A curated set of client work showing accessibility, SEO, responsive UI, JavaScript, and Vue 3 experience. The full list and captures live in the gallery.",
-        "archiveCountLabel": "client projects in the archive",
+        "fullArchiveLink": "View all {total} professional projects",
+        "sectionDescription": "Selected builds, operations work, and product initiatives where ownership, problem-solving, and outcomes are clear—from HTML and SCSS publishing to JavaScript and Vue 3 UI development.",
+        "archiveCountLabel": "professional projects in the archive",
         "archiveSummary": "{pinned} highlights on this page; {total} total in the gallery.",
         "showMore": "Show more projects",
         "collapse": "Collapse projects",
@@ -63,14 +63,14 @@
     "personal": {
         "title": "Frontend personal projects",
         "cardLabel": "Personal",
-        "backToWorks": "Go to Client works (#works)",
+        "backToWorks": "Go to professional work (#works)",
         "ctaTab": "Open personal projects gallery",
         "fullArchiveLink": "View personal work",
         "designTokensLink": "View 2026 portfolio design tokens"
     },
     "gallery": {
         "careerEyebrow": "Works archive",
-        "careerTitle": "Client Works",
+        "careerTitle": "Professional Work",
         "indexLabel": "INDEX",
         "detailLabel": "PROJECT AT A GLANCE",
         "viewEntry": "Open project detail page",
@@ -92,10 +92,10 @@
         "overview": "In plain English",
         "role": "Role",
         "breadcrumbLabel": "Breadcrumb",
-        "backToCareerList": "Back to client works",
+        "backToCareerList": "Back to professional work",
         "backToPersonalList": "Back to personal projects",
         "detailEndLine": "That's the last line—thanks for reading all the way through.",
-        "detailEndBackCareer": "Read it all? Back to client works",
+        "detailEndBackCareer": "Read it all? Back to professional work",
         "detailEndBackPersonal": "Read it all? Back to personal projects",
         "sortStart": "Start date",
         "sortTitle": "A-Z",
@@ -175,8 +175,8 @@
     },
     "answers": {
         "eyebrow": "Asked and answered",
-        "title": "Three things search engines and interviewers ask",
-        "description": "Role, strengths, and contact details—answered before a long portfolio turns into a scavenger hunt. Less scrolling, more signal."
+        "title": "Three things recruiters and practitioners check first",
+        "description": "Current role, proven strengths, and contact details come first. Each case study then supports them with ownership, decisions, and outcomes."
     },
     "highlights": {
         "title": "Achievements and expertise at a glance",
@@ -206,7 +206,7 @@
         "tagline": "Eunyounghwan's 2026 portfolio: web publishing at the core, expanding into Vue frontend development",
         "navLabel": "Footer links",
         "homeLink": "Portfolio home",
-        "careerLink": "Client projects gallery",
+        "careerLink": "Professional projects gallery",
         "personalLink": "Personal projects gallery",
         "copyright": "© 2026 Eunyounghwan Portfolio"
     },
@@ -368,7 +368,20 @@
             "jobTitle": "Web Publisher Growing into Vue Frontend Development",
             "description": "Eunyounghwan is a web publisher in his seventh year, building on HTML and SCSS publishing with Vue 3 components and frontend architecture.",
             "websiteName": "Eunyounghwan Web Publisher Portfolio 2026",
-            "questions": []
+            "questions": [
+                {
+                    "name": "What role can Eunyounghwan take on?",
+                    "acceptedAnswer": "His core is HTML and SCSS web publishing across responsive UI, CMS customization, and operations. He is extending that scope into Vue 3 components, state, routing, and API integration."
+                },
+                {
+                    "name": "What strengths are proven in production?",
+                    "acceptedAnswer": "Across 20+ build and operations projects, he has turned recurring UI into shared components and standards. On a TMS operations project, his improvements reduced average daily complaints from 15+ to around 2."
+                },
+                {
+                    "name": "How does he collaborate, and how can I contact him?",
+                    "acceptedAnswer": "He translates requirements across designers, developers, and clients, documenting shared decisions through Figma, Git, and practical guides. Hiring and collaboration inquiries can be sent through the portfolio email link."
+                }
+            ]
         },
         "componentCatalogSamples": {
             "tech": ["Vue 3", "Nuxt 3", "TypeScript", "SCSS"],
@@ -513,9 +526,9 @@
             "name": "은영환",
             "role": "Web Publisher / Growing into Vue Frontend Development",
             "keywords": [
-                "웹 퍼블리셔",
+                "Web Publisher",
                 "Vue-based frontend development",
-                "UI 개발자",
+                "UI Developer",
                 "HTML5",
                 "SCSS",
                 "JavaScript",
@@ -551,7 +564,7 @@
             "stats": [
                 {
                     "label": "Experience",
-                    "value": 7,
+                    "value": 6,
                     "suffix": "Y+",
                     "description": "Professional web publishing experience counted from joining full-time in July 2020."
                 },
@@ -581,7 +594,7 @@
             }
         },
         "about": {
-            "intro": "Hi, I am Eunyounghwan. I see publishing not just as visual implementation, but as translating requirements into structure while designing user experience and collaboration flow.",
+            "intro": "Hi, I am Eunyounghwan. I turn complex requirements into interfaces users can understand and code that teammates can continue to develop and operate.",
             "paragraphs": [
                 "My work covers requirements, markup architecture, CMS customization, responsive implementation, and maintenance across the full UI lifecycle.",
                 "My core is HTML, SCSS, and JavaScript web publishing. I maintain UI quality across ICE CMS, WebSquare, and Nexacro, while Vue 3 projects have expanded my role into components, state, routing, and API integration.",
@@ -606,13 +619,13 @@
                 },
                 {
                     "title": "Maintainable Structure",
-                    "description": "As projects grow, structure matters more. I reduce duplication and increase reuse.",
+                    "description": "As projects grow, shared rules outlast individual screens. I turn repeated UI into understandable, reusable building blocks.",
                     "evidence": "See the Nuxt 3 framework case",
                     "href": "/projects/framework"
                 },
                 {
                     "title": "Clear Communication",
-                    "description": "I bridge designers, developers, and clients with explainable outputs.",
+                    "description": "I bridge the different language of designers, developers, and clients, then document decisions so the same context survives handoff.",
                     "evidence": "See the Hanjin Kal documentation case",
                     "href": "/projects/hanjinkal"
                 }
@@ -631,7 +644,7 @@
                     "description": "When official documentation was insufficient, I wrote development and setup guides and carried the context through training and handoff."
                 }
             ],
-            "direction": "Built on publishing foundations, my goal is to lead UI development by deepening component architecture and frontend structural understanding."
+            "direction": "I am combining production-grade publishing and operations experience with Vue component architecture to own UI from implementation through maintenance."
         },
         "skills": [
             {
@@ -639,42 +652,42 @@
                 "icon": "</>",
                 "title": "Markup",
                 "items": ["HTML5", "Semantic Markup", "Web Standards", "Web Accessibility", "Cross-browser"],
-                "description": "Skilled in semantic and accessible markup for production services."
+                "description": "I structure HTML so reading order and meaning remain clear in code, while preserving the same user flow across browsers."
             },
             {
                 "key": "style",
                 "icon": "◈",
                 "title": "Style",
                 "items": ["CSS3", "SCSS", "Responsive Web", "Component Styling", "Maintainable Structure"],
-                "description": "Improves maintainability and reuse through SCSS componentization."
+                "description": "I turn repeated styles into clear SCSS rules so one change does not create surprises elsewhere in the interface."
             },
             {
                 "key": "framework",
                 "icon": "⚡",
                 "title": "Vue UI Development",
                 "items": ["Vue 3", "Nuxt 3", "JavaScript", "Vue Router", "Axios"],
-                "description": "Expands a publishing foundation into Vue components, state, routing, and API flows for production UI."
+                "description": "I extend my publishing foundation into Vue components, state, routing, and API flows for production UI."
             },
             {
                 "key": "cms",
                 "icon": "▦",
                 "title": "CMS / Solution",
                 "items": ["ICE CMS", "WebSquare", "Nexacro", "eGovFrame", "Customization"],
-                "description": "Flexible in adapting to enterprise CMS and solution ecosystems."
+                "description": "I first learn each CMS or business solution's constraints, then build UI that remains stable inside that environment."
             },
             {
                 "key": "search",
                 "icon": "◎",
                 "title": "Accessibility / SEO",
                 "items": ["Web Accessibility", "SEO", "Semantic HTML", "Metadata", "JSON-LD", "Sitemap"],
-                "description": "Applies semantic HTML, metadata, JSON-LD, and sitemaps, with keyboard and structured-data checks as part of UI quality."
+                "description": "I apply semantic HTML, metadata, JSON-LD, and sitemaps, treating keyboard and structured-data checks as part of UI quality."
             },
             {
                 "key": "collaboration",
                 "icon": "✦",
                 "title": "Design / Collaboration",
                 "items": ["Figma", "Git", "Documentation", "Training Support", "React experience", "jQuery"],
-                "description": "Collaborates through Figma, Git, and documentation; React and jQuery are presented as project-specific implementation experience."
+                "description": "I collaborate through Figma, Git, and documentation; my React and jQuery work is project-specific implementation experience."
             }
         ],
         "journey": [
@@ -682,7 +695,7 @@
                 "temp": false,
                 "summary": {
                     "company": "Company",
-                    "team": "JO&SOFT / DX Solution Team 2 / Assistant Manager (Daeri) / Web Publishing · Vue UI",
+                    "team": "JO&SOFT / DX Solution Team 2 / Assistant Manager (Daeri) / Web Publishing and Vue UI",
                     "period": "Jul 2020-Present",
                     "intro": "Web publishing remains my core across builds, operations, and renewals, while Vue components and frontend architecture have expanded my responsibility.",
                     "clients": [
@@ -1017,13 +1030,13 @@
                         "Owned all screen publishing for the Teraeco MES adoption and smart-factory build",
                         "Reflected per-client requirements while expanding to Sungel, Dawoo, Sinae, and more",
                         "Provided tailored UI design (20%) matching each brand identity and colors",
-                        "Organized repeated screens with a productization lens for later reuse"
+                        "Organized repeated screens for reuse as the foundation of a shared solution"
                     ],
                     "achievements": [
                         "Expanded across multiple clients with tailored design and high satisfaction",
                         "The accumulated MES screen know-how seeded the in-house Robo MES solution"
                     ],
-                    "points": ["Handled multiple enterprise clients", "Brand-tailored design", "Productization-grounded experience"],
+                    "points": ["Handled multiple enterprise clients", "Brand-tailored design", "Foundation for a reusable solution"],
                     "pin": false,
                     "duration": "~15 months",
                     "captures": [
@@ -1045,7 +1058,9 @@
                     "tech": ["Visual Studio Code", "Sketch", "HTML", "CSS", "jQuery"],
                     "introduction": "An early-career build where I owned publishing for the Kwangjang Partners corporate site. Working from Sketch designs, I covered responsive layout and cross-browser support, building the fundamentals of corporate-site delivery.",
                     "myWorks": ["Owned publishing for all corporate-site screens", "Handled responsive and cross-browser work from Sketch designs"],
-                    "achievements": [],
+                    "achievements": [
+                        "Translated Sketch designs into a responsive, cross-browser corporate site and completed an early production delivery"
+                    ],
                     "points": ["Early-stage production build experience", "Corporate-site publishing fundamentals"],
                     "pin": false,
                     "duration": "~2 months",
@@ -1066,7 +1081,9 @@
                         "Implemented JavaScript-based interactions",
                         "Built it as a web app to realize an app-style usage flow"
                     ],
-                    "achievements": [],
+                    "achievements": [
+                        "Completed all screen publishing in the first month on the job, including JavaScript interactions and a web-app usage flow"
+                    ],
                     "points": ["App-like web implementation", "Service application publishing"],
                     "pin": false,
                     "duration": "~2 months",
@@ -1117,7 +1134,7 @@
                         "Cut average daily complaints from 15+ to around 2",
                         "Resolution-case documents were reused to handle recurrences faster"
                     ],
-                    "points": ["Operations-improving publishing", "Self-initiated customer support", "Recurrence-prevention documentation"],
+                    "points": ["Operations-led UI improvement", "Self-initiated customer support", "Recurrence-prevention documentation"],
                     "pin": false,
                     "duration": "~3 months",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1155,10 +1172,10 @@
                         "Shaped composables, layouts, and shared plugins for production use and built example pages"
                     ],
                     "achievements": [
-                        "Frameworkized the base UI, layout, API integration, and SCSS rebuilt on every project",
+                        "Standardized the base UI, layout, API integration, and SCSS previously rebuilt on every project",
                         "Built a collaboration standard—components, API structure, and examples—that speeds up new-project kickoff"
                     ],
-                    "points": ["Nuxt 3 frameworkization", "Production-state components", "Design-token SCSS"],
+                    "points": ["Nuxt 3 frontend framework", "Production-state components", "Design-token SCSS"],
                     "pin": true,
                     "duration": "Ongoing",
                     "captures": [
@@ -1196,7 +1213,7 @@
                     ],
                     "achievements": [
                         "Created a foundation for quickly applying base layouts, components, and the style guide on new projects",
-                        "Unified scattered UI structures into a base that lifts publishing–frontend collaboration productivity"
+                        "Unified scattered UI structures into a shared baseline for more efficient publishing–frontend collaboration"
                     ],
                     "points": ["Publishing standardization", "Reuse and collaboration", "Examples and guide docs"],
                     "pin": true,
@@ -1212,7 +1229,7 @@
                     "type": "In-house Solution",
                     "role": "Contributed to planning; owned all screen publishing and UI design",
                     "tech": ["Vue", "SCSS", "Figma"],
-                    "introduction": "Built on hands-on experience resolving customer requests during TMS operation, this project produced the in-house Robo TMS solution. I cared most about the customer-facing app—owning it from UI/UX design through publishing—and lifted satisfaction with a redesigned UI and a more comfortable UX.",
+                    "introduction": "This project turned customer needs and recurring inquiries observed in TMS operations into the in-house Robo TMS product. I owned the customer application from UI/UX design through Vue and SCSS publishing, connecting operational pain points to clearer screen flows and status feedback.",
                     "myWorks": [
                         "Contributed to planning from customer needs gathered during operation",
                         "Designed the customer application UI/UX directly",
@@ -1223,7 +1240,7 @@
                         "Fed recurring inquiries observed in TMS operations back into screen flow and status improvements",
                         "Turned operational experience into a finished in-house product"
                     ],
-                    "points": ["Planning, design, and publishing in one", "Operation experience to productization", "UX improvement case"],
+                    "points": ["Planning, design, and publishing in one", "Operations insight turned into a product", "UX improvement case"],
                     "pin": false,
                     "duration": "~3 months",
                     "captures": [
@@ -1251,7 +1268,7 @@
                         "Turned repeated screens into reusable modules for later projects",
                         "Converted field-project know-how into reusable solution assets"
                     ],
-                    "points": ["Solution productization", "Modularization-driven productivity"],
+                    "points": ["Reusable solution delivery", "Modular components for faster delivery"],
                     "pin": false,
                     "duration": "~9 months",
                     "captures": ["/assets/images/projects/robo-mes/image-01.webp", "/assets/images/projects/robo-mes/image-02.webp"],
@@ -1384,7 +1401,9 @@
                         "Built admin components aligned to a React structure",
                         "Split and structured screens per version requirements"
                     ],
-                    "achievements": [],
+                    "achievements": [
+                        "Delivered separate customer-facing HTML screens and React components for administrators, meeting two distinct operating needs"
+                    ],
                     "points": ["Multi-version structure handling", "React component adaptation"],
                     "pin": false,
                     "duration": "~6 months",
@@ -1426,14 +1445,14 @@
                     "type": "SM / Renewal",
                     "role": "Sole publishing owner for all screens",
                     "tech": ["Visual Studio Code", "Adobe XD", "HTML", "CSS", "jQuery"],
-                    "introduction": "A renewal where I owned publishing for the engineering college site. When the school’s brochure and the official site’s faculty data didn’t match, I didn’t let it slide—I took ownership and raised it with the school so the information was corrected and completed.",
+                    "introduction": "I owned publishing for the Incheon National University College of Engineering renewal. When faculty data differed between the school brochure and official website, I requested verification and followed the correction through so the published information was accurate.",
                     "myWorks": [
                         "Owned publishing for the engineering college site",
                         "Spotted brochure-vs-site data mismatches and proposed corrections to the school",
                         "Reflected accurate data through corrections and additions"
                     ],
                     "achievements": ["Improved site data accuracy through a proactive flag"],
-                    "points": ["Proactive problem discovery and fix", "Ownership-driven improvement"],
+                    "points": ["Proactive problem discovery and fix", "Content accuracy verification"],
                     "pin": false,
                     "duration": "~2 months",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1449,7 +1468,9 @@
                     "tech": ["eGovFrame", "Sketch", "HTML", "CSS", "jQuery"],
                     "introduction": "A renewal of Tailim Packaging’s internal order system (TOS) where I handled publishing. Working with business-system screens on the eGovFrame stack, it was the first of a long collaboration with Tailim that later included TOMS and TMS.",
                     "myWorks": ["Published the internal order-system renewal screens", "Structured markup for the eGovFrame environment"],
-                    "achievements": [],
+                    "achievements": [
+                        "Delivered order-system screens on eGovFrame, establishing the working relationship that continued through TOMS and TMS"
+                    ],
                     "points": ["Business-system publishing", "Start of a long client relationship"],
                     "pin": false,
                     "duration": "~2 months",
@@ -1468,11 +1489,11 @@
                     "type": "New Build",
                     "role": "Sole publishing owner; contributed to design and UX planning",
                     "tech": ["HTML", "CSS", "jQuery", "Figma"],
-                    "introduction": "A renewal/build of Tailim Packaging’s internal paper-and-box ordering service, where I combined design collaboration, UX planning, and publishing for the required application. Communicating with the designer in Figma, I learned the tooling, reflected client requirements precisely, and designed directly—an outcome that won the Smart App Awards 2022 Grand Prize in the work-improvement category.",
+                    "introduction": "I combined design collaboration, UX planning, and full-screen publishing for Tailim Packaging's internal paper-and-box ordering service. Using Figma, I translated client requirements and workflows into the interface; the result won the Smart App Awards 2022 Grand Prize in the work-improvement category.",
                     "myWorks": [
                         "Collaborated with the designer in Figma and reflected client requirements precisely",
                         "Owned end-to-end application screen publishing with HTML, CSS, and jQuery",
-                        "Planned UX around work flows and improved screen usability"
+                        "Planned UX around workflows and improved screen usability"
                     ],
                     "achievements": ["Won the Smart App Awards 2022 Grand Prize (work-improvement category)"],
                     "points": ["Award-linked achievement", "Design, UX, and publishing in one build"],

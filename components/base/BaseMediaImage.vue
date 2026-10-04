@@ -13,8 +13,6 @@ withDefaults(
         priority?: boolean;
     }>(),
     {
-        width: 1200,
-        height: 675,
         priority: false,
     },
 );

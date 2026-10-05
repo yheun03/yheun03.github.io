@@ -3,8 +3,14 @@
         <header v-if="$slots.head" class="section-head" :class="headClass">
             <slot name="head" />
         </header>
-        <BaseSectionTitle v-else-if="eyebrow && title" :title-id="titleId" :eyebrow="eyebrow" :title="title"
-            :description="description" :animate="animateTitle" />
+        <BaseSectionTitle
+            v-else-if="eyebrow && title"
+            :title-id="titleId"
+            :eyebrow="eyebrow"
+            :title="title"
+            :description="description"
+            :animate="animateTitle"
+        />
         <slot />
     </section>
 </template>

@@ -8,9 +8,9 @@
 withDefaults(
     defineProps<{
         value?: string | number;
-        variant?: "default" | "tag";
-        tag?: "span" | "p";
+        variant?: 'default' | 'tag';
+        tag?: 'span' | 'p';
     }>(),
-    { tag: "span", variant: "default" },
+    { tag: 'span', variant: 'default' },
 );
 </script>

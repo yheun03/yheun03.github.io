@@ -1,9 +1,9 @@
 <template>
     <a class="skip-link" href="#main-content" @click="focusMainContent">{{ t('a11y.skipToContent') }}</a>
-    <AppDock v-if="showAppDock" :links="dockLinks" :active-id="activeId" :active-path="activePath" />
+    <AppDock v-if="showAppDock" :links="links" :active-id="activeId" :active-path="activePath" />
     <div class="app-background" aria-hidden="true" />
     <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
-    <main id="main-content" class="portfolio-page"
+    <main id="main-content" ref="pageRoot" class="portfolio-page"
         :class="[{ 'portfolio-page--app-dock': showAppDock }, pageVariant && `portfolio-page--${pageVariant}`]"
         tabindex="-1">
         <slot />
@@ -13,6 +13,9 @@
 
 <script setup lang="ts">
 const { t } = useLocale();
+const pageRoot = ref<HTMLElement | null>(null);
+
+usePageMotion(pageRoot);
 
 const props = withDefaults(
     defineProps<{
@@ -31,12 +34,11 @@ const props = withDefaults(
         pageVariant?: string;
     }>(),
     {
-        brandHref: "#hello",
+        brandHref: '#hello',
         showAppDock: true,
-    }
+    },
 );
 
-const dockLinks = computed(() => props.links);
 const headerNavLinks = computed(() => props.headerLinks ?? props.links);
 
 function focusMainContent(event: MouseEvent) {

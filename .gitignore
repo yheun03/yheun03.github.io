@@ -3,6 +3,7 @@ node_modules
 .env.*
 !.env.example
 .nuxt
+.nuxt-build
 .output
 dist
 .DS_Store

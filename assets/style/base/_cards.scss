@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* Card */
 .base-card {
@@ -16,14 +16,16 @@
     --card-list-gap: #{$space-3};
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
         z-index: -1;
-        background: linear-gradient(145deg,
-                color-mix(in srgb, $primary-600 8%, transparent) 0%,
-                transparent 42%,
-                color-mix(in srgb, $accent-mint 5%, transparent) 100%);
+        background: linear-gradient(
+            145deg,
+            color-mix(in srgb, $primary-600 8%, transparent) 0%,
+            transparent 42%,
+            color-mix(in srgb, $accent-mint 5%, transparent) 100%
+        );
         opacity: 0.55;
         pointer-events: none;
     }
@@ -32,20 +34,15 @@
         margin-bottom: 0;
     }
 
-    > :where(.base-label, .base-label--technical)+ :where(h2, h3, p, ul, ol) {
+    > :where(.base-label, .base-label--technical) + :where(h2, h3, p, ul, ol) {
         margin-top: var(--card-flow-label);
     }
 
-    > :where(h2, h3)+ :where(p, ul, ol) {
+    > :where(h2, h3) + :where(p, ul, ol) {
         margin-top: var(--card-flow-title);
     }
 
-    > :where(p, ul, ol)+ :where(p, ul, ol),
-    >.contact__profile+ :where(p, ul, ol, div) {
-        margin-top: var(--card-flow-content);
-    }
-
-    >.contact__profile {
+    > :where(p, ul, ol) + :where(p, ul, ol) {
         margin-top: var(--card-flow-content);
     }
 
@@ -72,15 +69,8 @@
     transform-origin: center center;
     @include pointer-glow;
 
-    &.card--tilted {
-        transition:
-            transform 0.1s ease,
-            border-color 0.32s ease,
-            box-shadow 0.32s ease;
-    }
-
     @media (hover: hover) {
-        &:hover:not(.card--tilted) {
+        &:hover {
             border-color: color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
             box-shadow:
                 0 1px 0 color-mix(in srgb, var(--color-surface) 92%, var(--color-primary)),
@@ -96,14 +86,6 @@
 }
 
 .surface-card {
-    &--metrics {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(24px, 4vw, 56px);
-        align-items: flex-end;
-        padding: clamp(20px, 2.5vw, 32px) clamp(24px, 3vw, 40px);
-    }
-
     &--flow {
         display: grid;
         gap: clamp(20px, 3vw, 32px);
@@ -149,7 +131,6 @@
 
     &__description {
         margin: 0;
-        max-width: 34ch;
         color: var(--color-text-muted);
         @include font(body-2);
     }
@@ -168,15 +149,10 @@
     }
 }
 
-.spotlight {
-    display: grid;
-    gap: clamp(28px, 4vw, 48px);
-
-    &__kicker {
-        margin: 0;
-        max-width: 14ch;
-        @include font(display-4);
-    }
+.spotlight__kicker {
+    margin: 0;
+    max-width: 14ch;
+    @include font(display-4);
 }
 
 .feature-grid {
@@ -187,10 +163,6 @@
     margin: 0;
     overflow: visible;
     list-style: none;
-
-    &--highlights {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
 
     &--toolbox {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -222,7 +194,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .surface-card,
     .feature-card {
         transition: none;

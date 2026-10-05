@@ -62,13 +62,12 @@ function handleTabFocus(event: FocusEvent) {
     const tabList = tabListRef.value;
     if (!tab || !tabList) return;
 
-    const scrollPaddingStart = Number.parseFloat(
-        getComputedStyle(tabList).getPropertyValue('scroll-padding-inline-start'),
-    ) || 0;
+    const scrollPaddingStart = Number.parseFloat(getComputedStyle(tabList).getPropertyValue('scroll-padding-inline-start')) || 0;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     tabList.scrollTo({
         left: Math.max(0, tab.offsetLeft - scrollPaddingStart),
-        behavior: 'smooth',
+        behavior: reducedMotion ? 'auto' : 'smooth',
     });
 }
 </script>

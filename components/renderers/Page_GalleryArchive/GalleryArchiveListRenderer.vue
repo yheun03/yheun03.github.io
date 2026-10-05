@@ -1,25 +1,45 @@
 <template>
     <!-- @vue-generic {import('~/composables/gallery/useGallery').WorkYearGroup} -->
-    <BaseYearTimeline v-if="viewMode === 'editorial'" variant="gallery" :ariaLabel="listAriaLabel"
-        :eras="editorialYearGroups" id-prefix="gallery-era" :flat-aria-label="flatAriaLabel">
+    <BaseYearTimeline
+        v-if="viewMode === 'editorial'"
+        :ariaLabel="listAriaLabel"
+        :eras="editorialYearGroups"
+        id-prefix="gallery-era"
+        :flat-aria-label="flatAriaLabel"
+    >
         <template #era="{ era: group, index: groupIndex }">
-            <ProjectGalleryCard v-for="(work, index) in group.works" :key="work.id" :work="work"
-                :to="`${basePath}/${work.id}`" view-mode="editorial" :priority="groupIndex === 0 && index === 0"
-                :entry-label="entryLabel" heading-tag="h3" />
+            <ProjectGalleryCard
+                v-for="(work, index) in group.works"
+                :key="work.id"
+                :work="work"
+                :to="`${basePath}/${work.id}`"
+                view-mode="editorial"
+                :priority="groupIndex === 0 && index === 0"
+                :entry-label="entryLabel"
+                heading-tag="h3"
+                :reveal-delay="Math.min(index * 90, 270)"
+            />
         </template>
     </BaseYearTimeline>
     <section v-else class="gallery-page__grid" :aria-label="listAriaLabel">
-        <template v-for="entry in galleryEntries" :key="entry.key">
+        <template v-for="(entry, entryIndex) in galleryEntries" :key="entry.key">
             <h2 v-if="entry.type === 'year'" class="gallery-page__year">{{ entry.year }}</h2>
-            <ProjectGalleryCard v-else :work="entry.work" :to="`${basePath}/${entry.work.id}`" view-mode="grid"
-                :priority="entry.firstWork" :entry-label="entryLabel" :heading-tag="gridCardHeadingTag" />
+            <ProjectGalleryCard
+                v-else
+                :work="entry.work"
+                :to="`${basePath}/${entry.work.id}`"
+                view-mode="grid"
+                :priority="entry.firstWork"
+                :entry-label="entryLabel"
+                :heading-tag="gridCardHeadingTag"
+                :reveal-delay="Math.min((entryIndex % 4) * 90, 270)"
+            />
         </template>
     </section>
 </template>
 
 <script setup lang="ts">
 import type { GalleryViewMode, WorkYearEntry, WorkYearGroup } from '~/composables/gallery/useGallery';
-import ProjectGalleryCard from '~/components/work/ProjectGalleryCard.vue';
 
 const props = defineProps<{
     viewMode: GalleryViewMode;

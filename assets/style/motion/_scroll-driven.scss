@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* =========================================
    Scroll-driven motion (CSS only)
@@ -10,7 +10,6 @@
 
 @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: view()) {
-
         /* 섹션 번호(::before) — 섹션이 뷰포트를 통과할 때 미세 패럴랙스 드리프트 */
         .section:not(.section--hero) .section-title::before {
             animation: sd-index-drift linear both;

@@ -7,9 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import PortfolioJourney from '~/components/home/PortfolioJourney.vue';
-import PortfolioHighlights from '~/components/home/PortfolioHighlights.vue';
-
 const { t, locale } = useLocale();
 const layoutLinks = useSubpageLinks();
 

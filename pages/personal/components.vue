@@ -1,13 +1,11 @@
 <template>
     <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
-        :footer-text="t('footer.copyright')" :show-app-dock="true">
+        :footer-text="t('footer.copyright')">
         <article class="catalog-page section" aria-labelledby="catalog-page-title">
-            <header class="catalog-hero">
+            <header class="catalog-hero" data-reveal="hero">
                 <BaseLabel tone="technical">{{ t('catalog.pageLabel') }}</BaseLabel>
                 <h1 id="catalog-page-title">{{ t('catalog.title') }}</h1>
-                <p>
-                    {{ t('catalog.introBefore') }} <code>assets/style/base/</code> {{ t('catalog.introAfter') }}
-                </p>
+                <p>{{ t('catalog.introBefore') }} <code>assets/style/base/</code> {{ t('catalog.introAfter') }}</p>
                 <nav class="catalog-hero__actions" :aria-label="t('catalog.navigation')">
                     <BaseButton :label="t('catalog.viewTokens')" href="/personal/design-tokens" variant="ghost" />
                     <BaseButton :label="t('catalog.viewPersonal')" href="/personal" variant="ghost" />
@@ -15,7 +13,7 @@
                 </nav>
             </header>
 
-            <section class="catalog-section" aria-labelledby="button-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="button-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseButton</BaseLabel>
                     <h2 id="button-section-title">{{ t('catalog.buttonTitle') }}</h2>
@@ -29,7 +27,7 @@
                 </div>
             </section>
 
-            <section class="catalog-section" aria-labelledby="label-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="label-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseLabel</BaseLabel>
                     <h2 id="label-section-title">{{ t('catalog.labelTitle') }}</h2>
@@ -45,7 +43,7 @@
                 </div>
             </section>
 
-            <section class="catalog-section" aria-labelledby="badge-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="badge-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseBadge / BaseAccentBadge</BaseLabel>
                     <h2 id="badge-section-title">{{ t('catalog.badgeTitle') }}</h2>
@@ -60,7 +58,7 @@
                 </div>
             </section>
 
-            <section class="catalog-section" aria-labelledby="index-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="index-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseIndexLabel</BaseLabel>
                     <h2 id="index-section-title">{{ t('catalog.indexTitle') }}</h2>
@@ -75,7 +73,7 @@
                 </div>
             </section>
 
-            <section class="catalog-section" aria-labelledby="chip-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="chip-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseChipList</BaseLabel>
                     <h2 id="chip-section-title">{{ t('catalog.chipTitle') }}</h2>
@@ -84,7 +82,7 @@
                 <BaseChipList :items="sampleTech" :aria-label="t('catalog.sampleTech')" />
             </section>
 
-            <section class="catalog-section" aria-labelledby="stat-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="stat-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseStatList</BaseLabel>
                     <h2 id="stat-section-title">{{ t('catalog.statTitle') }}</h2>
@@ -93,7 +91,7 @@
                 <BaseStatList :stats="sampleStats" :aria-label="t('catalog.sampleStats')" />
             </section>
 
-            <section class="catalog-section" aria-labelledby="section-title-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="section-title-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseSectionTitle</BaseLabel>
                     <h2 id="section-title-section-title">{{ t('catalog.sectionTitle') }}</h2>
@@ -104,7 +102,7 @@
                     :animate="false" />
             </section>
 
-            <section class="catalog-section" aria-labelledby="card-section-title">
+            <section class="catalog-section" data-reveal="up" aria-labelledby="card-section-title">
                 <header class="catalog-section__head">
                     <BaseLabel tone="technical">BaseCard / StoryCaseCard</BaseLabel>
                     <h2 id="card-section-title">{{ t('catalog.cardTitle') }}</h2>

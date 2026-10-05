@@ -1,7 +1,5 @@
-import ko from '@i18n/ko.json';
-import en from '@i18n/en.json';
-
 type SeoLocale = 'ko' | 'en';
+type SeoQuestion = { name: string; acceptedAnswer: string };
 
 type PortfolioSeoOptions = {
     title: string;
@@ -25,9 +23,7 @@ type PortfolioSeoOptions = {
 };
 
 const SITE_URL = 'https://yheun03.github.io/';
-const DEFAULT_IMAGE = '/images/projects/portfolio-2026/home-light-desktop.png';
-const contentByLocale = { ko: ko.content, en: en.content };
-
+const DEFAULT_IMAGE = '/assets/images/common/og/og-image-2026.jpg';
 export function getPortfolioAbsoluteUrl(path = '/') {
     return new URL(path.startsWith('/') ? path.slice(1) : path, SITE_URL).toString();
 }
@@ -41,10 +37,12 @@ function getImageMimeType(path: string) {
 
 export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) {
     const { public: config } = useRuntimeConfig();
+    const { content } = useLocale();
 
     useHead(() => {
         const page = toValue(options);
-        const { profile, seo } = contentByLocale[page.locale];
+        const { profile, seo } = content.value;
+        const questions: SeoQuestion[] = seo.questions;
         const pagePath = page.path ?? '/';
         const canonicalPath = pagePath === '/' || pagePath.endsWith('/') ? pagePath : `${pagePath}/`;
         const canonical = getPortfolioAbsoluteUrl(canonicalPath);
@@ -52,26 +50,28 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const image = getPortfolioAbsoluteUrl(imagePath);
         const title = page.ogTitle ?? page.title;
         const description = page.ogDescription ?? page.description;
-        const robots = page.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+        const robots = page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
         const naverVerification = String(config.naverSiteVerification ?? '').trim();
         const personId = `${SITE_URL}#person`;
-        const organizationId = `${SITE_URL}#organization`;
         const websiteId = `${SITE_URL}#website`;
         const webpageId = `${canonical}#webpage`;
         const imageId = `${canonical}#primaryimage`;
+        const schemaType = page.schemaType ?? (pagePath === '/' ? 'ProfilePage' : 'WebPage');
         const person = {
             '@type': 'Person',
             '@id': personId,
             name: profile.name,
+            alternateName: 'Eunyounghwan',
             url: SITE_URL,
             jobTitle: seo.jobTitle,
             description: seo.description,
-            email: `mailto:${profile.contacts.email}`,
+            email: profile.contacts.email,
             sameAs: [profile.contacts.github],
             knowsAbout: profile.keywords,
+            knowsLanguage: ['ko', 'en'],
         };
         const webpage: Record<string, unknown> = {
-            '@type': page.schemaType ?? (pagePath === '/' ? 'ProfilePage' : 'WebPage'),
+            '@type': schemaType,
             '@id': webpageId,
             url: canonical,
             name: page.title,
@@ -79,11 +79,11 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             inLanguage: page.locale,
             isPartOf: { '@id': websiteId },
             about: { '@id': personId },
-            publisher: { '@id': organizationId },
+            publisher: { '@id': personId },
             primaryImageOfPage: { '@id': imageId },
         };
 
-        if ((page.schemaType ?? (pagePath === '/' ? 'ProfilePage' : 'WebPage')) === 'ProfilePage') {
+        if (schemaType === 'ProfilePage' || schemaType === 'AboutPage') {
             webpage.mainEntity = { '@id': personId };
         } else if (page.mainEntity) {
             webpage.mainEntity = page.mainEntity;
@@ -102,15 +102,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 name: seo.websiteName,
                 description: seo.description,
                 inLanguage: ['ko', 'en'],
-                publisher: { '@id': organizationId },
-            },
-            {
-                '@type': 'Organization',
-                '@id': organizationId,
-                name: seo.websiteName,
-                url: SITE_URL,
-                founder: { '@id': personId },
-                sameAs: [profile.contacts.github],
+                publisher: { '@id': personId },
             },
             person,
             {
@@ -118,8 +110,10 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 '@id': imageId,
                 url: image,
                 contentUrl: image,
+                encodingFormat: getImageMimeType(imagePath),
                 caption: page.imageAlt ?? title,
                 inLanguage: page.locale,
+                ...(imagePath === DEFAULT_IMAGE ? { width: 1402, height: 1122 } : {}),
             },
             webpage,
         ];
@@ -138,6 +132,27 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             webpage.breadcrumb = { '@id': `${canonical}#breadcrumb` };
         }
 
+        if (pagePath === '/' && questions.length) {
+            const faqId = `${canonical}#faq`;
+            graph.push({
+                '@type': 'FAQPage',
+                '@id': faqId,
+                url: `${canonical}#answers`,
+                inLanguage: page.locale,
+                about: { '@id': personId },
+                isPartOf: { '@id': websiteId },
+                mainEntity: questions.map((question) => ({
+                    '@type': 'Question',
+                    name: question.name,
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: question.acceptedAnswer,
+                    },
+                })),
+            });
+            webpage.subjectOf = { '@id': faqId };
+        }
+
         const structuredData = JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': graph,
@@ -152,11 +167,10 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'author', content: profile.name },
                 { name: 'keywords', content: [...new Set([...seo.keywords, ...(page.keywords ?? [])])].join(', ') },
                 { name: 'robots', content: robots },
-                { name: 'googlebot', content: robots },
-                { name: 'bingbot', content: robots },
                 ...(naverVerification ? [{ name: 'naver-site-verification', content: naverVerification }] : []),
                 { property: 'og:type', content: page.type ?? 'website' },
                 { property: 'og:locale', content: page.locale === 'ko' ? 'ko_KR' : 'en_US' },
+                { property: 'og:locale:alternate', content: page.locale === 'ko' ? 'en_US' : 'ko_KR' },
                 { property: 'og:site_name', content: seo.websiteName },
                 { property: 'og:url', content: canonical },
                 { property: 'og:title', content: title },
@@ -167,8 +181,8 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { property: 'og:image:alt', content: page.imageAlt ?? title },
                 ...(imagePath === DEFAULT_IMAGE
                     ? [
-                          { property: 'og:image:width', content: '1200' },
-                          { property: 'og:image:height', content: '900' },
+                          { property: 'og:image:width', content: '1402' },
+                          { property: 'og:image:height', content: '1122' },
                       ]
                     : []),
                 { name: 'twitter:card', content: 'summary_large_image' },

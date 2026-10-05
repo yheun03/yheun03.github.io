@@ -5,6 +5,9 @@
                 <BaseIndexLabel :value="String(index + 1).padStart(2, '0')" aria-hidden="true" />
                 <h3>{{ principle.title }}</h3>
                 <p>{{ principle.description }}</p>
+                <BaseLink v-if="principle.href" class="why__evidence" :href="principle.href">
+                    {{ principle.evidence }} <span aria-hidden="true">→</span>
+                </BaseLink>
             </li>
         </ol>
     </section>

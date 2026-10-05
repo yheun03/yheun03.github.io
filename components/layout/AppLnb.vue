@@ -15,10 +15,7 @@
                     </div>
                     <button type="button" class="app-lnb__close" :aria-label="t('a11y.mobileMenuClose')"
                         @click="emitClose">
-                        <span class="app-lnb__close-icon" aria-hidden="true">
-                            <span />
-                            <span />
-                        </span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <nav class="app-lnb__nav" :aria-label="t('a11y.mobileNavigation')">
@@ -92,9 +89,9 @@ function formatLinkIndex(index: number): string {
 
 function getFocusableElements(): HTMLElement[] {
     if (!drawerRef.value) return [];
-    return [...drawerRef.value.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-    )].filter((element) => !element.hasAttribute('hidden'));
+    return [...drawerRef.value.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')].filter(
+        (element) => !element.hasAttribute('hidden'),
+    );
 }
 
 function handleDialogKeydown(event: KeyboardEvent): void {
@@ -106,27 +103,30 @@ function handleDialogKeydown(event: KeyboardEvent): void {
     }
 
     if (event.key !== 'Tab') return;
-    const focusable = getFocusableElements();
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (!first || !last) return;
 
-    if (event.shiftKey && document.activeElement === first) {
+    const focusableElements = getFocusableElements();
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements.at(-1);
+    if (!firstElement || !lastElement) return;
+
+    if (event.shiftKey && document.activeElement === firstElement) {
         event.preventDefault();
-        last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
+        lastElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastElement) {
         event.preventDefault();
-        first.focus();
+        firstElement.focus();
     }
 }
 
 function setBackgroundInert(inert: boolean): void {
     if (!import.meta.client) return;
-    document.querySelectorAll<HTMLElement>(
-        '.app-dock-ribbon, .app-header, #main-content, .app-footer',
-    ).forEach((element) => {
-        element.inert = inert;
-    });
+    document
+        .querySelectorAll<HTMLElement>(
+            '.app-dock-ribbon, .app-header__brand, .app-header__nav, .app-header__theme-toggle, .app-header__language-toggle, .app-header__menu-btn, #main-content, .app-footer',
+        )
+        .forEach((element) => {
+            element.inert = inert;
+        });
 }
 
 const { isActive, getAriaCurrent } = useNavLinkState({
@@ -140,11 +140,10 @@ watch(
         setBackgroundInert(open);
         if (!open) return;
         nextTick(() => {
-            drawerRef.value?.querySelector<HTMLElement>('.app-lnb__close')?.focus();
+            getFocusableElements()[0]?.focus();
         });
     },
 );
 
 onBeforeUnmount(() => setBackgroundInert(false));
-
 </script>

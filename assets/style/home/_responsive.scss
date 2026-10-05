@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* Page */
 .portfolio-page--home {
@@ -11,7 +11,7 @@ html:has(.portfolio-page--home) {
     scroll-snap-type: y mandatory;
 }
 
-.portfolio-page.portfolio-page--home>.section {
+.portfolio-page.portfolio-page--home > .section {
     scroll-margin-top: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -22,7 +22,6 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (max-width: #{$bp-max-tablet}) {
-
     .section--hero,
     .hero.section--hero {
         padding: var(--section-pad-y) var(--page-pad-x);
@@ -30,7 +29,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .portfolio-page.portfolio-page--home> :is(#hello, #about, #works) {
+    .portfolio-page.portfolio-page--home > .section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -41,7 +40,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: #{$bp-min-tablet}) {
-    .portfolio-page.portfolio-page--home>.section {
+    .portfolio-page.portfolio-page--home > .section {
         min-height: var(--home-fullpage-height);
         align-content: center;
     }
@@ -49,7 +48,6 @@ html:has(.portfolio-page--home) .app-footer {
 
 /* Cards */
 @media (max-width: #{$bp-max-tablet}) {
-
     .surface-card,
     .feature-card,
     .base-card {
@@ -135,7 +133,7 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: 1920px) {
-    .portfolio-page--home>.hero.section--hero {
+    .portfolio-page--home > .hero.section--hero {
         padding-block: 72px;
     }
 
@@ -149,14 +147,14 @@ html:has(.portfolio-page--home) .app-footer {
     }
 
     .hero__lead {
-        max-width: 32ch;
+        max-width: 44ch;
         margin-top: 32px;
         font-size: 1.5rem;
     }
 
     .hero__meta,
     .hero__eyebrow {
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
     .hero__cue {
@@ -168,7 +166,6 @@ html:has(.portfolio-page--home) .app-footer {
 
 /* About */
 @media (min-width: #{$bp-min-laptop}) {
-
     .section.section--about-intro,
     .section.section--why-list {
         padding-block: clamp(80px, 13vw, 160px) clamp(96px, 15vw, 192px);
@@ -176,7 +173,6 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: 1920px) {
-
     .section.section--about-intro,
     .section.section--why-list {
         display: flex;
@@ -195,7 +191,7 @@ html:has(.portfolio-page--home) .app-footer {
     }
 
     .about__lead {
-        max-width: 32ch;
+        max-width: 44ch;
         margin-top: 32px;
         font-size: 1.5rem;
     }
@@ -228,68 +224,25 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 @media (min-width: #{$bp-min-laptop}) {
-    .showcase__item--featured .story-case {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        grid-template-areas: "head head" "title summary" "stack summary" "cta summary";
-        column-gap: clamp(32px, 4vw, 56px);
-        align-items: start;
-        min-height: clamp(272px, 26vw, 368px);
+    .showcase__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
-        .story-case__head {
-            grid-area: head;
-        }
-
-        h3 {
-            grid-area: title;
-            max-width: 18ch;
-            @include font(display-4);
-        }
-
-        .story-case__summary {
-            grid-area: summary;
-            max-width: 52ch;
-            font-size: var(--font-size-md);
-            -webkit-line-clamp: 6;
-        }
-
-        .base-chip-list {
-            grid-area: stack;
-            align-self: end;
-        }
-
-        .story-case__cta {
-            grid-area: cta;
-        }
+    .showcase__item--featured {
+        grid-column: auto;
     }
 }
 
 /* How */
 @media (max-width: #{$bp-max-tablet}) {
-    .flow-steps {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-
-        li {
-            grid-column: span 2;
-        }
-
-        li:nth-last-child(-n + 2) {
-            grid-column: span 3;
-        }
+    .how__steps-card .flow-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .flow-steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        li,
-        li:nth-last-child(-n + 2) {
-            grid-column: auto;
-        }
-
-        li:last-child {
-            grid-column: 1 / -1;
-        }
+    .how__steps-card .flow-steps {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 
@@ -358,10 +311,6 @@ html:has(.portfolio-page--home) .app-footer {
         .feature-card__tags {
             gap: 6px;
         }
-
-        .feature-card__description {
-            line-height: 1.5;
-        }
     }
 }
 
@@ -384,8 +333,8 @@ html:has(.portfolio-page--home) .app-footer {
         padding-top: 0;
 
         &:not(:first-of-type) {
-            margin-top: var(--space-7);
-            padding-top: var(--space-7);
+            margin-top: clamp(40px, 7vw, 64px);
+            padding-top: 0;
         }
     }
 
@@ -394,6 +343,9 @@ html:has(.portfolio-page--home) .app-footer {
         gap: var(--space-3);
         padding: var(--card-padding-lg);
         @include glass-panel(var(--radius-xl));
+        border: 0;
+        background: color-mix(in srgb, var(--color-surface) 78%, transparent);
+        box-shadow: none;
     }
 
     .journey__chapter--temp .journey__chapter-card {
@@ -411,7 +363,7 @@ html:has(.portfolio-page--home) .app-footer {
     }
 
     .journey__chapter-roles {
-        padding-left: 16px;
+        padding-left: 0;
         margin-top: 0;
 
         li {
@@ -424,8 +376,7 @@ html:has(.portfolio-page--home) .app-footer {
         white-space: normal;
     }
 
-    .journey__chapter .journey__steps,
-    .year-timeline__entries {
+    .journey__chapter .journey__steps {
         position: relative;
         display: grid;
         gap: 0;
@@ -435,19 +386,22 @@ html:has(.portfolio-page--home) .app-footer {
         list-style: none;
     }
 
-    .year-timeline__entries {
-        --timeline-rail-color: var(--year-timeline-rail, color-mix(in srgb, var(--color-primary) 42%, var(--color-border)));
-    }
-
     .journey__chapter .journey__steps .timeline-item,
     .year-timeline__entries .timeline-item {
         position: relative;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            'period'
+            'title'
+            'description';
         gap: 8px;
         padding: var(--space-6) 0;
         padding-inline-start: var(--space-4);
+        padding-inline-end: 36px;
+        border-bottom: 0;
 
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             top: 22px;
             left: calc(-1 * var(--space-6) + 2px);
@@ -458,6 +412,11 @@ html:has(.portfolio-page--home) .app-footer {
             background: var(--color-primary);
             box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, transparent);
             transform: translateX(-85%);
+        }
+
+        &::after,
+        &:first-child::after {
+            top: var(--space-6);
         }
 
         &__period {
@@ -478,34 +437,32 @@ html:has(.portfolio-page--home) .app-footer {
             line-height: var(--line-height-body);
         }
     }
+
+    .section--journey .year-timeline .timeline-item {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            'affiliation'
+            'title'
+            'description';
+
+        &::before {
+            display: none;
+        }
+    }
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    .portfolio-page--journey>.section.section--journey {
-        padding-block: 44px 64px;
-        padding-inline: 16px;
-    }
-
     .section--journey {
         gap: 26px;
 
-        .section-title::before {
-            margin-bottom: 8px;
+        .editorial-masthead__title {
+            max-width: 10ch;
+            font-size: clamp(2.65rem, 13vw, 4.1rem);
         }
+    }
 
-        .section-title__eyebrow {
-            margin-bottom: 8px;
-        }
-
-        .section-title__title {
-            font-size: clamp(1.4rem, 7vw, 1.55rem);
-        }
-
-        .section-title__description {
-            margin-top: 14px;
-            font-size: 0.9rem;
-            line-height: 1.65;
-        }
+    .journey__masthead .editorial-masthead__figure {
+        font-size: clamp(2.55rem, 14vw, 3.6rem);
     }
 
     .journey__flow {
@@ -514,6 +471,8 @@ html:has(.portfolio-page--home) .app-footer {
 
     .journey__view-switch {
         gap: 10px;
+        padding: 16px;
+        border-radius: 18px;
     }
 
     .journey__view-kicker {
@@ -536,8 +495,8 @@ html:has(.portfolio-page--home) .app-footer {
         gap: 18px;
 
         &:not(:first-of-type) {
-            margin-top: 24px;
-            padding-top: 24px;
+            margin-top: 42px;
+            padding-top: 0;
         }
     }
 
@@ -554,21 +513,19 @@ html:has(.portfolio-page--home) .app-footer {
 
     .journey__chapter-meta {
         font-size: 0.78rem;
-        line-height: 1.55;
+        line-height: 1.45;
     }
 
     .journey__chapter-intro {
-        padding-top: 12px;
+        padding-top: 4px;
         margin-top: 4px;
-        border-top: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
         font-size: 0.84rem;
         line-height: 1.65;
     }
 
     .journey__chapter-roles {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px 16px;
-        padding-left: 16px;
+        gap: 5px;
+        padding-left: 0;
         margin-top: 4px;
 
         li {
@@ -583,7 +540,6 @@ html:has(.portfolio-page--home) .app-footer {
         overflow-x: auto;
         margin: 6px -18px -2px;
         padding: 10px 18px 2px;
-        border-top: 1px solid color-mix(in srgb, var(--color-primary) 14%, var(--color-border));
         scrollbar-width: none;
 
         &::-webkit-scrollbar {
@@ -592,24 +548,29 @@ html:has(.portfolio-page--home) .app-footer {
 
         li {
             flex: 0 0 auto;
-            padding: 5px 9px;
             font-size: 0.7rem;
             white-space: nowrap;
         }
     }
 
-    .journey__chapter .journey__steps,
-    .year-timeline__entries {
-        padding-inline-start: 16px;
+    .journey__chapter .journey__steps {
+        padding-inline-start: 0;
+        border-inline-start: 0;
     }
 
     .journey__chapter .journey__steps .timeline-item,
     .year-timeline__entries .timeline-item {
         padding-block: 18px;
-        padding-inline-start: 12px;
+        padding-inline-start: 0;
+        padding-inline-end: 30px;
 
         &::before {
-            left: -14px;
+            display: none;
+        }
+
+        &::after,
+        &:first-child::after {
+            top: 18px;
         }
 
         &__title {
@@ -629,14 +590,6 @@ html:has(.portfolio-page--home) .app-footer {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .section--highlights .highlights__total-badge {
-        position: relative;
-        top: auto;
-        left: auto;
-        order: -2;
-        align-self: flex-start;
-    }
-
     .section--highlights .highlights__title-col {
         display: flex;
         flex-direction: column;
@@ -644,11 +597,6 @@ html:has(.portfolio-page--home) .app-footer {
         gap: var(--space-5);
         padding-inline-end: 0;
         text-align: start;
-
-        .section-title__description {
-            max-width: none;
-            margin: 0;
-        }
     }
 
     .section--highlights .highlights__title-col,
@@ -725,12 +673,6 @@ html:has(.portfolio-page--home) .app-footer {
         overflow-wrap: normal;
     }
 
-    .surface-card--metrics {
-        display: grid;
-        gap: var(--space-5);
-        align-items: start;
-    }
-
     :where(.base-label, .base-label--technical) {
         max-width: 100%;
         white-space: normal;
@@ -757,7 +699,8 @@ html:has(.portfolio-page--home) .app-footer {
 }
 
 /* Compact one-screen layout for MacBook-sized desktop viewports */
-@media (min-width: #{$bp-min-laptop}) and (max-height: 1080px) {
+@media (min-width: #{$bp-min-laptop}) and (max-height: 1080px),
+(min-width: 1920px) and (max-height: 1440px) {
     .portfolio-page--home {
         --space-1: 3px;
         --space-2: 5px;
@@ -805,11 +748,11 @@ html:has(.portfolio-page--home) .app-footer {
         --font-size-contact: var(--font-size-display-2);
     }
 
-    .portfolio-page.portfolio-page--home>.section,
-    .portfolio-page--home>.hero.section--hero,
-    .portfolio-page--home>.section.section--about-intro,
-    .portfolio-page--home>.section.section--why-list,
-    .portfolio-page--home>.section.section--contact {
+    .portfolio-page.portfolio-page--home > .section,
+    .portfolio-page--home > .hero.section--hero,
+    .portfolio-page--home > .section.section--about-intro,
+    .portfolio-page--home > .section.section--why-list,
+    .portfolio-page--home > .section.section--contact {
         padding-block: var(--section-pad-y);
     }
 
@@ -862,15 +805,18 @@ html:has(.portfolio-page--home) .app-footer {
         gap: clamp(12px, 2vh, 18px);
     }
 
+    .section.section--works {
+        gap: clamp(12px, 2vh, 18px);
+    }
+
+    .section--works > .section-title {
+        margin-bottom: 0;
+    }
+
     .feature-card,
     .surface-card--flow,
     .how__steps-card {
         gap: var(--block-gap);
-    }
-
-    .surface-card--metrics {
-        gap: var(--block-gap);
-        padding: var(--card-padding);
     }
 
     .base-button {
@@ -887,5 +833,45 @@ html:has(.portfolio-page--home) .app-footer {
     .contact__poster,
     .contact__head {
         gap: var(--section-gap);
+    }
+}
+
+@media (min-width: #{$bp-min-laptop}) and (max-height: 800px) {
+    .portfolio-page.portfolio-page--home > .section.section--toolbox {
+        gap: clamp(10px, 1.8vh, 14px);
+        padding-block: clamp(14px, 2vh, 20px);
+    }
+
+    .section--toolbox {
+        .section-head,
+        .spotlight-block,
+        .toolbox__grid {
+            gap: clamp(8px, 1.4vh, 12px);
+        }
+
+        .section-title__description {
+            margin-top: clamp(8px, 1.4vh, 12px);
+        }
+
+        .section-head > .section-title__description {
+            display: none;
+        }
+
+        .spotlight__kicker {
+            font-size: var(--font-size-display-6);
+        }
+
+        .feature-card--skill {
+            min-height: 0;
+            gap: clamp(5px, 1vh, 8px);
+            padding: clamp(12px, 2vh, 16px);
+        }
+
+        .feature-card__description {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
     }
 }

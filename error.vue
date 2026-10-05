@@ -1,6 +1,6 @@
 <template>
-    <main id="main-content" class="error-page" tabindex="-1">
-        <article class="error-page__card base-card" role="alert" aria-live="assertive">
+    <main id="main-content" ref="pageRoot" class="error-page" tabindex="-1">
+        <article class="error-page__card base-card" data-reveal="scale" role="alert" aria-live="assertive">
             <span class="error-page__emoji emoji emoji--soft" aria-hidden="true">{{ emoji }}</span>
 
             <div class="error-page__layout">
@@ -40,6 +40,9 @@ const props = defineProps<{
 
 const route = useRoute();
 const { content, locale, t } = useLocale();
+const pageRoot = ref<HTMLElement | null>(null);
+
+usePageMotion(pageRoot);
 const profile = computed(() => content.value.profile);
 const statusCode = computed(() => props.error.statusCode ?? 500);
 const is404 = computed(() => statusCode.value === 404);

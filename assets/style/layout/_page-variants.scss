@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* =========================================
    Page-level personality
@@ -24,36 +24,42 @@
 .portfolio-page--journey {
     --color-primary: color-mix(in srgb, var(--accent-mint) 42%, var(--primary-500));
     --color-primary-dark: color-mix(in srgb, var(--accent-mint) 30%, var(--primary-600));
-    --gradient-accent: linear-gradient(122deg,
-            var(--accent-mint) 0%,
-            var(--primary-500) 58%,
-            var(--primary-700) 100%);
+    --gradient-accent: linear-gradient(122deg, var(--accent-mint) 0%, var(--primary-500) 58%, var(--primary-700) 100%);
 
-    >.section.section--journey,
-    >.section.section--highlights {
-        width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
-        max-width: var(--layout-content-max);
+    > .section.section--journey,
+    > .section.section--highlights {
+        width: min(100%, 1560px);
+        max-width: 1560px;
         margin-inline: auto;
-        padding-block: clamp(88px, 11vw, 168px);
-        padding-inline: 0;
+        padding: clamp(72px, 8vw, 120px) var(--page-pad-x) clamp(96px, 11vw, 176px);
+        box-sizing: border-box;
     }
 
-    .section-title__eyebrow {
+    .section-title__eyebrow,
+    .editorial-masthead__eyebrow {
         letter-spacing: 0.16em;
     }
 
     .section-title__description {
-        max-width: 52ch;
+        max-width: 68ch;
     }
 }
 
 @media (max-width: $bp-max-tablet) {
     .portfolio-page--journey {
-
-        >.section.section--journey,
-        >.section.section--highlights {
+        > .section.section--journey,
+        > .section.section--highlights {
             width: 100%;
-            padding: var(--section-pad-y) var(--page-pad-x);
+            padding: clamp(64px, 9vw, 96px) var(--page-pad-x) clamp(88px, 12vw, 128px);
+        }
+    }
+}
+
+@media (max-width: $bp-max-mobile) {
+    .portfolio-page--journey {
+        > .section.section--journey,
+        > .section.section--highlights {
+            padding: 48px var(--page-pad-x) 96px;
         }
     }
 }
@@ -64,7 +70,6 @@
     --color-primary-dark: var(--primary-700);
     background: var(--color-bg);
 
-    .gallery-page__kicker,
     .section-title__eyebrow {
         letter-spacing: 0.17em;
     }
@@ -74,10 +79,7 @@
 .portfolio-page--archive-personal {
     --color-primary: color-mix(in srgb, var(--accent-hot) 52%, var(--primary-500));
     --color-primary-dark: color-mix(in srgb, var(--accent-hot) 38%, var(--primary-600));
-    --gradient-accent: linear-gradient(128deg,
-            var(--accent-hot) 0%,
-            var(--primary-500) 56%,
-            var(--primary-700) 100%);
+    --gradient-accent: linear-gradient(128deg, var(--accent-hot) 0%, var(--primary-500) 56%, var(--primary-700) 100%);
     --card-list-gap: var(--space-6);
     background: var(--color-bg);
 }

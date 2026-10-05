@@ -1,4 +1,4 @@
-@use "../abstracts/tokens" as *;
+@use '../abstracts/tokens' as *;
 
 /* App dock (scroll spy navigation) */
 /** 오른쪽 끝 호버·포커스 시 맥 독처럼 네비가 미끄러져 나타남 */
@@ -139,13 +139,14 @@
         opacity: 0;
         pointer-events: none;
         transform: translateY(-50%) translateX(3px);
-        transition: opacity 0.18s ease, transform 0.18s ease;
+        transition:
+            opacity 0.18s ease,
+            transform 0.18s ease;
         z-index: 1;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .app-dock {
         transition-duration: 0.01ms;
     }

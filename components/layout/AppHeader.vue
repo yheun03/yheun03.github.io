@@ -45,9 +45,15 @@
 const menuOpen = ref(false);
 const menuButtonRef = ref<HTMLButtonElement | null>(null);
 const isScrolled = ref(false);
+let scrollFrame = 0;
 
 const handleScroll = () => {
-    isScrolled.value = window.scrollY > 48;
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+        const nextScrolled = window.scrollY > 48;
+        if (isScrolled.value !== nextScrolled) isScrolled.value = nextScrolled;
+        scrollFrame = 0;
+    });
 };
 
 const statusMessage = ref('');
@@ -55,17 +61,17 @@ const { locale, toggleLocale, t } = useLocale();
 const { isDarkTheme, toggleTheme } = useTheme();
 
 const localeLabel = computed(() => locale.value.toUpperCase());
-const languageToggleAriaLabel = computed(() =>
-    locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo'),
+const languageToggleAriaLabel = computed(
+    () => `${localeLabel.value}: ${locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo')}`,
 );
 const themeToggleLabel = computed(() => (isDarkTheme.value ? 'Light' : 'Dark'));
-const themeToggleAriaLabel = computed(() =>
-    isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme'),
+const themeToggleAriaLabel = computed(
+    () => `${themeToggleLabel.value}: ${isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme')}`,
 );
 
-function handleLocaleToggle() {
+async function handleLocaleToggle() {
     const switchingToEn = locale.value === 'ko';
-    toggleLocale();
+    await toggleLocale();
     statusMessage.value = t(switchingToEn ? 'a11y.localeChangedEn' : 'a11y.localeChangedKo');
 }
 
@@ -88,8 +94,8 @@ const props = withDefaults(
         activePath?: string;
     }>(),
     {
-        brandHref: "#hello",
-    }
+        brandHref: '#hello',
+    },
 );
 
 const { isActive, getAriaCurrent } = useNavLinkState({
@@ -109,19 +115,20 @@ watch(
     () => menuOpen.value,
     (open) => {
         if (!import.meta.client) return;
-        document.documentElement.classList.toggle("app--menu-open", open);
-    }
+        document.documentElement.classList.toggle('app--menu-open', open);
+    },
 );
 
 onMounted(() => {
-    window.addEventListener("keydown", handleEscapeKeydown);
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('keydown', handleEscapeKeydown);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 });
 
 onBeforeUnmount(() => {
-    document.documentElement.classList.remove("app--menu-open");
-    window.removeEventListener("keydown", handleEscapeKeydown);
-    window.removeEventListener("scroll", handleScroll);
+    cancelAnimationFrame(scrollFrame);
+    document.documentElement.classList.remove('app--menu-open');
+    window.removeEventListener('keydown', handleEscapeKeydown);
+    window.removeEventListener('scroll', handleScroll);
 });
 </script>

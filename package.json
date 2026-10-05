@@ -14,7 +14,7 @@
     "scripts": {
         "clean": "rm -rf .nuxt .nuxt-build .output .nitro node_modules/.vite node_modules/.cache",
         "dev": "nuxt dev --host 0.0.0.0",
-        "generate": "nuxt generate",
+        "generate": "nuxt prepare --envName development && nuxt generate",
         "postgenerate": "node scripts/generate-legacy-redirects.mjs",
         "deploy": "ANALYTICS_ENABLED=true npm run generate && gh-pages -d .output/public -b gh-pages --nojekyll",
         "postinstall": "nuxt prepare"

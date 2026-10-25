@@ -1620,37 +1620,37 @@
                 {
                     "id": "clone-flighty",
                     "category": "personal",
-                    "title": "Flighty Clone Demo",
-                    "period": "2026.05.24~",
-                    "type": "Personal / Nuxt clone service",
+                    "title": "Flighty UI Clone",
+                    "period": "",
+                    "type": "Personal / Vue web publishing",
                     "role": "End-to-end planning, design analysis, Figma redesign, and frontend development",
-                    "tech": ["Nuxt 3", "Vue 3", "TypeScript", "Pinia", "SCSS", "Figma", "AG Grid", "Chart.js"],
-                    "introduction": "A Nuxt 3 service demo that analyzes Flighty's flight-record experience and redesigns it for local users. The product structure reflects multilingual support, mobile usability, and scalable aircraft data after reviewing the original information architecture and core user flows.",
+                    "tech": ["Vue 3", "JavaScript", "Vue Router", "Vite", "SCSS", "MapLibre", "Figma"],
+                    "introduction": "A Vue 3 clone project that adapts Flighty's flight experience for the web. It connects data for 32 flights across list, detail, search, map, passport, and statistics views, with a complete responsive UI plus shared language and unit settings.",
                     "myWorks": [
                         "Captured the Flighty 4.8.2 desktop UI and analyzed IA, typography hierarchy, card structure, and interaction density",
-                        "Reconstructed the captured UI in Figma to analyze the original layout rules and visual details",
-                        "Designed a mobile-adapted version with refined typography, spacing, component sizing, and color roles",
-                        "Built a Nuxt 3 foundation with workspace, auth, settings, component demos, grid, chart, and upload UI patterns",
-                        "Organized Pinia, Axios, i18n dictionaries, and GitHub Pages base-path handling for localization and static deployment"
+                        "Built responsive screens and shared UI components with Vue 3, Vite, and Vue Router based on the final Figma design",
+                        "Connected 32 flights through shared JSON so list, detail, search, passport, and statistics views use consistent data",
+                        "Implemented route maps with MapLibre and OpenFreeMap, synchronized with search, period selection, and flight-detail context",
+                        "Persisted device language, Korean, English, Japanese, and distance, speed, and altitude unit settings across the app"
                     ],
                     "achievements": [
-                        "Produced a consistent set of product-design deliverables from service analysis and Figma design to mobile UI reconstruction",
-                        "Prepared a scalable base by building shared UI components and demo pages on Nuxt 3 + Pinia first"
+                        "Centralized time, delay, timezone, and statistics calculations so every flight view shares consistent results",
+                        "Completed a reusable publishing architecture by separating base UI from Flighty-specific composed components and prop variants"
                     ],
                     "points": [
-                        "Defined core features and improvement requirements through structured product benchmarking",
-                        "Designed scalable content architecture for localization and aircraft-data expansion",
-                        "Reinterpreted the UI around mobile usability and design-system consistency"
+                        "Service-style UI connecting flight lists, details, search, passport, and statistics through one data flow",
+                        "Interactive flat and globe route maps plus aircraft information that respond to filters and selected flights",
+                        "Responsive web and mobile experience with four language options and unit conversion"
                     ],
                     "pin": true,
-                    "duration": "In progress",
+                    "duration": "",
                     "captures": [
                         "/assets/images/projects/clone-flighty/image-01.webp",
                         "/assets/images/projects/clone-flighty/image-02.webp",
                         "/assets/images/projects/clone-flighty/image-03.webp"
                     ],
                     "thumbnail": "/assets/images/projects/archive-thumbnails/flighty.jpg",
-                    "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Figma"],
+                    "languages": ["Vue 3", "JavaScript", "Vue Router", "Vite", "SCSS", "MapLibre"],
                     "links": [
                         {
                             "label": "View demo",

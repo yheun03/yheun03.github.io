@@ -28,11 +28,11 @@
                             <dt>{{ metaLabels.type }}</dt>
                             <dd>{{ work.type }}</dd>
                         </div>
-                        <div>
+                        <div v-if="work.period">
                             <dt>{{ metaLabels.period }}</dt>
                             <dd>{{ work.period }}</dd>
                         </div>
-                        <div>
+                        <div v-if="work.duration">
                             <dt>{{ t('gallery.duration') }}</dt>
                             <dd>{{ work.duration }}</dd>
                         </div>

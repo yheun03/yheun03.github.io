@@ -24,6 +24,7 @@ https://yheun03.github.io/projects/company-renewal-2022/
 https://yheun03.github.io/projects/incheon-university/
 https://yheun03.github.io/projects/tos-renewal/
 https://yheun03.github.io/projects/toms/
+https://yheun03.github.io/personal/planearby/
 https://yheun03.github.io/personal/jonsoft-framework-portfolio/
 https://yheun03.github.io/personal/singil-bmc/
 https://yheun03.github.io/personal/clone-flighty/

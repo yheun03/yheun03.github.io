@@ -37,7 +37,7 @@ usePortfolioSeo(() => ({
     imageAlt: t('meta.ogTitle'),
     dateCreated: '2026-04-16T17:24:07+09:00',
     dateModified: '2026-10-04T00:00:00+09:00',
-    relatedLinks: ['/projects/', '/personal/', '/journey/'],
+    relatedLinks: ['/about/', '/projects/', '/personal/', '/journey/'],
     significantLinks: ['/projects/', '/journey/'],
 }));
 </script>

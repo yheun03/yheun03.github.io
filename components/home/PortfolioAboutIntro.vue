@@ -10,6 +10,7 @@
             </h2>
 
             <p class="about__lead">{{ t('about.tagline') }}</p>
+            <BaseLink href="/about" class="about__personal-link"> {{ t('aboutMe.homeLink') }} <span aria-hidden="true">↗</span> </BaseLink>
         </header>
     </HomeSection>
 </template>

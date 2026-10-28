@@ -3,6 +3,7 @@
         "hello": "Hello",
         "home": "Portfolio",
         "about": "About Me",
+        "aboutMe": "My Story",
         "works": "Works",
         "personal": "Personal",
         "worksArchive": "Works",
@@ -14,6 +15,35 @@
         "proof": "Proof",
         "how": "Process",
         "answers": "Quick Answers"
+    },
+    "aboutMe": {
+        "metaTitle": "Eun, beyond the screen | My story",
+        "metaDescription": "Meet Eun beyond web publishing: an ENTJ personality, a lasting personal belief and the story behind the overlapping YH logo.",
+        "homeLink": "Meet Eun beyond the screen",
+        "introLabel": "A little beyond the job title,",
+        "titleLine1": "Off the clock,",
+        "titleLine2": "still Eun.",
+        "intro": "A tendency to act, a belief I carry and a logo shaped by my name and taste. Meet the person beyond the screen.",
+        "skipStory": "Read my story",
+        "personalityTitle": "Think it through. Then move.",
+        "personalityDescription": "My MBTI is ENTJ. When something interests me, I like to try it myself, find a direction, and get moving.",
+        "beliefLine1": "Even the law cannot",
+        "beliefLine2": "protect the idle.",
+        "beliefSource": "— My middle-school technology and home economics teacher",
+        "beliefDescription": "A sentence I heard in middle school still guides me today. It reminds me to take action when there is something to do.",
+        "identityTitle1": "My initials, overlapped.",
+        "identityTitle2": "My colors, included.",
+        "identityIntro": "Y and H, the initials of my name. Two letters coming together to represent me.",
+        "identityMe": "ME",
+        "identityDescription": "YH stands for my name. I overlapped the Y and H and filled them with colors I love. My name and taste, in one simple mark.",
+        "logoDescription": "Eun's YH logo, with a pale blue Y overlapping a sky blue H, shown with construction guides",
+        "paletteLabel": "The two colors of the YH logo",
+        "constructionNote": "These visual guides illustrate the shapes and overlap of Y and H.",
+        "outroLine1": "What I do. What I love.",
+        "outroLine2": "All part of who I am.",
+        "outroDescription": "I put my plans into action and express what I love in my own way. I’m Eun, a web publisher.",
+        "viewWorks": "Explore my work",
+        "backHome": "Back to the portfolio"
     },
     "hero": {
         "title": "I turn complex requirements into UI that users understand and teams can maintain",
@@ -97,6 +127,7 @@
         "detailEndLine": "That's the last line—thanks for reading all the way through.",
         "detailEndBackCareer": "Read it all? Back to professional work",
         "detailEndBackPersonal": "Read it all? Back to personal projects",
+        "sortAdded": "Recently added",
         "sortStart": "Start date",
         "sortTitle": "A-Z",
         "sortLegend": "Sort",
@@ -1516,6 +1547,53 @@
                 }
             ],
             "personal": [
+                {
+                    "id": "planearby",
+                    "category": "personal",
+                    "title": "Planearby · Nearby aircraft radar",
+                    "period": "2026.10~",
+                    "type": "Personal / Vue aircraft dashboard",
+                    "role": "Planning / design / publishing / frontend development",
+                    "tech": ["Vue 3", "Vite", "JavaScript", "SCSS", "Leaflet", "Geolocation API"],
+                    "introduction": "A Vue 3 dashboard that presents aircraft within 25 km of a chosen location through a radar and an airport-style flight board. It shows airlines, callsigns, aircraft types, reference routes and track, with manual map selection available without location permission.",
+                    "myWorks": [
+                        "Built the dashboard, settings and location picker with Vue 3, Vite, JavaScript and SCSS",
+                        "Created a responsive layout with the flight board beside the radar on desktop and the radar first on mobile",
+                        "Implemented split-flap flight information, aircraft selection, 10-second automatic switching and pause controls",
+                        "Integrated Geolocation, adsb.lol and adsbdb for nearby aircraft and reference routes with 5-second refreshes",
+                        "Added manual location selection through Leaflet / OpenStreetMap, address search and coordinate input",
+                        "Supported light / dark themes, Korean / English / Japanese, phone compass and manual heading controls",
+                        "Added keyboard navigation, status announcements, reduced motion, prerendered SEO and GitHub Pages deployment"
+                    ],
+                    "achievements": [
+                        "Connected aircraft distance and bearing on the radar to readable details on the flight board",
+                        "Provided map and coordinate alternatives when location permission or GPS is unavailable",
+                        "Built request cancellation, route caching, API rate-limit waits and error states into the interface"
+                    ],
+                    "points": [
+                        "Combined radar visualization with an airport flight board and split-flap interactions",
+                        "Delivered responsive Vue UI with multilingual content, themes and accessibility",
+                        "Screenshots show the service’s fictional aircraft examples, separate from live flight data"
+                    ],
+                    "pin": true,
+                    "duration": "In progress",
+                    "captures": [
+                        "/assets/images/projects/planearby/image-01.jpg",
+                        "/assets/images/projects/planearby/image-02.jpg",
+                        "/assets/images/projects/planearby/image-03.jpg"
+                    ],
+                    "languages": ["Vue 3", "JavaScript", "SCSS", "Vite"],
+                    "links": [
+                        {
+                            "label": "Visit site",
+                            "href": "https://yheun03.github.io/planearby/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/planearby"
+                        }
+                    ]
+                },
                 {
                     "id": "jonsoft-framework-portfolio",
                     "category": "personal",

@@ -3,7 +3,7 @@ import type { WorkItem } from '@data/works';
 
 export type GalleryViewMode = 'editorial' | 'grid';
 export type GalleryArchiveVariant = 'career' | 'personal';
-export type WorkSortMode = 'start' | 'title';
+export type WorkSortMode = 'added' | 'start' | 'title';
 export type WorkFilterMode = 'featured' | 'problem' | 'frontend' | 'operation' | 'cms';
 
 export type WorkYearEntry = { type: 'year'; key: string; year: string } | { type: 'work'; key: string; work: WorkItem; firstWork?: boolean };
@@ -109,27 +109,31 @@ function useGalleryViewMode() {
 
 export function useGalleryArchive(variant: GalleryArchiveVariant, works: ComputedRef<WorkItem[]>) {
     const { t, locale } = useLocale();
-    const sortMode = ref<WorkSortMode>('start');
+    const sortMode = ref<WorkSortMode>(variant === 'personal' ? 'added' : 'start');
     const filterModes = ref<WorkFilterMode[]>([]);
     const { viewMode } = useGalleryViewMode();
     const editorialYear = new Date().getFullYear();
     const config = getGalleryVariantConfig(variant);
 
     const sortOptions = computed<{ value: WorkSortMode; label: string }[]>(() => [
+        ...(variant === 'personal' ? [{ value: 'added' as const, label: t('gallery.sortAdded') }] : []),
         { value: 'start', label: t('gallery.sortStart') },
         { value: 'title', label: t('gallery.sortTitle') },
     ]);
 
-    const sortedWorks = computed(() =>
-        [...works.value].sort((a, b) =>
+    const sortedWorks = computed(() => {
+        // 개인 프로젝트는 콘텐츠 배열 맨 앞에 새 항목을 추가해 최근 추가 순서를 유지한다.
+        if (sortMode.value === 'added') return [...works.value];
+
+        return [...works.value].sort((a, b) =>
             sortMode.value === 'start'
                 ? getStartValue(b.period) - getStartValue(a.period)
                 : a.title.localeCompare(b.title, locale.value === 'ko' ? 'ko-KR' : 'en-US', {
                       numeric: true,
                       sensitivity: 'base',
                   }),
-        ),
-    );
+        );
+    });
 
     const filterOptions = computed<{ value: WorkFilterMode; label: string }[]>(() =>
         variant === 'career'

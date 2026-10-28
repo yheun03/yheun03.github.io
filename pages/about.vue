@@ -30,10 +30,10 @@
                 </div>
             </section>
 
-            <section id="about-mindset" class="about-mindset" aria-labelledby="about-mindset-title">
+            <section id="about-mindset" class="about-mindset" aria-labelledby="about-mindset-title" tabindex="-1">
                 <div class="about-mindset__personality" data-about-reveal>
                     <p class="about-page__eyebrow">01 / THE WAY I AM</p>
-                    <h2 id="about-mindset-title" class="about-mindset__letters" aria-label="ENTJ">
+                    <h2 id="about-mindset-title" class="about-mindset__letters" :aria-label="t('aboutMe.personalityHeading')">
                         <span v-for="letter in 'ENTJ'" :key="letter" class="about-mindset__letter" aria-hidden="true">{{ letter }}</span>
                     </h2>
                     <p class="about-mindset__personality-title">{{ t('aboutMe.personalityTitle') }}</p>
@@ -41,7 +41,7 @@
                     <span class="about-mindset__annotation">A LITTLE LESS MAYBE. A LITTLE MORE LET'S GO.</span>
                 </div>
                 <div class="about-mindset__belief" data-about-reveal>
-                    <p class="about-page__eyebrow">A SENTENCE I CARRY WITH ME</p>
+                    <h3 class="about-page__eyebrow">{{ t('aboutMe.beliefTitle') }}</h3>
                     <blockquote>
                         <span class="about-mindset__quote-mark" aria-hidden="true">“</span>
                         <p>
@@ -63,14 +63,20 @@
                         <p>{{ t('aboutMe.identityIntro') }}</p>
                     </header>
                     <div class="about-identity__blueprint">
-                        <span class="about-identity__figure-label">FIG. 01 — YH / CONSTRUCTION</span>
-                        <svg class="about-identity__svg" viewBox="0 0 600 420" role="img" :aria-label="t('aboutMe.logoDescription')">
+                        <span class="about-identity__figure-label" aria-hidden="true">FIG. 01 — YH / CONSTRUCTION</span>
+                        <svg
+                            class="about-identity__svg"
+                            viewBox="0 0 600 420"
+                            role="img"
+                            focusable="false"
+                            :aria-label="t('aboutMe.logoDescription')"
+                        >
                             <defs>
                                 <pattern id="about-logo-grid" width="20" height="20" patternUnits="userSpaceOnUse">
                                     <path d="M20 0H0V20" fill="none" stroke="var(--about-guide)" stroke-opacity=".15" stroke-width=".7" />
                                 </pattern>
                             </defs>
-                            <g class="about-identity__guides" fill="none" stroke="var(--about-guide)" stroke-width="1">
+                            <g class="about-identity__guides" fill="none" stroke="var(--about-guide)" stroke-width="1" aria-hidden="true">
                                 <rect x="120" y="40" width="360" height="340" fill="url(#about-logo-grid)" stroke-opacity=".45" />
                                 <path
                                     d="M60 78.5h480M60 339.5h480M151.65 15v390M450.8 15v390M60 210h480M300 15v390M225.8 60v300M306.8 60v300M369.8 60v300"
@@ -109,14 +115,14 @@
                                 />
                             </g>
                         </svg>
-                        <span class="about-identity__figure-footer">YOUNG HWAN / OVERLAPPING INITIALS</span>
+                        <span class="about-identity__figure-footer" aria-hidden="true">YOUNG HWAN / OVERLAPPING INITIALS</span>
                     </div>
                     <div class="about-identity__details">
-                        <div class="about-identity__formula">
+                        <div class="about-identity__formula" aria-hidden="true">
                             <span>Y</span><span>+</span><span>H</span><span>=</span><strong>{{ t('aboutMe.identityMe') }}</strong>
                         </div>
                         <p>{{ t('aboutMe.identityDescription') }}</p>
-                        <div class="about-identity__palette" :aria-label="t('aboutMe.paletteLabel')">
+                        <div class="about-identity__palette" role="group" :aria-label="t('aboutMe.paletteLabel')">
                             <div>
                                 <i style="--swatch: #eaf2ff" aria-hidden="true" /><span>PALE BLUE<small>#EAF2FF</small></span>
                             </div>
@@ -127,6 +133,16 @@
                     </div>
                     <p class="about-identity__note">{{ t('aboutMe.constructionNote') }}</p>
                 </div>
+            </section>
+
+            <section id="answers" class="about-answers" aria-labelledby="about-answers-title">
+                <h2 id="about-answers-title">{{ t('aboutMe.answersTitle') }}</h2>
+                <dl class="about-answers__list">
+                    <div v-for="question in questions" :key="question.name" class="about-answers__item">
+                        <dt>{{ question.name }}</dt>
+                        <dd>{{ question.acceptedAnswer }}</dd>
+                    </div>
+                </dl>
             </section>
 
             <section class="about-outro" aria-labelledby="about-outro-title">
@@ -149,6 +165,12 @@
 const { t, locale } = useLocale();
 const layoutLinks = useSubpageLinks();
 const pageRef = ref<HTMLElement | null>(null);
+const questions = computed(() =>
+    ['role', 'personality', 'logo'].map((key) => ({
+        name: t(`aboutMe.${key}Question`),
+        acceptedAnswer: t(`aboutMe.${key}Answer`),
+    })),
+);
 let motion: { revert: () => void } | undefined;
 let refreshMotion: (() => void) | undefined;
 let disposed = false;
@@ -175,7 +197,6 @@ onMounted(async () => {
             select('[data-about-reveal]').forEach((element: HTMLElement) => {
                 gsap.from(element, {
                     y: 45,
-                    autoAlpha: 0,
                     duration: 0.9,
                     ease: 'power3.out',
                     scrollTrigger: { trigger: element, start: 'top 90%', toggleActions: 'play none none reverse' },
@@ -192,7 +213,8 @@ onMounted(async () => {
                 scrollTrigger: { trigger: select('.about-mindset__belief')[0], start: 'top 75%', end: 'center 55%', scrub: true },
             });
 
-            gsap.set(select('.about-identity__guides, .about-identity__details, .about-identity__figure-label, .about-identity__figure-footer'), {
+            // 본문은 스크롤 위치와 관계없이 스크린리더와 키보드 사용자에게 계속 노출한다.
+            gsap.set(select('.about-identity__guides, .about-identity__figure-label, .about-identity__figure-footer'), {
                 autoAlpha: 0,
             });
             const identity = gsap.timeline({
@@ -210,7 +232,7 @@ onMounted(async () => {
                 .from(select('.about-identity__letter-h'), { x: 42, autoAlpha: 0, duration: 1.5, ease: 'power2.inOut' }, 0)
                 .to(select('.about-identity__guides'), { autoAlpha: 1, duration: 0.8 }, 1.5)
                 .to(select('.about-identity__figure-label, .about-identity__figure-footer'), { autoAlpha: 1, duration: 0.5 }, 1.7)
-                .to(select('.about-identity__details'), { autoAlpha: 1, duration: 0.7 }, 1.8)
+                .from(select('.about-identity__details'), { y: 16, duration: 0.7 }, 1.8)
                 .to({}, { duration: 0.7 });
         },
         page,
@@ -229,7 +251,18 @@ usePortfolioSeo(() => ({
     description: t('aboutMe.metaDescription'),
     path: '/about',
     locale: locale.value,
-    schemaType: 'AboutPage',
+    schemaType: 'ProfilePage',
+    ogTitle: t('aboutMe.ogTitle'),
+    ogDescription: t('aboutMe.metaDescription'),
+    image: '/assets/images/common/og/about-yh-20261028.png',
+    imageAlt: t('aboutMe.ogImageAlt'),
+    imageWidth: 1200,
+    imageHeight: 630,
+    personDescription: t('aboutMe.intro'),
+    questions: questions.value,
+    dateModified: '2026-10-28',
+    relatedLinks: ['/', '/journey/'],
+    significantLinks: ['/projects/'],
     breadcrumbs: [
         { name: t('footer.homeLink'), path: '/' },
         { name: t('nav.aboutMe'), path: '/about' },

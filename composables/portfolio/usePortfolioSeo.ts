@@ -12,6 +12,10 @@ type PortfolioSeoOptions = {
     type?: 'website' | 'article';
     image?: string;
     imageAlt?: string;
+    imageWidth?: number;
+    imageHeight?: number;
+    personDescription?: string;
+    questions?: SeoQuestion[];
     noindex?: boolean;
     schemaType?: 'ProfilePage' | 'CollectionPage' | 'AboutPage' | 'WebPage';
     breadcrumbs?: { name: string; path: string }[];
@@ -42,12 +46,14 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
     useHead(() => {
         const page = toValue(options);
         const { profile, seo } = content.value;
-        const questions: SeoQuestion[] = seo.questions;
         const pagePath = page.path ?? '/';
+        const questions: SeoQuestion[] = page.questions ?? (pagePath === '/' ? seo.questions : []);
         const canonicalPath = pagePath === '/' || pagePath.endsWith('/') ? pagePath : `${pagePath}/`;
         const canonical = getPortfolioAbsoluteUrl(canonicalPath);
         const imagePath = page.image?.endsWith('.svg') ? DEFAULT_IMAGE : (page.image ?? DEFAULT_IMAGE);
         const image = getPortfolioAbsoluteUrl(imagePath);
+        const imageWidth = page.imageWidth ?? (imagePath === DEFAULT_IMAGE ? 1402 : undefined);
+        const imageHeight = page.imageHeight ?? (imagePath === DEFAULT_IMAGE ? 1122 : undefined);
         const title = page.ogTitle ?? page.title;
         const description = page.ogDescription ?? page.description;
         const robots = page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
@@ -64,7 +70,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             alternateName: 'Eunyounghwan',
             url: SITE_URL,
             jobTitle: seo.jobTitle,
-            description: seo.description,
+            description: page.personDescription ?? seo.description,
             email: profile.contacts.email,
             sameAs: [profile.contacts.github],
             knowsAbout: profile.keywords,
@@ -113,7 +119,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 encodingFormat: getImageMimeType(imagePath),
                 caption: page.imageAlt ?? title,
                 inLanguage: page.locale,
-                ...(imagePath === DEFAULT_IMAGE ? { width: 1402, height: 1122 } : {}),
+                ...(imageWidth && imageHeight ? { width: imageWidth, height: imageHeight } : {}),
             },
             webpage,
         ];
@@ -132,7 +138,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             webpage.breadcrumb = { '@id': `${canonical}#breadcrumb` };
         }
 
-        if (pagePath === '/' && questions.length) {
+        if (questions.length) {
             const faqId = `${canonical}#faq`;
             graph.push({
                 '@type': 'FAQPage',
@@ -179,10 +185,10 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { property: 'og:image:secure_url', content: image },
                 { property: 'og:image:type', content: getImageMimeType(imagePath) },
                 { property: 'og:image:alt', content: page.imageAlt ?? title },
-                ...(imagePath === DEFAULT_IMAGE
+                ...(imageWidth && imageHeight
                     ? [
-                          { property: 'og:image:width', content: '1402' },
-                          { property: 'og:image:height', content: '1122' },
+                          { property: 'og:image:width', content: String(imageWidth) },
+                          { property: 'og:image:height', content: String(imageHeight) },
                       ]
                     : []),
                 { name: 'twitter:card', content: 'summary_large_image' },

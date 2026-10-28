@@ -5,10 +5,19 @@
     <link>https://yheun03.github.io/</link>
     <description>HTML과 SCSS 기반 웹 퍼블리싱 실무, Vue 3와 Nuxt 3 UI 개발 경험을 프로젝트별 역할과 구현 내용 중심으로 정리한 포트폴리오입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0900</lastBuildDate>
     <ttl>1440</ttl>
     <generator>Nuxt 3</generator>
     <atom:link href="https://yheun03.github.io/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>웹 퍼블리셔 은영환 소개 | 나의 이야기</title>
+      <link>https://yheun03.github.io/about/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/about/</guid>
+      <description>웹 퍼블리셔 은영환의 ENTJ 성향, 행동을 이끄는 신념과 이름의 이니셜을 겹친 YH 로고의 의미를 소개합니다.</description>
+      <category>나의 이야기</category>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0900</pubDate>
+    </item>
 
     <item>
       <title>은영환 웹 퍼블리셔 포트폴리오</title>

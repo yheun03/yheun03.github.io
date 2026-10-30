@@ -1564,10 +1564,11 @@
                     "title": "Planearby · Nearby aircraft radar",
                     "period": "2026.10~",
                     "type": "Personal / Vue aircraft dashboard",
-                    "role": "Planning / design / publishing / frontend development",
+                    "role": "Planning / feature scoping / building with Codex Sol 6.1",
                     "tech": ["Vue 3", "Vite", "JavaScript", "SCSS", "Leaflet", "Geolocation API"],
-                    "introduction": "A Vue 3 dashboard that presents aircraft within 25 km of a chosen location through a radar and an airport-style flight board. It shows airlines, callsigns, aircraft types, reference routes and track, with manual map selection available without location permission.",
+                    "introduction": "Curiosity about planes flying overhead while driving or exercising led me to use Flightradar24 regularly. I only wanted information about aircraft near me, so I narrowed the scope to the features I needed and built a service that shows aircraft within 25 km through a radar and an airport-style flight board. This personal project was built entirely with Codex Sol 6.1.",
                     "myWorks": [
+                        "Used my experience with Flightradar24 to scope the service around checking nearby aircraft",
                         "Built the dashboard, settings and location picker with Vue 3, Vite, JavaScript and SCSS",
                         "Created a responsive layout with the flight board beside the radar on desktop and the radar first on mobile",
                         "Implemented split-flap flight information, aircraft selection, 10-second automatic switching and pause controls",

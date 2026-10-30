@@ -120,10 +120,13 @@
 }
 
 .about-mindset {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--section-gap);
-    padding: var(--section-pad-y) var(--page-pad-x);
+    &__stage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--section-gap);
+        padding: var(--section-pad-y) var(--page-pad-x);
+        background: var(--about-paper);
+    }
 
     &:focus-visible {
         outline: 2px solid var(--about-accent);
@@ -199,6 +202,7 @@
     &__underline {
         background: linear-gradient(transparent 66%, color-mix(in srgb, var(--about-blue) 35%, transparent) 66%);
         background-repeat: no-repeat;
+        background-size: 100% 100%;
     }
     &__belief-note {
         max-width: 40ch;
@@ -357,8 +361,19 @@
     }
 
     &__item {
+        --about-rule-scale: 1;
+        position: relative;
         padding-block: var(--space-8);
-        border-top: 1px solid color-mix(in srgb, var(--about-ink) 22%, transparent);
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto;
+            height: 1px;
+            background: color-mix(in srgb, var(--about-ink) 22%, transparent);
+            transform: scaleX(var(--about-rule-scale, 1));
+            transform-origin: left center;
+        }
 
         > dt {
             font-weight: 700;
@@ -386,7 +401,14 @@
         line-height: 1.25;
         letter-spacing: -0.055em;
     }
-    > h2 span {
+    &__line,
+    &__line-text {
+        display: block;
+    }
+    &__line {
+        overflow: hidden;
+    }
+    &__line:last-child {
         color: var(--about-accent);
     }
     > p:not(.about-page__eyebrow) {
@@ -431,7 +453,7 @@
 }
 
 @media (max-width: $bp-max-tablet) {
-    .about-mindset {
+    .about-mindset__stage {
         gap: var(--space-9);
     }
     .about-mindset__belief {
@@ -446,7 +468,7 @@
     .about-page__eyebrow {
         font-size: 0.62rem;
     }
-    .about-mindset {
+    .about-mindset__stage {
         grid-template-columns: 1fr;
         gap: var(--space-11);
     }
@@ -527,6 +549,14 @@
     }
     .about-outro > p:not(.about-page__eyebrow) {
         font-size: 0.85rem;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: $bp-min-laptop) and (min-height: 740px) {
+    .about-mindset__stage {
+        align-items: center;
+        min-height: calc(100svh - var(--layout-header-height));
+        padding-block: clamp(48px, 8svh, 96px);
     }
 }
 

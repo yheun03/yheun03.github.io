@@ -31,25 +31,27 @@
             </section>
 
             <section id="about-mindset" class="about-mindset" aria-labelledby="about-mindset-title" tabindex="-1">
-                <div class="about-mindset__personality" data-about-reveal>
-                    <p class="about-page__eyebrow">01 / THE WAY I AM</p>
-                    <h2 id="about-mindset-title" class="about-mindset__letters" :aria-label="t('aboutMe.personalityHeading')">
-                        <span v-for="letter in 'ENTJ'" :key="letter" class="about-mindset__letter" aria-hidden="true">{{ letter }}</span>
-                    </h2>
-                    <p class="about-mindset__personality-title">{{ t('aboutMe.personalityTitle') }}</p>
-                    <p>{{ t('aboutMe.personalityDescription') }}</p>
-                    <span class="about-mindset__annotation">A LITTLE LESS MAYBE. A LITTLE MORE LET'S GO.</span>
-                </div>
-                <div class="about-mindset__belief" data-about-reveal>
-                    <h3 class="about-page__eyebrow">{{ t('aboutMe.beliefTitle') }}</h3>
-                    <blockquote>
-                        <span class="about-mindset__quote-mark" aria-hidden="true">“</span>
-                        <p>
-                            {{ t('aboutMe.beliefLine1') }}<br /><span class="about-mindset__underline">{{ t('aboutMe.beliefLine2') }}</span>
-                        </p>
-                        <cite>{{ t('aboutMe.beliefSource') }}</cite>
-                    </blockquote>
-                    <p class="about-mindset__belief-note">{{ t('aboutMe.beliefDescription') }}</p>
+                <div class="about-mindset__stage">
+                    <div class="about-mindset__personality">
+                        <p class="about-page__eyebrow">01 / THE WAY I AM</p>
+                        <h2 id="about-mindset-title" class="about-mindset__letters" :aria-label="t('aboutMe.personalityHeading')">
+                            <span v-for="letter in 'ENTJ'" :key="letter" class="about-mindset__letter" aria-hidden="true">{{ letter }}</span>
+                        </h2>
+                        <p class="about-mindset__personality-title">{{ t('aboutMe.personalityTitle') }}</p>
+                        <p>{{ t('aboutMe.personalityDescription') }}</p>
+                        <span class="about-mindset__annotation">A LITTLE LESS MAYBE. A LITTLE MORE LET'S GO.</span>
+                    </div>
+                    <div class="about-mindset__belief">
+                        <h3 class="about-page__eyebrow">{{ t('aboutMe.beliefTitle') }}</h3>
+                        <blockquote>
+                            <span class="about-mindset__quote-mark" aria-hidden="true">“</span>
+                            <p>
+                                {{ t('aboutMe.beliefLine1') }}<br /><span class="about-mindset__underline">{{ t('aboutMe.beliefLine2') }}</span>
+                            </p>
+                            <cite>{{ t('aboutMe.beliefSource') }}</cite>
+                        </blockquote>
+                        <p class="about-mindset__belief-note">{{ t('aboutMe.beliefDescription') }}</p>
+                    </div>
                 </div>
             </section>
 
@@ -138,7 +140,7 @@
             <section id="answers" class="about-answers" aria-labelledby="about-answers-title">
                 <h2 id="about-answers-title">{{ t('aboutMe.answersTitle') }}</h2>
                 <dl class="about-answers__list">
-                    <div v-for="question in questions" :key="question.name" class="about-answers__item">
+                    <div v-for="(question, index) in questions" :key="index" class="about-answers__item">
                         <dt>{{ question.name }}</dt>
                         <dd>{{ question.acceptedAnswer }}</dd>
                     </div>
@@ -147,8 +149,13 @@
 
             <section class="about-outro" aria-labelledby="about-outro-title">
                 <p class="about-page__eyebrow" data-about-reveal>STILL ME. ALWAYS MOVING.</p>
-                <h2 id="about-outro-title" data-about-reveal>
-                    {{ t('aboutMe.outroLine1') }}<br /><span>{{ t('aboutMe.outroLine2') }}</span>
+                <h2 id="about-outro-title">
+                    <span class="about-outro__line"
+                        ><span class="about-outro__line-text">{{ t('aboutMe.outroLine1') }}</span></span
+                    >
+                    <span class="about-outro__line"
+                        ><span class="about-outro__line-text">{{ t('aboutMe.outroLine2') }}</span></span
+                    >
                 </h2>
                 <p data-about-reveal>{{ t('aboutMe.outroDescription') }}</p>
                 <div class="about-outro__links" data-about-reveal>
@@ -191,8 +198,13 @@ onMounted(async () => {
     motion = media;
 
     media.add(
-        '(prefers-reduced-motion: no-preference) and (min-height: 600px)',
-        () => {
+        {
+            animate: '(prefers-reduced-motion: no-preference) and (min-height: 600px)',
+            pinMindset: '(min-width: 1024px) and (min-height: 740px)',
+        },
+        (context) => {
+            const { animate, pinMindset } = context.conditions!;
+            if (!animate) return;
             const select = gsap.utils.selector(page);
             select('[data-about-reveal]').forEach((element: HTMLElement) => {
                 gsap.from(element, {
@@ -202,16 +214,37 @@ onMounted(async () => {
                     scrollTrigger: { trigger: element, start: 'top 90%', toggleActions: 'play none none reverse' },
                 });
             });
-            gsap.from(select('.about-mindset__letter'), {
-                yPercent: 45,
-                rotation: 6,
-                stagger: 0.12,
-                scrollTrigger: { trigger: select('.about-mindset__letters')[0], start: 'top 90%', end: 'bottom 55%', scrub: 0.7 },
+            const story = gsap.timeline({
+                scrollTrigger: { trigger: select('.about-story')[0], start: 'top top+=66', end: 'bottom top+=66', scrub: 0.7 },
             });
-            gsap.from(select('.about-mindset__underline'), {
-                backgroundSize: '0% 100%',
-                scrollTrigger: { trigger: select('.about-mindset__belief')[0], start: 'top 75%', end: 'center 55%', scrub: true },
+            story
+                .to(select('.about-story__title'), { yPercent: -12, duration: 1, ease: 'none' }, 0)
+                .to(select('.about-story__asterisk'), { rotation: 120, y: -20, duration: 1, ease: 'none' }, 0)
+                .to(select('.about-story__edition, .about-story__lead'), { y: -20, duration: 1, ease: 'none' }, 0);
+
+            // 넓고 충분히 높은 화면에서만 고정하고, 작은 화면은 같은 순서로 자연스럽게 읽게 한다.
+            const mindset = gsap.timeline({
+                scrollTrigger: {
+                    trigger: select('.about-mindset')[0],
+                    pin: pinMindset ? select('.about-mindset__stage')[0] : false,
+                    start: pinMindset ? 'top top+=66' : 'top 80%',
+                    end: pinMindset ? () => `+=${window.innerHeight * 1.15}` : 'bottom 65%',
+                    scrub: 0.7,
+                    invalidateOnRefresh: true,
+                },
             });
+            mindset
+                .from(select('.about-mindset__letter'), { yPercent: 110, rotation: 8, stagger: 0.14, duration: 1.1, ease: 'power3.out' }, 0)
+                .from(
+                    select('.about-mindset__personality-title, .about-mindset__personality > p:last-of-type, .about-mindset__annotation'),
+                    { y: 28, opacity: 0.35, stagger: 0.16, duration: 0.7 },
+                    0.45,
+                )
+                .from(select('.about-mindset__quote-mark'), { y: 24, rotation: -12, duration: 0.7 }, 0.95)
+                .from(select('.about-mindset__belief blockquote p'), { x: 20, opacity: 0.35, duration: 0.9 }, 1.1)
+                .from(select('.about-mindset__underline'), { backgroundSize: '0% 100%', duration: 1, ease: 'none' }, 1.5)
+                .from(select('.about-mindset__belief cite, .about-mindset__belief-note'), { y: 22, opacity: 0.35, stagger: 0.16, duration: 0.7 }, 2.1)
+                .to({}, { duration: 0.5 });
 
             // 본문은 스크롤 위치와 관계없이 스크린리더와 키보드 사용자에게 계속 노출한다.
             gsap.set(select('.about-identity__guides, .about-identity__figure-label, .about-identity__figure-footer'), {
@@ -234,6 +267,22 @@ onMounted(async () => {
                 .to(select('.about-identity__figure-label, .about-identity__figure-footer'), { autoAlpha: 1, duration: 0.5 }, 1.7)
                 .from(select('.about-identity__details'), { y: 16, duration: 0.7 }, 1.8)
                 .to({}, { duration: 0.7 });
+
+            select('.about-answers__item').forEach((element: HTMLElement) => {
+                gsap.timeline({
+                    scrollTrigger: { trigger: element, start: 'top 90%', end: 'top 55%', scrub: 0.6 },
+                })
+                    .from(element, { '--about-rule-scale': 0, duration: 0.8, ease: 'none' }, 0)
+                    .from(element.querySelector('dt'), { y: 18, opacity: 0.4, duration: 0.65 }, 0.1)
+                    .from(element.querySelector('dd'), { y: 24, opacity: 0.35, duration: 0.8 }, 0.25);
+            });
+
+            const outro = gsap.timeline({
+                scrollTrigger: { trigger: select('.about-outro')[0], start: 'top 85%', end: 'center 65%', scrub: 0.7 },
+            });
+            outro
+                .from(select('.about-outro__line-text'), { yPercent: 110, rotation: 2, stagger: 0.16, duration: 1, ease: 'power3.out' }, 0)
+                .from(select('.about-outro__signature'), { yPercent: 25, rotation: 3, duration: 1.5, ease: 'none' }, 0);
         },
         page,
     );

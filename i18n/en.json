@@ -1566,20 +1566,20 @@
                     "type": "Personal / Vue aircraft dashboard",
                     "role": "Planning / feature scoping / building with Codex Sol 6.1",
                     "tech": ["Vue 3", "Vite", "JavaScript", "SCSS", "Leaflet", "Geolocation API"],
-                    "introduction": "Curiosity about planes flying overhead while driving or exercising led me to use Flightradar24 regularly. I only wanted information about aircraft near me, so I narrowed the scope to the features I needed and built a service that shows aircraft within 25 km through a radar and an airport-style flight board. This personal project was built entirely with Codex Sol 6.1.",
+                    "introduction": "Curiosity about planes flying overhead while driving or exercising led me to use Flightradar24 regularly. I only wanted information about aircraft near me, so I narrowed the scope to the features I needed and built a service that shows aircraft within 30 km through a radar and an airport-style flight board. This personal project was built entirely with Codex Sol 6.1.",
                     "myWorks": [
                         "Used my experience with Flightradar24 to scope the service around checking nearby aircraft",
                         "Built the dashboard, settings and location picker with Vue 3, Vite, JavaScript and SCSS",
                         "Created a responsive layout with the flight board beside the radar on desktop and the radar first on mobile",
-                        "Implemented split-flap flight information, aircraft selection, 10-second automatic switching and pause controls",
-                        "Integrated Geolocation, adsb.lol and adsbdb for nearby aircraft and reference routes with 5-second refreshes",
+                        "Implemented split-flap flight information, aircraft selection, refresh-aligned automatic switching and pause controls",
+                        "Integrated Geolocation, adsb.lol and adsbdb for aircraft within 30 km and reference routes, refreshing every 5, 10 or 15 seconds based on network conditions",
                         "Added manual location selection through Leaflet / OpenStreetMap, address search and coordinate input",
-                        "Supported light / dark themes, Korean / English / Japanese, phone compass and manual heading controls",
-                        "Added keyboard navigation, status announcements, reduced motion, prerendered SEO and GitHub Pages deployment"
+                        "Supported light / dark themes, Korean / English / Japanese, linked mobile location and compass controls, and manual headings",
+                        "Added keyboard navigation, status and radar-scale announcements, reduced motion, prerendered SEO and GitHub Pages deployment"
                     ],
                     "achievements": [
                         "Connected aircraft distance and bearing on the radar to readable details on the flight board",
-                        "Provided map and coordinate alternatives when location permission or GPS is unavailable",
+                        "Added location permission retries, GPS and compass failure guidance, plus map and coordinate alternatives",
                         "Built request cancellation, route caching, API rate-limit waits and error states into the interface"
                     ],
                     "points": [

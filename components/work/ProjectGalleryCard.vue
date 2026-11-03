@@ -1,17 +1,12 @@
 <template>
-    <NuxtLink
-        :to="to"
-        class="gallery-card"
-        data-reveal="up"
-        :data-reveal-delay="revealDelay"
+    <NuxtLink :to="to" class="gallery-card" data-reveal="up" :data-reveal-delay="revealDelay"
         :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
-        :aria-label="cardAriaLabel"
-    >
+        :aria-label="cardAriaLabel">
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
                 <p class="gallery-editorial__entry-kicker">
-                    <span>{{ work.duration }}</span>
-                    <span aria-hidden="true">•</span>
+                    <span v-if="work.duration">{{ work.duration }}</span>
+                    <span v-if="work.duration" aria-hidden="true">•</span>
                     <span>{{ work.type }}</span>
                     <span v-if="work.period" aria-hidden="true">•</span>
                     <span v-if="work.period">{{ work.period }}</span>
@@ -25,7 +20,8 @@
 
                 <p class="gallery-editorial__entry-dek">{{ work.introduction }}</p>
 
-                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags" :aria-label="t('gallery.languages')">
+                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags"
+                    :aria-label="t('gallery.languages')">
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
                 </ul>
 
@@ -46,8 +42,8 @@
             </div>
             <div class="gallery-card__body">
                 <p class="gallery-card__meta">
-                    <span>{{ work.duration }}</span>
-                    <span aria-hidden="true"> / </span>
+                    <span v-if="work.duration">{{ work.duration }}</span>
+                    <span v-if="work.duration" aria-hidden="true"> / </span>
                     <span>{{ work.type }}</span>
                 </p>
                 <component :is="headingTag" class="gallery-card__title">{{ work.title }}</component>

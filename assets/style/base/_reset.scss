@@ -229,7 +229,39 @@ html.app--menu-open {
     }
 }
 
+html.reduce-effects {
+    scroll-behavior: auto;
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .app-background::after {
+        display: none;
+    }
+}
+
+@media (forced-colors: active) {
+    .app-background {
+        display: none;
+    }
+
+    :where(a, button, input, textarea, select, summary):focus-visible {
+        outline: 2px solid Highlight;
+    }
+
+    .skip-link {
+        border: 1px solid CanvasText;
+        color: CanvasText;
+        background: Canvas;
+    }
+}
+
 @keyframes emoji-float {
+
     0%,
     100% {
         transform: translateY(0) rotate(0deg) scale(1);
@@ -247,6 +279,7 @@ html.app--menu-open {
 }
 
 @keyframes emoji-glow {
+
     0%,
     100% {
         transform: translateY(0) scale(1);

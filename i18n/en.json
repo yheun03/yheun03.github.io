@@ -282,6 +282,7 @@
         "switchToLightTheme": "Switch to light theme",
         "localeChangedEn": "Display language switched to English.",
         "localeChangedKo": "Display language switched to Korean.",
+        "localeChangeFailed": "The language data could not be loaded. Check your connection and try again.",
         "themeChangedDark": "Dark theme enabled.",
         "themeChangedLight": "Light theme enabled.",
         "skipToContent": "Skip to main content",

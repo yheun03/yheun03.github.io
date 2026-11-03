@@ -192,10 +192,18 @@ usePortfolioSeo(() => {
             '@id': `${workUrl}#project`,
             url: workUrl,
             name: props.work.title,
+            description: props.work.introduction,
             abstract: props.work.introduction,
             creator: { '@id': 'https://yheun03.github.io/#person' },
+            author: { '@id': 'https://yheun03.github.io/#person' },
+            mainEntityOfPage: { '@id': `${workUrl}#webpage` },
+            inLanguage: locale.value,
+            isAccessibleForFree: true,
             genre: props.work.type,
             keywords: [...props.work.languages, ...props.work.tech].join(', '),
+            about: [...new Set(props.work.tech)].map((name) => ({ '@type': 'Thing', name })),
+            ...(coverImage ? { image: getPortfolioAbsoluteUrl(coverImage) } : {}),
+            ...(props.work.links?.length ? { sameAs: props.work.links.map((link) => link.href) } : {}),
         },
     };
 });

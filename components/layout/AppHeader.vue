@@ -18,7 +18,8 @@
                 </Transition>
             </BaseButton>
             <BaseButton class="app-header__language-toggle" variant="ghost" :label="localeLabel"
-                :aria-label="languageToggleAriaLabel" @click="handleLocaleToggle">
+                :aria-label="languageToggleAriaLabel" :aria-busy="localeLoading" :disabled="localeLoading"
+                @click="handleLocaleToggle">
                 <Transition name="toggle-swap" mode="out-in">
                     <span :key="localeLabel" class="toggle-swap">{{ localeLabel }}</span>
                 </Transition>
@@ -57,6 +58,7 @@ const handleScroll = () => {
 };
 
 const statusMessage = ref('');
+const localeLoading = ref(false);
 const { locale, toggleLocale, t } = useLocale();
 const { isDarkTheme, toggleTheme } = useTheme();
 
@@ -70,9 +72,17 @@ const themeToggleAriaLabel = computed(
 );
 
 async function handleLocaleToggle() {
+    if (localeLoading.value) return;
     const switchingToEn = locale.value === 'ko';
-    await toggleLocale();
-    statusMessage.value = t(switchingToEn ? 'a11y.localeChangedEn' : 'a11y.localeChangedKo');
+    localeLoading.value = true;
+    try {
+        await toggleLocale();
+        statusMessage.value = t(switchingToEn ? 'a11y.localeChangedEn' : 'a11y.localeChangedKo');
+    } catch {
+        statusMessage.value = t('a11y.localeChangeFailed');
+    } finally {
+        localeLoading.value = false;
+    }
 }
 
 function handleThemeToggle() {

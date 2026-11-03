@@ -282,6 +282,7 @@
         "switchToLightTheme": "라이트 테마로 전환",
         "localeChangedKo": "표시 언어가 한국어로 변경되었습니다.",
         "localeChangedEn": "표시 언어가 영어로 변경되었습니다.",
+        "localeChangeFailed": "언어 데이터를 불러오지 못했습니다. 네트워크 상태를 확인한 뒤 다시 시도해 주세요.",
         "themeChangedDark": "다크 테마로 변경되었습니다.",
         "themeChangedLight": "라이트 테마로 변경되었습니다.",
         "skipToContent": "본문으로 건너뛰기",

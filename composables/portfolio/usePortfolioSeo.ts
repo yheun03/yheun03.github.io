@@ -56,6 +56,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const imageHeight = page.imageHeight ?? (imagePath === DEFAULT_IMAGE ? 1122 : undefined);
         const title = page.ogTitle ?? page.title;
         const description = page.ogDescription ?? page.description;
+        const keywordList = [...new Set([...seo.keywords, ...(page.keywords ?? [])])];
         const robots = page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
         const naverVerification = String(config.naverSiteVerification ?? '').trim();
         const personId = `${SITE_URL}#person`;
@@ -83,8 +84,11 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             name: page.title,
             description: page.description,
             inLanguage: page.locale,
+            keywords: keywordList.join(', '),
+            isAccessibleForFree: true,
             isPartOf: { '@id': websiteId },
             about: { '@id': personId },
+            author: { '@id': personId },
             publisher: { '@id': personId },
             primaryImageOfPage: { '@id': imageId },
         };
@@ -171,7 +175,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             meta: [
                 { name: 'description', content: page.description },
                 { name: 'author', content: profile.name },
-                { name: 'keywords', content: [...new Set([...seo.keywords, ...(page.keywords ?? [])])].join(', ') },
+                { name: 'keywords', content: keywordList.join(', ') },
                 { name: 'robots', content: robots },
                 ...(naverVerification ? [{ name: 'naver-site-verification', content: naverVerification }] : []),
                 { property: 'og:type', content: page.type ?? 'website' },
@@ -185,6 +189,9 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { property: 'og:image:secure_url', content: image },
                 { property: 'og:image:type', content: getImageMimeType(imagePath) },
                 { property: 'og:image:alt', content: page.imageAlt ?? title },
+                ...(page.type === 'article' ? [{ property: 'article:author', content: profile.name }] : []),
+                ...(page.dateCreated ? [{ property: 'article:published_time', content: page.dateCreated }] : []),
+                ...(page.dateModified ? [{ property: 'article:modified_time', content: page.dateModified }] : []),
                 ...(imageWidth && imageHeight
                     ? [
                           { property: 'og:image:width', content: String(imageWidth) },

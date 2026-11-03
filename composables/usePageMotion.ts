@@ -15,9 +15,9 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
         const container = root.value;
         if (!container) return;
 
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const reducedEffects = useReducedEffects();
         const initialized = new WeakSet<Element>();
-        const intersectionObserver = reducedMotion
+        const intersectionObserver = reducedEffects
             ? undefined
             : new IntersectionObserver(
                   (entries, observer) => {
@@ -37,7 +37,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
             const delay = Number(element.dataset.revealDelay || 0);
             if (delay > 0) element.style.setProperty('--reveal-delay', `${delay}ms`);
 
-            if (reducedMotion) reveal(element);
+            if (reducedEffects) reveal(element);
             else intersectionObserver?.observe(element);
         };
 

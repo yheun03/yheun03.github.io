@@ -42,14 +42,23 @@ export function useLocale() {
         await loadMessages(value);
         locale.value = value;
         if (import.meta.client) {
-            localStorage.setItem(STORAGE_KEY, value);
+            try {
+                localStorage.setItem(STORAGE_KEY, value);
+            } catch {
+                // 저장소가 차단되어도 현재 문서의 언어는 유지한다.
+            }
             document.documentElement.lang = value;
         }
     }
 
     async function initLocale() {
         if (!import.meta.client) return;
-        const saved = localStorage.getItem(STORAGE_KEY);
+        let saved: string | null = null;
+        try {
+            saved = localStorage.getItem(STORAGE_KEY);
+        } catch {
+            // 저장소 접근이 제한된 환경에서는 기본 언어를 사용한다.
+        }
         await setLocale(isLocale(saved) ? saved : 'ko');
     }
 

@@ -47,6 +47,13 @@
         transition-duration: 0.1s;
     }
 
+    &:disabled {
+        cursor: wait;
+        opacity: 0.62;
+        transform: none;
+        box-shadow: none;
+    }
+
     &--primary {
         background: var(--gradient-accent);
         color: var(--color-on-primary);

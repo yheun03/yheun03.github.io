@@ -1,13 +1,6 @@
 <template>
-    <AppLayout
-        :links="layoutLinks"
-        active-id=""
-        brand-href="/"
-        active-path="/about"
-        page-variant="about"
-        :show-app-dock="false"
-        :footer-text="t('footer.copyright')"
-    >
+    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/about" page-variant="about"
+        :show-app-dock="false" :footer-text="t('footer.copyright')">
         <div ref="pageRef" class="about-page">
             <section id="about-intro" class="about-story" aria-labelledby="about-title">
                 <div class="about-story__stage">
@@ -19,8 +12,8 @@
                         <p class="about-story__edition">{{ t('aboutMe.introLabel') }}</p>
                         <h1 id="about-title" class="about-story__title">
                             {{ t('aboutMe.titleLine1') }}<br />
-                            <span>{{ t('aboutMe.titleLine2') }}</span
-                            ><span class="about-story__asterisk" aria-hidden="true">✳</span>
+                            <span>{{ t('aboutMe.titleLine2') }}</span><span class="about-story__asterisk"
+                                aria-hidden="true">✳</span>
                         </h1>
                         <p class="about-story__lead">{{ t('aboutMe.intro') }}</p>
                         <BaseLink href="#about-mindset" class="about-page__text-link about-story__skip">
@@ -34,8 +27,10 @@
                 <div class="about-mindset__stage">
                     <div class="about-mindset__personality">
                         <p class="about-page__eyebrow">01 / THE WAY I AM</p>
-                        <h2 id="about-mindset-title" class="about-mindset__letters" :aria-label="t('aboutMe.personalityHeading')">
-                            <span v-for="letter in 'ENTJ'" :key="letter" class="about-mindset__letter" aria-hidden="true">{{ letter }}</span>
+                        <h2 id="about-mindset-title" class="about-mindset__letters"
+                            :aria-label="t('aboutMe.personalityHeading')">
+                            <span v-for="letter in 'ENTJ'" :key="letter" class="about-mindset__letter"
+                                aria-hidden="true">{{ letter }}</span>
                         </h2>
                         <p class="about-mindset__personality-title">{{ t('aboutMe.personalityTitle') }}</p>
                         <p>{{ t('aboutMe.personalityDescription') }}</p>
@@ -46,7 +41,8 @@
                         <blockquote>
                             <span class="about-mindset__quote-mark" aria-hidden="true">“</span>
                             <p>
-                                {{ t('aboutMe.beliefLine1') }}<br /><span class="about-mindset__underline">{{ t('aboutMe.beliefLine2') }}</span>
+                                {{ t('aboutMe.beliefLine1') }}<br /><span class="about-mindset__underline">{{
+                                    t('aboutMe.beliefLine2') }}</span>
                             </p>
                             <cite>{{ t('aboutMe.beliefSource') }}</cite>
                         </blockquote>
@@ -66,31 +62,31 @@
                     </header>
                     <div class="about-identity__blueprint">
                         <span class="about-identity__figure-label" aria-hidden="true">FIG. 01 — YH / CONSTRUCTION</span>
-                        <svg
-                            class="about-identity__svg"
-                            viewBox="0 0 600 420"
-                            role="img"
-                            focusable="false"
-                            :aria-label="t('aboutMe.logoDescription')"
-                        >
+                        <svg class="about-identity__svg" viewBox="0 0 600 420" role="img" focusable="false"
+                            :aria-label="t('aboutMe.logoDescription')">
                             <defs>
                                 <pattern id="about-logo-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M20 0H0V20" fill="none" stroke="var(--about-guide)" stroke-opacity=".15" stroke-width=".7" />
+                                    <path d="M20 0H0V20" fill="none" stroke="var(--about-guide)" stroke-opacity=".15"
+                                        stroke-width=".7" />
                                 </pattern>
                             </defs>
-                            <g class="about-identity__guides" fill="none" stroke="var(--about-guide)" stroke-width="1" aria-hidden="true">
-                                <rect x="120" y="40" width="360" height="340" fill="url(#about-logo-grid)" stroke-opacity=".45" />
+                            <g class="about-identity__guides" fill="none" stroke="var(--about-guide)" stroke-width="1"
+                                aria-hidden="true">
+                                <rect x="120" y="40" width="360" height="340" fill="url(#about-logo-grid)"
+                                    stroke-opacity=".45" />
                                 <path
                                     d="M60 78.5h480M60 339.5h480M151.65 15v390M450.8 15v390M60 210h480M300 15v390M225.8 60v300M306.8 60v300M369.8 60v300"
-                                    stroke-dasharray="4 5"
-                                />
-                                <path d="m105 20 150 375M200 20l150 375M350 20 200 375M445 20 295 395" stroke-opacity=".55" />
+                                    stroke-dasharray="4 5" />
+                                <path d="m105 20 150 375M200 20l150 375M350 20 200 375M445 20 295 395"
+                                    stroke-opacity=".55" />
                                 <circle cx="300" cy="210" r="130" />
                                 <circle cx="220" cy="120" r="40" />
                                 <circle cx="380" cy="120" r="40" />
                                 <circle cx="300" cy="270" r="70" />
-                                <path d="M151.65 365H450.8m-299.15-5v10m299.15-10v10M475 78.5v261m-5-261h10m-10 261h10" />
-                                <g fill="var(--about-guide)" stroke="none" font-size="10" font-family="monospace" letter-spacing="1">
+                                <path
+                                    d="M151.65 365H450.8m-299.15-5v10m299.15-10v10M475 78.5v261m-5-261h10m-10 261h10" />
+                                <g fill="var(--about-guide)" stroke="none" font-size="10" font-family="monospace"
+                                    letter-spacing="1">
                                     <text x="265" y="383">33.24 UNITS</text>
                                     <text x="488" y="215" transform="rotate(90 488 215)">29 UNITS</text>
                                     <text x="69" y="74">CAP HEIGHT</text>
@@ -101,35 +97,31 @@
                             </g>
                             <!-- 실제 파비콘의 경로·색상·레이어 순서. -->
                             <g transform="translate(145 65) scale(9)">
-                                <path
-                                    class="about-identity__letter-h"
+                                <path class="about-identity__letter-h"
                                     d="M33.9771 30.5029H33.4771L25.4771 30.501H24.9771V20.4971L17.9771 20.499V30.5039H17.4771L9.47705 30.5029H8.97705V1.50293H9.47705L17.4771 1.50391H17.9771V11.502L24.9771 11.5V1.5H25.4771L33.4771 1.50293H33.9771V30.5029Z"
-                                    fill="#8FB8FF"
-                                    stroke="var(--about-ink)"
-                                    stroke-width=".22"
-                                />
-                                <path
-                                    class="about-identity__letter-y"
+                                    fill="#8FB8FF" stroke="var(--about-ink)" stroke-width=".22" />
+                                <path class="about-identity__letter-y"
                                     d="M9.81592 1.5L9.94092 1.81445L13.4771 10.6543L17.0132 1.81445L17.1382 1.5H26.2153L25.9409 2.18555L17.9771 22.0947V30.5H8.97705V22.0947L1.01318 2.18555L0.73877 1.5H9.81592Z"
-                                    fill="#EAF2FF"
-                                    stroke="var(--about-ink)"
-                                    stroke-width=".22"
-                                />
+                                    fill="#EAF2FF" stroke="var(--about-ink)" stroke-width=".22" />
                             </g>
                         </svg>
-                        <span class="about-identity__figure-footer" aria-hidden="true">YOUNG HWAN / OVERLAPPING INITIALS</span>
+                        <span class="about-identity__figure-footer" aria-hidden="true">YOUNG HWAN / OVERLAPPING
+                            INITIALS</span>
                     </div>
                     <div class="about-identity__details">
                         <div class="about-identity__formula" aria-hidden="true">
-                            <span>Y</span><span>+</span><span>H</span><span>=</span><strong>{{ t('aboutMe.identityMe') }}</strong>
+                            <span>Y</span><span>+</span><span>H</span><span>=</span><strong>{{ t('aboutMe.identityMe')
+                                }}</strong>
                         </div>
                         <p>{{ t('aboutMe.identityDescription') }}</p>
                         <div class="about-identity__palette" role="group" :aria-label="t('aboutMe.paletteLabel')">
                             <div>
-                                <i style="--swatch: #eaf2ff" aria-hidden="true" /><span>PALE BLUE<small>#EAF2FF</small></span>
+                                <i style="--swatch: #eaf2ff" aria-hidden="true" /><span>PALE
+                                    BLUE<small>#EAF2FF</small></span>
                             </div>
                             <div>
-                                <i style="--swatch: #8fb8ff" aria-hidden="true" /><span>SKY BLUE<small>#8FB8FF</small></span>
+                                <i style="--swatch: #8fb8ff" aria-hidden="true" /><span>SKY
+                                    BLUE<small>#8FB8FF</small></span>
                             </div>
                         </div>
                     </div>
@@ -150,17 +142,16 @@
             <section class="about-outro" aria-labelledby="about-outro-title">
                 <p class="about-page__eyebrow" data-about-reveal>STILL ME. ALWAYS MOVING.</p>
                 <h2 id="about-outro-title">
-                    <span class="about-outro__line"
-                        ><span class="about-outro__line-text">{{ t('aboutMe.outroLine1') }}</span></span
-                    >
-                    <span class="about-outro__line"
-                        ><span class="about-outro__line-text">{{ t('aboutMe.outroLine2') }}</span></span
-                    >
+                    <span class="about-outro__line"><span class="about-outro__line-text">{{ t('aboutMe.outroLine1')
+                            }}</span></span>
+                    <span class="about-outro__line"><span class="about-outro__line-text">{{ t('aboutMe.outroLine2')
+                            }}</span></span>
                 </h2>
                 <p data-about-reveal>{{ t('aboutMe.outroDescription') }}</p>
                 <div class="about-outro__links" data-about-reveal>
                     <BaseButton href="/projects" :label="t('aboutMe.viewWorks')" />
-                    <BaseLink href="/" class="about-page__text-link">{{ t('aboutMe.backHome') }} <span aria-hidden="true">↗</span></BaseLink>
+                    <BaseLink href="/" class="about-page__text-link">{{ t('aboutMe.backHome') }} <span
+                            aria-hidden="true">↗</span></BaseLink>
                 </div>
                 <span class="about-outro__signature" aria-hidden="true">Eun.</span>
             </section>
@@ -188,6 +179,8 @@ watch(locale, async () => {
 });
 
 onMounted(async () => {
+    if (useReducedEffects()) return;
+
     // 이 페이지에서만 GSAP을 불러온다. 페이지 이동 시 모든 트리거와 인라인 스타일을 복원한다.
     const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
     if (disposed || !pageRef.value) return;

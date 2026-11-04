@@ -1,1 +1,0 @@
-import{_ as a}from"./DM0XBued.js";import{d as t,E as s,f as n,i as c,e as m}from"./Bnrv_iNm.js";import{u as _}from"./CObu4E-S.js";import"./DowdeEFo.js";const w=t({__name:"[id]",setup(i){const e=s(),r=_("career",e.params.id);return(p,u)=>{const o=a;return m(),n(o,{variant:"career",work:c(r)},null,8,["work"])}}});export{w as default};

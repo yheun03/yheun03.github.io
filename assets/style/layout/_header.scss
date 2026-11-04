@@ -180,7 +180,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .app-header__theme-toggle:active,
     .app-header__language-toggle:active,
     .app-header__menu-btn:active {
@@ -199,62 +198,14 @@
 }
 
 .app-header__menu-icon {
-    position: relative;
-    display: grid;
-    width: 18px;
-    height: 14px;
-    align-items: center;
-
-    span {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        border-radius: $radius-pill;
-        background: currentColor;
-        transform-origin: center;
-        transition:
-            transform 0.22s ease,
-            opacity 0.16s ease,
-            top 0.22s ease;
-
-        &:nth-child(1) {
-            top: 0;
-        }
-
-        &:nth-child(2) {
-            top: calc(50% - 1px);
-            width: 68%;
-            right: 0;
-            left: auto;
-        }
-
-        &:nth-child(3) {
-            top: calc(100% - 2px);
-        }
-    }
+    display: block;
+    width: 20px;
+    height: 20px;
 }
 
 .app-header__menu-btn[aria-expanded='true'] {
     border-color: var(--color-border);
     background: color-mix(in srgb, var(--color-primary) 8%, transparent);
-
-    .app-header__menu-icon {
-        span:nth-child(1) {
-            top: calc(50% - 1px);
-            transform: rotate(45deg);
-        }
-
-        span:nth-child(2) {
-            opacity: 0;
-            transform: translateX(6px);
-        }
-
-        span:nth-child(3) {
-            top: calc(50% - 1px);
-            transform: rotate(-45deg);
-        }
-    }
 }
 
 /* =========================================
@@ -383,7 +334,7 @@
 
     &__link {
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: minmax(0, 1fr) auto;
         align-items: center;
         gap: $space-4;
         min-height: $size-touch;
@@ -405,7 +356,7 @@
 
             .app-lnb__link-arrow {
                 opacity: 0.8;
-                transform: translateX(1px) rotate(45deg);
+                transform: translateX(1px);
             }
         }
 
@@ -442,12 +393,9 @@
     }
 
     &__link-arrow {
-        width: 7px;
-        height: 7px;
-        border-top: 2px solid currentColor;
-        border-right: 2px solid currentColor;
-        opacity: 0.35;
-        transform: rotate(45deg);
+        width: 16px;
+        height: 16px;
+        opacity: 0.6;
         transition:
             opacity 0.18s ease,
             transform 0.18s ease;
@@ -643,7 +591,6 @@
 }
 
 @media (max-width: 360px) {
-
     .app-header__theme-toggle,
     .app-header__language-toggle {
         padding-inline: $space-3;

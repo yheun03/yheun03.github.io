@@ -10,12 +10,12 @@
     --reveal-side-distance: 56px;
 }
 
-.portfolio-page--home>.section:not(.section--hero) {
+.portfolio-page--home > .section:not(.section--hero) {
     content-visibility: auto;
     contain-intrinsic-block-size: auto 900px;
 }
 
-.portfolio-page--home>.section:not(.section--hero) [data-animate] {
+.portfolio-page--home > .section:not(.section--hero) [data-animate] {
     opacity: 0;
     transform: translateY(var(--reveal-distance));
     transition:
@@ -25,32 +25,35 @@
     will-change: opacity, transform;
 }
 
-.portfolio-page--home>.section:not(.section--hero) [data-animate] [data-animate],
-.portfolio-page--home>.section:not(.section--hero) :is(.section-title, .about__intro)[data-animate],
-.portfolio-page--home>.section.section--why-list .why__list>li[data-animate] {
+.portfolio-page--home > .section:not(.section--hero) [data-animate] [data-animate],
+.portfolio-page--home > .section:not(.section--hero) :is(.section-title, .about__intro)[data-animate],
+.portfolio-page--home > .section.section--why-list .why__list > li[data-animate] {
     opacity: 1;
     transform: none;
     transition: none;
 }
 
-.portfolio-page--home>.section:not(.section--hero) [data-animate='zoom'] {
+.portfolio-page--home > .section:not(.section--hero) [data-animate='zoom'] {
     transform: translateY(20px) scale(0.95);
 }
 
-.portfolio-page--home>.section:not(.section--hero) [data-animate].animate--visible {
+.portfolio-page--home > .section:not(.section--hero) [data-animate].animate--visible {
     opacity: 1;
     transform: none;
     will-change: auto;
 }
 
-.portfolio-page--home>.section:not(.section--hero) [data-animate].animate--visible [data-stagger] {
+.portfolio-page--home > .section:not(.section--hero) [data-animate].animate--visible [data-stagger] {
     animation-duration: var(--reveal-duration);
 }
 
-.portfolio-page--home>.section:not(.section--hero) .section-title[data-animate]> :is(.section-title__eyebrow, .section-title__title, .section-title__description),
-.portfolio-page--home>.section.section--about-intro .about__intro[data-animate]> :is(.section-title__eyebrow, .about__lead),
-.portfolio-page--home>.section.section--about-intro .about__intro[data-animate] .about__display-line,
-.portfolio-page--home>.section.section--why-list .why__list>li[data-animate]>* {
+.portfolio-page--home
+    > .section:not(.section--hero)
+    .section-title[data-animate]
+    > :is(.section-title__eyebrow, .section-title__title, .section-title__description),
+.portfolio-page--home > .section.section--about-intro .about__intro[data-animate] > :is(.section-title__eyebrow, .about__lead),
+.portfolio-page--home > .section.section--about-intro .about__intro[data-animate] .about__display-line,
+.portfolio-page--home > .section.section--why-list .why__list > li[data-animate] > * {
     opacity: 0;
     transform: translateY(var(--reveal-distance));
     transition:
@@ -60,42 +63,42 @@
     will-change: opacity, transform;
 }
 
-.portfolio-page--home>.section.section--why-list .why__list>li:first-child[data-animate]>* {
+.portfolio-page--home > .section.section--why-list .why__list > li:first-child[data-animate] > * {
     transform: translateX(calc(0px - var(--reveal-side-distance)));
 }
 
-.portfolio-page--home>.section.section--why-list .why__list>li:last-child[data-animate]>* {
+.portfolio-page--home > .section.section--why-list .why__list > li:last-child[data-animate] > * {
     transform: translateX(var(--reveal-side-distance));
 }
 
-.portfolio-page--home>.section:not(.section--hero) .section-title[data-animate].animate--visible>*,
-.portfolio-page--home>.section.section--about-intro .about__intro[data-animate].animate--visible> :is(.section-title__eyebrow, .about__lead),
-.portfolio-page--home>.section.section--about-intro .about__intro[data-animate].animate--visible .about__display-line,
-.portfolio-page--home>.section.section--why-list .why__list>li[data-animate].animate--visible>*,
-.portfolio-page--home>.section.section--why-list .why__list>li:first-child[data-animate].animate--visible>*,
-.portfolio-page--home>.section.section--why-list .why__list>li:last-child[data-animate].animate--visible>* {
+.portfolio-page--home > .section:not(.section--hero) .section-title[data-animate].animate--visible > *,
+.portfolio-page--home > .section.section--about-intro .about__intro[data-animate].animate--visible > :is(.section-title__eyebrow, .about__lead),
+.portfolio-page--home > .section.section--about-intro .about__intro[data-animate].animate--visible .about__display-line,
+.portfolio-page--home > .section.section--why-list .why__list > li[data-animate].animate--visible > *,
+.portfolio-page--home > .section.section--why-list .why__list > li:first-child[data-animate].animate--visible > *,
+.portfolio-page--home > .section.section--why-list .why__list > li:last-child[data-animate].animate--visible > * {
     opacity: 1;
     transform: translate(0, 0);
     will-change: auto;
 }
 
-.portfolio-page--home>.section.section--about-intro .about__intro[data-animate].animate--visible .about__display-line {
+.portfolio-page--home > .section.section--about-intro .about__intro[data-animate].animate--visible .about__display-line {
     will-change: auto;
 }
 
-.portfolio-page--home .section-title[data-animate]>.section-title__eyebrow,
-.portfolio-page--home .section--about-intro .about__intro[data-animate]>.section-title__eyebrow,
-.portfolio-page--home .section--why-list .why__list>li[data-animate]> :first-child {
+.portfolio-page--home .section-title[data-animate] > .section-title__eyebrow,
+.portfolio-page--home .section--about-intro .about__intro[data-animate] > .section-title__eyebrow,
+.portfolio-page--home .section--why-list .why__list > li[data-animate] > :first-child {
     --reveal-delay: var(--reveal-delay-base);
 }
 
-.portfolio-page--home .section-title[data-animate]>.section-title__title,
-.portfolio-page--home .section--why-list .why__list>li[data-animate]>h3 {
+.portfolio-page--home .section-title[data-animate] > .section-title__title,
+.portfolio-page--home .section--why-list .why__list > li[data-animate] > h3 {
     --reveal-delay: calc(var(--reveal-delay-base) + var(--reveal-delay-step));
 }
 
-.portfolio-page--home .section-title[data-animate]>.section-title__description,
-.portfolio-page--home .section--why-list .why__list>li[data-animate]>p {
+.portfolio-page--home .section-title[data-animate] > .section-title__description,
+.portfolio-page--home .section--why-list .why__list > li[data-animate] > p {
     --reveal-delay: calc(var(--reveal-delay-base) + var(--reveal-delay-step) + var(--reveal-delay-step));
 }
 
@@ -127,10 +130,15 @@
     line-height: calc(var(--line-height-body) + 0.15);
 }
 
+/* 주력으로 사용하는 HTML·SCSS를 먼저 읽을 수 있도록 강조한다. */
+.feature-grid--toolbox > li:nth-child(-n + 2) .feature-card__title {
+    color: var(--primary-600);
+}
+
 .section--toolbox .section-head {
     gap: clamp(16px, 2vw, 24px);
 
-    >.section-title__description {
+    > .section-title__description {
         margin-top: 0;
     }
 }
@@ -147,7 +155,7 @@
     align-content: start;
     gap: var(--space-4);
     padding-top: var(--space-5);
-    border-top: 2px solid var(--color-primary);
+    border-top: 1px solid var(--color-border);
 
     dt {
         display: grid;

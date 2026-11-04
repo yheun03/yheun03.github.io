@@ -3,7 +3,21 @@
         <summary class="gallery-filter__trigger">
             <span class="gallery-filter__trigger-label">{{ triggerLabel }}</span>
             <strong>{{ selectionLabel }}</strong>
-            <span class="gallery-filter__chevron" aria-hidden="true" />
+            <svg
+                class="gallery-filter__chevron"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <path d="m6 9 6 6 6-6" />
+            </svg>
         </summary>
 
         <fieldset class="gallery-filter__panel">
@@ -15,11 +29,41 @@
                 :aria-label="t('gallery.filterAll')"
                 @click="emit('update:selected', [])"
             >
+                <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
                 {{ t('gallery.filterAll') }}
             </button>
             <label v-for="option in options" :key="option.value" class="gallery-filter__option">
                 <input type="checkbox" :aria-label="option.label" :checked="selected.includes(option.value)" @change="toggle(option.value)" />
-                <span aria-hidden="true" />
+                <span aria-hidden="true">
+                    <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                </span>
                 {{ option.label }}
             </label>
         </fieldset>

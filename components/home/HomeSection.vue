@@ -4,7 +4,7 @@
             <slot name="head" />
         </header>
         <BaseSectionTitle
-            v-else-if="eyebrow && title"
+            v-else-if="title"
             :title-id="titleId"
             :eyebrow="eyebrow"
             :title="title"

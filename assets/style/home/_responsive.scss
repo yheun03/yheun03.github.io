@@ -60,7 +60,7 @@ html:has(.portfolio-page--home) .app-footer {
         &__title,
         &__description {
             max-width: 100%;
-            overflow-wrap: anywhere;
+            overflow-wrap: break-word;
         }
     }
 
@@ -84,12 +84,12 @@ html:has(.portfolio-page--home) .app-footer {
     }
 
     .hero__display-line {
-        font-size: var(--font-size-display-1);
+        font-size: clamp(2rem, 10vw, 3.5rem);
         letter-spacing: 0;
     }
 
     .hero__lead {
-        max-width: 24ch;
+        max-width: 36ch;
         margin-top: clamp(14px, 4.5vw, 24px);
     }
 
@@ -186,8 +186,8 @@ html:has(.portfolio-page--home) .app-footer {
     }
 
     .about__display-line {
-        font-size: 10rem;
-        line-height: 1.12;
+        font-size: var(--font-size-display-2);
+        line-height: 1.2;
     }
 
     .about__lead {
@@ -202,16 +202,12 @@ html:has(.portfolio-page--home) .app-footer {
         align-content: space-between;
 
         h3 {
-            font-size: 5.5rem;
-            line-height: 1.05;
+            font-size: var(--font-size-display-4);
+            line-height: 1.2;
         }
 
         p {
             font-size: 1.125rem;
-        }
-
-        .base-index-label {
-            font-size: 1rem;
         }
     }
 }
@@ -456,8 +452,8 @@ html:has(.portfolio-page--home) .app-footer {
         gap: 26px;
 
         .editorial-masthead__title {
-            max-width: 10ch;
-            font-size: clamp(2.65rem, 13vw, 4.1rem);
+            max-width: 100%;
+            font-size: clamp(2.25rem, 9vw, 3.5rem);
         }
     }
 
@@ -471,7 +467,7 @@ html:has(.portfolio-page--home) .app-footer {
 
     .journey__view-switch {
         gap: 10px;
-        padding: 16px;
+        padding: 0;
         border-radius: 18px;
     }
 
@@ -648,9 +644,10 @@ html:has(.portfolio-page--home) .app-footer {
             white-space: nowrap;
 
             &--active {
-                color: var(--color-on-primary);
-                border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
-                background: var(--gradient-accent);
+                color: var(--color-bg);
+                border-color: var(--color-text-strong);
+                background: var(--color-text-strong);
+                box-shadow: none;
             }
         }
     }
@@ -760,8 +757,7 @@ html:has(.portfolio-page--home) .app-footer {
         gap: clamp(16px, 2.5vh, 22px);
     }
 
-    .hero__display-line,
-    .about__display-line {
+    .hero__display-line {
         font-size: var(--font-size-display-1);
         line-height: var(--line-height-display);
     }
@@ -774,7 +770,12 @@ html:has(.portfolio-page--home) .app-footer {
     .hero__lead,
     .about__lead {
         margin-top: clamp(12px, 2vh, 18px);
-        font-size: var(--font-size-title-1);
+        font-size: var(--font-size-body-1);
+        font-weight: var(--font-weight-regular);
+    }
+
+    .about__display-line {
+        font-size: var(--font-size-display-2);
     }
 
     .hero__meta {
@@ -789,7 +790,7 @@ html:has(.portfolio-page--home) .app-footer {
         gap: clamp(20px, 3vh, 28px);
 
         h3 {
-            font-size: var(--font-size-display-3);
+            font-size: var(--font-size-display-4);
         }
 
         p {

@@ -63,14 +63,14 @@
     }
 
     &--active {
-        color: var(--sc-active-fg, var(--color-on-accent, #{$grayscale-0}));
-        background: var(--sc-active-bg, var(--sc-base-color));
-        box-shadow: var(--sc-active-shadow, var(--shadow-ring));
+        color: var(--sc-active-fg, var(--primary-600));
+        background: var(--sc-active-bg, color-mix(in srgb, var(--color-primary) 10%, var(--color-surface)));
+        box-shadow: var(--sc-active-shadow, none);
     }
 
     &--active:hover {
-        color: var(--sc-active-fg, var(--color-on-accent, #{$grayscale-0}));
-        background: var(--sc-active-hover-bg, var(--sc-base-color));
-        box-shadow: var(--sc-active-shadow-hover, var(--shadow-soft));
+        color: var(--sc-active-fg, var(--primary-600));
+        background: var(--sc-active-hover-bg, color-mix(in srgb, var(--color-primary) 14%, var(--color-surface)));
+        box-shadow: var(--sc-active-shadow-hover, none);
     }
 }

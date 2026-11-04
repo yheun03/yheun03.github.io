@@ -11,9 +11,9 @@
 
 .base-chip {
     padding: 4px 11px;
-    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+    border: 0;
     border-radius: var(--radius-pill);
-    background: color-mix(in srgb, var(--color-surface) 65%, transparent);
+    background: var(--color-bg);
     color: var(--color-text-muted);
     font-family: var(--font-mono);
     font-size: 0.75rem;

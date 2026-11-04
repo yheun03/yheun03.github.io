@@ -12,7 +12,7 @@
     overflow-x: clip;
     overflow-y: visible;
 
-    background: var(--gradient-noise);
+    background: var(--color-bg);
     scroll-behavior: smooth;
 
     /** 독은 오버레이로 처리: 페이지 폭을 줄이지 않아 배경이 잘리지 않도록 유지 */
@@ -24,27 +24,6 @@
 .section,
 .section * {
     min-width: 0;
-}
-
-.app-background {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.45;
-    background-image: var(--gradient-hero-mesh);
-    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, var(--theme-black) 20%, transparent 72%);
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.18;
-        background-image: $texture-noise;
-        background-size: 160px 160px;
-        mix-blend-mode: multiply;
-    }
 }
 
 // Dark editorial panel — 다크 테마에서만 적용 (라이트 테마는 페이지 배경 그대로)
@@ -61,8 +40,6 @@
     --color-border: #{$border};
     --color-primary: #4a8cff;
     --color-primary-dark: #6fa3ff;
-    --gradient-accent: linear-gradient(118deg, #6fa3ff 0%, #4a8cff 48%, #0050ff 100%);
-    --gradient-surface: linear-gradient(168deg, #1c2436 0%, #1a2030 100%);
     --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.42);
     --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.48);
     --shadow-glow: 0 0 0 1px rgba(45, 55, 72, 0.58) inset;
@@ -86,7 +63,6 @@
 
 // data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
 @media (prefers-color-scheme: dark) {
-
     :root:not([data-theme='light']) .section--about-intro,
     :root:not([data-theme='light']) .section--why-list {
         @include editorial-panel-about;
@@ -119,63 +95,7 @@
     &:not(.section--hero) {
         display: grid;
         gap: var(--section-gap);
-
-        .section-title::before {
-            content: var(--section-index, '00');
-            display: block;
-            margin-bottom: var(--space-3);
-            font-family: var(--font-mono);
-            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
-            font-weight: var(--font-weight-bold);
-            line-height: 1;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--color-primary);
-            opacity: 0.72;
-        }
     }
-}
-
-.section--about-intro {
-    --section-index: '01';
-}
-
-.section--works {
-    --section-index: '02';
-}
-
-.section--proof {
-    --section-index: '03';
-}
-
-.section--how {
-    --section-index: '04';
-}
-
-.section--toolbox {
-    --section-index: '05';
-}
-
-.section--journey-preview {
-    --section-index: '06';
-}
-
-.section--answers {
-    --section-index: '07';
-}
-
-.section--contact {
-    --section-index: '08';
-}
-
-/* 독립 페이지 섹션 — 단독 노출이므로 01 고정 */
-.section--journey {
-    --section-index: '01';
-}
-
-/* 여정 페이지 두 번째 섹션 */
-.section--highlights {
-    --section-index: '02';
 }
 
 .app-header__link:focus-visible,

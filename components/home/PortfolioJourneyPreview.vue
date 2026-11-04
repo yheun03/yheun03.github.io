@@ -1,10 +1,6 @@
 <template>
     <HomeSection id="journey" section-class="section--journey-preview" title-id="section-journey-preview-title">
         <div class="journey-preview" data-animate>
-            <div class="journey-preview__head">
-                <p class="journey-preview__eyebrow">{{ t('journeyPreview.eyebrow') }}</p>
-            </div>
-
             <div class="journey-preview__body">
                 <h2 id="section-journey-preview-title" class="journey-preview__title">
                     <span>{{ t('journeyPreview.titleLine1') }}</span>

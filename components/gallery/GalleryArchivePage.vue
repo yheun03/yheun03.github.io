@@ -5,11 +5,6 @@
                 :view-mode="viewMode"
                 :title="t(titleKey)"
                 :dek="lead"
-                :kicker="editorialKicker"
-                :hero-number="heroNumber"
-                :hero-aria-label="heroAriaLabel"
-                :status-label="t('gallery.indexLabel')"
-                :stats="editorialStats"
                 :sort-legend="sortLegend"
                 :filter-legend="filterLegend"
                 :view-legend="viewLegend"
@@ -59,10 +54,6 @@ const {
     galleryEntries,
     editorialYearGroups,
     lead,
-    editorialKicker,
-    editorialStats,
-    heroNumber,
-    heroAriaLabel,
     sortLegend,
     filterLegend,
     viewLegend,

@@ -7,7 +7,6 @@
             :class="{ 'journey__chapter--temp': block.temp }"
         >
             <div class="journey__chapter-card">
-                <p class="journey__chapter-index">{{ String(companyIndex + 1).padStart(2, '0') }}</p>
                 <p v-if="block.temp" class="journey__temp-label">{{ tempLabel }}</p>
                 <h3 class="journey__chapter-title">{{ block.summary.company }}</h3>
                 <p class="journey__chapter-meta">
@@ -45,9 +44,22 @@
                     @click="toggleChapter(companyIndex)"
                 >
                     <span>{{ chapterToggleLabel(companyIndex, block.timeline.length) }}</span>
-                    <span class="journey__chapter-toggle-icon" aria-hidden="true">
-                        {{ isChapterExpanded(companyIndex) ? '−' : '+' }}
-                    </span>
+                    <svg
+                        class="journey__chapter-toggle-icon"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M5 12h14" />
+                        <path v-if="!isChapterExpanded(companyIndex)" d="M12 5v14" />
+                    </svg>
                 </button>
                 <ol v-show="isChapterExpanded(companyIndex)" :id="chapterTimelineId(companyIndex)" class="journey__steps">
                     <TimelineItem

@@ -3,8 +3,7 @@
         id="proof"
         section-class="section--proof"
         title-id="section-proof-title"
-        :eyebrow="t('nav.proof')"
-        :title="t('highlights.title')"
+        :title="t('story.proofTitle')"
         :description="t('story.proofDescription')"
     >
         <BaseStatList

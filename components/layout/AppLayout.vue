@@ -1,11 +1,14 @@
 <template>
     <a class="skip-link" href="#main-content" @click="focusMainContent">{{ t('a11y.skipToContent') }}</a>
     <AppDock v-if="showAppDock" :links="links" :active-id="activeId" :active-path="activePath" />
-    <div class="app-background" aria-hidden="true" />
     <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
-    <main id="main-content" ref="pageRoot" class="portfolio-page"
+    <main
+        id="main-content"
+        ref="pageRoot"
+        class="portfolio-page"
         :class="[{ 'portfolio-page--app-dock': showAppDock }, pageVariant && `portfolio-page--${pageVariant}`]"
-        tabindex="-1">
+        tabindex="-1"
+    >
         <slot />
     </main>
     <AppFooter :text="footerText" />

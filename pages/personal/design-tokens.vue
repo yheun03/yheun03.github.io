@@ -1,25 +1,28 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
-        :footer-text="t('footer.copyright')">
+    <AppLayout
+        :links="layoutLinks"
+        active-id=""
+        brand-href="/"
+        active-path="/personal"
+        page-variant="archive-personal"
+        :footer-text="t('footer.copyright')"
+    >
         <article class="token-page section" aria-labelledby="token-page-title">
             <header class="token-hero" data-reveal="hero">
-                <p class="base-label base-label--technical">{{ t('tokens.pageLabel') }}</p>
                 <h1 id="token-page-title">{{ t('tokens.title') }}</h1>
                 <p>
-                    {{ t('tokens.introBefore') }} <code>assets/style/abstracts/_theme.scss</code>, {{
-                        t('tokens.introMiddle') }}
+                    {{ t('tokens.introBefore') }} <code>assets/style/abstracts/_theme.scss</code>, {{ t('tokens.introMiddle') }}
                     <code>_tokens.scss</code>{{ t('tokens.introAfter') }}
                 </p>
                 <nav class="token-hero__actions" :aria-label="t('tokens.navigation')">
-                    <BaseButton :label="t('tokens.viewCatalog')" href="/personal/components" variant="ghost" />
+                    <BaseButton :label="t('tokens.viewCatalog')" href="/personal/components" />
                     <BaseButton :label="t('tokens.viewPersonal')" href="/personal" variant="ghost" />
-                    <BaseButton :label="t('tokens.viewHome')" href="/" />
+                    <BaseButton :label="t('tokens.viewHome')" href="/" variant="ghost" />
                 </nav>
             </header>
 
             <section class="token-section" data-reveal="up" aria-labelledby="color-token-title">
                 <div class="token-section__head">
-                    <p class="base-label base-label--technical">Color</p>
                     <h2 id="color-token-title">{{ t('tokens.colorTitle') }}</h2>
                     <p>{{ t('tokens.colorDescription') }}</p>
                 </div>
@@ -37,7 +40,6 @@
 
             <section class="token-section" data-reveal="up" aria-labelledby="space-token-title">
                 <div class="token-section__head">
-                    <p class="base-label base-label--technical">Spacing</p>
                     <h2 id="space-token-title">{{ t('tokens.spacingTitle') }}</h2>
                     <p>{{ t('tokens.spacingDescription') }}</p>
                 </div>
@@ -57,7 +59,6 @@
 
             <section class="token-section" data-reveal="up" aria-labelledby="type-token-title">
                 <div class="token-section__head">
-                    <p class="base-label base-label--technical">Typography</p>
                     <h2 id="type-token-title">{{ t('tokens.typeTitle') }}</h2>
                     <p>{{ t('tokens.typeDescription') }}</p>
                 </div>
@@ -75,13 +76,11 @@
 
             <section class="token-section" data-reveal="up" aria-labelledby="shape-token-title">
                 <div class="token-section__head">
-                    <p class="base-label base-label--technical">Shape & Effect</p>
                     <h2 id="shape-token-title">{{ t('tokens.shapeTitle') }}</h2>
                     <p>{{ t('tokens.shapeDescription') }}</p>
                 </div>
                 <div class="token-grid">
-                    <article v-for="token in shapeTokens" :key="token.name" class="token-card token-card--shape"
-                        data-reveal="scale">
+                    <article v-for="token in shapeTokens" :key="token.name" class="token-card token-card--shape" data-reveal="scale">
                         <span class="shape-demo" :class="token.demoClass" aria-hidden="true" />
                         <div>
                             <h3>{{ token.name }}</h3>
@@ -119,23 +118,24 @@ usePortfolioSeo(() => ({
 .token-page {
     display: grid;
     gap: clamp(88px, 11vw, 168px);
-    width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
+    width: min(100%, 1560px);
     margin: 0 auto;
-    padding: clamp(88px, 11vw, 168px) 0;
+    padding: clamp(72px, 8vw, 120px) var(--page-pad-x);
 }
 
 .token-hero,
 .token-section {
     display: grid;
-    gap: clamp(24px, 3vw, 48px);
+    gap: var(--block-gap);
 }
 
 .token-hero {
     max-width: 1080px;
+    gap: var(--space-6);
 }
 
 .token-hero h1 {
-    max-width: 11ch;
+    max-width: 18ch;
     font-family: var(--font-display);
     font-size: var(--font-size-display-2);
     font-weight: var(--font-weight-black);
@@ -143,13 +143,18 @@ usePortfolioSeo(() => ({
     letter-spacing: var(--tracking-tight);
 }
 
+.token-hero code {
+    overflow-wrap: anywhere;
+}
+
 .token-hero p:not(.base-label--technical),
 .token-section__head p:not(.base-label--technical) {
-    max-width: 64ch;
+    max-width: 52ch;
     color: var(--color-text-muted);
 }
 
 .token-hero__actions {
+    margin-top: var(--space-6);
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
@@ -177,11 +182,9 @@ usePortfolioSeo(() => ({
 .token-card,
 .type-item,
 .token-table {
-    border: 1px solid color-mix(in srgb, var(--color-border) 78%, var(--color-primary));
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
-    background: var(--color-glass-2-strong);
-    box-shadow: var(--shadow-soft), var(--shadow-glow);
-    backdrop-filter: blur(14px);
+    background: var(--color-surface);
 }
 
 .token-card {
@@ -211,7 +214,7 @@ usePortfolioSeo(() => ({
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-ui);
     letter-spacing: var(--tracking-label);
-    color: var(--color-primary);
+    color: var(--color-text-muted);
 }
 
 .token-swatch {
@@ -238,8 +241,8 @@ usePortfolioSeo(() => ({
 }
 
 .token-table__row--head {
-    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
-    color: var(--color-primary);
+    background: var(--color-surface-strong);
+    color: var(--color-text-muted);
     font-family: var(--font-mono);
     font-size: var(--font-size-label);
     font-weight: var(--font-weight-bold);
@@ -275,7 +278,7 @@ usePortfolioSeo(() => ({
 
 .type-item__meta {
     margin: var(--space-2) 0 var(--space-3);
-    color: var(--color-primary) !important;
+    color: var(--color-text-muted);
     font-family: var(--font-mono);
     font-size: var(--font-size-label);
     font-weight: var(--font-weight-semibold);
@@ -335,7 +338,7 @@ usePortfolioSeo(() => ({
 .shape-demo {
     width: min(100%, 192px);
     height: 80px;
-    background: var(--gradient-surface);
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
 }
 
@@ -367,7 +370,7 @@ usePortfolioSeo(() => ({
 
     .token-hero h1,
     .token-section__head h2 {
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
     }
 
     .token-hero__actions {

@@ -8,19 +8,19 @@
         "personal": "개인 프로젝트",
         "worksArchive": "프로젝트",
         "personalArchive": "개인 작업",
-        "journey": "여정",
-        "toolbox": "기술 스택",
-        "highlights": "하이라이트",
-        "contact": "연락하기",
-        "proof": "성과",
+        "journey": "경력·학업",
+        "toolbox": "사용 기술",
+        "highlights": "수상·자격",
+        "contact": "연락처",
+        "proof": "실무 경험",
         "how": "작업 방식",
-        "answers": "빠른 답변"
+        "answers": "질문과 답변"
     },
     "aboutMe": {
         "ogTitle": "화면 밖의 은영환 | 웹 퍼블리셔의 이야기",
         "ogImageAlt": "Eun, beyond the screen 문구와 옅은 하늘색 Y, 하늘색 H가 겹쳐진 은영환의 로고",
         "personalityHeading": "나의 성향: ENTJ",
-        "beliefTitle": "나를 움직이는 신념",
+        "beliefTitle": "오래 기억하는 말",
         "answersTitle": "저에 대해 궁금하다면",
         "roleQuestion": "은영환은 어떤 일을 하나요?",
         "roleAnswer": "HTML과 SCSS를 중심으로 반응형 웹 화면을 만들고, Vue 3와 Nuxt 3 기반 UI 개발까지 맡는 웹 퍼블리셔입니다. 작업 사례는 실무 프로젝트와 개인 프로젝트에서 확인할 수 있습니다.",
@@ -30,47 +30,47 @@
         "logoAnswer": "이름의 이니셜 Y와 H를 겹친 로고입니다. 옅은 하늘색과 하늘색을 사용해 이름과 좋아하는 색을 함께 담았습니다.",
         "metaTitle": "웹 퍼블리셔 은영환 소개 | 나의 이야기",
         "metaDescription": "HTML·SCSS와 Vue로 화면을 만드는 웹 퍼블리셔 은영환을 소개합니다. ENTJ 성향, 행동을 이끄는 신념, 이름의 이니셜 Y와 H를 겹친 로고에 담긴 이야기를 만나보세요.",
-        "homeLink": "화면 밖의 은영환 알아보기",
+        "homeLink": "저에 대해 더 알아보기",
         "introLabel": "직함을 잠시 내려놓고,",
-        "titleLine1": "화면 밖의,",
-        "titleLine2": "은영환.",
-        "intro": "저는 HTML·SCSS와 Vue로 화면을 만드는 웹 퍼블리셔 은영환입니다. 생각을 행동으로 옮기는 성향, 오래 간직한 신념, 이름과 취향을 담은 로고로 화면 밖의 저를 소개합니다.",
+        "titleLine1": "안녕하세요,",
+        "titleLine2": "은영환입니다.",
+        "intro": "HTML·SCSS와 Vue로 웹 화면을 만드는 은영환입니다. 평소의 성향과 오래 기억하는 말, 직접 만든 로고 이야기를 담았습니다.",
         "skipStory": "소개 바로 읽기",
-        "personalityTitle": "생각했다면, 움직이는 쪽.",
-        "personalityDescription": "제 MBTI는 ENTJ예요. 좋아하는 것을 발견하면 직접 해보고, 마음먹은 일에는 방향을 잡고 움직이려 합니다.",
+        "personalityTitle": "궁금한 건 직접 해보는 편입니다.",
+        "personalityDescription": "제 MBTI는 ENTJ예요. 관심이 생기면 일단 직접 해보고, 하기로 마음먹은 일은 계획을 세워 진행하는 편입니다.",
         "beliefLine1": "게으른자는",
         "beliefLine2": "법도 보호받지 못한다",
         "beliefSource": "— 중학교 기술가정 선생님의 어록",
-        "beliefDescription": "중학교 때 들었던 이 말은 지금도 제 신념으로 남아 있어요. 해야 할 일 앞에서 스스로를 움직이게 하는 문장입니다.",
-        "identityTitle1": "이름을 겹치고,",
-        "identityTitle2": "취향을 담다.",
-        "identityIntro": "내 이름의 이니셜 Y와 H. 두 글자가 만나 하나의 나를 표현합니다.",
+        "beliefDescription": "중학교 기술가정 시간에 들었던 말이에요. 해야 할 일을 미루고 싶을 때면 종종 떠올립니다.",
+        "identityTitle1": "이름의 두 글자로",
+        "identityTitle2": "만든 로고",
+        "identityIntro": "이름의 이니셜 Y와 H를 겹쳐 로고를 만들었습니다.",
         "identityMe": "나",
-        "identityDescription": "YH는 내 이름의 약자예요. Y와 H를 겹치고, 내가 좋아하는 색으로 채웠어요. 이름과 취향을 가장 간단하게 담은 나의 로고입니다.",
+        "identityDescription": "Y와 H를 겹치고 좋아하는 두 가지 파란색을 넣었어요. 제 이름과 취향을 담은 로고입니다.",
         "logoDescription": "옅은 하늘색 Y가 하늘색 H 위에 겹쳐진 은영환의 YH 로고와 구성 가이드라인",
         "paletteLabel": "YH 로고의 두 가지 색상",
         "constructionNote": "구성선은 Y와 H의 겹침과 형태를 보여주는 시각적 가이드입니다.",
-        "outroLine1": "하는 일도, 좋아하는 것도.",
-        "outroLine2": "모두 나의 일부니까.",
-        "outroDescription": "마음먹은 일은 직접 해보고, 내가 좋아하는 모습으로 표현합니다. 웹 퍼블리셔, 은영환입니다.",
+        "outroLine1": "만드는 일도,",
+        "outroLine2": "새로 배우는 일도 좋아합니다.",
+        "outroDescription": "지금까지 맡았던 프로젝트와 개인적으로 만든 작업도 함께 봐 주세요.",
         "viewWorks": "내가 만든 화면 보기",
         "backHome": "포트폴리오로 돌아가기"
     },
     "hero": {
-        "title": "복잡할수록, 쓰기는 쉽게",
+        "title": "디자인 구현부터 운영까지 맡는 웹 퍼블리셔",
         "subtitle": "HTML과 SCSS를 중심으로 기업 홈페이지, 스마트팩토리, 물류 시스템 등 20개가 넘는 프로젝트를 구축하고 운영해 왔습니다. 최근에는 Vue 3 컴포넌트와 상태 관리, 라우팅, API 연동까지 맡고 있습니다.",
         "branding": "웹 퍼블리싱에서 시작해 Vue 프론트엔드까지 다룹니다",
         "kicker": "핵심부터.",
         "essentialsLead": "요구사항을 정리하고 화면을 만든 뒤, 검수와 운영까지 챙깁니다.",
-        "ctaWorks": "웹 퍼블리셔 실무 프로젝트 보기",
-        "ctaToolbox": "Vue 3 / SCSS 작업 방식 보기",
+        "ctaWorks": "실무 프로젝트 보기",
+        "ctaToolbox": "사용 기술 보기",
         "ctaContact": "연락하기",
         "scrollCue": "Scroll",
         "scrollCueLabel": "다음 섹션으로 이동",
-        "displayLine1": "정보는 한눈에",
-        "displayLine2": "조작은 망설임 없이",
-        "displayLine3": "코드는 오래가게",
-        "lead": "시맨틱 HTML과 SCSS로 반응형 화면을 만들고 접근성을 챙깁니다. 반복되는 화면은 Vue 컴포넌트로 정리해 다른 사람이 이어서 수정하기 쉽게 만듭니다.",
+        "displayLine1": "디자인을 구현하고",
+        "displayLine2": "운영까지 맡아 온",
+        "displayLine3": "웹 퍼블리셔입니다.",
+        "lead": "기업 홈페이지와 업무 시스템의 반응형 화면을 만들어 왔습니다. HTML·SCSS 퍼블리싱을 바탕으로, 지금은 Vue 컴포넌트와 상태별 UI도 함께 작업합니다.",
         "actionsAriaLabel": "주요 포트폴리오 섹션 바로가기"
     },
     "about": {
@@ -78,18 +78,18 @@
         "intro": "요구사항을 그대로 옮기기보다 사용자가 먼저 볼 정보와 다음 행동을 고민합니다. 운영자가 나중에 수정할 부분도 함께 생각합니다.",
         "direction": "HTML과 SCSS로 쌓은 경험을 바탕으로 Vue 3와 Nuxt의 컴포넌트, 상태 관리, 라우팅, API 연동까지 다루고 있습니다.",
         "kicker": "조금 더.",
-        "workflowTitle": "한 번 푼 문제는 두 번 풀지 않습니다",
-        "howTitle": "자주 만난 문제, 이렇게 풀었습니다",
-        "tagline": "사용자는 헤매지 않고, 동료는 코드를 빠르게 이해할 수 있어야 한다고 생각합니다. 디자인을 정확히 구현하면서도 운영하기 쉬운 화면을 만듭니다.",
-        "displayLine1": "읽는 순서는",
-        "displayLine2": "명확하게",
-        "displayLine3": "사용은 빠르게",
+        "workflowTitle": "컴포넌트와 문서로 남깁니다",
+        "howTitle": "반복되는 작업을 정리하는 방법",
+        "tagline": "디자인 시안을 옮기면서 키보드 조작과 반응형 동작도 확인합니다. 반복되는 마크업과 스타일은 정리해서, 다른 사람이 이어서 수정하기 쉽게 만듭니다.",
+        "displayLine1": "코드를 작성할 때",
+        "displayLine2": "수정할 사람도",
+        "displayLine3": "함께 생각합니다.",
         "principlesAriaLabel": "작업 원칙",
         "workflowAriaLabel": "작업 흐름",
         "stepsAriaLabel": "단계"
     },
     "works": {
-        "title": "일로 만든 화면들",
+        "title": "실무 프로젝트",
         "cardLabel": "실무 사례",
         "all": "전체",
         "detail": "프로젝트 상세 보기",
@@ -102,47 +102,47 @@
         "visibleCount": "{visible} / {total}개 대표 사례 표시 중"
     },
     "personal": {
-        "title": "궁금해서 직접 만든 화면들",
+        "title": "개인 프로젝트",
         "cardLabel": "개인 프로젝트",
         "backToWorks": "실무 프로젝트(Works) 섹션으로 이동",
         "ctaTab": "개인 프로젝트 전체 보기",
-        "fullArchiveLink": "개인 전체보기",
+        "fullArchiveLink": "개인 프로젝트 전체 보기",
         "designTokensLink": "2026 포트폴리오 디자인 토큰 보기"
     },
     "gallery": {
         "careerEyebrow": "Works archive",
-        "careerTitle": "일로 만든 화면들",
+        "careerTitle": "실무 프로젝트",
         "indexLabel": "인덱스",
         "detailLabel": "프로젝트 한눈에 보기",
         "viewEntry": "프로젝트 상세 페이지로 이동",
         "viewLegend": "보기",
         "toolbarAriaLabel": "프로젝트 필터, 보기 방식과 정렬 선택",
-        "viewEditorial": "뉴스형",
-        "viewGrid": "갤러리",
+        "viewEditorial": "목록",
+        "viewGrid": "카드",
         "careerMetaTitle": "웹 퍼블리셔 포트폴리오 2026 실무 프로젝트 | 은영환",
         "careerMetaDescription": "웹 퍼블리셔 은영환의 2026 실무 프로젝트 포트폴리오입니다. Vue 3, SCSS, JavaScript, CMS, 반응형 UI, SEO, 웹 접근성 중심의 프론트엔드 작업을 정리했습니다.",
         "personalEyebrow": "Personal",
-        "personalTitle": "궁금해서 직접 만든 화면들",
+        "personalTitle": "개인 프로젝트",
         "personalMetaTitle": "웹 프론트엔드 개발자 포트폴리오 2026 개인 프로젝트 | 은영환",
         "personalMetaDescription": "웹 프론트엔드 개발자 은영환의 2026 개인 프로젝트 포트폴리오입니다. 포트폴리오 개선, UI 패턴, Vue 3, SCSS, JavaScript 인터랙션 구현 경험을 정리했습니다.",
         "duration": "소요 시간",
         "projectList": "프로젝트 목록",
         "otherProjects": "연도 미분류 프로젝트",
         "languages": "언어 / 핵심 스택",
-        "captures": "화면으로 확인하기",
-        "overview": "쉽게 말하면",
+        "captures": "프로젝트 화면",
+        "overview": "프로젝트 소개",
         "role": "역할",
         "breadcrumbLabel": "현재 위치",
         "backToCareerList": "실무 목록으로",
         "backToPersonalList": "개인 목록으로",
-        "detailEndLine": "여기까지 읽으셨다면, 이제 제 일을 꽤 많이 아십니다.",
-        "detailEndBackCareer": "다 읽었다면 실무 페이지로 돌아가기",
-        "detailEndBackPersonal": "다 읽었다면 개인 프로젝트 목록으로",
+        "detailEndLine": "다른 프로젝트도 확인해 보세요.",
+        "detailEndBackCareer": "실무 프로젝트 목록으로",
+        "detailEndBackPersonal": "개인 프로젝트 목록으로",
         "sortAdded": "최근 추가순",
-        "sortStart": "시작시간",
+        "sortStart": "시작일순",
         "sortTitle": "가나다 순",
         "sortLegend": "정렬",
-        "filterLegend": "채용 관점별 프로젝트 필터",
+        "filterLegend": "프로젝트 분류",
         "filterAll": "전체",
         "filterTrigger": "프로젝트 유형 선택",
         "filterSelected": "{count}개 선택",
@@ -153,8 +153,8 @@
         "filterCms": "CMS",
         "archive": "아카이브",
         "result": "결과",
-        "careerLead": "실무와 사내 프로젝트 {total}건을 실제 화면, 작업 기간, 핵심 기술과 함께 정리했습니다.",
-        "personalLead": "개인 프로젝트 {total}건을 아카이브로 정리했습니다.",
+        "careerLead": "구축·리뉴얼·운영에 참여한 {total}개 프로젝트입니다. 각 프로젝트에서 맡은 업무와 사용 기술을 확인할 수 있습니다.",
+        "personalLead": "직접 기획하거나 팀으로 참여한 {total}개 개인 프로젝트입니다.",
         "stats": "프로젝트 {total}건, 실제 화면과 핵심 기술 포함",
         "totalProjects": "총 {total}개 프로젝트",
         "home": "홈",
@@ -172,26 +172,26 @@
         "captureCardAlt": "{title} 캡처",
         "captureDotLabel": "{index}번째 이미지 보기",
         "projectLinkLabel": "{title} {label}",
-        "openPage": "페이지 이동하기",
-        "emptyCaptureTitle": "화면은 없어도, 한 일은 남았습니다",
-        "emptyCaptureDescription": "고객사 보안과 저작권 범위를 고려해 화면은 공개하지 않고, 맡은 역할과 해결 과정만 정리했습니다.",
-        "contributions": "제가 맡은 일",
-        "results": "작업 뒤 달라진 점",
-        "points": "이 프로젝트의 핵심",
-        "solutionLabel": "이렇게 해결했습니다",
-        "storyGuide": "완성 화면만 보여드리지 않습니다. 어떤 문제가 있었고 어떻게 해결했는지 함께 적었습니다.",
-        "captureGuide": "설명보다 화면이 더 빠를 때가 있습니다. 실제 화면에서 어떻게 만들었는지 확인해 주세요."
+        "openPage": "사이트 보기",
+        "emptyCaptureTitle": "공개 이미지가 없는 프로젝트",
+        "emptyCaptureDescription": "보안·저작권 제한으로 화면을 공개하기 어려운 프로젝트입니다. 담당 업무와 작업 내용은 상세 페이지에 정리했습니다.",
+        "contributions": "작업 내용과 결과",
+        "results": "작업 결과",
+        "points": "기술 및 구현 특징",
+        "solutionLabel": "담당한 작업",
+        "storyGuide": "프로젝트에서 맡은 업무와 구현 과정, 결과를 정리했습니다.",
+        "captureGuide": "프로젝트에서 구현한 화면입니다."
     },
     "journey": {
-        "title": "만들다 보니, 여기까지 왔습니다",
-        "summary": "웹 퍼블리싱 실무를 시작해 Vue 기반 프론트엔드 개발까지 맡게 된 과정을 정리했습니다.",
+        "title": "경력과 학업 이력",
+        "summary": "회사에서 맡은 일과 학교에서 배운 내용을 시기별로 정리했습니다.",
         "archiveLabel": "Career log / 계속 업데이트 중",
         "stats": "{chapters}개 챕터, {milestones}개의 기록",
-        "status": "일하고 배우며 화면에 남긴 기록입니다.",
-        "kicker": "일 → 배움 → 다시 화면. 어떤 순서로 볼까요?",
-        "viewLegend": "여정 보기 방식",
-        "viewAffiliation": "소속순",
-        "viewChronological": "시간순",
+        "status": "회사 업무와 학업을 함께 기록했습니다.",
+        "kicker": "소속별 또는 연도별로 볼 수 있습니다.",
+        "viewLegend": "이력 보기 방식",
+        "viewAffiliation": "소속별",
+        "viewChronological": "연도별",
         "showChapter": "연도별 기록 {count}개 펼치기",
         "hideChapter": "연도별 기록 {count}개 접기",
         "moreClients": "외 {count}곳",
@@ -200,28 +200,28 @@
     },
     "journeyPreview": {
         "eyebrow": "06 / 다음 장면으로",
-        "titleLine1": "만든 화면은",
-        "titleLine2": "경험이 되고",
-        "titleLine3": "다음 기준이 됐습니다.",
-        "description": "입사 후 20개가 넘는 프로젝트를 맡았습니다. 작업하며 반복해서 만난 문제는 Vue 컴포넌트와 사내 기준으로 정리했습니다.",
-        "cta": "은영환의 여정 보기",
-        "timelineLabel": "여정 주요 시점",
-        "milestoneStart": "웹을 처음 배우기 시작한 순간",
-        "milestoneWork": "웹 퍼블리셔로 입사",
-        "milestoneNow": "웹 퍼블리싱 중심, Vue 프론트엔드로 확장 중"
+        "titleLine1": "웹을 배운 뒤,",
+        "titleLine2": "실무와 공부를",
+        "titleLine3": "함께 이어 왔습니다.",
+        "description": "2020년 입사한 뒤 기업 홈페이지와 업무 시스템을 만들어 왔습니다. 일하면서 대학을 마쳤고, 지금은 Vue와 Nuxt를 실무에 적용하고 있습니다.",
+        "cta": "경력과 학업 이력 보기",
+        "timelineLabel": "경력 주요 시점",
+        "milestoneStart": "웹 제작 공부 시작",
+        "milestoneWork": "웹 퍼블리셔 입사",
+        "milestoneNow": "Vue·Nuxt 실무 적용"
     },
     "toolbox": {
-        "title": "써 본 기술만 적었습니다",
-        "copy": "주로 쓰는 기술과 프로젝트에서 써 본 기술을 나눠 적었습니다. HTML과 SCSS가 중심이고, Vue와 Nuxt로 화면 구조를 설계한 경험도 쌓고 있습니다.",
+        "title": "주로 사용하는 기술",
+        "copy": "HTML·SCSS를 가장 많이 사용하고, Vue·Nuxt로 컴포넌트와 업무 화면도 작업합니다. 프로젝트에서 사용한 도구와 협업 경험을 함께 정리했습니다.",
         "kicker": "숙련도와 역할별로."
     },
     "answers": {
         "eyebrow": "묻기 전에 답했습니다",
-        "title": "궁금할 만한 건 먼저 답했습니다",
-        "description": "지금 맡을 수 있는 일과 실무에서 잘하는 것, 연락 방법을 먼저 적었습니다. 자세한 내용은 각 프로젝트의 담당 업무와 해결 과정에 담았습니다."
+        "title": "자주 묻는 내용",
+        "description": "담당할 수 있는 업무와 주요 경험, 연락 방법을 정리했습니다."
     },
     "highlights": {
-        "title": "말보다 기록이 빠릅니다",
+        "title": "수상·자격·대외 활동",
         "awards": "수상",
         "certifications": "자격/인증",
         "roles": "전문 역할",
@@ -232,20 +232,20 @@
         "categoriesAriaLabel": "하이라이트 카테고리"
     },
     "contact": {
-        "title": "다음 화면은 함께 만들고 싶습니다",
-        "description": "웹 퍼블리싱부터 Vue 기반 UI 개발까지 함께 맡을 사람을 찾고 계시다면 연락해 주세요.",
+        "title": "메일로 연락 주세요",
+        "description": "웹 퍼블리싱이나 Vue UI 개발을 함께할 사람을 찾고 계시다면 메일로 제안해 주세요.",
         "kicker": "메일 주소.",
-        "note": "제가 맡았던 구축과 운영 사례를 더 자세히 말씀드리겠습니다.",
+        "note": "작업한 내용은 GitHub와 이력서에서도 확인하실 수 있습니다.",
         "profileLabel": "채용 및 협업 문의",
         "email": "메일 보내기",
-        "github": "은영환 GitHub 프로필 보기",
-        "resume": "은영환 Markdown 이력서 보기",
+        "github": "GitHub 보기",
+        "resume": "이력서 보기",
         "mailPrefix": "이메일 주소",
         "linksAriaLabel": "연락 링크",
         "spotlightAriaLabel": "연락처"
     },
     "footer": {
-        "tagline": "웹 퍼블리셔를 중심으로 Vue 프론트엔드까지 확장하는 은영환의 2026 포트폴리오",
+        "tagline": "웹 퍼블리셔 은영환의 포트폴리오 · 2026",
         "navLabel": "사이트 하단 링크",
         "homeLink": "포트폴리오 홈",
         "careerLink": "실무 프로젝트 갤러리",
@@ -255,7 +255,7 @@
     "lnb": {
         "eyebrow": "탐색",
         "title": "메뉴",
-        "subtitle": "웹 퍼블리셔 / 프론트엔드",
+        "subtitle": "웹 퍼블리셔 은영환",
         "connect": "연락하기",
         "email": "메일 보내기",
         "github": "GitHub",
@@ -363,22 +363,23 @@
     },
     "meta": {
         "title": "웹 퍼블리셔 은영환 | 2026 포트폴리오",
-        "description": "HTML과 SCSS를 중심으로 웹 UI를 구현해 온 7년차 웹 퍼블리셔 은영환의 포트폴리오입니다. Vue 3 기반 프론트엔드 개발로 역할을 넓혀 온 과정을 소개합니다.",
-        "ogTitle": "웹 퍼블리셔 은영환 | Vue 프론트엔드로 확장하는 2026 포트폴리오",
-        "ogDescription": "보기 좋은 화면은 기본, 오래 고치기 좋은 코드는 원칙입니다. HTML과 SCSS, Vue 3로 만든 실무 UI를 확인해 보세요."
+        "description": "HTML·SCSS 퍼블리싱과 Vue 3 UI 개발을 맡아 온 7년차 웹 퍼블리셔 은영환의 포트폴리오입니다. 기업 홈페이지, 업무 시스템과 개인 프로젝트를 소개합니다.",
+        "ogTitle": "웹 퍼블리셔 은영환 | HTML·SCSS·Vue 포트폴리오",
+        "ogDescription": "기업 홈페이지와 업무 시스템의 퍼블리싱·운영 경험, Vue 3로 만든 UI 작업을 소개합니다."
     },
     "story": {
-        "showcaseTitle": "퍼블리싱으로 시작해, Vue 구조까지",
-        "showcaseDescription": "대시보드를 새로 만들고, 운영 이슈를 줄이고, 사내 프레임워크를 만든 세 가지 사례를 먼저 골랐습니다. 제가 어디까지 맡았는지도 함께 적었습니다.",
+        "showcaseTitle": "실무에서 맡았던 작업",
+        "showcaseDescription": "대시보드 퍼블리싱, TMS 운영·보수, 사내 프레임워크 구축 사례입니다. 각 상세 페이지에 담당 업무와 작업 결과를 정리했습니다.",
         "caseCta": "프로젝트 상세 보기",
-        "proofDescription": "경력, 프로젝트 수, 담당 범위와 일정 기록을 숫자로 정리했습니다. 집계 기준은 정보 아이콘에서 확인할 수 있습니다.",
-        "proofLinkHighlights": "수상 / 자격 기록 보기",
-        "proofLinkJourney": "성장 여정 보기",
-        "featuredBadge": "먼저 볼 프로젝트",
-        "howDescription": "같은 문제를 다시 겪지 않도록 해결 방법을 컴포넌트와 가이드, 운영 기록으로 남겼습니다.",
+        "proofTitle": "실무 경험",
+        "proofDescription": "실무 경력과 참여 프로젝트 수, 담당했던 퍼블리싱 범위입니다. 정보 아이콘에서 집계 기준을 확인할 수 있습니다.",
+        "proofLinkHighlights": "수상·자격 보기",
+        "proofLinkJourney": "경력과 학업 이력 보기",
+        "featuredBadge": "대표 프로젝트",
+        "howDescription": "프로젝트마다 반복하던 작업은 공통 컴포넌트로 만들고, 운영 중 해결한 문제와 설정 방법은 문서로 남겼습니다.",
         "galleriesAriaLabel": "프로젝트 갤러리 바로가기",
         "techStackAriaLabel": "사용 기술",
-        "proofMetricsAriaLabel": "핵심 지표",
+        "proofMetricsAriaLabel": "실무 경력과 프로젝트 수",
         "proofLinksAriaLabel": "이력 상세 페이지"
     },
     "content": {
@@ -411,21 +412,21 @@
                 "구조화 데이터",
                 "반응형 웹"
             ],
-            "jobTitle": "웹 퍼블리셔, Vue 기반 프론트엔드로 확장 중",
-            "description": "HTML과 SCSS를 중심으로 실무 UI를 구현해 온 7년차 웹 퍼블리셔 은영환입니다. Vue 3 컴포넌트와 프론트엔드 구조까지 역할을 넓히고 있습니다.",
+            "jobTitle": "웹 퍼블리셔 · Vue UI 개발",
+            "description": "기업 홈페이지와 업무 시스템의 HTML·SCSS 퍼블리싱, Vue 3 UI 개발과 운영·유지보수를 맡아 온 웹 퍼블리셔 은영환입니다.",
             "websiteName": "웹 퍼블리셔 은영환 2026 포트폴리오",
             "questions": [
                 {
-                    "name": "은영환은 어떤 일을 맡을 수 있나요?",
+                    "name": "어떤 업무를 맡을 수 있나요?",
                     "acceptedAnswer": "HTML과 SCSS 기반 웹 퍼블리싱을 중심으로 반응형 UI, CMS 커스터마이징, 운영 유지보수를 맡아 왔습니다. 현재는 Vue 3 컴포넌트와 상태 관리, 라우팅, API 연동까지 맡고 있습니다."
                 },
                 {
-                    "name": "실무에서 잘하는 일은 무엇인가요?",
-                    "acceptedAnswer": "20개가 넘는 프로젝트를 구축하고 운영하며 반복되는 UI를 공통 컴포넌트로 정리해 왔습니다. TMS 운영에서는 개선 작업 뒤 일 평균 불편 접수가 15건 이상에서 2건 수준으로 줄었습니다."
+                    "name": "주로 어떤 프로젝트를 했나요?",
+                    "acceptedAnswer": "기업 홈페이지와 스마트팩토리·물류 시스템, CMS 등 20개가 넘는 프로젝트에 참여했습니다. TMS 운영에서는 속도 문제를 해결하고 UI를 수정한 뒤, 일 평균 불편 접수가 15건 이상에서 2건 수준으로 줄었습니다."
                 },
                 {
-                    "name": "협업 방식과 연락처가 궁금합니다.",
-                    "acceptedAnswer": "디자이너와 개발자, 고객사의 요구사항을 화면과 문서로 정리합니다. Figma와 Git, 작업 가이드로 정한 내용을 공유하며 채용과 협업 문의는 포트폴리오의 이메일 링크로 받을 수 있습니다."
+                    "name": "어떻게 협업하고, 어디로 연락하면 되나요?",
+                    "acceptedAnswer": "디자이너·개발자·고객사와 Figma, Git, 작업 문서로 내용을 공유합니다. 채용이나 협업 제안은 하단 메일 주소로 보내 주세요."
                 }
             ]
         },
@@ -570,7 +571,7 @@
         },
         "profile": {
             "name": "은영환",
-            "role": "웹 퍼블리셔 / Vue 기반 프론트엔드로 확장 중",
+            "role": "웹 퍼블리셔 · Vue UI 개발",
             "keywords": [
                 "웹 퍼블리셔",
                 "Vue 기반 프론트엔드 개발",
@@ -621,7 +622,7 @@
                     "description": "기업 홈페이지, 스마트팩토리, 물류 시스템, CMS와 자사 솔루션을 포함한 공개 가능 프로젝트 기준입니다."
                 },
                 {
-                    "label": "맡은 퍼블리싱 범위",
+                    "label": "퍼블리싱 담당 범위",
                     "value": 100,
                     "suffix": "%",
                     "description": "담당 프로젝트에서 배정받은 화면을 구현하고 검수한 뒤 운영 대응까지 맡았습니다."
@@ -649,36 +650,36 @@
             "keywords": ["꼼꼼함", "성실함", "구조적 사고", "사용자 중심", "유지보수성", "협업 친화성", "실행력", "리더십"],
             "principles": [
                 {
-                    "title": "누구나 막힘없이",
-                    "description": "시맨틱 구조와 키보드 탐색, 분명한 정보 순서를 챙겨 누구나 쉽게 사용할 수 있게 만듭니다.",
+                    "title": "키보드로도 사용할 수 있게",
+                    "description": "시맨틱 마크업과 키보드 탐색을 확인하고, 내용을 읽고 조작하는 순서를 정리합니다.",
                     "evidence": "포트폴리오 접근성 구현 보기",
                     "href": "/personal/jonsoft-framework-portfolio"
                 },
                 {
-                    "title": "고칠 사람까지 생각합니다",
-                    "description": "프로젝트가 길어져도 수정하기 쉽도록 반복 화면을 알아보기 쉬운 공통 단위로 묶습니다.",
+                    "title": "반복 화면은 같은 방식으로",
+                    "description": "반복되는 UI는 공통 컴포넌트로 만들고, 파일과 SCSS 이름을 일관되게 작성합니다.",
                     "evidence": "Nuxt 3 프레임워크 사례 보기",
                     "href": "/projects/framework"
                 },
                 {
-                    "title": "디자인은 살리고, 데이터는 쉽게",
-                    "description": "디자인 의도는 화면에 충실히 담고, 개발자가 데이터를 연결하기 편하도록 마크업과 컴포넌트 구조를 정리합니다.",
+                    "title": "데이터 연결을 고려한 마크업",
+                    "description": "개발자가 데이터를 연결할 위치와 상태별 화면을 알아보기 쉽도록 마크업과 컴포넌트를 구성합니다.",
                     "evidence": "한진칼 문서화 사례 보기",
                     "href": "/projects/hanjinkal"
                 }
             ],
             "workflow": [
                 {
-                    "label": "반복 UI → 프레임워크화",
-                    "description": "프로젝트마다 다시 만들던 라우팅, API, 상태 UI와 SCSS 기반을 Nuxt 3 공통 구조로 묶었습니다."
+                    "label": "공통 UI와 프레임워크",
+                    "description": "라우팅, API 연동, 상태별 UI와 SCSS 설정처럼 반복해서 준비하던 코드를 Nuxt 3 프레임워크에 모았습니다."
                 },
                 {
-                    "label": "운영 문의 → 개선 기록화",
-                    "description": "고객 문의를 분류하고 반복 이슈를 UI 보수와 해결 사례 문서로 연결해 재발 대응 기준을 남겼습니다."
+                    "label": "운영 이슈와 처리 기록",
+                    "description": "고객 문의를 분류하고, UI를 수정한 내용과 해결 방법을 기록해 같은 문의에 다시 참고할 수 있도록 했습니다."
                 },
                 {
-                    "label": "CMS 혼선 → 가이드화",
-                    "description": "공식 문서가 부족한 환경에서는 개발 및 환경 설정 가이드를 직접 만들고 교육과 인수인계까지 이어지게 했습니다."
+                    "label": "CMS 설정과 작업 가이드",
+                    "description": "공식 문서가 부족한 부분은 환경 설정과 개발 방법을 직접 정리하고, 교육과 인수인계 때 공유했습니다."
                 }
             ],
             "direction": "퍼블리싱에서 쌓은 화면 구현과 운영 경험에 Vue 컴포넌트 설계를 더하고 있습니다. 이제는 UI 구현부터 유지보수까지 맡는 것이 목표입니다."
@@ -687,44 +688,44 @@
             {
                 "key": "markup",
                 "icon": "</>",
-                "title": "뜻이 보이는 마크업",
+                "title": "HTML과 시맨틱 마크업",
                 "items": ["HTML5", "시맨틱 마크업", "웹표준", "웹접근성", "크로스브라우징"],
-                "description": "내용의 순서와 의미가 코드에서도 드러나도록 HTML 구조를 잡고, 여러 브라우저에서 같은 흐름으로 사용할 수 있게 만듭니다."
+                "description": "내용과 조작 순서에 맞게 HTML을 작성하고, 웹 표준과 키보드 접근성, 브라우저별 표시를 확인합니다."
             },
             {
                 "key": "style",
                 "icon": "◈",
-                "title": "고쳐도 흔들리지 않는 스타일",
+                "title": "SCSS와 반응형 스타일",
                 "items": ["CSS3", "SCSS", "반응형 웹", "컴포넌트 스타일링", "유지보수형 구조"],
-                "description": "반복되는 스타일은 SCSS 규칙으로 묶어 한 화면의 수정이 다른 화면에 영향을 주지 않게 관리합니다."
+                "description": "기존 변수와 공통 스타일을 재사용하고, 컴포넌트별 스타일과 화면 크기에 따른 배치를 관리합니다."
             },
             {
                 "key": "framework",
                 "icon": "⚡",
-                "title": "화면을 구조로 만드는 Vue",
+                "title": "Vue·Nuxt UI 개발",
                 "items": ["Vue 3", "Nuxt 3", "JavaScript", "Vue Router", "Axios"],
-                "description": "Vue 컴포넌트와 상태 관리, 라우팅, API 연동을 다루며 프론트엔드 개발 범위를 넓히고 있습니다."
+                "description": "컴포넌트, 상태 관리, 라우팅과 API 연동을 사용해 업무 화면과 공통 UI를 만듭니다."
             },
             {
                 "key": "cms",
                 "icon": "▦",
-                "title": "제약 안에서도 돌아가게",
+                "title": "CMS·업무 솔루션",
                 "items": ["ICE CMS", "WebSquare", "Nexacro", "eGovFrame", "커스터마이징"],
-                "description": "CMS와 업무 솔루션마다 다른 규칙과 제약을 먼저 파악하고, 그 환경에서 안정적으로 운영되는 화면을 만듭니다."
+                "description": "ICE CMS, WebSquare, Nexacro와 전자정부 프레임워크 환경에서 화면을 구현하고 수정해 왔습니다."
             },
             {
                 "key": "search",
                 "icon": "◎",
-                "title": "사람도 검색도 찾기 쉽게",
+                "title": "접근성과 검색 최적화",
                 "items": ["웹 접근성", "SEO", "시맨틱 HTML", "메타데이터", "JSON-LD", "Sitemap"],
-                "description": "시맨틱 HTML, 메타데이터, JSON-LD, sitemap을 적용하고 키보드 탐색과 구조화 데이터 검증까지 화면 품질의 일부로 확인합니다."
+                "description": "키보드 탐색과 시맨틱 구조를 점검하고, 메타데이터·JSON-LD·사이트맵을 적용합니다."
             },
             {
                 "key": "collaboration",
                 "icon": "✦",
-                "title": "함께 만들기 위한 기록",
+                "title": "협업 도구와 문서화",
                 "items": ["Figma", "Git", "문서화", "교육 지원", "React 경험", "jQuery"],
-                "description": "Figma와 Git으로 협업합니다. React와 jQuery는 필요한 프로젝트에서 화면을 구현해 본 경험이 있습니다."
+                "description": "Figma와 Git으로 작업을 공유하고, 설정 방법과 인수인계 문서를 작성합니다. React와 jQuery로 화면을 구현한 경험도 있습니다."
             }
         ],
         "journey": [
@@ -759,43 +760,43 @@
                 "timeline": [
                     {
                         "period": "2026",
-                        "title": "화면을 넘어 구조를 봅니다",
-                        "description": "포트폴리오와 납품형 UI를 Vue 3 / Composition API 기준으로 다시 구성했습니다. 재사용 컴포넌트, SCSS 모듈, 디자인 토큰을 함께 다루며 정적 배포까지 고려한 화면 단위 설계를 이어가고 있습니다."
+                        "title": "Nuxt 3 공통 UI와 사내 프레임워크",
+                        "description": "Vue 3와 Composition API로 포트폴리오와 업무 UI를 작업했습니다. 공통 컴포넌트, SCSS 모듈과 디자인 토큰을 정리하고 정적 배포 환경도 설정했습니다."
                     },
                     {
                         "period": "2025",
-                        "title": "고치고, 바꾸고, 남겼습니다",
-                        "description": "운영 / 리뉴얼 / CMS 커스터마이징을 병행하며 프로젝트별 기준에 맞춰 화면을 맞췄습니다. 인수인계 자료와 가이드를 남겨 이후 수정이 쉬운 상태로 넘기는 비중을 키웠고, 대학 졸업과 납품 일정을 함께 관리했습니다."
+                        "title": "홈페이지 운영과 CMS 리뉴얼",
+                        "description": "홈페이지 운영·리뉴얼과 CMS 커스터마이징을 맡았습니다. 설정 가이드와 인수인계 자료를 작성했고, 회사 업무와 대학 졸업 준비를 병행했습니다."
                     },
                     {
                         "period": "2024",
-                        "title": "Vue를 실무 한가운데로",
-                        "description": "Vue 3 기반 관리 / 업무 시스템에서 컴포넌트, 상태, 라우팅, SCSS 레이어를 함께 다뤘습니다. 화면 단위 QA와 협업사 / 고객 피드백 반영 루틴도 이 시기에 정착시켰습니다."
+                        "title": "Vue 3 업무 화면 개발",
+                        "description": "Vue 3 기반 관리·업무 시스템에서 컴포넌트, 상태 관리, 라우팅과 SCSS를 작업했습니다. 화면을 검수하고 협업사와 고객사 피드백을 반영했습니다."
                     },
                     {
                         "period": "2023",
-                        "title": "WebSquare와 개발 기준을 더했습니다",
-                        "description": "WebSquare Certified Publisher와 SW개발 L5를 취득하며 엔터프라이즈 UI와 개발 산출물 기준을 보강했습니다. 화면 스펙과 마크업 규칙을 문서로 남기는 습관도 이때 강화했습니다."
+                        "title": "WebSquare·SW개발 L5 자격 취득",
+                        "description": "WebSquare Certified Publisher와 SW개발 L5를 취득했습니다. 화면 명세와 마크업 규칙을 정리하고 개발 산출물 작성 방법을 익혔습니다."
                     },
                     {
                         "period": "2022",
-                        "title": "반복 화면에 공통 기준을 세웠습니다",
-                        "description": "자사 솔루션과 납품형 화면의 레이아웃, 컴포넌트, SCSS 변수를 묶어 반복 마크업을 줄였습니다. Naver Cloud Platform Certified Associate 취득으로 배포 환경에 대한 이해도 넓혔습니다."
+                        "title": "솔루션 UI 공통화",
+                        "description": "자사 솔루션과 구축 프로젝트의 레이아웃·컴포넌트·SCSS 변수를 공통으로 정리했습니다. Naver Cloud Platform Certified Associate도 취득했습니다."
                     },
                     {
                         "period": "2021",
-                        "title": "실무의 속도에 익숙해졌습니다",
-                        "description": "시스템 구축 프로젝트에서 와이어, 디자인, HTML/CSS, 인터랙션을 연속된 흐름으로 맡기 시작했습니다. 고등학교 졸업과 맞물려 업무 톤에 맞는 산출물 관리 방식도 익혔습니다."
+                        "title": "업무 시스템 구축 프로젝트 참여",
+                        "description": "업무 시스템의 와이어프레임, 디자인, HTML·CSS와 인터랙션을 작업했습니다. 고등학교를 졸업하고 회사 업무를 이어갔습니다."
                     },
                     {
                         "period": "2020",
-                        "title": "학교 화면에서 납품 화면으로",
-                        "description": "7월 정식 사원으로 입사한 뒤 반응형, 크로스브라우징, 웹 표준을 프로젝트 단위로 적용했습니다. 요구사항 변경과 운영 티켓에 대응하며 납품형 퍼블리싱의 기준을 익혔습니다."
+                        "title": "웹 퍼블리셔 정식 입사",
+                        "description": "7월 웹 퍼블리셔 정식 사원으로 입사했습니다. 반응형 화면과 크로스브라우징을 작업하고, 고객 요구사항 변경과 운영 요청에 대응했습니다."
                     },
                     {
                         "period": "2019",
-                        "title": "첫 실무는 OJT에서 시작됐습니다",
-                        "description": "2019년 12월부터 OJT 현장실습에 참여했습니다. 학교와 동아리에서 만들던 웹 화면을 실제 업무 기준으로 옮기며 일정, 품질, 커뮤니케이션을 배웠습니다."
+                        "title": "OJT 현장실습",
+                        "description": "2019년 12월부터 OJT 현장실습에 참여했습니다. 학교와 동아리에서 배우던 웹 제작을 회사 프로젝트에 적용하기 시작했습니다."
                     }
                 ]
             },
@@ -817,27 +818,27 @@
                 "timeline": [
                     {
                         "period": "2025",
-                        "title": "일과 학업, 둘 다 마쳤습니다",
-                        "description": "한국공학대학교 컴퓨터전자공학과를 4.45/4.5의 학점으로 졸업했습니다. 학업, 회사 일정, 학생회 운영을 함께 마무리하며 여러 이해관계를 조율하는 경험을 쌓았습니다."
+                        "title": "일하며 대학을 졸업했습니다",
+                        "description": "회사 업무와 학업을 병행하며 한국공학대학교 컴퓨터전자공학과를 4.45/4.5의 학점으로 졸업했습니다."
                     },
                     {
                         "period": "2024",
-                        "title": "배우면서 이끌었습니다",
+                        "title": "학회장 활동",
                         "description": "2024년 2월까지 학회장을 맡아 학과 점퍼, MT, 해커톤 같은 프로그램을 기획 / 주최했습니다. 전공 수업에서는 웹 제작 경험을 이론과 연결했습니다."
                     },
                     {
                         "period": "2023",
-                        "title": "편입하고, 학생회를 세웠습니다",
+                        "title": "한국공학대학교 편입·학생회 설립",
                         "description": "전적대 졸업 후 한국공학대학교 컴퓨터전자공학과 3학년으로 편입했습니다. 학과대표를 거쳐 학회장을 맡으며 학생회 설립, 셔틀버스 배차, 주차 문제 등을 조율했습니다."
                     },
                     {
                         "period": "2022",
-                        "title": "일하면서 개발을 배웠습니다",
+                        "title": "모바일소프트웨어 전공 수업",
                         "description": "전적대 모바일소프트웨어학과에서 앱과 소프트웨어 개발 흐름을 익혔습니다. 업무와 수업 일정을 함께 관리하는 방식도 배웠습니다."
                     },
                     {
                         "period": "2021",
-                        "title": "회사와 대학을 함께 다녔습니다",
+                        "title": "회사와 대학 생활 병행",
                         "description": "고등학교 졸업 후 전적대 모바일소프트웨어학과에 입학했습니다. 회사 업무를 이어가며 전공 공부를 시작했습니다."
                     }
                 ]
@@ -855,12 +856,12 @@
                 "timeline": [
                     {
                         "period": "2020",
-                        "title": "학교에서 만든 화면이 실무로",
+                        "title": "온라인 학습·선거 사이트 제작",
                         "description": "원격 수업용 온라인 학습 사이트와 학생회장 선거 페이지를 제작했습니다. 교내 프로젝트에서 익힌 마크업과 협업 방식을 OJT 현장실습과 실무로 이어갔습니다."
                     },
                     {
                         "period": "2018 ~ 2019",
-                        "title": "HTML부터, 동아리 운영까지",
+                        "title": "웹 제작 공부와 MOD 동아리 운영",
                         "description": "HTML / CSS / JavaScript 기초를 익히고 MOD 회장으로 커리큘럼과 과제를 운영했습니다. 관련 자격을 취득하고 교내 웹 TF를 이끌며 실사용자와 마감을 처음 경험했습니다."
                     }
                 ]
@@ -910,7 +911,7 @@
                     "type": "SI / 대시보드",
                     "role": "전체 화면 퍼블리싱 단독 담당, 기존 UI 규칙 개선 참여",
                     "tech": ["Visual Studio Code", "Git", "Vue", "JavaScript", "SCSS", "HTML"],
-                    "introduction": "운영자가 공정 / 환경 데이터를 한 화면에서 빠르게 확인하는 생태공장 대시보드입니다. 카드 / 상태 표시 / 차트 / 정보성 UI가 제각각이던 화면을 하나의 시각 규칙으로 묶어 \"보기 좋은 화면\"보다 \"빠르게 읽히는 화면\"에 초점을 맞췄습니다.",
+                    "introduction": "삼화페인트 생태공장의 공정·환경 데이터를 보여 주는 대시보드입니다. 전체 화면 퍼블리싱을 맡아 카드·차트·상태 표시의 간격과 색상, 정렬을 맞췄습니다.",
                     "myWorks": [
                         "대시보드 Client 화면 전체 퍼블리싱 — 카드, 데이터 영역, 상태 표시, 차트, 정보성 UI",
                         "화면별로 흩어져 있던 위계 / 간격 / 정렬 기준을 통일해 일관된 카드형 레이아웃 정립",
@@ -922,7 +923,7 @@
                         "화면별로 달랐던 간격 / 정렬 / 상태 색을 하나의 규칙으로 통일",
                         "카드와 상태 표현 기준을 공통화해 신규 위젯도 같은 시각 규칙으로 추가할 수 있게 구성"
                     ],
-                    "points": ["데이터 중심 대시보드 UI", "상태 / 위계 시각화 규칙 정립", "짧은 기간에 화면 일관성 확보"],
+                    "points": ["공정·환경 데이터 대시보드", "카드·차트·상태 표시 통일", "전체 화면 퍼블리싱"],
                     "pin": true,
                     "duration": "약 1개월",
                     "captures": ["/assets/images/projects/samhwa-eco-dashboard/image-01.webp"],
@@ -950,7 +951,7 @@
                         "flatpickr",
                         "marked"
                     ],
-                    "introduction": "Vue 3 + Vite 기반으로 제조 현장의 MES를 리뉴얼했습니다. Vue Router / Pinia / Axios / Vue I18n 구조 위에서 업무 화면을 구성하고, 반복 화면을 공통 컴포넌트로 묶어 AG Grid 테이블 UX와 태블릿 사용성을 끌어올렸습니다.",
+                    "introduction": "Vue 3와 Vite로 제조 현장의 MES를 리뉴얼했습니다. 전체 화면 퍼블리싱과 공통 컴포넌트를 맡았고, AG Grid 테이블과 태블릿 레이아웃을 작업했습니다.",
                     "myWorks": [
                         "Vue Router / Pinia / Axios / Vue I18n 구조에 맞춰 MES 업무 화면 퍼블리싱 / 구성",
                         "공통 컴포넌트(AppGrid / AppInput / AppSelect / AppButton / AppAccordion / AppModalHost)를 활용 / 개선해 화면 간 UI 일관성 확보",
@@ -964,7 +965,7 @@
                         "AG Grid의 검색 / 선택 / 삭제 / 칩 / 조건부 스타일 / 다운로드 동작을 AppGrid 기준으로 통일",
                         "API 응답과 다국어 키를 props / 상태 / 이벤트 흐름에 연결해 화면별 임시 처리 대신 공통 구조를 사용"
                     ],
-                    "points": ["AG Grid 테이블 UX 표준화", "태블릿 업무 UI 대응", "Vue 3 + Vite 구조 연동"],
+                    "points": ["AG Grid 검색·선택·다운로드 UI", "태블릿 레이아웃", "Vue 3·Vite 업무 화면"],
                     "pin": true,
                     "duration": "진행 중 / 약 3개월~",
                     "captures": [
@@ -985,7 +986,7 @@
                     "type": "기업 사이트 / CMS",
                     "role": "개발 및 환경 설정 가이드 작성, 교육과 운영 안정화 지원, 협력사와 고객사 기술 커뮤니케이션 담당",
                     "tech": ["IntelliJ", "ICE 5.0", "Microsoft Teams", "Word", "PowerPoint", "HTML", "SCSS", "Vue.js"],
-                    "introduction": "한진칼과 계열사 홈페이지 리뉴얼에서 콘센트릭스가 전달한 Vue 컴포넌트를 ICE 5.0 CMS에 맞게 커스터마이징했습니다. 공식 가이드가 없어 생긴 교육 혼선을 줄이기 위해 개발 구조와 ICE 환경 세팅 가이드를 만들어 공유했고, 이후 대외 커뮤니케이션도 맡았습니다.",
+                    "introduction": "한진칼과 계열사 홈페이지의 Vue 컴포넌트를 ICE 5.0 CMS에 맞게 수정했습니다. 환경 설정과 개발 방법을 가이드로 작성해 교육 때 공유하고, 협력사와 고객사의 기술 문의에도 대응했습니다.",
                     "myWorks": [
                         "콘센트릭스가 전달한 Vue 컴포넌트를 ICE 5.0 CMS 구조에 맞게 커스터마이징 / 재구성",
                         "ICE가 요구하는 파일 구조를 직접 설계하고, 컴포넌트를 재사용 / 확장 가능한 CMS 친화형으로 변환",
@@ -995,11 +996,11 @@
                         "2025.04 ICE 담당자 롤아웃 이후 대외 커뮤니케이션 전담, 내부 산출물 정리 / 공유로 협업 효율 유지"
                     ],
                     "achievements": [
-                        "가이드와 산출물을 정리해 교육과 협업 중 반복 질문과 설정 혼선을 줄임",
-                        "ICE 기능 한계 상황에서도 컴포넌트 재사용 / 확장 구조를 확보해 운영 안정성 향상",
-                        "협력사(콘센트릭스 / 아이온)–고객사(한진칼) 사이를 잇는 커뮤니케이션 허브 역할 수행"
+                        "환경 설정과 개발 가이드를 정리해 교육과 협업 때 공유",
+                        "ICE 기능에 맞춰 컴포넌트를 수정하고 재사용할 수 있도록 정리",
+                        "콘센트릭스·아이온·한진칼 사이의 기술 문의와 작업 내용 조율"
                     ],
-                    "points": ["CMS 커스터마이징 적응력", "가이드 / 문서화 / 교육 주도", "다자 협업 커뮤니케이션"],
+                    "points": ["ICE 5.0 CMS 컴포넌트 수정", "설정 가이드 작성과 교육", "협력사·고객사 기술 문의 대응"],
                     "pin": true,
                     "duration": "약 6개월",
                     "captures": [
@@ -1019,7 +1020,7 @@
                     "type": "시스템 리뉴얼",
                     "role": "전체 화면 퍼블리싱 단독 담당",
                     "tech": ["Vue", "SCSS", "Figma"],
-                    "introduction": "깨끗한나라 OMS 리뉴얼에서 전체 화면 퍼블리싱을 맡았습니다. 주요 화면을 일정보다 빠르게 끝낸 뒤 Vue 컴포넌트 개발에 참여하고, 오픈 전 UI/UX 개선안을 제안했습니다. 마진 / 폰트 같은 디테일까지 챙긴 사례입니다.",
+                    "introduction": "깨끗한나라 OMS의 전체 화면 퍼블리싱을 맡아 주요 화면을 약 1개월 일찍 완료했습니다. 이후 Vue 컴포넌트 개발에 참여하고, 오픈 전 여백과 폰트를 포함한 UI/UX 개선안을 제안했습니다.",
                     "myWorks": [
                         "전체 화면을 Vue 기반으로 퍼블리싱 전담",
                         "주요 화면을 약 1개월 만에 조기 완료해 일정 여유 확보",
@@ -1028,7 +1029,7 @@
                         "세부 마진 / 폰트 크기까지 점검해 화면 완성도 유지"
                     ],
                     "achievements": ["주요 화면 약 1개월 조기 완료로 일정 리스크 완화", "개선 제안 일부가 실제 반영되어 사용자 경험 향상에 기여"],
-                    "points": ["일정 단축과 품질을 동시 달성", "자발적 프론트엔드 기여", "개선 제안형 퍼블리셔"],
+                    "points": ["주요 화면 약 1개월 조기 완료", "Vue 컴포넌트 개발 참여", "오픈 전 UI/UX 개선 제안"],
                     "pin": true,
                     "duration": "약 8개월",
                     "captures": [
@@ -1048,18 +1049,15 @@
                     "type": "SI / SM",
                     "role": "전체 화면 퍼블리싱 전담, 고객사별 UI 디자인 참여",
                     "tech": ["eGovFrame", "Adobe XD", "HTML", "CSS", "jQuery"],
-                    "introduction": "테라에코 MES와 스마트팩토리 구축에서 시작해 썬겔, 다우기업, 신애전자 등 여러 제조사로 이어진 정부 지원 사업입니다. 기업마다 다른 브랜드와 색상을 화면에 반영했고, 이때 쌓은 경험은 이후 Robo MES 솔루션을 만드는 데 쓰였습니다.",
+                    "introduction": "테라에코, 썬겔, 다우기업, 신애전자 등 제조사의 MES·스마트팩토리 구축에 참여했습니다. 전체 화면 퍼블리싱과 고객사별 UI 디자인을 맡았고, 이후 Robo MES 솔루션에도 이 작업 경험을 적용했습니다.",
                     "myWorks": [
                         "테라에코 MES 도입 / 스마트팩토리 구축의 전체 화면 퍼블리싱 담당",
                         "썬겔 / 다우기업 / 신애전자 등 다수 제조사로 확장하며 기업별 요구사항 반영",
                         "각 기업의 브랜드 철학 / 색상을 반영한 맞춤 UI 디자인(20%) 제공",
                         "반복 화면을 솔루션화 관점으로 정리해 후속 재사용 기반 마련"
                     ],
-                    "achievements": [
-                        "다수 고객사로 사업을 확장하며 맞춤 디자인으로 높은 만족도 확보",
-                        "축적한 MES 화면 노하우가 자사 Robo MES 솔루션 구축의 기반이 됨"
-                    ],
-                    "points": ["다수 고객사 동시 대응", "브랜드 맞춤 디자인", "솔루션화 기반 경험"],
+                    "achievements": ["고객사별 브랜드와 색상을 반영해 MES·스마트팩토리 화면 제작", "MES 구축 경험을 이후 Robo MES 솔루션에 적용"],
+                    "points": ["여러 제조사의 MES 화면 구축", "고객사별 UI 디자인", "Robo MES에 작업 경험 적용"],
                     "pin": false,
                     "duration": "약 15개월",
                     "captures": [
@@ -1082,7 +1080,7 @@
                     "introduction": "입사 초기에 맡은 광장 파트너스 기업 홈페이지 신규 구축 작업입니다. Sketch 시안을 기준으로 반응형 / 크로스브라우징을 챙기며 기업 사이트의 기본기를 다졌습니다.",
                     "myWorks": ["기업 홈페이지 전 화면 퍼블리싱 전담", "Sketch 시안 기반 반응형 / 크로스브라우징 대응"],
                     "achievements": ["Sketch 시안을 반응형 및 크로스브라우징 화면으로 구현하며 기업 사이트 납품 경험 확보"],
-                    "points": ["초기 실무 구축 경험", "기업 사이트 퍼블리싱 기본기"],
+                    "points": ["Sketch 시안 구현", "반응형·크로스브라우징"],
                     "pin": false,
                     "duration": "약 2개월",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1103,7 +1101,7 @@
                         "웹앱(WebApp) 형태로 빌드해 앱 사용 흐름 구현"
                     ],
                     "achievements": ["입사 첫 달에 JavaScript 인터랙션과 웹앱 사용 흐름을 포함한 전체 화면 퍼블리싱 완수"],
-                    "points": ["앱형 웹 구축 경험", "서비스 애플리케이션 퍼블리싱"],
+                    "points": ["앱 형태의 웹 화면 구현", "JavaScript 인터랙션"],
                     "pin": false,
                     "duration": "약 2개월",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1117,7 +1115,7 @@
                     "type": "SM 운영",
                     "role": "홈페이지 퍼블리싱 운영과 이슈 대응 담당",
                     "tech": ["Rider", "Teams", "JIRA", "C#", "CSS3", "csHtml", "JavaScript"],
-                    "introduction": "콘센트릭스 CATALYST와 함께 한온시스템 홈페이지를 운영하는 SM 사업입니다. JIRA 티켓을 화면 수정으로만 보지 않고 csHtml 뷰, CSP, 인코딩, 정적 리소스 경로, 404, 보안 설정까지 영향 범위를 확인했습니다.",
+                    "introduction": "콘센트릭스 CATALYST와 함께 한온시스템 홈페이지 운영을 맡고 있습니다. JIRA 요청에 따라 화면을 수정하고, csHtml 뷰와 CSS 경로, CSP·인코딩·404 등 관련 설정을 확인합니다.",
                     "myWorks": [
                         "JIRA 운영 티켓 기반으로 요청사항을 분석하고 우선순위에 맞춰 대응",
                         "문구 / 타이틀 / 이미지 / 링크 / 레이아웃 / 콘텐츠 영역 등 퍼블리싱 중심 유지보수 수행",
@@ -1128,7 +1126,7 @@
                         "운영 요청을 신속히 반영해 홈페이지 콘텐츠의 최신성 유지",
                         "뷰 구조 / CSS 경로 / 보안 설정 영향까지 함께 검토해 운영 안정성 확보에 기여"
                     ],
-                    "points": ["운영 대응력", "티켓 기반 유지보수 체계", "배포 / 보안 영향까지 검토하는 시야"],
+                    "points": ["홈페이지 콘텐츠·화면 수정", "JIRA 요청 관리", "뷰·리소스 경로·보안 설정 점검"],
                     "pin": true,
                     "duration": "진행 중",
                     "captures": ["/assets/images/projects/hanon/image-01.webp", "/assets/images/projects/hanon/image-02.webp"],
@@ -1142,7 +1140,7 @@
                     "type": "SM 운영 / 보수",
                     "role": "고객 이슈 접수, 분류, 리포트와 보수 퍼블리싱 담당",
                     "tech": ["Nexacro"],
-                    "introduction": "태림포장 / 대영포장 TMS의 속도 저하 이슈 해결을 위해 투입된 뒤, 단위 테스트로 원인을 찾아 해결하고 그대로 운영 대응까지 이어간 프로젝트입니다. 서비스에 익숙해지자 자발적으로 고객 응대를 맡았고, 일 평균 15건 이상이던 불편 접수가 2건 수준으로 감소했습니다. 반복 이슈는 UX/UI 개선과 보수 작업으로 연결했습니다.",
+                    "introduction": "태림포장·대영포장 TMS의 속도 저하 원인을 단위 테스트로 찾아 해결한 뒤, 고객 문의와 화면 보수도 맡았습니다. 개선 작업 후 일 평균 15건 이상이던 불편 접수가 2건 수준으로 줄었고, 처리 방법을 문서로 남겼습니다.",
                     "myWorks": [
                         "속도 저하 이슈를 단위 테스트로 특정해 원인 해결",
                         "자발적으로 고객 응대를 맡아 속도 / 화면 오류 등 불편사항 즉시 처리",
@@ -1153,7 +1151,7 @@
                         "일 평균 불편 접수 15건 이상 → 2건 수준으로 감소",
                         "해결 케이스 산출물이 동일 이슈 재발 시 대응 자료로 재사용됨"
                     ],
-                    "points": ["운영 개선형 퍼블리싱", "주도적 고객 응대", "재발 방지 산출물화"],
+                    "points": ["속도 저하 원인 확인과 수정", "고객 문의 접수·분류·응대", "반복 이슈 처리 문서"],
                     "pin": false,
                     "duration": "약 3개월",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1182,7 +1180,7 @@
                         "flatpickr",
                         "noUiSlider"
                     ],
-                    "introduction": "프로젝트마다 화면 기반을 새로 짜던 비효율을 줄이기 위해 Nuxt 3 기반 자사 프론트엔드 프레임워크를 구축했습니다. 자동 라우팅, 컴포넌트 자동 import, 상태 관리, API 플러그인과 실무 상태를 반영한 UI 컴포넌트, 디자인 토큰 기반 SCSS를 하나의 표준으로 묶었습니다.",
+                    "introduction": "프로젝트의 초기 설정과 반복 UI를 공통으로 사용할 수 있도록 Nuxt 3 기반 사내 프레임워크를 만들었습니다. 라우팅·상태 관리·API 플러그인·UI 컴포넌트와 SCSS 설정을 정리했습니다.",
                     "myWorks": [
                         "자동 라우팅 / 컴포넌트 자동 import / Pinia 상태 관리 / Axios API 플러그인 등 기반 구조 정리",
                         "AppButton / AppInput / AppSelect / AppDatePicker / AppProgress / Chart / AG Grid 등 재사용 컴포넌트 제작",
@@ -1194,7 +1192,7 @@
                         "프로젝트마다 반복 구축하던 기본 UI / 레이아웃 / API 연동 / SCSS 구조를 프레임워크화",
                         "컴포넌트 / API 구조 / 예제 페이지를 함께 정리해 신규 프로젝트 착수 속도를 높이는 협업 표준 구축"
                     ],
-                    "points": ["Nuxt 3 프레임워크화", "실무 상태 반영 컴포넌트", "디자인 토큰 기반 SCSS"],
+                    "points": ["Nuxt 3 공통 프레임워크", "상태별 UI 컴포넌트", "디자인 토큰·SCSS 설정"],
                     "pin": true,
                     "duration": "진행 중",
                     "captures": [
@@ -1223,7 +1221,7 @@
                     "type": "내부 프로젝트",
                     "role": "퍼블리싱 표준화와 공통 UI 구조 개선, 개발 가이드 작성",
                     "tech": ["GitHub", "Visual Studio Code", "Cursor", "Figma", "Vue 3", "Nuxt 3", "SCSS", "JavaScript", "TypeScript"],
-                    "introduction": "프레임워크 구축과 함께 산발적으로 작성되던 화면 구조, SCSS, 컴포넌트 네이밍, 폴더 구조, API 연동, 다국어 처리를 하나의 기준으로 맞춘 표준화 작업입니다. 실무 적용 가능한 예제 페이지와 스타일 가이드도 함께 만들었습니다.",
+                    "introduction": "프로젝트마다 달랐던 폴더, 컴포넌트 이름, SCSS와 API·다국어 처리 방식을 정리했습니다. 사내 프레임워크와 함께 사용할 예제 페이지, 스타일 가이드와 개발 문서도 작성했습니다.",
                     "myWorks": [
                         "버튼 / 입력폼 / 셀렉트 / 달력 / 프로그레스 / 차트 / 그리드 / LNB / 레이아웃 구조를 공통화",
                         "컴포넌트 네이밍 / 폴더 구조 / API 연동 / 다국어 처리 방식을 신규 프로젝트 재사용 가능한 형태로 정리",
@@ -1234,7 +1232,7 @@
                         "신규 프로젝트 착수 시 기본 레이아웃 / 컴포넌트 / 스타일 가이드를 빠르게 적용할 수 있는 기반 마련",
                         "산발적이던 UI 구조를 공통화해 퍼블리싱–프론트엔드 협업 생산성 향상 기반 구축"
                     ],
-                    "points": ["퍼블리싱 표준화", "재사용성 / 협업성 향상", "예제 / 가이드 문서화"],
+                    "points": ["폴더·컴포넌트·SCSS 규칙 정리", "공통 UI와 API 처리", "예제 페이지·개발 가이드"],
                     "pin": true,
                     "duration": "진행 중",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1248,7 +1246,7 @@
                     "type": "자사 솔루션",
                     "role": "기획 공동 참여, 전체 화면 퍼블리싱과 UI 디자인 담당",
                     "tech": ["Vue", "SCSS", "Figma"],
-                    "introduction": "TMS 운영에서 직접 확인한 고객 요구와 반복 문의를 자사 솔루션으로 옮긴 프로젝트입니다. 고객용 애플리케이션의 UI와 UX 디자인부터 Vue와 SCSS 퍼블리싱까지 맡았고, 운영에서 발견한 불편을 화면 흐름과 상태 표현에 반영했습니다.",
+                    "introduction": "TMS 운영 중 확인한 고객 요구를 반영해 자사 물류 솔루션을 만들었습니다. 기획에 함께 참여하고, 고객용 앱의 UI 디자인과 Vue·SCSS 퍼블리싱을 맡았습니다.",
                     "myWorks": [
                         "운영 중 수집한 고객 요구 / 문의를 바탕으로 기획에 참여",
                         "고객용 애플리케이션의 UI / UX 디자인을 직접 설계",
@@ -1259,7 +1257,7 @@
                         "TMS 운영에서 확인한 반복 문의를 화면 흐름과 상태 표현 개선에 반영",
                         "운영 경험을 제품화로 연결한 자사 솔루션 결과물 완성"
                     ],
-                    "points": ["기획 / 디자인 / 퍼블리싱 일체형 수행", "운영 경험 → 제품화", "사용성 개선 사례"],
+                    "points": ["기획 참여·UI 디자인·퍼블리싱", "운영 중 받은 고객 요구 반영", "Vue·SCSS 고객용 앱"],
                     "pin": false,
                     "duration": "약 3개월",
                     "captures": [
@@ -1277,7 +1275,7 @@
                     "type": "자사 솔루션",
                     "role": "전체 화면 퍼블리싱 단독 담당",
                     "tech": ["WebSquare", "Figma", "HTML", "CSS", "jQuery"],
-                    "introduction": "여러 제조사의 MES / 스마트팩토리 프로젝트에서 다진 노하우를 모아 자사 Robo MES 솔루션으로 제품화한 프로젝트입니다. 전체 화면 퍼블리싱을 맡고 모듈 단위 컴포넌트로 구축해 이후 프로젝트에서 재사용할 수 있는 기반을 만들었습니다.",
+                    "introduction": "여러 제조사의 MES 구축 경험을 바탕으로 만든 자사 Robo MES 솔루션입니다. 전체 화면 퍼블리싱을 맡고, 반복되는 화면을 모듈로 나눠 이후 프로젝트에서도 사용할 수 있게 만들었습니다.",
                     "myWorks": [
                         "반복 화면을 모듈 단위 UI 컴포넌트로 구축",
                         "전체 퍼블리싱을 전담하며 화면 구조 일관성 고도화",
@@ -1287,7 +1285,7 @@
                         "반복 화면을 모듈로 정리해 후속 프로젝트에서 다시 사용할 수 있는 구조 확보",
                         "현장 프로젝트 노하우를 재사용 가능한 솔루션 자산으로 전환"
                     ],
-                    "points": ["솔루션 제품화 경험", "모듈화 기반 생산성 향상"],
+                    "points": ["자사 MES 솔루션 화면 구축", "반복 화면 모듈화"],
                     "pin": false,
                     "duration": "약 9개월",
                     "captures": ["/assets/images/projects/robo-mes/image-01.webp", "/assets/images/projects/robo-mes/image-02.webp"],
@@ -1301,7 +1299,7 @@
                     "type": "내부 프로젝트",
                     "role": "전체 화면 퍼블리싱 단독 담당, UI 개선과 콘텐츠 구조 제안",
                     "tech": ["Cursor", "Figma", "Git", "FileZilla", "Whois Hosting", "HTML", "SCSS", "JavaScript", "jQuery"],
-                    "introduction": "구조 복잡성과 정보 노후화로 신뢰도가 떨어진 자사 홈페이지를, AW VIETNAM 2025 국제 전시회를 앞두고 3주 만에 전면 리뉴얼한 프로젝트입니다. 2022년 코드의 구조적 한계를 리팩토링하고, 형상관리가 안 되던 FTP 배포를 Git 도입으로 전환하자고 직접 제안했으며, 영문 / 베트남어 다국어와 SSL / SEO / 접근성까지 함께 끌어올렸습니다.",
+                    "introduction": "AW VIETNAM 2025 전시회에 맞춰 자사 홈페이지를 3주 동안 리뉴얼했습니다. 중복 코드를 정리하고 영문·베트남어, SEO·SSL을 적용했으며, FTP 배포 대신 Git으로 변경 이력을 관리하도록 제안했습니다.",
                     "myWorks": [
                         "중복 마크업 / 불필요 요소를 제거하고 SCSS 컴포넌트 구조 도입으로 유지보수성 개선",
                         "AW VIETNAM 2025 대비 영문 / 베트남어 다국어를 유연한 텍스트 적용 방식으로 설계 / 구현",
@@ -1314,7 +1312,7 @@
                         "다국어 / SEO / SSL / OG를 적용해 해외 전시 대응과 검색 및 공유 기반 마련",
                         "FTP→Git 전환으로 배포 안정성과 협업 추적성 확보"
                     ],
-                    "points": ["브랜드 / 정보 신뢰도 개선", "다국어 / 웹 표준 대응", "Git 도입을 주도한 개선 제안"],
+                    "points": ["기업 소개·서비스 정보 재정리", "영문·베트남어·웹 표준 대응", "Git 변경 이력 관리 도입 제안"],
                     "pin": true,
                     "duration": "약 3주",
                     "captures": [
@@ -1341,7 +1339,7 @@
                     "introduction": "기존 담당자의 장기 공가로 생긴 공백을 메우기 위해 짧게 투입된 프로젝트입니다. 이미 만들어진 화면을 빠르게 파악해 오류를 고치고 신규 페이지까지 제작했습니다.",
                     "myWorks": ["기존 인원이 제작한 화면의 디테일한 오류 수정", "신규 페이지 퍼블리싱", "웹스퀘어 SP5 CMS 구조에 빠르게 적응해 합류"],
                     "achievements": ["약 2주 내 신규 / 수정 화면 납품 완료", "코드 기준을 맞춰 기존 작업과의 충돌 최소화"],
-                    "points": ["단기 투입 대응력", "CMS 퍼블리싱 안정화"],
+                    "points": ["약 2주간 신규·수정 화면 작업", "기존 CMS 코드에 맞춘 구현"],
                     "pin": false,
                     "duration": "약 2주",
                     "captures": [
@@ -1362,7 +1360,7 @@
                     "introduction": "삼화페인트 FEMS 도입 프로젝트에서 React 기반 주요 화면을 1주 안에 구현해야 했습니다. 기존 업무 시스템 퍼블리싱 경험을 활용해 필요한 화면을 일정에 맞춰 완성했습니다.",
                     "myWorks": ["1주 내 우선 구현이 필요한 React 주요 화면 단기 구축", "급한 납기 속에서도 완성도를 유지하는 퍼블리싱 수행"],
                     "achievements": ["1주 내 주요 화면 구현으로 일정 준수 / 프로젝트 안정화 지원"],
-                    "points": ["단기 납품 대응력", "React 퍼블리싱 경험"],
+                    "points": ["1주 내 주요 화면 구현", "React 환경의 퍼블리싱"],
                     "pin": false,
                     "duration": "약 1주",
                     "captures": ["/assets/images/projects/fems/image-01.webp", "/assets/images/projects/fems/image-02.webp"],
@@ -1376,14 +1374,14 @@
                     "type": "SI / 신규 구축",
                     "role": "전체 화면 퍼블리싱 단독 담당",
                     "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS"],
-                    "introduction": "대양제지 SCM 신규 구축에서는 이전 프로젝트에서 쌓은 공통 컴포넌트와 재사용 경험을 활용했습니다. 반복 화면을 새로 만들지 않고 검증된 구조를 적용해 납품 일정과 이후 수정까지 함께 고려했습니다.",
+                    "introduction": "대양제지 SCM 구축에서 공통 컴포넌트를 활용해 반복 화면을 구현했습니다. 기존에 사용하던 마크업과 스타일을 재사용해 작업량과 수정 범위를 줄였습니다.",
                     "myWorks": [
                         "공통 UI 요소를 체계화하고 재사용 구조로 반영",
                         "컴포넌트 기반 퍼블리싱으로 화면 일관성 확보",
                         "유지보수 / 확장성을 고려한 마크업 설계"
                     ],
                     "achievements": ["공통 컴포넌트를 재사용해 반복 마크업과 수정 범위를 줄임", "퍼블리싱 효율화로 개발 일정 단축에 기여"],
-                    "points": ["재사용 중심 퍼블리싱", "일정 단축 기여"],
+                    "points": ["공통 컴포넌트 재사용", "반복 마크업과 수정 범위 축소"],
                     "pin": false,
                     "duration": "약 2개월",
                     "captures": [
@@ -1401,14 +1399,14 @@
                     "type": "SI / 리뉴얼",
                     "role": "고객 및 관리자 화면 퍼블리싱 단독 담당",
                     "tech": ["Visual Studio Code", "Figma", "HTML", "SCSS", "React"],
-                    "introduction": "대양판지 SCM 리뉴얼에서는 고객 버전과 관리자 버전을 분리해 구현했습니다. 고객 버전은 HTML로 만들고, 관리자 버전은 React 구조에 맞춰 컴포넌트로 전환하며 두 가지 화면 전략을 다뤘습니다.",
+                    "introduction": "대양판지 SCM의 고객용 화면과 관리자 화면을 작업했습니다. 고객용은 HTML로 구현하고, 관리자는 React 컴포넌트로 전환했습니다.",
                     "myWorks": [
                         "고객 버전 HTML 퍼블리싱",
                         "관리자 버전을 React 구조에 맞춰 컴포넌트로 제작",
                         "버전별 요구사항에 맞춘 화면 분리 / 구성"
                     ],
                     "achievements": ["고객용 HTML 화면과 관리자용 React 컴포넌트를 분리 구현해 서로 다른 운영 요구에 대응"],
-                    "points": ["멀티 버전 구조 대응", "React 컴포넌트 적응력"],
+                    "points": ["고객용·관리자용 화면 분리", "HTML·React 화면 구현"],
                     "pin": false,
                     "duration": "약 6개월",
                     "captures": [
@@ -1425,14 +1423,14 @@
                     "type": "내부 프로젝트",
                     "role": "전체 화면 퍼블리싱 단독 담당, UI 디자인과 UX 구조 개선 참여",
                     "tech": ["Visual Studio Code", "Figma", "FileZilla", "Whois Hosting", "HTML", "CSS", "jQuery"],
-                    "introduction": "단방향 소통에 머물던 단조로운 기존 홈페이지를 개선하기 위해 리뉴얼을 직접 건의하고, 기획 / 디자인 / 퍼블리싱 / 배포 / 운영까지 일체형으로 수행한 프로젝트입니다. 성공적인 홈페이지 레퍼런스를 수집해 콘텐츠를 기획하고, SEO / 오픈그래프를 챙긴 뒤 후이즈 호스팅으로 올려 지금까지 관리하고 있습니다.",
+                    "introduction": "자사 홈페이지 리뉴얼을 제안하고 기획·디자인·퍼블리싱·배포·운영을 맡았습니다. 참고 사이트를 조사해 콘텐츠를 구성하고, SEO와 오픈그래프를 적용한 뒤 후이즈 호스팅에 배포했습니다.",
                     "myWorks": [
                         "홈페이지에 담길 콘텐츠를 직접 기획하고 성공 레퍼런스 수집 / 활용",
                         "SEO / 오픈그래프 프로토콜을 반영한 퍼블리싱 수행",
                         "후이즈 호스팅으로 배포하고 이후 지속 운영 / 관리"
                     ],
-                    "achievements": ["단방향 구조를 개선해 기업 전문성 / 브랜드 신뢰도 향상에 기여"],
-                    "points": ["기획-구현-운영 일체형 수행", "브랜드 신뢰도 개선 기여"],
+                    "achievements": ["기업 소개와 서비스 정보를 다시 구성해 홈페이지 리뉴얼"],
+                    "points": ["기획부터 배포·운영까지 담당", "기업 소개·서비스 콘텐츠 구성"],
                     "pin": false,
                     "duration": "약 3개월",
                     "captures": [
@@ -1455,8 +1453,8 @@
                         "브로슈어와 홈페이지 데이터 불일치를 발견해 학교에 개선 건의",
                         "정확한 정보로 데이터 수정 / 추가 반영"
                     ],
-                    "achievements": ["주도적 문제 제기로 홈페이지 정보 정확성 개선"],
-                    "points": ["주도적 문제 발견 / 해결", "콘텐츠 정확성 검증"],
+                    "achievements": ["브로슈어와 홈페이지의 교수 정보를 비교하고 정확한 내용으로 수정 요청"],
+                    "points": ["교수 정보의 불일치 확인·수정 요청", "홈페이지 콘텐츠 검수"],
                     "pin": false,
                     "duration": "약 2개월",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1473,7 +1471,7 @@
                     "introduction": "태림포장 사내 주문 시스템(TOS) 리뉴얼 작업입니다. 전자정부 프레임워크 환경에서 업무 시스템 화면을 다뤘고, 이후 태림포장과의 장기 협업(TOMS / TMS)으로 이어졌습니다.",
                     "myWorks": ["사내 주문 시스템 리뉴얼 화면 퍼블리싱", "전자정부 프레임워크 환경에 맞춘 마크업 구성"],
                     "achievements": ["전자정부 프레임워크 환경의 주문 시스템 화면을 납품하고 이후 TOMS와 TMS 협업으로 연결"],
-                    "points": ["업무 시스템 퍼블리싱", "장기 고객 협업의 출발점"],
+                    "points": ["전자정부 프레임워크 주문 화면", "이후 TOMS·TMS 프로젝트 참여"],
                     "pin": false,
                     "duration": "약 2개월",
                     "captures": [
@@ -1498,7 +1496,7 @@
                         "업무 흐름을 고려한 UX 기획과 화면 사용성 개선"
                     ],
                     "achievements": ["스마트앱어워드 2022 업무향상 부문 대상 수상"],
-                    "points": ["수상 연계 실적", "디자인 / UX / 퍼블리싱 일체형 구축"],
+                    "points": ["스마트앱어워드 2022 업무향상 부문 대상", "디자인 협업·UX 기획·전체 퍼블리싱"],
                     "pin": true,
                     "duration": "약 3개월",
                     "captures": [
@@ -1526,7 +1524,7 @@
                     "type": "개인 / Vue 항공기 대시보드",
                     "role": "기획 / 기능 범위 정의 / Codex Sol 6.1을 활용한 제작",
                     "tech": ["Vue 3", "Vite", "JavaScript", "SCSS", "Leaflet", "Geolocation API"],
-                    "introduction": "운전하거나 운동할 때 머리 위를 지나가는 비행기가 궁금해 Flightradar24 앱을 자주 사용한 경험에서 출발했습니다. 내 주변의 비행기 정보만 확인하고 싶어 필요한 기능으로 범위를 좁혔고, 주변 30km의 항공기를 레이더와 공항 전광판 형태로 보여주는 서비스를 만들었습니다. Codex Sol 6.1만으로 제작한 개인 프로젝트입니다.",
+                    "introduction": "운전하거나 운동할 때 보이는 비행기가 궁금해 만들었습니다. 주변 30km의 항공기를 레이더와 공항 전광판 형태로 보여 줍니다. Flightradar24에서 자주 쓰던 기능 중 주변 항공기 조회에 집중했고, Codex Sol 6.1만으로 제작했습니다.",
                     "myWorks": [
                         "Flightradar24 사용 경험을 바탕으로 내 주변 항공기 확인에 집중하도록 기능 범위 정의",
                         "Vue 3 + Vite + JavaScript + SCSS로 대시보드와 설정 / 위치 선택 화면 구현",
@@ -1591,12 +1589,7 @@
                         "사용하지 않는 GSAP / Pinia 의존성과 모션 / 모달 코드를 제거해 화면 구조를 단순화",
                         "실제 사용되는 컴포넌트 중심으로 구조를 정리해 유지보수성과 코드 가독성 확보"
                     ],
-                    "points": [
-                        "시맨틱 마크업과 디자인 토큰을 기반으로 한 일관된 UI 구현",
-                        "반복 UI를 컴포넌트화해 화면 확장과 변경 대응 효율 확보",
-                        "한 / 영 콘텐츠 중앙 관리로 운영 시 수정 범위와 오류 가능성 최소화",
-                        "정적 배포 환경에서도 안정적으로 운영 가능한 자산 / 경로 구조 적용"
-                    ],
+                    "points": ["시맨틱 마크업·디자인 토큰 적용", "반복 UI 컴포넌트화", "한·영 콘텐츠 JSON 관리", "정적 배포용 자산·경로 설정"],
                     "pin": true,
                     "duration": "약 2개월",
                     "captures": [
@@ -1640,11 +1633,7 @@
                         "게임원 HTML만 추가하면 `npm run update` 한 번으로 경기 / 누적 / 조별 기록을 재생성하는 비개발자 친화 운영 구조 확립",
                         "상대팀 선수 기록 제외 / 선수명 `players.json` 매칭 등 야구 기록 도메인 규칙을 파싱 스크립트와 README에 반영"
                     ],
-                    "points": [
-                        "교회 공동체 운영에 맞춘 정적 사이트 — 서버 없이도 경기 후 기록 갱신이 가능한 파이프라인",
-                        "실제 경기 / 영상 / MVP 데이터를 반영할 수 있는 운영 중심 콘텐츠 구조 설계",
-                        "GitHub Pages base path, 접근성, SEO, 다크/라이트 테마를 포함한 배포 / 운영 가능한 실서비스"
-                    ],
+                    "points": ["별도 서버 없이 경기 기록 갱신", "경기·선수·영상·MVP 콘텐츠 관리", "GitHub Pages 배포·접근성·테마 적용"],
                     "pin": true,
                     "duration": "2026.05~진행 중",
                     "captures": [
@@ -1675,7 +1664,7 @@
                     "type": "개인 / Vue 웹 퍼블리싱",
                     "role": "기획 / 디자인 분석 / Figma 재설계 / 프론트엔드 개발 전체 담당",
                     "tech": ["Vue 3", "JavaScript", "Vue Router", "Vite", "SCSS", "MapLibre", "Figma"],
-                    "introduction": "Flighty의 항공편 경험을 웹 환경에 맞게 재구성한 Vue 3 기반 클론 프로젝트입니다. 32편의 항공 데이터를 연결해 목록·상세·검색·지도·패스포트·통계 화면을 구현하고, 반응형 UI와 다국어·단위 설정까지 하나의 흐름으로 완성했습니다.",
+                    "introduction": "Flighty의 주요 화면을 Vue 3로 구현한 클론입니다. 32편의 항공 데이터로 목록·상세·검색·지도·패스포트·통계 화면을 연결하고, 반응형과 다국어·단위 설정을 적용했습니다.",
                     "myWorks": [
                         "Flighty 4.8.2 PC 버전 화면을 캡처하고 정보 구조, 폰트 계층, 카드 구성, 인터랙션 밀도를 분석",
                         "Figma 최종 시안을 기준으로 Vue 3·Vite·Vue Router 기반의 반응형 화면과 공통 UI 컴포넌트 구현",
@@ -1687,11 +1676,7 @@
                         "항공편 원천 데이터를 중심으로 시간·지연·시차·통계를 계산해 여러 화면이 동일한 결과를 공유하도록 구현",
                         "기본 UI와 플라이티 전용 조합 컴포넌트를 분리하고 props 변형으로 재사용 가능한 퍼블리싱 구조 완성"
                     ],
-                    "points": [
-                        "항공편 목록·상세·검색·패스포트·통계가 하나의 데이터 흐름으로 연결되는 서비스형 UI",
-                        "검색과 기간 선택에 반응하는 평면·지구본 항로 지도와 항공편별 기체 정보 제공",
-                        "반응형 레이아웃, 4가지 언어 옵션, 단위 변환을 적용한 웹·모바일 사용 경험"
-                    ],
+                    "points": ["32편의 항공 데이터를 여러 화면에서 사용", "검색·기간별 항로 지도와 기체 정보", "반응형·4개 언어·단위 변환"],
                     "pin": true,
                     "duration": "",
                     "captures": [
@@ -1732,10 +1717,7 @@
                         "화면과 공통 컴포넌트를 단계적으로 확장하며 Vue 3 Composition API 기반 구조 정립",
                         "라우팅 / 빌드 / 배포 환경을 포함한 Vue SPA 개발 흐름 구축"
                     ],
-                    "points": [
-                        "대규모 메신저 UI를 기준으로 컴포넌트 경계와 라우팅 구조를 설계한 SPA 구현 사례",
-                        "배포 URL과 저장소 README를 기준으로 로컬 실행 / base path 규칙을 문서화해 재현 가능하게 유지"
-                    ],
+                    "points": ["채팅·친구·설정 화면의 라우팅과 컴포넌트", "로컬 실행·배포 경로 README 작성"],
                     "pin": true,
                     "duration": "약 8개월",
                     "captures": ["/assets/images/projects/placeholder.svg"],
@@ -1769,10 +1751,7 @@
                         "프레임워크 없이 정적 자산만으로 단일 페이지 포트폴리오를 완성해 배포",
                         "콘텐츠 전달과 인터랙션 구현에 집중한 경량 정적 사이트 구조 확보"
                     ],
-                    "points": [
-                        "별도 프레임워크 없이도 안정적으로 동작하는 반응형 단일 페이지 구현",
-                        "정적 자산 중심 구성으로 간단한 배포와 유지관리 가능"
-                    ],
+                    "points": ["HTML 기반 반응형 단일 페이지", "정적 파일 배포·유지관리"],
                     "pin": true,
                     "duration": "약 1개월",
                     "captures": [
@@ -1813,10 +1792,7 @@
                         "4주간의 팀 협업으로 핵심 사용자 흐름을 갖춘 MVP와 배포 파이프라인 완성",
                         "체크리스트 / 개인 게시글 방식 대비 자동 조건 매칭이라는 서비스 차별점을 UI 흐름으로 구현"
                     ],
-                    "points": [
-                        "팀 캡스톤에서 기획 / 퍼블리싱을 담당하고 공통 기준에 따라 화면 단위 업무를 분담",
-                        "Firebase로 호스팅 / DB / 함수를 묶어 모바일 웹 프로토타입을 실제 URL로 공유 가능"
-                    ],
+                    "points": ["팀 프로젝트 기획·퍼블리싱 담당", "Firebase 호스팅·DB·함수 사용"],
                     "pin": false,
                     "duration": "약 4주",
                     "captures": [
@@ -1846,7 +1822,7 @@
                     "type": "개인 / 모바일 웹 서비스",
                     "role": "UI 디자인 공동 참여, 전체 화면 퍼블리싱 담당",
                     "tech": ["HTML", "SCSS", "JavaScript", "Figma", "Photoshop", "Illustrator", "GitHub Pages"],
-                    "introduction": "한국공학대학교 학생을 대상으로 한 블라인드 매칭 웹 서비스입니다. 코로나19 이후 줄어든 학생 간 교류를 다시 만들기 위해 성향 / 관심사 기반 연결 흐름을 설계했습니다. intro, 가입, 프로필, 매칭, 결과 화면을 정적 HTML로 관리하고 GitHub Pages에 배포했습니다.",
+                    "introduction": "한국공학대학교 학생을 대상으로 만든 블라인드 매칭 서비스입니다. 성향과 관심사를 입력해 상대를 찾을 수 있도록 소개·가입·프로필·매칭·결과 화면을 제작하고 GitHub Pages에 배포했습니다.",
                     "myWorks": [
                         "intro / 회원(user) / 매칭(match) 흐름을 `html/` 정적 페이지와 `intro.html` 진입점으로 구성",
                         "모바일 중심 UI 디자인 방향 수립, 브랜드 톤 / 그래픽 / SCSS / JS를 `resources/`에 정리",
@@ -1857,10 +1833,7 @@
                         "초기 서비스에서 1차 171명, 2차 121명의 참여 경험을 기록",
                         "GitHub 저장소로 화면 / 리소스를 버전 관리해 포트폴리오 아카이브와 별도로 유지"
                     ],
-                    "points": [
-                        "정해진 일정 안에 핵심 사용자 흐름과 모바일 UI를 완성해 실제 서비스 출시",
-                        "사용자 참여 데이터와 피드백을 바탕으로 후속 기능 확장 방향 도출"
-                    ],
+                    "points": ["모바일 화면 구현과 서비스 출시", "참여 기록과 피드백을 반영한 후속 기획"],
                     "pin": false,
                     "duration": "구축 약 1주 / 운영 및 고도화 약 2개월",
                     "captures": ["/assets/images/projects/gongting-blind-matching/image-01.webp"],
@@ -1884,14 +1857,14 @@
                     "type": "아카이브 / 기업 홈페이지",
                     "role": "기획 / 퍼블리싱 중심 참여",
                     "tech": ["HTML", "CSS", "jQuery", "Figma", "Photoshop", "Illustrator"],
-                    "introduction": "2025 포트폴리오에 수록했던 조앤소프트 홈페이지 리뉴얼 아카이브입니다. 단조로운 정보 구성과 낮은 신뢰감을 개선하기 위해 레퍼런스 조사, 콘텐츠 구성, 퍼블리싱, SEO / 오픈그래프 관리를 함께 맡았습니다.",
+                    "introduction": "2025 포트폴리오에 수록한 조앤소프트 홈페이지 리뉴얼 기록입니다. 참고 사이트 조사와 콘텐츠 구성, 퍼블리싱, SEO·오픈그래프 설정을 맡았습니다.",
                     "myWorks": [
                         "홈페이지 리뉴얼 방향 제안 및 주요 콘텐츠 구조 정리",
                         "퍼블리싱, 반응형 화면, SEO / 오픈그래프 메타 관리 수행",
                         "2025 포트폴리오용 PC / 모바일 캡처 자료를 아카이브로 정리"
                     ],
-                    "achievements": ["기업 홈페이지의 전문성과 대외 신뢰도 개선에 기여"],
-                    "points": ["현재 실무 프로젝트 이력과 연결되는 초기 기업 홈페이지 리뉴얼 경험"],
+                    "achievements": ["기업 소개·서비스 정보 구성과 홈페이지 리뉴얼 담당"],
+                    "points": ["초기 기업 홈페이지 리뉴얼 기록"],
                     "pin": false,
                     "duration": "약 2개월",
                     "captures": [

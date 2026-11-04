@@ -16,28 +16,13 @@
     padding: var(--badge-padding-block) var(--badge-padding-inline);
     border-radius: 999px;
     background: var(--badge-bg);
-    border: 1px solid $grayscale-300;
+    border: 0;
     font-size: var(--badge-font-size);
     font-weight: var(--badge-font-weight);
     color: var(--badge-color);
-    box-shadow: $shadow-glow;
     transition:
         transform 0.22s ease,
         box-shadow 0.22s ease;
-
-    &::before {
-        content: '';
-        width: 6px;
-        height: 6px;
-        border-radius: 999px;
-        background: var(--badge-accent);
-        box-shadow: 0 0 0 5px color-mix(in srgb, var(--badge-accent) 16%, transparent);
-    }
-
-    &:hover {
-        box-shadow: $shadow-soft;
-        transform: translateY(-1px);
-    }
 
     &--sm {
         --badge-padding-block: 4px;
@@ -66,8 +51,8 @@
 .base-accent-badge {
     padding: 3px 10px;
     border-radius: var(--radius-pill);
-    background: var(--gradient-accent);
-    color: var(--color-on-primary, #fff);
+    background: var(--color-surface-strong);
+    color: var(--color-text-strong);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     white-space: nowrap;

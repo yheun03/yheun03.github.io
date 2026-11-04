@@ -1,6 +1,6 @@
 <template>
     <header class="editorial-masthead">
-        <div class="editorial-masthead__top">
+        <div v-if="kicker || stats" class="editorial-masthead__top">
             <p v-if="kicker" class="editorial-masthead__kicker">{{ kicker }}</p>
             <p v-if="stats" class="editorial-masthead__stats">{{ stats }}</p>
         </div>

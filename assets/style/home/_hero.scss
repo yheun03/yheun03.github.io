@@ -30,60 +30,6 @@
         }
     }
 
-    &__canvas {
-        position: absolute;
-        inset: -8% -4%;
-        z-index: -1;
-        pointer-events: none;
-    }
-
-    &__orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(clamp(40px, 6vw, 72px));
-        will-change: transform;
-        animation: hero-orb-drift 22s ease-in-out infinite alternate;
-
-        &--a {
-            top: 6%;
-            right: 8%;
-            width: clamp(256px, 34vw, 544px);
-            aspect-ratio: 1;
-            opacity: 0.38;
-            background: radial-gradient(circle at 32% 32%, color-mix(in srgb, var(--color-primary) 52%, transparent), transparent 70%);
-        }
-
-        &--b {
-            bottom: 4%;
-            left: -4%;
-            width: clamp(208px, 26vw, 416px);
-            aspect-ratio: 1;
-            opacity: 0.26;
-            background: radial-gradient(
-                circle at 60% 40%,
-                color-mix(in srgb, var(--accent-mint, var(--color-primary)) 46%, transparent),
-                transparent 72%
-            );
-            animation-duration: 28s;
-            animation-delay: -8s;
-        }
-
-        &--c {
-            top: 38%;
-            left: 36%;
-            width: clamp(144px, 18vw, 288px);
-            aspect-ratio: 1;
-            opacity: 0.2;
-            background: radial-gradient(
-                circle at 50% 50%,
-                color-mix(in srgb, var(--accent-hot, var(--color-primary)) 40%, transparent),
-                transparent 70%
-            );
-            animation-duration: 18s;
-            animation-delay: -14s;
-        }
-    }
-
     &__cue {
         position: absolute;
         bottom: clamp(20px, 3vw, 40px);
@@ -123,7 +69,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: var(--gradient-accent);
+            background: var(--color-text-muted);
             transform: translateY(-100%);
             animation: hero-cue-scan 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
         }
@@ -137,8 +83,8 @@
         color: var(--color-text-muted);
         font-family: var(--font-mono);
         font-size: var(--font-size-xs);
-        font-weight: var(--font-weight-semibold);
-        letter-spacing: var(--tracking-label);
+        font-weight: var(--font-weight-medium);
+        letter-spacing: 0;
         line-height: var(--line-height-ui);
         text-transform: uppercase;
 
@@ -172,6 +118,10 @@
         @include display-line;
         font-weight: inherit;
         transform-origin: left center;
+
+        &--accent {
+            color: var(--primary-600);
+        }
     }
 
     &__lead {

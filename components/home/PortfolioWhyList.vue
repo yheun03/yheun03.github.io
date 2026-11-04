@@ -1,12 +1,26 @@
 <template>
     <section class="section section--why-list" :aria-label="t('about.principlesAriaLabel')">
         <ol class="why__list">
-            <li v-for="(principle, index) in aboutContent.principles" :key="principle.title" data-animate>
-                <BaseIndexLabel :value="String(index + 1).padStart(2, '0')" aria-hidden="true" />
+            <li v-for="principle in aboutContent.principles" :key="principle.title" data-animate>
                 <h3>{{ principle.title }}</h3>
                 <p>{{ principle.description }}</p>
                 <BaseLink v-if="principle.href" class="why__evidence" :href="principle.href">
-                    {{ principle.evidence }} <span aria-hidden="true">→</span>
+                    {{ principle.evidence }}
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                    </svg>
                 </BaseLink>
             </li>
         </ol>

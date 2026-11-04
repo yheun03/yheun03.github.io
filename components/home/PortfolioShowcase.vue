@@ -3,7 +3,6 @@
         id="works"
         section-class="section--works"
         title-id="section-works-title"
-        :eyebrow="t('nav.works')"
         :title="t('story.showcaseTitle')"
         :description="t('story.showcaseDescription')"
     >
@@ -18,7 +17,6 @@
                 <StoryCaseCard
                     :to="`/projects/${work.id}`"
                     :link-label="`${work.title}, ${t('story.caseCta')}`"
-                    :index-label="String(index + 1).padStart(2, '0')"
                     :tag="work.type"
                     :period="work.period"
                     :title="work.title"
@@ -26,8 +24,6 @@
                     :tech="work.tech.slice(0, 4)"
                     :cta-label="t('story.caseCta')"
                     :tech-aria-label="t('story.techStackAriaLabel')"
-                    :featured="index === 0"
-                    :featured-badge="t('story.featuredBadge')"
                 />
             </li>
         </ul>

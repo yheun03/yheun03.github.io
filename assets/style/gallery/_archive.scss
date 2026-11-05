@@ -435,6 +435,7 @@
         margin: 0 auto;
         overflow: hidden;
         aspect-ratio: 16 / 9;
+        border: 1px solid var(--color-border);
         border-radius: var(--radius-lg);
         background: var(--gallery-bg-elevated);
     }
@@ -479,8 +480,8 @@
     .gallery-card__media {
         overflow: hidden;
         aspect-ratio: 16 / 9;
+        border: 1px solid var(--color-border);
         border-radius: clamp(16px, 1.8vw, 28px);
-        box-shadow: 0 0 0 1px color-mix(in srgb, var(--gallery-muted) 24%, transparent);
 
         .gallery-card__screen {
             display: block;

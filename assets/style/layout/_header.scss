@@ -36,9 +36,18 @@
     &__brand {
         display: inline-flex;
         align-items: center;
+        justify-self: start;
+        max-width: 100%;
         min-height: $size-touch;
-        letter-spacing: -0.03em;
-        @include font(title-2, $font-weight-black);
+        color: var(--color-text-heading);
+    }
+
+    &__logo {
+        display: block;
+        width: 210px;
+        max-width: 100%;
+        height: auto;
+        font-family: var(--font-display);
     }
 
     &__nav {
@@ -450,7 +459,7 @@
 
     &__socials {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) auto;
         gap: $space-2;
     }
 

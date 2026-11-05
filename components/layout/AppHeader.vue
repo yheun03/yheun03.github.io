@@ -1,7 +1,16 @@
 <template>
     <header class="app-header" :class="{ 'app-header--scrolled': isScrolled }">
         <BaseLink class="app-header__brand" :href="brandHref" :aria-label="t('a11y.portfolioHome')">
-            <span aria-hidden="true">Eun</span>
+            <svg class="app-header__logo" width="210" height="44" viewBox="0 0 210 44" aria-hidden="true" focusable="false">
+                <g transform="translate(0 6)" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-miterlimit="10">
+                    <path d="M10 2H18V12H26V2H34V30H26V20H18V30H10Z" fill="#8FB8FF" />
+                    <path d="M2 2H10L14 12L18 2H26L18 22V30H10V22Z" fill="#EAF2FF" />
+                </g>
+                <g fill="currentColor">
+                    <text x="48" y="21" font-size="13" font-weight="750" letter-spacing="1">EUN YOUNGHWAN</text>
+                    <text x="48" y="35" font-size="8" letter-spacing="2">WEB PUBLISHER</text>
+                </g>
+            </svg>
         </BaseLink>
         <nav class="app-header__nav" :aria-label="t('a11y.primaryNavigation')">
             <BaseLink

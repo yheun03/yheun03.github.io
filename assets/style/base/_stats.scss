@@ -48,6 +48,7 @@
         font-size: var(--font-size-display-4);
         font-weight: 900;
         letter-spacing: var(--tracking-tight);
+        font-variant-numeric: tabular-nums;
         line-height: 1;
         color: var(--color-text-strong);
         transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);

@@ -26,7 +26,10 @@
                     <span class="base-stat-list__tooltip">{{ stat.description }}</span>
                 </details>
             </dt>
-            <dd>{{ stat.value }}{{ stat.suffix ?? '' }}</dd>
+            <dd :aria-label="`${stat.value}${stat.suffix ?? ''}`">
+                <span :data-count-to="Number.isFinite(Number(stat.value)) ? stat.value : undefined" aria-hidden="true">{{ stat.value }}</span
+                ><span aria-hidden="true">{{ stat.suffix ?? '' }}</span>
+            </dd>
         </div>
     </dl>
 </template>

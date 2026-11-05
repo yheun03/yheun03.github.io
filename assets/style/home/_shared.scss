@@ -97,6 +97,30 @@
     --reveal-delay: calc(var(--reveal-delay-base) + var(--reveal-delay-step));
 }
 
+/* 제목을 읽는 방향으로 primary 색상이 차오른다. */
+@supports (background-clip: text) {
+    .portfolio-page--home > .section.section--why-list .why__list > li[data-animate] > h3 {
+        color: transparent;
+        background-image: linear-gradient(90deg, var(--color-primary) 44%, var(--color-text-heading) 56%);
+        background-size: 230% 100%;
+        background-position: 100% 0;
+        background-clip: text;
+        -webkit-background-clip: text;
+        transition-property: opacity, transform, background-position;
+    }
+
+    .portfolio-page--home > .section.section--why-list .why__list > li[data-animate].animate--visible > h3 {
+        background-position: 0 0;
+    }
+}
+
+@media (forced-colors: active) {
+    .portfolio-page--home > .section.section--why-list .why__list > li[data-animate] > h3 {
+        background: none;
+        color: CanvasText;
+    }
+}
+
 .portfolio-page--home .section-title[data-animate] > .section-title__description,
 .portfolio-page--home .section--why-list .why__list > li[data-animate] > p {
     --reveal-delay: calc(var(--reveal-delay-base) + var(--reveal-delay-step) + var(--reveal-delay-step));
@@ -130,7 +154,7 @@
     line-height: calc(var(--line-height-body) + 0.15);
 }
 
-/* 주력으로 사용하는 HTML·SCSS를 먼저 읽을 수 있도록 강조한다. */
+/* 주력으로 사용하는 HTML과 SCSS를 먼저 읽을 수 있도록 강조한다. */
 .feature-grid--toolbox > li:nth-child(-n + 2) .feature-card__title {
     color: var(--primary-600);
 }

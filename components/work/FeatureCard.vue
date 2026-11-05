@@ -5,7 +5,7 @@
         <h3 class="feature-card__title">{{ title }}</h3>
         <ul v-if="items.length" class="feature-card__tags">
             <li v-for="item in items" :key="item">
-                <BaseBadge size="sm" tone="toolbox" plain>{{ item }}</BaseBadge>
+                <BaseBadge size="sm" tone="toolbox">{{ item }}</BaseBadge>
             </li>
         </ul>
         <p v-if="description" class="feature-card__description">{{ description }}</p>

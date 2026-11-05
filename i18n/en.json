@@ -245,7 +245,7 @@
         "spotlightAriaLabel": "Contact"
     },
     "footer": {
-        "tagline": "Eunyounghwan · Web Publisher · 2026",
+        "tagline": "Eunyounghwan / Web Publisher / 2026",
         "navLabel": "Footer links",
         "homeLink": "Portfolio home",
         "careerLink": "Professional projects gallery",
@@ -255,7 +255,7 @@
     "lnb": {
         "eyebrow": "Explore",
         "title": "Menu",
-        "subtitle": "Eunyounghwan · Web Publisher",
+        "subtitle": "Eunyounghwan / Web Publisher",
         "connect": "Get in touch",
         "email": "Email me",
         "github": "GitHub",
@@ -409,7 +409,7 @@
                 "structured data",
                 "responsive web"
             ],
-            "jobTitle": "Web Publisher · Vue UI Development",
+            "jobTitle": "Web Publisher / Vue UI Development",
             "description": "I’m Eunyounghwan, a web publisher working on corporate websites and business applications with HTML, SCSS, and Vue 3.",
             "websiteName": "Eunyounghwan Web Publisher Portfolio 2026",
             "questions": [
@@ -568,7 +568,7 @@
         },
         "profile": {
             "name": "은영환",
-            "role": "Web Publisher · Vue UI Development",
+            "role": "Web Publisher / Vue UI Development",
             "keywords": [
                 "Web Publisher",
                 "Vue-based frontend development",
@@ -1571,7 +1571,7 @@
                 {
                     "id": "planearby",
                     "category": "personal",
-                    "title": "Planearby · Nearby aircraft radar",
+                    "title": "Planearby / Nearby aircraft radar",
                     "period": "2026.10~",
                     "type": "Personal / Vue aircraft dashboard",
                     "role": "Planning / feature scoping / building with Codex Sol 6.1",

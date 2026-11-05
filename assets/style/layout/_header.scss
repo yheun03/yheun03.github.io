@@ -153,8 +153,40 @@
 ========================================= */
 
 .toggle-swap {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     will-change: transform, opacity;
+}
+
+/* 작은 아이콘과 언어 코드로 표시하고 실제 클릭 영역은 44px을 확보한다. */
+.app-header .app-header__theme-toggle,
+.app-header .app-header__language-toggle {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+
+    &:hover {
+        background: var(--color-surface-strong);
+        color: var(--color-primary);
+    }
+}
+
+.app-header__theme-icon {
+    display: block;
+    transition: rotate 0.35s ease;
+}
+
+.app-header__theme-toggle:hover .app-header__theme-icon {
+    rotate: -15deg;
 }
 
 .toggle-swap-enter-active {

@@ -58,6 +58,7 @@
     }
 
     h3 {
+        width: fit-content;
         max-width: 22ch;
         @include font(display-4);
         line-height: var(--line-height-display);
@@ -77,10 +78,31 @@
     }
 
     .why__evidence {
+        display: inline-flex;
+        align-items: center;
+        justify-self: start;
+        gap: var(--space-2);
+        width: fit-content;
+        max-width: 100%;
+        min-height: var(--size-touch);
+        padding-block: var(--space-2);
         color: var(--color-text-strong);
         font-size: var(--font-size-sm);
         font-weight: var(--font-weight-bold);
         text-underline-offset: 0.24em;
+
+        &:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+    }
+
+    li:nth-child(2) .why__evidence {
+        justify-self: center;
+    }
+
+    li:nth-child(3) .why__evidence {
+        justify-self: end;
     }
 }
 

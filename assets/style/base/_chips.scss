@@ -11,13 +11,20 @@
 
 .base-chip {
     padding: 4px 11px;
-    border: 0;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-pill);
-    background: var(--color-bg);
-    color: var(--color-text-muted);
+    background: var(--color-surface-strong);
+    color: var(--color-text-strong);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.03em;
     line-height: var(--line-height-ui);
+}
+
+.story-case:is(:hover, :focus-visible, :active) .base-chip,
+.showcase__item--featured .base-chip {
+    border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+    background: color-mix(in srgb, var(--color-primary) 14%, var(--color-surface));
+    color: var(--color-primary-dark);
 }

@@ -32,9 +32,10 @@
     }
 
     &--toolbox {
-        --badge-accent: color-mix(in srgb, #{$primary-600} 55%, #{$grayscale-700});
-        --badge-color: #{$grayscale-600};
-        --badge-bg: color-mix(in srgb, #{$grayscale-0} 72%, transparent);
+        --badge-accent: var(--color-primary);
+        --badge-color: var(--color-text-strong);
+        --badge-bg: var(--color-bg);
+        border: 1px solid var(--color-border);
     }
 
     &--work {

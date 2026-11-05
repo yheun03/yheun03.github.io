@@ -79,47 +79,39 @@
                             :aria-label="t('aboutMe.logoDescription')"
                         >
                             <defs>
-                                <pattern id="about-logo-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M20 0H0V20" fill="none" stroke="var(--about-guide)" stroke-opacity=".15" stroke-width=".7" />
+                                <pattern id="about-logo-grid" x="138" y="66" width="9" height="9" patternUnits="userSpaceOnUse">
+                                    <path d="M9 0H0V9" fill="none" stroke="var(--about-guide)" stroke-opacity=".15" stroke-width="1" />
                                 </pattern>
                             </defs>
+                            <!-- 최종 아이콘의 정수 좌표와 1단위 선 두께. 치수선은 경로 중심을 기준으로 한다. -->
+                            <g
+                                transform="translate(138 66) scale(9)"
+                                stroke="#000000"
+                                stroke-width="1"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                            >
+                                <path class="about-identity__letter-h" d="M10 2H18V12H26V2H34V30H26V20H18V30H10Z" fill="#8FB8FF" />
+                                <path class="about-identity__letter-y" d="M2 2H10L14 12L18 2H26L18 22V30H10V22Z" fill="#EAF2FF" />
+                            </g>
                             <g class="about-identity__guides" fill="none" stroke="var(--about-guide)" stroke-width="1" aria-hidden="true">
-                                <rect x="120" y="40" width="360" height="340" fill="url(#about-logo-grid)" stroke-opacity=".45" />
+                                <rect x="138" y="66" width="324" height="288" fill="url(#about-logo-grid)" stroke-opacity=".45" />
                                 <path
-                                    d="M60 78.5h480M60 339.5h480M151.65 15v390M450.8 15v390M60 210h480M300 15v390M225.8 60v300M306.8 60v300M369.8 60v300"
+                                    d="M120 84H480M120 174H480M120 246H480M120 336H480M228 58V362M300 58V362M372 58V362M444 58V362"
                                     stroke-dasharray="4 5"
                                 />
-                                <path d="m105 20 150 375M200 20l150 375M350 20 200 375M445 20 295 395" stroke-opacity=".55" />
-                                <circle cx="300" cy="210" r="130" />
-                                <circle cx="220" cy="120" r="40" />
-                                <circle cx="380" cy="120" r="40" />
-                                <circle cx="300" cy="270" r="70" />
-                                <path d="M151.65 365H450.8m-299.15-5v10m299.15-10v10M475 78.5v261m-5-261h10m-10 261h10" />
+                                <path d="M138 375H462M138 370V380M462 370V380M492 66V354M487 66H497M487 354H497" />
+                                <path d="M228 50H300M228 45V55M300 45V55M372 50H444M372 45V55M444 45V55" />
+                                <path d="M108 84V336M103 84H113M103 174H113M103 246H113M103 336H113" />
                                 <g fill="var(--about-guide)" stroke="none" font-size="10" font-family="monospace" letter-spacing="1">
-                                    <text x="265" y="383">33.24 UNITS</text>
-                                    <text x="488" y="215" transform="rotate(90 488 215)">29 UNITS</text>
-                                    <text x="69" y="74">CAP HEIGHT</text>
-                                    <text x="69" y="355">BASELINE</text>
-                                    <text x="226" y="61">Y</text>
-                                    <text x="372" y="61">H</text>
+                                    <text x="300" y="397" text-anchor="middle">36 UNITS</text>
+                                    <text x="510" y="210" text-anchor="middle" transform="rotate(90 510 210)">32 UNITS</text>
+                                    <text x="264" y="40" text-anchor="middle">8</text>
+                                    <text x="408" y="40" text-anchor="middle">8</text>
+                                    <text x="95" y="132" text-anchor="end">10</text>
+                                    <text x="95" y="213" text-anchor="end">8</text>
+                                    <text x="95" y="294" text-anchor="end">10</text>
                                 </g>
-                            </g>
-                            <!-- 실제 파비콘의 경로·색상·레이어 순서. -->
-                            <g transform="translate(145 65) scale(9)">
-                                <path
-                                    class="about-identity__letter-h"
-                                    d="M33.9771 30.5029H33.4771L25.4771 30.501H24.9771V20.4971L17.9771 20.499V30.5039H17.4771L9.47705 30.5029H8.97705V1.50293H9.47705L17.4771 1.50391H17.9771V11.502L24.9771 11.5V1.5H25.4771L33.4771 1.50293H33.9771V30.5029Z"
-                                    fill="#8FB8FF"
-                                    stroke="var(--about-ink)"
-                                    stroke-width=".22"
-                                />
-                                <path
-                                    class="about-identity__letter-y"
-                                    d="M9.81592 1.5L9.94092 1.81445L13.4771 10.6543L17.0132 1.81445L17.1382 1.5H26.2153L25.9409 2.18555L17.9771 22.0947V30.5H8.97705V22.0947L1.01318 2.18555L0.73877 1.5H9.81592Z"
-                                    fill="#EAF2FF"
-                                    stroke="var(--about-ink)"
-                                    stroke-width=".22"
-                                />
                             </g>
                         </svg>
                     </div>

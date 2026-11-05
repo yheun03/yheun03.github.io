@@ -223,10 +223,6 @@ html:has(.portfolio-page--home) .app-footer {
     .showcase__list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
-    .showcase__item--featured {
-        grid-column: auto;
-    }
 }
 
 /* How */
@@ -781,8 +777,7 @@ html:has(.portfolio-page--home) .app-footer {
         padding: var(--space-5) clamp(18px, 2vw, 24px);
     }
 
-    .story-case,
-    .showcase__item--featured .story-case {
+    .story-case {
         min-height: clamp(176px, 22vh, 204px);
         gap: clamp(10px, 1.5vh, 14px);
     }
@@ -825,4 +820,51 @@ html:has(.portfolio-page--home) .app-footer {
     .portfolio-page.portfolio-page--home > .section.section--toolbox {
         padding-block: 56px;
     }
+}
+
+/* 대표 작업은 이미지, 설명, 담당 범위를 읽을 여유를 둔다. */
+.portfolio-page.portfolio-page--home > .section.section--works {
+    gap: 36px;
+    padding-block: clamp(56px, 7vh, 88px);
+}
+
+.section--works .showcase__list {
+    gap: 24px;
+}
+
+.section--works .story-case {
+    min-height: 0;
+    grid-template-rows: auto auto auto 1fr auto auto auto;
+    align-content: stretch;
+    gap: 16px;
+    padding: 24px;
+}
+
+.section--works .base-chip {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    letter-spacing: 0;
+}
+
+.section--works .story-case h3 {
+    font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+    line-height: 1.45;
+}
+
+.section--works .story-case__summary {
+    display: block;
+    overflow: visible;
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.section--works .story-case .story-case__cta {
+    width: fit-content;
+    min-height: 44px;
+    padding: 10px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--color-action);
+    color: var(--color-on-primary);
+    font-size: 0.875rem;
 }

@@ -13,7 +13,7 @@
             />
         </div>
 
-        <div class="highlights__workspace" data-animate>
+        <div ref="workspaceRef" class="highlights__workspace" data-animate>
             <HighlightsTabPanelRenderer
                 :active-tab="activeTab"
                 :panel-render-key="activeTab"
@@ -34,12 +34,19 @@ const tabKeys: HighlightTabKey[] = ['awards', 'certifications', 'roles', 'activi
 const { t, content } = useLocale();
 const highlights = computed(() => content.value.highlights);
 const activeTab = ref<HighlightTabKey>('awards');
+const workspaceRef = ref<HTMLElement | null>(null);
 const tabs = computed(() => tabKeys.map((key) => ({ key, label: t(`highlights.${key}`) })));
 const activeItems = computed(() => highlights.value[activeTab.value]);
 const activeTabLabel = computed(() => t(`highlights.${activeTab.value}`));
 const activeDescription = computed(() => highlights.value.descriptions[activeTab.value]);
 
-function handleHighlightTabChange(key: string) {
+async function handleHighlightTabChange(key: string) {
     activeTab.value = key as HighlightTabKey;
+    await nextTick();
+    const workspace = workspaceRef.value;
+    if (!workspace) return;
+    const headerHeight = document.querySelector('.app-header')?.getBoundingClientRect().height ?? 0;
+    const top = window.scrollY + workspace.getBoundingClientRect().top - headerHeight - 24;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
 }
 </script>

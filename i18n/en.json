@@ -131,6 +131,8 @@
         "languages": "Languages & core stack",
         "captures": "Screenshots",
         "overview": "Overview",
+        "technologies": "Technologies",
+        "projectNavigation": "Project sections",
         "role": "Role",
         "breadcrumbLabel": "Breadcrumb",
         "backToCareerList": "Back to professional work",
@@ -151,6 +153,10 @@
         "filterFrontend": "Frontend",
         "filterOperation": "Operations",
         "filterCms": "CMS",
+        "filterIndividual": "Individual",
+        "filterTeam": "Team",
+        "filterHint": "Choose one or more categories",
+        "filteredCount": "{count} projects",
         "archive": "ARCHIVE",
         "result": "RESULT",
         "careerLead": "{total} client and in-house projects I helped build, redesign, or maintain, with my responsibilities and the technologies used.",
@@ -657,18 +663,27 @@
             "principles": [
                 {
                     "title": "Keyboard access matters",
+                    "titleBefore": "",
+                    "titleAccent": "Keyboard access",
+                    "titleAfter": " matters",
                     "description": "I check semantic markup, keyboard navigation, and the order in which content and controls are reached.",
                     "evidence": "See accessibility in this portfolio",
                     "href": "/personal/jonsoft-framework-portfolio"
                 },
                 {
                     "title": "Consistent patterns for repeated UI",
+                    "titleBefore": "",
+                    "titleAccent": "Consistent patterns",
+                    "titleAfter": " for repeated UI",
                     "description": "I use shared components for recurring UI and keep file and SCSS naming consistent.",
                     "evidence": "See the Nuxt 3 framework case",
                     "href": "/projects/framework"
                 },
                 {
                     "title": "Markup ready for data",
+                    "titleBefore": "Markup ready for ",
+                    "titleAccent": "data",
+                    "titleAfter": "",
                     "description": "I structure markup and components so developers can identify data bindings and application states.",
                     "evidence": "See the Hanjin Kal documentation case",
                     "href": "/projects/hanjinkal"

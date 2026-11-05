@@ -10,11 +10,14 @@
             <li
                 v-for="(work, index) in homeShowcaseWorks"
                 :key="work.id"
-                :class="['showcase__item', { 'showcase__item--featured': index === 0 }]"
+                class="showcase__item"
                 :style="{ '--animate-delay': `${index * 90}ms` }"
                 data-animate
             >
                 <StoryCaseCard
+                    :featured="index === 0"
+                    :cover="work.thumbnail ?? work.captures[0]"
+                    :role="work.role"
                     :to="`/projects/${work.id}`"
                     :link-label="`${work.title}, ${t('story.caseCta')}`"
                     :tag="work.type"

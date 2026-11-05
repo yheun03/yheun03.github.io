@@ -22,8 +22,7 @@
     line-height: var(--line-height-ui);
 }
 
-.story-case:is(:hover, :focus-visible, :active) .base-chip,
-.showcase__item--featured .base-chip {
+.story-case:is(:hover, :focus-visible, :active) .base-chip {
     border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
     background: color-mix(in srgb, var(--color-primary) 14%, var(--color-surface));
     color: var(--color-primary-dark);

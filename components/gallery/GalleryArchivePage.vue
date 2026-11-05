@@ -9,6 +9,7 @@
                 :filter-legend="filterLegend"
                 :view-legend="viewLegend"
                 :toolbar-aria-label="toolbarAriaLabel"
+                :result-label="resultLabel"
                 :sort-options="sortOptions"
                 :view-options="viewOptions"
                 :filter-options="filterOptions"
@@ -52,6 +53,7 @@ const {
     filterOptions,
     viewOptions,
     galleryEntries,
+    filteredWorks,
     editorialYearGroups,
     lead,
     sortLegend,
@@ -61,4 +63,6 @@ const {
     titleKey,
     basePath,
 } = useGalleryArchive(props.variant, works);
+
+const resultLabel = computed(() => t('gallery.filteredCount').replace('{count}', String(filteredWorks.value.length)));
 </script>

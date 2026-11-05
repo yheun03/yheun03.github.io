@@ -131,6 +131,8 @@
         "languages": "언어 / 핵심 스택",
         "captures": "프로젝트 화면",
         "overview": "프로젝트 소개",
+        "technologies": "사용 기술",
+        "projectNavigation": "프로젝트 상세 바로가기",
         "role": "역할",
         "breadcrumbLabel": "현재 위치",
         "backToCareerList": "실무 목록으로",
@@ -151,6 +153,10 @@
         "filterFrontend": "프론트엔드",
         "filterOperation": "운영",
         "filterCms": "CMS",
+        "filterIndividual": "개인 제작",
+        "filterTeam": "팀 제작",
+        "filterHint": "여러 유형을 선택할 수 있어요",
+        "filteredCount": "{count}개 프로젝트",
         "archive": "아카이브",
         "result": "결과",
         "careerLead": "구축, 리뉴얼, 운영에 참여한 {total}개 프로젝트입니다. 각 프로젝트에서 맡은 업무와 사용 기술을 확인할 수 있습니다.",
@@ -651,18 +657,27 @@
             "principles": [
                 {
                     "title": "키보드로도 사용할 수 있게",
+                    "titleBefore": "",
+                    "titleAccent": "키보드",
+                    "titleAfter": "로도 사용할 수 있게",
                     "description": "시맨틱 마크업과 키보드 탐색을 확인하고, 내용을 읽고 조작하는 순서를 정리합니다.",
                     "evidence": "포트폴리오 접근성 구현 보기",
                     "href": "/personal/jonsoft-framework-portfolio"
                 },
                 {
                     "title": "반복 화면은 같은 방식으로",
+                    "titleBefore": "반복 화면은 ",
+                    "titleAccent": "같은 방식",
+                    "titleAfter": "으로",
                     "description": "반복되는 UI는 공통 컴포넌트로 만들고, 파일과 SCSS 이름을 일관되게 작성합니다.",
                     "evidence": "Nuxt 3 프레임워크 사례 보기",
                     "href": "/projects/framework"
                 },
                 {
                     "title": "데이터 연결을 고려한 마크업",
+                    "titleBefore": "",
+                    "titleAccent": "데이터 연결",
+                    "titleAfter": "을 고려한 마크업",
                     "description": "개발자가 데이터를 연결할 위치와 상태별 화면을 알아보기 쉽도록 마크업과 컴포넌트를 구성합니다.",
                     "evidence": "한진칼 문서화 사례 보기",
                     "href": "/projects/hanjinkal"

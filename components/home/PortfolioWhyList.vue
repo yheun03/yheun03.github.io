@@ -2,7 +2,10 @@
     <section class="section section--why-list" :aria-label="t('about.principlesAriaLabel')">
         <ol class="why__list">
             <li v-for="principle in aboutContent.principles" :key="principle.title" data-animate>
-                <h3>{{ principle.title }}</h3>
+                <h3>
+                    {{ principle.titleBefore }}<em>{{ principle.titleAccent }}</em
+                    >{{ principle.titleAfter }}
+                </h3>
                 <p>{{ principle.description }}</p>
                 <BaseLink v-if="principle.href" class="why__evidence" :href="principle.href">
                     {{ principle.evidence }}

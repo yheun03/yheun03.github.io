@@ -1619,6 +1619,7 @@
                         "/assets/images/projects/planearby/image-02.jpg",
                         "/assets/images/projects/planearby/image-03.jpg"
                     ],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/planearby-light-devices.jpg",
                     "languages": ["Vue 3", "JavaScript", "SCSS", "Vite"],
                     "links": [
                         {
@@ -1675,6 +1676,7 @@
                         "/assets/images/projects/jonsoft-framework-portfolio/image-08.webp",
                         "/assets/images/projects/jonsoft-framework-portfolio/image-09.webp"
                     ],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-framework-portfolio-light-devices.jpg",
                     "languages": ["HTML5", "SCSS", "Nuxt 3", "Vue 3", "TypeScript"],
                     "links": [
                         {
@@ -1720,6 +1722,7 @@
                         "/assets/images/projects/singil-bmc/image-05.webp",
                         "/assets/images/projects/singil-bmc/image-06.webp"
                     ],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/singil-bmc-light-devices.jpg",
                     "languages": ["Nuxt 3", "Vue 3", "TypeScript", "SCSS", "Pinia", "Node.js"],
                     "links": [
                         {
@@ -1736,7 +1739,7 @@
                     "id": "clone-flighty",
                     "category": "personal",
                     "title": "Flighty UI Clone",
-                    "period": "",
+                    "period": "2026.10 (completed in late October)",
                     "type": "Personal / Vue web publishing",
                     "role": "End-to-end planning, design analysis, Figma redesign, and frontend development",
                     "tech": ["Vue 3", "JavaScript", "Vue Router", "Vite", "SCSS", "MapLibre", "Figma"],
@@ -1764,7 +1767,7 @@
                         "/assets/images/projects/clone-flighty/image-02.webp",
                         "/assets/images/projects/clone-flighty/image-03.webp"
                     ],
-                    "thumbnail": "/assets/images/projects/archive-thumbnails/flighty.jpg",
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/clone-flighty-light-devices.jpg",
                     "languages": ["Vue 3", "JavaScript", "Vue Router", "Vite", "SCSS", "MapLibre"],
                     "links": [
                         {
@@ -1801,6 +1804,7 @@
                     "pin": true,
                     "duration": "~8 months",
                     "captures": ["/assets/images/projects/placeholder.svg"],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/clone-kakaotalk-light-devices.jpg",
                     "languages": ["Vue 3", "Vue Router 4", "Vite 6", "SCSS", "JavaScript"],
                     "links": [
                         {
@@ -1845,6 +1849,7 @@
                         "/assets/images/projects/portfolio-2025/image-08.webp",
                         "/assets/images/projects/portfolio-2025/image-09.webp"
                     ],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/portfolio-2025-light-devices.jpg",
                     "languages": ["HTML", "SCSS", "JavaScript", "jQuery"],
                     "links": [
                         {
@@ -1881,7 +1886,7 @@
                         "/assets/images/projects/matemate-capstone/image-03.webp",
                         "/assets/images/projects/matemate-capstone/image-04.webp"
                     ],
-                    "thumbnail": "/assets/images/projects/archive-thumbnails/matemate.jpg",
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/matemate-capstone-light-devices.jpg",
                     "languages": ["HTML", "SCSS", "JavaScript", "Firebase", "Figma"],
                     "links": [
                         {
@@ -1917,6 +1922,7 @@
                     "pin": false,
                     "duration": "~1 week build / ~2 months operation and enhancement",
                     "captures": ["/assets/images/projects/gongting-blind-matching/image-01.webp"],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/gongting-blind-matching-light-devices.jpg",
                     "languages": ["HTML", "SCSS", "JavaScript", "Figma"],
                     "links": [
                         {
@@ -1951,7 +1957,7 @@
                         "/assets/images/projects/jonsoft-homepage-2022-archive/image-01.webp",
                         "/assets/images/projects/jonsoft-homepage-2022-archive/image-02.webp"
                     ],
-                    "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-2022.jpg",
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-homepage-2022-archive-light-devices.jpg",
                     "languages": ["HTML", "CSS", "jQuery", "Figma"],
                     "links": [
                         {

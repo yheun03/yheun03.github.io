@@ -23,7 +23,7 @@
     </BaseYearTimeline>
     <section v-else class="gallery-page__grid" :aria-label="listAriaLabel">
         <template v-for="(entry, entryIndex) in galleryEntries" :key="entry.key">
-            <h2 v-if="entry.type === 'year'" class="gallery-page__year">{{ entry.year }}</h2>
+            <h2 v-if="entry.type === 'year'" class="gallery-page__year">{{ entry.year || flatAriaLabel }}</h2>
             <ProjectGalleryCard
                 v-else
                 :work="entry.work"

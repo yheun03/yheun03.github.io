@@ -37,7 +37,8 @@ function createWorkYearEntries(works: readonly WorkItem[]): WorkYearEntry[] {
 
     works.forEach((work, index) => {
         const year = getWorkStartYear(work);
-        if (year && year !== currentYear) {
+        // 날짜가 없는 항목도 이전 연도 그룹에서 분리한다.
+        if (year !== currentYear) {
             entries.push({ type: 'year', key: `year-${year}`, year });
             currentYear = year;
         }

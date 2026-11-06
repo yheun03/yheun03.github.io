@@ -1532,6 +1532,54 @@
             ],
             "personal": [
                 {
+                    "id": "flight-shade",
+                    "category": "personal",
+                    "title": "Flight Shade / 비행 창가 좌석 추천",
+                    "period": "2026.11.06",
+                    "type": "개인 / Vue 좌석 추천 서비스",
+                    "role": "기획 / 퍼블리싱 / 프론트엔드 개발",
+                    "tech": ["Vue 3", "Vite", "JavaScript", "SCSS", "Leaflet", "SunCalc"],
+                    "introduction": "비행 중 햇빛을 피하거나 일출·일몰을 보기 좋은 창가 좌석을 찾아주는 Vue 3 웹 서비스입니다. 출도착 공항과 출발 날짜·시간을 입력하면 비행 경로의 태양 방향을 계산하고 왼쪽 또는 오른쪽 좌석을 추천합니다.",
+                    "myWorks": [
+                        "Vue 3 + Vite + JavaScript + SCSS로 경로 설정, 지도, 좌석 추천과 공유를 한 화면에 구성",
+                        "공항 코드·도시 검색과 출발 공항의 현지 시간대를 반영한 날짜·시간 입력 구현",
+                        "SunCalc와 대권 경로를 이용해 좌우 햇빛 비율과 일출·일몰 시점을 계산하고 선호에 따라 창가 좌석 추천",
+                        "Leaflet / OpenStreetMap 지도에 비행 경로와 태양 방향을 표시하고 재생 가능한 비행 타임라인 구현",
+                        "PC의 고정 입력 패널과 모바일의 드래그 가능한 바텀 시트로 반응형 UI 구성",
+                        "입력 변경 자동 반영, 한국어 / 영어 전환과 항공편·좌석 선호를 복원하는 URL 공유 구현",
+                        "키보드 공항 검색, 포커스 관리와 모션 감소를 적용하고 언어별 사전 렌더링 / SEO / GitHub Pages 배포 구성"
+                    ],
+                    "achievements": [
+                        "공항 선택부터 좌석 추천, 비행 시뮬레이션과 결과 공유까지 이어지는 단일 페이지 완성",
+                        "API 키나 별도 서버 없이 브라우저에서 공항 검색과 태양 위치 계산 처리",
+                        "데스크톱과 모바일에서 같은 항공편 결과를 한국어 / 영어로 확인하고 공유하도록 구현"
+                    ],
+                    "points": [
+                        "햇빛 회피·햇빛 선호·일출·일몰에 따라 달라지는 좌석 추천과 타임라인",
+                        "지도와 추천 결과를 중심으로 PC 입력 패널과 모바일 바텀 시트를 연결한 반응형 UI",
+                        "FlightSide의 UI·사용 경험을 참고하고 Planearby의 Vue·SCSS 구조 활용"
+                    ],
+                    "pin": true,
+                    "duration": "약 2시간",
+                    "captures": [
+                        "/assets/images/projects/flight-shade/image-01.jpg",
+                        "/assets/images/projects/flight-shade/image-02.jpg",
+                        "/assets/images/projects/flight-shade/image-03.jpg"
+                    ],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/flight-shade-light-devices-4k.jpg",
+                    "languages": ["Vue 3", "JavaScript", "SCSS", "Vite"],
+                    "links": [
+                        {
+                            "label": "페이지 이동하기",
+                            "href": "https://yheun03.github.io/flight-shade/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/flight-shade"
+                        }
+                    ]
+                },
+                {
                     "id": "planearby",
                     "category": "personal",
                     "title": "Planearby / 주변 항공기 레이더",

@@ -1584,6 +1584,54 @@
             ],
             "personal": [
                 {
+                    "id": "flight-shade",
+                    "category": "personal",
+                    "title": "Flight Shade / Window seat recommendations",
+                    "period": "2026.11.06",
+                    "type": "Personal / Vue seat recommendation service",
+                    "role": "Planning / web publishing / frontend development",
+                    "tech": ["Vue 3", "Vite", "JavaScript", "SCSS", "Leaflet", "SunCalc"],
+                    "introduction": "A Vue 3 web service for finding a window seat to avoid sunlight or enjoy a sunrise or sunset. Enter the departure and arrival airports, date and time to calculate the sun’s direction along the flight path and get a left or right seat recommendation.",
+                    "myWorks": [
+                        "Built a single-page route form, map, seat recommendation and sharing flow with Vue 3, Vite, JavaScript and SCSS",
+                        "Implemented airport code and city search with date and time inputs based on the departure airport’s local time zone",
+                        "Used SunCalc and a great-circle route to calculate sunlight ratios and sunrise / sunset times, recommending window seats by preference",
+                        "Displayed the flight path and sun direction with Leaflet / OpenStreetMap and built a playable flight timeline",
+                        "Created a responsive interface with a fixed desktop input panel and a draggable mobile bottom sheet",
+                        "Added automatic input updates, Korean / English switching and URL sharing that restores the flight and seat preference",
+                        "Added keyboard airport search, focus management, reduced motion, localized prerendering, SEO and GitHub Pages deployment"
+                    ],
+                    "achievements": [
+                        "Connected airport selection, seat recommendations, flight simulation and result sharing in one page",
+                        "Handled airport search and solar calculations in the browser without API keys or a separate server",
+                        "Made the same flight results available to view and share in Korean / English across desktop and mobile"
+                    ],
+                    "points": [
+                        "Seat recommendations and a timeline for shade, sunlight, sunrise and sunset preferences",
+                        "Responsive map and recommendation UI with a desktop input panel and mobile bottom sheet",
+                        "Referenced FlightSide’s UI and experience, following Planearby’s Vue and SCSS structure"
+                    ],
+                    "pin": true,
+                    "duration": "~2 hours",
+                    "captures": [
+                        "/assets/images/projects/flight-shade/image-01.jpg",
+                        "/assets/images/projects/flight-shade/image-02.jpg",
+                        "/assets/images/projects/flight-shade/image-03.jpg"
+                    ],
+                    "thumbnail": "/assets/images/projects/archive-thumbnails/flight-shade-light-devices-4k.jpg",
+                    "languages": ["Vue 3", "JavaScript", "SCSS", "Vite"],
+                    "links": [
+                        {
+                            "label": "Visit site",
+                            "href": "https://yheun03.github.io/flight-shade/"
+                        },
+                        {
+                            "label": "GitHub",
+                            "href": "https://github.com/yheun03/flight-shade"
+                        }
+                    ]
+                },
+                {
                     "id": "planearby",
                     "category": "personal",
                     "title": "Planearby / Nearby aircraft radar",

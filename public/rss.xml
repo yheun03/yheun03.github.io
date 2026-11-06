@@ -5,10 +5,19 @@
     <link>https://yheun03.github.io/</link>
     <description>HTML과 SCSS 기반 웹 퍼블리싱 실무, Vue 3와 Nuxt 3 UI 개발 경험을 프로젝트별 역할과 구현 내용 중심으로 정리한 포트폴리오입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 00:00:00 +0900</lastBuildDate>
     <ttl>1440</ttl>
     <generator>Nuxt 3</generator>
     <atom:link href="https://yheun03.github.io/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Flight Shade / 비행 창가 좌석 추천</title>
+      <link>https://yheun03.github.io/personal/flight-shade/</link>
+      <guid isPermaLink="true">https://yheun03.github.io/personal/flight-shade/</guid>
+      <description>비행 경로의 태양 방향을 계산해 그늘·햇빛·일출·일몰 선호에 맞는 창가 좌석을 추천하는 Vue 3 서비스입니다. PC 입력 패널과 모바일 바텀 시트, 한국어·영어, 결과 공유를 구현했습니다.</description>
+      <category>개인 프로젝트</category>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0900</pubDate>
+    </item>
 
     <item>
       <title>웹 퍼블리셔 은영환 소개 | 나의 이야기</title>

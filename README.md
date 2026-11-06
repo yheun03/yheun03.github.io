@@ -44,3 +44,17 @@ npm run deploy
 ```
 
 공개 이력서는 [`RESUME.md`](RESUME.md)에서 확인할 수 있으며, 2025년 포트폴리오는 `public/ver.2025/`에 보관되어 있습니다.
+
+## GitHub Pages 검색 설정
+
+`public/`의 `sitemap.xml`, `sitemap.txt`, `rss.xml`, `robots.txt`는 빌드 후 사이트 루트에 배포됩니다. `robots.txt`는 전체 공개 URL을 담은 XML 사이트맵과 최근 콘텐츠를 담은 RSS 2.0 피드를 안내합니다. 새 페이지를 추가하면 사이트맵을 갱신하고, 최근 콘텐츠는 RSS에도 반영합니다.
+
+Nuxt에서 생성한 정적 파일을 그대로 제공하도록 `public/.nojekyll`을 포함합니다. `npm run deploy`도 `--nojekyll` 옵션으로 `gh-pages` 브랜치에 배포합니다. GitHub Pages의 배포 소스는 `gh-pages` 브랜치의 루트(`/`)를 사용합니다. GitHub Pages에서는 `public/_headers`로 응답 헤더를 바꿀 수 없으며, XML과 텍스트 파일의 Content-Type은 호스팅 서버가 확장자에 맞춰 제공합니다.
+
+배포 후 Google Search Console의 `https://yheun03.github.io/` 속성에서 `sitemap.xml`과 `rss.xml`을 제출합니다. `sitemap.txt`는 같은 공개 URL의 텍스트 목록이므로 선택적으로 제출할 수 있습니다.
+
+`가져올 수 없음`이 표시되면 해당 파일의 URL을 `URL 검사 → 실제 URL 테스트`로 확인합니다. `크롤링 허용 여부: 예`, `페이지 가져오기: 성공`이면 검사 시점에는 Google이 파일에 접근할 수 있습니다. 실시간 검사와 Sitemaps 보고서의 처리 결과는 별개이므로 파일 자체의 검색 색인 생성을 요청하지 않고, 사이트맵을 다시 제출한 뒤 보고서의 마지막 읽은 날짜와 상태를 확인합니다.
+
+- [Google 사이트맵 작성 및 제출 안내](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+- [Google Sitemaps 보고서와 가져오기 오류 안내](https://support.google.com/webmasters/answer/7451001?hl=ko)
+- [GitHub Pages 정적 파일 및 MIME 유형 안내](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)

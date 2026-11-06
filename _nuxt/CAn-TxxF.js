@@ -1,1 +1,0 @@
-import{d as r,e as a,m as e,F as i,r as l,t as n}from"./DabYmfB8.js";const c=["aria-label"],u=r({__name:"BaseChipList",props:{items:{},ariaLabel:{}},setup(s){return(o,m)=>(a(),e("ul",{class:"base-chip-list","aria-label":s.ariaLabel},[(a(!0),e(i,null,l(s.items,t=>(a(),e("li",{key:t,class:"base-chip"},n(t),1))),128))],8,c))}});export{u as _};

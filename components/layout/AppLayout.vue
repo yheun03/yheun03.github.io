@@ -1,17 +1,12 @@
 <template>
-    <a class="skip-link" href="#main-content" @click="focusMainContent">{{ t('a11y.skipToContent') }}</a>
-    <AppDock v-if="showAppDock" :links="links" :active-id="activeId" :active-path="activePath" />
-    <AppHeader :links="headerNavLinks" :active-id="activeId" :brand-href="brandHref" :active-path="activePath" />
-    <main
-        id="main-content"
-        ref="pageRoot"
-        class="portfolio-page"
-        :class="[{ 'portfolio-page--app-dock': showAppDock }, pageVariant && `portfolio-page--${pageVariant}`]"
-        tabindex="-1"
-    >
-        <slot />
-    </main>
-    <AppFooter :text="footerText" />
+    <div class="silver-shell">
+        <a class="skip-link" href="#main-content" @click="focusMainContent">{{ t('a11y.skipToContent') }}</a>
+        <StudioHeader />
+        <main id="main-content" ref="pageRoot" class="portfolio-page" :class="pageVariant && `portfolio-page--${pageVariant}`" tabindex="-1">
+            <slot />
+        </main>
+        <AppFooter :text="footerText" />
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -20,7 +15,7 @@ const pageRoot = ref<HTMLElement | null>(null);
 
 usePageMotion(pageRoot);
 
-const props = withDefaults(
+withDefaults(
     defineProps<{
         /** AppDock용 섹션 앵커(홈). 서브페이지에서는 헤더와 동일하게 쓰면 됨 */
         links: { href: string; label: string }[];
@@ -42,8 +37,6 @@ const props = withDefaults(
     },
 );
 
-const headerNavLinks = computed(() => props.headerLinks ?? props.links);
-
 function focusMainContent(event: MouseEvent) {
     if (!import.meta.client) return;
     const main = document.getElementById('main-content');
@@ -52,3 +45,7 @@ function focusMainContent(event: MouseEvent) {
     main.focus({ preventScroll: false });
 }
 </script>
+
+<style lang="scss" src="~/assets/style/pages/_silver-shell.scss"></style>
+
+<style lang="scss" src="~/assets/style/pages/_silver-pages.scss"></style>

@@ -1,6 +1,6 @@
 <template>
     <GalleryLayout :variant="variant" :base-path="config.basePath">
-        <article class="gallery-detail gallery-page--editorial section" :class="galleryVariantClass">
+        <article class="gallery-detail gallery-page--editorial section silver-case" :class="galleryVariantClass">
             <nav class="gallery-detail__breadcrumb" data-reveal="up" :aria-label="t('gallery.breadcrumbLabel')">
                 <NuxtLink :to="config.basePath" class="gallery-detail__breadcrumb-link">
                     <svg
@@ -26,24 +26,6 @@
                 <div class="gallery-detail__hero-copy" data-reveal="right" data-reveal-delay="100">
                     <h1 class="gallery-detail__title">{{ work.title }}</h1>
                     <p class="gallery-detail__intro">{{ work.introduction }}</p>
-                    <dl class="gallery-detail__hero-meta">
-                        <div>
-                            <dt>{{ metaLabels.type }}</dt>
-                            <dd>{{ work.type }}</dd>
-                        </div>
-                        <div v-if="work.period">
-                            <dt>{{ metaLabels.period }}</dt>
-                            <dd>{{ work.period }}</dd>
-                        </div>
-                        <div v-if="work.duration">
-                            <dt>{{ t('gallery.duration') }}</dt>
-                            <dd>{{ work.duration }}</dd>
-                        </div>
-                        <div>
-                            <dt>{{ t('gallery.role') }}</dt>
-                            <dd>{{ work.role }}</dd>
-                        </div>
-                    </dl>
                     <p v-if="work.links?.length" class="gallery-detail__links">
                         <BaseButton
                             v-for="link in work.links"
@@ -65,20 +47,24 @@
                 </figure>
             </header>
 
-            <dl class="gallery-detail__summary">
-                <div v-if="work.myWorks.length">
-                    <dt>{{ t('gallery.solutionLabel') }}</dt>
-                    <dd>{{ work.myWorks[0] }}</dd>
-                </div>
-                <div v-if="work.achievements.length">
-                    <dt>{{ t('gallery.results') }}</dt>
-                    <dd>{{ work.achievements[0] }}</dd>
-                </div>
-                <div v-if="work.points.length">
-                    <dt>{{ t('gallery.points') }}</dt>
-                    <dd>{{ work.points[0] }}</dd>
-                </div>
-            </dl>
+                    <dl class="gallery-detail__hero-meta">
+                        <div>
+                            <dt>{{ metaLabels.type }}</dt>
+                            <dd>{{ work.type }}</dd>
+                        </div>
+                        <div v-if="work.period">
+                            <dt>{{ metaLabels.period }}</dt>
+                            <dd>{{ work.period }}</dd>
+                        </div>
+                        <div v-if="work.duration">
+                            <dt>{{ t('gallery.duration') }}</dt>
+                            <dd>{{ work.duration }}</dd>
+                        </div>
+                        <div>
+                            <dt>{{ t('gallery.role') }}</dt>
+                            <dd>{{ work.role }}</dd>
+                        </div>
+                    </dl>
 
             <nav class="gallery-detail__section-nav" :aria-label="t('gallery.projectNavigation')">
                 <a :href="`#${briefTitleId}`">{{ t('gallery.contributions') }}</a>

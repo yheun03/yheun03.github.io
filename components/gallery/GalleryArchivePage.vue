@@ -1,46 +1,40 @@
 <template>
     <GalleryLayout :variant="variant" :base-path="basePath">
-        <article class="gallery-page section gallery-page--editorial" :class="galleryVariantClass" aria-labelledby="gallery-poster-title">
-            <GalleryPageHeader
-                :view-mode="viewMode"
-                :title="t(titleKey)"
-                :dek="lead"
-                :sort-legend="sortLegend"
-                :filter-legend="filterLegend"
-                :view-legend="viewLegend"
-                :toolbar-aria-label="toolbarAriaLabel"
-                :result-label="resultLabel"
-                :sort-options="sortOptions"
-                :view-options="viewOptions"
-                :filter-options="filterOptions"
-                :filter-modes="filterModes"
-                :sort-mode="sortMode"
-                @update:filter-modes="filterModes = $event"
-                @update:sort-mode="sortMode = $event"
-                @update:view-mode="viewMode = $event"
-            />
-
-            <GalleryArchiveListRenderer
-                :view-mode="viewMode"
-                :editorial-year-groups="editorialYearGroups"
-                :gallery-entries="galleryEntries"
-                :base-path="basePath"
-                :list-aria-label="t('gallery.projectList')"
-                :flat-aria-label="t('gallery.otherProjects')"
-                :entry-label="t('gallery.viewEntry')"
-            />
+        <article class="silver-archive" :class="galleryVariantClass">
+            <header class="silver-page-heading">
+                <h1>{{ t(titleKey) }}</h1>
+                <p>{{ lead }}</p>
+            </header>
+            <div class="silver-archive__toolbar" role="group" :aria-label="toolbarAriaLabel">
+                <GalleryMultiFilter v-if="filterOptions.length" :selected="filterModes" :options="filterOptions" :label="filterLegend" @update:selected="filterModes = $event" />
+                <div class="silver-archive__sort">
+                    <p role="status" aria-live="polite">{{ resultLabel }}</p>
+                    <label><span>{{ sortLegend }}</span><select v-model="sortMode"><option v-for="option in sortOptions" :key="option.value" :value="option.value">{{ option.label }}</option></select></label>
+                </div>
+            </div>
+            <div class="silver-archive__grid">
+                <NuxtLink v-for="work in filteredWorks" :key="work.id" :to="`${basePath}/${work.id}`" class="silver-project">
+                    <div class="silver-project__stage">
+                        <GalleryEmptyCapture v-if="isPlaceholderCapture(work.thumbnail || work.captures[0] || '')" />
+                        <div v-else class="silver-project__screen"><BaseMediaImage :src="resolveAppPath(work.thumbnail || work.captures[0])" :alt="work.title" /></div>
+                    </div>
+                    <div class="silver-project__heading"><h2>{{ work.title }}</h2><span aria-hidden="true">↗</span></div>
+                    <p>{{ work.role }}</p>
+                </NuxtLink>
+            </div>
         </article>
     </GalleryLayout>
 </template>
 
 <script setup lang="ts">
 import type { GalleryArchiveVariant } from '~/composables/gallery/useGallery';
-import GalleryArchiveListRenderer from '~/components/renderers/Page_GalleryArchive/GalleryArchiveListRenderer.vue';
+import { isPlaceholderCapture } from '~/composables/gallery/useGallery';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;
 }>();
 
+const { resolveAppPath } = useAppPath();
 const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 const works = useGalleryRouteWorks(props.variant);
 
@@ -48,17 +42,12 @@ const {
     t,
     sortMode,
     filterModes,
-    viewMode,
     sortOptions,
     filterOptions,
-    viewOptions,
-    galleryEntries,
     filteredWorks,
-    editorialYearGroups,
     lead,
     sortLegend,
     filterLegend,
-    viewLegend,
     toolbarAriaLabel,
     titleKey,
     basePath,

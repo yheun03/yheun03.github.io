@@ -1,7 +1,7 @@
 <template>
     <header class="studio-nav">
         <BaseLink class="studio-nav__brand" :href="home ? '#hello' : '/'" aria-label="Eun Younghwan — Home"
-            ><img :src="resolveAppPath('/assets/icons/logo.svg')" width="210" height="44" alt=""
+            ><img :src="resolveAppPath('/assets/icons/favicon.svg')" width="35" height="32" alt=""
         /></BaseLink>
         <nav class="studio-nav__links" aria-label="Main navigation">
             <BaseLink
@@ -26,8 +26,8 @@ const { resolveAppPath } = useAppPath();
 const { locale, toggleLocale } = useLocale();
 const switching = ref(false);
 const links = computed(() => [
-    { label: 'Work', href: props.home ? '#works' : '/projects' },
     { label: 'About', href: props.home ? '#about' : '/about' },
+    { label: 'Work', href: props.home ? '#works' : '/projects' },
     ...(props.home ? [{ label: 'Skills', href: '#approach' }] : []),
     { label: 'Personal', href: '/personal' },
     { label: 'Journey', href: '/journey' },
@@ -55,7 +55,7 @@ async function switchLocale() {
     min-height: 82px;
     padding: 16px 5%;
     border-bottom: 1px solid #23355426;
-    background: #f4f5f4;
+    background: var(--silver-paper);
     color: #222a35;
     font-family: Arial, 'Pretendard', sans-serif;
     line-height: 1.4;
@@ -68,16 +68,14 @@ async function switchLocale() {
         outline-offset: 5px;
     }
     &__brand {
+        display: grid;
+        place-items: center;
         flex-shrink: 0;
+        min-width: 44px;
+        min-height: 44px;
         img {
             display: block;
-            width: 190px;
-            height: auto;
         }
-        font-size: 34px;
-        font-weight: 750;
-        letter-spacing: -0.09em;
-        color: #2354d8;
     }
     &__links {
         display: flex;
@@ -125,15 +123,6 @@ async function switchLocale() {
         flex-wrap: wrap;
         gap: 8px 20px;
         padding-block: 12px;
-        &__brand {
-            flex-shrink: 0;
-            img {
-                display: block;
-                width: 190px;
-                height: auto;
-            }
-            font-size: 29px;
-        }
         &__links {
             order: 3;
             width: 100%;

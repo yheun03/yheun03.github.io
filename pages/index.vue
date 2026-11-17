@@ -5,8 +5,7 @@
         <main id="main-content" tabindex="-1">
             <section id="hello" class="studio-hero" aria-labelledby="hero-title">
                 <div class="studio-hero__heading">
-                    <h1 id="hero-title">YOUNGHWAN<span>EUN</span></h1>
-                    <p>Web publisher<br />& UI developer</p>
+                    <h1 id="hero-title">YOUNGHWAN <span>EUN</span></h1>
                 </div>
                 <div class="studio-hero__body">
                     <NuxtLink to="/projects/framework" class="studio-hero__visual" :aria-label="copy('조앤소프트 프레임워크 프로젝트 보기', 'Explore the Jonsoft framework project')">
@@ -16,9 +15,9 @@
                         <span class="studio-hero__visual-arrow" aria-hidden="true">↗</span>
                     </NuxtLink>
                     <div class="studio-hero__intro">
-                        <p v-if="locale === 'ko'">디자인을 웹 화면으로 구현하는 <span class="studio__keep-together">웹 퍼블리셔</span> 은영환입니다.</p>
-                        <p v-else>I’m Younghwan Eun, a <span class="studio__keep-together">web publisher</span> who turns designs into working interfaces.</p>
-                        <p>{{ copy('HTML, SCSS, JavaScript와 Vue로 기업 홈페이지와 업무 시스템을 만듭니다.', 'I build corporate websites and business applications with HTML, SCSS, JavaScript and Vue.') }}</p>
+                        <p v-if="locale === 'ko'"><strong>디자인을 웹 화면으로 구현하는</strong> <span class="studio__keep-together">웹 퍼블리셔</span> 은영환입니다.</p>
+                        <p v-else>I’m Younghwan Eun, a <span class="studio__keep-together">web publisher</span> who <strong>turns designs into working interfaces.</strong></p>
+                        <p>{{ copy('HTML, SCSS, JavaScript와 Vue로 기업 홈페이지와 업무 시스템의 UI를 구현합니다.', 'I develop interfaces for corporate websites and business applications with HTML, SCSS, JavaScript and Vue.') }}</p>
                         <a class="studio-text-link" href="#works">{{ copy('작업 보기', 'Explore my work') }} <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
@@ -36,8 +35,10 @@
             <section id="about" class="studio-about studio-section">
                 <h2 class="studio-title">About</h2>
                 <div class="studio-about__content">
-                    <p class="studio-about__statement">{{ copy('기업 홈페이지부터 제조와 물류 시스템까지 구현하고 운영해 왔습니다.', 'I build and maintain corporate websites, manufacturing systems and logistics interfaces.') }}</p>
-                    <p>{{ copy('화면 퍼블리싱을 시작으로 Vue 컴포넌트와 사내 프레임워크 개발까지 업무를 넓혔습니다. 반복되는 UI를 공통화하고, 팀에서 사용할 수 있도록 작업 기준과 사용 방법을 문서로 정리합니다.', 'My work has expanded from web publishing to Vue components and an internal framework. I turn recurring UI into shared components and document conventions and usage for the team.') }}</p>
+                    <p v-if="locale === 'ko'" class="studio-about__statement"><strong>기업 홈페이지부터 제조와 물류 시스템까지</strong> 구현하고 운영해 왔습니다.</p>
+                    <p v-else class="studio-about__statement">I build and maintain <strong>corporate websites, manufacturing systems and logistics interfaces.</strong></p>
+                    <p v-if="locale === 'ko'">화면 퍼블리싱을 시작으로 <strong>Vue 컴포넌트와 사내 프레임워크 개발</strong>까지 업무를 넓혔습니다. 반복되는 UI를 공통화하고, 팀에서 사용할 수 있도록 작업 기준과 사용 방법을 문서로 정리합니다.</p>
+                    <p v-else>My work has expanded from web publishing to <strong>Vue components and an internal framework.</strong> I turn recurring UI into shared components and document conventions and usage for the team.</p>
                     <NuxtLink class="studio-text-link" to="/about">{{ copy('경력 자세히 보기', 'More about my experience') }} ↗</NuxtLink>
                     <div class="studio-stats">
                         <div v-for="stat in profile.stats.slice(0, 2)" :key="stat.label">
@@ -111,11 +112,19 @@
                     </div>
                 </div>
             </section>
-            <section class="studio-process studio-section">
-                <h2 class="studio-title">{{ copy('작업 방식', 'How I work') }}</h2>
-                <div class="studio-process__grid">
-                    <article v-for="item in principles" :key="item.title"><h3>{{ item.title }}</h3><p>{{ item.description }}</p></article>
-                </div>
+            <section class="studio-process studio-section" aria-labelledby="process-title">
+                <h2 id="process-title" class="studio-title studio-process__title">{{ copy('작업 방식', 'How I work') }}</h2>
+                <p class="studio-process__lead">
+                    {{ copy('작은 디테일이 모여,', 'Small details add up') }}
+                    <span>{{ copy('좋은 경험이 됩니다.', 'to a better experience.') }}</span>
+                </p>
+                <ol class="studio-process__grid" role="list">
+                    <li v-for="(item, index) in principles" :key="item.title" class="studio-process__step">
+                        <BaseIndexLabel class="studio-process__index" aria-hidden="true">[0{{ index + 1 }}]</BaseIndexLabel>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                    </li>
+                </ol>
             </section>
 
         </main>

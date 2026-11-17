@@ -4,24 +4,30 @@
 .silver-shell {
     @include theme.theme-light-palette;
     --silver-accent: #2354d8;
-    --silver-orange: #b9380c;
+    --silver-orange: #f12810;
     --silver-space: clamp(60px, 7vw, 120px);
     --silver-title: clamp(42px, 5.1vw, 80px);
     color-scheme: light;
-    background: #f4f5f4;
+    background: var(--silver-paper);
     color: #222a35;
     font-family: Arial, 'Pretendard', sans-serif;
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
 
-    [id] { scroll-margin-top: 108px; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--silver-accent); outline-offset: 4px; }
+    [id] {
+        scroll-margin-top: 108px;
+    }
+    a:focus-visible,
+    button:focus-visible {
+        outline: 2px solid var(--silver-accent);
+        outline-offset: 4px;
+    }
 
     main.portfolio-page {
         @include theme.theme-light-palette;
-        --color-bg: #f4f5f4;
-        --color-background: #f4f5f4;
+        --color-bg: var(--silver-paper);
+        --color-background: var(--silver-paper);
         --color-primary: #2354d8;
         --color-action: #2354d8;
         --color-action-hover: #1b43b0;
@@ -36,7 +42,7 @@
         --gallery-bg-elevated: #e8ecf1;
         --page-pad-x: 5%;
         --section-pad-y: var(--silver-space);
-        --about-paper: #f4f5f4;
+        --about-paper: var(--silver-paper);
         --about-ink: #152339;
         --about-muted: #566273;
         --about-blue: #2354d8;
@@ -45,10 +51,10 @@
         --about-blueprint: #e4e8ed;
         --about-guide: #8b9dbb;
         padding-top: 0;
-        background: #f4f5f4;
+        background: var(--color-bg);
         color: #222a35;
         font-family: inherit;
-        letter-spacing: -.025em;
+        letter-spacing: -0.025em;
 
         .section {
             width: 100%;
@@ -67,34 +73,75 @@
             font-size: var(--silver-title);
             font-weight: 400;
             line-height: 1.12;
-            letter-spacing: -.055em;
+            letter-spacing: -0.055em;
             color: var(--silver-accent);
             word-break: keep-all;
         }
-        .editorial-masthead { padding-bottom: 32px; border-bottom: 1px solid #23355426; }
+        .editorial-masthead {
+            padding-bottom: 32px;
+            border-bottom: 1px solid #23355426;
+        }
         .editorial-masthead__eyebrow,
-        .gallery-editorial__kicker { display: none; }
+        .gallery-editorial__kicker {
+            display: none;
+        }
         .gallery-detail__cover,
         .gallery-card.gallery-editorial__entry,
         .gallery-detail__brief-card,
         .gallery-detail__summary,
-        .gallery-detail__preview-stage { border-radius: 2px; box-shadow: none; }
-        .gallery-card.gallery-editorial__entry { background: #fff; border-color: #23355426; }
-        .gallery-detail__cover { padding: clamp(12px, 2vw, 30px); background: linear-gradient(135deg, #e3e7ec, #ced7e4); }
-        .gallery-detail__cover img { object-fit: contain; }
-        .gallery-detail__section-nav a { border-radius: 2px; background: #e4e8ee; }
-        .gallery-detail__section-nav a:hover { background: #2354d8; color: #fff; }
-        .gallery-detail__section { padding-block: 40px; border-top: 1px solid #23355426; }
-        .about-story__stage { padding-top: var(--silver-space); }
-        .about-mindset__stage, .about-identity__stage { border-top: 1px solid #23355426; }
-        .about-outro { border-top: 1px solid #23355426; }
-        .about-outro h2 { color: var(--silver-orange); }
-        .catalog-hero, .token-hero { border-bottom: 1px solid #23355426; padding-bottom: 36px; }
+        .gallery-detail__preview-stage {
+            border-radius: 2px;
+            box-shadow: none;
+        }
+        .gallery-card.gallery-editorial__entry {
+            background: #fff;
+            border-color: #23355426;
+        }
+        .gallery-detail__cover {
+            padding: clamp(12px, 2vw, 30px);
+            background: linear-gradient(135deg, #e3e7ec, #ced7e4);
+        }
+        .gallery-detail__cover img {
+            object-fit: contain;
+        }
+        .gallery-detail__section-nav a {
+            border-radius: 2px;
+            background: #e4e8ee;
+        }
+        .gallery-detail__section-nav a:hover {
+            background: #2354d8;
+            color: #fff;
+        }
+        .gallery-detail__section {
+            padding-block: 40px;
+            border-top: 1px solid #23355426;
+        }
+        .about-story__stage {
+            padding-top: var(--silver-space);
+        }
+        .about-mindset__stage,
+        .about-identity__stage {
+            border-top: 1px solid #23355426;
+        }
+        .about-outro {
+            border-top: 1px solid #23355426;
+        }
+        .about-outro h2 {
+            color: var(--silver-orange);
+        }
+        .catalog-hero,
+        .token-hero {
+            border-bottom: 1px solid #23355426;
+            padding-bottom: 36px;
+        }
     }
 }
 
-
 @media (max-width: 640px) {
-    .silver-shell [id] { scroll-margin-top: 140px; }
-    .silver-shell .portfolio-page .gallery-detail__title { font-size: clamp(32px, 8vw, 42px); }
+    .silver-shell [id] {
+        scroll-margin-top: 140px;
+    }
+    .silver-shell .portfolio-page .gallery-detail__title {
+        font-size: clamp(32px, 8vw, 42px);
+    }
 }

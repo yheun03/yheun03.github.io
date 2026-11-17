@@ -202,6 +202,12 @@
     @include dark-theme;
 }
 
+.studio,
+.silver-shell {
+    --silver-paper: #f5f5f5;
+    --silver-charcoal: #262626;
+}
+
 @media (prefers-contrast: more) {
     :root {
         --grayscale-600: #3d4654;

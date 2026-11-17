@@ -33,7 +33,7 @@ const contacts = computed(() => content.value.profile.contacts);
 .portfolio-footer {
     padding: clamp(60px, 7vw, 120px) 5% 28px;
     border-top: 1px solid #23355426;
-    background: #e9edf2;
+    background: var(--silver-paper);
     color: #222a35;
     font-family: Arial, 'Pretendard', sans-serif;
     word-break: keep-all;

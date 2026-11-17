@@ -3,7 +3,6 @@
         id="works"
         section-class="section--works"
         title-id="section-works-title"
-        :eyebrow="t('nav.works')"
         :title="t('story.showcaseTitle')"
         :description="t('story.showcaseDescription')"
     >
@@ -11,14 +10,16 @@
             <li
                 v-for="(work, index) in homeShowcaseWorks"
                 :key="work.id"
-                :class="['showcase__item', { 'showcase__item--featured': index === 0 }]"
+                class="showcase__item"
                 :style="{ '--animate-delay': `${index * 90}ms` }"
                 data-animate
             >
                 <StoryCaseCard
+                    :featured="index === 0"
+                    :cover="work.thumbnail ?? work.captures[0]"
+                    :role="work.role"
                     :to="`/projects/${work.id}`"
                     :link-label="`${work.title}, ${t('story.caseCta')}`"
-                    :index-label="String(index + 1).padStart(2, '0')"
                     :tag="work.type"
                     :period="work.period"
                     :title="work.title"
@@ -26,8 +27,6 @@
                     :tech="work.tech.slice(0, 4)"
                     :cta-label="t('story.caseCta')"
                     :tech-aria-label="t('story.techStackAriaLabel')"
-                    :featured="index === 0"
-                    :featured-badge="t('story.featuredBadge')"
                 />
             </li>
         </ul>

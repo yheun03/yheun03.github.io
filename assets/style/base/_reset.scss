@@ -41,6 +41,7 @@ body {
         color 0.35s ease;
     text-wrap: pretty;
     word-break: keep-all;
+    overflow-wrap: break-word;
     /* Apple HIG: -apple-system 폰트의 선명한 렌더 (Retina 디바이스 기준) */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -71,6 +72,7 @@ h2,
 h3 {
     @include font(display-4);
     color: var(--color-text-heading);
+    text-wrap: balance;
 }
 
 h1 {
@@ -116,6 +118,11 @@ a {
 
 button {
     font: inherit;
+}
+
+:where(a, button, summary) > svg {
+    flex-shrink: 0;
+    vertical-align: middle;
 }
 
 img,
@@ -261,7 +268,6 @@ html.reduce-effects {
 }
 
 @keyframes emoji-float {
-
     0%,
     100% {
         transform: translateY(0) rotate(0deg) scale(1);
@@ -279,7 +285,6 @@ html.reduce-effects {
 }
 
 @keyframes emoji-glow {
-
     0%,
     100% {
         transform: translateY(0) scale(1);

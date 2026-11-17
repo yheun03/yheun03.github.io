@@ -4,7 +4,7 @@ import type { WorkItem } from '@data/works';
 export type GalleryViewMode = 'editorial' | 'grid';
 export type GalleryArchiveVariant = 'career' | 'personal';
 export type WorkSortMode = 'added' | 'start' | 'title';
-export type WorkFilterMode = 'featured' | 'problem' | 'frontend' | 'operation' | 'cms';
+export type WorkFilterMode = 'featured' | 'problem' | 'frontend' | 'operation' | 'cms' | 'individual' | 'team';
 
 export type WorkYearEntry = { type: 'year'; key: string; year: string } | { type: 'work'; key: string; work: WorkItem; firstWork?: boolean };
 
@@ -37,7 +37,8 @@ function createWorkYearEntries(works: readonly WorkItem[]): WorkYearEntry[] {
 
     works.forEach((work, index) => {
         const year = getWorkStartYear(work);
-        if (year && year !== currentYear) {
+        // 날짜가 없는 항목도 이전 연도 그룹에서 분리한다.
+        if (year !== currentYear) {
             entries.push({ type: 'year', key: `year-${year}`, year });
             currentYear = year;
         }
@@ -109,15 +110,15 @@ function useGalleryViewMode() {
 
 export function useGalleryArchive(variant: GalleryArchiveVariant, works: ComputedRef<WorkItem[]>) {
     const { t, locale } = useLocale();
-    const sortMode = ref<WorkSortMode>(variant === 'personal' ? 'added' : 'start');
+    const sortMode = ref<WorkSortMode>('start');
     const filterModes = ref<WorkFilterMode[]>([]);
     const { viewMode } = useGalleryViewMode();
     const editorialYear = new Date().getFullYear();
     const config = getGalleryVariantConfig(variant);
 
     const sortOptions = computed<{ value: WorkSortMode; label: string }[]>(() => [
-        ...(variant === 'personal' ? [{ value: 'added' as const, label: t('gallery.sortAdded') }] : []),
         { value: 'start', label: t('gallery.sortStart') },
+        { value: 'added', label: t('gallery.sortAdded') },
         { value: 'title', label: t('gallery.sortTitle') },
     ]);
 
@@ -144,7 +145,11 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
                   { value: 'operation', label: t('gallery.filterOperation') },
                   { value: 'cms', label: t('gallery.filterCms') },
               ]
-            : [],
+            : [
+                  { value: 'featured', label: t('gallery.filterFeatured') },
+                  { value: 'individual', label: t('gallery.filterIndividual') },
+                  { value: 'team', label: t('gallery.filterTeam') },
+              ],
     );
 
     const filteredWorks = computed(() => sortedWorks.value.filter((work) => matchesFilters(work, filterModes.value)));
@@ -217,6 +222,7 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
         filterOptions,
         viewOptions,
         galleryEntries,
+        filteredWorks,
         editorialYearGroups,
         lead,
         editorialKicker,
@@ -234,6 +240,8 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
 
 function matchesFilter(work: WorkItem, filter: WorkFilterMode) {
     if (filter === 'featured') return work.pin;
+    if (filter === 'individual') return /^(개인|Personal)\s*\//i.test(work.type);
+    if (filter === 'team') return /^(팀|Team)\s*\//i.test(work.type);
     if (filter === 'problem') return ['tms-maintenance', 'hanjinkal', 'oms', 'company-renewal'].includes(work.id);
     if (filter === 'frontend') return ['framework', 'orchem-mes', 'infra', 'samhwa-eco-dashboard'].includes(work.id);
     if (filter === 'operation') return work.category === 'operation' || ['hanon', 'tms-maintenance'].includes(work.id);

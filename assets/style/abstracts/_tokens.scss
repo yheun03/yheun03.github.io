@@ -33,9 +33,9 @@
     --font-weight-black: 900;
     --font-weight-bold: 760;
     --font-weight-medium: 650;
-    --font-weight-regular: 500;
+    --font-weight-regular: 400;
     --font-weight-semibold: 720;
-    --line-height-body: 1.92;
+    --line-height-body: 1.8;
     --line-height-display: 1.16;
     --line-height-heading: 1.2;
     --line-height-tight: 1.08;
@@ -44,7 +44,7 @@
     --tracking-heading: -0.02em;
     --tracking-label: 0.09em;
     --tracking-tight: -0.03em;
-    --tracking-ui: 0.015em;
+    --tracking-ui: 0;
     /* State 색상은 테마별로 abstracts/_theme.scss 에서 정의 (light/dark 각각 AA 충족) */
     /* Motion — Apple-style easings (재사용) */
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -434,11 +434,9 @@ $font-presets: (
 }
 
 @mixin glass-panel($radius: var(--radius-lg), $blur: 12px) {
-    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    border: 1px solid var(--color-border);
     border-radius: $radius;
-    background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-    box-shadow: var(--shadow-soft);
-    backdrop-filter: blur($blur);
+    background: var(--color-surface);
 }
 
 @mixin pointer-glow($size: 288px, $pseudo: after) {
@@ -474,17 +472,9 @@ $font-presets: (
     position: relative;
     overflow: hidden;
     padding: var(--card-padding-lg);
-    border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-    border-radius: var(--radius-2xl);
-    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-
-    @if $shadow ==soft {
-        box-shadow:
-            0 1px 0 color-mix(in srgb, var(--color-surface) 90%, var(--color-primary)),
-            0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
-    } @else {
-        box-shadow: 0 24px 64px color-mix(in srgb, var(--color-primary) 6%, transparent);
-    }
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
 
     transition:
         transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
@@ -505,7 +495,7 @@ $font-presets: (
 }
 
 @mixin index-label {
-    color: var(--color-primary);
+    color: var(--color-text-muted);
     font-family: var(--font-mono);
     @include font(label, $font-weight-bold);
 }
@@ -517,15 +507,15 @@ $font-presets: (
     line-height: var(--line-height-display);
 
     &--accent {
-        @include gradient-accent-text;
+        color: var(--color-text-strong);
     }
 }
 
 @mixin editorial-lead {
     max-width: 28ch;
-    margin: clamp(32px, 5vw, 56px) 0 0;
+    margin: var(--space-8) 0 0;
     color: var(--color-text-muted);
-    @include font(title-1, $font-weight-semibold, $line-height: $line-height-body);
+    @include font(body-1);
 }
 
 @mixin font($type, $font-weight: null, $letter-spacing: null, $line-height: null) {

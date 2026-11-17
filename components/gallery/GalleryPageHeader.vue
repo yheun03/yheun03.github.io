@@ -1,18 +1,57 @@
 <template>
     <div class="gallery-editorial__header" data-reveal="hero">
-        <BaseEditorialMasthead title-id="gallery-poster-title" :title="title" :kicker="kicker" :stats="stats"
-            :description="dek" :figure="heroNumber" :figure-aria-label="heroAriaLabel" :status="statusLabel" />
+        <BaseEditorialMasthead title-id="gallery-poster-title" :title="title" :description="dek" />
 
         <div class="gallery-page__toolbar" role="group" :aria-label="toolbarAriaLabel">
-            <GalleryMultiFilter v-if="filterOptions.length" data-reveal="up" data-reveal-delay="120"
-                :selected="filterModes" :options="filterOptions" :label="filterLegend"
-                @update:selected="emit('update:filterModes', $event)" />
-            <BaseSegmentControl v-if="viewOptions.length" data-reveal="up" data-reveal-delay="180"
-                :model-value="viewMode" :options="viewOptions" :label-text="viewLegend" :label-id="viewLabelId"
-                label-hidden @update:model-value="emit('update:viewMode', $event as GalleryViewMode)" />
-            <BaseSegmentControl v-if="sortOptions.length" data-reveal="up" data-reveal-delay="240"
-                :model-value="sortMode" :options="sortOptions" :label-text="sortLegend" :label-id="sortLabelId"
-                label-hidden @update:model-value="emit('update:sortMode', $event as WorkSortMode)" />
+            <GalleryMultiFilter
+                v-if="filterOptions.length"
+                :selected="filterModes"
+                :options="filterOptions"
+                :label="filterLegend"
+                @update:selected="emit('update:filterModes', $event)"
+            />
+            <div class="gallery-page__controls">
+                <p class="gallery-page__result" role="status" aria-live="polite" aria-atomic="true">{{ resultLabel }}</p>
+                <BaseSegmentControl
+                    v-if="viewOptions.length"
+                    class="gallery-page__view"
+                    :model-value="viewMode"
+                    :options="viewOptions"
+                    :label-text="viewLegend"
+                    :label-id="viewLabelId"
+                    @update:model-value="emit('update:viewMode', $event as GalleryViewMode)"
+                >
+                    <template #option="{ option }">
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path v-if="option.value === 'editorial'" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+                            <template v-else>
+                                <rect x="3" y="3" width="7" height="7" rx="1" />
+                                <rect x="14" y="3" width="7" height="7" rx="1" />
+                                <rect x="3" y="14" width="7" height="7" rx="1" />
+                                <rect x="14" y="14" width="7" height="7" rx="1" />
+                            </template>
+                        </svg>
+                        {{ option.label }}
+                    </template>
+                </BaseSegmentControl>
+                <label v-if="sortOptions.length" class="gallery-page__sort">
+                    <span>{{ sortLegend }}</span>
+                    <select :value="sortMode" @change="handleSortChange">
+                        <option v-for="option in sortOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
+                    </select>
+                </label>
+            </div>
         </div>
     </div>
 </template>
@@ -24,15 +63,11 @@ defineProps<{
     viewMode: GalleryViewMode;
     title: string;
     dek: string;
-    kicker?: string;
-    heroNumber?: string;
-    heroAriaLabel?: string;
-    statusLabel?: string;
-    stats?: string;
     sortLegend: string;
     filterLegend: string;
     viewLegend: string;
     toolbarAriaLabel: string;
+    resultLabel: string;
     sortOptions: { value: WorkSortMode; label: string }[];
     filterOptions: { value: WorkFilterMode; label: string }[];
     viewOptions: { value: GalleryViewMode; label: string }[];
@@ -47,5 +82,8 @@ const emit = defineEmits<{
 }>();
 
 const viewLabelId = 'gallery-toolbar-view-label';
-const sortLabelId = 'gallery-toolbar-sort-label';
+
+function handleSortChange(event: Event) {
+    emit('update:sortMode', (event.target as HTMLSelectElement).value as WorkSortMode);
+}
 </script>

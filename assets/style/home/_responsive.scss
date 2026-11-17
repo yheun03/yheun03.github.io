@@ -60,7 +60,7 @@ html:has(.portfolio-page--home) .app-footer {
         &__title,
         &__description {
             max-width: 100%;
-            overflow-wrap: anywhere;
+            overflow-wrap: break-word;
         }
     }
 
@@ -84,12 +84,12 @@ html:has(.portfolio-page--home) .app-footer {
     }
 
     .hero__display-line {
-        font-size: var(--font-size-display-1);
+        font-size: clamp(2rem, 10vw, 3.5rem);
         letter-spacing: 0;
     }
 
     .hero__lead {
-        max-width: 24ch;
+        max-width: 36ch;
         margin-top: clamp(14px, 4.5vw, 24px);
     }
 
@@ -186,8 +186,8 @@ html:has(.portfolio-page--home) .app-footer {
     }
 
     .about__display-line {
-        font-size: 10rem;
-        line-height: 1.12;
+        font-size: var(--font-size-display-2);
+        line-height: 1.2;
     }
 
     .about__lead {
@@ -202,16 +202,12 @@ html:has(.portfolio-page--home) .app-footer {
         align-content: space-between;
 
         h3 {
-            font-size: 5.5rem;
-            line-height: 1.05;
+            font-size: var(--font-size-display-4);
+            line-height: 1.2;
         }
 
         p {
             font-size: 1.125rem;
-        }
-
-        .base-index-label {
-            font-size: 1rem;
         }
     }
 }
@@ -226,10 +222,6 @@ html:has(.portfolio-page--home) .app-footer {
 @media (min-width: #{$bp-min-laptop}) {
     .showcase__list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .showcase__item--featured {
-        grid-column: auto;
     }
 }
 
@@ -268,49 +260,6 @@ html:has(.portfolio-page--home) .app-footer {
 @media (min-width: 1100px) {
     .feature-grid--toolbox {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-@media (min-width: 1920px) and (max-height: 1440px) {
-    .section.section--toolbox {
-        gap: clamp(20px, 3vh, 32px);
-        padding-block: clamp(32px, 4vh, 48px);
-        justify-content: center;
-    }
-
-    .section--toolbox {
-        .section-head {
-            gap: 16px;
-        }
-
-        .section-title__description {
-            margin-top: 16px;
-        }
-
-        .spotlight-block {
-            gap: clamp(12px, 2vh, 20px);
-        }
-
-        .spotlight__kicker {
-            font-size: var(--font-size-display-5);
-        }
-
-        .toolbox__grid {
-            gap: clamp(12px, 1.5vh, 20px);
-        }
-
-        .feature-card--skill {
-            gap: clamp(8px, 1.3vh, 14px);
-            padding: clamp(18px, 2.2vh, 28px);
-        }
-
-        .feature-card__title {
-            font-size: var(--font-size-display-6);
-        }
-
-        .feature-card__tags {
-            gap: 6px;
-        }
     }
 }
 
@@ -456,8 +405,8 @@ html:has(.portfolio-page--home) .app-footer {
         gap: 26px;
 
         .editorial-masthead__title {
-            max-width: 10ch;
-            font-size: clamp(2.65rem, 13vw, 4.1rem);
+            max-width: 100%;
+            font-size: clamp(2.25rem, 9vw, 3.5rem);
         }
     }
 
@@ -471,7 +420,7 @@ html:has(.portfolio-page--home) .app-footer {
 
     .journey__view-switch {
         gap: 10px;
-        padding: 16px;
+        padding: 0;
         border-radius: 18px;
     }
 
@@ -648,9 +597,10 @@ html:has(.portfolio-page--home) .app-footer {
             white-space: nowrap;
 
             &--active {
-                color: var(--color-on-primary);
-                border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
-                background: var(--gradient-accent);
+                color: var(--color-bg);
+                border-color: var(--color-text-strong);
+                background: var(--color-text-strong);
+                box-shadow: none;
             }
         }
     }
@@ -760,8 +710,7 @@ html:has(.portfolio-page--home) .app-footer {
         gap: clamp(16px, 2.5vh, 22px);
     }
 
-    .hero__display-line,
-    .about__display-line {
+    .hero__display-line {
         font-size: var(--font-size-display-1);
         line-height: var(--line-height-display);
     }
@@ -774,7 +723,12 @@ html:has(.portfolio-page--home) .app-footer {
     .hero__lead,
     .about__lead {
         margin-top: clamp(12px, 2vh, 18px);
-        font-size: var(--font-size-title-1);
+        font-size: var(--font-size-body-1);
+        font-weight: var(--font-weight-regular);
+    }
+
+    .about__display-line {
+        font-size: var(--font-size-display-2);
     }
 
     .hero__meta {
@@ -789,7 +743,7 @@ html:has(.portfolio-page--home) .app-footer {
         gap: clamp(20px, 3vh, 28px);
 
         h3 {
-            font-size: var(--font-size-display-3);
+            font-size: var(--font-size-display-4);
         }
 
         p {
@@ -823,8 +777,7 @@ html:has(.portfolio-page--home) .app-footer {
         padding: var(--space-5) clamp(18px, 2vw, 24px);
     }
 
-    .story-case,
-    .showcase__item--featured .story-case {
+    .story-case {
         min-height: clamp(176px, 22vh, 204px);
         gap: clamp(10px, 1.5vh, 14px);
     }
@@ -836,42 +789,82 @@ html:has(.portfolio-page--home) .app-footer {
     }
 }
 
-@media (min-width: #{$bp-min-laptop}) and (max-height: 800px) {
+/* 본문을 기준으로 중앙 정렬하되, 긴 콘텐츠는 여백을 유지하며 자연스럽게 흐른다. */
+@media (min-width: #{$bp-min-tablet}) {
+    .portfolio-page.portfolio-page--home > .section.section--body-centered {
+        padding-block-end: calc(var(--section-pad-y) + var(--section-center-offset, 0px));
+    }
+}
+
+/* 기술 카드는 화면 한 장에 강제로 압축하지 않는다. */
+.portfolio-page.portfolio-page--home > .section.section--toolbox {
+    gap: clamp(32px, 5vh, 56px);
+    padding-block: clamp(64px, 9vh, 112px);
+}
+
+.section--toolbox .toolbox__grid {
+    gap: clamp(24px, 3vw, 36px);
+}
+
+.section--toolbox .feature-card--skill {
+    min-height: 0;
+    gap: clamp(20px, 2.5vh, 28px);
+    padding: clamp(24px, 2.5vw, 36px);
+}
+
+.section--toolbox .feature-card__tags {
+    gap: 8px;
+}
+
+@media (max-width: #{$bp-max-mobile}) {
     .portfolio-page.portfolio-page--home > .section.section--toolbox {
-        gap: clamp(10px, 1.8vh, 14px);
-        padding-block: clamp(14px, 2vh, 20px);
+        padding-block: 56px;
     }
+}
 
-    .section--toolbox {
-        .section-head,
-        .spotlight-block,
-        .toolbox__grid {
-            gap: clamp(8px, 1.4vh, 12px);
-        }
+/* 대표 작업은 이미지, 설명, 담당 범위를 읽을 여유를 둔다. */
+.portfolio-page.portfolio-page--home > .section.section--works {
+    gap: 36px;
+    padding-block: clamp(56px, 7vh, 88px);
+}
 
-        .section-title__description {
-            margin-top: clamp(8px, 1.4vh, 12px);
-        }
+.section--works .showcase__list {
+    gap: 24px;
+}
 
-        .section-head > .section-title__description {
-            display: none;
-        }
+.section--works .story-case {
+    min-height: 0;
+    grid-template-rows: auto auto auto 1fr auto auto auto;
+    align-content: stretch;
+    gap: 16px;
+    padding: 24px;
+}
 
-        .spotlight__kicker {
-            font-size: var(--font-size-display-6);
-        }
+.section--works .base-chip {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    letter-spacing: 0;
+}
 
-        .feature-card--skill {
-            min-height: 0;
-            gap: clamp(5px, 1vh, 8px);
-            padding: clamp(12px, 2vh, 16px);
-        }
+.section--works .story-case h3 {
+    font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+    line-height: 1.45;
+}
 
-        .feature-card__description {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
-            overflow: hidden;
-        }
-    }
+.section--works .story-case__summary {
+    display: block;
+    overflow: visible;
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.section--works .story-case .story-case__cta {
+    width: fit-content;
+    min-height: 44px;
+    padding: 10px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--color-action);
+    color: var(--color-on-primary);
+    font-size: 0.875rem;
 }

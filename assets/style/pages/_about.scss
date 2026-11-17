@@ -92,7 +92,7 @@
         font-size: clamp(2.5rem, 6vw, 6.7rem);
         font-weight: 850;
         line-height: 1.16;
-        letter-spacing: -0.065em;
+        letter-spacing: var(--tracking-tight);
 
         > span:first-of-type {
             color: var(--about-accent);
@@ -109,7 +109,7 @@
 
     &__lead {
         max-width: 42ch;
-        margin-top: var(--space-9);
+        margin-top: var(--space-8);
         font-size: var(--font-size-body-1);
         line-height: 1.8;
     }
@@ -135,7 +135,7 @@
 
     &__letters {
         display: flex;
-        margin-block: var(--space-9);
+        margin-block: 0 var(--space-8);
         padding-bottom: var(--space-5);
         overflow: hidden;
         font-size: clamp(4.3rem, 8.2vw, 10rem);
@@ -180,7 +180,7 @@
             font-size: clamp(1.65rem, 2.65vw, 3rem);
             font-weight: 750;
             line-height: 1.65;
-            letter-spacing: -0.055em;
+            letter-spacing: var(--tracking-tight);
         }
         cite {
             display: block;
@@ -189,6 +189,12 @@
             color: var(--about-muted);
             font-style: normal;
         }
+    }
+
+    &__belief-title {
+        font-size: var(--font-size-title-2);
+        font-weight: var(--font-weight-medium);
+        color: var(--about-muted);
     }
 
     &__quote-mark {
@@ -200,9 +206,7 @@
         color: var(--about-blue);
     }
     &__underline {
-        background: linear-gradient(transparent 66%, color-mix(in srgb, var(--about-blue) 35%, transparent) 66%);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+        color: var(--about-ink);
     }
     &__belief-note {
         max-width: 40ch;
@@ -241,7 +245,7 @@
         > h2 {
             font-size: clamp(2rem, 3.5vw, 4rem);
             line-height: 1.25;
-            letter-spacing: -0.055em;
+            letter-spacing: var(--tracking-tight);
         }
         > h2 span {
             color: var(--about-accent);
@@ -381,6 +385,7 @@
 
         > dd {
             max-width: 70ch;
+            margin-left: 0;
             margin-top: var(--space-5);
             color: var(--about-muted);
             line-height: 1.8;
@@ -399,7 +404,7 @@
         margin-top: var(--space-9);
         font-size: clamp(2.2rem, 5vw, 5.6rem);
         line-height: 1.25;
-        letter-spacing: -0.055em;
+        letter-spacing: var(--tracking-tight);
     }
     &__line,
     &__line-text {
@@ -490,7 +495,7 @@
         min-height: 0;
         height: calc(100svh - var(--layout-header-height));
         grid-template-columns: 1fr;
-        grid-template-rows: auto minmax(170px, 1fr) auto auto;
+        grid-template-rows: auto minmax(170px, 1fr) auto;
         padding-top: var(--space-8);
         gap: var(--space-6);
     }
@@ -565,7 +570,7 @@
     .about-identity__stage {
         padding-top: var(--space-6);
         gap: var(--space-5);
-        grid-template-rows: auto minmax(150px, 1fr) auto auto;
+        grid-template-rows: auto minmax(150px, 1fr) auto;
     }
 }
 

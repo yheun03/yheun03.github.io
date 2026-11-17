@@ -18,11 +18,16 @@
 
 .about__display {
     margin: 0;
-    @include font(display-1);
+    @include font(display-2);
 }
 
 .about__display-line {
     @include display-line;
+    font-size: var(--font-size-display-2);
+
+    &--accent {
+        color: var(--primary-600);
+    }
 }
 
 .about__lead {
@@ -53,8 +58,9 @@
     }
 
     h3 {
+        width: fit-content;
         max-width: 22ch;
-        @include font(display-3);
+        @include font(display-4);
         line-height: var(--line-height-display);
 
         em {
@@ -72,10 +78,31 @@
     }
 
     .why__evidence {
-        color: var(--color-primary);
+        display: inline-flex;
+        align-items: center;
+        justify-self: start;
+        gap: var(--space-2);
+        width: fit-content;
+        max-width: 100%;
+        min-height: var(--size-touch);
+        padding-block: var(--space-2);
+        color: var(--color-text-strong);
         font-size: var(--font-size-sm);
         font-weight: var(--font-weight-bold);
         text-underline-offset: 0.24em;
+
+        &:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+    }
+
+    li:nth-child(2) .why__evidence {
+        justify-self: center;
+    }
+
+    li:nth-child(3) .why__evidence {
+        justify-self: end;
     }
 }
 
@@ -128,7 +155,7 @@
 }
 
 .journey-preview__title-accent {
-    color: var(--color-primary);
+    color: var(--primary-600);
 }
 
 .journey-preview__description {
@@ -160,7 +187,7 @@
         right: 0;
         left: 0;
         height: 1px;
-        background: linear-gradient(90deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 18%, transparent), transparent);
+        background: var(--color-border);
     }
 
     li {
@@ -178,7 +205,6 @@
             height: 9px;
             border-radius: 50%;
             background: var(--color-primary);
-            box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-primary) 10%, transparent);
         }
     }
 
@@ -248,7 +274,7 @@
             left: 4px;
             width: 1px;
             height: auto;
-            background: linear-gradient(to bottom, var(--color-primary), color-mix(in srgb, var(--color-primary) 18%, transparent), transparent);
+            background: var(--color-border);
         }
 
         li {
@@ -261,7 +287,6 @@
                 left: calc(0px - var(--space-7) + 1px);
                 width: 8px;
                 height: 8px;
-                box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 10%, transparent);
             }
 
             &:last-child {
@@ -280,10 +305,6 @@
     list-style: none;
 }
 
-.showcase__item--featured {
-    grid-column: 1 / -1;
-}
-
 .story-case {
     display: grid;
     align-content: start;
@@ -294,33 +315,58 @@
     color: inherit;
     text-decoration: none;
 
+    transition:
+        border-color 0.22s ease,
+        background-color 0.22s ease;
+
+    &:focus-visible,
+    &:hover {
+        border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+        background: color-mix(in srgb, var(--color-primary) 4%, var(--color-surface));
+
+        h3,
+        .story-case__cta {
+            color: var(--color-primary);
+        }
+    }
+
     @media (hover: hover) {
         &:hover .story-case__cta-arrow {
             translate: 5px 0;
         }
+    }
 
-        &:hover .story-case__watermark {
-            opacity: 0.85;
-            translate: 0 -4px;
+    &__media {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        background: var(--color-bg);
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
         }
     }
 
-    &__watermark {
-        position: absolute;
-        right: clamp(10px, 2vw, 26px);
-        bottom: -0.16em;
-        font-family: var(--font-display);
-        font-size: clamp(4.5rem, 10vw, 8.5rem);
-        font-weight: 900;
-        line-height: 1;
-        letter-spacing: -0.05em;
-        color: color-mix(in srgb, var(--color-primary) 12%, transparent);
-        opacity: 0.72;
-        transition:
-            opacity 0.45s ease,
-            translate 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-        pointer-events: none;
-        user-select: none;
+    &__role {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 8px;
+        margin: 0;
+        font-size: 0.875rem;
+        line-height: 1.7;
+        color: var(--color-text-strong);
+
+        strong {
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
     }
 
     &__head {
@@ -332,11 +378,25 @@
         margin: 0;
     }
 
+    &__meta {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    &__pin {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--color-text-muted);
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-semibold);
+    }
+
     &__period {
         color: var(--color-text-subtle, var(--color-text-muted));
-        font-family: var(--font-mono);
-        font-size: var(--font-size-xs);
-        letter-spacing: 0.04em;
+        font-size: 0.875rem;
     }
 
     h3 {
@@ -359,7 +419,7 @@
         align-items: center;
         gap: 7px;
         margin-top: auto;
-        color: var(--color-primary);
+        color: var(--color-text-strong);
         font-size: var(--font-size-sm);
         font-weight: 700;
     }
@@ -388,12 +448,12 @@
 
 .how__steps-card {
     display: grid;
-    justify-items: center;
-    gap: clamp(24px, 3.5vw, 40px);
-    text-align: center;
+    justify-items: start;
+    gap: var(--block-gap);
+    text-align: start;
 
     .surface-card__title {
-        text-align: center;
+        text-align: start;
     }
 
     .flow-steps {
@@ -403,7 +463,7 @@
 
     .flow-steps li {
         position: relative;
-        justify-items: center;
+        justify-items: start;
         transition: border-color 0.3s ease;
 
         &::before {
@@ -413,7 +473,7 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--gradient-accent);
+            background: var(--color-text-muted);
             transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
     }

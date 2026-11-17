@@ -3,7 +3,7 @@
 /* Section title (layout for .section lives in layout/_shell.scss) */
 .section-title {
     position: relative;
-    margin-bottom: clamp(16px, 3vw, 32px);
+    margin-bottom: 0;
 
     &::before {
         line-height: var(--line-height-display);
@@ -14,7 +14,7 @@
         gap: $space-3;
         align-items: center;
         margin-bottom: clamp(10px, 1.5vw, 16px);
-        color: var(--color-primary);
+        color: var(--color-text-muted);
         @include font(label, $font-weight-semibold);
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -30,13 +30,14 @@
     &__spark {
         margin-left: $space-2;
         color: color-mix(in srgb, $primary-600 64%, $grayscale-0);
-        font-size: 0.75em;
+        width: 0.65em;
+        height: 0.65em;
         vertical-align: super;
     }
 
     &__description {
-        max-width: 68ch;
-        margin-top: clamp(28px, 4vw, 44px);
+        max-width: 52ch;
+        margin-top: var(--space-6);
         color: var(--color-text-muted);
         @include font(body-1, $line-height: $line-height-body);
         font-size: $font-size-lg;
@@ -78,19 +79,7 @@
     align-items: flex-start;
     gap: var(--space-3) var(--space-6);
     padding-bottom: clamp(26px, 4vw, 42px);
-    border-bottom: 1px solid var(--editorial-ink);
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--editorial-accent);
-        box-shadow: 0 0 0 5px color-mix(in srgb, var(--editorial-accent) 12%, transparent);
-    }
+    border-bottom: 1px solid var(--color-border);
 }
 
 .editorial-masthead__kicker,
@@ -116,10 +105,10 @@
 
 .editorial-masthead__hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(32px, 7vw, 112px);
     align-items: end;
-    padding-block: clamp(36px, 5vw, 68px) clamp(30px, 4vw, 52px);
+    padding-block: 0;
 }
 
 .editorial-masthead__copy {
@@ -137,20 +126,20 @@
 }
 
 .editorial-masthead__title {
-    max-width: 12ch;
+    max-width: 18ch;
     margin: 0;
     color: var(--editorial-ink);
     font-family: var(--font-display);
     font-size: clamp(3.25rem, 6vw, 6.75rem);
     font-weight: 900;
-    letter-spacing: -0.055em;
-    line-height: 1.02;
+    letter-spacing: var(--tracking-tight);
+    line-height: 1.2;
     text-wrap: balance;
 }
 
 .editorial-masthead__description {
-    max-width: 64ch;
-    margin: clamp(24px, 3vw, 38px) 0 0;
+    max-width: 52ch;
+    margin: var(--space-8) 0 0;
     color: var(--editorial-body);
     font-size: clamp(1rem, 1.4vw, 1.18rem);
     line-height: 1.8;
@@ -211,7 +200,7 @@
 
     .editorial-masthead__hero {
         gap: 24px;
-        padding-block: 28px 24px;
+        padding-block: 0;
     }
 
     .editorial-masthead__eyebrow {
@@ -219,14 +208,14 @@
     }
 
     .editorial-masthead__title {
-        font-size: clamp(2.65rem, 13vw, 4.5rem);
-        line-height: 1.04;
+        font-size: clamp(2.25rem, 10vw, 3.5rem);
+        line-height: 1.24;
     }
 
     .editorial-masthead__description {
-        margin-top: 14px;
-        font-size: 0.9rem;
-        line-height: 1.65;
+        margin-top: var(--space-6);
+        font-size: var(--font-size-body-1);
+        line-height: var(--line-height-body);
     }
 
     .editorial-masthead__figure {

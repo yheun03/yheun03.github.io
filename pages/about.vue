@@ -1,23 +1,39 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/about" page-variant="about"
-        :show-app-dock="false" :footer-text="t('footer.copyright')">
+    <AppLayout
+        :links="layoutLinks"
+        active-id=""
+        brand-href="/"
+        active-path="/about"
+        page-variant="about"
+        :show-app-dock="false"
+        :footer-text="t('footer.copyright')"
+    >
         <div ref="pageRef" class="about-page">
             <section id="about-intro" class="about-story" aria-labelledby="about-title">
                 <div class="about-story__stage">
-                    <div class="about-story__topline">
-                        <p class="about-page__eyebrow">EUN / A PERSONAL FIELD GUIDE</p>
-                        <span class="about-page__eyebrow">OFF THE CLOCK, ON MY OWN.</span>
-                    </div>
                     <div class="about-story__intro">
-                        <p class="about-story__edition">{{ t('aboutMe.introLabel') }}</p>
                         <h1 id="about-title" class="about-story__title">
                             {{ t('aboutMe.titleLine1') }}<br />
-                            <span>{{ t('aboutMe.titleLine2') }}</span><span class="about-story__asterisk"
-                                aria-hidden="true">✳</span>
+                            <span>{{ t('aboutMe.titleLine2') }}</span>
                         </h1>
                         <p class="about-story__lead">{{ t('aboutMe.intro') }}</p>
                         <BaseLink href="#about-mindset" class="about-page__text-link about-story__skip">
-                            {{ t('aboutMe.skipStory') }} <span aria-hidden="true">↗</span>
+                            {{ t('aboutMe.skipStory') }}
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </BaseLink>
                     </div>
                 </div>
@@ -26,23 +42,18 @@
             <section id="about-mindset" class="about-mindset" aria-labelledby="about-mindset-title" tabindex="-1">
                 <div class="about-mindset__stage">
                     <div class="about-mindset__personality">
-                        <p class="about-page__eyebrow">01 / THE WAY I AM</p>
-                        <h2 id="about-mindset-title" class="about-mindset__letters"
-                            :aria-label="t('aboutMe.personalityHeading')">
-                            <span v-for="letter in 'ENTJ'" :key="letter" class="about-mindset__letter"
-                                aria-hidden="true">{{ letter }}</span>
+                        <h2 id="about-mindset-title" class="about-mindset__letters" :aria-label="t('aboutMe.personalityHeading')">
+                            <span v-for="letter in 'ENTJ'" :key="letter" class="about-mindset__letter" aria-hidden="true">{{ letter }}</span>
                         </h2>
                         <p class="about-mindset__personality-title">{{ t('aboutMe.personalityTitle') }}</p>
                         <p>{{ t('aboutMe.personalityDescription') }}</p>
-                        <span class="about-mindset__annotation">A LITTLE LESS MAYBE. A LITTLE MORE LET'S GO.</span>
                     </div>
                     <div class="about-mindset__belief">
-                        <h3 class="about-page__eyebrow">{{ t('aboutMe.beliefTitle') }}</h3>
+                        <h3 class="about-mindset__belief-title">{{ t('aboutMe.beliefTitle') }}</h3>
                         <blockquote>
                             <span class="about-mindset__quote-mark" aria-hidden="true">“</span>
                             <p>
-                                {{ t('aboutMe.beliefLine1') }}<br /><span class="about-mindset__underline">{{
-                                    t('aboutMe.beliefLine2') }}</span>
+                                {{ t('aboutMe.beliefLine1') }}<br /><span class="about-mindset__underline">{{ t('aboutMe.beliefLine2') }}</span>
                             </p>
                             <cite>{{ t('aboutMe.beliefSource') }}</cite>
                         </blockquote>
@@ -54,78 +65,70 @@
             <section id="about-identity" class="about-identity" aria-labelledby="about-identity-title">
                 <div class="about-identity__stage">
                     <header class="about-identity__heading">
-                        <p class="about-page__eyebrow">02 / TWO LETTERS, ONE ME</p>
                         <h2 id="about-identity-title">
                             {{ t('aboutMe.identityTitle1') }}<br /><span>{{ t('aboutMe.identityTitle2') }}</span>
                         </h2>
                         <p>{{ t('aboutMe.identityIntro') }}</p>
                     </header>
                     <div class="about-identity__blueprint">
-                        <span class="about-identity__figure-label" aria-hidden="true">FIG. 01 — YH / CONSTRUCTION</span>
-                        <svg class="about-identity__svg" viewBox="0 0 600 420" role="img" focusable="false"
-                            :aria-label="t('aboutMe.logoDescription')">
+                        <svg
+                            class="about-identity__svg"
+                            viewBox="0 0 600 420"
+                            role="img"
+                            focusable="false"
+                            :aria-label="t('aboutMe.logoDescription')"
+                        >
                             <defs>
-                                <pattern id="about-logo-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M20 0H0V20" fill="none" stroke="var(--about-guide)" stroke-opacity=".15"
-                                        stroke-width=".7" />
+                                <pattern id="about-logo-grid" x="138" y="66" width="9" height="9" patternUnits="userSpaceOnUse">
+                                    <path d="M9 0H0V9" fill="none" stroke="var(--about-guide)" stroke-opacity=".15" stroke-width="1" />
                                 </pattern>
                             </defs>
-                            <g class="about-identity__guides" fill="none" stroke="var(--about-guide)" stroke-width="1"
-                                aria-hidden="true">
-                                <rect x="120" y="40" width="360" height="340" fill="url(#about-logo-grid)"
-                                    stroke-opacity=".45" />
+                            <!-- 최종 아이콘의 정수 좌표와 1단위 선 두께. 치수선은 경로 중심을 기준으로 한다. -->
+                            <g
+                                transform="translate(138 66) scale(9)"
+                                stroke="#000000"
+                                stroke-width="1"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                            >
+                                <path class="about-identity__letter-h" d="M10 2H18V12H26V2H34V30H26V20H18V30H10Z" fill="#8FB8FF" />
+                                <path class="about-identity__letter-y" d="M2 2H10L14 12L18 2H26L18 22V30H10V22Z" fill="#EAF2FF" />
+                            </g>
+                            <g class="about-identity__guides" fill="none" stroke="var(--about-guide)" stroke-width="1" aria-hidden="true">
+                                <rect x="138" y="66" width="324" height="288" fill="url(#about-logo-grid)" stroke-opacity=".45" />
                                 <path
-                                    d="M60 78.5h480M60 339.5h480M151.65 15v390M450.8 15v390M60 210h480M300 15v390M225.8 60v300M306.8 60v300M369.8 60v300"
-                                    stroke-dasharray="4 5" />
-                                <path d="m105 20 150 375M200 20l150 375M350 20 200 375M445 20 295 395"
-                                    stroke-opacity=".55" />
-                                <circle cx="300" cy="210" r="130" />
-                                <circle cx="220" cy="120" r="40" />
-                                <circle cx="380" cy="120" r="40" />
-                                <circle cx="300" cy="270" r="70" />
-                                <path
-                                    d="M151.65 365H450.8m-299.15-5v10m299.15-10v10M475 78.5v261m-5-261h10m-10 261h10" />
-                                <g fill="var(--about-guide)" stroke="none" font-size="10" font-family="monospace"
-                                    letter-spacing="1">
-                                    <text x="265" y="383">33.24 UNITS</text>
-                                    <text x="488" y="215" transform="rotate(90 488 215)">29 UNITS</text>
-                                    <text x="69" y="74">CAP HEIGHT</text>
-                                    <text x="69" y="355">BASELINE</text>
-                                    <text x="226" y="61">Y</text>
-                                    <text x="372" y="61">H</text>
+                                    d="M120 84H480M120 174H480M120 246H480M120 336H480M228 58V362M300 58V362M372 58V362M444 58V362"
+                                    stroke-dasharray="4 5"
+                                />
+                                <path d="M138 375H462M138 370V380M462 370V380M492 66V354M487 66H497M487 354H497" />
+                                <path d="M228 50H300M228 45V55M300 45V55M372 50H444M372 45V55M444 45V55" />
+                                <path d="M108 84V336M103 84H113M103 174H113M103 246H113M103 336H113" />
+                                <g fill="var(--about-guide)" stroke="none" font-size="10" font-family="monospace" letter-spacing="1">
+                                    <text x="300" y="397" text-anchor="middle">36 UNITS</text>
+                                    <text x="510" y="210" text-anchor="middle" transform="rotate(90 510 210)">32 UNITS</text>
+                                    <text x="264" y="40" text-anchor="middle">8</text>
+                                    <text x="408" y="40" text-anchor="middle">8</text>
+                                    <text x="95" y="132" text-anchor="end">10</text>
+                                    <text x="95" y="213" text-anchor="end">8</text>
+                                    <text x="95" y="294" text-anchor="end">10</text>
                                 </g>
                             </g>
-                            <!-- 실제 파비콘의 경로·색상·레이어 순서. -->
-                            <g transform="translate(145 65) scale(9)">
-                                <path class="about-identity__letter-h"
-                                    d="M33.9771 30.5029H33.4771L25.4771 30.501H24.9771V20.4971L17.9771 20.499V30.5039H17.4771L9.47705 30.5029H8.97705V1.50293H9.47705L17.4771 1.50391H17.9771V11.502L24.9771 11.5V1.5H25.4771L33.4771 1.50293H33.9771V30.5029Z"
-                                    fill="#8FB8FF" stroke="var(--about-ink)" stroke-width=".22" />
-                                <path class="about-identity__letter-y"
-                                    d="M9.81592 1.5L9.94092 1.81445L13.4771 10.6543L17.0132 1.81445L17.1382 1.5H26.2153L25.9409 2.18555L17.9771 22.0947V30.5H8.97705V22.0947L1.01318 2.18555L0.73877 1.5H9.81592Z"
-                                    fill="#EAF2FF" stroke="var(--about-ink)" stroke-width=".22" />
-                            </g>
                         </svg>
-                        <span class="about-identity__figure-footer" aria-hidden="true">YOUNG HWAN / OVERLAPPING
-                            INITIALS</span>
                     </div>
                     <div class="about-identity__details">
                         <div class="about-identity__formula" aria-hidden="true">
-                            <span>Y</span><span>+</span><span>H</span><span>=</span><strong>{{ t('aboutMe.identityMe')
-                                }}</strong>
+                            <span>Y</span><span>+</span><span>H</span><span>=</span><strong>{{ t('aboutMe.identityMe') }}</strong>
                         </div>
                         <p>{{ t('aboutMe.identityDescription') }}</p>
                         <div class="about-identity__palette" role="group" :aria-label="t('aboutMe.paletteLabel')">
                             <div>
-                                <i style="--swatch: #eaf2ff" aria-hidden="true" /><span>PALE
-                                    BLUE<small>#EAF2FF</small></span>
+                                <i style="--swatch: #eaf2ff" aria-hidden="true" /><span>PALE BLUE<small>#EAF2FF</small></span>
                             </div>
                             <div>
-                                <i style="--swatch: #8fb8ff" aria-hidden="true" /><span>SKY
-                                    BLUE<small>#8FB8FF</small></span>
+                                <i style="--swatch: #8fb8ff" aria-hidden="true" /><span>SKY BLUE<small>#8FB8FF</small></span>
                             </div>
                         </div>
                     </div>
-                    <p class="about-identity__note">{{ t('aboutMe.constructionNote') }}</p>
                 </div>
             </section>
 
@@ -140,18 +143,34 @@
             </section>
 
             <section class="about-outro" aria-labelledby="about-outro-title">
-                <p class="about-page__eyebrow" data-about-reveal>STILL ME. ALWAYS MOVING.</p>
                 <h2 id="about-outro-title">
-                    <span class="about-outro__line"><span class="about-outro__line-text">{{ t('aboutMe.outroLine1')
-                            }}</span></span>
-                    <span class="about-outro__line"><span class="about-outro__line-text">{{ t('aboutMe.outroLine2')
-                            }}</span></span>
+                    <span class="about-outro__line"
+                        ><span class="about-outro__line-text">{{ t('aboutMe.outroLine1') }}</span></span
+                    >
+                    <span class="about-outro__line"
+                        ><span class="about-outro__line-text">{{ t('aboutMe.outroLine2') }}</span></span
+                    >
                 </h2>
                 <p data-about-reveal>{{ t('aboutMe.outroDescription') }}</p>
                 <div class="about-outro__links" data-about-reveal>
                     <BaseButton href="/projects" :label="t('aboutMe.viewWorks')" />
-                    <BaseLink href="/" class="about-page__text-link">{{ t('aboutMe.backHome') }} <span
-                            aria-hidden="true">↗</span></BaseLink>
+                    <BaseLink href="/" class="about-page__text-link"
+                        >{{ t('aboutMe.backHome') }}
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" /></svg
+                    ></BaseLink>
                 </div>
                 <span class="about-outro__signature" aria-hidden="true">Eun.</span>
             </section>
@@ -212,8 +231,7 @@ onMounted(async () => {
             });
             story
                 .to(select('.about-story__title'), { yPercent: -12, duration: 1, ease: 'none' }, 0)
-                .to(select('.about-story__asterisk'), { rotation: 120, y: -20, duration: 1, ease: 'none' }, 0)
-                .to(select('.about-story__edition, .about-story__lead'), { y: -20, duration: 1, ease: 'none' }, 0);
+                .to(select('.about-story__lead'), { y: -20, duration: 1, ease: 'none' }, 0);
 
             // 넓고 충분히 높은 화면에서만 고정하고, 작은 화면은 같은 순서로 자연스럽게 읽게 한다.
             const mindset = gsap.timeline({
@@ -229,18 +247,15 @@ onMounted(async () => {
             mindset
                 .from(select('.about-mindset__letter'), { yPercent: 110, rotation: 8, stagger: 0.14, duration: 1.1, ease: 'power3.out' }, 0)
                 .from(
-                    select('.about-mindset__personality-title, .about-mindset__personality > p:last-of-type, .about-mindset__annotation'),
-                    { y: 28, opacity: 0.35, stagger: 0.16, duration: 0.7 },
+                    select('.about-mindset__personality-title, .about-mindset__personality > p:last-of-type'),
+                    { y: 28, clipPath: 'inset(0 0 100% 0)', stagger: 0.16, duration: 0.7 },
                     0.45,
                 )
-                .from(select('.about-mindset__quote-mark'), { y: 24, rotation: -12, duration: 0.7 }, 0.95)
-                .from(select('.about-mindset__belief blockquote p'), { x: 20, opacity: 0.35, duration: 0.9 }, 1.1)
-                .from(select('.about-mindset__underline'), { backgroundSize: '0% 100%', duration: 1, ease: 'none' }, 1.5)
-                .from(select('.about-mindset__belief cite, .about-mindset__belief-note'), { y: 22, opacity: 0.35, stagger: 0.16, duration: 0.7 }, 2.1)
+                .from(select('.about-mindset__belief'), { y: 24, clipPath: 'inset(0 0 100% 0)', duration: 1.2, ease: 'power2.out' }, 0.95)
                 .to({}, { duration: 0.5 });
 
             // 본문은 스크롤 위치와 관계없이 스크린리더와 키보드 사용자에게 계속 노출한다.
-            gsap.set(select('.about-identity__guides, .about-identity__figure-label, .about-identity__figure-footer'), {
+            gsap.set(select('.about-identity__guides'), {
                 autoAlpha: 0,
             });
             const identity = gsap.timeline({
@@ -257,7 +272,6 @@ onMounted(async () => {
                 .from(select('.about-identity__letter-y'), { x: -42, autoAlpha: 0, duration: 1.5, ease: 'power2.inOut' }, 0)
                 .from(select('.about-identity__letter-h'), { x: 42, autoAlpha: 0, duration: 1.5, ease: 'power2.inOut' }, 0)
                 .to(select('.about-identity__guides'), { autoAlpha: 1, duration: 0.8 }, 1.5)
-                .to(select('.about-identity__figure-label, .about-identity__figure-footer'), { autoAlpha: 1, duration: 0.5 }, 1.7)
                 .from(select('.about-identity__details'), { y: 16, duration: 0.7 }, 1.8)
                 .to({}, { duration: 0.7 });
 

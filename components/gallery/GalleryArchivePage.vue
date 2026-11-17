@@ -5,15 +5,11 @@
                 :view-mode="viewMode"
                 :title="t(titleKey)"
                 :dek="lead"
-                :kicker="editorialKicker"
-                :hero-number="heroNumber"
-                :hero-aria-label="heroAriaLabel"
-                :status-label="t('gallery.indexLabel')"
-                :stats="editorialStats"
                 :sort-legend="sortLegend"
                 :filter-legend="filterLegend"
                 :view-legend="viewLegend"
                 :toolbar-aria-label="toolbarAriaLabel"
+                :result-label="resultLabel"
                 :sort-options="sortOptions"
                 :view-options="viewOptions"
                 :filter-options="filterOptions"
@@ -57,12 +53,9 @@ const {
     filterOptions,
     viewOptions,
     galleryEntries,
+    filteredWorks,
     editorialYearGroups,
     lead,
-    editorialKicker,
-    editorialStats,
-    heroNumber,
-    heroAriaLabel,
     sortLegend,
     filterLegend,
     viewLegend,
@@ -70,4 +63,6 @@ const {
     titleKey,
     basePath,
 } = useGalleryArchive(props.variant, works);
+
+const resultLabel = computed(() => t('gallery.filteredCount').replace('{count}', String(filteredWorks.value.length)));
 </script>

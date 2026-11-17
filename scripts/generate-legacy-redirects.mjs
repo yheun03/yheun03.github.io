@@ -20,7 +20,6 @@ function createRedirectHtml(targetUrl) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="은영환 포트폴리오의 새 주소로 이동합니다." />
-        <meta name="robots" content="noindex, follow" />
         <meta http-equiv="refresh" content="0; url=${escapedUrl}" />
         <link rel="canonical" href="${escapedUrl}" />
         <title>포트폴리오 주소가 변경되었습니다</title>

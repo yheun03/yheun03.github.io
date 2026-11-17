@@ -1,10 +1,5 @@
 <template>
     <section id="hello" class="section section--hero hero" aria-labelledby="hero-display-title">
-        <div class="hero__canvas" aria-hidden="true">
-            <span class="hero__orb hero__orb--a"></span>
-            <span class="hero__orb hero__orb--b"></span>
-            <span class="hero__orb hero__orb--c"></span>
-        </div>
         <div class="hero__poster">
             <p class="hero__meta">
                 <span>{{ profile.name }}</span>
@@ -13,8 +8,6 @@
             </p>
 
             <div class="hero__stage">
-                <p class="section-title__eyebrow hero__eyebrow">{{ t('nav.hello') }}</p>
-
                 <h1 id="hero-display-title" class="hero__display">
                     <span class="hero__display-line">{{ t('hero.displayLine1') }}</span>
                     <span class="hero__display-line hero__display-line--accent">{{ t('hero.displayLine2') }}</span>

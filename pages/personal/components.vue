@@ -1,15 +1,20 @@
 <template>
-    <AppLayout :links="layoutLinks" active-id="" brand-href="/" active-path="/personal" page-variant="archive-personal"
-        :footer-text="t('footer.copyright')">
+    <AppLayout
+        :links="layoutLinks"
+        active-id=""
+        brand-href="/"
+        active-path="/personal"
+        page-variant="archive-personal"
+        :footer-text="t('footer.copyright')"
+    >
         <article class="catalog-page section" aria-labelledby="catalog-page-title">
             <header class="catalog-hero" data-reveal="hero">
-                <BaseLabel tone="technical">{{ t('catalog.pageLabel') }}</BaseLabel>
                 <h1 id="catalog-page-title">{{ t('catalog.title') }}</h1>
                 <p>{{ t('catalog.introBefore') }} <code>assets/style/base/</code> {{ t('catalog.introAfter') }}</p>
                 <nav class="catalog-hero__actions" :aria-label="t('catalog.navigation')">
-                    <BaseButton :label="t('catalog.viewTokens')" href="/personal/design-tokens" variant="ghost" />
+                    <BaseButton :label="t('catalog.viewTokens')" href="/personal/design-tokens" />
                     <BaseButton :label="t('catalog.viewPersonal')" href="/personal" variant="ghost" />
-                    <BaseButton :label="t('catalog.viewHome')" href="/" />
+                    <BaseButton :label="t('catalog.viewHome')" href="/" variant="ghost" />
                 </nav>
             </header>
 
@@ -67,7 +72,8 @@
                 <div class="catalog-row catalog-row--wrap">
                     <BaseIndexLabel value="01" />
                     <BaseIndexLabel value="02" />
-                    <BaseIndexLabel variant="tag">SI PROJECT
+                    <BaseIndexLabel variant="tag"
+                        >SI PROJECT
                         <BaseAccentBadge :label="t('story.featuredBadge')" />
                     </BaseIndexLabel>
                 </div>
@@ -97,9 +103,13 @@
                     <h2 id="section-title-section-title">{{ t('catalog.sectionTitle') }}</h2>
                     <p>{{ t('catalog.sectionDescription') }}</p>
                 </header>
-                <BaseSectionTitle title-id="catalog-section-title-demo" eyebrow="Works"
-                    :title="t('catalog.sectionDemoTitle')" :description="t('catalog.sectionDemoDescription')"
-                    :animate="false" />
+                <BaseSectionTitle
+                    title-id="catalog-section-title-demo"
+                    eyebrow="Works"
+                    :title="t('catalog.sectionDemoTitle')"
+                    :description="t('catalog.sectionDemoDescription')"
+                    :animate="false"
+                />
             </section>
 
             <section class="catalog-section" data-reveal="up" aria-labelledby="card-section-title">
@@ -114,11 +124,17 @@
                         <h3>BaseCard</h3>
                         <p>{{ t('catalog.baseCardDescription') }}</p>
                     </BaseCard>
-                    <StoryCaseCard to="/projects/toms" :link-label="t('catalog.caseAria')" index-label="01"
-                        :tag="t('catalog.caseTag')" period="2024.03 – 2024.11" :title="t('catalog.caseTitle')"
-                        :summary="t('catalog.caseSummary')" :tech="['Vue 3', 'TypeScript', 'SCSS']"
-                        :cta-label="t('catalog.caseCta')" :tech-aria-label="t('catalog.caseTech')" featured
-                        :featured-badge="t('story.featuredBadge')" />
+                    <StoryCaseCard
+                        to="/projects/toms"
+                        :link-label="t('catalog.caseAria')"
+                        :tag="t('catalog.caseTag')"
+                        period="2024.03 – 2024.11"
+                        :title="t('catalog.caseTitle')"
+                        :summary="t('catalog.caseSummary')"
+                        :tech="['Vue 3', 'TypeScript', 'SCSS']"
+                        :cta-label="t('catalog.caseCta')"
+                        :tech-aria-label="t('catalog.caseTech')"
+                    />
                 </div>
             </section>
         </article>
@@ -146,19 +162,20 @@ usePortfolioSeo(() => ({
 .catalog-page {
     display: grid;
     gap: clamp(88px, 11vw, 168px);
-    width: min(var(--layout-content-max), calc(100% - (var(--page-pad-x) * 2)));
+    width: min(100%, 1560px);
     margin: 0 auto;
-    padding: clamp(88px, 11vw, 168px) 0;
+    padding: clamp(72px, 8vw, 120px) var(--page-pad-x);
 }
 
 .catalog-hero,
 .catalog-section {
     display: grid;
-    gap: clamp(24px, 3vw, 48px);
+    gap: var(--block-gap);
 }
 
 .catalog-hero {
     max-width: 1080px;
+    gap: var(--space-6);
 }
 
 .catalog-hero h1,
@@ -169,7 +186,7 @@ usePortfolioSeo(() => ({
 }
 
 .catalog-hero h1 {
-    max-width: 12ch;
+    max-width: 18ch;
     font-size: var(--font-size-display-2);
     font-weight: var(--font-weight-black);
     line-height: var(--line-height-display);
@@ -181,12 +198,20 @@ usePortfolioSeo(() => ({
     line-height: var(--line-height-heading);
 }
 
+.catalog-hero code {
+    overflow-wrap: anywhere;
+}
+
 .catalog-hero p,
 .catalog-section__head p {
-    max-width: 62ch;
+    max-width: 52ch;
     margin: 0;
     color: var(--color-text-muted);
     line-height: var(--line-height-body);
+}
+
+.catalog-hero__actions {
+    margin-top: var(--space-6);
 }
 
 .catalog-hero__actions,

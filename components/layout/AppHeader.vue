@@ -1,44 +1,127 @@
 <template>
     <header class="app-header" :class="{ 'app-header--scrolled': isScrolled }">
         <BaseLink class="app-header__brand" :href="brandHref" :aria-label="t('a11y.portfolioHome')">
-            <span aria-hidden="true">Eun</span>
+            <svg class="app-header__logo" width="210" height="44" viewBox="0 0 210 44" aria-hidden="true" focusable="false">
+                <g transform="translate(0 6)" stroke="#000000" stroke-width="1" stroke-linejoin="miter" stroke-miterlimit="10">
+                    <path d="M10 2H18V12H26V2H34V30H26V20H18V30H10Z" fill="#8FB8FF" />
+                    <path d="M2 2H10L14 12L18 2H26L18 22V30H10V22Z" fill="#EAF2FF" />
+                </g>
+                <g fill="currentColor">
+                    <text x="48" y="21" font-size="13" font-weight="750" letter-spacing="1">EUN YOUNGHWAN</text>
+                    <text x="48" y="35" font-size="8" letter-spacing="2">WEB PUBLISHER</text>
+                </g>
+            </svg>
         </BaseLink>
         <nav class="app-header__nav" :aria-label="t('a11y.primaryNavigation')">
-            <BaseLink v-for="link in links" :key="link.href" :href="link.href" class="app-header__link"
-                :class="{ 'app-header__link--active': isActive(link.href) }" :aria-current="getAriaCurrent(link.href)">
+            <BaseLink
+                v-for="link in links"
+                :key="link.href"
+                :href="link.href"
+                class="app-header__link"
+                :class="{ 'app-header__link--active': isActive(link.href) }"
+                :aria-current="getAriaCurrent(link.href)"
+            >
                 {{ link.label }}
             </BaseLink>
         </nav>
         <div class="app-header__actions">
             <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">{{ statusMessage }}</p>
-            <BaseButton class="app-header__theme-toggle" variant="ghost" :label="themeToggleLabel"
-                :aria-label="themeToggleAriaLabel" @click="handleThemeToggle">
+            <BaseButton
+                class="app-header__theme-toggle"
+                variant="ghost"
+                :label="themeToggleLabel"
+                :aria-label="themeToggleAriaLabel"
+                :title="themeToggleAriaLabel"
+                @click="handleThemeToggle"
+            >
                 <Transition name="toggle-swap" mode="out-in">
-                    <span :key="themeToggleLabel" class="toggle-swap">{{ themeToggleLabel }}</span>
+                    <span :key="themeToggleLabel" class="toggle-swap" aria-hidden="true">
+                        <svg
+                            class="app-header__theme-icon"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            focusable="false"
+                        >
+                            <template v-if="isDarkTheme">
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                            </template>
+                            <path v-else d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" />
+                        </svg>
+                    </span>
                 </Transition>
             </BaseButton>
-            <BaseButton class="app-header__language-toggle" variant="ghost" :label="localeLabel"
-                :aria-label="languageToggleAriaLabel" :aria-busy="localeLoading" :disabled="localeLoading"
-                @click="handleLocaleToggle">
+            <BaseButton
+                class="app-header__language-toggle"
+                variant="ghost"
+                :label="localeLabel"
+                :aria-label="languageToggleAriaLabel"
+                :title="languageToggleAriaLabel"
+                :aria-busy="localeLoading"
+                :disabled="localeLoading"
+                @click="handleLocaleToggle"
+            >
                 <Transition name="toggle-swap" mode="out-in">
                     <span :key="localeLabel" class="toggle-swap">{{ localeLabel }}</span>
                 </Transition>
             </BaseButton>
-            <button ref="menuButtonRef" type="button" class="app-header__menu-btn"
-                :aria-label="t(menuOpen ? 'a11y.mobileMenuClose' : 'a11y.mobileMenuOpen')" :aria-expanded="menuOpen"
-                aria-controls="app-lnb-panel" aria-haspopup="dialog" @click="handleAppLnbToggle">
-                <span class="app-header__menu-icon" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
-                </span>
+            <button
+                ref="menuButtonRef"
+                type="button"
+                class="app-header__menu-btn"
+                :aria-label="t(menuOpen ? 'a11y.mobileMenuClose' : 'a11y.mobileMenuOpen')"
+                :aria-expanded="menuOpen"
+                aria-controls="app-lnb-panel"
+                aria-haspopup="dialog"
+                @click="handleAppLnbToggle"
+            >
+                <svg
+                    class="app-header__menu-icon"
+                    v-if="menuOpen"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+                <svg
+                    class="app-header__menu-icon"
+                    v-else
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path d="M4 5h16" />
+                    <path d="M4 12h16" />
+                    <path d="M4 19h16" />
+                </svg>
                 <span class="visually-hidden">
                     {{ t(menuOpen ? 'a11y.close' : 'a11y.menu') }}
                 </span>
             </button>
         </div>
-        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId"
-            @close="closeMobileMenu" />
+        <AppLnb id="app-lnb-panel" :open="menuOpen" :links="links" :active-path="activePath" :active-id="activeId" @close="closeMobileMenu" />
     </header>
 </template>
 
@@ -63,9 +146,7 @@ const { locale, toggleLocale, t } = useLocale();
 const { isDarkTheme, toggleTheme } = useTheme();
 
 const localeLabel = computed(() => locale.value.toUpperCase());
-const languageToggleAriaLabel = computed(
-    () => `${localeLabel.value}: ${locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo')}`,
-);
+const languageToggleAriaLabel = computed(() => `${localeLabel.value}: ${locale.value === 'ko' ? t('a11y.switchToEn') : t('a11y.switchToKo')}`);
 const themeToggleLabel = computed(() => (isDarkTheme.value ? 'Light' : 'Dark'));
 const themeToggleAriaLabel = computed(
     () => `${themeToggleLabel.value}: ${isDarkTheme.value ? t('a11y.switchToLightTheme') : t('a11y.switchToDarkTheme')}`,

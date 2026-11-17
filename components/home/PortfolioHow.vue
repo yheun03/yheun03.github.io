@@ -3,7 +3,6 @@
         id="how"
         section-class="section--how"
         title-id="section-how-title"
-        :eyebrow="t('nav.how')"
         :title="t('about.howTitle')"
         :description="t('story.howDescription')"
     >

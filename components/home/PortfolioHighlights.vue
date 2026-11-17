@@ -1,7 +1,7 @@
 <template>
     <section id="highlights" class="section section--highlights highlights" aria-labelledby="section-highlights-title">
         <div class="highlights__title-col">
-            <BaseSectionTitle title-id="section-highlights-title" :eyebrow="t('nav.highlights')" :title="t('highlights.title')" />
+            <BaseSectionTitle title-id="section-highlights-title" :title="t('highlights.title')" />
             <BaseTabList
                 :model-value="activeTab"
                 :items="tabs"
@@ -13,11 +13,10 @@
             />
         </div>
 
-        <div class="highlights__workspace" data-animate>
+        <div ref="workspaceRef" class="highlights__workspace" data-animate>
             <HighlightsTabPanelRenderer
                 :active-tab="activeTab"
                 :panel-render-key="activeTab"
-                :active-tab-index="activeTabIndex"
                 :active-tab-label="activeTabLabel"
                 :active-description="activeDescription"
                 :active-items="activeItems"
@@ -35,13 +34,19 @@ const tabKeys: HighlightTabKey[] = ['awards', 'certifications', 'roles', 'activi
 const { t, content } = useLocale();
 const highlights = computed(() => content.value.highlights);
 const activeTab = ref<HighlightTabKey>('awards');
+const workspaceRef = ref<HTMLElement | null>(null);
 const tabs = computed(() => tabKeys.map((key) => ({ key, label: t(`highlights.${key}`) })));
-const activeTabIndex = computed(() => String(tabKeys.indexOf(activeTab.value) + 1).padStart(2, '0'));
 const activeItems = computed(() => highlights.value[activeTab.value]);
 const activeTabLabel = computed(() => t(`highlights.${activeTab.value}`));
 const activeDescription = computed(() => highlights.value.descriptions[activeTab.value]);
 
-function handleHighlightTabChange(key: string) {
+async function handleHighlightTabChange(key: string) {
     activeTab.value = key as HighlightTabKey;
+    await nextTick();
+    const workspace = workspaceRef.value;
+    if (!workspace) return;
+    const headerHeight = document.querySelector('.app-header')?.getBoundingClientRect().height ?? 0;
+    const top = window.scrollY + workspace.getBoundingClientRect().top - headerHeight - 24;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
 }
 </script>

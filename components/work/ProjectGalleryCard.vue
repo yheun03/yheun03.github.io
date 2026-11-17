@@ -1,35 +1,43 @@
 <template>
-    <NuxtLink :to="to" class="gallery-card" data-reveal="up" :data-reveal-delay="revealDelay"
+    <NuxtLink
+        :to="to"
+        class="gallery-card"
+        data-reveal="up"
+        :data-reveal-delay="revealDelay"
         :class="viewMode === 'editorial' ? 'gallery-editorial__entry' : 'gallery-card--grid'"
-        :aria-label="cardAriaLabel">
+        :aria-label="cardAriaLabel"
+    >
         <template v-if="viewMode === 'editorial'">
             <div class="gallery-editorial__entry-poster">
-                <p class="gallery-editorial__entry-kicker">
-                    <span v-if="work.duration">{{ work.duration }}</span>
-                    <span v-if="work.duration" aria-hidden="true">•</span>
-                    <span>{{ work.type }}</span>
-                    <span v-if="work.period" aria-hidden="true">•</span>
-                    <span v-if="work.period">{{ work.period }}</span>
-                </p>
-
-                <div class="gallery-editorial__entry-hero">
-                    <component :is="headingTag" class="gallery-editorial__entry-title">{{ work.title }}</component>
-                    <span class="gallery-editorial__entry-rule" aria-hidden="true" />
-                    <p class="gallery-editorial__entry-label" aria-hidden="true">{{ entryLabel }}</p>
-                </div>
-
-                <p class="gallery-editorial__entry-dek">{{ work.introduction }}</p>
-
-                <ul v-if="work.languages.length" class="gallery-editorial__entry-tags"
-                    :aria-label="t('gallery.languages')">
-                    <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
-                </ul>
-
                 <div class="gallery-editorial__entry-media">
                     <GalleryEmptyCapture v-if="isPlaceholderCover" />
                     <span v-else class="gallery-editorial__entry-screen">
                         <BaseMediaImage :src="coverSrc" :alt="coverAlt" :priority="priority" />
                     </span>
+                </div>
+
+                <div class="gallery-editorial__entry-head">
+                    <p class="gallery-editorial__entry-kicker">{{ work.type }}</p>
+                    <div class="gallery-editorial__entry-hero">
+                        <component :is="headingTag" class="gallery-editorial__entry-title">{{ work.title }}</component>
+                    </div>
+                    <p v-if="work.period || work.duration" class="gallery-editorial__entry-period">
+                        <span v-if="work.period">{{ work.period }}</span>
+                        <span v-if="work.period && work.duration" aria-hidden="true"> / </span>
+                        <span v-if="work.duration">{{ work.duration }}</span>
+                    </p>
+                </div>
+
+                <div class="gallery-editorial__entry-body">
+                    <p class="gallery-editorial__entry-dek">{{ work.introduction }}</p>
+                    <dl class="gallery-editorial__entry-role">
+                        <dt>{{ t('gallery.role') }}</dt>
+                        <dd>{{ work.role }}</dd>
+                    </dl>
+                    <ul v-if="work.languages.length" class="gallery-editorial__entry-tags" :aria-label="t('gallery.languages')">
+                        <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
+                    </ul>
+                    <span class="gallery-editorial__entry-label" aria-hidden="true">{{ t('story.caseCta') }}</span>
                 </div>
             </div>
         </template>
@@ -48,9 +56,14 @@
                 </p>
                 <component :is="headingTag" class="gallery-card__title">{{ work.title }}</component>
                 <p class="gallery-card__excerpt">{{ work.introduction }}</p>
+                <p class="gallery-card__role">
+                    <strong>{{ t('gallery.role') }}</strong
+                    >{{ work.role }}
+                </p>
                 <ul v-if="work.languages.length" class="gallery-card__langs" :aria-label="t('gallery.languages')">
                     <li v-for="lang in work.languages" :key="lang">{{ lang }}</li>
                 </ul>
+                <span class="gallery-card__cta" aria-hidden="true">{{ t('story.caseCta') }} <span>→</span></span>
             </div>
         </template>
     </NuxtLink>
@@ -80,7 +93,6 @@ const props = withDefaults(
 
 const { t } = useLocale();
 const { resolveAppPath } = useAppPath();
-
 const entryLabel = computed(() => props.entryLabel ?? t('gallery.viewEntry'));
 
 const cardAriaLabel = computed(() => {

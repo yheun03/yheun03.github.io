@@ -90,6 +90,10 @@ export default defineNuxtConfig({
 
     css: ['~/assets/style/main.scss'],
 
+    routeRules: {
+        '/personal/jonsoft-framework-portfolio': { redirect: { to: '/personal/portfolio-2026/', statusCode: 301 } },
+    },
+
     alias: {
         '@data': fileURLToPath(new URL('./data', import.meta.url)),
         '@i18n': fileURLToPath(new URL('./i18n', import.meta.url)),
@@ -120,7 +124,7 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'static',
-        prerender: { ignore: ['/ver.2026/**'] },
+        prerender: { ignore: ['/ver.2026'] },
         publicAssets: [
             { dir: imagesDir, baseURL: '/assets/images' },
             { dir: iconsDir, baseURL: '/assets/icons' },

@@ -18,6 +18,7 @@ export function useAppPath() {
     function isAppRoute(path: string): boolean {
         if (!path.startsWith('/') || path.startsWith('//')) return false;
         const pathOnly = path.split(/[#?]/, 1)[0] ?? path;
+        if (/^\/ver\.\d{4}(?:\/|$)/.test(pathOnly)) return false;
         return !STATIC_ASSET_PATTERN.test(pathOnly);
     }
 

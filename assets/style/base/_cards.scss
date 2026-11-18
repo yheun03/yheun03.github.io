@@ -8,18 +8,9 @@
     border-radius: var(--radius-lg);
     background: var(--color-surface);
     isolation: isolate;
-    --card-flow-label: #{$space-5};
     --card-flow-title: #{$space-6};
     --card-flow-content: #{$space-7};
     --card-list-gap: #{$space-3};
-
-    > :where(.base-label) {
-        margin-bottom: 0;
-    }
-
-    > :where(.base-label) + :where(h2, h3, p, ul, ol) {
-        margin-top: var(--card-flow-label);
-    }
 
     > :where(h2, h3) + :where(p, ul, ol) {
         margin-top: var(--card-flow-title);

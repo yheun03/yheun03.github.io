@@ -1,17 +1,5 @@
 @use '../abstracts/mixins' as *;
 
-/* Label */
-.base-label {
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-    margin: 0;
-    padding: 0;
-    color: var(--color-text-muted);
-    @include font(label);
-    text-transform: uppercase;
-}
-
 .base-index-label {
     @include index-label;
 

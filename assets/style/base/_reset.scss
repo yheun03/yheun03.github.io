@@ -48,7 +48,7 @@ body {
 }
 
 /* 라벨·캡션: UI 최소 14px (--font-size-xs) */
-:where(.base-label, small) {
+small {
     @include font(label);
 }
 

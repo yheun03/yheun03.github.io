@@ -52,11 +52,11 @@ npm run deploy
 
 ## 2026 초기 버전 보관
 
-기존 main 커밋 `6c47ccc7182529e466410058f91d7e8cfe00467d`의 정적 빌드를 `public/ver.2026/`에 보관합니다. `/personal/portfolio-2026/` 상세 페이지에서 `/ver.2026/index.html`을 열 수 있습니다. 일반 빌드에서 다시 렌더링하지 않는 고정 보관본이며 출처와 경로 조정 사항은 `public/ver.2026/archive.json`에 기록했습니다. 2025 버전은 기존 `/ver.2025/` 주소를 사용합니다.
+기존 main 커밋 `6c47ccc7182529e466410058f91d7e8cfe00467d`의 정적 빌드를 `public/ver.2026/`에 보관합니다. 기존 2026 프로젝트의 본문과 캡처는 `/personal/portfolio-2026/`에서 관리하며, 사이트 보기 버튼은 `/ver.2026/`로 연결합니다. 이전 상세 주소 `/personal/jonsoft-framework-portfolio`는 새 상세 주소로 이동합니다. 일반 빌드에서 다시 렌더링하지 않는 고정 보관본이며 출처와 경로 조정 사항은 `public/ver.2026/archive.json`에 기록했습니다. 2025 버전은 기존 `/ver.2025/` 주소를 사용합니다.
 
 ## GitHub Pages 검색 설정
 
-`public/`의 `sitemap.xml`, `sitemap.txt`, `rss.xml`, `robots.txt`는 빌드 후 사이트 루트에 배포됩니다. `robots.txt`는 전체 공개 URL을 담은 XML 사이트맵과 최근 콘텐츠를 담은 RSS 2.0 피드를 안내합니다. 프로젝트를 추가하면 빌드 시 공개 URL과 검색 리소스를 자동 갱신합니다. 고정 페이지를 추가할 때는 `scripts/generate-search-assets.mjs`의 페이지 목록을 수정합니다. 실제로 콘텐츠를 수정한 날짜만 수정일로 기록합니다. 컴포넌트·디자인 토큰 데모는 `noindex`로 유지합니다.
+`public/`의 `sitemap.xml`, `sitemap.txt`, `rss.xml`, `robots.txt`는 빌드 후 사이트 루트에 배포됩니다. `robots.txt`는 전체 공개 URL을 담은 XML 사이트맵과 최근 콘텐츠를 담은 RSS 2.0 피드를 안내합니다. 프로젝트를 추가하면 빌드 시 공개 URL과 검색 리소스를 자동 갱신합니다. 고정 페이지를 추가할 때는 `scripts/generate-search-assets.mjs`의 페이지 목록을 수정합니다. 실제로 콘텐츠를 수정한 날짜만 수정일로 기록합니다.
 
 Nuxt에서 생성한 정적 파일을 그대로 제공하도록 `public/.nojekyll`을 포함합니다. `npm run deploy`도 `--nojekyll` 옵션으로 `gh-pages` 브랜치에 배포합니다. GitHub Pages의 배포 소스는 `gh-pages` 브랜치의 루트(`/`)를 사용합니다. GitHub Pages에서는 `public/_headers`로 응답 헤더를 바꿀 수 없으며, XML과 텍스트 파일의 Content-Type은 호스팅 서버가 확장자에 맞춰 제공합니다.
 

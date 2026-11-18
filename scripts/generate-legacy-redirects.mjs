@@ -46,3 +46,10 @@ for (const canonicalUrl of canonicalUrls) {
 }
 
 console.log(`Generated ${canonicalUrls.length} legacy portfolio redirects.`);
+
+// Keep the original 2026 project URL working after its slug changes.
+for (const prefix of ['', legacyBasePath]) {
+    const redirectFile = join(outputDir, prefix, 'personal/jonsoft-framework-portfolio/index.html');
+    await mkdir(dirname(redirectFile), { recursive: true });
+    await writeFile(redirectFile, createRedirectHtml(`${siteUrl}/personal/portfolio-2026/`));
+}

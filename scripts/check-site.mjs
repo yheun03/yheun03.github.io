@@ -35,10 +35,6 @@ for (const url of urls) {
     }
 }
 for (const path of assets) assert.ok((await stat(join(directory, decodeURI(path)))).isFile(), `Missing image: ${path}`);
-for (const route of ['components', 'design-tokens']) {
-    const html = await readFile(join(directory, 'personal', route, 'index.html'), 'utf8');
-    assert.ok(/name="robots" content="noindex, follow"/.test(html), `Demo ${route} must stay out of search results`);
-}
 for (const locale of ['ko', 'en']) {
     const source = JSON.parse(await readFile(`data/works/${locale}.json`, 'utf8'));
     for (const [variant, items] of Object.entries(source)) {

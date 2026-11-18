@@ -1,20 +1,9 @@
-// 갤러리(실무·개인) 뷰 상태 — 보기 모드·정렬·연도 그룹·SEO·상세 라우트 작업 조회 제공
-import type { WorkItem } from '@data/works';
+// 갤러리(실무·개인) 필터·정렬·SEO·상세 라우트 작업 조회
+import type { WorkItem, WorkSummary } from '@data/works';
 
-export type GalleryViewMode = 'editorial' | 'grid';
 export type GalleryArchiveVariant = 'career' | 'personal';
 export type WorkSortMode = 'start' | 'title';
 export type WorkFilterMode = 'featured' | 'problem' | 'frontend' | 'operation' | 'cms' | 'individual' | 'team';
-
-export type WorkYearEntry = { type: 'year'; key: string; year: string } | { type: 'work'; key: string; work: WorkItem; firstWork?: boolean };
-
-export type WorkYearGroup = {
-    year: string;
-    key: string;
-    works: WorkItem[];
-};
-
-const GALLERY_VIEW_STORAGE_KEY = 'portfolio-gallery-view';
 
 function getStartValue(period: string) {
     const [start = ''] = period.split('~');
@@ -23,49 +12,8 @@ function getStartValue(period: string) {
     return Number(match[1]) * 100 + Number(match[2] ?? '1');
 }
 
-function getWorkStartYear(work: WorkItem) {
-    return work.period.match(/\d{4}/)?.[0] ?? '';
-}
-
 export function isPlaceholderCapture(src: string | undefined | null) {
     return !src || /placeholder/i.test(src);
-}
-
-function createWorkYearEntries(works: readonly WorkItem[]): WorkYearEntry[] {
-    const entries: WorkYearEntry[] = [];
-    let currentYear = '';
-
-    works.forEach((work, index) => {
-        const year = getWorkStartYear(work);
-        // 날짜가 없는 항목도 이전 연도 그룹에서 분리한다.
-        if (year !== currentYear) {
-            entries.push({ type: 'year', key: `year-${year}`, year });
-            currentYear = year;
-        }
-        entries.push({ type: 'work', key: work.id, work, firstWork: index === 0 });
-    });
-
-    return entries;
-}
-
-function groupWorkYearEntries(entries: readonly WorkYearEntry[]): WorkYearGroup[] {
-    const groups: WorkYearGroup[] = [];
-    let current: WorkYearGroup | null = null;
-
-    entries.forEach((entry) => {
-        if (entry.type === 'year') {
-            current = { year: entry.year, key: entry.key, works: [] };
-            groups.push(current);
-        } else {
-            if (!current) {
-                current = { year: '', key: 'works', works: [] };
-                groups.push(current);
-            }
-            current.works.push(entry.work);
-        }
-    });
-
-    return groups;
 }
 
 const galleryVariantConfig = {
@@ -89,31 +37,10 @@ export function getGalleryVariantConfig(variant: GalleryArchiveVariant) {
     return galleryVariantConfig[variant];
 }
 
-function useGalleryViewMode() {
-    const viewMode = ref<GalleryViewMode>('editorial');
-
-    onMounted(() => {
-        if (!import.meta.client) return;
-        const stored = localStorage.getItem(GALLERY_VIEW_STORAGE_KEY);
-        if (stored === 'editorial' || stored === 'grid') {
-            viewMode.value = stored;
-        }
-    });
-
-    watch(viewMode, (mode) => {
-        if (!import.meta.client) return;
-        localStorage.setItem(GALLERY_VIEW_STORAGE_KEY, mode);
-    });
-
-    return { viewMode };
-}
-
-export function useGalleryArchive(variant: GalleryArchiveVariant, works: ComputedRef<WorkItem[]>) {
+export function useGalleryArchive(variant: GalleryArchiveVariant, works: Ref<WorkSummary[]>) {
     const { t, locale } = useLocale();
     const sortMode = ref<WorkSortMode>('start');
     const filterModes = ref<WorkFilterMode[]>([]);
-    const { viewMode } = useGalleryViewMode();
-    const editorialYear = new Date().getFullYear();
     const config = getGalleryVariantConfig(variant);
 
     const sortOptions = computed<{ value: WorkSortMode; label: string }[]>(() => [
@@ -150,40 +77,11 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
 
     const filteredWorks = computed(() => sortedWorks.value.filter((work) => matchesFilters(work, filterModes.value)));
 
-    const galleryEntries = computed(() =>
-        sortMode.value === 'start'
-            ? createWorkYearEntries(filteredWorks.value)
-            : filteredWorks.value.map((work, index) => ({
-                  type: 'work' as const,
-                  key: work.id,
-                  work,
-                  firstWork: index === 0,
-              })),
-    );
-
-    const editorialYearGroups = computed(() => groupWorkYearEntries(galleryEntries.value));
-
-    const lead = computed(() =>
-        t(variant === 'career' ? 'gallery.careerLead' : 'gallery.personalLead').replace('{total}', String(works.value.length)),
-    );
-
-    const editorialKicker = computed(() => `${t(config.titleKey)} • ${editorialYear} • ${t('gallery.archive')}`);
-
-    const editorialStats = computed(() => t('gallery.stats').replace('{total}', String(works.value.length)));
-
-    const heroNumber = computed(() => String(works.value.length).padStart(2, '0'));
-
-    const heroAriaLabel = computed(() => t('gallery.totalProjects').replace('{total}', String(works.value.length)));
+    const lead = computed(() => t(variant === 'career' ? 'gallery.careerLead' : 'gallery.personalLead').replace('{total}', String(works.value.length)));
 
     const sortLegend = computed(() => t('gallery.sortLegend'));
     const filterLegend = computed(() => t('gallery.filterLegend'));
 
-    const viewOptions = computed(() => [
-        { value: 'editorial' as const, label: t('gallery.viewEditorial') },
-        { value: 'grid' as const, label: t('gallery.viewGrid') },
-    ]);
-
-    const viewLegend = computed(() => t('gallery.viewLegend'));
     const toolbarAriaLabel = computed(() => t('gallery.toolbarAriaLabel'));
 
     usePortfolioSeo(() => ({
@@ -213,28 +111,19 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
         t,
         sortMode,
         filterModes,
-        viewMode,
         sortOptions,
         filterOptions,
-        viewOptions,
-        galleryEntries,
         filteredWorks,
-        editorialYearGroups,
         lead,
-        editorialKicker,
-        editorialStats,
-        heroNumber,
-        heroAriaLabel,
         sortLegend,
         filterLegend,
-        viewLegend,
         toolbarAriaLabel,
         titleKey: config.titleKey,
         basePath: config.basePath,
     };
 }
 
-function matchesFilter(work: WorkItem, filter: WorkFilterMode) {
+function matchesFilter(work: WorkSummary, filter: WorkFilterMode) {
     if (filter === 'featured') return work.pin;
     if (filter === 'individual') return /^(개인|Personal)\s*\//i.test(work.type);
     if (filter === 'team') return /^(팀|Team)\s*\//i.test(work.type);
@@ -245,29 +134,26 @@ function matchesFilter(work: WorkItem, filter: WorkFilterMode) {
     return true;
 }
 
-function matchesFilters(work: WorkItem, filters: readonly WorkFilterMode[]) {
+function matchesFilters(work: WorkSummary, filters: readonly WorkFilterMode[]) {
     return filters.length === 0 || filters.some((filter) => matchesFilter(work, filter));
 }
 
 export function useGalleryRouteWorks(variant: GalleryArchiveVariant) {
-    const { content } = useLocale();
-
-    return computed(() => (variant === 'career' ? content.value.works.career : content.value.works.personal) as unknown as WorkItem[]);
+    const { locale } = useLocale();
+    const { resolveAppPath } = useAppPath();
+    return useAsyncData(
+        () => `works-${locale.value}-${variant}`,
+        () => $fetch<WorkSummary[]>(resolveAppPath(`/content/${locale.value}/works-${variant}.json`)),
+        { default: () => [], deep: false },
+    );
 }
 
 export function useGalleryRouteWork(variant: GalleryArchiveVariant, id: string) {
-    const works = useGalleryRouteWorks(variant);
-
-    return computed(() => {
-        const work = works.value.find((item) => item.id === id);
-
-        if (!work) {
-            throw createError({
-                statusCode: 404,
-                statusMessage: variant === 'career' ? 'Project not found' : 'Personal project not found',
-            });
-        }
-
-        return work;
-    });
+    const { locale } = useLocale();
+    const { resolveAppPath } = useAppPath();
+    return useAsyncData(
+        () => `work-${locale.value}-${variant}-${id}`,
+        () => $fetch<WorkItem>(resolveAppPath(`/content/${locale.value}/works/${variant}/${id}.json`)),
+        { deep: false },
+    );
 }

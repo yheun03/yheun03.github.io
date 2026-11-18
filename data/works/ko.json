@@ -1,0 +1,1552 @@
+{
+  "career": [
+    {
+      "id": "samhwa-eco-dashboard",
+      "category": "project",
+      "title": "삼화페인트 생태공장 대시보드",
+      "period": "2026.05",
+      "type": "SI / 대시보드",
+      "role": "전체 화면 퍼블리싱 단독 담당, 기존 UI 규칙 개선 참여",
+      "tech": [
+        "Visual Studio Code",
+        "Git",
+        "Vue",
+        "JavaScript",
+        "SCSS",
+        "HTML"
+      ],
+      "introduction": "삼화페인트 생태공장의 공정, 환경 데이터를 보여 주는 대시보드입니다. 전체 화면 퍼블리싱을 맡아 카드, 차트, 상태 표시의 간격과 색상, 정렬을 맞췄습니다.",
+      "myWorks": [
+        "대시보드 Client 화면 전체 퍼블리싱 — 카드, 데이터 영역, 상태 표시, 차트, 정보성 UI",
+        "화면별로 흩어져 있던 위계 / 간격 / 정렬 기준을 통일해 일관된 카드형 레이아웃 정립",
+        "정상 / 경고 등 상태 표현을 색 / 라벨 규칙으로 정리해 데이터 판독성 강화",
+        "차트 / 수치 영역의 반응형 대응으로 다양한 해상도에서 가독성 유지",
+        "기존 화면의 불규칙한 스타일을 정리하고 카드 / 상태 / 차트 UI 규칙을 문서화"
+      ],
+      "achievements": [
+        "화면별로 달랐던 간격 / 정렬 / 상태 색을 하나의 규칙으로 통일",
+        "카드와 상태 표현 기준을 공통화해 신규 위젯도 같은 시각 규칙으로 추가할 수 있게 구성"
+      ],
+      "points": [
+        "공정, 환경 데이터 대시보드",
+        "카드, 차트, 상태 표시 통일",
+        "전체 화면 퍼블리싱"
+      ],
+      "pin": true,
+      "duration": "약 1개월",
+      "captures": [
+        "/assets/images/projects/samhwa-eco-dashboard/image-01.webp"
+      ],
+      "languages": [
+        "Vue",
+        "JavaScript",
+        "SCSS",
+        "HTML"
+      ]
+    },
+    {
+      "id": "orchem-mes",
+      "category": "project",
+      "title": "오알켐 MES 리뉴얼",
+      "period": "2026.03~",
+      "type": "실무 / 구축",
+      "role": "전체 화면 퍼블리싱 단독 담당, 공통 컴포넌트 구조와 화면 설계 주도",
+      "tech": [
+        "Vue 3",
+        "Vite",
+        "JavaScript",
+        "SCSS",
+        "HTML",
+        "Vue Router",
+        "Pinia",
+        "Axios",
+        "Vue I18n",
+        "AG Grid",
+        "Chart.js",
+        "flatpickr",
+        "marked"
+      ],
+      "introduction": "Vue 3와 Vite로 제조 현장의 MES를 리뉴얼했습니다. 전체 화면 퍼블리싱과 공통 컴포넌트를 맡았고, AG Grid 테이블과 태블릿 레이아웃을 작업했습니다.",
+      "myWorks": [
+        "Vue Router / Pinia / Axios / Vue I18n 구조에 맞춰 MES 업무 화면 퍼블리싱 / 구성",
+        "공통 컴포넌트(AppGrid / AppInput / AppSelect / AppButton / AppAccordion / AppModalHost)를 활용 / 개선해 화면 간 UI 일관성 확보",
+        "원재료 준비 / 중간 검사 / 검사 결과 / 태블릿 화면의 레이아웃과 인터랙션 개선",
+        "AG Grid 검색 / 선택 / 삭제 / 칩 렌더링 / 조건부 스타일 / 엑셀 다운로드 / 행/헤더 높이까지 테이블 동작 정리",
+        "태블릿 환경의 버튼 / 카드 / 아코디언 / 그리드 반응형 / 터치 UI 개선",
+        "API 응답 / 다국어 키를 안정적으로 반영하도록 props / 상태값 / 이벤트 처리 구조 정리"
+      ],
+      "achievements": [
+        "화면마다 반복하던 입력 / 버튼 / 모달 UI를 AppInput / AppSelect / AppButton / AppModalHost로 모음",
+        "AG Grid의 검색 / 선택 / 삭제 / 칩 / 조건부 스타일 / 다운로드 동작을 AppGrid 기준으로 통일",
+        "API 응답과 다국어 키를 props / 상태 / 이벤트 흐름에 연결해 화면별 임시 처리 대신 공통 구조를 사용"
+      ],
+      "points": [
+        "AG Grid 검색, 선택, 다운로드 UI",
+        "태블릿 레이아웃",
+        "Vue 3, Vite 업무 화면"
+      ],
+      "pin": true,
+      "duration": "진행 중 / 약 3개월~",
+      "captures": [
+        "/assets/images/projects/orchem-mes/image-01.webp",
+        "/assets/images/projects/orchem-mes/image-02.webp",
+        "/assets/images/projects/orchem-mes/image-03.webp",
+        "/assets/images/projects/orchem-mes/image-04.webp",
+        "/assets/images/projects/orchem-mes/image-05.webp",
+        "/assets/images/projects/orchem-mes/image-06.webp"
+      ],
+      "languages": [
+        "Vue 3",
+        "Vite",
+        "JavaScript",
+        "SCSS",
+        "AG Grid"
+      ]
+    },
+    {
+      "id": "hanjinkal",
+      "category": "project",
+      "title": "한진칼 및 계열사 리뉴얼",
+      "period": "2025.02~07",
+      "type": "기업 사이트 / CMS",
+      "role": "개발 및 환경 설정 가이드 작성, 교육과 운영 안정화 지원, 협력사와 고객사 기술 커뮤니케이션 담당",
+      "tech": [
+        "IntelliJ",
+        "ICE 5.0",
+        "Microsoft Teams",
+        "Word",
+        "PowerPoint",
+        "HTML",
+        "SCSS",
+        "Vue.js"
+      ],
+      "introduction": "한진칼과 계열사 홈페이지의 Vue 컴포넌트를 ICE 5.0 CMS에 맞게 수정했습니다. 환경 설정과 개발 방법을 가이드로 작성해 교육 때 공유하고, 협력사와 고객사의 기술 문의에도 대응했습니다.",
+      "myWorks": [
+        "콘센트릭스가 전달한 Vue 컴포넌트를 ICE 5.0 CMS 구조에 맞게 커스터마이징 / 재구성",
+        "ICE가 요구하는 파일 구조를 직접 설계하고, 컴포넌트를 재사용 / 확장 가능한 CMS 친화형으로 변환",
+        "공식 가이드 부재로 생긴 교육 혼선을 해소하기 위해 개발 구조 / ICE 세팅 가이드를 직접 기획 / 제작해 콘센트릭스 / 한진칼에 공유",
+        "ICE 내부 기능 미비로 발생한 이슈를 ICE 담당자와 지속 커뮤니케이션하며 해결 속도 단축",
+        "퍼블리싱 가이드를 유지하면서 다양한 디바이스 대응 마크업 / 스타일링을 주도적으로 수정 / 적용",
+        "2025.04 ICE 담당자 롤아웃 이후 대외 커뮤니케이션 전담, 내부 산출물 정리 / 공유로 협업 효율 유지"
+      ],
+      "achievements": [
+        "환경 설정과 개발 가이드를 정리해 교육과 협업 때 공유",
+        "ICE 기능에 맞춰 컴포넌트를 수정하고 재사용할 수 있도록 정리",
+        "콘센트릭스, 아이온, 한진칼 사이의 기술 문의와 작업 내용 조율"
+      ],
+      "points": [
+        "ICE 5.0 CMS 컴포넌트 수정",
+        "설정 가이드 작성과 교육",
+        "협력사, 고객사 기술 문의 대응"
+      ],
+      "pin": true,
+      "duration": "약 6개월",
+      "captures": [
+        "/assets/images/projects/hanjinkal/image-01.webp",
+        "/assets/images/projects/hanjinkal/image-02.webp",
+        "/assets/images/projects/hanjinkal/image-03.webp",
+        "/assets/images/projects/hanjinkal/image-04.webp",
+        "/assets/images/projects/hanjinkal/image-05.webp"
+      ],
+      "languages": [
+        "HTML",
+        "SCSS",
+        "Vue"
+      ]
+    },
+    {
+      "id": "oms",
+      "category": "project",
+      "title": "깨끗한나라 OMS 리뉴얼",
+      "period": "2024.07~2025.02",
+      "type": "시스템 리뉴얼",
+      "role": "전체 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "Vue",
+        "SCSS",
+        "Figma"
+      ],
+      "introduction": "깨끗한나라 OMS의 전체 화면 퍼블리싱을 맡아 주요 화면을 약 1개월 일찍 완료했습니다. 이후 Vue 컴포넌트 개발에 참여하고, 오픈 전 여백과 폰트를 포함한 UI/UX 개선안을 제안했습니다.",
+      "myWorks": [
+        "전체 화면을 Vue 기반으로 퍼블리싱 전담",
+        "주요 화면을 약 1개월 만에 조기 완료해 일정 여유 확보",
+        "잔여 기간에 자발적으로 Vue 컴포넌트 개발에 참여해 프론트엔드 기여 확대",
+        "서비스 오픈 전 UI/UX 개선 항목을 정리해 팀장에게 제안, 일부 실제 반영",
+        "세부 마진 / 폰트 크기까지 점검해 화면 완성도 유지"
+      ],
+      "achievements": [
+        "주요 화면 약 1개월 조기 완료로 일정 리스크 완화",
+        "개선 제안 일부가 실제 반영되어 사용자 경험 향상에 기여"
+      ],
+      "points": [
+        "주요 화면 약 1개월 조기 완료",
+        "Vue 컴포넌트 개발 참여",
+        "오픈 전 UI/UX 개선 제안"
+      ],
+      "pin": true,
+      "duration": "약 8개월",
+      "captures": [
+        "/assets/images/projects/oms/image-01.webp",
+        "/assets/images/projects/oms/image-02.webp",
+        "/assets/images/projects/oms/image-03.webp",
+        "/assets/images/projects/oms/image-04.webp",
+        "/assets/images/projects/oms/image-05.webp"
+      ],
+      "languages": [
+        "Vue",
+        "SCSS"
+      ]
+    },
+    {
+      "id": "smart-factory-gov",
+      "category": "project",
+      "title": "스마트팩토리 정부 사업 프로젝트",
+      "period": "2021.05~2022.07",
+      "type": "SI / SM",
+      "role": "전체 화면 퍼블리싱 전담, 고객사별 UI 디자인 참여",
+      "tech": [
+        "eGovFrame",
+        "Adobe XD",
+        "HTML",
+        "CSS",
+        "jQuery"
+      ],
+      "introduction": "테라에코, 썬겔, 다우기업, 신애전자 등 제조사의 MES, 스마트팩토리 구축에 참여했습니다. 전체 화면 퍼블리싱과 고객사별 UI 디자인을 맡았고, 이후 Robo MES 솔루션에도 이 작업 경험을 적용했습니다.",
+      "myWorks": [
+        "테라에코 MES 도입 / 스마트팩토리 구축의 전체 화면 퍼블리싱 담당",
+        "썬겔 / 다우기업 / 신애전자 등 다수 제조사로 확장하며 기업별 요구사항 반영",
+        "각 기업의 브랜드 철학 / 색상을 반영한 맞춤 UI 디자인(20%) 제공",
+        "반복 화면을 솔루션화 관점으로 정리해 후속 재사용 기반 마련"
+      ],
+      "achievements": [
+        "고객사별 브랜드와 색상을 반영해 MES, 스마트팩토리 화면 제작",
+        "MES 구축 경험을 이후 Robo MES 솔루션에 적용"
+      ],
+      "points": [
+        "여러 제조사의 MES 화면 구축",
+        "고객사별 UI 디자인",
+        "Robo MES에 작업 경험 적용"
+      ],
+      "pin": false,
+      "duration": "약 15개월",
+      "captures": [
+        "/assets/images/projects/smart-factory-gov/image-01.webp",
+        "/assets/images/projects/smart-factory-gov/image-02.webp",
+        "/assets/images/projects/smart-factory-gov/image-03.webp",
+        "/assets/images/projects/smart-factory-gov/image-04.webp",
+        "/assets/images/projects/smart-factory-gov/image-05.webp"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery"
+      ]
+    },
+    {
+      "id": "kwangjang-homepage",
+      "category": "project",
+      "title": "광장 파트너스 홈페이지",
+      "period": "2020.11~2020.12",
+      "type": "SI / 구축",
+      "role": "전체 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "Visual Studio Code",
+        "Sketch",
+        "HTML",
+        "CSS",
+        "jQuery"
+      ],
+      "introduction": "입사 초기에 맡은 광장 파트너스 기업 홈페이지 신규 구축 작업입니다. Sketch 시안을 기준으로 반응형 / 크로스브라우징을 챙기며 기업 사이트의 기본기를 다졌습니다.",
+      "myWorks": [
+        "기업 홈페이지 전 화면 퍼블리싱 전담",
+        "Sketch 시안 기반 반응형 / 크로스브라우징 대응"
+      ],
+      "achievements": [
+        "Sketch 시안을 반응형 및 크로스브라우징 화면으로 구현하며 기업 사이트 납품 경험 확보"
+      ],
+      "points": [
+        "Sketch 시안 구현",
+        "반응형, 크로스브라우징"
+      ],
+      "pin": false,
+      "duration": "약 2개월",
+      "captures": [
+        "/assets/images/projects/placeholder.svg"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery"
+      ]
+    },
+    {
+      "id": "hama-app",
+      "category": "project",
+      "title": "하마 애플리케이션",
+      "period": "2020.09~2020.10",
+      "type": "SI / 구축",
+      "role": "전체 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "Visual Studio Code",
+        "Sketch",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "introduction": "입사 첫 달에 맡은 부동산 건축 서비스 애플리케이션 작업입니다. 화면 퍼블리싱부터 웹앱 형태의 사용 흐름까지 처음으로 다뤘습니다.",
+      "myWorks": [
+        "부동산 건축 서비스 애플리케이션 화면 퍼블리싱",
+        "JavaScript 기반 인터랙션 구현",
+        "웹앱(WebApp) 형태로 빌드해 앱 사용 흐름 구현"
+      ],
+      "achievements": [
+        "입사 첫 달에 JavaScript 인터랙션과 웹앱 사용 흐름을 포함한 전체 화면 퍼블리싱 완수"
+      ],
+      "points": [
+        "앱 형태의 웹 화면 구현",
+        "JavaScript 인터랙션"
+      ],
+      "pin": false,
+      "duration": "약 2개월",
+      "captures": [
+        "/assets/images/projects/placeholder.svg"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": "hanon",
+      "category": "operation",
+      "title": "한온시스템 홈페이지 운영",
+      "period": "2025.07~",
+      "type": "SM 운영",
+      "role": "홈페이지 퍼블리싱 운영과 이슈 대응 담당",
+      "tech": [
+        "Rider",
+        "Teams",
+        "JIRA",
+        "C#",
+        "CSS3",
+        "csHtml",
+        "JavaScript"
+      ],
+      "introduction": "콘센트릭스 CATALYST와 함께 한온시스템 홈페이지 운영을 맡고 있습니다. JIRA 요청에 따라 화면을 수정하고, csHtml 뷰와 CSS 경로, CSP, 인코딩, 404 등 관련 설정을 확인합니다.",
+      "myWorks": [
+        "JIRA 운영 티켓 기반으로 요청사항을 분석하고 우선순위에 맞춰 대응",
+        "문구 / 타이틀 / 이미지 / 링크 / 레이아웃 / 콘텐츠 영역 등 퍼블리싱 중심 유지보수 수행",
+        "csHtml 화면 구조를 확인하고 필요 시 CSS / 정적 리소스를 직접 수정",
+        "CSP / 인코딩 / 정적 리소스 경로 / 404 / 보안 점검 이슈를 퍼블리싱 관점에서 검토하고 영향 범위 정리"
+      ],
+      "achievements": [
+        "운영 요청을 신속히 반영해 홈페이지 콘텐츠의 최신성 유지",
+        "뷰 구조 / CSS 경로 / 보안 설정 영향까지 함께 검토해 운영 안정성 확보에 기여"
+      ],
+      "points": [
+        "홈페이지 콘텐츠, 화면 수정",
+        "JIRA 요청 관리",
+        "뷰, 리소스 경로, 보안 설정 점검"
+      ],
+      "pin": true,
+      "duration": "진행 중",
+      "captures": [
+        "/assets/images/projects/hanon/image-01.webp",
+        "/assets/images/projects/hanon/image-02.webp"
+      ],
+      "languages": [
+        "C#",
+        "CSS3",
+        "csHtml",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": "tms-maintenance",
+      "category": "operation",
+      "title": "TMS 운영 / 보수",
+      "period": "2023.05~2023.07",
+      "type": "SM 운영 / 보수",
+      "role": "고객 이슈 접수, 분류, 리포트와 보수 퍼블리싱 담당",
+      "tech": [
+        "Nexacro"
+      ],
+      "introduction": "태림포장, 대영포장 TMS의 속도 저하 원인을 단위 테스트로 찾아 해결한 뒤, 고객 문의와 화면 보수도 맡았습니다. 개선 작업 후 일 평균 15건 이상이던 불편 접수가 2건 수준으로 줄었고, 처리 방법을 문서로 남겼습니다.",
+      "myWorks": [
+        "속도 저하 이슈를 단위 테스트로 특정해 원인 해결",
+        "자발적으로 고객 응대를 맡아 속도 / 화면 오류 등 불편사항 즉시 처리",
+        "미해결 이슈는 개발팀에 신속 보고하고, 해결 케이스를 산출물로 정리",
+        "반복되는 불편 사항을 분석해 UX/UI 개선 / 보수 화면(Nexacro)으로 연결"
+      ],
+      "achievements": [
+        "일 평균 불편 접수 15건 이상 → 2건 수준으로 감소",
+        "해결 케이스 산출물이 동일 이슈 재발 시 대응 자료로 재사용됨"
+      ],
+      "points": [
+        "속도 저하 원인 확인과 수정",
+        "고객 문의 접수, 분류, 응대",
+        "반복 이슈 처리 문서"
+      ],
+      "pin": false,
+      "duration": "약 3개월",
+      "captures": [
+        "/assets/images/projects/placeholder.svg"
+      ],
+      "languages": [
+        "Nexacro"
+      ]
+    },
+    {
+      "id": "framework",
+      "category": "solution",
+      "title": "조앤소프트 프레임워크 구축",
+      "period": "2026.02~",
+      "type": "내부 프로젝트 / 프레임워크",
+      "role": "퍼블리싱 표준과 Nuxt 3 프론트엔드 구조, 디자인 토큰 주도 설계",
+      "tech": [
+        "Nuxt 3",
+        "Vue 3",
+        "TypeScript",
+        "JavaScript",
+        "SCSS",
+        "Pinia",
+        "Axios",
+        "Vite",
+        "Vue I18n",
+        "Chart.js",
+        "vue-chartjs",
+        "AG Grid",
+        "flatpickr",
+        "noUiSlider"
+      ],
+      "introduction": "프로젝트의 초기 설정과 반복 UI를 공통으로 사용할 수 있도록 Nuxt 3 기반 사내 프레임워크를 만들었습니다. 라우팅, 상태 관리, API 플러그인, UI 컴포넌트와 SCSS 설정을 정리했습니다.",
+      "myWorks": [
+        "자동 라우팅 / 컴포넌트 자동 import / Pinia 상태 관리 / Axios API 플러그인 등 기반 구조 정리",
+        "AppButton / AppInput / AppSelect / AppDatePicker / AppProgress / Chart / AG Grid 등 재사용 컴포넌트 제작",
+        "컴포넌트마다 size / disabled / readonly / focus / error / loading / active 등 실무 상태를 반영",
+        "BEM 네이밍과 디자인 토큰(색 / 타이포 / 간격 / 상태 / 반응형)을 기준으로 SCSS 구조 설계",
+        "composable / 레이아웃 / 공통 플러그인을 실무 적용 가능한 형태로 구성하고 예제 페이지 제작"
+      ],
+      "achievements": [
+        "프로젝트마다 반복 구축하던 기본 UI / 레이아웃 / API 연동 / SCSS 구조를 프레임워크화",
+        "컴포넌트 / API 구조 / 예제 페이지를 함께 정리해 신규 프로젝트 착수 속도를 높이는 협업 표준 구축"
+      ],
+      "points": [
+        "Nuxt 3 공통 프레임워크",
+        "상태별 UI 컴포넌트",
+        "디자인 토큰, SCSS 설정"
+      ],
+      "pin": true,
+      "duration": "진행 중",
+      "captures": [
+        "/assets/images/projects/framework/image-01.webp",
+        "/assets/images/projects/framework/image-02.webp",
+        "/assets/images/projects/framework/image-03.webp",
+        "/assets/images/projects/framework/image-04.webp"
+      ],
+      "languages": [
+        "Nuxt 3",
+        "Vue 3",
+        "TypeScript",
+        "SCSS"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/framework/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/yheun03/framework"
+        }
+      ]
+    },
+    {
+      "id": "infra",
+      "category": "solution",
+      "title": "자사 개발 인프라 및 퍼블리싱 표준화",
+      "period": "2026.02~",
+      "type": "내부 프로젝트",
+      "role": "퍼블리싱 표준화와 공통 UI 구조 개선, 개발 가이드 작성",
+      "tech": [
+        "GitHub",
+        "Visual Studio Code",
+        "Cursor",
+        "Figma",
+        "Vue 3",
+        "Nuxt 3",
+        "SCSS",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "introduction": "프로젝트마다 달랐던 폴더, 컴포넌트 이름, SCSS와 API, 다국어 처리 방식을 정리했습니다. 사내 프레임워크와 함께 사용할 예제 페이지, 스타일 가이드와 개발 문서도 작성했습니다.",
+      "myWorks": [
+        "버튼 / 입력폼 / 셀렉트 / 달력 / 프로그레스 / 차트 / 그리드 / LNB / 레이아웃 구조를 공통화",
+        "컴포넌트 네이밍 / 폴더 구조 / API 연동 / 다국어 처리 방식을 신규 프로젝트 재사용 가능한 형태로 정리",
+        "SCSS 토큰 / BEM 네이밍 / 컴포넌트 단위 스타일 관리 방식 정립",
+        "실무 적용 가능한 예제 페이지와 스타일 가이드 제작 / 문서화"
+      ],
+      "achievements": [
+        "신규 프로젝트 착수 시 기본 레이아웃 / 컴포넌트 / 스타일 가이드를 빠르게 적용할 수 있는 기반 마련",
+        "산발적이던 UI 구조를 공통화해 퍼블리싱–프론트엔드 협업 생산성 향상 기반 구축"
+      ],
+      "points": [
+        "폴더, 컴포넌트, SCSS 규칙 정리",
+        "공통 UI와 API 처리",
+        "예제 페이지, 개발 가이드"
+      ],
+      "pin": true,
+      "duration": "진행 중",
+      "captures": [
+        "/assets/images/projects/placeholder.svg"
+      ],
+      "languages": [
+        "Vue 3",
+        "Nuxt 3",
+        "SCSS",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": "robo-tms",
+      "category": "solution",
+      "title": "Robo TMS 솔루션",
+      "period": "2024.02~04",
+      "type": "자사 솔루션",
+      "role": "기획 공동 참여, 전체 화면 퍼블리싱과 UI 디자인 담당",
+      "tech": [
+        "Vue",
+        "SCSS",
+        "Figma"
+      ],
+      "introduction": "TMS 운영 중 확인한 고객 요구를 반영해 자사 물류 솔루션을 만들었습니다. 기획에 함께 참여하고, 고객용 앱의 UI 디자인과 Vue, SCSS 퍼블리싱을 맡았습니다.",
+      "myWorks": [
+        "운영 중 수집한 고객 요구 / 문의를 바탕으로 기획에 참여",
+        "고객용 애플리케이션의 UI / UX 디자인을 직접 설계",
+        "Vue / SCSS 기반으로 전체 화면 퍼블리싱 전담",
+        "개편된 UI와 더 편한 사용 흐름으로 사용성 개선"
+      ],
+      "achievements": [
+        "TMS 운영에서 확인한 반복 문의를 화면 흐름과 상태 표현 개선에 반영",
+        "운영 경험을 제품화로 연결한 자사 솔루션 결과물 완성"
+      ],
+      "points": [
+        "기획 참여, UI 디자인, 퍼블리싱",
+        "운영 중 받은 고객 요구 반영",
+        "Vue, SCSS 고객용 앱"
+      ],
+      "pin": false,
+      "duration": "약 3개월",
+      "captures": [
+        "/assets/images/projects/robo-tms/image-01.webp",
+        "/assets/images/projects/robo-tms/image-02.webp",
+        "/assets/images/projects/robo-tms/image-03.webp"
+      ],
+      "languages": [
+        "Vue",
+        "SCSS"
+      ]
+    },
+    {
+      "id": "robo-mes",
+      "category": "solution",
+      "title": "Robo MES 솔루션 개발",
+      "period": "2022.08~2023.04",
+      "type": "자사 솔루션",
+      "role": "전체 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "WebSquare",
+        "Figma",
+        "HTML",
+        "CSS",
+        "jQuery"
+      ],
+      "introduction": "여러 제조사의 MES 구축 경험을 바탕으로 만든 자사 Robo MES 솔루션입니다. 전체 화면 퍼블리싱을 맡고, 반복되는 화면을 모듈로 나눠 이후 프로젝트에서도 사용할 수 있게 만들었습니다.",
+      "myWorks": [
+        "반복 화면을 모듈 단위 UI 컴포넌트로 구축",
+        "전체 퍼블리싱을 전담하며 화면 구조 일관성 고도화",
+        "WebSquare 환경에서 컴포넌트 재사용 체계 정착"
+      ],
+      "achievements": [
+        "반복 화면을 모듈로 정리해 후속 프로젝트에서 다시 사용할 수 있는 구조 확보",
+        "현장 프로젝트 노하우를 재사용 가능한 솔루션 자산으로 전환"
+      ],
+      "points": [
+        "자사 MES 솔루션 화면 구축",
+        "반복 화면 모듈화"
+      ],
+      "pin": false,
+      "duration": "약 9개월",
+      "captures": [
+        "/assets/images/projects/robo-mes/image-01.webp",
+        "/assets/images/projects/robo-mes/image-02.webp"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery"
+      ]
+    },
+    {
+      "id": "company-renewal",
+      "category": "renewal",
+      "title": "자사 홈페이지 리뉴얼",
+      "period": "2025.07~2025.08",
+      "type": "내부 프로젝트",
+      "role": "전체 화면 퍼블리싱 단독 담당, UI 개선과 콘텐츠 구조 제안",
+      "tech": [
+        "Cursor",
+        "Figma",
+        "Git",
+        "FileZilla",
+        "Whois Hosting",
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "jQuery"
+      ],
+      "introduction": "AW VIETNAM 2025 전시회에 맞춰 자사 홈페이지를 3주 동안 리뉴얼했습니다. 중복 코드를 정리하고 영문, 베트남어, SEO, SSL을 적용했으며, FTP 배포 대신 Git으로 변경 이력을 관리하도록 제안했습니다.",
+      "myWorks": [
+        "중복 마크업 / 불필요 요소를 제거하고 SCSS 컴포넌트 구조 도입으로 유지보수성 개선",
+        "AW VIETNAM 2025 대비 영문 / 베트남어 다국어를 유연한 텍스트 적용 방식으로 설계 / 구현",
+        "형상관리가 안 되던 FTP 배포를 Git 도입으로 전환하자고 주도적으로 제안 / 적용",
+        "최신 프로젝트 레퍼런스 / 솔루션 / 회사 소개 등 콘텐츠를 최신화하고 일부 페이지 구성 기획",
+        "SSL 인증서 적용과 SEO / 오픈그래프 / 접근성 / 반응형 표준 반영"
+      ],
+      "achievements": [
+        "중복 마크업을 제거하고 SCSS 컴포넌트로 묶어 수정 지점을 명확히 정리",
+        "다국어 / SEO / SSL / OG를 적용해 해외 전시 대응과 검색 및 공유 기반 마련",
+        "FTP→Git 전환으로 배포 안정성과 협업 추적성 확보"
+      ],
+      "points": [
+        "기업 소개, 서비스 정보 재정리",
+        "영문, 베트남어, 웹 표준 대응",
+        "Git 변경 이력 관리 도입 제안"
+      ],
+      "pin": true,
+      "duration": "약 3주",
+      "captures": [
+        "/assets/images/projects/company-renewal/image-01.webp",
+        "/assets/images/projects/company-renewal/image-02.webp",
+        "/assets/images/projects/company-renewal/image-03.webp"
+      ],
+      "languages": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "jQuery"
+      ],
+      "links": [
+        {
+          "label": "사이트 보기",
+          "href": "https://jonsoft.co.kr/"
+        }
+      ]
+    },
+    {
+      "id": "kyungdongwon-cms",
+      "category": "renewal",
+      "title": "경동원 CMS 리뉴얼",
+      "period": "2025.07",
+      "type": "SI / CMS",
+      "role": "신규 및 수정 화면 퍼블리싱 담당",
+      "tech": [
+        "WebSquare SP5",
+        "XML",
+        "CSS3"
+      ],
+      "introduction": "기존 담당자의 장기 공가로 생긴 공백을 메우기 위해 짧게 투입된 프로젝트입니다. 이미 만들어진 화면을 빠르게 파악해 오류를 고치고 신규 페이지까지 제작했습니다.",
+      "myWorks": [
+        "기존 인원이 제작한 화면의 디테일한 오류 수정",
+        "신규 페이지 퍼블리싱",
+        "웹스퀘어 SP5 CMS 구조에 빠르게 적응해 합류"
+      ],
+      "achievements": [
+        "약 2주 내 신규 / 수정 화면 납품 완료",
+        "코드 기준을 맞춰 기존 작업과의 충돌 최소화"
+      ],
+      "points": [
+        "약 2주간 신규, 수정 화면 작업",
+        "기존 CMS 코드에 맞춘 구현"
+      ],
+      "pin": false,
+      "duration": "약 2주",
+      "captures": [
+        "/assets/images/projects/kyungdongwon-cms/image-01.webp",
+        "/assets/images/projects/kyungdongwon-cms/image-02.webp",
+        "/assets/images/projects/kyungdongwon-cms/image-03.webp"
+      ],
+      "languages": [
+        "XML",
+        "CSS3"
+      ]
+    },
+    {
+      "id": "fems",
+      "category": "renewal",
+      "title": "삼화페인트 FEMS 리뉴얼",
+      "period": "2024.11",
+      "type": "SI / 단기 납품",
+      "role": "주요 화면 퍼블리싱 공동 담당",
+      "tech": [
+        "Visual Studio Code",
+        "Figma",
+        "HTML",
+        "SCSS",
+        "React.js"
+      ],
+      "introduction": "삼화페인트 FEMS 도입 프로젝트에서 React 기반 주요 화면을 1주 안에 구현해야 했습니다. 기존 업무 시스템 퍼블리싱 경험을 활용해 필요한 화면을 일정에 맞춰 완성했습니다.",
+      "myWorks": [
+        "1주 내 우선 구현이 필요한 React 주요 화면 단기 구축",
+        "급한 납기 속에서도 완성도를 유지하는 퍼블리싱 수행"
+      ],
+      "achievements": [
+        "1주 내 주요 화면 구현으로 일정 준수 / 프로젝트 안정화 지원"
+      ],
+      "points": [
+        "1주 내 주요 화면 구현",
+        "React 환경의 퍼블리싱"
+      ],
+      "pin": false,
+      "duration": "약 1주",
+      "captures": [
+        "/assets/images/projects/fems/image-01.webp",
+        "/assets/images/projects/fems/image-02.webp"
+      ],
+      "languages": [
+        "HTML",
+        "SCSS",
+        "React"
+      ]
+    },
+    {
+      "id": "scm-daeyang-paper",
+      "category": "renewal",
+      "title": "대양제지 SCM 리뉴얼",
+      "period": "2024.05~2024.06",
+      "type": "SI / 신규 구축",
+      "role": "전체 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "Visual Studio Code",
+        "Figma",
+        "HTML",
+        "SCSS"
+      ],
+      "introduction": "대양제지 SCM 구축에서 공통 컴포넌트를 활용해 반복 화면을 구현했습니다. 기존에 사용하던 마크업과 스타일을 재사용해 작업량과 수정 범위를 줄였습니다.",
+      "myWorks": [
+        "공통 UI 요소를 체계화하고 재사용 구조로 반영",
+        "컴포넌트 기반 퍼블리싱으로 화면 일관성 확보",
+        "유지보수 / 확장성을 고려한 마크업 설계"
+      ],
+      "achievements": [
+        "공통 컴포넌트를 재사용해 반복 마크업과 수정 범위를 줄임",
+        "퍼블리싱 효율화로 개발 일정 단축에 기여"
+      ],
+      "points": [
+        "공통 컴포넌트 재사용",
+        "반복 마크업과 수정 범위 축소"
+      ],
+      "pin": false,
+      "duration": "약 2개월",
+      "captures": [
+        "/assets/images/projects/scm-daeyang-paper/image-01.webp",
+        "/assets/images/projects/scm-daeyang-paper/image-02.webp",
+        "/assets/images/projects/scm-daeyang-paper/image-03.webp"
+      ],
+      "languages": [
+        "HTML",
+        "SCSS"
+      ]
+    },
+    {
+      "id": "scm-daeyang-board",
+      "category": "renewal",
+      "title": "대양판지 SCM 리뉴얼",
+      "period": "2023.08~2024.01",
+      "type": "SI / 리뉴얼",
+      "role": "고객 및 관리자 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "Visual Studio Code",
+        "Figma",
+        "HTML",
+        "SCSS",
+        "React"
+      ],
+      "introduction": "대양판지 SCM의 고객용 화면과 관리자 화면을 작업했습니다. 고객용은 HTML로 구현하고, 관리자는 React 컴포넌트로 전환했습니다.",
+      "myWorks": [
+        "고객 버전 HTML 퍼블리싱",
+        "관리자 버전을 React 구조에 맞춰 컴포넌트로 제작",
+        "버전별 요구사항에 맞춘 화면 분리 / 구성"
+      ],
+      "achievements": [
+        "고객용 HTML 화면과 관리자용 React 컴포넌트를 분리 구현해 서로 다른 운영 요구에 대응"
+      ],
+      "points": [
+        "고객용, 관리자용 화면 분리",
+        "HTML, React 화면 구현"
+      ],
+      "pin": false,
+      "duration": "약 6개월",
+      "captures": [
+        "/assets/images/projects/scm-daeyang-board/image-01.webp",
+        "/assets/images/projects/scm-daeyang-board/image-02.webp"
+      ],
+      "languages": [
+        "HTML",
+        "SCSS",
+        "React"
+      ]
+    },
+    {
+      "id": "company-renewal-2022",
+      "category": "renewal",
+      "title": "자사 홈페이지 리뉴얼 (2022)",
+      "period": "2022.01~2022.03",
+      "type": "내부 프로젝트",
+      "role": "전체 화면 퍼블리싱 단독 담당, UI 디자인과 UX 구조 개선 참여",
+      "tech": [
+        "Visual Studio Code",
+        "Figma",
+        "FileZilla",
+        "Whois Hosting",
+        "HTML",
+        "CSS",
+        "jQuery"
+      ],
+      "introduction": "자사 홈페이지 리뉴얼을 제안하고 기획, 디자인, 퍼블리싱, 배포, 운영을 맡았습니다. 참고 사이트를 조사해 콘텐츠를 구성하고, SEO와 오픈그래프를 적용한 뒤 후이즈 호스팅에 배포했습니다.",
+      "myWorks": [
+        "홈페이지에 담길 콘텐츠를 직접 기획하고 성공 레퍼런스 수집 / 활용",
+        "SEO / 오픈그래프 프로토콜을 반영한 퍼블리싱 수행",
+        "후이즈 호스팅으로 배포하고 이후 지속 운영 / 관리"
+      ],
+      "achievements": [
+        "기업 소개와 서비스 정보를 다시 구성해 홈페이지 리뉴얼"
+      ],
+      "points": [
+        "기획부터 배포, 운영까지 담당",
+        "기업 소개, 서비스 콘텐츠 구성"
+      ],
+      "pin": false,
+      "duration": "약 3개월",
+      "captures": [
+        "/assets/images/projects/company-renewal-2022/image-01.webp",
+        "/assets/images/projects/company-renewal-2022/image-02.webp"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery"
+      ]
+    },
+    {
+      "id": "incheon-university",
+      "category": "renewal",
+      "title": "인천대학교 공과대학 홈페이지 리뉴얼",
+      "period": "2021.03~2021.04",
+      "type": "SM / 리뉴얼",
+      "role": "전체 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "Visual Studio Code",
+        "Adobe XD",
+        "HTML",
+        "CSS",
+        "jQuery"
+      ],
+      "introduction": "인천대학교 공과대학 홈페이지 리뉴얼 퍼블리싱을 담당했습니다. 학교 브로슈어와 공식 홈페이지의 교수 데이터가 서로 다른 것을 발견해 직접 확인을 요청했고, 정확한 정보로 수정하고 보완하는 과정까지 챙겼습니다.",
+      "myWorks": [
+        "공과대학 홈페이지 퍼블리싱 전담",
+        "브로슈어와 홈페이지 데이터 불일치를 발견해 학교에 개선 건의",
+        "정확한 정보로 데이터 수정 / 추가 반영"
+      ],
+      "achievements": [
+        "브로슈어와 홈페이지의 교수 정보를 비교하고 정확한 내용으로 수정 요청"
+      ],
+      "points": [
+        "교수 정보의 불일치 확인, 수정 요청",
+        "홈페이지 콘텐츠 검수"
+      ],
+      "pin": false,
+      "duration": "약 2개월",
+      "captures": [
+        "/assets/images/projects/placeholder.svg"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery"
+      ]
+    },
+    {
+      "id": "tos-renewal",
+      "category": "renewal",
+      "title": "태림포장 TOS 리뉴얼",
+      "period": "2021.01~2021.02",
+      "type": "SI / 리뉴얼",
+      "role": "전체 화면 퍼블리싱 단독 담당",
+      "tech": [
+        "eGovFrame",
+        "Sketch",
+        "HTML",
+        "CSS",
+        "jQuery"
+      ],
+      "introduction": "태림포장 사내 주문 시스템(TOS) 리뉴얼 작업입니다. 전자정부 프레임워크 환경에서 업무 시스템 화면을 다뤘고, 이후 태림포장과의 장기 협업(TOMS / TMS)으로 이어졌습니다.",
+      "myWorks": [
+        "사내 주문 시스템 리뉴얼 화면 퍼블리싱",
+        "전자정부 프레임워크 환경에 맞춘 마크업 구성"
+      ],
+      "achievements": [
+        "전자정부 프레임워크 환경의 주문 시스템 화면을 납품하고 이후 TOMS와 TMS 협업으로 연결"
+      ],
+      "points": [
+        "전자정부 프레임워크 주문 화면",
+        "이후 TOMS, TMS 프로젝트 참여"
+      ],
+      "pin": false,
+      "duration": "약 2개월",
+      "captures": [
+        "/assets/images/projects/tos-renewal/image-01.webp",
+        "/assets/images/projects/tos-renewal/image-02.webp",
+        "/assets/images/projects/tos-renewal/image-03.webp"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery"
+      ]
+    },
+    {
+      "id": "toms",
+      "category": "award",
+      "title": "TOMS 서비스 구축",
+      "period": "2021.10~12",
+      "type": "신규 구축",
+      "role": "전체 화면 퍼블리싱 단독 담당, 디자인과 UX 기획 참여",
+      "tech": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Figma"
+      ],
+      "introduction": "태림포장 사내 원지 및 박스 주문 서비스를 구축하며 디자인 협업, UX 기획, 전체 화면 퍼블리싱을 맡았습니다. Figma로 고객 요구사항과 업무 흐름을 화면에 반영했고, 결과물은 스마트앱어워드 2022 업무향상 부문 대상을 수상했습니다.",
+      "myWorks": [
+        "Figma 기반으로 디자이너와 협업하며 고객 요구사항을 정확히 반영",
+        "HTML / CSS / jQuery 기반 애플리케이션의 전체 화면 퍼블리싱 담당",
+        "업무 흐름을 고려한 UX 기획과 화면 사용성 개선"
+      ],
+      "achievements": [
+        "스마트앱어워드 2022 업무향상 부문 대상 수상"
+      ],
+      "points": [
+        "스마트앱어워드 2022 업무향상 부문 대상",
+        "디자인 협업, UX 기획, 전체 퍼블리싱"
+      ],
+      "pin": true,
+      "duration": "약 3개월",
+      "captures": [
+        "/assets/images/projects/toms/image-01.webp",
+        "/assets/images/projects/toms/image-02.webp",
+        "/assets/images/projects/toms/image-03.webp",
+        "/assets/images/projects/toms/image-04.webp",
+        "/assets/images/projects/toms/image-05.webp",
+        "/assets/images/projects/toms/image-06.webp",
+        "/assets/images/projects/toms/image-07.webp",
+        "/assets/images/projects/toms/image-08.webp",
+        "/assets/images/projects/toms/image-09.webp",
+        "/assets/images/projects/toms/image-10.webp",
+        "/assets/images/projects/toms/image-11.webp"
+      ],
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery"
+      ]
+    }
+  ],
+  "personal": [
+    {
+      "id": "flight-shade",
+      "category": "personal",
+      "title": "Flight Shade / 비행 창가 좌석 추천",
+      "period": "2026.11.06",
+      "type": "개인 / Vue 좌석 추천 서비스",
+      "role": "기획 / 퍼블리싱 / 프론트엔드 개발",
+      "tech": [
+        "Vue 3",
+        "Vite",
+        "JavaScript",
+        "SCSS",
+        "Leaflet",
+        "SunCalc"
+      ],
+      "introduction": "비행 중 햇빛을 피하거나 일출·일몰을 보기 좋은 창가 좌석을 찾아주는 Vue 3 웹 서비스입니다. 출도착 공항과 출발 날짜·시간을 입력하면 비행 경로의 태양 방향을 계산하고 왼쪽 또는 오른쪽 좌석을 추천합니다.",
+      "myWorks": [
+        "Vue 3 + Vite + JavaScript + SCSS로 경로 설정, 지도, 좌석 추천과 공유를 한 화면에 구성",
+        "공항 코드·도시 검색과 출발 공항의 현지 시간대를 반영한 날짜·시간 입력 구현",
+        "SunCalc와 대권 경로를 이용해 좌우 햇빛 비율과 일출·일몰 시점을 계산하고 선호에 따라 창가 좌석 추천",
+        "Leaflet / OpenStreetMap 지도에 비행 경로와 태양 방향을 표시하고 재생 가능한 비행 타임라인 구현",
+        "PC의 고정 입력 패널과 모바일의 드래그 가능한 바텀 시트로 반응형 UI 구성",
+        "입력 변경 자동 반영, 한국어 / 영어 전환과 항공편·좌석 선호를 복원하는 URL 공유 구현",
+        "키보드 공항 검색, 포커스 관리와 모션 감소를 적용하고 언어별 사전 렌더링 / SEO / GitHub Pages 배포 구성"
+      ],
+      "achievements": [
+        "공항 선택부터 좌석 추천, 비행 시뮬레이션과 결과 공유까지 이어지는 단일 페이지 완성",
+        "API 키나 별도 서버 없이 브라우저에서 공항 검색과 태양 위치 계산 처리",
+        "데스크톱과 모바일에서 같은 항공편 결과를 한국어 / 영어로 확인하고 공유하도록 구현"
+      ],
+      "points": [
+        "햇빛 회피·햇빛 선호·일출·일몰에 따라 달라지는 좌석 추천과 타임라인",
+        "지도와 추천 결과를 중심으로 PC 입력 패널과 모바일 바텀 시트를 연결한 반응형 UI",
+        "FlightSide의 UI·사용 경험을 참고하고 Planearby의 Vue·SCSS 구조 활용"
+      ],
+      "pin": true,
+      "duration": "약 2시간",
+      "captures": [
+        "/assets/images/projects/flight-shade/image-01.jpg",
+        "/assets/images/projects/flight-shade/image-02.jpg",
+        "/assets/images/projects/flight-shade/image-03.jpg"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/flight-shade-light-devices-4k.jpg",
+      "languages": [
+        "Vue 3",
+        "JavaScript",
+        "SCSS",
+        "Vite"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/flight-shade/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/yheun03/flight-shade"
+        }
+      ]
+    },
+    {
+      "id": "planearby",
+      "category": "personal",
+      "title": "Planearby / 주변 항공기 레이더",
+      "period": "2026.10~",
+      "type": "개인 / Vue 항공기 대시보드",
+      "role": "기획 / 기능 범위 정의 / Codex Sol 6.1을 활용한 제작",
+      "tech": [
+        "Vue 3",
+        "Vite",
+        "JavaScript",
+        "SCSS",
+        "Leaflet",
+        "Geolocation API"
+      ],
+      "introduction": "운전하거나 운동할 때 보이는 비행기가 궁금해 만들었습니다. 주변 30km의 항공기를 레이더와 공항 전광판 형태로 보여 줍니다. Flightradar24에서 자주 쓰던 기능 중 주변 항공기 조회에 집중했고, Codex Sol 6.1만으로 제작했습니다.",
+      "myWorks": [
+        "Flightradar24 사용 경험을 바탕으로 내 주변 항공기 확인에 집중하도록 기능 범위 정의",
+        "Vue 3 + Vite + JavaScript + SCSS로 대시보드와 설정 / 위치 선택 화면 구현",
+        "PC에서는 전광판과 레이더를 나란히, 모바일에서는 레이더를 먼저 보여주는 반응형 레이아웃 구성",
+        "항공편 정보를 분할 플랩 애니메이션으로 표현하고 항공기 선택 / 위치 갱신 주기 자동 전환 / 일시정지 구현",
+        "Geolocation API와 adsb.lol / adsbdb를 연동해 반경 30km의 항공기와 참고 노선을 조회하고 네트워크 상태에 따라 5초 / 10초 / 15초로 갱신",
+        "Leaflet / OpenStreetMap 지도, 주소 검색과 위도, 경도 입력으로 조회 위치 직접 선택 기능 구현",
+        "라이트 / 다크 테마, 한국어 / 영어 / 일본어, 휴대폰 위치, 나침반 연동과 수동 방향 설정 지원",
+        "키보드 조작, 상태, 레이더 거리 눈금 음성 안내와 모션 감소 설정을 적용하고 사전 렌더링 / SEO / GitHub Pages 배포 구성"
+      ],
+      "achievements": [
+        "주변 항공기의 거리와 방향을 시각적으로 확인하고 전광판에서 상세 정보를 읽는 화면 흐름 완성",
+        "위치 권한 거부 후 재요청, GPS, 나침반 실패 안내와 지도, 좌표 입력을 통한 대체 경로 마련",
+        "요청 취소, 노선 캐시, API 한도 대기와 오류 안내를 포함해 조회 상태별 화면 구현"
+      ],
+      "points": [
+        "레이더와 공항 전광판을 결합한 데이터 시각화 및 분할 플랩 인터랙션",
+        "반응형 화면, 다국어, 테마와 접근성을 함께 고려한 Vue UI 구현",
+        "캡처는 서비스에서 제공하는 가상 항공기 예시 화면이며 실제 운항 정보와 구분"
+      ],
+      "pin": true,
+      "duration": "진행 중",
+      "captures": [
+        "/assets/images/projects/planearby/image-01.jpg",
+        "/assets/images/projects/planearby/image-02.jpg",
+        "/assets/images/projects/planearby/image-03.jpg"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/planearby-light-devices-4k.jpg",
+      "languages": [
+        "Vue 3",
+        "JavaScript",
+        "SCSS",
+        "Vite"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/planearby/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/yheun03/planearby"
+        }
+      ]
+    },
+    {
+      "id": "jonsoft-framework-portfolio",
+      "category": "personal",
+      "title": "포트폴리오 웹사이트 2026",
+      "period": "2026",
+      "type": "개인 / Nuxt 포트폴리오",
+      "role": "디자인 / 퍼블리싱 / 구조 설계 / 프론트엔드 개발 전체 담당",
+      "tech": [
+        "HTML5",
+        "SCSS",
+        "Nuxt 3",
+        "Vue 3",
+        "TypeScript",
+        "Vite"
+      ],
+      "introduction": "웹 퍼블리싱 실무와 Vue 경험을 한곳에 보여 주려고 만든 Nuxt 3 포트폴리오입니다. 시맨틱 HTML과 SCSS를 바탕으로 Vue 컴포넌트, 상태 관리, 다국어 콘텐츠를 나눠 관리했습니다.",
+      "myWorks": [
+        "시맨틱 HTML과 SCSS를 기준으로 홈 / 갤러리 / 상세 페이지 퍼블리싱",
+        "Vue template, props, v-if, v-for, Teleport로 반복 UI와 모바일 메뉴 구성",
+        "한국어 / 영어 UI 문구와 프로젝트 콘텐츠를 i18n/ko.json, i18n/en.json에 통합",
+        "Nuxt 파일 기반 라우팅과 Vite 번들 환경을 활용해 정적 포트폴리오 구성",
+        "색상 / 여백 / 폰트 / 라운드 / 그림자를 SCSS 디자인 토큰으로 정리",
+        "사용하지 않는 모션 / 스토어 / 컴포넌트를 제거해 HTML에 가까운 화면 코드로 단순화",
+        "GitHub Pages base path와 public asset 경로를 고려한 정적 배포 구조 정리"
+      ],
+      "achievements": [
+        "디자인, 퍼블리싱, 설계, 프론트엔드 개발까지 전 과정을 단독 수행",
+        "실무 / 개인 프로젝트와 전체 한 / 영 콘텐츠를 i18n JSON으로 통합해 콘텐츠 관리 효율 향상",
+        "Vue 상태 관리는 언어 / 테마처럼 필요한 값만 Nuxt useState로 유지",
+        "사용하지 않는 GSAP / Pinia 의존성과 모션 / 모달 코드를 제거해 화면 구조를 단순화",
+        "실제 사용되는 컴포넌트 중심으로 구조를 정리해 유지보수성과 코드 가독성 확보"
+      ],
+      "points": [
+        "시맨틱 마크업, 디자인 토큰 적용",
+        "반복 UI 컴포넌트화",
+        "한국어 / 영어 콘텐츠 JSON 관리",
+        "정적 배포용 자산, 경로 설정"
+      ],
+      "pin": true,
+      "duration": "약 2개월",
+      "captures": [
+        "/assets/images/projects/jonsoft-framework-portfolio/image-01.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-02.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-03.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-04.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-05.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-06.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-07.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-08.webp",
+        "/assets/images/projects/jonsoft-framework-portfolio/image-09.webp"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-framework-portfolio-light-devices-4k.jpg",
+      "languages": [
+        "HTML5",
+        "SCSS",
+        "Nuxt 3",
+        "Vue 3",
+        "TypeScript"
+      ],
+      "links": [
+        {
+          "label": "디자인 토큰 보기",
+          "href": "/personal/design-tokens"
+        }
+      ]
+    },
+    {
+      "id": "singil-bmc",
+      "category": "personal",
+      "title": "신길교회 야구 선교단 홈페이지",
+      "period": "2026.05.31~",
+      "type": "개인 / Nuxt 커뮤니티 사이트",
+      "role": "기획 / 디자인 / 퍼블리싱 / 프론트엔드 / 기록 파이프라인 개발 전체 담당",
+      "tech": [
+        "Nuxt 3",
+        "Vue 3",
+        "TypeScript",
+        "Pinia",
+        "SCSS",
+        "AG Grid",
+        "Node.js",
+        "cheerio"
+      ],
+      "introduction": "신길교회 야구 선교단의 경기 기록과 소식을 모아 관리하는 Nuxt 3 홈페이지입니다. 소개, 기록, 경기, 선수, MVP, 영상, 소식, 문의 화면을 만들고 게임원 HTML을 JSON으로 바꾸는 자동화 작업도 붙였습니다. 별도 서버 없이 경기 기록을 갱신할 수 있습니다.",
+      "myWorks": [
+        "선교단 소개 / 조직 / 히스토리, 단체사진, 전체/연도별/월별/조별 기록, 월 / 주간 MVP, 선수 / 경기 / YouTube / 소식 / 문의 페이지 IA 설계",
+        "게임원 경기 HTML을 cheerio로 파싱해 경기 / 누적 기록 JSON을 생성하는 `parse-game-html` / `build-records` / `update-records` 스크립트 구축",
+        "A조(Davids) / D조(다윗) 자동 구분, `playerId` 기준 통계 집계, AG Grid 기록 표 / 경기 상세 MVP/하이라이트 섹션 구현",
+        "`useBasePath` / `fetchJson()`으로 GitHub Pages base path 대응, `GAME_RECORD_UPDATE_HANDOFF.md`로 경기 후 운영 절차 문서화",
+        "6월: 다크 / 라이트 테마, 홈 최근 경기 / 영상 링크 레이아웃, 리더 카드 컴포넌트 / 이미지 경로 동적 처리, favicon / SCSS 통합",
+        "GitHub Actions / `npm run deploy` / sitemap 생성 / JSON-LD / 경기 / 뉴스 동적 SEO 메타로 정적 배포 파이프라인 정리"
+      ],
+      "achievements": [
+        "정보 구조부터 기록 / 통계 / 선수 / 미디어 / 배포까지 서비스 운영에 필요한 핵심 기능 구축",
+        "게임원 HTML만 추가하면 `npm run update` 한 번으로 경기 / 누적 / 조별 기록을 재생성하는 비개발자 친화 운영 구조 확립",
+        "상대팀 선수 기록 제외 / 선수명 `players.json` 매칭 등 야구 기록 도메인 규칙을 파싱 스크립트와 README에 반영"
+      ],
+      "points": [
+        "별도 서버 없이 경기 기록 갱신",
+        "경기, 선수, 영상, MVP 콘텐츠 관리",
+        "GitHub Pages 배포, 접근성, 테마 적용"
+      ],
+      "pin": true,
+      "duration": "2026.05~진행 중",
+      "captures": [
+        "/assets/images/projects/singil-bmc/image-01.webp",
+        "/assets/images/projects/singil-bmc/image-02.webp",
+        "/assets/images/projects/singil-bmc/image-03.webp",
+        "/assets/images/projects/singil-bmc/image-04.webp",
+        "/assets/images/projects/singil-bmc/image-05.webp",
+        "/assets/images/projects/singil-bmc/image-06.webp"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/singil-bmc-light-devices-4k.jpg",
+      "languages": [
+        "Nuxt 3",
+        "Vue 3",
+        "TypeScript",
+        "SCSS",
+        "Pinia",
+        "Node.js"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/singil-bmc/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/yheun03/singil-bmc"
+        }
+      ]
+    },
+    {
+      "id": "clone-flighty",
+      "category": "personal",
+      "title": "플라이티 UI 클론",
+      "period": "2026.10 말 완료",
+      "type": "개인 / Vue 웹 퍼블리싱",
+      "role": "기획 / 디자인 분석 / Figma 재설계 / 프론트엔드 개발 전체 담당",
+      "tech": [
+        "Vue 3",
+        "JavaScript",
+        "Vue Router",
+        "Vite",
+        "SCSS",
+        "MapLibre",
+        "Figma"
+      ],
+      "introduction": "Flighty의 주요 화면을 Vue 3로 구현한 클론입니다. 32편의 항공 데이터로 목록, 상세, 검색, 지도, 패스포트, 통계 화면을 연결하고, 반응형과 다국어, 단위 설정을 적용했습니다.",
+      "myWorks": [
+        "Flighty 4.8.2 PC 버전 화면을 캡처하고 정보 구조, 폰트 계층, 카드 구성, 인터랙션 밀도를 분석",
+        "Figma 최종 시안을 기준으로 Vue 3, Vite, Vue Router 기반의 반응형 화면과 공통 UI 컴포넌트 구현",
+        "32편의 항공 데이터를 공통 JSON으로 연결해 목록, 상세, 검색, 패스포트, 통계 화면의 데이터를 일관되게 구성",
+        "MapLibre, OpenFreeMap으로 항공 경로 지도를 구현하고 검색, 기간 선택, 상세 항공편에 따라 지도 데이터를 연동",
+        "한국어, 영어, 일본어, 기기 언어와 거리, 속도, 고도 단위 설정을 브라우저에 저장해 전체 화면에 적용"
+      ],
+      "achievements": [
+        "항공편 원천 데이터를 중심으로 시간, 지연, 시차, 통계를 계산해 여러 화면이 동일한 결과를 공유하도록 구현",
+        "기본 UI와 플라이티 전용 조합 컴포넌트를 분리하고 props 변형으로 재사용 가능한 퍼블리싱 구조 완성"
+      ],
+      "points": [
+        "32편의 항공 데이터를 여러 화면에서 사용",
+        "검색, 기간별 항로 지도와 기체 정보",
+        "반응형, 4개 언어, 단위 변환"
+      ],
+      "pin": true,
+      "duration": "",
+      "captures": [
+        "/assets/images/projects/clone-flighty/image-01.webp",
+        "/assets/images/projects/clone-flighty/image-02.webp",
+        "/assets/images/projects/clone-flighty/image-03.webp"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/clone-flighty-light-devices-4k.jpg",
+      "languages": [
+        "Vue 3",
+        "JavaScript",
+        "Vue Router",
+        "Vite",
+        "SCSS",
+        "MapLibre"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/cloneFlighty/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/yheun03/cloneFlighty"
+        }
+      ]
+    },
+    {
+      "id": "clone-kakaotalk",
+      "category": "personal",
+      "title": "카카오톡 클론",
+      "period": "2025.09.27~2026.05.23",
+      "type": "개인 / Vue 클론 코딩",
+      "role": "기획 / UI 구현 / 퍼블리싱 / 프론트엔드 개발 전체 담당",
+      "tech": [
+        "Vue 3",
+        "Vue Router 4",
+        "Vite 6",
+        "SCSS",
+        "@vuepic/vue-datepicker",
+        "holiday-kr",
+        "vite-svg-loader"
+      ],
+      "introduction": "카카오톡의 주요 화면을 Vue 3 SPA로 다시 만든 프로젝트입니다. 채팅, 친구, 설정 화면을 라우트와 컴포넌트로 나누고 공통 UI와 배포 환경도 함께 정리했습니다.",
+      "myWorks": [
+        "카카오톡 주요 화면 IA를 Vue Router 4 라우트와 레이아웃 컴포넌트로 구성",
+        "Vite 6 + Sass(SCSS) 기반 스타일 구조, SVG 아이콘 로더(vite-svg-loader) 적용",
+        "날짜 / 휴일 선택 UI에 @vuepic/vue-datepicker, holiday-kr 연동",
+        "GitHub Pages용 base path(`VITE_APP_BASE_URL`)와 dev/root 스크립트로 로컬 / 배포 경로 정리",
+        "gh-pages 브랜치 배포 파이프라인(`npm run deploy`) 구성"
+      ],
+      "achievements": [
+        "화면과 공통 컴포넌트를 단계적으로 확장하며 Vue 3 Composition API 기반 구조 정립",
+        "라우팅 / 빌드 / 배포 환경을 포함한 Vue SPA 개발 흐름 구축"
+      ],
+      "points": [
+        "채팅, 친구, 설정 화면의 라우팅과 컴포넌트",
+        "로컬 실행, 배포 경로 README 작성"
+      ],
+      "pin": true,
+      "duration": "약 8개월",
+      "captures": [
+        "/assets/images/projects/placeholder.svg"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/clone-kakaotalk-light-devices-4k.jpg",
+      "languages": [
+        "Vue 3",
+        "Vue Router 4",
+        "Vite 6",
+        "SCSS",
+        "JavaScript"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/cloneKakaoTalk/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/yheun03/cloneKakaoTalk"
+        }
+      ]
+    },
+    {
+      "id": "portfolio-2025",
+      "category": "personal",
+      "title": "포트폴리오 웹사이트 2025",
+      "period": "2025",
+      "type": "개인 / HTML 포트폴리오",
+      "role": "기획 / 디자인 / 퍼블리싱 / 인터랙션 구현 전체 담당",
+      "tech": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "jQuery",
+        "Swiper"
+      ],
+      "introduction": "프로필과 프로젝트를 한 페이지에 담은 정적 HTML 포트폴리오입니다. 반응형 레이아웃, 다크 모드, 슬라이드, 모달을 구현하고 정적 파일만으로 배포했습니다.",
+      "myWorks": [
+        "HTML / SCSS 기반의 단일 페이지 포트폴리오 IA와 화면 디자인 설계",
+        "다크/라이트 모드, Swiper 프로젝트 영역, 모달 인터랙션 구현",
+        "프로필 이미지, 목업, OG 이미지, 이력서 정적 파일까지 함께 관리"
+      ],
+      "achievements": [
+        "프레임워크 없이 정적 자산만으로 단일 페이지 포트폴리오를 완성해 배포",
+        "콘텐츠 전달과 인터랙션 구현에 집중한 경량 정적 사이트 구조 확보"
+      ],
+      "points": [
+        "HTML 기반 반응형 단일 페이지",
+        "정적 파일 배포, 유지관리"
+      ],
+      "pin": true,
+      "duration": "약 1개월",
+      "captures": [
+        "/assets/images/projects/portfolio-2025/image-01.webp",
+        "/assets/images/projects/portfolio-2025/image-02.webp",
+        "/assets/images/projects/portfolio-2025/image-03.webp",
+        "/assets/images/projects/portfolio-2025/image-04.webp",
+        "/assets/images/projects/portfolio-2025/image-05.webp",
+        "/assets/images/projects/portfolio-2025/image-06.webp",
+        "/assets/images/projects/portfolio-2025/image-07.webp",
+        "/assets/images/projects/portfolio-2025/image-08.webp",
+        "/assets/images/projects/portfolio-2025/image-09.webp"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/portfolio-2025-light-devices-4k.jpg",
+      "languages": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "jQuery"
+      ],
+      "links": [
+        {
+          "label": "2025 버전 보기",
+          "href": "/ver.2025/index.html"
+        }
+      ]
+    },
+    {
+      "id": "matemate-capstone",
+      "category": "personal",
+      "title": "메이트메이트(MATEMATE) 룸메이트 매칭",
+      "period": "2025.01.04~2025.01.30",
+      "type": "팀 / 방학 / 캡스톤 (모바일 웹)",
+      "role": "서비스 기획 주도, UI 디자인 공동 참여, 전체 화면 퍼블리싱 담당 (team-matemate)",
+      "tech": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "Firebase Hosting",
+        "Firestore",
+        "Cloud Functions",
+        "Figma"
+      ],
+      "introduction": "한국공학대학교 방학 / 캡스톤 팀 프로젝트로 만든 기숙사 룸메이트 매칭 모바일 웹입니다. 랜덤 배정이나 지인 추천 대신 생활 습관 / 성향 조건을 입력해 맞는 상대를 찾도록 설계했습니다. 소스와 배포는 team-matemate/matemate 저장소와 Firebase에서 관리했습니다.",
+      "myWorks": [
+        "문제 정의 / 서비스 기획 / 매칭 / 인증 / 채팅 / 게시판 등 사용자 흐름과 IA 설계",
+        "`public/html/`에 auth / match / chat / board / cutline / user / main 화면 퍼블리싱 및 SCSS 컴포넌트 구조 정리",
+        "Firebase Hosting(루트 → main), Firestore / Storage rules, Cloud Functions 백엔드 연동 구성",
+        "Swiper / 공통 JS로 매칭 / 목록 인터랙션 구현, C2C 반복 수정에 맞춘 UX 정리"
+      ],
+      "achievements": [
+        "4주간의 팀 협업으로 핵심 사용자 흐름을 갖춘 MVP와 배포 파이프라인 완성",
+        "체크리스트 / 개인 게시글 방식 대비 자동 조건 매칭이라는 서비스 차별점을 UI 흐름으로 구현"
+      ],
+      "points": [
+        "팀 프로젝트 기획, 퍼블리싱 담당",
+        "Firebase 호스팅, DB, 함수 사용"
+      ],
+      "pin": false,
+      "duration": "약 4주",
+      "captures": [
+        "/assets/images/projects/matemate-capstone/image-01.webp",
+        "/assets/images/projects/matemate-capstone/image-02.webp",
+        "/assets/images/projects/matemate-capstone/image-03.webp",
+        "/assets/images/projects/matemate-capstone/image-04.webp"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/matemate-capstone-light-devices-4k.jpg",
+      "languages": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "Firebase",
+        "Figma"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/matemate/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/team-matemate/matemate"
+        }
+      ]
+    },
+    {
+      "id": "gongting-blind-matching",
+      "category": "personal",
+      "title": "공팅 블라인드 매칭 서비스",
+      "period": "2024.05.16~2024.07.21",
+      "type": "개인 / 모바일 웹 서비스",
+      "role": "UI 디자인 공동 참여, 전체 화면 퍼블리싱 담당",
+      "tech": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "Figma",
+        "Photoshop",
+        "Illustrator",
+        "GitHub Pages"
+      ],
+      "introduction": "한국공학대학교 학생을 대상으로 만든 블라인드 매칭 서비스입니다. 성향과 관심사를 입력해 상대를 찾을 수 있도록 소개, 가입, 프로필, 매칭, 결과 화면을 제작하고 GitHub Pages에 배포했습니다.",
+      "myWorks": [
+        "intro / 회원(user) / 매칭(match) 흐름을 `html/` 정적 페이지와 `intro.html` 진입점으로 구성",
+        "모바일 중심 UI 디자인 방향 수립, 브랜드 톤 / 그래픽 / SCSS / JS를 `resources/`에 정리",
+        "UI 컴포넌트 샘플을 `component.html`로 분리해 화면 단위 퍼블리싱 재사용",
+        "GitHub Pages(`yheun03.github.io/gongting`) 배포 및 파비콘 / 에셋 세트 구성"
+      ],
+      "achievements": [
+        "초기 서비스에서 1차 171명, 2차 121명의 참여 경험을 기록",
+        "GitHub 저장소로 화면 / 리소스를 버전 관리해 포트폴리오 아카이브와 별도로 유지"
+      ],
+      "points": [
+        "모바일 화면 구현과 서비스 출시",
+        "참여 기록과 피드백을 반영한 후속 기획"
+      ],
+      "pin": false,
+      "duration": "구축 약 1주 / 운영 및 고도화 약 2개월",
+      "captures": [
+        "/assets/images/projects/gongting-blind-matching/image-01.webp"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/gongting-blind-matching-light-devices-4k.jpg",
+      "languages": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "Figma"
+      ],
+      "links": [
+        {
+          "label": "페이지 이동하기",
+          "href": "https://yheun03.github.io/gongting/intro.html"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/yheun03/gongting"
+        }
+      ]
+    },
+    {
+      "id": "jonsoft-homepage-2022-archive",
+      "category": "personal",
+      "title": "조앤소프트 홈페이지 리뉴얼 아카이브",
+      "period": "2022.01.03~2022.03.04",
+      "type": "아카이브 / 기업 홈페이지",
+      "role": "기획 / 퍼블리싱 중심 참여",
+      "tech": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Figma",
+        "Photoshop",
+        "Illustrator"
+      ],
+      "introduction": "2025 포트폴리오에 수록한 조앤소프트 홈페이지 리뉴얼 기록입니다. 참고 사이트 조사와 콘텐츠 구성, 퍼블리싱, SEO, 오픈그래프 설정을 맡았습니다.",
+      "myWorks": [
+        "홈페이지 리뉴얼 방향 제안 및 주요 콘텐츠 구조 정리",
+        "퍼블리싱, 반응형 화면, SEO / 오픈그래프 메타 관리 수행",
+        "2025 포트폴리오용 PC / 모바일 캡처 자료를 아카이브로 정리"
+      ],
+      "achievements": [
+        "기업 소개, 서비스 정보 구성과 홈페이지 리뉴얼 담당"
+      ],
+      "points": [
+        "초기 기업 홈페이지 리뉴얼 기록"
+      ],
+      "pin": false,
+      "duration": "약 2개월",
+      "captures": [
+        "/assets/images/projects/jonsoft-homepage-2022-archive/image-01.webp",
+        "/assets/images/projects/jonsoft-homepage-2022-archive/image-02.webp"
+      ],
+      "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-homepage-2022-archive-light-devices-4k.jpg",
+      "languages": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Figma"
+      ],
+      "links": [
+        {
+          "label": "사이트 보기",
+          "href": "http://jonsoft.co.kr/"
+        }
+      ]
+    }
+  ]
+}

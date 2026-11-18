@@ -2,99 +2,49 @@
    Theme — color system single source
    Palette, semantic colors, gradients, shadows.
    Typography/spacing/layout → abstracts/_tokens.scss
-   Primary: #0050FF
+   Primary: #2354D8
 ========================================= */
 
-@mixin theme-light-palette {
-    /* Raw anchors */
-    --theme-white: #fff;
-    --theme-black: #000;
+:root {
+    color-scheme: light;
 
-    /* Palette — cool neutral + Toss blue */
+    /* Palette — cool neutral + blue */
     --grayscale-0: #fff;
-    --grayscale-50: #f9fafb;
-    --grayscale-100: #f2f4f6;
-    --grayscale-200: #e5e8eb;
-    --grayscale-300: #d1d6db;
-    --grayscale-400: #8b95a1;
-    --grayscale-500: #6b7684;
-    --grayscale-600: #4e5968;
-    --grayscale-700: #333d4b;
     --grayscale-800: #191f28;
-    --grayscale-900: #111827;
-    --grayscale-950: #0a0e14;
-    --primary-50: #e6eeff;
-    --primary-100: #ccdfff;
-    --primary-200: #99bfff;
-    --primary-300: #669fff;
-    --primary-400: #337fff;
     --primary-500: #1a66ff;
-    --primary-600: #0050ff;
-    --primary-700: #0040cc;
-    --primary-800: #003099;
-    --primary-900: #002066;
-    --accent-hot: #6b7fff;
-    --accent-mint: #4dc9ff;
+    --primary-600: #2354d8;
 
-    /* Text — light theme.
-       muted/subtle 는 WCAG AA(4.5:1)를 페이지 배경(#f2f4f6)·surface(#fff) 양쪽에서 충족하도록 조정.
-       기존 #6b7684(4.19/bg)·#8b95a1(2.76/bg)는 본문 텍스트로 명암비 미달이었음. */
-    --color-text: #333d4b;
+    /* Text */
+    --color-text: #222a35;
     --color-text-strong: #191f28;
-    --color-text-heading: #191f28;
-    --color-text-muted: #4e5968;
-    /* 6.45:1 on bg · 7.11:1 on surface */
-    --color-text-subtle: #5b6573;
-    /* 5.36:1 on bg · 5.91:1 on surface — muted 보다 옅되 AA 충족 */
+    --color-text-heading: #152339;
+    --color-text-muted: #566273;
+    --color-text-subtle: #566273;
 
     /* Semantic surfaces */
-    --color-bg: #f2f4f6;
+    --color-bg: #f5f5f5;
     --color-border: #d1d6db;
-    --color-primary: #0050ff;
+    --color-primary: var(--primary-600);
     --color-primary-dark: #0040cc;
-    --color-action: #0050ff;
-    --color-action-hover: #0040cc;
+    --color-action: #2354d8;
     --color-surface: #fff;
     --color-surface-strong: #e5e8eb;
-    --color-glass-2: color-mix(in srgb, var(--color-surface) 78%, transparent);
-    --color-glass-2-strong: color-mix(in srgb, var(--color-surface) 90%, transparent);
 
-    /* Foreground on filled/accent surfaces */
-    --color-on-primary: var(--theme-white);
-    --color-on-accent: var(--theme-white);
+    --color-surface-inverse: #262626;
+    --color-accent: #f12810;
+    --color-divider: #bfc7d1;
+    --color-divider-subtle: #23355426;
 
-    /* State (light theme) — 흰/연회색 배경에서 AA(4.5:1) 충족.
-       색상에만 의존하지 않도록 사용처에서는 아이콘/텍스트 레이블을 병기할 것. */
-    --state-error: #c81e1e;
-    /* 5.74:1 on surface */
-    --state-success: #047857;
-    /* 5.48:1 on surface */
-    --state-warning: #b45309;
-    /* 5.02:1 on surface */
-
-    /* Shared overlay */
-    --color-scrim: color-mix(in srgb, var(--grayscale-950) 62%, transparent);
-
-    /* Gradients and shadows */
-    --gradient-accent: linear-gradient(118deg, #337fff 0%, #0050ff 52%, #0040cc 100%);
-    --gradient-hero-mesh:
-        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-300) 18%, transparent), transparent 42%),
-        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 8%, transparent), transparent 38%),
-        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 11%, transparent), transparent 45%);
-    --gradient-noise: linear-gradient(185deg, #fff 0%, #f2f4f6 48%, #e8ecf1 100%);
-    --gradient-surface: linear-gradient(168deg, var(--color-surface) 0%, var(--grayscale-50) 58%, var(--grayscale-100) 100%);
+    /* Shadows for card and token specimens */
     --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--color-border) 50%, transparent) inset;
-    --shadow-lift: 0 28px 70px color-mix(in srgb, var(--grayscale-800) 13%, transparent);
     --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-500) 22%, transparent);
     --shadow-soft: 0 18px 44px color-mix(in srgb, var(--grayscale-800) 10%, transparent);
 
     /* Gallery aliases */
     --gallery-accent: var(--color-primary);
-    --gallery-bg: var(--color-bg);
-    --gallery-bg-elevated: var(--color-surface);
+    --gallery-bg-elevated: #e8ecf1;
     --gallery-body: var(--color-text);
-    --gallery-body-soft: color-mix(in srgb, var(--color-text) 78%, var(--color-text-muted));
-    --gallery-ink: var(--color-text);
+    --gallery-ink: var(--color-text-heading);
     --gallery-muted: var(--color-text-muted);
 
     /* Layout aliases */
@@ -104,115 +54,8 @@
     --shell-skip-outline: var(--color-primary);
 }
 
-@mixin dark-theme {
-    color-scheme: dark;
-
-    --theme-white: #f9fafb;
-    --theme-black: #030608;
-    --grayscale-0: #17171c;
-    --grayscale-50: #1c1c22;
-    --grayscale-100: #232329;
-    --grayscale-200: #2c2c35;
-    --grayscale-300: #3d3d47;
-    --grayscale-400: #6b7684;
-    --grayscale-500: #8b95a1;
-    --grayscale-600: #b0b8c1;
-    --grayscale-700: #d1d6db;
-    --grayscale-800: #e5e8eb;
-    --grayscale-900: #f2f4f6;
-    --grayscale-950: #f9fafb;
-    --primary-50: #001433;
-    --primary-100: #001f4d;
-    --primary-200: #002966;
-    --primary-300: #003d99;
-    --primary-400: #0050ff;
-    --primary-500: #337fff;
-    --primary-600: #669fff;
-    --primary-700: #99bfff;
-    --primary-800: #ccdfff;
-    --primary-900: #e6eeff;
-    --accent-hot: #8b9dff;
-    --accent-mint: #5ed4ff;
-    --color-bg: #0a0e14;
-    --color-border: #3d3d47;
-    --color-primary: #337fff;
-    --color-primary-dark: #669fff;
-    --color-surface: #17171c;
-    --color-surface-strong: #232329;
-    --color-text: #e5e8eb;
-    --color-text-strong: #f9fafb;
-    --color-text-heading: #f2f4f6;
-    --color-text-muted: #b0b8c1;
-    --color-text-subtle: #8b95a1;
-    --color-on-primary: #fff;
-    --color-on-accent: #fff;
-
-    /* State (dark theme) — 어두운 배경에서 AA 충족하도록 밝게 재정의 */
-    --state-error: #f87171;
-    /* 6.99:1 on bg */
-    --state-success: #10b981;
-    /* 7.62:1 on bg */
-    --state-warning: #f59e0b;
-    /* 9.01:1 on bg */
-
-    --color-scrim: color-mix(in srgb, #020407 78%, transparent);
-    --color-glass-2: color-mix(in srgb, var(--color-surface) 78%, transparent);
-    --color-glass-2-strong: color-mix(in srgb, var(--color-surface-strong) 86%, transparent);
-    --gradient-accent: linear-gradient(118deg, #669fff 0%, #337fff 48%, #0050ff 100%);
-    --gradient-hero-mesh:
-        radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--primary-600) 14%, transparent), transparent 42%),
-        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-hot) 9%, transparent), transparent 38%),
-        radial-gradient(circle at 70% 72%, color-mix(in srgb, var(--accent-mint) 9%, transparent), transparent 45%);
-    --gradient-noise: linear-gradient(185deg, #0a0e14 0%, #111827 50%, #17171c 100%);
-    --gradient-surface: linear-gradient(168deg, #17171c 0%, #1c1c22 58%, #232329 100%);
-    --shadow-glow: 0 0 0 1px color-mix(in srgb, var(--color-border) 58%, transparent) inset;
-    --shadow-lift: 0 30px 80px color-mix(in srgb, #020407 48%, transparent);
-    --shadow-ring: 0 0 0 3px color-mix(in srgb, var(--primary-600) 28%, transparent);
-    --shadow-soft: 0 20px 54px color-mix(in srgb, #020407 42%, transparent);
-    --gallery-accent: var(--color-primary);
-    --gallery-bg: var(--color-bg);
-    --gallery-bg-elevated: var(--color-surface);
-    --gallery-body: var(--color-text);
-    --gallery-body-soft: color-mix(in srgb, var(--color-text) 78%, var(--color-text-muted));
-    --gallery-ink: var(--color-text);
-    --gallery-muted: var(--color-text-muted);
-    --shell-skip-bg: var(--color-surface-strong);
-    --shell-skip-border: var(--color-border);
-    --shell-skip-fg: var(--color-text);
-    --shell-skip-outline: var(--color-primary);
-}
-
-:root {
-    color-scheme: light;
-    @include theme-light-palette;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        @include dark-theme;
-    }
-}
-
-:root[data-theme='light'] {
-    color-scheme: light;
-    @include theme-light-palette;
-}
-
-:root[data-theme='dark'] {
-    @include dark-theme;
-}
-
-.studio,
-.silver-shell {
-    --silver-paper: #f5f5f5;
-    --silver-charcoal: #262626;
-    --silver-orange: #f12810;
-}
-
 @media (prefers-contrast: more) {
     :root {
-        --grayscale-600: #3d4654;
-        --grayscale-300: #a8b3c0;
         --color-text-muted: #3d4654;
         --color-text-subtle: #3d4654;
         /* 고대비 모드에서는 subtle 도 최대 명암으로 끌어올림 */

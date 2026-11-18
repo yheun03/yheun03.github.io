@@ -1,10 +1,9 @@
-@use '../abstracts/tokens' as *;
+@use '../abstracts/mixins' as *;
 
 /* Badge */
 .base-badge {
-    --badge-accent: #{$primary-600};
-    --badge-bg: #{$glass-2-strong};
-    --badge-color: #{$grayscale-900};
+    --badge-bg: #e4e8ee;
+    --badge-color: var(--color-text);
     --badge-padding-block: #{$space-2};
     --badge-padding-inline: #{$space-4};
     --badge-font-size: #{$font-size-xs};
@@ -14,7 +13,7 @@
     align-items: center;
     gap: var(--space-1);
     padding: var(--badge-padding-block) var(--badge-padding-inline);
-    border-radius: 999px;
+    border-radius: 0;
     background: var(--badge-bg);
     border: 0;
     font-size: var(--badge-font-size);
@@ -32,26 +31,16 @@
     }
 
     &--toolbox {
-        --badge-accent: var(--color-primary);
-        --badge-color: var(--color-text-strong);
-        --badge-bg: var(--color-bg);
         border: 1px solid var(--color-border);
     }
 
     &--work {
-        --badge-accent: #{$primary-700};
-        --badge-color: #{$grayscale-600};
-        --badge-bg: color-mix(in srgb, #{$grayscale-0} 72%, transparent);
-    }
-
-    &--plain::before {
-        display: none;
     }
 }
 
 .base-accent-badge {
     padding: 3px 10px;
-    border-radius: var(--radius-pill);
+    border-radius: 0;
     background: var(--color-surface-strong);
     color: var(--color-text-strong);
     font-size: 0.75rem;

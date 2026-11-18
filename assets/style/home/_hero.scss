@@ -1,237 +1,66 @@
-@use '../abstracts/tokens' as *;
+.home-hero {
+    padding: 62px 5% 72px;
 
-.hero {
-    &.section--hero {
-        padding-top: 0;
+    &__role {
+        white-space: nowrap;
     }
 
-    &__poster {
-        position: relative;
-        display: grid;
-        grid-template-areas: 'meta' 'stage' 'actions';
-        gap: clamp(32px, 4.5vw, 56px);
-        align-items: start;
-        padding: 0;
-        isolation: isolate;
-        background: transparent;
-        border: 0;
-        box-shadow: none;
-
-        .hero__meta {
-            grid-area: meta;
-        }
-
-        .hero__stage {
-            grid-area: stage;
-        }
-
-        .hero__actions {
-            grid-area: actions;
-        }
-    }
-
-    &__cue {
-        position: absolute;
-        bottom: clamp(20px, 3vw, 40px);
-        left: 50%;
-        translate: -50% 0;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        color: var(--color-text-muted);
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        @media (hover: hover) {
-            &:hover {
-                color: var(--color-primary);
+    &__heading {
+        margin-bottom: 52px;
+        h1 {
+            color: var(--color-primary);
+            font-size: clamp(52px, 10vw, 172px);
+            font-weight: 550;
+            line-height: 0.86;
+            letter-spacing: -0.085em;
+            span {
+                display: block;
             }
         }
     }
-
-    &__cue-label {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
+    &__body {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        align-items: center;
+        gap: 8%;
     }
-
-    &__cue-line {
+    &__visual {
         position: relative;
-        width: 1px;
-        height: clamp(40px, 4vw, 56px);
-        overflow: hidden;
-        background: color-mix(in srgb, var(--color-border) 85%, transparent);
-
-        &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--color-text-muted);
-            transform: translateY(-100%);
-            animation: hero-cue-scan 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-        }
-    }
-
-    &__meta {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 6px 10px;
-        margin: 0;
-        color: var(--color-text-muted);
-        font-family: var(--font-mono);
-        font-size: var(--font-size-xs);
-        font-weight: var(--font-weight-medium);
-        letter-spacing: 0;
-        line-height: var(--line-height-ui);
-        text-transform: uppercase;
-
-        span:nth-child(2) {
-            opacity: 0.4;
-        }
-    }
-
-    &__stage {
-        max-width: min(1248px, 100%);
-    }
-
-    &__eyebrow {
-        margin-bottom: clamp(20px, 3vw, 32px);
-        color: var(--color-text-muted);
-        font-size: var(--font-size-sm);
-        letter-spacing: var(--tracking-label);
-        line-height: var(--line-height-ui);
-        text-transform: uppercase;
-    }
-
-    &__display {
-        margin: 0;
-        @include font(display-1);
-        font-family: var(--font-pretendard);
-        font-weight: 900;
-        font-synthesis-weight: auto;
-    }
-
-    &__display-line {
-        @include display-line;
-        font-weight: inherit;
-        transform-origin: left center;
-
-        &--accent {
-            color: var(--primary-600);
-        }
-    }
-
-    &__lead {
-        @include editorial-lead;
-        max-width: 44ch;
-    }
-
-    &__actions {
         display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-3);
-        padding-block-end: clamp(8px, 2vw, 16px);
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1.65;
+        padding: 35px;
+        overflow: hidden;
+        background: #ebebeb;
+        container-type: inline-size;
+
+        .home-mockup--laptop {
+            width: 100%;
+        }
     }
-}
-
-@keyframes hero-rise-in {
-    from {
-        opacity: 0;
-        transform: translateY(26px);
-        filter: blur(6px);
+    &__visual-arrow {
+        position: absolute;
+        right: 22px;
+        bottom: 14px;
+        font-size: 30px;
+        color: #264777;
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
+    &__intro {
+        > p:first-child {
+            margin-bottom: 24px;
+            font-size: clamp(23px, 2.4vw, 36px);
+            line-height: 1.5;
+            letter-spacing: -0.055em;
+        }
+        > p:nth-child(2) {
+            max-width: 360px;
+            color: var(--color-text-muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+        > a {
+            margin-top: 32px;
+        }
     }
-}
-
-@keyframes hero-word-in {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 0.45em, 0) scale(0.97);
-        filter: blur(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0) scale(1);
-        filter: blur(0);
-    }
-}
-
-@keyframes hero-orb-drift {
-    from {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(4%, -7%, 0) scale(1.12);
-    }
-}
-
-@keyframes hero-cue-scan {
-    to {
-        transform: translateY(100%);
-    }
-}
-
-@keyframes hero-fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.hero__meta,
-.hero__eyebrow,
-.hero__actions,
-.hero__cue,
-.hero__canvas {
-    animation: hero-rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-}
-
-.hero__canvas {
-    animation: hero-fade-in 1.6s backwards;
-    animation-delay: 0.1s;
-}
-
-.hero__meta {
-    animation-delay: 0.05s;
-}
-
-.hero__eyebrow {
-    animation-delay: 0.16s;
-}
-
-.hero__actions {
-    animation-delay: 1.08s;
-}
-
-.hero__cue {
-    animation-delay: 1.45s;
-}
-
-.hero__display-line {
-    animation: hero-word-in var(--reveal-duration) var(--reveal-ease) backwards;
-}
-
-.hero__display-line:nth-child(1) {
-    animation-delay: var(--reveal-line-delay);
-}
-
-.hero__display-line:nth-child(2) {
-    animation-delay: calc(var(--reveal-line-delay) + var(--reveal-delay-step));
-}
-
-.hero__display-line:nth-child(3) {
-    animation-delay: calc(var(--reveal-line-delay) + var(--reveal-delay-step) + var(--reveal-delay-step));
 }

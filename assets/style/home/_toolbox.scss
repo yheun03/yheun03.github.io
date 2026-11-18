@@ -1,0 +1,103 @@
+.home-approach {
+    --approach-row-height: 148px;
+    &__heading {
+        padding-left: 36%;
+        margin-bottom: 56px;
+        p {
+            max-width: 460px;
+            margin-top: 24px;
+            color: var(--color-text-muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+    }
+    &__showcase {
+        position: relative;
+        isolation: isolate;
+    }
+    &__preview {
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+        left: 7%;
+        top: 0;
+        width: 25%;
+        height: 220px;
+        overflow: hidden;
+        background: #dbe1e8;
+        box-shadow: 0 18px 40px #0003;
+        transform: translateY(calc(var(--active-row) * var(--approach-row-height) + (var(--approach-row-height) - 220px) / 2));
+        clip-path: inset(0 0 round 2px);
+        transition:
+            transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+            clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        &--square {
+            clip-path: inset(0 7% round 18px);
+        }
+        img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            filter: blur(5px);
+            transform: scale(1.08);
+            transition:
+                opacity 0.45s,
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.45s;
+            &.is-active {
+                opacity: 1;
+                filter: blur(0);
+                transform: scale(1);
+            }
+        }
+    }
+    &__item {
+        height: var(--approach-row-height);
+        padding: 25px 28px 20px 36%;
+        border-top: 1px solid #d0d0d0;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+        &:last-child {
+            border-bottom: 1px solid #d0d0d0;
+        }
+        h3 {
+            margin: 0;
+            color: inherit;
+        }
+        button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: none;
+            color: inherit;
+            font-size: clamp(20px, 2.1vw, 32px);
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+            text-align: left;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 12px;
+            padding-right: 0;
+            color: inherit;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+        &--active {
+            background: var(--color-surface-inverse);
+            color: var(--color-bg);
+
+            button:focus-visible {
+                outline-color: var(--color-bg);
+            }
+        }
+    }
+}

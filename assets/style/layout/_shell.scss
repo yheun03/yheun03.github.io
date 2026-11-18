@@ -1,24 +1,44 @@
-@use '../abstracts/tokens' as *;
+@use '../abstracts/mixins' as *;
 
-/* =========================================
-   Portfolio Pages
-========================================= */
+.app-layout {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-editorial);
+    word-break: keep-all;
+    overflow-wrap: normal;
+    hyphens: none;
+
+    &--home {
+        font-size: 15px;
+        line-height: 1.6;
+        letter-spacing: -0.03em;
+    }
+
+    [id] {
+        scroll-margin-top: 108px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 4px;
+    }
+}
 
 .portfolio-page {
+    --page-pad-x: 5%;
+    --section-pad-y: clamp(60px, 7vw, 120px);
+    --page-title-size: clamp(42px, 5.1vw, 80px);
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    padding-top: var(--layout-header-height);
     overflow-x: clip;
     overflow-y: visible;
-
     background: var(--color-bg);
+    color: var(--color-text);
+    font-family: inherit;
+    letter-spacing: -0.025em;
     scroll-behavior: smooth;
-
-    /** 독은 오버레이로 처리: 페이지 폭을 줄이지 않아 배경이 잘리지 않도록 유지 */
-    &--app-dock {
-        padding-inline-end: 0;
-    }
 }
 
 .section,
@@ -26,86 +46,22 @@
     min-width: 0;
 }
 
-// Dark editorial panel — 다크 테마에서만 적용 (라이트 테마는 페이지 배경 그대로)
-@mixin editorial-panel-base($surface: #0d1117, $border: #1c2333, $glass-2: rgba(28, 36, 54, 0.78), $glass-2-strong: rgba(37, 46, 66, 0.86)) {
-    background: #020407;
-    --color-bg: #020407;
-    --color-surface: #{$surface};
-    --color-surface-strong: #252e42;
-    --color-text: #d1d6db;
-    --color-text-strong: #f2f4f6;
-    --color-text-heading: #f9fafb;
-    --color-text-muted: #8b95a1;
-    --color-text-subtle: #7b8694;
-    --color-border: #{$border};
-    --color-primary: #4a8cff;
-    --color-primary-dark: #6fa3ff;
-    --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.42);
-    --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.48);
-    --shadow-glow: 0 0 0 1px rgba(45, 55, 72, 0.58) inset;
-    --shadow-ring: 0 0 0 3px rgba(74, 140, 255, 0.28);
-    --color-glass-2: #{$glass-2};
-    --color-glass-2-strong: #{$glass-2-strong};
-    --color-on-primary: #fff;
-}
-
-@mixin editorial-panel-about {
-    @include editorial-panel-base;
-}
-
-@mixin editorial-panel-contact {
-    @include editorial-panel-base($surface: #161c27, $border: #252e42, $glass-2: rgba(22, 28, 39, 0.78), $glass-2-strong: rgba(30, 37, 56, 0.86));
-
-    --shadow-soft: 0 20px 54px rgba(2, 4, 7, 0.48);
-    --shadow-lift: 0 30px 80px rgba(2, 4, 7, 0.58);
-    --shadow-glow: 0 0 0 1px rgba(37, 46, 66, 0.58) inset;
-}
-
-// data-theme 미설정(하이드레이션 전)일 때는 시스템 다크 설정을 따른다
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) .section--about-intro,
-    :root:not([data-theme='light']) .section--why-list {
-        @include editorial-panel-about;
-    }
-
-    :root:not([data-theme='light']) .section--contact {
-        @include editorial-panel-contact;
-    }
-}
-
-:root[data-theme='dark'] .section--about-intro,
-:root[data-theme='dark'] .section--why-list {
-    @include editorial-panel-about;
-}
-
-:root[data-theme='dark'] .section--contact {
-    @include editorial-panel-contact;
-}
-
 .section {
     position: relative;
     z-index: 1;
-    scroll-margin-top: var(--layout-header-height);
-    overflow: visible;
     width: 100%;
     max-width: none;
     margin-inline: 0;
     padding: var(--section-pad-y) var(--page-pad-x);
+    overflow: visible;
+    background: transparent;
 
-    &:not(.section--hero) {
-        display: grid;
-        gap: var(--section-gap);
-    }
+    display: grid;
+    gap: var(--section-gap);
 }
 
-.app-header__link:focus-visible,
-.app-lnb__link:focus-visible,
-.app-dock__item:focus-visible,
-.app-footer__links a:focus-visible,
-.tab-list .tab-list__tab:focus-visible,
-.highlights__filters .tab-list__tab:focus-visible,
-.gallery-card:focus-visible,
-.gallery-editorial__entry:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+@media (max-width: 640px) {
+    .app-layout [id] {
+        scroll-margin-top: 140px;
+    }
 }

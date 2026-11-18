@@ -1,4 +1,4 @@
-@use '../abstracts/tokens' as *;
+@use '../abstracts/mixins' as *;
 
 /* =========================================
    Base
@@ -48,7 +48,7 @@ body {
 }
 
 /* 라벨·캡션: UI 최소 14px (--font-size-xs) */
-:where(.base-label, .base-label--technical, small) {
+:where(.base-label, small) {
     @include font(label);
 }
 
@@ -75,14 +75,6 @@ h3 {
     text-wrap: balance;
 }
 
-h1 {
-    @include font(display-4);
-}
-
-h2 {
-    @include font(display-4);
-}
-
 h3 {
     @include font(display-6);
 }
@@ -99,10 +91,6 @@ label {
 }
 
 @media (max-width: #{$bp-max-mobile}) {
-    body {
-        @include font(body-1);
-    }
-
     h1,
     h2,
     h3 {
@@ -186,49 +174,6 @@ html.app--menu-open {
     border: 0 !important;
 }
 
-[data-animate] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-    transition-delay: var(--animate-delay, 0s);
-}
-
-[data-animate].animate--visible {
-    opacity: 1;
-    transform: none;
-}
-
-/* stagger siblings inside a revealed container */
-[data-animate].animate--visible [data-stagger] {
-    animation: apple-stagger-in 0.68s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: calc(var(--stagger-i, 0) * 80ms);
-}
-
-@keyframes apple-stagger-in {
-    from {
-        opacity: 0;
-        transform: translateY(24px) scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@media (hover: hover) {
-    [data-motion='lift'] {
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-    }
-
-    [data-motion='lift']:hover {
-        transform: translateY(-6px);
-        box-shadow: $shadow-soft;
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;
@@ -245,17 +190,9 @@ html.reduce-effects {
         transition: none !important;
         animation: none !important;
     }
-
-    .app-background::after {
-        display: none;
-    }
 }
 
 @media (forced-colors: active) {
-    .app-background {
-        display: none;
-    }
-
     :where(a, button, input, textarea, select, summary):focus-visible {
         outline: 2px solid Highlight;
     }

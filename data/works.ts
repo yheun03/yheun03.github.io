@@ -19,3 +19,5 @@ export type WorkItem = {
     thumbnail?: string;
     links?: { label: string; href: string }[];
 };
+
+export type WorkSummary = Pick<WorkItem, 'id' | 'category' | 'title' | 'period' | 'type' | 'role' | 'tech' | 'pin' | 'languages' | 'captures' | 'thumbnail'>;

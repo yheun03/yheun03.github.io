@@ -1,8 +1,8 @@
 https://yheun03.github.io/
 https://yheun03.github.io/about/
+https://yheun03.github.io/journey/
 https://yheun03.github.io/projects/
 https://yheun03.github.io/personal/
-https://yheun03.github.io/journey/
 https://yheun03.github.io/projects/samhwa-eco-dashboard/
 https://yheun03.github.io/projects/orchem-mes/
 https://yheun03.github.io/projects/hanjinkal/

@@ -1,11 +1,5 @@
 <template>
-    <article class="base-card" :data-animate="animate ? '' : null">
+    <article class="base-card">
         <slot />
     </article>
 </template>
-
-<script setup lang="ts">
-withDefaults(defineProps<{ animate?: boolean }>(), {
-    animate: true,
-});
-</script>

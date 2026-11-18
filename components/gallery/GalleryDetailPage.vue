@@ -1,6 +1,6 @@
 <template>
-    <GalleryLayout :variant="variant" :base-path="config.basePath">
-        <article class="gallery-detail gallery-page--editorial section silver-case" :class="galleryVariantClass">
+    <AppLayout>
+        <article class="gallery-detail section">
             <nav class="gallery-detail__breadcrumb" data-reveal="up" :aria-label="t('gallery.breadcrumbLabel')">
                 <NuxtLink :to="config.basePath" class="gallery-detail__breadcrumb-link">
                     <svg
@@ -23,7 +23,7 @@
             </nav>
 
             <header class="gallery-detail__header gallery-detail__hero">
-                <div class="gallery-detail__hero-copy" data-reveal="right" data-reveal-delay="100">
+                <div class="gallery-detail__hero-copy" data-reveal="right">
                     <h1 class="gallery-detail__title">{{ work.title }}</h1>
                     <p class="gallery-detail__intro">{{ work.introduction }}</p>
                     <p v-if="work.links?.length" class="gallery-detail__links">
@@ -37,34 +37,30 @@
                         />
                     </p>
                 </div>
-                <figure
-                    class="gallery-detail__cover"
-                    data-reveal="scale"
-                    :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }"
-                >
+                <figure class="gallery-detail__cover" data-reveal="scale" :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }">
                     <GalleryEmptyCapture v-if="isPlaceholderCapture(coverCapture)" />
-                    <BaseMediaImage v-else :src="resolveAppPath(coverCapture)" :alt="captureAlt(0)" priority />
+                    <BaseMediaImage v-else :src="resolveAppPath(coverCapture)" :alt="captureAlt(0)" sizes="(min-width: 641px) 68vw, 80vw" priority />
                 </figure>
             </header>
 
-                    <dl class="gallery-detail__hero-meta">
-                        <div>
-                            <dt>{{ metaLabels.type }}</dt>
-                            <dd>{{ work.type }}</dd>
-                        </div>
-                        <div v-if="work.period">
-                            <dt>{{ metaLabels.period }}</dt>
-                            <dd>{{ work.period }}</dd>
-                        </div>
-                        <div v-if="work.duration">
-                            <dt>{{ t('gallery.duration') }}</dt>
-                            <dd>{{ work.duration }}</dd>
-                        </div>
-                        <div>
-                            <dt>{{ t('gallery.role') }}</dt>
-                            <dd>{{ work.role }}</dd>
-                        </div>
-                    </dl>
+            <dl class="gallery-detail__hero-meta">
+                <div>
+                    <dt>{{ t('gallery.type') }}</dt>
+                    <dd>{{ work.type }}</dd>
+                </div>
+                <div v-if="work.period">
+                    <dt>{{ t('gallery.period') }}</dt>
+                    <dd>{{ work.period }}</dd>
+                </div>
+                <div v-if="work.duration">
+                    <dt>{{ t('gallery.duration') }}</dt>
+                    <dd>{{ work.duration }}</dd>
+                </div>
+                <div>
+                    <dt>{{ t('gallery.role') }}</dt>
+                    <dd>{{ work.role }}</dd>
+                </div>
+            </dl>
 
             <section class="gallery-detail__brief" :aria-labelledby="briefTitleId">
                 <header class="gallery-detail__section-intro" data-reveal="up">
@@ -72,7 +68,7 @@
                 </header>
 
                 <div class="gallery-detail__brief-grid">
-                    <section class="gallery-detail__brief-card gallery-detail__brief-card--wide" data-reveal="up">
+                    <section class="gallery-detail__brief-card" data-reveal="up">
                         <h3 class="gallery-detail__brief-label">{{ t('gallery.solutionLabel') }}</h3>
                         <ul>
                             <li v-for="item in work.myWorks" :key="item">{{ item }}</li>
@@ -84,7 +80,7 @@
                             <li v-for="item in work.achievements" :key="item">{{ item }}</li>
                         </ul>
                     </section>
-                    <section class="gallery-detail__brief-card" data-reveal="up" data-reveal-delay="80">
+                    <section class="gallery-detail__brief-card" data-reveal="up">
                         <h3 class="gallery-detail__brief-label">{{ t('gallery.points') }}</h3>
                         <ul>
                             <li v-for="item in work.points" :key="item">{{ item }}</li>
@@ -106,10 +102,12 @@
                     <div v-if="galleryCaptures.length > 1" class="gallery-detail__capture-controls">
                         <span aria-hidden="true">{{ activeCaptureIndex + 1 }} / {{ galleryCaptures.length }}</span>
                         <BaseButton
+                            v-for="control in captureControls"
+                            :key="control.step"
                             variant="ghost"
-                            :aria-label="t('gallery.previousImage')"
-                            :disabled="activeCaptureIndex === 0"
-                            @click="selectCapture(activeCaptureIndex - 1)"
+                            :aria-label="t(control.labelKey)"
+                            :disabled="control.step < 0 ? activeCaptureIndex === 0 : activeCaptureIndex === galleryCaptures.length - 1"
+                            @click="selectCapture(activeCaptureIndex + control.step)"
                         >
                             <svg
                                 width="18"
@@ -123,28 +121,7 @@
                                 aria-hidden="true"
                                 focusable="false"
                             >
-                                <path d="m15 18-6-6 6-6" />
-                            </svg>
-                        </BaseButton>
-                        <BaseButton
-                            variant="ghost"
-                            :aria-label="t('gallery.nextImage')"
-                            :disabled="activeCaptureIndex === galleryCaptures.length - 1"
-                            @click="selectCapture(activeCaptureIndex + 1)"
-                        >
-                            <svg
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                aria-hidden="true"
-                                focusable="false"
-                            >
-                                <path d="m9 18 6-6-6-6" />
+                                <path :d="control.path" />
                             </svg>
                         </BaseButton>
                     </div>
@@ -158,13 +135,7 @@
                 >
                     <div class="gallery-detail__preview-stage">
                         <GalleryEmptyCapture v-if="isPlaceholderCapture(activeCapture)" />
-                        <BaseMediaImage
-                            v-else
-                            :key="activeCapture"
-                            :src="resolveAppPath(activeCapture)"
-                            :alt="captureAlt(activeCaptureIndex)"
-                            priority
-                        />
+                        <BaseMediaImage v-else :key="activeCapture" :src="resolveAppPath(activeCapture)" :alt="captureAlt(activeCaptureIndex)" sizes="90vw" />
                     </div>
                     <figcaption v-if="!isPlaceholderCapture(activeCapture)" aria-live="polite" aria-atomic="true">
                         <span>{{ String(activeCaptureIndex + 1).padStart(2, '0') }} / {{ String(galleryCaptures.length).padStart(2, '0') }}</span
@@ -189,7 +160,7 @@
                             :aria-controls="capturePreviewId"
                             @click="selectCapture(index)"
                         >
-                            <BaseMediaImage v-if="!isPlaceholderCapture(capture)" :src="resolveAppPath(capture)" alt="" />
+                            <BaseMediaImage v-if="!isPlaceholderCapture(capture)" :src="resolveAppPath(capture)" alt="" sizes="112px" />
                             <span class="gallery-detail__thumbnail-index" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
                         </button>
                     </li>
@@ -197,8 +168,8 @@
             </section>
 
             <footer class="gallery-detail__end" data-reveal="up">
-                <h2 class="gallery-detail__next-title">{{ navLabels.next }}</h2>
-                <nav class="gallery-detail__next-list" :aria-label="navLabels.next">
+                <h2 class="gallery-detail__next-title">{{ t('gallery.nextProject') }}</h2>
+                <nav class="gallery-detail__next-list" :aria-label="t('gallery.nextProject')">
                     <NuxtLink v-for="item in nextWorks" :key="item.id" :to="`${config.basePath}/${item.id}`">
                         <span>{{ item.title }}</span>
                         <svg
@@ -238,7 +209,7 @@
                 </BaseButton>
             </footer>
         </article>
-    </GalleryLayout>
+    </AppLayout>
 </template>
 
 <script setup lang="ts">
@@ -253,7 +224,6 @@ const props = defineProps<{
 const { t, locale } = useLocale();
 const { resolveAppPath } = useAppPath();
 const config = getGalleryVariantConfig(props.variant);
-const galleryVariantClass = computed(() => `gallery-page--${props.variant}`);
 const capturesTitleId = `gallery-${props.variant}-captures`;
 const briefTitleId = `gallery-${props.variant}-brief`;
 const techTitleId = `gallery-${props.variant}-technologies`;
@@ -299,22 +269,16 @@ function handleCaptureKeydown(event: KeyboardEvent) {
 }
 
 const coverCapture = computed(() => props.work.thumbnail || galleryCaptures.value[0] || '');
-const works = useGalleryRouteWorks(props.variant);
+const { data: works } = await useGalleryRouteWorks(props.variant);
 const currentWorkIndex = computed(() => works.value.findIndex((item) => item.id === props.work.id));
 const nextWorks = computed(() => {
     if (works.value.length < 2 || currentWorkIndex.value < 0) return [];
-    return Array.from(
-        { length: Math.min(4, works.value.length - 1) },
-        (_, offset) => works.value[(currentWorkIndex.value + offset + 1) % works.value.length],
-    );
+    return Array.from({ length: Math.min(4, works.value.length - 1) }, (_, offset) => works.value[(currentWorkIndex.value + offset + 1) % works.value.length]);
 });
-const metaLabels = computed(() => ({
-    type: t('gallery.type'),
-    period: t('gallery.period'),
-}));
-const navLabels = computed(() => ({
-    next: t('gallery.nextProject'),
-}));
+const captureControls = [
+    { step: -1, labelKey: 'gallery.previousImage', path: 'm15 18-6-6 6-6' },
+    { step: 1, labelKey: 'gallery.nextImage', path: 'm9 18 6-6-6-6' },
+];
 
 function captureAlt(index: number) {
     return t('gallery.captureAlt')
@@ -344,7 +308,7 @@ usePortfolioSeo(() => {
     const workUrl = getPortfolioAbsoluteUrl(workPath);
 
     return {
-        title: `${props.work.title} | ${t(config.metaTitleKey)}`,
+        title: `${props.work.title} | ${locale.value === 'ko' ? '웹 퍼블리셔 은영환' : 'Younghwan Eun, Web Publisher'}`,
         description: props.work.introduction,
         path: workPath,
         locale: locale.value,
@@ -363,14 +327,12 @@ usePortfolioSeo(() => {
             url: workUrl,
             name: props.work.title,
             description: props.work.introduction,
-            abstract: props.work.introduction,
-            creator: { '@id': 'https://yheun03.github.io/#person' },
             author: { '@id': 'https://yheun03.github.io/#person' },
             mainEntityOfPage: { '@id': `${workUrl}#webpage` },
             inLanguage: locale.value,
             isAccessibleForFree: true,
             genre: props.work.type,
-            keywords: [...props.work.languages, ...props.work.tech].join(', '),
+            keywords: [...new Set([...props.work.languages, ...props.work.tech])].join(', '),
             about: [...new Set(props.work.tech)].map((name) => ({ '@type': 'Thing', name })),
             ...(coverImage ? { image: getPortfolioAbsoluteUrl(coverImage) } : {}),
             ...(props.work.links?.length ? { sameAs: props.work.links.map((link) => link.href) } : {}),
@@ -378,3 +340,5 @@ usePortfolioSeo(() => {
     };
 });
 </script>
+
+<style lang="scss" src="~/assets/style/gallery/_detail.scss"></style>

@@ -1,31 +1,16 @@
 <template>
-    <AppLayout :links="appDockLinks" :header-links="headerNavLinks" active-id="" page-variant="home"
-        :footer-text="t('footer.copyright')">
+    <AppLayout home>
         <PortfolioHero />
-        <PortfolioAboutIntro />
-        <PortfolioWhyList />
-        <PortfolioShowcase />
         <PortfolioProof />
-        <PortfolioHow />
+        <PortfolioAboutIntro />
+        <PortfolioShowcase />
         <PortfolioToolbox />
-        <PortfolioJourneyPreview />
-        <PortfolioAnswers />
-        <PortfolioContact />
+        <PortfolioHow />
     </AppLayout>
 </template>
 
 <script setup lang="ts">
 const { t, locale } = useLocale();
-const sectionIds = ['hello', 'about', 'works', 'proof', 'how', 'toolbox', 'journey', 'answers', 'contact'] as const;
-
-const appDockLinks = computed(() =>
-    sectionIds.map((id) => ({
-        href: `#${id}`,
-        label: t(`nav.${id}`),
-    })),
-);
-
-const headerNavLinks = useSubpageLinks();
 
 usePortfolioSeo(() => ({
     title: t('meta.title'),
@@ -36,8 +21,10 @@ usePortfolioSeo(() => ({
     locale: locale.value,
     imageAlt: t('meta.ogTitle'),
     dateCreated: '2026-04-16T17:24:07+09:00',
-    dateModified: '2026-11-03T00:00:00+09:00',
+    dateModified: '2026-11-18T00:00:00+09:00',
     relatedLinks: ['/about/', '/projects/', '/personal/', '/journey/'],
     significantLinks: ['/projects/', '/journey/'],
 }));
 </script>
+
+<style lang="scss" src="~/assets/style/home.scss"></style>

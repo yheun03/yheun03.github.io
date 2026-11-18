@@ -1,76 +1,64 @@
-# 은영환 웹 퍼블리셔 포트폴리오
+# 은영환 · Younghwan Eun
 
-> HTML과 SCSS로 실무 화면을 만들고, Vue 3와 Nuxt 3 UI 개발까지 맡아 온 은영환의 2026 포트폴리오입니다.
+> 기업 홈페이지와 업무 시스템의 HTML, SCSS 퍼블리싱, Vue 3 UI 개발과 운영, 유지보수를 맡아 온 웹 퍼블리셔 은영환입니다.
 
-## 핵심 정보
+## 공식 프로필
 
-- 이름: 은영환
-- 역할: 웹 퍼블리셔를 중심으로 Vue 기반 프론트엔드 개발 영역까지 확장 중
-- 최신 업데이트: 2026-11-06
-- 주요 역량: HTML5, SCSS, JavaScript, Vue 3, Nuxt 3, CMS 커스터마이징, 반응형 웹, 웹 접근성, SEO, i18n
-- 실무 경험: 조앤소프트 DX 솔루션 2팀 대리로 웹 시스템 구축, 운영, 리뉴얼, CMS 커스터마이징, 문서화, 유지보수 참여
+- 이름: 은영환 (Younghwan Eun / Eun Younghwan)
+- 역할: 웹 퍼블리셔 / Vue UI 개발
+- 주요 기술: HTML, SCSS, JavaScript, Vue 3, Nuxt 3
 - 연락처: eyh208@naver.com
 - GitHub: https://github.com/yheun03
+- 이력서: https://github.com/yheun03/yheun03.github.io/blob/main/RESUME.md
+- 기본 언어: 한국어. 사이트에서 영어 표시도 지원합니다.
+- 이 문서 갱신일: 2026-11-18
 
-## 역할별 확인 포인트
+Younghwan Eun is a web publisher who builds corporate websites and business interfaces with HTML, SCSS, JavaScript, Vue 3, and Nuxt 3.
 
-- 인사 담당자: 성장 여정과 실무 프로젝트에서 경력 흐름, 담당 역할, 협업 범위를 확인할 수 있습니다.
-- 웹 퍼블리셔: 프로젝트 상세에서 반응형 UI, SCSS 설계, 공통 컴포넌트, CMS 커스터마이징 경험을 확인할 수 있습니다.
-- 프론트엔드 개발자: Vue 3와 Nuxt 3 기반 컴포넌트 구조, 상태 관리, 다국어 콘텐츠, 배포 환경 경험을 확인할 수 있습니다.
+## 공식 페이지와 프로젝트
 
-## 주요 페이지
+- [웹 퍼블리셔 은영환 | 2026 포트폴리오](https://yheun03.github.io/): HTML, SCSS 퍼블리싱과 Vue 3 UI 개발을 맡아 온 7년차 웹 퍼블리셔 은영환의 포트폴리오입니다. 기업 홈페이지, 업무 시스템과 개인 프로젝트를 소개합니다.
+- [웹 퍼블리셔 은영환 소개 | 나의 이야기](https://yheun03.github.io/about/): HTML, SCSS와 Vue로 화면을 만드는 웹 퍼블리셔 은영환을 소개합니다. ENTJ 성향, 행동을 이끄는 신념, 이름의 이니셜 Y와 H를 겹친 로고에 담긴 이야기를 만나보세요.
+- [경력과 학업 이력](https://yheun03.github.io/journey/): 회사에서 맡은 일과 학교에서 배운 내용을 시기별로 정리했습니다.
+- [실무 프로젝트](https://yheun03.github.io/projects/): 구축, 리뉴얼, 운영에 참여한 22개 프로젝트입니다. 각 프로젝트에서 맡은 업무와 사용 기술을 확인할 수 있습니다.
+- [개인 프로젝트](https://yheun03.github.io/personal/): 직접 기획하거나 팀으로 참여한 11개 개인 프로젝트입니다.
+- [삼화페인트 생태공장 대시보드](https://yheun03.github.io/projects/samhwa-eco-dashboard/): 삼화페인트 생태공장의 공정, 환경 데이터를 보여 주는 대시보드입니다. 전체 화면 퍼블리싱을 맡아 카드, 차트, 상태 표시의 간격과 색상, 정렬을 맞췄습니다.
+- [오알켐 MES 리뉴얼](https://yheun03.github.io/projects/orchem-mes/): Vue 3와 Vite로 제조 현장의 MES를 리뉴얼했습니다. 전체 화면 퍼블리싱과 공통 컴포넌트를 맡았고, AG Grid 테이블과 태블릿 레이아웃을 작업했습니다.
+- [한진칼 및 계열사 리뉴얼](https://yheun03.github.io/projects/hanjinkal/): 한진칼과 계열사 홈페이지의 Vue 컴포넌트를 ICE 5.0 CMS에 맞게 수정했습니다. 환경 설정과 개발 방법을 가이드로 작성해 교육 때 공유하고, 협력사와 고객사의 기술 문의에도 대응했습니다.
+- [깨끗한나라 OMS 리뉴얼](https://yheun03.github.io/projects/oms/): 깨끗한나라 OMS의 전체 화면 퍼블리싱을 맡아 주요 화면을 약 1개월 일찍 완료했습니다. 이후 Vue 컴포넌트 개발에 참여하고, 오픈 전 여백과 폰트를 포함한 UI/UX 개선안을 제안했습니다.
+- [스마트팩토리 정부 사업 프로젝트](https://yheun03.github.io/projects/smart-factory-gov/): 테라에코, 썬겔, 다우기업, 신애전자 등 제조사의 MES, 스마트팩토리 구축에 참여했습니다. 전체 화면 퍼블리싱과 고객사별 UI 디자인을 맡았고, 이후 Robo MES 솔루션에도 이 작업 경험을 적용했습니다.
+- [광장 파트너스 홈페이지](https://yheun03.github.io/projects/kwangjang-homepage/): 입사 초기에 맡은 광장 파트너스 기업 홈페이지 신규 구축 작업입니다. Sketch 시안을 기준으로 반응형 / 크로스브라우징을 챙기며 기업 사이트의 기본기를 다졌습니다.
+- [하마 애플리케이션](https://yheun03.github.io/projects/hama-app/): 입사 첫 달에 맡은 부동산 건축 서비스 애플리케이션 작업입니다. 화면 퍼블리싱부터 웹앱 형태의 사용 흐름까지 처음으로 다뤘습니다.
+- [한온시스템 홈페이지 운영](https://yheun03.github.io/projects/hanon/): 콘센트릭스 CATALYST와 함께 한온시스템 홈페이지 운영을 맡고 있습니다. JIRA 요청에 따라 화면을 수정하고, csHtml 뷰와 CSS 경로, CSP, 인코딩, 404 등 관련 설정을 확인합니다.
+- [TMS 운영 / 보수](https://yheun03.github.io/projects/tms-maintenance/): 태림포장, 대영포장 TMS의 속도 저하 원인을 단위 테스트로 찾아 해결한 뒤, 고객 문의와 화면 보수도 맡았습니다. 개선 작업 후 일 평균 15건 이상이던 불편 접수가 2건 수준으로 줄었고, 처리 방법을 문서로 남겼습니다.
+- [조앤소프트 프레임워크 구축](https://yheun03.github.io/projects/framework/): 프로젝트의 초기 설정과 반복 UI를 공통으로 사용할 수 있도록 Nuxt 3 기반 사내 프레임워크를 만들었습니다. 라우팅, 상태 관리, API 플러그인, UI 컴포넌트와 SCSS 설정을 정리했습니다.
+- [자사 개발 인프라 및 퍼블리싱 표준화](https://yheun03.github.io/projects/infra/): 프로젝트마다 달랐던 폴더, 컴포넌트 이름, SCSS와 API, 다국어 처리 방식을 정리했습니다. 사내 프레임워크와 함께 사용할 예제 페이지, 스타일 가이드와 개발 문서도 작성했습니다.
+- [Robo TMS 솔루션](https://yheun03.github.io/projects/robo-tms/): TMS 운영 중 확인한 고객 요구를 반영해 자사 물류 솔루션을 만들었습니다. 기획에 함께 참여하고, 고객용 앱의 UI 디자인과 Vue, SCSS 퍼블리싱을 맡았습니다.
+- [Robo MES 솔루션 개발](https://yheun03.github.io/projects/robo-mes/): 여러 제조사의 MES 구축 경험을 바탕으로 만든 자사 Robo MES 솔루션입니다. 전체 화면 퍼블리싱을 맡고, 반복되는 화면을 모듈로 나눠 이후 프로젝트에서도 사용할 수 있게 만들었습니다.
+- [자사 홈페이지 리뉴얼](https://yheun03.github.io/projects/company-renewal/): AW VIETNAM 2025 전시회에 맞춰 자사 홈페이지를 3주 동안 리뉴얼했습니다. 중복 코드를 정리하고 영문, 베트남어, SEO, SSL을 적용했으며, FTP 배포 대신 Git으로 변경 이력을 관리하도록 제안했습니다.
+- [경동원 CMS 리뉴얼](https://yheun03.github.io/projects/kyungdongwon-cms/): 기존 담당자의 장기 공가로 생긴 공백을 메우기 위해 짧게 투입된 프로젝트입니다. 이미 만들어진 화면을 빠르게 파악해 오류를 고치고 신규 페이지까지 제작했습니다.
+- [삼화페인트 FEMS 리뉴얼](https://yheun03.github.io/projects/fems/): 삼화페인트 FEMS 도입 프로젝트에서 React 기반 주요 화면을 1주 안에 구현해야 했습니다. 기존 업무 시스템 퍼블리싱 경험을 활용해 필요한 화면을 일정에 맞춰 완성했습니다.
+- [대양제지 SCM 리뉴얼](https://yheun03.github.io/projects/scm-daeyang-paper/): 대양제지 SCM 구축에서 공통 컴포넌트를 활용해 반복 화면을 구현했습니다. 기존에 사용하던 마크업과 스타일을 재사용해 작업량과 수정 범위를 줄였습니다.
+- [대양판지 SCM 리뉴얼](https://yheun03.github.io/projects/scm-daeyang-board/): 대양판지 SCM의 고객용 화면과 관리자 화면을 작업했습니다. 고객용은 HTML로 구현하고, 관리자는 React 컴포넌트로 전환했습니다.
+- [자사 홈페이지 리뉴얼 (2022)](https://yheun03.github.io/projects/company-renewal-2022/): 자사 홈페이지 리뉴얼을 제안하고 기획, 디자인, 퍼블리싱, 배포, 운영을 맡았습니다. 참고 사이트를 조사해 콘텐츠를 구성하고, SEO와 오픈그래프를 적용한 뒤 후이즈 호스팅에 배포했습니다.
+- [인천대학교 공과대학 홈페이지 리뉴얼](https://yheun03.github.io/projects/incheon-university/): 인천대학교 공과대학 홈페이지 리뉴얼 퍼블리싱을 담당했습니다. 학교 브로슈어와 공식 홈페이지의 교수 데이터가 서로 다른 것을 발견해 직접 확인을 요청했고, 정확한 정보로 수정하고 보완하는 과정까지 챙겼습니다.
+- [태림포장 TOS 리뉴얼](https://yheun03.github.io/projects/tos-renewal/): 태림포장 사내 주문 시스템(TOS) 리뉴얼 작업입니다. 전자정부 프레임워크 환경에서 업무 시스템 화면을 다뤘고, 이후 태림포장과의 장기 협업(TOMS / TMS)으로 이어졌습니다.
+- [TOMS 서비스 구축](https://yheun03.github.io/projects/toms/): 태림포장 사내 원지 및 박스 주문 서비스를 구축하며 디자인 협업, UX 기획, 전체 화면 퍼블리싱을 맡았습니다. Figma로 고객 요구사항과 업무 흐름을 화면에 반영했고, 결과물은 스마트앱어워드 2022 업무향상 부문 대상을 수상했습니다.
+- [포트폴리오 웹사이트 2026 초기 버전](https://yheun03.github.io/personal/portfolio-2026/): 기존 main 브랜치의 2026 포트폴리오를 초기 버전으로 보관했습니다. 소개, 경력, 프로젝트 갤러리와 상세 화면을 정적 파일로 생성해 당시 화면과 동작을 다시 확인할 수 있습니다.
+- [Flight Shade / 비행 창가 좌석 추천](https://yheun03.github.io/personal/flight-shade/): 비행 중 햇빛을 피하거나 일출·일몰을 보기 좋은 창가 좌석을 찾아주는 Vue 3 웹 서비스입니다. 출도착 공항과 출발 날짜·시간을 입력하면 비행 경로의 태양 방향을 계산하고 왼쪽 또는 오른쪽 좌석을 추천합니다.
+- [Planearby / 주변 항공기 레이더](https://yheun03.github.io/personal/planearby/): 운전하거나 운동할 때 보이는 비행기가 궁금해 만들었습니다. 주변 30km의 항공기를 레이더와 공항 전광판 형태로 보여 줍니다. Flightradar24에서 자주 쓰던 기능 중 주변 항공기 조회에 집중했고, Codex Sol 6.1만으로 제작했습니다.
+- [포트폴리오 웹사이트 2026](https://yheun03.github.io/personal/jonsoft-framework-portfolio/): 웹 퍼블리싱 실무와 Vue 경험을 한곳에 보여 주려고 만든 Nuxt 3 포트폴리오입니다. 시맨틱 HTML과 SCSS를 바탕으로 Vue 컴포넌트, 상태 관리, 다국어 콘텐츠를 나눠 관리했습니다.
+- [신길교회 야구 선교단 홈페이지](https://yheun03.github.io/personal/singil-bmc/): 신길교회 야구 선교단의 경기 기록과 소식을 모아 관리하는 Nuxt 3 홈페이지입니다. 소개, 기록, 경기, 선수, MVP, 영상, 소식, 문의 화면을 만들고 게임원 HTML을 JSON으로 바꾸는 자동화 작업도 붙였습니다. 별도 서버 없이 경기 기록을 갱신할 수 있습니다.
+- [플라이티 UI 클론](https://yheun03.github.io/personal/clone-flighty/): Flighty의 주요 화면을 Vue 3로 구현한 클론입니다. 32편의 항공 데이터로 목록, 상세, 검색, 지도, 패스포트, 통계 화면을 연결하고, 반응형과 다국어, 단위 설정을 적용했습니다.
+- [카카오톡 클론](https://yheun03.github.io/personal/clone-kakaotalk/): 카카오톡의 주요 화면을 Vue 3 SPA로 다시 만든 프로젝트입니다. 채팅, 친구, 설정 화면을 라우트와 컴포넌트로 나누고 공통 UI와 배포 환경도 함께 정리했습니다.
+- [포트폴리오 웹사이트 2025](https://yheun03.github.io/personal/portfolio-2025/): 프로필과 프로젝트를 한 페이지에 담은 정적 HTML 포트폴리오입니다. 반응형 레이아웃, 다크 모드, 슬라이드, 모달을 구현하고 정적 파일만으로 배포했습니다.
+- [메이트메이트(MATEMATE) 룸메이트 매칭](https://yheun03.github.io/personal/matemate-capstone/): 한국공학대학교 방학 / 캡스톤 팀 프로젝트로 만든 기숙사 룸메이트 매칭 모바일 웹입니다. 랜덤 배정이나 지인 추천 대신 생활 습관 / 성향 조건을 입력해 맞는 상대를 찾도록 설계했습니다. 소스와 배포는 team-matemate/matemate 저장소와 Firebase에서 관리했습니다.
+- [공팅 블라인드 매칭 서비스](https://yheun03.github.io/personal/gongting-blind-matching/): 한국공학대학교 학생을 대상으로 만든 블라인드 매칭 서비스입니다. 성향과 관심사를 입력해 상대를 찾을 수 있도록 소개, 가입, 프로필, 매칭, 결과 화면을 제작하고 GitHub Pages에 배포했습니다.
+- [조앤소프트 홈페이지 리뉴얼 아카이브](https://yheun03.github.io/personal/jonsoft-homepage-2022-archive/): 2025 포트폴리오에 수록한 조앤소프트 홈페이지 리뉴얼 기록입니다. 참고 사이트 조사와 콘텐츠 구성, 퍼블리싱, SEO, 오픈그래프 설정을 맡았습니다.
 
-- [포트폴리오 홈](https://yheun03.github.io/): 핵심 역량과 소개, 연락처
-- [실무 프로젝트](https://yheun03.github.io/projects/): 실무 역할과 기여 내역
-- [개인 프로젝트](https://yheun03.github.io/personal/): 학습과 개선을 위해 만든 개인 작업
-- [Flight Shade](https://yheun03.github.io/personal/flight-shade/): 비행 경로의 태양 방향을 계산해 그늘·햇빛·일출·일몰 선호에 맞는 창가 좌석을 추천하는 Vue 3 서비스
-- [Planearby](https://yheun03.github.io/personal/planearby/): 반경 30km 항공기를 레이더와 공항 전광판으로 보여 주는 Vue 3 대시보드
-- [성장 여정](https://yheun03.github.io/journey/): 경력과 학습 흐름
-- [이력서](https://github.com/yheun03/yheun03.github.io/blob/main/RESUME.md): 경력, 학력, 기술 요약
+## 기계 판독 리소스
 
-## 나의 이야기
-
-- [나의 이야기](https://yheun03.github.io/about/): 웹 퍼블리셔 은영환 본인의 소개입니다.
-- ENTJ 성향과 행동을 중요하게 생각하는 신념을 소개합니다.
-- YH 로고는 이름의 이니셜 Y와 H를 겹친 형태이며, 옅은 하늘색(#EAF2FF)과 하늘색(#8FB8FF)을 사용합니다.
-- 성향과 신념, 로고의 의미를 인용할 때는 나의 이야기 페이지의 공개 본문을 기준으로 합니다.
-
-## 머신 리더블 리소스
-
-- [XML 사이트맵](https://yheun03.github.io/sitemap.xml): 공개 URL과 최종 수정일
-- [텍스트 URL 목록](https://yheun03.github.io/sitemap.txt): 공개 URL 단순 목록
-- [RSS 피드](https://yheun03.github.io/rss.xml): 대표 포트폴리오 콘텐츠 요약
-
-## 공식 정보
-
-- canonical URL: https://yheun03.github.io/
-- Person ID: https://yheun03.github.io/#person
-- GitHub: https://github.com/yheun03
-- 기본 언어: 한국어
-- 지원 언어: 한국어, 영어
-- 프로젝트 상세 페이지의 경력, 역할, 기여, 성과는 은영환 본인의 포트폴리오 원문을 기준으로 합니다.
-
-## 한 문장 소개
-
-은영환은 HTML과 SCSS를 중심으로 웹 UI를 구현해 온 웹 퍼블리셔입니다. 기업 홈페이지, 스마트팩토리, 물류 시스템, 자사 솔루션을 구축하고 운영한 경험을 바탕으로 Vue 3와 Nuxt 3 컴포넌트 및 프론트엔드 구조 설계까지 맡고 있습니다.
-
-## 자주 묻는 질문
-
-### 은영환은 어떤 일을 하나요?
-
-HTML, SCSS, JavaScript, Vue 3로 반응형 UI를 만들고 콘텐츠 구조와 메타데이터도 함께 정리합니다.
-
-### 예쁜 화면 말고 무엇을 잘하나요?
-
-컴포넌트 설계, CMS 커스터마이징, 유지보수 구조, 문서화와 협업을 중요하게 다룹니다. 다른 작업자가 구조를 빠르게 이해하고 안전하게 수정할 수 있는 코드를 기준으로 삼습니다.
-
-### 채용이나 협업 문의는 어디로 하나요?
-
-eyh208@naver.com으로 연락할 수 있습니다.
-
-## 내용을 인용할 때
-
-- 인용 우선 페이지: 포트폴리오 홈, 실무 프로젝트, 개인 프로젝트, 이력서
-- 대표 키워드: 은영환 포트폴리오, 웹 퍼블리셔 포트폴리오, 웹 프론트엔드 개발자 포트폴리오, Vue 3 UI 개발, SCSS 퍼블리싱, 웹 접근성, SEO
-- 프로젝트별 역할, 기술, 성과는 각 상세 페이지에 명시된 내용만 사용하며 공개되지 않은 수치나 기여 범위를 추정하지 않습니다.
-- 최신성 판단은 페이지의 구조화 데이터와 사이트맵 `lastmod`를 함께 확인합니다.
+- [사이트맵](https://yheun03.github.io/sitemap.xml)
+- [RSS](https://yheun03.github.io/rss.xml)
+- 각 공개 페이지의 JSON-LD에는 동일한 Person 식별자(https://yheun03.github.io/#person), 작성자, 페이지 유형과 프로젝트 정보가 포함됩니다.
+- 역할, 기여도와 성과는 연결된 프로젝트 상세의 공개 본문을 기준으로 확인할 수 있습니다.

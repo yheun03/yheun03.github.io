@@ -1,121 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>은영환 웹 퍼블리셔 포트폴리오</title>
-    <link>https://yheun03.github.io/</link>
-    <description>HTML과 SCSS 기반 웹 퍼블리싱 실무, Vue 3와 Nuxt 3 UI 개발 경험을 프로젝트별 역할과 구현 내용 중심으로 정리한 포트폴리오입니다.</description>
-    <language>ko-KR</language>
-    <lastBuildDate>Fri, 06 Nov 2026 00:00:00 +0900</lastBuildDate>
-    <ttl>1440</ttl>
-    <generator>Nuxt 3</generator>
-    <atom:link href="https://yheun03.github.io/rss.xml" rel="self" type="application/rss+xml" />
-
-    <item>
-      <title>Flight Shade / 비행 창가 좌석 추천</title>
-      <link>https://yheun03.github.io/personal/flight-shade/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/personal/flight-shade/</guid>
-      <description>비행 경로의 태양 방향을 계산해 그늘·햇빛·일출·일몰 선호에 맞는 창가 좌석을 추천하는 Vue 3 서비스입니다. PC 입력 패널과 모바일 바텀 시트, 한국어·영어, 결과 공유를 구현했습니다.</description>
-      <category>개인 프로젝트</category>
-      <pubDate>Fri, 06 Nov 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>웹 퍼블리셔 은영환 소개 | 나의 이야기</title>
-      <link>https://yheun03.github.io/about/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/about/</guid>
-      <description>웹 퍼블리셔 은영환의 ENTJ 성향, 행동을 이끄는 신념과 이름의 이니셜을 겹친 YH 로고의 의미를 소개합니다.</description>
-      <category>나의 이야기</category>
-      <pubDate>Wed, 28 Oct 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>은영환 웹 퍼블리셔 포트폴리오</title>
-      <link>https://yheun03.github.io/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/</guid>
-      <description>HTML과 SCSS 기반 웹 UI 구현 경험과 Vue 3와 Nuxt 3 컴포넌트 개발 역량을 실무와 개인 프로젝트로 보여 주는 포트폴리오입니다.</description>
-      <category>포트폴리오</category>
-      <pubDate>Sun, 04 Oct 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>포트폴리오 웹사이트 2026</title>
-      <link>https://yheun03.github.io/personal/jonsoft-framework-portfolio/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/personal/jonsoft-framework-portfolio/</guid>
-      <description>시맨틱 HTML과 SCSS를 기반으로 Vue 컴포넌트, 상태 관리, 다국어 콘텐츠 구조를 적용한 Nuxt 3 포트폴리오입니다.</description>
-      <category>개인 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>삼화페인트 생태공장 대시보드</title>
-      <link>https://yheun03.github.io/projects/samhwa-eco-dashboard/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/projects/samhwa-eco-dashboard/</guid>
-      <description>공정 및 환경 데이터를 빠르게 파악할 수 있도록 카드, 상태 표시, 차트의 시각 규칙을 정리한 Vue 대시보드 퍼블리싱 사례입니다.</description>
-      <category>실무 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>오알켐 MES 리뉴얼</title>
-      <link>https://yheun03.github.io/projects/orchem-mes/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/projects/orchem-mes/</guid>
-      <description>Vue 3와 Vite 기반 MES에서 공통 컴포넌트, AG Grid 테이블 UX, 태블릿 반응형 UI를 구현하고 개선한 프로젝트입니다.</description>
-      <category>실무 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>한진칼 및 계열사 리뉴얼</title>
-      <link>https://yheun03.github.io/projects/hanjinkal/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/projects/hanjinkal/</guid>
-      <description>Vue 컴포넌트를 ICE 5.0 CMS 구조에 맞게 재구성하고 개발 및 환경 설정 가이드와 대외 커뮤니케이션을 담당한 사례입니다.</description>
-      <category>실무 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>깨끗한나라 OMS 리뉴얼</title>
-      <link>https://yheun03.github.io/projects/oms/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/projects/oms/</guid>
-      <description>Vue 기반 OMS의 전체 화면을 퍼블리싱하고 컴포넌트 개발과 UI 및 UX 개선에 참여한 시스템 리뉴얼 프로젝트입니다.</description>
-      <category>실무 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>카카오톡 클론</title>
-      <link>https://yheun03.github.io/personal/clone-kakaotalk/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/personal/clone-kakaotalk/</guid>
-      <description>채팅, 친구, 설정 화면을 Vue 3 기반 SPA로 다시 만들고 라우팅, 공통 UI, 배포 환경을 정리한 개인 프로젝트입니다.</description>
-      <category>개인 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>Flighty 클론</title>
-      <link>https://yheun03.github.io/personal/clone-flighty/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/personal/clone-flighty/</guid>
-      <description>모바일 사용성과 디자인 시스템을 기준으로 Flighty의 항공 정보 UI를 Vue 3와 Nuxt 3로 재해석한 클론 프로젝트입니다.</description>
-      <category>개인 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>포트폴리오 웹사이트 2025</title>
-      <link>https://yheun03.github.io/personal/portfolio-2025/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/personal/portfolio-2025/</guid>
-      <description>HTML, SCSS, JavaScript로 반응형 레이아웃, 다크 모드, 슬라이드와 모달 인터랙션을 구현한 정적 포트폴리오입니다.</description>
-      <category>개인 프로젝트</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-
-    <item>
-      <title>만들다 보니, 여기까지 왔습니다</title>
-      <link>https://yheun03.github.io/journey/</link>
-      <guid isPermaLink="true">https://yheun03.github.io/journey/</guid>
-      <description>학교에서 처음 만든 웹 페이지부터 회사의 실제 서비스까지, 일과 전공 공부를 함께해 온 성장 과정입니다.</description>
-      <category>커리어</category>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>웹 퍼블리셔 은영환 | 2026 포트폴리오</title><link>https://yheun03.github.io/</link><description>HTML, SCSS 퍼블리싱과 Vue 3 UI 개발을 맡아 온 7년차 웹 퍼블리셔 은영환의 포트폴리오입니다. 기업 홈페이지, 업무 시스템과 개인 프로젝트를 소개합니다.</description><language>ko</language>
+<atom:link href="https://yheun03.github.io/rss.xml" rel="self" type="application/rss+xml" />
+<item><title>웹 퍼블리셔 은영환 | 2026 포트폴리오</title><link>https://yheun03.github.io/</link><guid isPermaLink="true">https://yheun03.github.io/</guid><description>HTML, SCSS 퍼블리싱과 Vue 3 UI 개발을 맡아 온 7년차 웹 퍼블리셔 은영환의 포트폴리오입니다. 기업 홈페이지, 업무 시스템과 개인 프로젝트를 소개합니다.</description></item>
+<item><title>웹 퍼블리셔 은영환 소개 | 나의 이야기</title><link>https://yheun03.github.io/about/</link><guid isPermaLink="true">https://yheun03.github.io/about/</guid><description>HTML, SCSS와 Vue로 화면을 만드는 웹 퍼블리셔 은영환을 소개합니다. ENTJ 성향, 행동을 이끄는 신념, 이름의 이니셜 Y와 H를 겹친 로고에 담긴 이야기를 만나보세요.</description></item>
+<item><title>경력과 학업 이력</title><link>https://yheun03.github.io/journey/</link><guid isPermaLink="true">https://yheun03.github.io/journey/</guid><description>회사에서 맡은 일과 학교에서 배운 내용을 시기별로 정리했습니다.</description></item>
+<item><title>오알켐 MES 리뉴얼</title><link>https://yheun03.github.io/projects/orchem-mes/</link><guid isPermaLink="true">https://yheun03.github.io/projects/orchem-mes/</guid><description>Vue 3와 Vite로 제조 현장의 MES를 리뉴얼했습니다. 전체 화면 퍼블리싱과 공통 컴포넌트를 맡았고, AG Grid 테이블과 태블릿 레이아웃을 작업했습니다.</description></item>
+<item><title>한진칼 및 계열사 리뉴얼</title><link>https://yheun03.github.io/projects/hanjinkal/</link><guid isPermaLink="true">https://yheun03.github.io/projects/hanjinkal/</guid><description>한진칼과 계열사 홈페이지의 Vue 컴포넌트를 ICE 5.0 CMS에 맞게 수정했습니다. 환경 설정과 개발 방법을 가이드로 작성해 교육 때 공유하고, 협력사와 고객사의 기술 문의에도 대응했습니다.</description></item>
+<item><title>조앤소프트 프레임워크 구축</title><link>https://yheun03.github.io/projects/framework/</link><guid isPermaLink="true">https://yheun03.github.io/projects/framework/</guid><description>프로젝트의 초기 설정과 반복 UI를 공통으로 사용할 수 있도록 Nuxt 3 기반 사내 프레임워크를 만들었습니다. 라우팅, 상태 관리, API 플러그인, UI 컴포넌트와 SCSS 설정을 정리했습니다.</description></item>
+<item><title>Flight Shade / 비행 창가 좌석 추천</title><link>https://yheun03.github.io/personal/flight-shade/</link><guid isPermaLink="true">https://yheun03.github.io/personal/flight-shade/</guid><description>비행 중 햇빛을 피하거나 일출·일몰을 보기 좋은 창가 좌석을 찾아주는 Vue 3 웹 서비스입니다. 출도착 공항과 출발 날짜·시간을 입력하면 비행 경로의 태양 방향을 계산하고 왼쪽 또는 오른쪽 좌석을 추천합니다.</description></item>
+<item><title>Planearby / 주변 항공기 레이더</title><link>https://yheun03.github.io/personal/planearby/</link><guid isPermaLink="true">https://yheun03.github.io/personal/planearby/</guid><description>운전하거나 운동할 때 보이는 비행기가 궁금해 만들었습니다. 주변 30km의 항공기를 레이더와 공항 전광판 형태로 보여 줍니다. Flightradar24에서 자주 쓰던 기능 중 주변 항공기 조회에 집중했고, Codex Sol 6.1만으로 제작했습니다.</description></item>
+</channel></rss>

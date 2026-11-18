@@ -1,0 +1,177 @@
+@use 'sass:map';
+
+/* Sass-only variables and helpers; importing this file emits no CSS. */
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+
+/** max-width — 정수 px만 사용 (.98 등 소수 금지) */
+$bp-max-mobile: $bp-tablet - 1px;
+$bp-max-tablet: $bp-laptop - 1px;
+$bp-min-tablet: $bp-tablet;
+$bp-min-laptop: $bp-laptop;
+
+$font-display: var(--font-display);
+$font-body: var(--font-body);
+$font-mono: var(--font-mono);
+$font-size-xs: var(--font-size-xs);
+$font-size-sm: var(--font-size-sm);
+$font-size-lg: var(--font-size-lg);
+$font-size-display-1: var(--font-size-display-1);
+$font-size-display-2: var(--font-size-display-2);
+$font-size-display-3: var(--font-size-display-3);
+$font-size-display-4: var(--font-size-display-4);
+$font-size-display-5: var(--font-size-display-5);
+$font-size-display-6: var(--font-size-display-6);
+$font-size-title-1: var(--font-size-title-1);
+$font-size-title-2: var(--font-size-title-2);
+$font-size-title-3: var(--font-size-title-3);
+$font-size-body-1: var(--font-size-body-1);
+$font-size-body-2: var(--font-size-body-2);
+$font-size-label: var(--font-size-label);
+$font-size-chip: var(--font-size-chip);
+$font-weight-regular: var(--font-weight-regular);
+$font-weight-medium: var(--font-weight-medium);
+$font-weight-semibold: var(--font-weight-semibold);
+$font-weight-bold: var(--font-weight-bold);
+$font-weight-black: var(--font-weight-black);
+$line-height-tight: var(--line-height-tight);
+$line-height-display: var(--line-height-display);
+$line-height-heading: var(--line-height-heading);
+$line-height-title: var(--line-height-title);
+$line-height-body: var(--line-height-body);
+$line-height-ui: var(--line-height-ui);
+$tracking-tight: var(--tracking-tight);
+$tracking-heading: var(--tracking-heading);
+$tracking-ui: var(--tracking-ui);
+$tracking-label: var(--tracking-label);
+
+$grayscale-0: var(--grayscale-0);
+$grayscale-100: var(--grayscale-100);
+$grayscale-200: var(--grayscale-200);
+$grayscale-300: var(--grayscale-300);
+$grayscale-600: var(--grayscale-600);
+$grayscale-700: var(--grayscale-700);
+$grayscale-900: var(--grayscale-900);
+$primary-600: var(--primary-600);
+$primary-700: var(--primary-700);
+$accent-hot: var(--accent-hot);
+$accent-mint: var(--accent-mint);
+$glass-2: var(--color-glass-2);
+$glass-2-strong: var(--color-glass-2-strong);
+$shadow-soft: var(--shadow-soft);
+$shadow-lift: var(--shadow-lift);
+$shadow-glow: var(--shadow-glow);
+$gradient-accent: var(--gradient-accent);
+$gradient-surface: var(--gradient-surface);
+$texture-noise: url('/assets/images/common/textures/noise-paper-small.png');
+$radius-card: var(--radius-card);
+$radius-pill: var(--radius-pill);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+$space-1: var(--space-1);
+$space-2: var(--space-2);
+$space-3: var(--space-3);
+$space-4: var(--space-4);
+$space-5: var(--space-5);
+$space-6: var(--space-6);
+$space-7: var(--space-7);
+$size-touch: var(--size-touch);
+$layout-header-height: var(--layout-header-height);
+
+$font-presets: (
+    display-4: (
+        family: $font-display,
+        size: $font-size-display-4,
+        weight: $font-weight-black,
+        line-height: $line-height-heading,
+        letter-spacing: $tracking-tight,
+    ),
+    display-5: (
+        family: $font-display,
+        size: $font-size-display-5,
+        weight: $font-weight-black,
+        line-height: $line-height-heading,
+        letter-spacing: $tracking-heading,
+    ),
+    display-6: (
+        family: $font-display,
+        size: $font-size-display-6,
+        weight: $font-weight-bold,
+        line-height: $line-height-title,
+        letter-spacing: $tracking-heading,
+    ),
+    body-1: (
+        family: $font-body,
+        size: $font-size-body-1,
+        weight: $font-weight-regular,
+        line-height: $line-height-body,
+        letter-spacing: 0,
+    ),
+    label: (
+        family: $font-mono,
+        size: $font-size-label,
+        weight: $font-weight-semibold,
+        line-height: $line-height-ui,
+        letter-spacing: $tracking-label,
+    ),
+);
+
+/* =========================================
+   Mixins
+========================================= */
+
+@mixin respond-up($bp) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
+
+@mixin surface-card-shell {
+    position: relative;
+    overflow: hidden;
+    padding: var(--card-padding-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.32s ease,
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@mixin index-label {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    @include font(label, $font-weight-bold);
+}
+
+@mixin font($type, $font-weight: null, $letter-spacing: null, $line-height: null) {
+    $preset: map.get($font-presets, $type);
+
+    @if $preset ==null {
+        @error "Unknown font preset `#{$type}`. Use one of: #{map.keys($font-presets)}.";
+    }
+
+    $resolved-weight: $font-weight;
+    $resolved-line-height: $line-height;
+    $resolved-letter-spacing: $letter-spacing;
+
+    @if $resolved-weight ==null {
+        $resolved-weight: map.get($preset, weight);
+    }
+
+    @if $resolved-line-height ==null {
+        $resolved-line-height: map.get($preset, line-height);
+    }
+
+    @if $resolved-letter-spacing ==null {
+        $resolved-letter-spacing: map.get($preset, letter-spacing);
+    }
+
+    font-family: map.get($preset, family);
+    font-size: map.get($preset, size);
+    font-weight: $resolved-weight;
+    line-height: $resolved-line-height;
+    letter-spacing: $resolved-letter-spacing;
+}

@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
     experimental: {
         appManifest: false,
+        defaults: { nuxtLink: { prefetchOn: { visibility: false, interaction: true } } },
     },
 
     runtimeConfig: {
@@ -44,9 +45,8 @@ export default defineNuxtConfig({
             viewport: 'width=device-width, initial-scale=1',
             meta: [
                 { name: 'referrer', content: 'strict-origin-when-cross-origin' },
-                { name: 'color-scheme', content: 'light dark' },
-                { name: 'theme-color', content: '#f2f4f6', media: '(prefers-color-scheme: light)' },
-                { name: 'theme-color', content: '#060a10', media: '(prefers-color-scheme: dark)' },
+                { name: 'color-scheme', content: 'light' },
+                { name: 'theme-color', content: '#f5f5f5' },
                 { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
                 ...(googleSiteVerification ? [{ name: 'google-site-verification', content: googleSiteVerification }] : []),
             ],
@@ -112,7 +112,7 @@ export default defineNuxtConfig({
             preprocessorOptions: {
                 scss: {
                     loadPaths: ['assets/style'],
-                    additionalData: '@use "abstracts/tokens" as *;',
+                    additionalData: '@use "abstracts/mixins" as *;',
                 },
             },
         },
@@ -120,6 +120,7 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'static',
+        prerender: { ignore: ['/ver.2026/**'] },
         publicAssets: [
             { dir: imagesDir, baseURL: '/assets/images' },
             { dir: iconsDir, baseURL: '/assets/icons' },

@@ -1,8 +1,8 @@
 https://yheun03.github.io/
 https://yheun03.github.io/about/
+https://yheun03.github.io/journey/
 https://yheun03.github.io/projects/
 https://yheun03.github.io/personal/
-https://yheun03.github.io/journey/
 https://yheun03.github.io/projects/samhwa-eco-dashboard/
 https://yheun03.github.io/projects/orchem-mes/
 https://yheun03.github.io/projects/hanjinkal/
@@ -25,6 +25,7 @@ https://yheun03.github.io/projects/company-renewal-2022/
 https://yheun03.github.io/projects/incheon-university/
 https://yheun03.github.io/projects/tos-renewal/
 https://yheun03.github.io/projects/toms/
+https://yheun03.github.io/personal/portfolio-2026/
 https://yheun03.github.io/personal/flight-shade/
 https://yheun03.github.io/personal/planearby/
 https://yheun03.github.io/personal/jonsoft-framework-portfolio/

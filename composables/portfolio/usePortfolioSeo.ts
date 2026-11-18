@@ -1,5 +1,4 @@
 type SeoLocale = 'ko' | 'en';
-type SeoQuestion = { name: string; acceptedAnswer: string };
 
 type PortfolioSeoOptions = {
     title: string;
@@ -15,7 +14,6 @@ type PortfolioSeoOptions = {
     imageWidth?: number;
     imageHeight?: number;
     personDescription?: string;
-    questions?: SeoQuestion[];
     noindex?: boolean;
     schemaType?: 'ProfilePage' | 'CollectionPage' | 'AboutPage' | 'WebPage';
     breadcrumbs?: { name: string; path: string }[];
@@ -47,7 +45,6 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const page = toValue(options);
         const { profile, seo } = content.value;
         const pagePath = page.path ?? '/';
-        const questions: SeoQuestion[] = page.questions ?? (pagePath === '/' ? seo.questions : []);
         const canonicalPath = pagePath === '/' || pagePath.endsWith('/') ? pagePath : `${pagePath}/`;
         const canonical = getPortfolioAbsoluteUrl(canonicalPath);
         const imagePath = page.image?.endsWith('.svg') ? DEFAULT_IMAGE : (page.image ?? DEFAULT_IMAGE);
@@ -56,7 +53,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         const imageHeight = page.imageHeight ?? (imagePath === DEFAULT_IMAGE ? 1122 : undefined);
         const title = page.ogTitle ?? page.title;
         const description = page.ogDescription ?? page.description;
-        const keywordList = [...new Set([...seo.keywords, ...(page.keywords ?? [])])];
+        const keywordList = [...new Set([profile.name, ...(page.keywords ?? []), ...seo.keywords])].slice(0, 16);
         const robots = page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
         const naverVerification = String(config.naverSiteVerification ?? '').trim();
         const personId = `${SITE_URL}#person`;
@@ -68,7 +65,8 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             '@type': 'Person',
             '@id': personId,
             name: profile.name,
-            alternateName: 'Eunyounghwan',
+            alternateName: ['Eun Younghwan', 'Younghwan Eun', 'Eunyounghwan'],
+            identifier: 'yheun03',
             url: SITE_URL,
             jobTitle: seo.jobTitle,
             description: page.personDescription ?? seo.description,
@@ -110,6 +108,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 '@id': websiteId,
                 url: SITE_URL,
                 name: seo.websiteName,
+                alternateName: ['은영환 포트폴리오', 'Younghwan Eun Portfolio'],
                 description: seo.description,
                 inLanguage: ['ko', 'en'],
                 publisher: { '@id': personId },
@@ -142,27 +141,6 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
             webpage.breadcrumb = { '@id': `${canonical}#breadcrumb` };
         }
 
-        if (questions.length) {
-            const faqId = `${canonical}#faq`;
-            graph.push({
-                '@type': 'FAQPage',
-                '@id': faqId,
-                url: `${canonical}#answers`,
-                inLanguage: page.locale,
-                about: { '@id': personId },
-                isPartOf: { '@id': websiteId },
-                mainEntity: questions.map((question) => ({
-                    '@type': 'Question',
-                    name: question.name,
-                    acceptedAnswer: {
-                        '@type': 'Answer',
-                        text: question.acceptedAnswer,
-                    },
-                })),
-            });
-            webpage.subjectOf = { '@id': faqId };
-        }
-
         const structuredData = JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': graph,
@@ -171,7 +149,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
         return {
             htmlAttrs: { lang: page.locale },
             title: page.title,
-            link: page.noindex ? [] : [{ rel: 'canonical', href: canonical }],
+            link: [{ rel: 'canonical', href: canonical }],
             meta: [
                 { name: 'description', content: page.description },
                 { name: 'author', content: profile.name },

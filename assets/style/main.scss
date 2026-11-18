@@ -10,29 +10,14 @@
 @use 'base/stats';
 @use 'base/cards';
 @use 'base/sections';
-@use 'base/year-timeline';
-@use 'base/segment-control';
 
 /* Layout shell */
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/shell';
-@use 'layout/dock';
-@use 'layout/page-variants';
 
 /* Motion */
 @use 'motion/reveal';
-@use 'motion/scroll-driven';
 
-/* Home sections */
-@use 'home/hero';
-@use 'home/story';
-@use 'home/shared';
-@use 'home/journey';
-@use 'home/highlights';
-@use 'home/contact';
-@use 'home/responsive';
-
-/* Route-level pages */
+/* Error page */
 @use 'pages/error';
-@use 'pages/about';

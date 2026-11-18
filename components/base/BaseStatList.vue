@@ -1,6 +1,6 @@
 <template>
     <dl class="base-stat-list" :aria-label="ariaLabel">
-        <div v-for="(stat, index) in stats" :key="stat.label" :style="{ '--stagger-i': index }" data-stagger>
+        <div v-for="stat in stats" :key="stat.label">
             <dt>
                 <span>{{ stat.label }}</span>
                 <details v-if="stat.description" class="base-stat-list__details">
@@ -27,7 +27,7 @@
                 </details>
             </dt>
             <dd :aria-label="`${stat.value}${stat.suffix ?? ''}`">
-                <span :data-count-to="Number.isFinite(Number(stat.value)) ? stat.value : undefined" aria-hidden="true">{{ stat.value }}</span
+                <span aria-hidden="true">{{ stat.value }}</span
                 ><span aria-hidden="true">{{ stat.suffix ?? '' }}</span>
             </dd>
         </div>

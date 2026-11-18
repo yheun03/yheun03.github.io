@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-18",
+  "method": {
+    "tool": "Lighthouse 12.8.2",
+    "formFactor": "mobile",
+    "rttMs": 150,
+    "throughputKbps": 1638.4,
+    "cpuSlowdown": 4,
+    "hosting": "Local static HTTP server with gzip; production build, default analytics environment"
+  },
+  "audits": {
+    "before-home": {
+      "scores": {
+        "performance": 87,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 3767.307500000001,
+      "transferBytes": 803380,
+      "tbtMs": 0,
+      "cls": 0
+    },
+    "final-home": {
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2631.7236000000003,
+      "transferBytes": 268718,
+      "tbtMs": 4,
+      "cls": 0
+    },
+    "final-projects": {
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2703.6966,
+      "transferBytes": 398638,
+      "tbtMs": 5.5,
+      "cls": 0
+    },
+    "final-detail": {
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2051.3029,
+      "transferBytes": 155774,
+      "tbtMs": 0,
+      "cls": 0
+    }
+  },
+  "bytes": {
+    "htmlBefore": 118060,
+    "htmlAfter": 68448,
+    "inlineCssBefore": 92941,
+    "inlineCssAfter": 40923
+  }
+}

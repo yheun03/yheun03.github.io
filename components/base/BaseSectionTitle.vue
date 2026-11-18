@@ -1,5 +1,5 @@
 <template>
-    <div class="section-title" :data-animate="animate ? '' : null">
+    <div class="section-title">
         <p v-if="eyebrow" class="section-title__eyebrow">{{ eyebrow }}</p>
         <component :is="headingTag" :id="titleId" class="section-title__title">
             {{ title }}
@@ -39,8 +39,7 @@ withDefaults(
         descriptionId?: string;
         headingTag?: 'h1' | 'h2';
         spark?: boolean;
-        animate?: boolean;
     }>(),
-    { headingTag: 'h2', spark: false, animate: true },
+    { headingTag: 'h2', spark: false },
 );
 </script>

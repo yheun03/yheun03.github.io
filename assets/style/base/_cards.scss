@@ -1,6 +1,5 @@
-@use '../abstracts/tokens' as *;
+@use '../abstracts/mixins' as *;
 
-/* Card */
 .base-card {
     position: relative;
     overflow: hidden;
@@ -14,11 +13,11 @@
     --card-flow-content: #{$space-7};
     --card-list-gap: #{$space-3};
 
-    > :where(.base-label, .base-label--technical) {
+    > :where(.base-label) {
         margin-bottom: 0;
     }
 
-    > :where(.base-label, .base-label--technical) + :where(h2, h3, p, ul, ol) {
+    > :where(.base-label) + :where(h2, h3, p, ul, ol) {
         margin-top: var(--card-flow-label);
     }
 
@@ -44,129 +43,6 @@
     }
 }
 
-/* Surface + feature cards */
-.surface-card,
-.feature-card {
-    @include surface-card-shell;
-    overflow: visible;
-}
-
-.surface-card {
-    &--flow {
-        display: grid;
-        gap: clamp(20px, 3vw, 32px);
-    }
-
-    &__title {
-        margin: 0;
-        @include font(display-6);
-    }
-}
-
-.feature-card {
-    display: grid;
-    gap: var(--space-6);
-    min-height: clamp(192px, 24vw, 256px);
-    align-content: start;
-
-    &--skill {
-        height: 100%;
-        min-height: clamp(224px, 28vw, 288px);
-    }
-
-    &__eyebrow {
-        margin: 0;
-        @include index-label;
-        text-transform: uppercase;
-    }
-
-    &__icon {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1;
-        color: var(--color-text-muted);
-        letter-spacing: 0;
-        font-style: normal;
-    }
-
-    &__title {
-        margin: 0;
-        @include font(display-5);
-        text-wrap: balance;
-    }
-
-    &__description {
-        margin: 0;
-        color: var(--color-text-muted);
-        @include font(body-2);
-    }
-
-    &__tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-3);
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        li {
-            display: contents;
-        }
-    }
-}
-
-.spotlight__kicker {
-    margin: 0;
-    max-width: 14ch;
-    @include font(display-4);
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(20px, 3vw, 32px);
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    list-style: none;
-
-    &--toolbox {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-.flow-steps {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: clamp(20px, 3vw, 36px);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    li {
-        display: grid;
-        gap: 12px;
-        padding-top: clamp(14px, 1.8vw, 19px);
-        border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
-    }
-
-    &__index {
-        @include index-label;
-    }
-
-    &__label {
-        @include font(title-1, $font-weight-black);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .surface-card,
-    .feature-card {
-        transition: none;
-    }
-}
-
-/* Shared empty image */
 .gallery-card__empty-capture {
     display: grid;
     place-content: center;
@@ -175,25 +51,31 @@
     min-height: 100%;
     aspect-ratio: 16 / 9;
     padding: clamp(20px, 4vw, 32px);
-    border: 1px dashed color-mix(in srgb, var(--gallery-muted) 35%, transparent);
-    border-radius: inherit;
-    color: var(--gallery-body-soft);
-    background: var(--gallery-bg-elevated);
+    border: 1px solid #d0d0d0;
+    border-radius: 0;
+    color: var(--gallery-body);
+    background: #ebebeb;
     text-align: center;
 }
 
 .gallery-card__empty-capture-kicker {
-    color: var(--gallery-accent);
-    font-size: 0.88rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    color: var(--gallery-ink);
+    font-size: clamp(16px, 1.4vw, 22px);
+    font-weight: 400;
+    letter-spacing: -0.04em;
 }
 
 .gallery-card__empty-capture-copy {
-    max-width: 22ch;
-    color: var(--gallery-body-soft);
+    max-width: 38ch;
+    margin-inline: auto;
+    color: var(--gallery-muted);
     font-size: clamp(0.88rem, 1.7vw, 0.95rem);
-    font-weight: 600;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+@media (max-width: 1023px) {
+    .base-card {
+        padding: var(--card-padding);
+    }
 }

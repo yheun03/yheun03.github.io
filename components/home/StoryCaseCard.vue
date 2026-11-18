@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to="to" class="story-case surface-card" :aria-label="featured ? `${t('story.featuredBadge')}: ${linkLabel}` : linkLabel">
+    <NuxtLink :to="to" class="story-case" :aria-label="featured ? `${t('story.featuredBadge')}: ${linkLabel}` : linkLabel">
         <figure v-if="cover" class="story-case__media">
             <GalleryEmptyCapture v-if="isPlaceholderCapture(cover)" />
             <BaseMediaImage v-else :src="resolveAppPath(cover)" :alt="title" />
@@ -80,3 +80,5 @@ defineProps<{
 const { t } = useLocale();
 const { resolveAppPath } = useAppPath();
 </script>
+
+<style lang="scss" src="~/assets/style/base/_case-card.scss"></style>

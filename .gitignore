@@ -9,3 +9,7 @@ dist
 .DS_Store
 * 2.*
 * 2/
+
+# Build-generated page data and responsive images
+public/content/
+public/assets/media/

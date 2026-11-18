@@ -1,5 +1,5 @@
 <template>
-    <component :is="tag" class="base-index-label" :class="variant ? `base-index-label--${variant}` : undefined">
+    <component :is="tag" class="base-index-label" :class="variant === 'tag' ? 'base-index-label--tag' : undefined">
         <slot>{{ value }}</slot>
     </component>
 </template>

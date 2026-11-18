@@ -1,12 +1,5 @@
 <template>
-    <AppLayout
-        :links="layoutLinks"
-        active-id=""
-        brand-href="/"
-        active-path="/personal"
-        page-variant="archive-personal"
-        :footer-text="t('footer.copyright')"
-    >
+    <AppLayout>
         <article class="token-page section" aria-labelledby="token-page-title">
             <header class="token-hero" data-reveal="hero">
                 <h1 id="token-page-title">{{ t('tokens.title') }}</h1>
@@ -97,8 +90,6 @@
 <script setup lang="ts">
 const { t, content, locale } = useLocale();
 
-const layoutLinks = useSubpageLinks();
-
 const colorTokens = computed(() => content.value.designTokens.colors);
 const spacingTokens = computed(() => content.value.designTokens.spacing);
 const typographyTokens = computed(() => content.value.designTokens.typography);
@@ -117,38 +108,63 @@ usePortfolioSeo(() => ({
 <style scoped>
 .token-page {
     display: grid;
-    gap: clamp(88px, 11vw, 168px);
-    width: min(100%, 1560px);
-    margin: 0 auto;
-    padding: clamp(72px, 8vw, 120px) var(--page-pad-x);
+    gap: var(--section-gap);
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: var(--section-pad-y) var(--page-pad-x);
 }
 
 .token-hero,
 .token-section {
     display: grid;
-    gap: var(--block-gap);
+    gap: 32px 8%;
 }
 
 .token-hero {
+    grid-template-columns: 1.3fr 1fr;
     max-width: 1080px;
-    gap: var(--space-6);
+    padding-block: 0 64px;
+    border-bottom: 1px solid var(--color-divider-subtle);
+}
+
+.token-section {
+    grid-template-columns: 1fr 1.8fr;
+    padding: 56px 0;
+    border-top: 1px solid var(--color-divider);
+}
+
+.token-section > :not(.token-section__head) {
+    grid-column: 2;
+}
+
+.token-section__head {
+    grid-row: 1;
+    margin: 0;
 }
 
 .token-hero h1 {
-    max-width: 18ch;
-    font-family: var(--font-display);
-    font-size: var(--font-size-display-2);
-    font-weight: var(--font-weight-black);
-    line-height: var(--line-height-display);
-    letter-spacing: var(--tracking-tight);
+    grid-row: span 2;
+    color: var(--color-primary);
+    font-family: var(--font-editorial);
+    font-size: var(--page-title-size);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.055em;
+    word-break: keep-all;
+}
+
+.token-hero p {
+    font-size: 20px;
+    line-height: 1.7;
 }
 
 .token-hero code {
     overflow-wrap: anywhere;
 }
 
-.token-hero p:not(.base-label--technical),
-.token-section__head p:not(.base-label--technical) {
+.token-hero p,
+.token-section__head p {
     max-width: 52ch;
     color: var(--color-text-muted);
 }
@@ -167,10 +183,10 @@ usePortfolioSeo(() => ({
 
 .token-section__head h2 {
     font-family: var(--font-display);
-    font-size: var(--font-size-display-4);
-    font-weight: var(--font-weight-black);
+    font-size: 32px;
+    font-weight: 400;
     line-height: var(--line-height-heading);
-    letter-spacing: var(--tracking-tight);
+    letter-spacing: -0.04em;
 }
 
 .token-grid {
@@ -343,13 +359,13 @@ usePortfolioSeo(() => ({
 }
 
 .shape-demo--card {
-    border-radius: var(--radius-card);
+    border-radius: var(--radius-lg);
 }
 
-.shape-demo--pill {
+.shape-demo--square {
     width: 192px;
     height: 56px;
-    border-radius: var(--radius-pill);
+    border-radius: 0;
 }
 
 .shape-demo--soft {
@@ -365,7 +381,7 @@ usePortfolioSeo(() => ({
 @media (max-width: 767px) {
     .token-page {
         width: 100%;
-        padding: 56px max(var(--page-pad-x), env(safe-area-inset-left)) 80px max(var(--page-pad-x), env(safe-area-inset-right));
+        padding: var(--section-pad-y) var(--page-pad-x);
     }
 
     .token-hero h1,
@@ -397,8 +413,24 @@ usePortfolioSeo(() => ({
     }
 
     .shape-demo,
-    .shape-demo--pill {
+    .shape-demo--square {
         width: min(100%, 192px);
+    }
+}
+@media (max-width: 640px) {
+    .token-hero,
+    .token-section {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .token-hero h1,
+    .token-section__head {
+        grid-row: auto;
+    }
+
+    .token-section > :not(.token-section__head) {
+        grid-column: 1;
     }
 }
 </style>

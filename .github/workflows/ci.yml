@@ -24,3 +24,6 @@ jobs:
 
             - name: Generate static site
               run: npm run generate
+
+            - name: Check SEO and generated content
+              run: npm run check:site

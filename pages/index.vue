@@ -9,8 +9,11 @@
                 </div>
                 <div class="studio-hero__body">
                     <NuxtLink to="/projects/framework" class="studio-hero__visual" :aria-label="copy('조앤소프트 프레임워크 프로젝트 보기', 'Explore the Jonsoft framework project')">
-                        <div class="studio-preview">
-                            <img :src="resolveAppPath('/assets/images/projects/framework/image-01.webp')" :alt="copy('조앤소프트 프레임워크 실제 화면', 'Jonsoft framework interface')" fetchpriority="high" />
+                        <div class="studio-mockup studio-mockup--laptop">
+                            <div class="studio-mockup__screen">
+                                <img :src="resolveAppPath('/assets/images/projects/framework/image-01.webp')" :alt="copy('조앤소프트 프레임워크 실제 화면', 'Jonsoft framework interface')" fetchpriority="high" />
+                            </div>
+                            <div class="studio-mockup__base" aria-hidden="true"></div>
                         </div>
                         <span class="studio-hero__visual-arrow" aria-hidden="true">↗</span>
                     </NuxtLink>
@@ -23,14 +26,19 @@
                 </div>
             </section>
             <section class="studio-companies" :aria-label="copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators')">
-                <p>{{ copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators') }}</p>
-                <ul>
-                    <li v-for="company in companies" :key="company.id">
-                        <NuxtLink :to="`/projects/${company.project}`" :aria-label="`${company.name} ${copy('프로젝트 보기', 'project')}`">
-                            <img :src="resolveAppPath(`/assets/images/companies/${company.file}`)" :alt="company.name" :class="`studio-companies__logo--${company.id}`" loading="lazy" />
-                        </NuxtLink>
-                    </li>
-                </ul>
+                <h2 class="studio-companies__title">{{ copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators') }}</h2>
+                <div v-for="group in companyGroups" :key="group.id" class="studio-companies__group">
+                    <h3>{{ group.title }}</h3>
+                    <ul class="studio-companies__logos">
+                        <li v-for="company in group.companies" :key="company.id">
+                            <NuxtLink :to="`/projects/${company.project}`" :aria-label="`${company.name} ${copy('프로젝트 보기', 'project')}`">
+                                <span class="studio-companies__logo-frame">
+                                    <img :src="resolveAppPath(`/assets/images/companies/${company.file}`)" :alt="company.name" :class="`studio-companies__logo--${company.id}`" loading="lazy" />
+                                </span>
+                            </NuxtLink>
+                        </li>
+                    </ul>
+                </div>
             </section>
             <section id="about" class="studio-about studio-section">
                 <h2 class="studio-title">About</h2>
@@ -139,19 +147,24 @@ const { resolveAppPath } = useAppPath();
 const copy = (ko: string, en: string) => locale.value === 'ko' ? ko : en;
 const profile = computed(() => content.value.profile);
 const companies = [
-    { id: 'hanjinkal', name: '한진칼 HANJIN KAL', file: 'hanjinkal.svg', project: 'hanjinkal' },
-    { id: 'spsamhwa', name: 'SP SAMHWA', file: 'spsamhwa.svg', project: 'samhwa-eco-dashboard' },
-    { id: 'orchem', name: 'ORCHEM 오알켐', file: 'orchem.svg', project: 'orchem-mes' },
-    { id: 'kdone', name: '경동원', file: 'kdone.gif', project: 'kyungdongwon-cms' },
-    { id: 'hanon', name: 'Hanon Systems 한온시스템', file: 'hanon.svg', project: 'hanon' },
-    { id: 'kleannara', name: '깨끗한나라', file: 'kleannara.png', project: 'oms' },
-    { id: 'jonsoft', name: '조앤소프트', file: 'jonsoft.svg', project: 'framework' },
-    { id: 'daeyang', name: '대양그룹 (대양제지·대양판지)', file: 'daeyang.webp', project: 'scm-daeyang-paper' },
-    { id: 'tailim', name: '태림', file: 'tailim.png', project: 'tos-renewal' },
-    { id: 'inu', name: '인천대학교', file: 'inu.webp', project: 'incheon-university' },
-    { id: 'concentrix', name: '콘센트릭스 · 한진칼 프로젝트 협업', file: 'concentrix.webp', project: 'hanjinkal' },
-    { id: 'i-on', name: '아이온커뮤니케이션즈 · 한진칼 프로젝트 협업', file: 'i-on.webp', project: 'hanjinkal' },
+    { id: 'hanjinkal', group: 'web', name: '한진칼 HANJIN KAL', file: 'hanjinkal.svg', project: 'hanjinkal' },
+    { id: 'spsamhwa', group: 'systems', name: 'SP SAMHWA', file: 'spsamhwa.svg', project: 'samhwa-eco-dashboard' },
+    { id: 'orchem', group: 'systems', name: 'ORCHEM 오알켐', file: 'orchem.svg', project: 'orchem-mes' },
+    { id: 'kdone', group: 'web', name: '경동원', file: 'kdone.gif', project: 'kyungdongwon-cms' },
+    { id: 'hanon', group: 'web', name: 'Hanon Systems 한온시스템', file: 'hanon.svg', project: 'hanon' },
+    { id: 'kleannara', group: 'systems', name: '깨끗한나라', file: 'kleannara.png', project: 'oms' },
+    { id: 'jonsoft', group: 'collaboration', name: '조앤소프트', file: 'jonsoft.svg', project: 'framework' },
+    { id: 'daeyang', group: 'systems', name: '대양그룹 (대양제지·대양판지)', file: 'daeyang.webp', project: 'scm-daeyang-paper' },
+    { id: 'tailim', group: 'systems', name: '태림', file: 'tailim.png', project: 'tos-renewal' },
+    { id: 'inu', group: 'web', name: '인천대학교', file: 'inu.webp', project: 'incheon-university' },
+    { id: 'concentrix', group: 'collaboration', name: '콘센트릭스 · 한진칼 프로젝트 협업', file: 'concentrix.webp', project: 'hanjinkal' },
+    { id: 'i-on', group: 'collaboration', name: '아이온커뮤니케이션즈 · 한진칼 프로젝트 협업', file: 'i-on.webp', project: 'hanjinkal' },
 ];
+const companyGroups = computed(() => [
+    { id: 'web', title: copy('기업 웹사이트', 'Corporate websites') },
+    { id: 'systems', title: copy('제조·물류 시스템', 'Manufacturing & logistics') },
+    { id: 'collaboration', title: copy('사내 개발·기술 협업', 'In-house development & collaboration') },
+].map(group => ({ ...group, companies: companies.filter(company => company.group === group.id) })));
 // Only pair a device with a capture made for that viewport.
 const projectDevices: Record<string, { type: 'phone' | 'tablet'; capture: string }> = {
     'orchem-mes': { type: 'tablet', capture: '/assets/images/projects/orchem-mes/image-05.webp' },

@@ -40,7 +40,7 @@
         padding-bottom: var(--silver-space);
         &__toolbar {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 24px;
@@ -49,23 +49,72 @@
         }
         &__sort {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             align-items: center;
             font-size: 13px;
             color: #566273;
-            label {
+            > p {
+                font-size: 13px;
+                line-height: 1.3;
+                white-space: nowrap;
+            }
+        }
+        &__sort-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        &__sort-dropdown {
+            position: relative;
+            z-index: 5;
+            min-width: 128px;
+            color: #222a35;
+
+            summary {
                 display: flex;
                 align-items: center;
-                gap: 12px;
-            }
-            select {
-                border: 0;
+                justify-content: space-between;
+                gap: 20px;
+                min-height: 44px;
+                padding: 8px 12px;
                 border-bottom: 1px solid #bfc7d1;
-                border-radius: 0;
+                list-style: none;
+                cursor: pointer;
+
+                &::-webkit-details-marker { display: none; }
+                &:hover { border-color: #2354d8; }
+                &:focus-visible { outline: 2px solid #2354d8; outline-offset: 3px; }
+            }
+            ul {
+                position: absolute;
+                top: calc(100% + 4px);
+                right: 0;
+                min-width: 100%;
+                margin: 0;
+                padding: 4px;
+                border: 1px solid #bfc7d1;
+                background: var(--silver-paper);
+                list-style: none;
+            }
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                width: 100%;
+                min-height: 44px;
                 padding: 8px;
+                border: 0;
                 background: transparent;
-                color: #222a35;
+                color: inherit;
                 font: inherit;
+                font-size: 13px;
+                text-align: left;
+                white-space: nowrap;
+                cursor: pointer;
+
+                &:hover, &:focus-visible { background: #e5e5e5; }
+                &[aria-pressed='true'] { color: #2354d8; }
             }
         }
         &__grid {
@@ -87,10 +136,14 @@
             overflow: hidden;
             background: linear-gradient(140deg, #dfe5ed, #bdc9db);
         }
-        &:nth-child(3n + 2) &__stage {
+        &__stage--empty {
+            padding: 0;
+            background: #ebebeb;
+        }
+        &:nth-child(3n + 2) &__stage:not(.silver-project__stage--empty) {
             background: linear-gradient(140deg, #e9e5de, #d1cbc2);
         }
-        &:nth-child(3n) &__stage {
+        &:nth-child(3n) &__stage:not(.silver-project__stage--empty) {
             background: linear-gradient(140deg, #dedfdf, #bec7c7);
         }
         &__screen {
@@ -207,6 +260,9 @@
             padding: var(--silver-space) 0;
             margin: 0;
             border-bottom: 1px solid #bfc7d1;
+        }
+        .gallery-detail__technologies {
+            align-items: center;
         }
         .gallery-detail__section-intro {
             margin: 0;
@@ -666,19 +722,29 @@
         color: #f3f3ef;
     }
     .gallery-filter {
+        &__label {
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 500;
+
+            span {
+                font-size: 12px;
+            }
+        }
         &__options {
-            gap: 8px 16px;
+            gap: 8px 12px;
         }
         &__chip {
             min-height: 44px;
-            padding: 10px 16px;
+            padding: 8px 12px;
             border: 0;
-            border-bottom: 2px solid #566273;
+            border-bottom: 1px solid #bfc7d1;
             border-radius: 0;
             background: transparent;
             color: #222a35;
             box-shadow: none;
             transform: none;
+            font-size: 13px;
             font-weight: 400;
             &:hover {
                 background: #e4e8ee;
@@ -715,6 +781,18 @@
 }
 
 .silver-shell main.portfolio-page {
+    .silver-case .gallery-detail__cover--empty {
+        padding: 0;
+        background: #ebebeb;
+
+        .gallery-card__empty-capture {
+            height: 100%;
+            min-height: 0;
+            aspect-ratio: auto;
+            border: 0;
+        }
+    }
+
     .gallery-detail__figure,
     .gallery-detail__thumbnail,
     .gallery-detail__thumbnail-index,

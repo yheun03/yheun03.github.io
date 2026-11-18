@@ -3,6 +3,7 @@
 .base-chip-list {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 8px;
     margin: 0;
     padding: 0;
@@ -10,6 +11,9 @@
 }
 
 .base-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
     padding: 7px 10px;
     border: 1px solid var(--color-border);
     border-radius: 0;

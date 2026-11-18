@@ -3,7 +3,7 @@ import type { WorkItem } from '@data/works';
 
 export type GalleryViewMode = 'editorial' | 'grid';
 export type GalleryArchiveVariant = 'career' | 'personal';
-export type WorkSortMode = 'added' | 'start' | 'title';
+export type WorkSortMode = 'start' | 'title';
 export type WorkFilterMode = 'featured' | 'problem' | 'frontend' | 'operation' | 'cms' | 'individual' | 'team';
 
 export type WorkYearEntry = { type: 'year'; key: string; year: string } | { type: 'work'; key: string; work: WorkItem; firstWork?: boolean };
@@ -118,14 +118,10 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Compute
 
     const sortOptions = computed<{ value: WorkSortMode; label: string }[]>(() => [
         { value: 'start', label: t('gallery.sortStart') },
-        { value: 'added', label: t('gallery.sortAdded') },
         { value: 'title', label: t('gallery.sortTitle') },
     ]);
 
     const sortedWorks = computed(() => {
-        // 개인 프로젝트는 콘텐츠 배열 맨 앞에 새 항목을 추가해 최근 추가 순서를 유지한다.
-        if (sortMode.value === 'added') return [...works.value];
-
         return [...works.value].sort((a, b) =>
             sortMode.value === 'start'
                 ? getStartValue(b.period) - getStartValue(a.period)

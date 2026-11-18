@@ -1,0 +1,14 @@
+{
+  "version": "2026-initial",
+  "sourceBranch": "main",
+  "sourceCommit": "6c47ccc7182529e466410058f91d7e8cfe00467d",
+  "archivedOn": "2026-11-18",
+  "baseURL": "/ver.2026/",
+  "adaptations": [
+    "Versioned base path",
+    "noindex metadata for archive pages",
+    "2025 archive links use /ver.2025/",
+    "Texture asset path stays inside the snapshot"
+  ],
+  "dependencies": "Installed from the source commit package-lock.json"
+}

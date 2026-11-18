@@ -124,7 +124,7 @@
     }
     ul {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 16px 3%;
         list-style: none;
         padding: 0;
@@ -137,9 +137,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
-        min-height: 82px;
-        padding: 8px 12px;
+        height: 104px;
+        padding: 16px 12px;
         background: #fff;
         transition: transform 0.2s;
         &:hover {
@@ -151,6 +150,7 @@
         display: block;
         width: calc(var(--logo-width) * var(--logo-scale, 1));
         max-width: 100%;
+        max-height: calc(var(--logo-height, 46px) * var(--logo-scale, 1));
         height: auto;
         object-fit: contain;
     }
@@ -176,13 +176,23 @@
         --logo-width: 165px;
     }
     &__logo--daeyang {
-        --logo-width: 150px;
+        --logo-width: 170px;
+        --logo-height: 72px;
     }
     &__logo--tailim {
         --logo-width: 190px;
     }
     &__logo--inu {
-        --logo-width: 210px;
+        --logo-width: 235px;
+        --logo-height: 72px;
+    }
+    &__logo--concentrix {
+        --logo-width: 220px;
+        --logo-height: 72px;
+    }
+    &__logo--i-on {
+        --logo-width: 235px;
+        --logo-height: 72px;
     }
 }
 
@@ -667,7 +677,8 @@
             flex: 0 0 44%;
         }
         a {
-            min-height: 65px;
+            height: 82px;
+            padding: 12px 8px;
         }
     }
     .studio-section {
@@ -765,6 +776,14 @@
 
 .studio [id] {
     scroll-margin-top: 100px;
+}
+@media (hover: hover) and (pointer: fine) {
+    .studio-work {
+        cursor: url('../../icons/cursor-arrow.svg') 24 24, pointer;
+    }
+    .studio-work__caption {
+        pointer-events: none;
+    }
 }
 @media (max-width: 640px) {
     .studio [id] {

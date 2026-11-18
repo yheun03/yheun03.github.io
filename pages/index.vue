@@ -22,8 +22,8 @@
                     </div>
                 </div>
             </section>
-            <section class="studio-companies" :aria-label="copy('참여 프로젝트 기업', 'Companies I have worked on projects for')">
-                <p>{{ copy('참여 프로젝트 기업', 'Project experience') }}</p>
+            <section class="studio-companies" :aria-label="copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators')">
+                <p>{{ copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators') }}</p>
                 <ul>
                     <li v-for="company in companies" :key="company.id">
                         <NuxtLink :to="`/projects/${company.project}`" :aria-label="`${company.name} ${copy('프로젝트 보기', 'project')}`">
@@ -149,6 +149,8 @@ const companies = [
     { id: 'daeyang', name: '대양그룹 (대양제지·대양판지)', file: 'daeyang.webp', project: 'scm-daeyang-paper' },
     { id: 'tailim', name: '태림', file: 'tailim.png', project: 'tos-renewal' },
     { id: 'inu', name: '인천대학교', file: 'inu.webp', project: 'incheon-university' },
+    { id: 'concentrix', name: '콘센트릭스 · 한진칼 프로젝트 협업', file: 'concentrix.webp', project: 'hanjinkal' },
+    { id: 'i-on', name: '아이온커뮤니케이션즈 · 한진칼 프로젝트 협업', file: 'i-on.webp', project: 'hanjinkal' },
 ];
 // Only pair a device with a capture made for that viewport.
 const projectDevices: Record<string, { type: 'phone' | 'tablet'; capture: string }> = {

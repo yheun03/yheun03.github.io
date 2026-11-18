@@ -38,5 +38,13 @@
     {
         "file": "inu.webp",
         "source": "https://jonsoft.co.kr/assets/logos/partners/incheon-national-university.webp"
+    },
+    {
+        "file": "concentrix.webp",
+        "source": "https://jonsoft.co.kr/assets/logos/partners/concentrix.webp"
+    },
+    {
+        "file": "i-on.webp",
+        "source": "https://jonsoft.co.kr/assets/logos/partners/i-on-communications.webp"
     }
 ]

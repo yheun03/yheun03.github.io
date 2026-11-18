@@ -14,10 +14,14 @@
     min-height: $size-touch;
     padding: $space-5 clamp(20px, 2.4vw, 28px);
     border: 1px solid transparent;
-    border-radius: $radius-pill;
+    border-radius: 0;
     cursor: pointer;
-    @include font(button);
-    font-size: var(--font-size-md);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    text-decoration: none;
     text-align: center;
     white-space: normal;
     transition:
@@ -35,12 +39,16 @@
         opacity: 0.62;
     }
 
+    &:hover {
+        text-decoration: none;
+    }
+
     &--primary {
-        background: var(--color-action);
-        color: var(--color-on-primary);
+        background: var(--silver-charcoal, var(--color-text-strong));
+        color: #fff;
 
         &:hover {
-            background: var(--color-action-hover);
+            background: var(--color-action);
         }
     }
 

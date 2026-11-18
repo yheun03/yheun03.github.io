@@ -66,5 +66,5 @@ export function useLocale() {
         await setLocale(locale.value === 'ko' ? 'en' : 'ko');
     }
 
-    return { locale, t, content, initLocale, toggleLocale };
+    return { locale, t, content, initLocale, setLocale, toggleLocale };
 }

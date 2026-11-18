@@ -199,22 +199,6 @@
                 font-weight: 400;
             }
         }
-        .gallery-detail__section-nav {
-            margin: 0;
-            padding: 20px 0;
-            gap: 32px;
-            a {
-                background: transparent;
-                padding: 8px 0;
-                border-radius: 0;
-                border-bottom: 1px solid #bfc7d1;
-                &:hover {
-                    background: transparent;
-                    color: #2354d8;
-                    border-color: #2354d8;
-                }
-            }
-        }
         .gallery-detail__brief,
         .gallery-detail__technologies {
             display: grid;
@@ -624,9 +608,6 @@
             .gallery-detail__hero-meta {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-            .gallery-detail__section-nav {
-                gap: 20px;
-            }
             .gallery-detail__end > .base-button {
                 grid-column: 1;
             }
@@ -731,4 +712,32 @@
 .silver-shell main.portfolio-page .base-badge {
     --badge-bg: #e4e8ee;
     --badge-color: #222a35;
+}
+
+.silver-shell main.portfolio-page {
+    .gallery-detail__figure,
+    .gallery-detail__thumbnail,
+    .gallery-detail__thumbnail-index,
+    .gallery-detail__links .base-button,
+    .base-badge,
+    .base-accent-badge,
+    .segment-control__group,
+    .segment-control__button {
+        border-radius: 0;
+    }
+
+    .base-chip-list .base-chip {
+        border-radius: 0;
+        background: transparent;
+        font-family: inherit;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 1001px) and (min-height: 650px) {
+    .silver-shell main.portfolio-page .silver-journey__chapter > header {
+        position: sticky;
+        top: 108px;
+        align-self: start;
+    }
 }

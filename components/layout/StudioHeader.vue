@@ -11,11 +11,15 @@
                 :aria-current="!home && route.path.startsWith(link.href) ? 'page' : undefined"
                 >{{ link.label }}</BaseLink
             >
-            <button type="button" :disabled="switching" :aria-label="locale === 'ko' ? 'Switch to English' : '한국어로 변경'" @click="switchLocale">
-                {{ locale === 'ko' ? 'EN' : '한국어' }}
-            </button>
         </nav>
-        <BaseLink class="studio-nav__contact" href="#contact">Contact <span aria-hidden="true">↗</span></BaseLink>
+        <div class="studio-nav__utilities">
+            <BaseLink class="studio-nav__contact" href="#contact">Contact <span aria-hidden="true">↗</span></BaseLink>
+            <div class="studio-nav__language" role="group" aria-label="Language">
+                <button type="button" lang="ko" aria-label="한국어" :aria-pressed="locale === 'ko'" :disabled="switching" @click="switchLocale('ko')">KO</button>
+                <span aria-hidden="true">/</span>
+                <button type="button" lang="en" aria-label="English" :aria-pressed="locale === 'en'" :disabled="switching" @click="switchLocale('en')">EN</button>
+            </div>
+        </div>
     </header>
 </template>
 
@@ -23,7 +27,7 @@
 const props = defineProps<{ home?: boolean }>();
 const route = useRoute();
 const { resolveAppPath } = useAppPath();
-const { locale, toggleLocale } = useLocale();
+const { locale, setLocale } = useLocale();
 const switching = ref(false);
 const links = computed(() => [
     { label: 'About', href: props.home ? '#about' : '/about' },
@@ -32,11 +36,11 @@ const links = computed(() => [
     { label: 'Personal', href: '/personal' },
     { label: 'Journey', href: '/journey' },
 ]);
-async function switchLocale() {
-    if (switching.value) return;
+async function switchLocale(value: 'ko' | 'en') {
+    if (switching.value || locale.value === value) return;
     switching.value = true;
     try {
-        await toggleLocale();
+        await setLocale(value);
     } finally {
         switching.value = false;
     }
@@ -82,47 +86,76 @@ async function switchLocale() {
         align-items: center;
         gap: clamp(16px, 2.4vw, 36px);
         font-size: 13px;
-        a,
-        button {
+        a {
             padding: 8px 0;
         }
         a:hover,
-        a[aria-current='page'],
-        button:hover {
+        a[aria-current='page'] {
             color: #2354d8;
         }
         a[aria-current='page'] {
             text-decoration: underline;
             text-underline-offset: 6px;
         }
+    }
+    &__utilities {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-shrink: 0;
+    }
+    &__language {
+        display: flex;
+        align-items: center;
+        color: #566273;
+        font-size: 11px;
+
         button {
+            min-width: 30px;
+            min-height: 44px;
+            margin: 0;
+            padding: 8px 4px;
             border: 0;
-            background: none;
+            background: transparent;
             color: inherit;
             font: inherit;
             cursor: pointer;
         }
+        button[aria-pressed='true'] {
+            color: #222a35;
+            font-weight: 700;
+        }
+        button:hover {
+            color: #2354d8;
+        }
         button:disabled {
-            color: #566273;
-            opacity: 1;
+            opacity: 0.6;
             cursor: wait;
+        }
+        span {
+            color: #bfc7d1;
         }
     }
     &__contact {
         display: flex;
         align-items: center;
         gap: 18px;
+        min-height: 44px;
         font-size: 13px;
         span {
             font-size: 22px;
         }
     }
 }
-@media (max-width: 640px) {
+@media (max-width: 900px) {
     .studio-nav {
         flex-wrap: wrap;
         gap: 8px 20px;
         padding-block: 12px;
+        &__utilities {
+            margin-left: auto;
+            gap: 20px;
+        }
         &__links {
             order: 3;
             width: 100%;

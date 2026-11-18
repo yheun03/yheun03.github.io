@@ -57,7 +57,7 @@ const contacts = computed(() => content.value.profile.contacts);
             align-items: center;
             justify-content: space-between;
             gap: 24px;
-            color: var(--studio-orange);
+            color: var(--silver-orange);
         }
         span {
             font-size: 0.65em;

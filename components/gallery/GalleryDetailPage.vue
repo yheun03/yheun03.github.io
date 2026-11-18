@@ -66,12 +66,6 @@
                         </div>
                     </dl>
 
-            <nav class="gallery-detail__section-nav" :aria-label="t('gallery.projectNavigation')">
-                <a :href="`#${briefTitleId}`">{{ t('gallery.contributions') }}</a>
-                <a :href="`#${techTitleId}`">{{ t('gallery.technologies') }}</a>
-                <a :href="`#${capturesTitleId}`">{{ t('gallery.captures') }}</a>
-            </nav>
-
             <section class="gallery-detail__brief" :aria-labelledby="briefTitleId">
                 <header class="gallery-detail__section-intro" data-reveal="up">
                     <h2 :id="briefTitleId">{{ t('gallery.contributions') }}</h2>

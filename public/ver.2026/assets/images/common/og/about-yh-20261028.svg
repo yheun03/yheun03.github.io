@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f7f8f2"/>
+<path d="M64 111h1072M64 551h1072" stroke="#182b40" stroke-opacity=".2"/>
+<g fill="#516278" font-family="Helvetica, Arial, sans-serif" font-size="18" letter-spacing="3">
+<text x="64" y="75">EUN / MY STORY</text><text x="827" y="75">WEB PUBLISHER</text>
+</g>
+<g fill="#182b40" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="74" letter-spacing="-3">
+<text x="64" y="255">Eun, beyond</text><text x="64" y="342" fill="#4474be">the screen.</text>
+</g>
+<text x="68" y="425" fill="#516278" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="1">PERSONALITY. BELIEFS. IDENTITY.</text>
+<rect x="758" y="161" width="378" height="330" rx="20" fill="#eaf2ff"/>
+<path d="M789 197h315M789 455h315M825 181v291M1068 181v291" stroke="#b65a7e" stroke-opacity=".45" stroke-dasharray="5 5"/>
+<g transform="translate(795 184) scale(8.5)"><path d="M33.9771 30.5029H33.4771L25.4771 30.501H24.9771V20.4971L17.9771 20.499V30.5039H17.4771L9.47705 30.5029H8.97705V1.50293H9.47705L17.4771 1.50391H17.9771V11.502L24.9771 11.5V1.5H25.4771L33.4771 1.50293H33.9771V30.5029Z" fill="#8FB8FF" stroke="#182b40" stroke-width=".22" />
+    <path d="M9.81592 1.5L9.94092 1.81445L13.4771 10.6543L17.0132 1.81445L17.1382 1.5H26.2153L25.9409 2.18555L17.9771 22.0947V30.5H8.97705V22.0947L1.01318 2.18555L0.73877 1.5H9.81592Z" fill="#EAF2FF" stroke="#182b40" stroke-width=".22" />
+</g>
+<text x="64" y="591" fill="#516278" font-family="Helvetica, Arial, sans-serif" font-size="18">yheun03.github.io/about/</text>
+<text x="971" y="591" fill="#516278" font-family="Helvetica, Arial, sans-serif" font-size="18">YH / 2026</text>
+</svg>

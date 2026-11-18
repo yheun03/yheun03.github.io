@@ -50,6 +50,10 @@ npm run deploy
 
 공개 이력서는 [`RESUME.md`](RESUME.md)에서 확인할 수 있으며, 2025년 포트폴리오는 `public/ver.2025/`에 보관되어 있습니다.
 
+## 2026 초기 버전 보관
+
+기존 main 커밋 `6c47ccc7182529e466410058f91d7e8cfe00467d`의 정적 빌드를 `public/ver.2026/`에 보관합니다. `/personal/portfolio-2026/` 상세 페이지에서 `/ver.2026/index.html`을 열 수 있습니다. 일반 빌드에서 다시 렌더링하지 않는 고정 보관본이며 출처와 경로 조정 사항은 `public/ver.2026/archive.json`에 기록했습니다. 2025 버전은 기존 `/ver.2025/` 주소를 사용합니다.
+
 ## GitHub Pages 검색 설정
 
 `public/`의 `sitemap.xml`, `sitemap.txt`, `rss.xml`, `robots.txt`는 빌드 후 사이트 루트에 배포됩니다. `robots.txt`는 전체 공개 URL을 담은 XML 사이트맵과 최근 콘텐츠를 담은 RSS 2.0 피드를 안내합니다. 프로젝트를 추가하면 빌드 시 공개 URL과 검색 리소스를 자동 갱신합니다. 고정 페이지를 추가할 때는 `scripts/generate-search-assets.mjs`의 페이지 목록을 수정합니다. 실제로 콘텐츠를 수정한 날짜만 수정일로 기록합니다. 컴포넌트·디자인 토큰 데모는 `noindex`로 유지합니다.

@@ -966,6 +966,54 @@
   ],
   "personal": [
     {
+      "id": "portfolio-2026",
+      "category": "personal",
+      "period": "2026",
+      "tech": [
+        "Nuxt 3",
+        "Vue 3",
+        "TypeScript",
+        "SCSS",
+        "JavaScript"
+      ],
+      "pin": true,
+      "captures": [
+        "/assets/images/projects/portfolio-2026/image-01.jpg",
+        "/assets/images/projects/portfolio-2026/image-02.jpg"
+      ],
+      "thumbnail": "/assets/images/projects/portfolio-2026/image-01.jpg",
+      "languages": [
+        "HTML",
+        "SCSS",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "links": [
+        {
+          "label": "Open the initial 2026 version",
+          "href": "/ver.2026/index.html"
+        }
+      ],
+      "title": "Portfolio Website 2026 Initial Version",
+      "type": "Personal / Nuxt Portfolio",
+      "role": "Planning, design, publishing, and Vue UI implementation",
+      "introduction": "The original 2026 portfolio from main, preserved before the Silver redesign. Its introduction, career history, project gallery, and detail pages remain available as a static snapshot.",
+      "myWorks": [
+        "Built portfolio screens and shared components with Nuxt 3 and Vue 3",
+        "Organized Korean and English content, light and dark themes",
+        "Archived main commit 6c47ccc7 as static files"
+      ],
+      "achievements": [
+        "Kept the initial version independent from the current portfolio",
+        "Preserved working pages and internal navigation"
+      ],
+      "points": [
+        "Static HTML and original build assets",
+        "Independent archive path with noindex metadata"
+      ],
+      "duration": "Initial release archive"
+    },
+    {
       "id": "flight-shade",
       "category": "personal",
       "title": "Flight Shade / Window seat recommendations",

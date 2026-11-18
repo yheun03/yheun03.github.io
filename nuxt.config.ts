@@ -120,6 +120,7 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'static',
+        prerender: { ignore: ['/ver.2026/**'] },
         publicAssets: [
             { dir: imagesDir, baseURL: '/assets/images' },
             { dir: iconsDir, baseURL: '/assets/icons' },

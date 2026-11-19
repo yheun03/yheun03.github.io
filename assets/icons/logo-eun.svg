@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="98" viewBox="0 0 240 98" role="img" aria-labelledby="logo-eun-title">
+    <title id="logo-eun-title">eun.</title>
+    <!-- x-height: y=16..82; curved overshoot: 2; stems: 16; curved top/bottom: 14. -->
+    <!-- u is the exact 180-degree rotation of n in a 56 x 98 construction box. -->
+    <g fill="#191f28">
+        <path fill-rule="evenodd" d="M24 54H66V45C66 25 55 14 38 14C20 14 8 28 8 49C8 71 20 84 40 84C50 84 58 81 65 74L55 64C51 68 46 70 40 70C30 70 24 64 24 54ZM24 40C25 32 30 28 38 28C46 28 50 32 50 40Z" />
+        <path d="M134 82L118 82L118 74C113 81 106 84 98 84C84 84 78 75 78 60L78 16L94 16L94 56C94 65 98 70 105 70C113 70 118 64 118 55L118 16L134 16Z" />
+        <path d="M148 16L164 16L164 24C169 17 176 14 184 14C198 14 204 23 204 38L204 82L188 82L188 42C188 33 184 28 177 28C169 28 164 34 164 43L164 82L148 82Z" />
+    </g>
+    <circle cx="224" cy="74" r="8" fill="#f12810" />
+</svg>

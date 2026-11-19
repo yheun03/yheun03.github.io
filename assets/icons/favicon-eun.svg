@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="favicon-eun-title">
+    <title id="favicon-eun-title">eun.</title>
+    <!-- 64-unit master; tile radius 12; e uses the approved wordmark path at 60%. -->
+    <!-- e bounds: x=10..44.8, y=11..53; nominal baseline=51.8; dot diameter=10. -->
+    <rect width="64" height="64" rx="12" fill="#191f28" />
+    <path fill="#ffffff" fill-rule="evenodd" transform="matrix(0.6 0 0 0.6 5.2 2.6)" d="M24 54H66V45C66 25 55 14 38 14C20 14 8 28 8 49C8 71 20 84 40 84C50 84 58 81 65 74L55 64C51 68 46 70 40 70C30 70 24 64 24 54ZM24 40C25 32 30 28 38 28C46 28 50 32 50 40Z" />
+    <circle cx="53" cy="46.8" r="5" fill="#f12810" />
+</svg>

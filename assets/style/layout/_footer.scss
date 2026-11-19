@@ -57,6 +57,17 @@
         margin-top: 25px;
         font-size: 14px;
     }
+    &__brand {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        min-height: var(--size-touch);
+        img {
+            display: block;
+            width: 120px;
+            height: auto;
+        }
+    }
     &__bottom {
         display: flex;
         flex-wrap: wrap;
@@ -97,6 +108,12 @@
         }
         &__bottom {
             margin-top: 44px;
+        }
+        &__brand {
+            flex-basis: 100%;
+            img {
+                width: 104px;
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <header class="app-header">
         <BaseLink class="app-header__brand" :href="home ? '#hello' : '/'" :aria-label="t('a11y.portfolioHome')"
-            ><img :src="resolveAppPath('/assets/icons/favicon.svg')" width="35" height="32" alt=""
+            ><img :src="resolveAppPath('/assets/icons/logo-eun.svg')" width="120" height="49" alt=""
         /></BaseLink>
         <nav class="app-header__links" :aria-label="t('a11y.primaryNavigation')">
             <BaseLink

@@ -18,7 +18,7 @@ Younghwan Eun is a web publisher who builds corporate websites and business inte
 ## 공식 페이지와 프로젝트
 
 - [웹 퍼블리셔 은영환 | 2026 포트폴리오](https://yheun03.github.io/): HTML, SCSS 퍼블리싱과 Vue 3 UI 개발을 맡아 온 7년차 웹 퍼블리셔 은영환의 포트폴리오입니다. 기업 홈페이지, 업무 시스템과 개인 프로젝트를 소개합니다.
-- [웹 퍼블리셔 은영환 소개 | 나의 이야기](https://yheun03.github.io/about/): HTML, SCSS와 Vue로 화면을 만드는 웹 퍼블리셔 은영환을 소개합니다. ENTJ 성향, 행동을 이끄는 신념, 이름의 이니셜 Y와 H를 겹친 로고에 담긴 이야기를 만나보세요.
+- [웹 퍼블리셔 은영환 소개 | 나의 이야기](https://yheun03.github.io/about/): HTML, SCSS와 Vue로 화면을 만드는 웹 퍼블리셔 은영환을 소개합니다. 평소의 성향과 신념, 일관된 리듬과 작은 디테일을 담은 eun. 로고 이야기를 만나보세요.
 - [경력과 학업 이력](https://yheun03.github.io/journey/): 회사에서 맡은 일과 학교에서 배운 내용을 시기별로 정리했습니다.
 - [실무 프로젝트](https://yheun03.github.io/projects/): 구축, 리뉴얼, 운영에 참여한 22개 프로젝트입니다. 각 프로젝트에서 맡은 업무와 사용 기술을 확인할 수 있습니다.
 - [개인 프로젝트](https://yheun03.github.io/personal/): 직접 기획하거나 팀으로 참여한 10개 개인 프로젝트입니다.

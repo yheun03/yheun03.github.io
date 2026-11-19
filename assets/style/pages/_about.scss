@@ -82,13 +82,57 @@
         }
     }
     &__mark {
-        display: grid;
-        place-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         aspect-ratio: 1;
-        background: linear-gradient(135deg, #e3e8ef, #c6d2e4);
+        padding: 32px;
+        background: var(--color-surface);
+        color: var(--color-text-strong);
         svg {
-            width: 52%;
+            width: 88%;
             height: auto;
+            overflow: visible;
+        }
+    }
+    &__letter {
+        animation: about-logo-letter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+        &--u {
+            animation-delay: 0.14s;
+        }
+        &--n {
+            animation-delay: 0.28s;
+        }
+    }
+    &__dot {
+        fill: var(--color-accent);
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: about-logo-dot 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
+    }
+    &__mark.reveal--pending,
+    &__mark--static {
+        .about-page__letter,
+        .about-page__dot {
+            animation: none;
+        }
+    }
+    &__identity-points {
+        display: grid;
+        gap: 24px;
+        margin: 32px 0 0;
+        padding: 28px 0 0;
+        border-top: 1px solid var(--color-divider-subtle);
+        list-style: none;
+        h3 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            font-weight: var(--font-weight-semibold);
+        }
+        p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.8;
         }
     }
 }
@@ -103,10 +147,35 @@
 
         &__mark {
             aspect-ratio: 4 / 3;
-
-            svg {
-                width: 38%;
-            }
         }
+    }
+}
+
+@keyframes about-logo-letter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes about-logo-dot {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce) {
+    .about-page__letter,
+    .about-page__dot {
+        animation: none;
     }
 }

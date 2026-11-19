@@ -7,7 +7,9 @@ const rawBase = process.env.NUXT_APP_BASE_URL ?? '/';
 const resolvedBaseURL = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const imagesDir = fileURLToPath(new URL('./assets/images', import.meta.url));
 const iconsDir = fileURLToPath(new URL('./assets/icons', import.meta.url));
-const faviconHref = joinURL(resolvedBaseURL, 'assets/icons/favicon.svg');
+const faviconHref = joinURL(resolvedBaseURL, 'assets/icons/favicon-eun.svg');
+const faviconIcoHref = joinURL(resolvedBaseURL, 'assets/icons/favicon-eun.ico');
+const appleTouchIconHref = joinURL(resolvedBaseURL, 'assets/icons/apple-touch-icon-eun.png');
 const sitemapHref = joinURL(resolvedBaseURL, 'sitemap.xml');
 const rssHref = joinURL(resolvedBaseURL, 'rss.xml');
 const llmsHref = joinURL(resolvedBaseURL, 'llms.txt');
@@ -51,7 +53,9 @@ export default defineNuxtConfig({
                 ...(googleSiteVerification ? [{ name: 'google-site-verification', content: googleSiteVerification }] : []),
             ],
             link: [
-                { rel: 'icon', type: 'image/svg+xml', href: faviconHref },
+                { rel: 'icon', type: 'image/x-icon', sizes: '16x16 32x32 48x48', href: faviconIcoHref },
+                { rel: 'icon', type: 'image/svg+xml', sizes: 'any', href: faviconHref },
+                { rel: 'apple-touch-icon', sizes: '180x180', href: appleTouchIconHref },
                 { rel: 'sitemap', type: 'application/xml', href: sitemapHref },
                 { rel: 'alternate', type: 'application/rss+xml', title: '은영환 포트폴리오 RSS', href: rssHref },
                 { rel: 'alternate', type: 'text/plain', title: 'AI-readable portfolio summary', href: llmsHref },

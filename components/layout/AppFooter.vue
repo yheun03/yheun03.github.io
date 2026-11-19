@@ -12,6 +12,9 @@
             <BaseLink :href="contacts.resume" external>{{ locale === 'ko' ? '이력서' : 'Résumé' }} ↗</BaseLink>
         </div>
         <div class="portfolio-footer__bottom">
+            <BaseLink class="portfolio-footer__brand" href="/" :aria-label="t('a11y.portfolioHome')">
+                <img :src="resolveAppPath('/assets/icons/logo-eun.svg')" width="120" height="49" alt="" />
+            </BaseLink>
             <p>{{ t('footer.copyright') }}</p>
             <nav :aria-label="t('footer.navLabel')">
                 <NuxtLink to="/">{{ t('footer.homeLink') }}</NuxtLink>
@@ -24,6 +27,7 @@
 </template>
 
 <script setup lang="ts">
+const { resolveAppPath } = useAppPath();
 const { t, locale, content } = useLocale();
 const contacts = computed(() => content.value.profile.contacts);
 </script>

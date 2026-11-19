@@ -68,7 +68,7 @@
         width: 100%;
         aspect-ratio: 2 / 1;
         margin: 0;
-        padding: 4% 12%;
+        padding: 3% 12%;
         overflow: hidden;
         background: linear-gradient(135deg, #dfe5ed, #bcc9dc);
 
@@ -258,6 +258,12 @@
         padding: clamp(12px, 3vw, 48px);
         overflow: hidden;
         background: #e1e6ed;
+
+        > .project-mockup {
+            max-width: 1080px;
+            max-height: 100%;
+            width: min(100%, calc((100dvh - var(--layout-header-height) - 346px) * 16 / 9));
+        }
 
         > img {
             display: block;

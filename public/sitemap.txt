@@ -13,7 +13,6 @@ https://yheun03.github.io/projects/hama-app/
 https://yheun03.github.io/projects/hanon/
 https://yheun03.github.io/projects/tms-maintenance/
 https://yheun03.github.io/projects/framework/
-https://yheun03.github.io/projects/infra/
 https://yheun03.github.io/projects/robo-tms/
 https://yheun03.github.io/projects/robo-mes/
 https://yheun03.github.io/projects/company-renewal/

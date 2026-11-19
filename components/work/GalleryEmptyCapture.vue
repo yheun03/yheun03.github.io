@@ -6,9 +6,12 @@
 </template>
 
 <script setup lang="ts">
+const props = defineProps<{
+    description?: string;
+}>();
 const { t } = useLocale();
 
 const emptyCaptureKicker = computed(() => t('gallery.emptyCaptureTitle'));
-const emptyCaptureCopy = computed(() => t('gallery.emptyCaptureDescription'));
+const emptyCaptureCopy = computed(() => props.description || t('gallery.emptyCaptureDescription'));
 const emptyCaptureLabel = computed(() => `${emptyCaptureKicker.value}. ${emptyCaptureCopy.value}`);
 </script>

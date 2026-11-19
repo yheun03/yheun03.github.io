@@ -9,17 +9,12 @@
                 class="home-hero__visual"
                 :aria-label="copy('조앤소프트 프레임워크 프로젝트 보기', 'Explore the Jonsoft framework project')"
             >
-                <div class="home-mockup home-mockup--laptop">
-                    <div class="home-mockup__screen">
-                        <BaseMediaImage
-                            :src="resolveAppPath('/assets/images/projects/framework/image-01.webp')"
-                            :alt="copy('조앤소프트 프레임워크 실제 화면', 'Jonsoft framework interface')"
-                            sizes="(min-width: 641px) 44vw, 70vw"
-                            priority
-                        />
-                    </div>
-                    <div class="home-mockup__base" aria-hidden="true"></div>
-                </div>
+                <ProjectDeviceMockup
+                    src="/assets/images/projects/framework/captures/framework-dashboard.webp"
+                    :alt="copy('조앤소프트 프레임워크 실제 화면', 'Jonsoft framework interface')"
+                    sizes="(min-width: 641px) 44vw, 70vw"
+                    priority
+                />
                 <span class="home-hero__visual-arrow" aria-hidden="true">↗</span>
             </NuxtLink>
             <div class="home-hero__intro">
@@ -44,6 +39,5 @@
 
 <script setup lang="ts">
 const { locale } = useLocale();
-const { resolveAppPath } = useAppPath();
 const copy = (ko: string, en: string) => (locale.value === 'ko' ? ko : en);
 </script>

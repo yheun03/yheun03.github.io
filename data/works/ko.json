@@ -101,7 +101,11 @@
         "JavaScript",
         "SCSS",
         "AG Grid"
-      ]
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/orchem-mes/image-01.webp",
+        "tablet": "/assets/images/projects/orchem-mes/image-05.webp"
+      }
     },
     {
       "id": "hanjinkal",
@@ -195,7 +199,11 @@
       "languages": [
         "Vue",
         "SCSS"
-      ]
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/oms/image-01.webp",
+        "mobile": "/assets/images/projects/oms/image-05.webp"
+      }
     },
     {
       "id": "smart-factory-gov",
@@ -277,7 +285,8 @@
         "HTML",
         "CSS",
         "jQuery"
-      ]
+      ],
+      "captureNotice": "오래된 프로젝트로 현재 보관된 화면 자료가 없습니다."
     },
     {
       "id": "hama-app",
@@ -315,7 +324,8 @@
         "HTML",
         "CSS",
         "JavaScript"
-      ]
+      ],
+      "captureNotice": "오래된 프로젝트로 현재 보관된 화면 자료가 없습니다."
     },
     {
       "id": "hanon",
@@ -395,15 +405,16 @@
       ],
       "languages": [
         "Nexacro"
-      ]
+      ],
+      "captureNotice": "보안상의 이유로 화면을 공개할 수 없습니다."
     },
     {
       "id": "framework",
       "category": "solution",
-      "title": "조앤소프트 프레임워크 구축",
+      "title": "조앤소프트 프레임워크 및 퍼블리싱 표준화",
       "period": "2026.02~",
       "type": "내부 프로젝트 / 프레임워크",
-      "role": "퍼블리싱 표준과 Nuxt 3 프론트엔드 구조, 디자인 토큰 주도 설계",
+      "role": "Nuxt 3 프론트엔드 구조와 공통 UI 설계, 퍼블리싱 표준화 및 개발 가이드 작성",
       "tech": [
         "Nuxt 3",
         "Vue 3",
@@ -418,32 +429,39 @@
         "vue-chartjs",
         "AG Grid",
         "flatpickr",
-        "noUiSlider"
+        "noUiSlider",
+        "GitHub",
+        "Visual Studio Code",
+        "Cursor",
+        "Figma"
       ],
-      "introduction": "프로젝트의 초기 설정과 반복 UI를 공통으로 사용할 수 있도록 Nuxt 3 기반 사내 프레임워크를 만들었습니다. 라우팅, 상태 관리, API 플러그인, UI 컴포넌트와 SCSS 설정을 정리했습니다.",
+      "introduction": "프로젝트마다 반복되는 초기 설정과 업무 UI를 공통으로 사용할 수 있도록 Nuxt 3 기반 사내 프레임워크를 구축했습니다. 라우팅, 상태 관리, API와 다국어 처리, 공통 컴포넌트, SCSS 토큰을 정리하고 예제 화면과 개발 가이드를 함께 제작했습니다.",
       "myWorks": [
         "자동 라우팅 / 컴포넌트 자동 import / Pinia 상태 관리 / Axios API 플러그인 등 기반 구조 정리",
         "AppButton / AppInput / AppSelect / AppDatePicker / AppProgress / Chart / AG Grid 등 재사용 컴포넌트 제작",
         "컴포넌트마다 size / disabled / readonly / focus / error / loading / active 등 실무 상태를 반영",
         "BEM 네이밍과 디자인 토큰(색 / 타이포 / 간격 / 상태 / 반응형)을 기준으로 SCSS 구조 설계",
-        "composable / 레이아웃 / 공통 플러그인을 실무 적용 가능한 형태로 구성하고 예제 페이지 제작"
+        "composable / 레이아웃 / 공통 플러그인을 실무 적용 가능한 형태로 구성하고 예제 페이지 제작",
+        "컴포넌트 네이밍, 폴더 구조, API와 다국어 처리 규칙을 신규 프로젝트에서 재사용할 수 있도록 정리",
+        "실무용 목록, 대시보드, 현장 키오스크 예제와 스타일 가이드, 개발 문서 제작"
       ],
       "achievements": [
         "프로젝트마다 반복 구축하던 기본 UI / 레이아웃 / API 연동 / SCSS 구조를 프레임워크화",
         "컴포넌트 / API 구조 / 예제 페이지를 함께 정리해 신규 프로젝트 착수 속도를 높이는 협업 표준 구축"
       ],
       "points": [
-        "Nuxt 3 공통 프레임워크",
-        "상태별 UI 컴포넌트",
-        "디자인 토큰, SCSS 설정"
+        "Nuxt 3 공통 프레임워크와 업무 화면 예제",
+        "상태별 UI 컴포넌트, 디자인 토큰과 SCSS 규칙",
+        "폴더 구조, API, 다국어와 개발 가이드 표준화"
       ],
       "pin": true,
       "duration": "진행 중",
       "captures": [
-        "/assets/images/projects/framework/image-01.webp",
-        "/assets/images/projects/framework/image-02.webp",
-        "/assets/images/projects/framework/image-03.webp",
-        "/assets/images/projects/framework/image-04.webp"
+        "/assets/images/projects/framework/captures/framework-dashboard.webp",
+        "/assets/images/projects/framework/captures/framework-work-orders.webp",
+        "/assets/images/projects/framework/captures/framework-buttons.webp",
+        "/assets/images/projects/framework/captures/framework-tablet.webp",
+        "/assets/images/projects/framework/captures/framework-mobile.webp"
       ],
       "languages": [
         "Nuxt 3",
@@ -460,53 +478,20 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/framework"
         }
-      ]
-    },
-    {
-      "id": "infra",
-      "category": "solution",
-      "title": "자사 개발 인프라 및 퍼블리싱 표준화",
-      "period": "2026.02~",
-      "type": "내부 프로젝트",
-      "role": "퍼블리싱 표준화와 공통 UI 구조 개선, 개발 가이드 작성",
-      "tech": [
-        "GitHub",
-        "Visual Studio Code",
-        "Cursor",
-        "Figma",
-        "Vue 3",
-        "Nuxt 3",
-        "SCSS",
-        "JavaScript",
-        "TypeScript"
       ],
-      "introduction": "프로젝트마다 달랐던 폴더, 컴포넌트 이름, SCSS와 API, 다국어 처리 방식을 정리했습니다. 사내 프레임워크와 함께 사용할 예제 페이지, 스타일 가이드와 개발 문서도 작성했습니다.",
-      "myWorks": [
-        "버튼 / 입력폼 / 셀렉트 / 달력 / 프로그레스 / 차트 / 그리드 / LNB / 레이아웃 구조를 공통화",
-        "컴포넌트 네이밍 / 폴더 구조 / API 연동 / 다국어 처리 방식을 신규 프로젝트 재사용 가능한 형태로 정리",
-        "SCSS 토큰 / BEM 네이밍 / 컴포넌트 단위 스타일 관리 방식 정립",
-        "실무 적용 가능한 예제 페이지와 스타일 가이드 제작 / 문서화"
+      "thumbnail": "/assets/images/projects/framework/captures/framework-dashboard.webp",
+      "captureLabels": [
+        "경영 현황 대시보드",
+        "작업지시 목록과 상태 표시",
+        "공통 버튼과 속성 가이드",
+        "태블릿 현장 실적 등록",
+        "모바일 경영 현황"
       ],
-      "achievements": [
-        "신규 프로젝트 착수 시 기본 레이아웃 / 컴포넌트 / 스타일 가이드를 빠르게 적용할 수 있는 기반 마련",
-        "산발적이던 UI 구조를 공통화해 퍼블리싱–프론트엔드 협업 생산성 향상 기반 구축"
-      ],
-      "points": [
-        "폴더, 컴포넌트, SCSS 규칙 정리",
-        "공통 UI와 API 처리",
-        "예제 페이지, 개발 가이드"
-      ],
-      "pin": true,
-      "duration": "진행 중",
-      "captures": [
-        "/assets/images/projects/placeholder.svg"
-      ],
-      "languages": [
-        "Vue 3",
-        "Nuxt 3",
-        "SCSS",
-        "TypeScript"
-      ]
+      "mockup": {
+        "tablet": "/assets/images/projects/framework/captures/framework-tablet.webp",
+        "mobile": "/assets/images/projects/framework/captures/framework-mobile.webp",
+        "desktop": "/assets/images/projects/framework/captures/framework-dashboard.webp"
+      }
     },
     {
       "id": "robo-tms",
@@ -627,9 +612,10 @@
       "pin": true,
       "duration": "약 3주",
       "captures": [
-        "/assets/images/projects/company-renewal/image-01.webp",
-        "/assets/images/projects/company-renewal/image-02.webp",
-        "/assets/images/projects/company-renewal/image-03.webp"
+        "/assets/images/projects/company-renewal/captures/company-renewal-desktop.webp",
+        "/assets/images/projects/company-renewal/captures/company-business.webp",
+        "/assets/images/projects/company-renewal/captures/company-renewal-tablet.webp",
+        "/assets/images/projects/company-renewal/captures/company-renewal-mobile.webp"
       ],
       "languages": [
         "HTML",
@@ -642,7 +628,19 @@
           "label": "사이트 보기",
           "href": "https://jonsoft.co.kr/"
         }
-      ]
+      ],
+      "thumbnail": "/assets/images/projects/company-renewal/captures/company-renewal-desktop.webp",
+      "captureLabels": [
+        "기업 홈페이지 홈",
+        "사업영역과 솔루션 소개",
+        "태블릿 홈",
+        "모바일 홈"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/company-renewal/captures/company-renewal-desktop.webp",
+        "tablet": "/assets/images/projects/company-renewal/captures/company-renewal-tablet.webp",
+        "mobile": "/assets/images/projects/company-renewal/captures/company-renewal-mobile.webp"
+      }
     },
     {
       "id": "kyungdongwon-cms",
@@ -875,7 +873,8 @@
         "HTML",
         "CSS",
         "jQuery"
-      ]
+      ],
+      "captureNotice": "오래된 프로젝트로 현재 보관된 화면 자료가 없습니다."
     },
     {
       "id": "tos-renewal",
@@ -906,9 +905,8 @@
       "pin": false,
       "duration": "약 2개월",
       "captures": [
-        "/assets/images/projects/tos-renewal/image-01.webp",
-        "/assets/images/projects/tos-renewal/image-02.webp",
-        "/assets/images/projects/tos-renewal/image-03.webp"
+        "/assets/images/projects/tos-renewal/image-03.webp",
+        "/assets/images/projects/tos-renewal/image-02.webp"
       ],
       "languages": [
         "HTML",
@@ -945,17 +943,11 @@
       "pin": true,
       "duration": "약 3개월",
       "captures": [
-        "/assets/images/projects/toms/image-01.webp",
-        "/assets/images/projects/toms/image-02.webp",
-        "/assets/images/projects/toms/image-03.webp",
         "/assets/images/projects/toms/image-04.webp",
         "/assets/images/projects/toms/image-05.webp",
         "/assets/images/projects/toms/image-06.webp",
-        "/assets/images/projects/toms/image-07.webp",
-        "/assets/images/projects/toms/image-08.webp",
         "/assets/images/projects/toms/image-09.webp",
-        "/assets/images/projects/toms/image-10.webp",
-        "/assets/images/projects/toms/image-11.webp"
+        "/assets/images/projects/toms/image-02.webp"
       ],
       "languages": [
         "HTML",
@@ -1003,11 +995,11 @@
       "pin": true,
       "duration": "약 2시간",
       "captures": [
-        "/assets/images/projects/flight-shade/image-01.jpg",
-        "/assets/images/projects/flight-shade/image-02.jpg",
-        "/assets/images/projects/flight-shade/image-03.jpg"
+        "/assets/images/projects/flight-shade/captures/flight-shade-desktop.webp",
+        "/assets/images/projects/flight-shade/captures/flight-shade-tablet.webp",
+        "/assets/images/projects/flight-shade/captures/flight-shade-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/flight-shade-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/flight-shade/captures/flight-shade-desktop.webp",
       "languages": [
         "Vue 3",
         "JavaScript",
@@ -1023,7 +1015,17 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/flight-shade"
         }
-      ]
+      ],
+      "captureLabels": [
+        "항공 경로와 좌석 추천 결과",
+        "태블릿 경로 설정",
+        "모바일 좌석 추천과 경로 설정"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/flight-shade/captures/flight-shade-desktop.webp",
+        "tablet": "/assets/images/projects/flight-shade/captures/flight-shade-tablet.webp",
+        "mobile": "/assets/images/projects/flight-shade/captures/flight-shade-mobile.webp"
+      }
     },
     {
       "id": "planearby",
@@ -1064,11 +1066,11 @@
       "pin": true,
       "duration": "진행 중",
       "captures": [
-        "/assets/images/projects/planearby/image-01.jpg",
-        "/assets/images/projects/planearby/image-02.jpg",
-        "/assets/images/projects/planearby/image-03.jpg"
+        "/assets/images/projects/planearby/captures/planearby-desktop.webp",
+        "/assets/images/projects/planearby/captures/planearby-tablet.webp",
+        "/assets/images/projects/planearby/captures/planearby-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/planearby-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/planearby/captures/planearby-desktop.webp",
       "languages": [
         "Vue 3",
         "JavaScript",
@@ -1084,7 +1086,17 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/planearby"
         }
-      ]
+      ],
+      "captureLabels": [
+        "항공편 정보와 레이더, 예시 데이터",
+        "태블릿 항공편 정보, 예시 데이터",
+        "모바일 항공편 정보, 예시 데이터"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/planearby/captures/planearby-desktop.webp",
+        "tablet": "/assets/images/projects/planearby/captures/planearby-tablet.webp",
+        "mobile": "/assets/images/projects/planearby/captures/planearby-mobile.webp"
+      }
     },
     {
       "id": "portfolio-2026",
@@ -1127,17 +1139,13 @@
       "pin": true,
       "duration": "약 2개월",
       "captures": [
-        "/assets/images/projects/jonsoft-framework-portfolio/image-01.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-02.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-03.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-04.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-05.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-06.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-07.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-08.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-09.webp"
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-desktop.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-about.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-projects.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-tablet.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-framework-portfolio-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-desktop.webp",
       "languages": [
         "HTML5",
         "SCSS",
@@ -1150,7 +1158,19 @@
           "label": "사이트 보기",
           "href": "/ver.2026/"
         }
-      ]
+      ],
+      "captureLabels": [
+        "2026 보관본 홈",
+        "소개 페이지",
+        "실무 프로젝트 목록",
+        "태블릿 홈",
+        "모바일 홈"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-desktop.webp",
+        "tablet": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-tablet.webp",
+        "mobile": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-mobile.webp"
+      }
     },
     {
       "id": "singil-bmc",
@@ -1191,14 +1211,12 @@
       "pin": true,
       "duration": "2026.05~진행 중",
       "captures": [
-        "/assets/images/projects/singil-bmc/image-01.webp",
-        "/assets/images/projects/singil-bmc/image-02.webp",
-        "/assets/images/projects/singil-bmc/image-03.webp",
-        "/assets/images/projects/singil-bmc/image-04.webp",
-        "/assets/images/projects/singil-bmc/image-05.webp",
-        "/assets/images/projects/singil-bmc/image-06.webp"
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-desktop.webp",
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-records.webp",
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-tablet.webp",
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/singil-bmc-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/singil-bmc/captures/singil-bmc-desktop.webp",
       "languages": [
         "Nuxt 3",
         "Vue 3",
@@ -1216,7 +1234,18 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/singil-bmc"
         }
-      ]
+      ],
+      "captureLabels": [
+        "선교단 홈",
+        "전체 타자 기록",
+        "태블릿 홈",
+        "모바일 홈"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/singil-bmc/captures/singil-bmc-desktop.webp",
+        "tablet": "/assets/images/projects/singil-bmc/captures/singil-bmc-tablet.webp",
+        "mobile": "/assets/images/projects/singil-bmc/captures/singil-bmc-mobile.webp"
+      }
     },
     {
       "id": "clone-flighty",
@@ -1254,11 +1283,12 @@
       "pin": true,
       "duration": "",
       "captures": [
-        "/assets/images/projects/clone-flighty/image-01.webp",
-        "/assets/images/projects/clone-flighty/image-02.webp",
-        "/assets/images/projects/clone-flighty/image-03.webp"
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-desktop.webp",
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-passport.webp",
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-tablet.webp",
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/clone-flighty-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/clone-flighty/captures/clone-flighty-desktop.webp",
       "languages": [
         "Vue 3",
         "JavaScript",
@@ -1276,7 +1306,18 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/cloneFlighty"
         }
-      ]
+      ],
+      "captureLabels": [
+        "항공편 목록과 경로 지도",
+        "패스포트와 전체 비행 경로",
+        "태블릿 패스포트",
+        "모바일 패스포트"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/clone-flighty/captures/clone-flighty-desktop.webp",
+        "tablet": "/assets/images/projects/clone-flighty/captures/clone-flighty-tablet.webp",
+        "mobile": "/assets/images/projects/clone-flighty/captures/clone-flighty-mobile.webp"
+      }
     },
     {
       "id": "clone-kakaotalk",
@@ -1313,9 +1354,11 @@
       "pin": true,
       "duration": "약 8개월",
       "captures": [
-        "/assets/images/projects/placeholder.svg"
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-mobile.webp",
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chats.webp",
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chat.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/clone-kakaotalk-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-mobile.webp",
       "languages": [
         "Vue 3",
         "Vue Router 4",
@@ -1332,7 +1375,15 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/cloneKakaoTalk"
         }
-      ]
+      ],
+      "captureLabels": [
+        "친구 목록",
+        "채팅 목록",
+        "대화 화면과 입력 영역"
+      ],
+      "mockup": {
+        "mobile": "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-mobile.webp"
+      }
     },
     {
       "id": "portfolio-2025",
@@ -1365,17 +1416,11 @@
       "pin": true,
       "duration": "약 1개월",
       "captures": [
-        "/assets/images/projects/portfolio-2025/image-01.webp",
-        "/assets/images/projects/portfolio-2025/image-02.webp",
-        "/assets/images/projects/portfolio-2025/image-03.webp",
-        "/assets/images/projects/portfolio-2025/image-04.webp",
-        "/assets/images/projects/portfolio-2025/image-05.webp",
-        "/assets/images/projects/portfolio-2025/image-06.webp",
-        "/assets/images/projects/portfolio-2025/image-07.webp",
-        "/assets/images/projects/portfolio-2025/image-08.webp",
-        "/assets/images/projects/portfolio-2025/image-09.webp"
+        "/assets/images/projects/portfolio-2025/captures/portfolio-2025-desktop.webp",
+        "/assets/images/projects/portfolio-2025/captures/portfolio-2025-tablet.webp",
+        "/assets/images/projects/portfolio-2025/captures/portfolio-2025-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/portfolio-2025-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-desktop.webp",
       "languages": [
         "HTML",
         "SCSS",
@@ -1387,7 +1432,17 @@
           "label": "2025 버전 보기",
           "href": "/ver.2025/index.html"
         }
-      ]
+      ],
+      "captureLabels": [
+        "2025 포트폴리오 홈",
+        "태블릿 홈",
+        "모바일 홈"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-desktop.webp",
+        "tablet": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-tablet.webp",
+        "mobile": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-mobile.webp"
+      }
     },
     {
       "id": "matemate-capstone",
@@ -1423,12 +1478,10 @@
       "pin": false,
       "duration": "약 4주",
       "captures": [
-        "/assets/images/projects/matemate-capstone/image-01.webp",
-        "/assets/images/projects/matemate-capstone/image-02.webp",
-        "/assets/images/projects/matemate-capstone/image-03.webp",
-        "/assets/images/projects/matemate-capstone/image-04.webp"
+        "/assets/images/projects/matemate-capstone/captures/matemate-match.webp",
+        "/assets/images/projects/matemate-capstone/captures/matemate-form.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/matemate-capstone-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/matemate-capstone/captures/matemate-match.webp",
       "languages": [
         "HTML",
         "SCSS",
@@ -1445,7 +1498,14 @@
           "label": "GitHub",
           "href": "https://github.com/team-matemate/matemate"
         }
-      ]
+      ],
+      "captureLabels": [
+        "룸메이트 추천과 생활관 공지",
+        "매칭 정보 입력 폼"
+      ],
+      "mockup": {
+        "mobile": "/assets/images/projects/matemate-capstone/captures/matemate-match.webp"
+      }
     },
     {
       "id": "gongting-blind-matching",
@@ -1481,9 +1541,11 @@
       "pin": false,
       "duration": "구축 약 1주 / 운영 및 고도화 약 2개월",
       "captures": [
-        "/assets/images/projects/gongting-blind-matching/image-01.webp"
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-result.webp",
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-profile.webp",
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-match.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/gongting-blind-matching-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/gongting-blind-matching/captures/gongting-result.webp",
       "languages": [
         "HTML",
         "SCSS",
@@ -1499,6 +1561,14 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/gongting"
         }
+      ],
+      "mockup": {
+        "mobile": "/assets/images/projects/gongting-blind-matching/captures/gongting-result.webp"
+      },
+      "captureLabels": [
+        "매칭 결과와 프로필 카드",
+        "내 프로필과 매칭 상태",
+        "매칭 조건 선택"
       ]
     },
     {

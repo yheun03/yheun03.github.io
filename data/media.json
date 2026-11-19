@@ -43,6 +43,50 @@
       1000
     ]
   },
+  "/assets/images/devices/ipad-landscape.png": {
+    "width": 2930,
+    "height": 2245,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1440
+    ]
+  },
+  "/assets/images/devices/ipad-portrait.png": {
+    "width": 2245,
+    "height": 2930,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1440
+    ]
+  },
+  "/assets/images/devices/iphone.png": {
+    "width": 1470,
+    "height": 3000,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1440
+    ]
+  },
+  "/assets/images/devices/macbook.png": {
+    "width": 3306,
+    "height": 1897,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1440
+    ]
+  },
   "/assets/images/projects/archive-thumbnails/clone-flighty-light-devices-4k.jpg": {
     "width": 3840,
     "height": 2160,
@@ -153,6 +197,48 @@
       1440
     ]
   },
+  "/assets/images/projects/clone-flighty/captures/clone-flighty-desktop.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/clone-flighty/captures/clone-flighty-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/clone-flighty/captures/clone-flighty-passport.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/clone-flighty/captures/clone-flighty-tablet.webp": {
+    "width": 1024,
+    "height": 1366,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1024
+    ]
+  },
   "/assets/images/projects/clone-flighty/image-01.webp": {
     "width": 1800,
     "height": 2266,
@@ -184,6 +270,75 @@
       480,
       960,
       1267
+    ]
+  },
+  "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chat.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chats.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/company-renewal/captures/company-business.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/company-renewal/captures/company-renewal-desktop.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/company-renewal/captures/company-renewal-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/company-renewal/captures/company-renewal-tablet.webp": {
+    "width": 1024,
+    "height": 1366,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1024
     ]
   },
   "/assets/images/projects/company-renewal/image-01.webp": {
@@ -261,6 +416,37 @@
       1440
     ]
   },
+  "/assets/images/projects/flight-shade/captures/flight-shade-desktop.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/flight-shade/captures/flight-shade-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/flight-shade/captures/flight-shade-tablet.webp": {
+    "width": 1024,
+    "height": 1366,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1024
+    ]
+  },
   "/assets/images/projects/flight-shade/image-01.jpg": {
     "width": 1440,
     "height": 900,
@@ -288,6 +474,59 @@
       160,
       320,
       390
+    ]
+  },
+  "/assets/images/projects/framework/captures/framework-buttons.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/framework/captures/framework-dashboard.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/framework/captures/framework-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/framework/captures/framework-tablet.webp": {
+    "width": 1366,
+    "height": 1024,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1366
+    ]
+  },
+  "/assets/images/projects/framework/captures/framework-work-orders.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
     ]
   },
   "/assets/images/projects/framework/image-01.webp": {
@@ -332,6 +571,33 @@
       480,
       960,
       1440
+    ]
+  },
+  "/assets/images/projects/gongting-blind-matching/captures/gongting-match.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/gongting-blind-matching/captures/gongting-profile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/gongting-blind-matching/captures/gongting-result.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
     ]
   },
   "/assets/images/projects/gongting-blind-matching/image-01.webp": {
@@ -566,6 +832,24 @@
       1440
     ]
   },
+  "/assets/images/projects/matemate-capstone/captures/matemate-form.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/matemate-capstone/captures/matemate-match.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
   "/assets/images/projects/matemate-capstone/image-01.webp": {
     "width": 711,
     "height": 3200,
@@ -726,6 +1010,37 @@
       1440
     ]
   },
+  "/assets/images/projects/planearby/captures/planearby-desktop.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/planearby/captures/planearby-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/planearby/captures/planearby-tablet.webp": {
+    "width": 1024,
+    "height": 1366,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1024
+    ]
+  },
   "/assets/images/projects/planearby/image-01.jpg": {
     "width": 829,
     "height": 1538,
@@ -754,6 +1069,37 @@
       320,
       480,
       844
+    ]
+  },
+  "/assets/images/projects/portfolio-2025/captures/portfolio-2025-desktop.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/portfolio-2025/captures/portfolio-2025-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/portfolio-2025/captures/portfolio-2025-tablet.webp": {
+    "width": 1024,
+    "height": 1366,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1024
     ]
   },
   "/assets/images/projects/portfolio-2025/image-01.webp": {
@@ -848,6 +1194,59 @@
       160,
       320,
       420
+    ]
+  },
+  "/assets/images/projects/portfolio-2026/captures/portfolio-2026-about.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/portfolio-2026/captures/portfolio-2026-desktop.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/portfolio-2026/captures/portfolio-2026-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/portfolio-2026/captures/portfolio-2026-projects.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/portfolio-2026/captures/portfolio-2026-tablet.webp": {
+    "width": 1024,
+    "height": 1366,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1024
     ]
   },
   "/assets/images/projects/robo-mes/image-01.webp": {
@@ -969,6 +1368,48 @@
       480,
       960,
       1366
+    ]
+  },
+  "/assets/images/projects/singil-bmc/captures/singil-bmc-desktop.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/singil-bmc/captures/singil-bmc-mobile.webp": {
+    "width": 440,
+    "height": 956,
+    "widths": [
+      160,
+      320,
+      440
+    ]
+  },
+  "/assets/images/projects/singil-bmc/captures/singil-bmc-records.webp": {
+    "width": 1280,
+    "height": 800,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1280
+    ]
+  },
+  "/assets/images/projects/singil-bmc/captures/singil-bmc-tablet.webp": {
+    "width": 1024,
+    "height": 1366,
+    "widths": [
+      160,
+      320,
+      480,
+      960,
+      1024
     ]
   },
   "/assets/images/projects/singil-bmc/image-01.webp": {

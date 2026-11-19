@@ -38,8 +38,8 @@
                     </p>
                 </div>
                 <figure class="gallery-detail__cover" data-reveal="scale" :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }">
-                    <GalleryEmptyCapture v-if="isPlaceholderCapture(coverCapture)" />
-                    <BaseMediaImage v-else :src="resolveAppPath(coverCapture)" :alt="captureAlt(0)" sizes="(min-width: 641px) 68vw, 80vw" priority />
+                    <GalleryEmptyCapture v-if="isPlaceholderCapture(coverCapture)" :description="work.captureNotice" />
+                    <ProjectDeviceMockup v-else :src="coverCapture" :mockup="work.mockup" :alt="work.title" sizes="(min-width: 641px) 68vw, 80vw" priority />
                 </figure>
             </header>
 
@@ -134,8 +134,8 @@
                     data-reveal="up"
                 >
                     <div class="gallery-detail__preview-stage">
-                        <GalleryEmptyCapture v-if="isPlaceholderCapture(activeCapture)" />
-                        <BaseMediaImage v-else :key="activeCapture" :src="resolveAppPath(activeCapture)" :alt="captureAlt(activeCaptureIndex)" sizes="90vw" />
+                        <GalleryEmptyCapture v-if="isPlaceholderCapture(activeCapture)" :description="work.captureNotice" />
+                        <ProjectDeviceMockup v-else :key="activeCapture" :src="activeCapture" :alt="captureAlt(activeCaptureIndex)" sizes="90vw" />
                     </div>
                     <figcaption v-if="!isPlaceholderCapture(activeCapture)" aria-live="polite" aria-atomic="true">
                         <span>{{ String(activeCaptureIndex + 1).padStart(2, '0') }} / {{ String(galleryCaptures.length).padStart(2, '0') }}</span
@@ -274,7 +274,7 @@ function handleCaptureKeydown(event: KeyboardEvent) {
     selectCapture(index, true);
 }
 
-const coverCapture = computed(() => props.work.thumbnail || galleryCaptures.value[0] || '');
+const coverCapture = computed(() => galleryCaptures.value[0] || '');
 const { data: works } = await useGalleryRouteWorks(props.variant);
 const currentWorkIndex = computed(() => works.value.findIndex((item) => item.id === props.work.id));
 const nextWorks = computed(() => {
@@ -287,6 +287,7 @@ const captureControls = [
 ];
 
 function captureAlt(index: number) {
+    if (props.work.captureLabels?.[index]) return `${props.work.title}, ${props.work.captureLabels[index]}`;
     return t('gallery.captureAlt')
         .replace('{title}', props.work.title)
         .replace('{index}', String(index + 1));

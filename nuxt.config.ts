@@ -95,6 +95,8 @@ export default defineNuxtConfig({
     css: ['~/assets/style/main.scss'],
 
     routeRules: {
+        '/projects/infra': { redirect: { to: '/projects/framework/', statusCode: 301 } },
+        '/projects/infra/': { redirect: { to: '/projects/framework/', statusCode: 301 } },
         '/personal/jonsoft-framework-portfolio': { redirect: { to: '/personal/portfolio-2026/', statusCode: 301 } },
     },
 

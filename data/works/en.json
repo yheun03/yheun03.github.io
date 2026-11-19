@@ -101,7 +101,11 @@
         "JavaScript",
         "SCSS",
         "AG Grid"
-      ]
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/orchem-mes/image-01.webp",
+        "tablet": "/assets/images/projects/orchem-mes/image-05.webp"
+      }
     },
     {
       "id": "hanjinkal",
@@ -195,7 +199,11 @@
       "languages": [
         "Vue",
         "SCSS"
-      ]
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/oms/image-01.webp",
+        "mobile": "/assets/images/projects/oms/image-05.webp"
+      }
     },
     {
       "id": "smart-factory-gov",
@@ -277,7 +285,8 @@
         "HTML",
         "CSS",
         "jQuery"
-      ]
+      ],
+      "captureNotice": "Screen captures are no longer available for this older project."
     },
     {
       "id": "hama-app",
@@ -315,7 +324,8 @@
         "HTML",
         "CSS",
         "JavaScript"
-      ]
+      ],
+      "captureNotice": "Screen captures are no longer available for this older project."
     },
     {
       "id": "hanon",
@@ -395,15 +405,16 @@
       ],
       "languages": [
         "Nexacro"
-      ]
+      ],
+      "captureNotice": "Screens cannot be disclosed for security reasons."
     },
     {
       "id": "framework",
       "category": "solution",
-      "title": "JO&SOFT Frontend Framework",
+      "title": "Jonsoft Framework and Publishing Standards",
       "period": "2026.02~",
       "type": "Internal / Framework",
-      "role": "Led publishing standards, Nuxt 3 frontend structure, and design-token architecture",
+      "role": "Nuxt 3 architecture, shared UI, publishing standards and development guides",
       "tech": [
         "Nuxt 3",
         "Vue 3",
@@ -418,32 +429,39 @@
         "vue-chartjs",
         "AG Grid",
         "flatpickr",
-        "noUiSlider"
+        "noUiSlider",
+        "GitHub",
+        "Visual Studio Code",
+        "Cursor",
+        "Figma"
       ],
-      "introduction": "I built an in-house Nuxt 3 framework to share project setup and recurring UI. It includes routing, state management, API plugins, UI components, and SCSS configuration.",
+      "introduction": "I built an in-house Nuxt 3 framework for recurring project setup and business interfaces. I standardized routing, state management, APIs, localization, shared components and SCSS tokens, and documented them with example screens and development guides.",
       "myWorks": [
         "Organized the base layer—auto routing, auto component imports, Pinia state, and the Axios API plugin",
         "Built reusable components: AppButton, AppInput, AppSelect, AppDatePicker, AppProgress, Chart, and AG Grid",
         "Covered real-world states per component—size, disabled, readonly, focus, error, loading, and active",
         "Designed the SCSS structure around BEM naming and design tokens (color, type, spacing, state, breakpoints)",
-        "Shaped composables, layouts, and shared plugins for production use and built example pages"
+        "Shaped composables, layouts, and shared plugins for production use and built example pages",
+        "Standardized component naming, folder structure, API integration and localization for new projects",
+        "Created business lists, dashboards, a shop-floor kiosk, style guides and development documentation"
       ],
       "achievements": [
         "Standardized the base UI, layout, API integration, and SCSS previously rebuilt on every project",
         "Built a collaboration standard—components, API structure, and examples—that speeds up new-project kickoff"
       ],
       "points": [
-        "Shared Nuxt 3 framework",
-        "Components for different UI states",
-        "Design tokens and SCSS setup"
+        "Shared Nuxt 3 framework and business screen examples",
+        "UI states, design tokens and SCSS conventions",
+        "Folder, API, localization and development standards"
       ],
       "pin": true,
       "duration": "Ongoing",
       "captures": [
-        "/assets/images/projects/framework/image-01.webp",
-        "/assets/images/projects/framework/image-02.webp",
-        "/assets/images/projects/framework/image-03.webp",
-        "/assets/images/projects/framework/image-04.webp"
+        "/assets/images/projects/framework/captures/framework-dashboard.webp",
+        "/assets/images/projects/framework/captures/framework-work-orders.webp",
+        "/assets/images/projects/framework/captures/framework-buttons.webp",
+        "/assets/images/projects/framework/captures/framework-tablet.webp",
+        "/assets/images/projects/framework/captures/framework-mobile.webp"
       ],
       "languages": [
         "Nuxt 3",
@@ -460,53 +478,20 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/framework"
         }
-      ]
-    },
-    {
-      "id": "infra",
-      "category": "solution",
-      "title": "In-house Development Infra & Publishing Standardization",
-      "period": "2026.02~",
-      "type": "Internal Project",
-      "role": "Standardized publishing, improved shared UI structure, and wrote development guides",
-      "tech": [
-        "GitHub",
-        "Visual Studio Code",
-        "Cursor",
-        "Figma",
-        "Vue 3",
-        "Nuxt 3",
-        "SCSS",
-        "JavaScript",
-        "TypeScript"
       ],
-      "introduction": "I standardized folder structure, component naming, SCSS, API handling, and localization across projects. I also wrote example pages, style guides, and development documentation for the in-house framework.",
-      "myWorks": [
-        "Standardized buttons, forms, selects, date pickers, progress, charts, grids, LNB, and layouts",
-        "Defined reusable conventions for naming, folder structure, API integration, and i18n for new projects",
-        "Established SCSS tokens, BEM naming, and component-level style management",
-        "Built and documented production-ready example pages and a style guide"
+      "thumbnail": "/assets/images/projects/framework/captures/framework-dashboard.webp",
+      "captureLabels": [
+        "Management dashboard",
+        "Work order list and statuses",
+        "Shared buttons and property guide",
+        "Tablet shop-floor results entry",
+        "Mobile management dashboard"
       ],
-      "achievements": [
-        "Created a foundation for quickly applying base layouts, components, and the style guide on new projects",
-        "Unified scattered UI structures into a shared baseline for more efficient publishing–frontend collaboration"
-      ],
-      "points": [
-        "Folder, component, and SCSS conventions",
-        "Shared UI and API handling",
-        "Examples and development guides"
-      ],
-      "pin": true,
-      "duration": "Ongoing",
-      "captures": [
-        "/assets/images/projects/placeholder.svg"
-      ],
-      "languages": [
-        "Vue 3",
-        "Nuxt 3",
-        "SCSS",
-        "TypeScript"
-      ]
+      "mockup": {
+        "tablet": "/assets/images/projects/framework/captures/framework-tablet.webp",
+        "mobile": "/assets/images/projects/framework/captures/framework-mobile.webp",
+        "desktop": "/assets/images/projects/framework/captures/framework-dashboard.webp"
+      }
     },
     {
       "id": "robo-tms",
@@ -627,9 +612,10 @@
       "pin": true,
       "duration": "~3 weeks",
       "captures": [
-        "/assets/images/projects/company-renewal/image-01.webp",
-        "/assets/images/projects/company-renewal/image-02.webp",
-        "/assets/images/projects/company-renewal/image-03.webp"
+        "/assets/images/projects/company-renewal/captures/company-renewal-desktop.webp",
+        "/assets/images/projects/company-renewal/captures/company-business.webp",
+        "/assets/images/projects/company-renewal/captures/company-renewal-tablet.webp",
+        "/assets/images/projects/company-renewal/captures/company-renewal-mobile.webp"
       ],
       "languages": [
         "HTML",
@@ -642,7 +628,19 @@
           "label": "Open site",
           "href": "https://jonsoft.co.kr/"
         }
-      ]
+      ],
+      "thumbnail": "/assets/images/projects/company-renewal/captures/company-renewal-desktop.webp",
+      "captureLabels": [
+        "Desktop home",
+        "Business and solutions",
+        "Tablet interface",
+        "Mobile interface"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/company-renewal/captures/company-renewal-desktop.webp",
+        "tablet": "/assets/images/projects/company-renewal/captures/company-renewal-tablet.webp",
+        "mobile": "/assets/images/projects/company-renewal/captures/company-renewal-mobile.webp"
+      }
     },
     {
       "id": "kyungdongwon-cms",
@@ -875,7 +873,8 @@
         "HTML",
         "CSS",
         "jQuery"
-      ]
+      ],
+      "captureNotice": "Screen captures are no longer available for this older project."
     },
     {
       "id": "tos-renewal",
@@ -906,9 +905,8 @@
       "pin": false,
       "duration": "~2 months",
       "captures": [
-        "/assets/images/projects/tos-renewal/image-01.webp",
-        "/assets/images/projects/tos-renewal/image-02.webp",
-        "/assets/images/projects/tos-renewal/image-03.webp"
+        "/assets/images/projects/tos-renewal/image-03.webp",
+        "/assets/images/projects/tos-renewal/image-02.webp"
       ],
       "languages": [
         "HTML",
@@ -945,17 +943,11 @@
       "pin": true,
       "duration": "~3 months",
       "captures": [
-        "/assets/images/projects/toms/image-01.webp",
-        "/assets/images/projects/toms/image-02.webp",
-        "/assets/images/projects/toms/image-03.webp",
         "/assets/images/projects/toms/image-04.webp",
         "/assets/images/projects/toms/image-05.webp",
         "/assets/images/projects/toms/image-06.webp",
-        "/assets/images/projects/toms/image-07.webp",
-        "/assets/images/projects/toms/image-08.webp",
         "/assets/images/projects/toms/image-09.webp",
-        "/assets/images/projects/toms/image-10.webp",
-        "/assets/images/projects/toms/image-11.webp"
+        "/assets/images/projects/toms/image-02.webp"
       ],
       "languages": [
         "HTML",
@@ -1003,11 +995,11 @@
       "pin": true,
       "duration": "~2 hours",
       "captures": [
-        "/assets/images/projects/flight-shade/image-01.jpg",
-        "/assets/images/projects/flight-shade/image-02.jpg",
-        "/assets/images/projects/flight-shade/image-03.jpg"
+        "/assets/images/projects/flight-shade/captures/flight-shade-desktop.webp",
+        "/assets/images/projects/flight-shade/captures/flight-shade-tablet.webp",
+        "/assets/images/projects/flight-shade/captures/flight-shade-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/flight-shade-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/flight-shade/captures/flight-shade-desktop.webp",
       "languages": [
         "Vue 3",
         "JavaScript",
@@ -1023,7 +1015,17 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/flight-shade"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Desktop home",
+        "Tablet interface",
+        "Mobile interface"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/flight-shade/captures/flight-shade-desktop.webp",
+        "tablet": "/assets/images/projects/flight-shade/captures/flight-shade-tablet.webp",
+        "mobile": "/assets/images/projects/flight-shade/captures/flight-shade-mobile.webp"
+      }
     },
     {
       "id": "planearby",
@@ -1064,11 +1066,11 @@
       "pin": true,
       "duration": "In progress",
       "captures": [
-        "/assets/images/projects/planearby/image-01.jpg",
-        "/assets/images/projects/planearby/image-02.jpg",
-        "/assets/images/projects/planearby/image-03.jpg"
+        "/assets/images/projects/planearby/captures/planearby-desktop.webp",
+        "/assets/images/projects/planearby/captures/planearby-tablet.webp",
+        "/assets/images/projects/planearby/captures/planearby-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/planearby-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/planearby/captures/planearby-desktop.webp",
       "languages": [
         "Vue 3",
         "JavaScript",
@@ -1084,7 +1086,17 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/planearby"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Flight information and radar, example data",
+        "Tablet flight information, example data",
+        "Mobile flight information, example data"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/planearby/captures/planearby-desktop.webp",
+        "tablet": "/assets/images/projects/planearby/captures/planearby-tablet.webp",
+        "mobile": "/assets/images/projects/planearby/captures/planearby-mobile.webp"
+      }
     },
     {
       "id": "portfolio-2026",
@@ -1127,17 +1139,13 @@
       "pin": true,
       "duration": "~2 months",
       "captures": [
-        "/assets/images/projects/jonsoft-framework-portfolio/image-01.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-02.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-03.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-04.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-05.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-06.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-07.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-08.webp",
-        "/assets/images/projects/jonsoft-framework-portfolio/image-09.webp"
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-desktop.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-about.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-projects.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-tablet.webp",
+        "/assets/images/projects/portfolio-2026/captures/portfolio-2026-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/jonsoft-framework-portfolio-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-desktop.webp",
       "languages": [
         "HTML5",
         "SCSS",
@@ -1150,7 +1158,19 @@
           "label": "Visit site",
           "href": "/ver.2026/"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Archived 2026 home",
+        "About page",
+        "Professional project archive",
+        "Tablet home",
+        "Mobile home"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-desktop.webp",
+        "tablet": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-tablet.webp",
+        "mobile": "/assets/images/projects/portfolio-2026/captures/portfolio-2026-mobile.webp"
+      }
     },
     {
       "id": "singil-bmc",
@@ -1191,14 +1211,12 @@
       "pin": true,
       "duration": "May 2026–Present",
       "captures": [
-        "/assets/images/projects/singil-bmc/image-01.webp",
-        "/assets/images/projects/singil-bmc/image-02.webp",
-        "/assets/images/projects/singil-bmc/image-03.webp",
-        "/assets/images/projects/singil-bmc/image-04.webp",
-        "/assets/images/projects/singil-bmc/image-05.webp",
-        "/assets/images/projects/singil-bmc/image-06.webp"
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-desktop.webp",
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-records.webp",
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-tablet.webp",
+        "/assets/images/projects/singil-bmc/captures/singil-bmc-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/singil-bmc-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/singil-bmc/captures/singil-bmc-desktop.webp",
       "languages": [
         "Nuxt 3",
         "Vue 3",
@@ -1216,7 +1234,18 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/singil-bmc"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Desktop home",
+        "Batting records",
+        "Tablet interface",
+        "Mobile interface"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/singil-bmc/captures/singil-bmc-desktop.webp",
+        "tablet": "/assets/images/projects/singil-bmc/captures/singil-bmc-tablet.webp",
+        "mobile": "/assets/images/projects/singil-bmc/captures/singil-bmc-mobile.webp"
+      }
     },
     {
       "id": "clone-flighty",
@@ -1254,11 +1283,12 @@
       "pin": true,
       "duration": "",
       "captures": [
-        "/assets/images/projects/clone-flighty/image-01.webp",
-        "/assets/images/projects/clone-flighty/image-02.webp",
-        "/assets/images/projects/clone-flighty/image-03.webp"
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-desktop.webp",
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-passport.webp",
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-tablet.webp",
+        "/assets/images/projects/clone-flighty/captures/clone-flighty-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/clone-flighty-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/clone-flighty/captures/clone-flighty-desktop.webp",
       "languages": [
         "Vue 3",
         "JavaScript",
@@ -1276,7 +1306,18 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/cloneFlighty"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Flight list and route map",
+        "Passport and flight history map",
+        "Tablet passport",
+        "Mobile passport"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/clone-flighty/captures/clone-flighty-desktop.webp",
+        "tablet": "/assets/images/projects/clone-flighty/captures/clone-flighty-tablet.webp",
+        "mobile": "/assets/images/projects/clone-flighty/captures/clone-flighty-mobile.webp"
+      }
     },
     {
       "id": "clone-kakaotalk",
@@ -1313,9 +1354,11 @@
       "pin": true,
       "duration": "~8 months",
       "captures": [
-        "/assets/images/projects/placeholder.svg"
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-mobile.webp",
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chats.webp",
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chat.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/clone-kakaotalk-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-mobile.webp",
       "languages": [
         "Vue 3",
         "Vue Router 4",
@@ -1332,7 +1375,15 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/cloneKakaoTalk"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Friend list",
+        "Chat list",
+        "Conversation and message input"
+      ],
+      "mockup": {
+        "mobile": "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-mobile.webp"
+      }
     },
     {
       "id": "portfolio-2025",
@@ -1365,17 +1416,11 @@
       "pin": true,
       "duration": "~1 month",
       "captures": [
-        "/assets/images/projects/portfolio-2025/image-01.webp",
-        "/assets/images/projects/portfolio-2025/image-02.webp",
-        "/assets/images/projects/portfolio-2025/image-03.webp",
-        "/assets/images/projects/portfolio-2025/image-04.webp",
-        "/assets/images/projects/portfolio-2025/image-05.webp",
-        "/assets/images/projects/portfolio-2025/image-06.webp",
-        "/assets/images/projects/portfolio-2025/image-07.webp",
-        "/assets/images/projects/portfolio-2025/image-08.webp",
-        "/assets/images/projects/portfolio-2025/image-09.webp"
+        "/assets/images/projects/portfolio-2025/captures/portfolio-2025-desktop.webp",
+        "/assets/images/projects/portfolio-2025/captures/portfolio-2025-tablet.webp",
+        "/assets/images/projects/portfolio-2025/captures/portfolio-2025-mobile.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/portfolio-2025-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-desktop.webp",
       "languages": [
         "HTML",
         "SCSS",
@@ -1387,7 +1432,17 @@
           "label": "Open 2025 version",
           "href": "/ver.2025/index.html"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Desktop home",
+        "Tablet interface",
+        "Mobile interface"
+      ],
+      "mockup": {
+        "desktop": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-desktop.webp",
+        "tablet": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-tablet.webp",
+        "mobile": "/assets/images/projects/portfolio-2025/captures/portfolio-2025-mobile.webp"
+      }
     },
     {
       "id": "matemate-capstone",
@@ -1423,12 +1478,10 @@
       "pin": false,
       "duration": "~4 weeks",
       "captures": [
-        "/assets/images/projects/matemate-capstone/image-01.webp",
-        "/assets/images/projects/matemate-capstone/image-02.webp",
-        "/assets/images/projects/matemate-capstone/image-03.webp",
-        "/assets/images/projects/matemate-capstone/image-04.webp"
+        "/assets/images/projects/matemate-capstone/captures/matemate-match.webp",
+        "/assets/images/projects/matemate-capstone/captures/matemate-form.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/matemate-capstone-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/matemate-capstone/captures/matemate-match.webp",
       "languages": [
         "HTML",
         "SCSS",
@@ -1445,7 +1498,14 @@
           "label": "GitHub",
           "href": "https://github.com/team-matemate/matemate"
         }
-      ]
+      ],
+      "captureLabels": [
+        "Roommate recommendations and notices",
+        "Matching profile form"
+      ],
+      "mockup": {
+        "mobile": "/assets/images/projects/matemate-capstone/captures/matemate-match.webp"
+      }
     },
     {
       "id": "gongting-blind-matching",
@@ -1481,9 +1541,11 @@
       "pin": false,
       "duration": "~1 week build / ~2 months operation and enhancement",
       "captures": [
-        "/assets/images/projects/gongting-blind-matching/image-01.webp"
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-result.webp",
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-profile.webp",
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-match.webp"
       ],
-      "thumbnail": "/assets/images/projects/archive-thumbnails/gongting-blind-matching-light-devices-4k.jpg",
+      "thumbnail": "/assets/images/projects/gongting-blind-matching/captures/gongting-result.webp",
       "languages": [
         "HTML",
         "SCSS",
@@ -1499,6 +1561,14 @@
           "label": "GitHub",
           "href": "https://github.com/yheun03/gongting"
         }
+      ],
+      "mockup": {
+        "mobile": "/assets/images/projects/gongting-blind-matching/captures/gongting-result.webp"
+      },
+      "captureLabels": [
+        "Matching results and profile cards",
+        "My profile and matching status",
+        "Matching preferences"
       ]
     },
     {

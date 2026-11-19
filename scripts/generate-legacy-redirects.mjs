@@ -53,3 +53,10 @@ for (const prefix of ['', legacyBasePath]) {
     await mkdir(dirname(redirectFile), { recursive: true });
     await writeFile(redirectFile, createRedirectHtml(`${siteUrl}/personal/portfolio-2026/`));
 }
+
+// Preserve both published infrastructure URLs after merging the project.
+for (const prefix of ['', legacyBasePath]) {
+    const redirectFile = join(outputDir, prefix, 'projects/infra/index.html');
+    await mkdir(dirname(redirectFile), { recursive: true });
+    await writeFile(redirectFile, createRedirectHtml(`${siteUrl}/projects/framework/`));
+}

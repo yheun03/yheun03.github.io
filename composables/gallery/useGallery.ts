@@ -132,7 +132,7 @@ function matchesFilter(work: WorkSummary, filter: WorkFilterMode) {
     if (filter === 'individual') return /^(개인|Personal)\s*\//i.test(work.type);
     if (filter === 'team') return /^(팀|Team)\s*\//i.test(work.type);
     if (filter === 'problem') return ['tms-maintenance', 'hanjinkal', 'oms', 'company-renewal'].includes(work.id);
-    if (filter === 'frontend') return ['framework', 'orchem-mes', 'infra', 'samhwa-eco-dashboard'].includes(work.id);
+    if (filter === 'frontend') return ['framework', 'orchem-mes', 'samhwa-eco-dashboard'].includes(work.id);
     if (filter === 'operation') return work.category === 'operation' || ['hanon', 'tms-maintenance'].includes(work.id);
     if (filter === 'cms') return ['hanjinkal', 'company-renewal', 'company-renewal-2022', 'kyungdongwon-cms'].includes(work.id);
     return true;

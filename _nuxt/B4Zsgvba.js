@@ -1,0 +1,1 @@
+import{_ as e,a as c}from"./BbBe1n9M.js";import{e as o,c as t}from"./Bw-EL0eH.js";import"./BCPaBjQ0.js";import"./BCV2eTKu.js";import"./CXjV4qwe.js";const a={};function n(_,s){const r=c;return t(),o(r,{variant:"career"})}const d=e(a,[["render",n]]);export{d as default};

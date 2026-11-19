@@ -68,13 +68,13 @@ const devices = computed(() => {
         position: absolute;
         overflow: hidden;
         isolation: isolate;
-        background: #fff;
+        background: #000;
 
         img {
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: top;
             filter: none;
         }

@@ -224,6 +224,12 @@ const props = defineProps<{
 const { t, locale } = useLocale();
 const { resolveAppPath } = useAppPath();
 const config = getGalleryVariantConfig(props.variant);
+// 공유 정보는 화면의 언어 설정과 관계없이 한국어 프로젝트 데이터를 사용한다.
+const { data: koreanWork } = await useAsyncData(
+    `work-ko-${props.variant}-${props.work.id}`,
+    () => $fetch<WorkItem>(resolveAppPath(`/content/ko/works/${props.variant}/${props.work.id}.json`)),
+    { deep: false },
+);
 const capturesTitleId = `gallery-${props.variant}-captures`;
 const briefTitleId = `gallery-${props.variant}-brief`;
 const techTitleId = `gallery-${props.variant}-technologies`;
@@ -303,18 +309,23 @@ function projectLinkLabel(link: NonNullable<WorkItem['links']>[number]) {
 }
 
 usePortfolioSeo(() => {
-    const coverImage = props.work.captures.find((src) => !isPlaceholderCapture(src));
+    const coverImage = `/assets/images/common/og/${props.variant}-${props.work.id}.jpg`;
     const workPath = `${config.basePath}/${props.work.id}/`;
     const workUrl = getPortfolioAbsoluteUrl(workPath);
 
     return {
         title: `${props.work.title} | ${locale.value === 'ko' ? '웹 퍼블리셔 은영환' : 'Younghwan Eun, Web Publisher'}`,
         description: props.work.introduction,
+        ogTitle: `${koreanWork.value?.title ?? props.work.title} | 웹 퍼블리셔 은영환`,
+        ogDescription: koreanWork.value?.introduction ?? props.work.introduction,
+        ogLocale: 'ko',
         path: workPath,
         locale: locale.value,
         type: 'article',
         image: coverImage,
-        imageAlt: coverImage ? captureAlt(0) : undefined,
+        imageAlt: koreanWork.value?.title ?? props.work.title,
+        imageWidth: 1200,
+        imageHeight: 630,
         keywords: [props.work.title, props.work.type, props.work.role, ...props.work.languages, ...props.work.tech],
         breadcrumbs: [
             { name: t('footer.homeLink'), path: '/' },

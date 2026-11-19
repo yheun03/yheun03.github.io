@@ -74,7 +74,7 @@ usePortfolioSeo(() => ({
     schemaType: 'ProfilePage',
     ogTitle: t('aboutMe.ogTitle'),
     ogDescription: t('aboutMe.metaDescription'),
-    image: '/assets/images/common/og/about-eun-20261119.png',
+    image: '/assets/images/common/og/about.jpg',
     imageAlt: t('aboutMe.ogImageAlt'),
     imageWidth: 1200,
     imageHeight: 630,

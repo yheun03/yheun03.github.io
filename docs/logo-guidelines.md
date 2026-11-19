@@ -6,7 +6,7 @@
 - 파비콘: `assets/icons/favicon-eun.svg`
 - 브라우저 호환 아이콘: `assets/icons/favicon-eun.ico`
 - 홈 화면 아이콘: `assets/icons/apple-touch-icon-eun.png`
-- About 공유 이미지: `assets/images/common/og/about-eun-20261119.png`
+- 소개 페이지 공유 이미지: `assets/images/common/og/about.jpg`
 
 워드마크와 파비콘의 정확한 경로와 제어점은 위 SVG 원본에 있습니다. 로고를 수정하면 `pages/about.vue`의 애니메이션용 인라인 SVG도 같은 경로로 맞춥니다.
 
@@ -53,4 +53,4 @@ SVG의 비율을 유지하고 CSS에서 너비만 조절합니다.
 - 헤더: 기본 104px, 900px 이하 88px
 - 푸터: 기본 120px, 640px 이하 104px
 
-About 로고는 해당 섹션에 진입할 때 글자와 점이 순서대로 나타납니다. 동작 줄이기 설정에서는 정적으로 표시합니다.
+소개 페이지 로고는 해당 섹션에 진입할 때 글자와 점이 순서대로 나타납니다. 동작 줄이기 설정에서는 정적으로 표시합니다.

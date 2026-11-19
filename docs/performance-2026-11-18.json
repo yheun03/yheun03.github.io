@@ -6,7 +6,7 @@
     "rttMs": 150,
     "throughputKbps": 1638.4,
     "cpuSlowdown": 4,
-    "hosting": "Local static HTTP server with gzip; production build, default analytics environment"
+    "hosting": "gzip 압축을 제공하는 로컬 정적 HTTP 서버, 운영용 빌드와 기본 분석 도구 환경"
   },
   "audits": {
     "before-home": {

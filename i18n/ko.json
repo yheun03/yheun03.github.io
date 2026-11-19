@@ -4,7 +4,7 @@
   },
   "aboutMe": {
     "ogTitle": "화면 밖의 은영환 | 웹 퍼블리셔의 이야기",
-    "ogImageAlt": "eun. 워드마크와 빨간 마침표, Small details. Consistent interfaces. 문구",
+    "ogImageAlt": "브라우저와 정렬된 UI 블록, 빨간 구로 표현한 웹 퍼블리셔 은영환 소개",
     "beliefTitle": "오래 기억하는 말",
     "metaTitle": "웹 퍼블리셔 은영환 소개 | 나의 이야기",
     "metaDescription": "HTML, SCSS와 Vue로 화면을 만드는 웹 퍼블리셔 은영환을 소개합니다. 평소의 성향과 신념, 일관된 리듬과 작은 디테일을 담은 eun. 로고 이야기를 만나보세요.",
@@ -31,11 +31,11 @@
   "gallery": {
     "careerTitle": "실무 프로젝트",
     "toolbarAriaLabel": "프로젝트 필터와 정렬 선택",
-    "careerMetaTitle": "웹 퍼블리셔 포트폴리오 2026 실무 프로젝트 | 은영환",
-    "careerMetaDescription": "웹 퍼블리셔 은영환의 2026 실무 프로젝트 포트폴리오입니다. Vue 3, SCSS, JavaScript, CMS, 반응형 UI, SEO, 웹 접근성 중심의 프론트엔드 작업을 정리했습니다.",
+    "careerMetaTitle": "실무 프로젝트 | 웹 퍼블리셔 은영환",
+    "careerMetaDescription": "기업 홈페이지, CMS, 제조와 물류 업무 시스템까지 은영환이 참여한 실무 프로젝트를 소개합니다. 프로젝트별 담당 업무, 사용 기술과 구현 결과를 확인하세요.",
     "personalTitle": "개인 프로젝트",
-    "personalMetaTitle": "웹 프론트엔드 개발자 포트폴리오 2026 개인 프로젝트 | 은영환",
-    "personalMetaDescription": "웹 프론트엔드 개발자 은영환의 2026 개인 프로젝트 포트폴리오입니다. 포트폴리오 개선, UI 패턴, Vue 3, SCSS, JavaScript 인터랙션 구현 경험을 정리했습니다.",
+    "personalMetaTitle": "개인 프로젝트 | 웹 퍼블리셔 은영환",
+    "personalMetaDescription": "Flight Shade, Planearby, 야구 선교단 홈페이지와 UI 클론 등 직접 만든 웹 서비스를 소개합니다. Vue 3, Nuxt 3 기반의 기획과 화면 구현 과정을 확인하세요.",
     "duration": "소요 시간",
     "captures": "프로젝트 화면",
     "technologies": "사용 기술",
@@ -79,7 +79,10 @@
   },
   "journey": {
     "title": "경력과 학업 이력",
-    "summary": "회사에서 맡은 일과 학교에서 배운 내용을 시기별로 정리했습니다."
+    "summary": "회사에서 맡은 일과 학교에서 배운 내용을 시기별로 정리했습니다.",
+    "metaTitle": "경력과 학업 이력 | 웹 퍼블리셔 은영환",
+    "metaDescription": "2019년 OJT부터 웹 퍼블리싱, Vue UI 개발로 이어진 은영환의 경력을 소개합니다. 회사에서 맡은 업무, 대학 학업, 수상과 자격 취득 이력을 확인할 수 있습니다.",
+    "ogImageAlt": "계단과 붉은 실로 연결한 경력과 배움의 성장 과정"
   },
   "highlights": {
     "title": "수상, 자격, 대외 활동",

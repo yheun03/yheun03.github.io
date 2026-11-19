@@ -48,8 +48,12 @@ const { affiliationBlocks } = useJourneyView();
 const highlightKeys = ['awards', 'certifications', 'roles', 'activities'] as const;
 
 usePortfolioSeo(() => ({
-    title: t('journey.title'),
-    description: t('journey.summary'),
+    title: t('journey.metaTitle'),
+    description: t('journey.metaDescription'),
+    image: '/assets/images/common/og/journey.jpg',
+    imageAlt: t('journey.ogImageAlt'),
+    imageWidth: 1200,
+    imageHeight: 630,
     path: '/journey',
     locale: locale.value,
     schemaType: 'AboutPage',

@@ -5,6 +5,7 @@ type PortfolioSeoOptions = {
     description: string;
     ogTitle?: string;
     ogDescription?: string;
+    ogLocale?: SeoLocale;
     keywords?: string[];
     path?: string;
     locale: SeoLocale;
@@ -157,8 +158,8 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 { name: 'robots', content: robots },
                 ...(naverVerification ? [{ name: 'naver-site-verification', content: naverVerification }] : []),
                 { property: 'og:type', content: page.type ?? 'website' },
-                { property: 'og:locale', content: page.locale === 'ko' ? 'ko_KR' : 'en_US' },
-                { property: 'og:locale:alternate', content: page.locale === 'ko' ? 'en_US' : 'ko_KR' },
+                { property: 'og:locale', content: (page.ogLocale ?? page.locale) === 'ko' ? 'ko_KR' : 'en_US' },
+                { property: 'og:locale:alternate', content: (page.ogLocale ?? page.locale) === 'ko' ? 'en_US' : 'ko_KR' },
                 { property: 'og:site_name', content: seo.websiteName },
                 { property: 'og:url', content: canonical },
                 { property: 'og:title', content: title },

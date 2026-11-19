@@ -4,7 +4,7 @@
   },
   "aboutMe": {
     "ogTitle": "Eun, beyond the screen | A web publisher’s story",
-    "ogImageAlt": "The eun. wordmark with a red full stop and the words Small details. Consistent interfaces.",
+    "ogImageAlt": "Browser frames, aligned interface blocks and a red sphere introducing web publisher Eun",
     "beliefTitle": "A saying I remember",
     "metaTitle": "About Eun, web publisher | My story",
     "metaDescription": "Meet Eun, a web publisher working with HTML, SCSS and Vue. Discover his personality, beliefs and the eun. logo, a signature built around consistency and small details.",
@@ -31,11 +31,11 @@
   "gallery": {
     "careerTitle": "Professional Projects",
     "toolbarAriaLabel": "Project filters and sort controls",
-    "careerMetaTitle": "Web Publisher Portfolio 2026 Case Studies | Eunyounghwan",
-    "careerMetaDescription": "The 2026 web publisher portfolio of Eunyounghwan, covering Vue 3, SCSS, JavaScript, CMS, responsive UI, SEO, accessibility, and frontend production work.",
+    "careerMetaTitle": "Professional Projects | Younghwan Eun, Web Publisher",
+    "careerMetaDescription": "Explore Eun’s professional work across corporate websites, CMS, manufacturing and logistics systems, including responsibilities, technologies and implementation results.",
     "personalTitle": "Personal Projects",
-    "personalMetaTitle": "Web Frontend Developer Portfolio 2026 Personal Projects | Eunyounghwan",
-    "personalMetaDescription": "The 2026 web frontend developer portfolio of Eunyounghwan, including portfolio improvements, UI patterns, Vue 3, SCSS, JavaScript, and interaction work.",
+    "personalMetaTitle": "Personal Projects | Younghwan Eun, Web Publisher",
+    "personalMetaDescription": "Discover Flight Shade, Planearby, a baseball community website and UI clones: independently built Vue 3 and Nuxt 3 services, from planning to interface implementation.",
     "duration": "Duration",
     "captures": "Screenshots",
     "technologies": "Technologies",
@@ -79,7 +79,10 @@
   },
   "journey": {
     "title": "Career and education",
-    "summary": "A timeline of my work and education."
+    "summary": "A timeline of my work and education.",
+    "metaTitle": "Career & Education | Younghwan Eun, Web Publisher",
+    "metaDescription": "Explore Younghwan Eun’s path from OJT in 2019 to web publishing and Vue UI development, alongside university studies, awards and professional certifications.",
+    "ogImageAlt": "Ascending steps and a red thread representing career growth and education"
   },
   "highlights": {
     "title": "Awards, certifications, and activities",

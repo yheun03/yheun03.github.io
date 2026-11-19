@@ -1,7 +1,7 @@
 <template>
     <div class="app-layout" :class="{ 'app-layout--home': home }">
         <a class="skip-link" href="#main-content" @click="focusMainContent">{{ t('a11y.skipToContent') }}</a>
-        <AppHeader :home="home" />
+        <AppHeader />
         <main id="main-content" ref="pageRoot" class="portfolio-page" :class="{ 'portfolio-page--home': home }" tabindex="-1">
             <slot />
         </main>

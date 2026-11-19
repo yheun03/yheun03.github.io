@@ -12,7 +12,9 @@
     background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-editorial);
+    font-weight: var(--font-weight-regular);
     line-height: 1.4;
+    letter-spacing: var(--tracking-ui);
     a {
         text-decoration: none;
     }

@@ -1,1 +1,0 @@
-import{_ as r}from"./Gg6-PU2D.js";import{d as e}from"./Dx60kSb-.js";import{c,o as t}from"./BM_2qx-C.js";import"./7zv-KNcw.js";import"./HO5MTc6B.js";const n={};function a(s,_){const o=r;return t(),c(o,{variant:"personal"})}const d=e(n,[["render",a]]);export{d as default};

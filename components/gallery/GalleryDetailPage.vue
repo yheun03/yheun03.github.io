@@ -139,19 +139,67 @@
                     </div>
                 </header>
 
+                <div v-if="!isPlaceholderCapture(activeCapture)" class="gallery-detail__viewer-toolbar">
+                    <div class="gallery-detail__viewer-modes" role="group" :aria-label="t('gallery.captureViewMode')">
+                        <BaseButton
+                            variant="ghost"
+                            :label="t('gallery.mockupView')"
+                            :aria-pressed="captureView === 'mockup'"
+                            :aria-controls="capturePreviewId"
+                            @click="captureView = 'mockup'"
+                        />
+                        <BaseButton
+                            variant="ghost"
+                            :label="t('gallery.largeView')"
+                            :aria-pressed="captureView === 'image'"
+                            :aria-controls="capturePreviewId"
+                            @click="captureView = 'image'"
+                        />
+                    </div>
+                    <BaseButton
+                        variant="ghost"
+                        :href="activeCapture"
+                        :label="t('gallery.openOriginal')"
+                        :aria-label="t('gallery.openOriginalLabel')"
+                        external
+                    />
+                    <p class="gallery-detail__viewer-hint">
+                        {{ t(captureView === 'mockup' ? 'gallery.mockupScrollHint' : 'gallery.largeScrollHint') }}
+                    </p>
+                </div>
+
                 <figure
+                    ref="captureFigureRef"
                     :id="capturePreviewId"
                     class="gallery-detail__figure"
                     :class="{ 'gallery-detail__figure--empty': isPlaceholderCapture(activeCapture) }"
                     data-reveal="up"
                 >
-                    <div class="gallery-detail__preview-stage">
+                    <div
+                        :key="`${activeCapture}-${captureView}`"
+                        class="gallery-detail__preview-stage"
+                        :class="{ 'gallery-detail__preview-stage--image': captureView === 'image' }"
+                        :data-drag-scroll="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? '' : undefined"
+                        :tabindex="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? 0 : undefined"
+                        :role="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? 'region' : undefined"
+                        :aria-label="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? t('gallery.captureScrollRegion') : undefined"
+                    >
                         <GalleryEmptyCapture v-if="isPlaceholderCapture(activeCapture)" :description="work.captureNotice" />
+                        <BaseMediaImage
+                            v-else-if="captureView === 'image'"
+                            class="gallery-detail__capture-image"
+                            :responsive="false"
+                            :draggable="false"
+                            :src="resolveAppPath(activeCapture)"
+                            :alt="captureAlt(activeCaptureIndex)"
+                            sizes="90vw"
+                        />
                         <ProjectDeviceMockup
                             v-else
                             :key="activeCapture"
                             :src="activeCapture"
                             :device="deviceForCapture(activeCapture)"
+                            scrollable
                             :alt="captureAlt(activeCaptureIndex)"
                             sizes="90vw"
                         />
@@ -257,6 +305,9 @@ const capturePreviewId = `gallery-${props.variant}-preview`;
 const detailEndCtaKey = computed(() => (props.variant === 'career' ? 'gallery.detailEndBackCareer' : 'gallery.detailEndBackPersonal'));
 const galleryCaptures = computed(() => (props.work.captures.length ? props.work.captures : ['']));
 const activeCaptureIndex = ref(0);
+const captureView = ref<'mockup' | 'image'>('mockup');
+const captureFigureRef = ref<HTMLElement | null>(null);
+useDragScroll(captureFigureRef);
 const captureThumbnailsRef = ref<HTMLOListElement | null>(null);
 const activeCapture = computed(() => galleryCaptures.value[activeCaptureIndex.value] ?? galleryCaptures.value[0] ?? '');
 
@@ -264,6 +315,7 @@ watch(
     () => props.work.id,
     () => {
         activeCaptureIndex.value = 0;
+        captureView.value = 'mockup';
     },
 );
 

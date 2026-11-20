@@ -1,15 +1,37 @@
 <template>
-    <div class="project-mockup" :class="{ 'project-mockup--multiple': devices.length > 1 }">
+    <div class="project-mockup" :class="{ 'project-mockup--multiple': devices.length > 1, 'project-mockup--scrollable': scrollable }">
         <div
             v-for="device in devices"
             :key="device.type"
             class="project-mockup__device"
-            :class="[`project-mockup__device--${device.type}`, { 'project-mockup__device--landscape': device.type === 'tablet' && isLandscape(device.src) }]"
+            :class="[
+                `project-mockup__device--${device.type}`,
+                { 'project-mockup__device--landscape': device.type === 'tablet' && isLandscape(device.src) },
+            ]"
         >
-            <div class="project-mockup__viewport">
-                <BaseMediaImage :src="resolveAppPath(device.src)" :alt="device.type === devices[0].type ? alt : ''" :sizes="sizes" :priority="priority" />
+            <div
+                class="project-mockup__viewport"
+                :data-drag-scroll="scrollable ? '' : undefined"
+                :tabindex="scrollable ? 0 : undefined"
+                :role="scrollable ? 'region' : undefined"
+                :aria-label="scrollable ? t('gallery.captureScrollRegion') : undefined"
+            >
+                <BaseMediaImage
+                    :draggable="false"
+                    :src="resolveAppPath(device.src)"
+                    :alt="device.type === devices[0].type ? alt : ''"
+                    :sizes="sizes"
+                    :priority="priority"
+                />
             </div>
-            <BaseMediaImage class="project-mockup__frame" :src="resolveAppPath(device.frame)" alt="" :sizes="sizes" :priority="priority" aria-hidden="true" />
+            <BaseMediaImage
+                class="project-mockup__frame"
+                :src="resolveAppPath(device.frame)"
+                alt=""
+                :sizes="sizes"
+                :priority="priority"
+                aria-hidden="true"
+            />
         </div>
     </div>
 </template>
@@ -26,10 +48,12 @@ const props = withDefaults(
         device?: CaptureDevice;
         sizes?: string;
         priority?: boolean;
+        scrollable?: boolean;
     }>(),
-    { sizes: '(min-width: 641px) 45vw, 90vw', priority: false },
+    { sizes: '(min-width: 641px) 45vw, 90vw', priority: false, scrollable: false },
 );
 const { resolveAppPath } = useAppPath();
+const { t } = useLocale();
 const imageInfo = (src: string) => (media as Record<string, { width: number; height: number }>)[src];
 const isLandscape = (src: string) => {
     const image = imageInfo(src);
@@ -80,6 +104,18 @@ const devices = computed(() => {
             height: auto;
             object-position: top;
             filter: none;
+        }
+    }
+
+    &--scrollable &__viewport {
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
+        scrollbar-width: thin;
+        scrollbar-color: #7a8696 transparent;
+
+        &:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: -3px;
         }
     }
 

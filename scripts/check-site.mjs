@@ -2,6 +2,12 @@ import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
+// Reviewed capture types: long desktop pages must not be confused with mobile UI.
+const expectedCaptureDevices = {
+    'smart-factory-gov': ['desktop', 'desktop', 'desktop', 'mobile', 'mobile'],
+    'company-renewal-2022': ['desktop', 'mobile'],
+};
+
 const directory = '.output/public';
 const origin = 'https://yheun03.github.io';
 const checkAnalytics = process.argv.includes('--analytics');
@@ -82,6 +88,19 @@ for (const locale of ['ko', 'en']) {
         for (const work of items) {
             const record = JSON.parse(await readFile(join(directory, 'content', locale, 'works', variant, `${work.id}.json`), 'utf8'));
             assert.deepEqual(record, work, `${locale}/${work.id}: static record differs from source`);
+            for (const [src, device] of Object.entries(work.captureDevices ?? {})) {
+                assert.ok(work.captures.includes(src), `${locale}/${work.id}: device mapping references a missing capture`);
+                assert.ok(['desktop', 'tablet', 'mobile'].includes(device), `${locale}/${work.id}: unsupported capture device`);
+            }
+            const summary = list.find((item) => item.id === work.id);
+            assert.deepEqual(summary?.captureDevices, work.captureDevices, `${locale}/${work.id}: summary capture devices differ from source`);
+            if (expectedCaptureDevices[work.id]) {
+                assert.deepEqual(
+                    work.captures.map((src) => work.captureDevices?.[src]),
+                    expectedCaptureDevices[work.id],
+                    `${locale}/${work.id}: desktop and mobile captures must retain their reviewed device types`,
+                );
+            }
         }
     }
 }

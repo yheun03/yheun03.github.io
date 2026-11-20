@@ -16,13 +16,14 @@
 
 <script setup lang="ts">
 import media from '@data/media.json';
-import type { WorkItem } from '@data/works';
+import type { CaptureDevice, WorkItem } from '@data/works';
 
 const props = withDefaults(
     defineProps<{
         src: string;
         alt: string;
         mockup?: WorkItem['mockup'];
+        device?: CaptureDevice;
         sizes?: string;
         priority?: boolean;
     }>(),
@@ -35,14 +36,17 @@ const isLandscape = (src: string) => {
     return image && image.width > image.height;
 };
 const devices = computed(() => {
-    const image = imageInfo(props.src);
-    const fallbackType = props.src.includes('tablet') ? 'tablet' : image && image.height > image.width * 1.15 ? 'mobile' : 'desktop';
-    const captures = props.mockup
-        ? (['desktop', 'tablet', 'mobile'] as const).flatMap((type) => {
-              const src = props.mockup?.[type];
-              return src ? [{ type, src }] : [];
-          })
-        : [{ type: fallbackType, src: props.src }];
+    // Image height cannot identify a device: desktop full-page captures can be tall.
+    const fallbackType = props.src.includes('tablet') ? 'tablet' : props.src.includes('mobile') ? 'mobile' : 'desktop';
+    // A per-image device overrides both the composition and aspect-ratio inference.
+    const captures = props.device
+        ? [{ type: props.device, src: props.src }]
+        : props.mockup
+          ? (['desktop', 'tablet', 'mobile'] as const).flatMap((type) => {
+                const src = props.mockup?.[type];
+                return src ? [{ type, src }] : [];
+            })
+          : [{ type: fallbackType, src: props.src }];
 
     return captures.map((device) => {
         let frameFile = 'macbook.png';
@@ -73,8 +77,7 @@ const devices = computed(() => {
         img {
             display: block;
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            height: auto;
             object-position: top;
             filter: none;
         }

@@ -10,7 +10,7 @@ for (const locale of ['ko', 'en']) {
     await mkdir(join(directory, 'works'), { recursive: true });
     for (const [variant, items] of Object.entries(works)) {
         await mkdir(join(directory, 'works', variant), { recursive: true });
-        const summaries = items.map(({ id, category, title, period, type, role, tech, pin, languages, captures, thumbnail, mockup, captureNotice }) => ({
+        const summaries = items.map(({ id, category, title, period, type, role, tech, pin, languages, captures, thumbnail, mockup, captureDevices, captureNotice }) => ({
             id,
             category,
             title,
@@ -23,6 +23,7 @@ for (const locale of ['ko', 'en']) {
             captures: captures.slice(0, 1),
             ...(thumbnail ? { thumbnail } : {}),
             ...(mockup ? { mockup } : {}),
+            ...(captureDevices ? { captureDevices } : {}),
             ...(captureNotice ? { captureNotice } : {}),
         }));
         await writeFile(join(directory, `works-${variant}.json`), JSON.stringify(summaries));

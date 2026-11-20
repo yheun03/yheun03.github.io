@@ -37,9 +37,21 @@
                         />
                     </p>
                 </div>
-                <figure class="gallery-detail__cover" data-reveal="scale" :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }">
+                <figure
+                    class="gallery-detail__cover"
+                    data-reveal="scale"
+                    :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }"
+                >
                     <GalleryEmptyCapture v-if="isPlaceholderCapture(coverCapture)" :description="work.captureNotice" />
-                    <ProjectDeviceMockup v-else :src="coverCapture" :mockup="work.mockup" :alt="captureAlt(0)" sizes="(min-width: 641px) 68vw, 80vw" priority />
+                    <ProjectDeviceMockup
+                        v-else
+                        :src="coverCapture"
+                        :mockup="work.mockup"
+                        :device="work.captureDevices?.[coverCapture]"
+                        :alt="captureAlt(0)"
+                        sizes="(min-width: 641px) 68vw, 80vw"
+                        priority
+                    />
                 </figure>
             </header>
 
@@ -135,7 +147,14 @@
                 >
                     <div class="gallery-detail__preview-stage">
                         <GalleryEmptyCapture v-if="isPlaceholderCapture(activeCapture)" :description="work.captureNotice" />
-                        <ProjectDeviceMockup v-else :key="activeCapture" :src="activeCapture" :alt="captureAlt(activeCaptureIndex)" sizes="90vw" />
+                        <ProjectDeviceMockup
+                            v-else
+                            :key="activeCapture"
+                            :src="activeCapture"
+                            :device="deviceForCapture(activeCapture)"
+                            :alt="captureAlt(activeCaptureIndex)"
+                            sizes="90vw"
+                        />
                     </div>
                     <figcaption v-if="!isPlaceholderCapture(activeCapture)" aria-live="polite" aria-atomic="true">
                         <span>{{ String(activeCaptureIndex + 1).padStart(2, '0') }} / {{ String(galleryCaptures.length).padStart(2, '0') }}</span
@@ -213,7 +232,7 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkItem } from '@data/works';
+import type { CaptureDevice, WorkItem } from '@data/works';
 import { type GalleryArchiveVariant, getGalleryVariantConfig, isPlaceholderCapture, useGalleryRouteWorks } from '~/composables/gallery/useGallery';
 
 const props = defineProps<{
@@ -279,12 +298,23 @@ const { data: works } = await useGalleryRouteWorks(props.variant);
 const currentWorkIndex = computed(() => works.value.findIndex((item) => item.id === props.work.id));
 const nextWorks = computed(() => {
     if (works.value.length < 2 || currentWorkIndex.value < 0) return [];
-    return Array.from({ length: Math.min(4, works.value.length - 1) }, (_, offset) => works.value[(currentWorkIndex.value + offset + 1) % works.value.length]);
+    return Array.from(
+        { length: Math.min(4, works.value.length - 1) },
+        (_, offset) => works.value[(currentWorkIndex.value + offset + 1) % works.value.length],
+    );
 });
 const captureControls = [
     { step: -1, labelKey: 'gallery.previousImage', path: 'm15 18-6-6 6-6' },
     { step: 1, labelKey: 'gallery.nextImage', path: 'm9 18 6-6-6-6' },
 ];
+
+function deviceForCapture(src: string): CaptureDevice | undefined {
+    const device = props.work.captureDevices?.[src];
+    if (device) return device;
+    for (const type of ['desktop', 'tablet', 'mobile'] as const) {
+        if (props.work.mockup?.[type] === src) return type;
+    }
+}
 
 function captureAlt(index: number) {
     if (props.work.captureLabels?.[index]) return `${props.work.title}, ${props.work.captureLabels[index]}`;

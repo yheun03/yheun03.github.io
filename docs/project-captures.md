@@ -23,7 +23,7 @@
 
 ## 목업
 
-목록과 상세는 `ProjectDeviceMockup.vue`를 공통으로 사용한다. 실제 기기별 캡처가 있는 경우 `mockup.desktop`, `mockup.tablet`, `mockup.mobile`을 연결한다. PC 화면을 모바일 화면처럼 잘라 재사용하지 않는다. 단일 캡처는 이미지 비율에 따라 맥북 또는 아이폰으로 표시하고, 태블릿 캡처는 가로와 세로 비율을 구분한다. 목업은 Bunlong Heng Frames의 실제 MacBook Air, iPad Pro, iPhone 투명 PNG를 사용한다. CSS는 기기 배치와 실제 화면 좌표에만 사용하고, 사진 프레임을 화면 위에 겹쳐 카메라, 베젤, 모서리를 보존한다. 출처와 MIT 라이선스는 `assets/images/devices/LICENSE.txt`에 보관한다.
+목록과 상세는 `ProjectDeviceMockup.vue`를 공통으로 사용한다. 실제 기기별 캡처가 있는 경우 `mockup.desktop`, `mockup.tablet`, `mockup.mobile`을 연결한다. PC 화면을 모바일 화면처럼 잘라 재사용하지 않는다. 단일 캡처는 이미지별 `captureDevices` 설정과 기존 `mockup` 연결을 우선하며, 기기가 명시된 파일명을 제외한 일반 캡처는 PC를 기본값으로 사용한다. PC 전체 페이지 캡처를 모바일로 오인하지 않도록 세로 길이로 기기를 추정하지 않는다. 태블릿은 가로와 세로 비율을 구분한다. 목업은 Bunlong Heng Frames의 실제 MacBook Air, iPad Pro, iPhone 투명 PNG를 사용한다. CSS는 기기 배치와 실제 화면 좌표에만 사용하고, 사진 프레임을 화면 위에 겹쳐 카메라, 베젤, 모서리를 보존한다. 출처와 MIT 라이선스는 `assets/images/devices/LICENSE.txt`에 보관한다.
 
 기존 `/projects/infra/`와 `/portfolio/projects/infra/`는 `/projects/framework/`로 연결된다. `public/ver.2026/`은 고정 보관본이므로 내부 콘텐츠를 수정하지 않는다.
 

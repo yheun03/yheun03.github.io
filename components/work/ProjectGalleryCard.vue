@@ -3,7 +3,7 @@
         <div class="gallery-card__stage" :class="{ 'gallery-card__stage--empty': isPlaceholderCover }">
             <GalleryEmptyCapture v-if="isPlaceholderCover" :description="work.captureNotice" />
             <div v-else class="gallery-card__motion">
-                <ProjectDeviceMockup :src="coverCapture" :mockup="work.mockup" alt="" sizes="(min-width: 641px) 45vw, 90vw" />
+                <ProjectDeviceMockup :src="coverCapture" :mockup="work.mockup" :device="work.captureDevices?.[coverCapture]" alt="" sizes="(min-width: 641px) 45vw, 90vw" />
             </div>
         </div>
         <div class="gallery-card__heading">

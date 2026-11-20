@@ -160,6 +160,9 @@
     },
     {
       "id": "oms",
+      "captureDevices": {
+        "/assets/images/projects/oms/image-04.webp": "mobile"
+      },
       "category": "project",
       "title": "KleanNara OMS Renewal",
       "period": "2024.07~2025.02",
@@ -207,6 +210,13 @@
     },
     {
       "id": "smart-factory-gov",
+      "captureDevices": {
+        "/assets/images/projects/smart-factory-gov/image-01.webp": "desktop",
+        "/assets/images/projects/smart-factory-gov/image-02.webp": "desktop",
+        "/assets/images/projects/smart-factory-gov/image-03.webp": "desktop",
+        "/assets/images/projects/smart-factory-gov/image-04.webp": "mobile",
+        "/assets/images/projects/smart-factory-gov/image-05.webp": "mobile"
+      },
       "category": "project",
       "title": "Smart Factory Government Projects",
       "period": "2021.05~2022.07",
@@ -644,6 +654,9 @@
     },
     {
       "id": "kyungdongwon-cms",
+      "captureDevices": {
+        "/assets/images/projects/kyungdongwon-cms/image-02.webp": "desktop"
+      },
       "category": "renewal",
       "title": "Kyungdongwon CMS Renewal",
       "period": "2025.07",
@@ -798,6 +811,10 @@
     },
     {
       "id": "company-renewal-2022",
+      "captureDevices": {
+        "/assets/images/projects/company-renewal-2022/image-01.webp": "desktop",
+        "/assets/images/projects/company-renewal-2022/image-02.webp": "mobile"
+      },
       "category": "renewal",
       "title": "Corporate Site Renewal (2022)",
       "period": "2022.01~2022.03",
@@ -916,6 +933,13 @@
     },
     {
       "id": "toms",
+      "captureDevices": {
+        "/assets/images/projects/toms/image-04.webp": "mobile",
+        "/assets/images/projects/toms/image-05.webp": "mobile",
+        "/assets/images/projects/toms/image-06.webp": "mobile",
+        "/assets/images/projects/toms/image-09.webp": "mobile",
+        "/assets/images/projects/toms/image-02.webp": "mobile"
+      },
       "category": "award",
       "title": "TOMS Service Build",
       "period": "2021.10~12",
@@ -1321,6 +1345,10 @@
     },
     {
       "id": "clone-kakaotalk",
+      "captureDevices": {
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chats.webp": "mobile",
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chat.webp": "mobile"
+      },
       "category": "personal",
       "title": "KakaoTalk Clone",
       "period": "2025.09.27~2026.05.23",
@@ -1446,6 +1474,9 @@
     },
     {
       "id": "matemate-capstone",
+      "captureDevices": {
+        "/assets/images/projects/matemate-capstone/captures/matemate-form.webp": "mobile"
+      },
       "category": "personal",
       "title": "MateMate Roommate Matching",
       "period": "2025.01.04~2025.01.30",
@@ -1509,6 +1540,10 @@
     },
     {
       "id": "gongting-blind-matching",
+      "captureDevices": {
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-profile.webp": "mobile",
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-match.webp": "mobile"
+      },
       "category": "personal",
       "title": "Gongting Blind Matching Service",
       "period": "2024.05.16~2024.07.21",
@@ -1573,6 +1608,10 @@
     },
     {
       "id": "jonsoft-homepage-2022-archive",
+      "captureDevices": {
+        "/assets/images/projects/jonsoft-homepage-2022-archive/image-01.webp": "desktop",
+        "/assets/images/projects/jonsoft-homepage-2022-archive/image-02.webp": "mobile"
+      },
       "category": "personal",
       "title": "JO&soft Homepage Renewal Archive",
       "period": "2022.01.03~2022.03.04",

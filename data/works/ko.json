@@ -160,6 +160,9 @@
     },
     {
       "id": "oms",
+      "captureDevices": {
+        "/assets/images/projects/oms/image-04.webp": "mobile"
+      },
       "category": "project",
       "title": "깨끗한나라 OMS 리뉴얼",
       "period": "2024.07~2025.02",
@@ -207,6 +210,13 @@
     },
     {
       "id": "smart-factory-gov",
+      "captureDevices": {
+        "/assets/images/projects/smart-factory-gov/image-01.webp": "desktop",
+        "/assets/images/projects/smart-factory-gov/image-02.webp": "desktop",
+        "/assets/images/projects/smart-factory-gov/image-03.webp": "desktop",
+        "/assets/images/projects/smart-factory-gov/image-04.webp": "mobile",
+        "/assets/images/projects/smart-factory-gov/image-05.webp": "mobile"
+      },
       "category": "project",
       "title": "스마트팩토리 정부 사업 프로젝트",
       "period": "2021.05~2022.07",
@@ -644,6 +654,9 @@
     },
     {
       "id": "kyungdongwon-cms",
+      "captureDevices": {
+        "/assets/images/projects/kyungdongwon-cms/image-02.webp": "desktop"
+      },
       "category": "renewal",
       "title": "경동원 CMS 리뉴얼",
       "period": "2025.07",
@@ -798,6 +811,10 @@
     },
     {
       "id": "company-renewal-2022",
+      "captureDevices": {
+        "/assets/images/projects/company-renewal-2022/image-01.webp": "desktop",
+        "/assets/images/projects/company-renewal-2022/image-02.webp": "mobile"
+      },
       "category": "renewal",
       "title": "자사 홈페이지 리뉴얼 (2022)",
       "period": "2022.01~2022.03",
@@ -916,6 +933,13 @@
     },
     {
       "id": "toms",
+      "captureDevices": {
+        "/assets/images/projects/toms/image-04.webp": "mobile",
+        "/assets/images/projects/toms/image-05.webp": "mobile",
+        "/assets/images/projects/toms/image-06.webp": "mobile",
+        "/assets/images/projects/toms/image-09.webp": "mobile",
+        "/assets/images/projects/toms/image-02.webp": "mobile"
+      },
       "category": "award",
       "title": "TOMS 서비스 구축",
       "period": "2021.10~12",
@@ -1321,6 +1345,10 @@
     },
     {
       "id": "clone-kakaotalk",
+      "captureDevices": {
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chats.webp": "mobile",
+        "/assets/images/projects/clone-kakaotalk/captures/clone-kakaotalk-chat.webp": "mobile"
+      },
       "category": "personal",
       "title": "카카오톡 클론",
       "period": "2025.09.27~2026.05.23",
@@ -1446,6 +1474,9 @@
     },
     {
       "id": "matemate-capstone",
+      "captureDevices": {
+        "/assets/images/projects/matemate-capstone/captures/matemate-form.webp": "mobile"
+      },
       "category": "personal",
       "title": "메이트메이트(MATEMATE) 룸메이트 매칭",
       "period": "2025.01.04~2025.01.30",
@@ -1509,6 +1540,10 @@
     },
     {
       "id": "gongting-blind-matching",
+      "captureDevices": {
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-profile.webp": "mobile",
+        "/assets/images/projects/gongting-blind-matching/captures/gongting-match.webp": "mobile"
+      },
       "category": "personal",
       "title": "공팅 블라인드 매칭 서비스",
       "period": "2024.05.16~2024.07.21",
@@ -1573,6 +1608,10 @@
     },
     {
       "id": "jonsoft-homepage-2022-archive",
+      "captureDevices": {
+        "/assets/images/projects/jonsoft-homepage-2022-archive/image-01.webp": "desktop",
+        "/assets/images/projects/jonsoft-homepage-2022-archive/image-02.webp": "mobile"
+      },
       "category": "personal",
       "title": "조앤소프트 홈페이지 리뉴얼 아카이브",
       "period": "2022.01.03~2022.03.04",

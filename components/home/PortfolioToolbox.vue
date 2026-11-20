@@ -1,12 +1,13 @@
 <template>
     <section id="approach" class="home-approach home-section">
-        <div class="home-approach__heading">
+        <div class="home-approach__heading" data-reveal="stagger">
             <h2 class="home-title">What I do</h2>
             <p>{{ copy('화면 구현부터 공통화와 운영까지 담당합니다.', 'From screen implementation to shared components and maintenance.') }}</p>
         </div>
-        <div class="home-approach__showcase" :style="{ '--active-row': activeApproach }">
+        <div class="home-approach__showcase" data-reveal="up" :style="{ '--active-row': activeApproach }">
             <div class="home-approach__preview" :class="`home-approach__preview--${approachImages[activeApproach].shape}`">
                 <BaseMediaImage
+                    :key="activeApproach"
                     :src="resolveAppPath(approachImages[activeApproach].src)"
                     :alt="copy(approachImages[activeApproach].altKo, approachImages[activeApproach].altEn)"
                     class="is-active"

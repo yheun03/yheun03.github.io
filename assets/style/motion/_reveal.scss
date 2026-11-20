@@ -1,23 +1,102 @@
+// GSAP applies temporary styles after mounting. Content stays visible without JS.
 [data-reveal] {
-    transition:
-        opacity 0.4s ease,
-        transform 0.4s ease;
+    backface-visibility: hidden;
 }
 
-.reveal--pending {
-    opacity: 0;
-    transform: translateY(20px);
-}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .home-text-link > span,
+    .home-work__caption > span,
+    .portfolio-footer__title span {
+        display: inline-block;
+        transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
-.reveal--pending:focus-within {
-    opacity: 1;
-    transform: none;
+    .home-text-link:hover > span,
+    .home-text-link:focus-visible > span,
+    .home-work:hover .home-work__caption > span,
+    .home-work:focus-visible .home-work__caption > span,
+    .portfolio-footer__title a:hover span,
+    .portfolio-footer__title a:focus-visible span {
+        translate: 4px -4px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    [data-reveal] {
-        opacity: 1;
-        transform: none;
-        transition: none;
+    [data-reveal],
+    [data-reveal='stagger'] > *,
+    [data-reveal='companies'] .home-companies__logos > li {
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: none !important;
     }
+}
+
+// These effects have visible defaults when JavaScript or motion is disabled.
+.home-work__image {
+    perspective: 900px;
+}
+.home-work__motion {
+    width: 100%;
+    transform-origin: center;
+}
+
+.portfolio-page--home .home-stats > div,
+.portfolio-page--home .home-process__step,
+.portfolio-page--home .home-works__more {
+    position: relative;
+    border-top-color: transparent;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -1px 0 auto;
+        height: 1px;
+        background: var(--motion-rule-color, #d0d0d0);
+        transform: scaleX(var(--rule-progress, 1));
+        transform-origin: left center;
+        pointer-events: none;
+    }
+}
+.home-stats > div {
+    --motion-rule-color: #b9c2cf;
+    perspective: 600px;
+}
+.home-process__step {
+    --motion-rule-color: #bdbdbd;
+}
+.home-works__more {
+    --motion-rule-color: #ffffff30;
+}
+
+@supports (background-clip: text) {
+    .home-about__statement strong {
+        background-image:
+            linear-gradient(var(--color-text-heading), var(--color-text-heading)),
+            linear-gradient(var(--color-text-muted), var(--color-text-muted));
+        background-size: var(--ink-progress, 100%) 100%, 100% 100%;
+        background-repeat: no-repeat;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .home-approach__preview img.is-active {
+        animation: approach-image-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+}
+@keyframes approach-image-reveal {
+    from {
+        clip-path: inset(0 0 100% 0);
+        transform: scale(1.12);
+    }
+    to {
+        clip-path: inset(0);
+        transform: scale(1);
+    }
+}
+.reduce-effects .home-approach__preview img.is-active {
+    animation: none;
 }

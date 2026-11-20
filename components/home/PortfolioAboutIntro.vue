@@ -1,7 +1,7 @@
 <template>
     <section id="about" class="home-about home-section">
-        <h2 class="home-title">About</h2>
-        <div class="home-about__content">
+        <h2 class="home-title" data-reveal="title">About</h2>
+        <div class="home-about__content" data-reveal="stagger">
             <p v-if="locale === 'ko'" class="home-about__statement"><strong>기업 홈페이지부터 제조와 물류 시스템까지</strong> 구현하고 운영해 왔습니다.</p>
             <p v-else class="home-about__statement">
                 I build and maintain <strong>corporate websites, manufacturing systems and logistics interfaces.</strong>

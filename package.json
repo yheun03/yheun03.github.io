@@ -23,6 +23,7 @@
         "check:site": "node scripts/check-site.mjs"
     },
     "dependencies": {
+        "gsap": "^3.15.1",
         "nuxt": "^3.21.11",
         "vue": "^3.5.45"
     },

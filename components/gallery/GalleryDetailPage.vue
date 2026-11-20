@@ -43,7 +43,7 @@
                 </figure>
             </header>
 
-            <dl class="gallery-detail__hero-meta">
+            <dl class="gallery-detail__hero-meta" data-reveal="stagger">
                 <div>
                     <dt>{{ t('gallery.type') }}</dt>
                     <dd>{{ work.type }}</dd>

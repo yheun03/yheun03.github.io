@@ -1,12 +1,12 @@
 <template>
     <AppLayout>
         <article class="journey-page">
-            <header class="page-heading">
+            <header class="page-heading" data-reveal="stagger">
                 <h1>{{ t('journey.title') }}</h1>
                 <p>{{ t('journey.summary') }}</p>
             </header>
             <section v-for="block in affiliationBlocks" :key="block.summary.company + block.summary.period" class="journey-page__chapter">
-                <header>
+                <header data-reveal="up">
                     <p class="journey-page__period">{{ block.summary.period }}</p>
                     <h2>{{ block.summary.company }}</h2>
                     <p>{{ block.summary.team }}</p>
@@ -16,7 +16,7 @@
                     <ul class="journey-page__roles">
                         <li v-for="role in block.summary.roles" :key="role">{{ role }}</li>
                     </ul>
-                    <ol class="journey-page__timeline">
+                    <ol class="journey-page__timeline" data-reveal="stagger">
                         <li v-for="item in block.timeline" :key="item.period + item.title">
                             <p>{{ item.period }}</p>
                             <div>
@@ -27,7 +27,7 @@
                     </ol>
                 </div>
             </section>
-            <section class="journey-page__highlights">
+            <section class="journey-page__highlights" data-reveal="up">
                 <h2>{{ t('highlights.title') }}</h2>
                 <div>
                     <section v-for="key in highlightKeys" :key="key">

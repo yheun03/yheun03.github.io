@@ -1,11 +1,11 @@
 <template>
     <section class="home-process home-section" aria-labelledby="process-title">
-        <h2 id="process-title" class="home-title home-process__title">{{ copy('작업 방식', 'How I work') }}</h2>
-        <p class="home-process__lead">
+        <h2 id="process-title" class="home-title home-process__title" data-reveal="up">{{ copy('작업 방식', 'How I work') }}</h2>
+        <p class="home-process__lead" data-reveal="title">
             {{ copy('작은 디테일이 모여,', 'Small details add up') }}
             <span>{{ copy('좋은 경험이 됩니다.', 'to a better experience.') }}</span>
         </p>
-        <ol class="home-process__grid" role="list">
+        <ol class="home-process__grid" data-reveal="stagger" role="list">
             <li v-for="(item, index) in principles" :key="item.title" class="home-process__step">
                 <BaseIndexLabel class="home-process__index" aria-hidden="true">[0{{ index + 1 }}]</BaseIndexLabel>
                 <h3>{{ item.title }}</h3>

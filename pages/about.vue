@@ -1,18 +1,18 @@
 <template>
     <AppLayout>
         <article class="about-page">
-            <header class="page-heading">
+            <header class="page-heading" data-reveal="stagger">
                 <h1>About me</h1>
                 <p>{{ t('aboutMe.intro') }}</p>
             </header>
-            <section class="about-page__intro">
+            <section class="about-page__intro" data-reveal="stagger">
                 <h2>{{ t('aboutMe.titleLine1') }}<br />{{ t('aboutMe.titleLine2') }}</h2>
                 <div>
                     <p>{{ t('aboutMe.roleAnswer') }}</p>
                     <BaseLink class="page-text-link" href="/projects">{{ t('aboutMe.viewWorks') }} <span aria-hidden="true">↗</span></BaseLink>
                 </div>
             </section>
-            <section class="about-page__mindset">
+            <section class="about-page__mindset" data-reveal="stagger">
                 <h2>{{ t('aboutMe.beliefTitle') }}</h2>
                 <div>
                     <blockquote>
@@ -27,7 +27,7 @@
                 </div>
             </section>
             <section class="about-page__identity">
-                <div class="about-page__mark" :class="{ 'about-page__mark--static': motionDisabled }" data-reveal>
+                <div class="about-page__mark">
                     <!-- Keep these paths in sync with assets/icons/logo-eun.svg. -->
                     <svg viewBox="0 0 240 98" role="img" :aria-label="t('aboutMe.logoDescription')">
                         <g fill="currentColor">
@@ -62,10 +62,6 @@
 
 <script setup lang="ts">
 const { t, locale } = useLocale();
-const motionDisabled = ref(false);
-onMounted(() => {
-    motionDisabled.value = useReducedEffects();
-});
 usePortfolioSeo(() => ({
     title: t('aboutMe.metaTitle'),
     description: t('aboutMe.metaDescription'),

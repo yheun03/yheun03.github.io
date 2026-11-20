@@ -1,5 +1,5 @@
 <template>
-    <section class="home-companies" :aria-label="copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators')">
+    <section class="home-companies" data-reveal="companies" :aria-label="copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators')">
         <h2 class="home-companies__title">{{ copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators') }}</h2>
         <div v-for="group in companyGroups" :key="group.id" class="home-companies__group">
             <h3>{{ group.title }}</h3>

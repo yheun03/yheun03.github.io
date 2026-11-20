@@ -95,27 +95,8 @@
             overflow: visible;
         }
     }
-    &__letter {
-        animation: about-logo-letter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
-        &--u {
-            animation-delay: 0.14s;
-        }
-        &--n {
-            animation-delay: 0.28s;
-        }
-    }
     &__dot {
         fill: var(--color-accent);
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: about-logo-dot 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
-    }
-    &__mark.reveal--pending,
-    &__mark--static {
-        .about-page__letter,
-        .about-page__dot {
-            animation: none;
-        }
     }
     &__identity-points {
         display: grid;
@@ -148,34 +129,5 @@
         &__mark {
             aspect-ratio: 4 / 3;
         }
-    }
-}
-
-@keyframes about-logo-letter {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes about-logo-dot {
-    from {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce) {
-    .about-page__letter,
-    .about-page__dot {
-        animation: none;
     }
 }

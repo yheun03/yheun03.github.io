@@ -1,12 +1,17 @@
 <template>
     <section id="hello" class="home-hero" aria-labelledby="hero-title">
         <div class="home-hero__heading">
-            <h1 id="hero-title">YOUNGHWAN <span>EUN</span></h1>
+            <h1 id="hero-title">
+                <span class="home-hero__line"><span class="home-hero__line-inner">YOUNGHWAN</span></span>
+                <span class="home-hero__line"><span class="home-hero__line-inner">EUN</span></span>
+            </h1>
         </div>
         <div class="home-hero__body">
             <NuxtLink
                 to="/projects/framework"
                 class="home-hero__visual"
+                data-reveal="image"
+                data-parallax
                 :aria-label="copy('조앤소프트 프레임워크 프로젝트 보기', 'Explore the Jonsoft framework project')"
             >
                 <ProjectDeviceMockup
@@ -17,7 +22,7 @@
                 />
                 <span class="home-hero__visual-arrow" aria-hidden="true">↗</span>
             </NuxtLink>
-            <div class="home-hero__intro">
+            <div class="home-hero__intro" data-reveal="stagger">
                 <p v-if="locale === 'ko'"><strong>디자인을 웹 화면으로 구현하는</strong> <span class="home-hero__role">웹 퍼블리셔</span> 은영환입니다.</p>
                 <p v-else>
                     I’m Younghwan Eun, a <span class="home-hero__role">web publisher</span> who

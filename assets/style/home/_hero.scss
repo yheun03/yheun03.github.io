@@ -18,6 +18,14 @@
             }
         }
     }
+    &__line {
+        overflow: clip;
+        padding: 0.12em 0.06em 0.15em 0;
+        margin: -0.12em -0.06em -0.15em 0;
+    }
+    &__line-inner {
+        transform-origin: left bottom;
+    }
     &__body {
         display: grid;
         grid-template-columns: 1.6fr 1fr;

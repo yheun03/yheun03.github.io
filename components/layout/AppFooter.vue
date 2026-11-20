@@ -1,13 +1,13 @@
 <template>
     <footer id="contact" class="portfolio-footer" aria-labelledby="footer-contact-title">
-        <h2 id="footer-contact-title" class="portfolio-footer__title">
+        <h2 id="footer-contact-title" class="portfolio-footer__title" data-reveal="title">
             <a :href="`mailto:${contacts.email}`">Let’s talk<span aria-hidden="true">↗</span></a>
         </h2>
-        <p class="portfolio-footer__description">
+        <p class="portfolio-footer__description" data-reveal="up">
             {{ locale === 'ko' ? '채용이나 프로젝트 제안은 이메일로 보내주세요.' : 'For roles or project enquiries, please get in touch by email.' }}
         </p>
         <a class="portfolio-footer__email" :href="`mailto:${contacts.email}`">{{ contacts.email }}</a>
-        <div class="portfolio-footer__links">
+        <div class="portfolio-footer__links" data-reveal="stagger">
             <BaseLink :href="contacts.github" external>GitHub <span aria-hidden="true">↗</span></BaseLink>
             <BaseLink :href="contacts.resume" external>{{ locale === 'ko' ? '이력서' : 'Résumé' }} <span aria-hidden="true">↗</span></BaseLink>
         </div>

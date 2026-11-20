@@ -1,13 +1,13 @@
 <template>
     <AppLayout>
         <article class="gallery-page">
-            <header class="page-heading">
+            <header class="page-heading" data-reveal="stagger">
                 <h1>
                     <template v-for="(line, index) in titleLines" :key="index"><br v-if="index" />{{ line }}</template>
                 </h1>
                 <p>{{ lead }}</p>
             </header>
-            <div class="gallery-page__toolbar" role="group" :aria-label="toolbarAriaLabel">
+            <div class="gallery-page__toolbar" data-reveal="up" role="group" :aria-label="toolbarAriaLabel">
                 <GalleryMultiFilter
                     v-if="filterOptions.length"
                     :selected="filterModes"
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gallery-page__grid">
+            <div class="gallery-page__grid" data-reveal="stagger">
                 <ProjectGalleryCard v-for="work in filteredWorks" :key="work.id" :work="work" :to="`${basePath}/${work.id}`" />
             </div>
         </article>

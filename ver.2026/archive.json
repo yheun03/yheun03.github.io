@@ -8,7 +8,8 @@
     "Versioned base path",
     "noindex metadata for archive pages",
     "2025 archive links use /ver.2025/",
-    "Texture asset path stays inside the snapshot"
+    "Texture asset path stays inside the snapshot",
+    "Accessibility corrections for statistic alternatives, labelled groups and brand link names (2026-11-20)"
   ],
   "dependencies": "Installed from the source commit package-lock.json"
 }

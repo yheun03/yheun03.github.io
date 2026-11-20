@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // 텍스트 그리기 함수
+    const animationStarted = performance.now();
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     function drawTexts() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = `900 ${fontSize}px Pretendard`; // 고정된 폰트 크기 설정
@@ -48,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        requestAnimationFrame(drawTexts);
+        if (!reducedMotion.matches && performance.now() - animationStarted < 4000) {
+            requestAnimationFrame(drawTexts);
+        }
     }
 
     // 애니메이션 시작
@@ -57,9 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // area-project 리스트 스와이퍼
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,           // 한 번에 한 슬라이드만 보이게 설정
-        autoplay: {
-            delay: 10000,
-        },
+        speed: reducedMotion.matches ? 0 : 300,
         autoHeight : true,
         pagination: {
             el: ".swiper-pagination",
@@ -76,13 +78,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailButtons = document.querySelectorAll(".proj-information .btn");
     const modals = document.querySelectorAll(".modal-content");
     const modalCloseButtons = document.querySelectorAll(".modal-close");
+    let modalTrigger;
+
+    function closeModal() {
+        modals.forEach((modal) => modal.classList.remove('active'));
+        document.querySelector('main').inert = false;
+        document.querySelector('footer').inert = false;
+        document.body.style.overflow = '';
+        modalTrigger?.focus();
+    }
 
     // 상세보기 버튼 클릭 시
     detailButtons.forEach((button, index) => {
         button.addEventListener("click", () => {
             const targetModal = modals[index];
             if (targetModal) {
+                modalTrigger = button;
                 targetModal.classList.add("active"); // 해당 모달에 active 클래스 추가
+                document.querySelector('main').inert = true;
+                document.querySelector('footer').inert = true;
+                document.body.style.overflow = 'hidden';
+                targetModal.focus();
             }
         });
     });
@@ -90,9 +106,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // 닫기 버튼 클릭 시
     modalCloseButtons.forEach((closeButton) => {
         closeButton.addEventListener("click", () => {
-            modals.forEach((modal) => {
-                modal.classList.remove("active"); // 모든 모달의 active 클래스 제거
-            });
+            closeModal();
+        });
+    });
+
+    modals.forEach((modal) => {
+        modal.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeModal();
+            }
+            if (event.key !== 'Tab') return;
+            const controls = [...modal.querySelectorAll('a[href], button, [tabindex="0"]')];
+            const first = controls[0];
+            const last = controls.at(-1);
+            if (event.shiftKey && (document.activeElement === first || document.activeElement === modal)) {
+                event.preventDefault();
+                last?.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first?.focus();
+            }
         });
     });
     
@@ -106,10 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isDarkMode) {
         document.body.classList.add('mode-dark');
     }
+    modeToggleButton.setAttribute('aria-pressed', String(isDarkMode));
 
     // 버튼 클릭 시 다크 모드 토글
     modeToggleButton.addEventListener('click', function() {
         document.body.classList.toggle('mode-dark');
+        modeToggleButton.setAttribute('aria-pressed', String(document.body.classList.contains('mode-dark')));
     });
 
     // 시스템 다크 모드 설정이 변경될 때 실시간 반영
@@ -119,5 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
         document.body.classList.remove('mode-dark');
         }
+        modeToggleButton.setAttribute('aria-pressed', String(e.matches));
     });
 });

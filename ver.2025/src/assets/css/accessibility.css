@@ -1,0 +1,47 @@
+/* 보관 페이지의 디자인을 유지하면서 키보드 접근성을 보완한다. */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 16px;
+    z-index: 20;
+    padding: 12px 20px;
+    color: #fff;
+    background: #222;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+:where(a, button, [tabindex]):focus-visible {
+    outline: 3px solid var(--primary-600);
+    outline-offset: 4px;
+}
+
+.area-projects .swiper-pagination-bullet {
+    width: 24px;
+    height: 24px;
+}
+
+/* 작은 화면에서도 제목을 보조 기술이 읽을 수 있도록 유지한다. */
+@media (max-width: 1140px) {
+    .area-intro .content h1 {
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

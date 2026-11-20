@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gallery-page__grid" data-reveal="stagger">
+            <div class="gallery-page__grid">
                 <ProjectGalleryCard v-for="work in filteredWorks" :key="work.id" :work="work" :to="`${basePath}/${work.id}`" />
             </div>
         </article>
@@ -61,6 +61,13 @@ const resultLabel = computed(() => t('gallery.filteredCount').replace('{count}',
 const titleLines = computed(() => (locale.value === 'en' ? t(titleKey).split(' ') : [t(titleKey)]));
 const sortDropdown = ref<HTMLDetailsElement | null>(null);
 const selectedSortLabel = computed(() => sortOptions.value.find((option) => option.value === sortMode.value)?.label);
+
+watch(filteredWorks, async () => {
+    if (!import.meta.client || useReducedEffects()) return;
+    await nextTick();
+    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+    ScrollTrigger.refresh();
+}, { flush: 'post' });
 
 function closeSort(returnFocus = false) {
     if (!sortDropdown.value?.open) return;

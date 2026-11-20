@@ -13,16 +13,34 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
 
         gsap.registerPlugin(ScrollTrigger);
         const scope = root.value;
-        // Start at 60% from the top, leaving the lower 40% as the entry zone.
-        // Clamp keeps triggers near the footer within the page's scroll range.
-        const scrollStart = 'clamp(top 60%)';
+        // Capture the first viewport before GSAP changes any element positions.
+        const initiallyVisible = new WeakSet<Element>();
+        scope.querySelectorAll(`
+            [data-reveal], .about-page__mark, .home-hero__heading, .home-hero,
+            .home-stats > div, .home-stats strong, .home-process__step,
+            .home-about__statement strong, .portfolio-footer__title,
+            [data-parallax], .home-process__lead > span
+        `).forEach((element) => {
+            const bounds = element.getBoundingClientRect();
+            if (bounds.top < window.innerHeight && bounds.bottom > 0) initiallyVisible.add(element);
+        });
+
+        // First-viewport effects play on load; the rest wait for the 55% line.
+        function motionTrigger(element: Element, options: { start?: string; end?: string; scrub?: number } = {}) {
+            if (initiallyVisible.has(element)) return undefined;
+            return {
+                trigger: element,
+                start: 'clamp(top 55%)',
+                once: options.scrub === undefined,
+                ...options,
+            };
+        }
         const media = gsap.matchMedia();
 
         media.add(
             {
                 desktop: '(min-width: 641px)',
                 mobile: '(max-width: 640px)',
-                pointer: '(hover: hover) and (pointer: fine)',
                 reduce: '(prefers-reduced-motion: reduce)',
             },
             (context) => {
@@ -30,9 +48,8 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                 const desktop = context.conditions?.desktop;
                 const distance = desktop ? 28 : 18;
                 const reveals = new Map<HTMLElement, gsap.core.Tween>();
-                const removeListeners: (() => void)[] = [];
 
-                // Play each entrance once when it reaches the shared viewport line.
+                // Visible entrances play immediately; off-screen entrances wait for scrolling.
                 scope.querySelectorAll<HTMLElement>('[data-reveal]').forEach((element) => {
                     if (element.getBoundingClientRect().bottom <= 0) return;
                     const mode = element.dataset.reveal;
@@ -56,7 +73,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                         stagger: mode === 'companies' ? 0.085 : mode === 'stagger' ? 0.1 : 0,
                         ease: 'power3.out',
                         clearProps: 'opacity,transform,clipPath',
-                        scrollTrigger: { trigger: element, start: scrollStart, once: true },
+                        scrollTrigger: motionTrigger(element),
                     });
                     reveals.set(element, tween);
                 });
@@ -67,7 +84,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                     const letters = aboutMark.querySelectorAll('.about-page__letter');
                     const dot = aboutMark.querySelector('.about-page__dot');
                     const logo = gsap.timeline({
-                        scrollTrigger: { trigger: aboutMark, start: scrollStart, once: true },
+                        scrollTrigger: motionTrigger(aboutMark, { start: 'clamp(top 40%)' }),
                     });
                     logo.fromTo(letters, { opacity: 0, scaleX: 0.96, transformOrigin: '50% 50%' }, {
                         opacity: 1,
@@ -87,7 +104,8 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                 }
 
                 const lines = scope.querySelectorAll('.home-hero__line-inner');
-                if (lines.length && scope.querySelector('.home-hero')!.getBoundingClientRect().bottom > 0) {
+                const heroHeading = scope.querySelector('.home-hero__heading');
+                if (lines.length && heroHeading && heroHeading.getBoundingClientRect().bottom > 0) {
                     gsap.fromTo(lines, { yPercent: 115, rotation: 1.5 }, {
                         yPercent: 0,
                         rotation: 0,
@@ -95,7 +113,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                         stagger: 0.14,
                         ease: 'power4.out',
                         clearProps: 'transform',
-                        scrollTrigger: { trigger: scope.querySelector('.home-hero__heading'), start: scrollStart, once: true },
+                        scrollTrigger: motionTrigger(heroHeading),
                     });
                 }
 
@@ -104,15 +122,16 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                         '--rule-progress': 1,
                         duration: 1.2,
                         ease: 'power3.inOut',
-                        scrollTrigger: { trigger: element, start: scrollStart, once: true },
+                        scrollTrigger: motionTrigger(element),
                     });
                 });
 
                 scope.querySelectorAll('.home-about__statement strong').forEach((element) => {
                     gsap.fromTo(element, { '--ink-progress': '0%' }, {
                         '--ink-progress': '100%',
+                        duration: 0.85,
                         ease: 'none',
-                        scrollTrigger: { trigger: element, start: scrollStart, end: 'clamp(bottom 30%)', scrub: 0.5 },
+                        scrollTrigger: motionTrigger(element, { end: 'clamp(bottom 30%)', scrub: 0.5 }),
                     });
                 });
 
@@ -124,7 +143,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                         duration: 0.9,
                         ease: 'power3.out',
                         clearProps: 'transform,transformOrigin,opacity',
-                        scrollTrigger: { trigger: element, start: scrollStart, once: true },
+                        scrollTrigger: motionTrigger(element),
                     });
                 });
 
@@ -134,59 +153,34 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                     if (hero) {
                         gsap.to(scope.querySelectorAll('.home-hero__line'), {
                             xPercent: (index) => index === 0 ? 1.5 : 3,
+                            duration: 0.85,
                             ease: 'none',
-                            scrollTrigger: { trigger: hero, start: scrollStart, end: 'clamp(bottom top)', scrub: 0.7 },
+                            scrollTrigger: motionTrigger(hero, { end: 'clamp(bottom top)', scrub: 0.7 }),
                         });
                     }
                     const footerTitle = scope.querySelector('.portfolio-footer__title a');
-                    if (footerTitle) gsap.fromTo(footerTitle, { y: 18 }, {
+                    if (footerTitle?.parentElement) gsap.fromTo(footerTitle, { y: 18 }, {
                         y: 0,
+                        duration: 0.85,
                         ease: 'none',
-                        scrollTrigger: { trigger: footerTitle.parentElement, start: scrollStart, end: 'clamp(top 30%)', scrub: 0.7 },
+                        scrollTrigger: motionTrigger(footerTitle.parentElement, { end: 'clamp(top 30%)', scrub: 0.7 }),
                     });
                     scope.querySelectorAll<HTMLElement>('[data-parallax]').forEach((element) => {
                         const target = element.querySelector('.project-mockup');
                         if (!target) return;
                         gsap.fromTo(target, { yPercent: 2 }, {
                             yPercent: -2,
+                            duration: 0.85,
                             ease: 'none',
-                            scrollTrigger: { trigger: element, start: scrollStart, end: 'clamp(bottom top)', scrub: 0.8 },
+                            scrollTrigger: motionTrigger(element, { end: 'clamp(bottom top)', scrub: 0.8 }),
                         });
                     });
                     const statement = scope.querySelector('.home-process__lead > span');
                     if (statement) gsap.fromTo(statement, { x: 24 }, {
                         x: 0,
+                        duration: 0.85,
                         ease: 'none',
-                        scrollTrigger: { trigger: statement, start: scrollStart, end: 'clamp(top 30%)', scrub: 0.6 },
-                    });
-                }
-
-                if (desktop && context.conditions?.pointer) {
-                    scope.querySelectorAll<HTMLElement>('.home-work').forEach((card) => {
-                        const image = card.querySelector('.home-work__motion');
-                        if (!image) return;
-                        gsap.set(image, { transformPerspective: 900 });
-                        const rotateX = gsap.quickTo(image, 'rotationX', { duration: 0.55, ease: 'power3.out' });
-                        const rotateY = gsap.quickTo(image, 'rotationY', { duration: 0.55, ease: 'power3.out' });
-                        const zoom = gsap.quickTo(image, 'scale', { duration: 0.55, ease: 'power3.out' });
-                        const move = (event: PointerEvent) => {
-                            if (event.pointerType === 'touch') return;
-                            const bounds = card.getBoundingClientRect();
-                            const x = gsap.utils.clamp(-0.5, 0.5, (event.clientX - bounds.left) / bounds.width - 0.5);
-                            const y = gsap.utils.clamp(-0.5, 0.5, (event.clientY - bounds.top) / bounds.height - 0.5);
-                            rotateX(-y * 5);
-                            rotateY(x * 5);
-                            zoom(1.025);
-                        };
-                        const reset = () => { rotateX(0); rotateY(0); zoom(1); };
-                        card.addEventListener('pointermove', move);
-                        card.addEventListener('pointerleave', reset);
-                        card.addEventListener('pointercancel', reset);
-                        removeListeners.push(() => {
-                            card.removeEventListener('pointermove', move);
-                            card.removeEventListener('pointerleave', reset);
-                            card.removeEventListener('pointercancel', reset);
-                        });
+                        scrollTrigger: motionTrigger(statement, { end: 'clamp(top 30%)', scrub: 0.6 }),
                     });
                 }
 
@@ -200,7 +194,6 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                 scope.addEventListener('focusin', revealFocused);
                 return () => {
                     scope.removeEventListener('focusin', revealFocused);
-                    removeListeners.forEach((remove) => remove());
                 };
             },
             scope,

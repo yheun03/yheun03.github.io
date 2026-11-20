@@ -3,6 +3,7 @@
     color: #f1f4f7;
     --color-text: #f1f4f7;
     --color-text-heading: #f1f4f7;
+    --color-text-muted: #b6c1ce;
     a:focus-visible {
         outline-color: #b6c1ce;
     }
@@ -22,7 +23,7 @@
     &__grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(32px, 3vw, 64px) clamp(24px, 2vw, 48px);
+        gap: 64px 32px;
     }
     &__more {
         display: flex;
@@ -32,52 +33,5 @@
         padding-top: 28px;
         margin-top: 50px;
         font-size: 14px;
-    }
-}
-.home-work {
-    min-width: 0;
-    cursor: pointer;
-    &__image {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
-        isolation: isolate;
-        container-type: inline-size;
-        pointer-events: none;
-        background: radial-gradient(ellipse at 50% 20%, #f5f7fa, #c5cfdb);
-        &--1 {
-            background: radial-gradient(ellipse at 50% 20%, #e3eaf0, #a4b5c6);
-        }
-        &--2 {
-            background: radial-gradient(ellipse at 50% 20%, #f2f2f2, #ccc);
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            width: 77%;
-            height: 6%;
-            bottom: 12%;
-            border-radius: 50%;
-            background: #27364a40;
-            filter: blur(12px);
-        }
-    }
-    &__caption {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        padding-top: 20px;
-        h3 {
-            font-size: clamp(17px, 1.3vw, 22px);
-            color: #f1f4f7;
-        }
-        > span {
-            font-size: 24px;
-        }
     }
 }

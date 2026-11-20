@@ -7,17 +7,7 @@
             </p>
         </div>
         <div class="home-works__grid">
-            <NuxtLink v-for="(work, index) in selectedWorks" :key="work.id" :to="`/projects/${work.id}`" class="home-work" data-reveal="image">
-                <div class="home-work__image" data-parallax :class="`home-work__image--${index % 3}`">
-                    <div class="home-work__motion">
-                        <ProjectDeviceMockup :src="work.captures[0] || ''" :mockup="work.mockup" alt="" sizes="(min-width: 641px) 32vw, 64vw" />
-                    </div>
-                </div>
-                <div class="home-work__caption">
-                    <h3>{{ work.title }}</h3>
-                    <span aria-hidden="true">↗</span>
-                </div>
-            </NuxtLink>
+            <ProjectGalleryCard v-for="work in selectedWorks" :key="work.id" :work="work" :to="`/projects/${work.id}`" heading-tag="h3" />
         </div>
         <div class="home-works__more" data-reveal="up">
             <NuxtLink to="/personal">{{ copy('개인 프로젝트', 'Personal projects') }} <span aria-hidden="true">↗</span></NuxtLink>

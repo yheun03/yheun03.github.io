@@ -37,9 +37,6 @@
             }
         }
     }
-    .home-work__caption h3 {
-        font-size: 16px;
-    }
 }
 @media (min-width: 641px) and (max-width: 1000px) {
     .home-companies__group {
@@ -132,7 +129,7 @@
         }
         &__grid {
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 40px;
         }
         &__more {
             font-size: 12px;
@@ -195,16 +192,6 @@
 
 .portfolio-page--home [id] {
     scroll-margin-top: 100px;
-}
-@media (hover: hover) and (pointer: fine) {
-    .home-work {
-        cursor:
-            url('../../icons/cursor-arrow.svg') 24 24,
-            pointer;
-    }
-    .home-work__caption {
-        pointer-events: none;
-    }
 }
 @media (max-width: 640px) {
     .portfolio-page--home [id] {

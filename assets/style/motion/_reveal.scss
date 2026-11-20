@@ -5,7 +5,6 @@
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
     .home-text-link > span,
-    .home-work__caption > span,
     .portfolio-footer__title span {
         display: inline-block;
         transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
@@ -13,8 +12,6 @@
 
     .home-text-link:hover > span,
     .home-text-link:focus-visible > span,
-    .home-work:hover .home-work__caption > span,
-    .home-work:focus-visible .home-work__caption > span,
     .portfolio-footer__title a:hover span,
     .portfolio-footer__title a:focus-visible span {
         translate: 4px -4px;
@@ -32,14 +29,6 @@
 }
 
 // These effects have visible defaults when JavaScript or motion is disabled.
-.home-work__image {
-    perspective: 900px;
-}
-.home-work__motion {
-    width: 100%;
-    transform-origin: center;
-}
-
 .portfolio-page--home .home-stats > div,
 .portfolio-page--home .home-process__step,
 .portfolio-page--home .home-works__more {

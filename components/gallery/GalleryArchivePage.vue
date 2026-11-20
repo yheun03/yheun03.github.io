@@ -25,7 +25,7 @@
                             @keydown.esc.prevent.stop="closeSort(true)"
                             @focusout="handleSortFocusOut"
                         >
-                            <summary :aria-label="`${sortLegend} · ${selectedSortLabel}`">{{ selectedSortLabel }}<span aria-hidden="true">⌄</span></summary>
+                            <summary :aria-label="`${sortLegend}, ${selectedSortLabel}`">{{ selectedSortLabel }}<span aria-hidden="true">⌄</span></summary>
                             <ul :aria-label="sortLegend">
                                 <li v-for="option in sortOptions" :key="option.value">
                                     <button type="button" :aria-pressed="sortMode === option.value" @click="selectSort(option.value)">

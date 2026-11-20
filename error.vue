@@ -1,6 +1,6 @@
 <template>
     <main id="main-content" ref="pageRoot" class="error-page" tabindex="-1">
-        <article class="error-page__card base-card" data-reveal="scale" role="alert" aria-live="assertive">
+        <article class="error-page__card base-card" data-reveal="scale">
             <span class="error-page__emoji emoji emoji--soft" aria-hidden="true">{{ emoji }}</span>
 
             <div class="error-page__layout">

@@ -1,4 +1,5 @@
 <template>
+    <NuxtRouteAnnouncer :atomic="true" />
     <NuxtPage />
 </template>
 

@@ -39,7 +39,7 @@
                 </div>
                 <figure class="gallery-detail__cover" data-reveal="scale" :class="{ 'gallery-detail__cover--empty': isPlaceholderCapture(coverCapture) }">
                     <GalleryEmptyCapture v-if="isPlaceholderCapture(coverCapture)" :description="work.captureNotice" />
-                    <ProjectDeviceMockup v-else :src="coverCapture" :mockup="work.mockup" :alt="work.title" sizes="(min-width: 641px) 68vw, 80vw" priority />
+                    <ProjectDeviceMockup v-else :src="coverCapture" :mockup="work.mockup" :alt="captureAlt(0)" sizes="(min-width: 641px) 68vw, 80vw" priority />
                 </figure>
             </header>
 
@@ -155,7 +155,7 @@
                             type="button"
                             class="gallery-detail__thumbnail"
                             :class="{ 'gallery-detail__thumbnail--active': activeCaptureIndex === index }"
-                            :aria-label="t('gallery.captureDotLabel').replace('{index}', String(index + 1))"
+                            :aria-label="t('gallery.captureDotLabel').replace('{index}', String(index + 1).padStart(2, '0'))"
                             :aria-pressed="activeCaptureIndex === index"
                             :aria-controls="capturePreviewId"
                             @click="selectCapture(index)"
@@ -295,7 +295,7 @@ function captureAlt(index: number) {
 
 function projectLinkAriaLabel(link: NonNullable<WorkItem['links']>[number]) {
     const title = props.work.title;
-    const label = link.label;
+    const label = projectLinkLabel(link);
 
     return t('gallery.projectLinkLabel').replace('{title}', title).replace('{label}', label);
 }
@@ -328,6 +328,7 @@ usePortfolioSeo(() => {
         imageWidth: 1200,
         imageHeight: 630,
         keywords: [props.work.title, props.work.type, props.work.role, ...props.work.languages, ...props.work.tech],
+        significantLinks: props.work.links?.map((link) => link.href),
         breadcrumbs: [
             { name: t('footer.homeLink'), path: '/' },
             { name: t(config.titleKey), path: config.basePath },
@@ -347,7 +348,6 @@ usePortfolioSeo(() => {
             keywords: [...new Set([...props.work.languages, ...props.work.tech])].join(', '),
             about: [...new Set(props.work.tech)].map((name) => ({ '@type': 'Thing', name })),
             ...(coverImage ? { image: getPortfolioAbsoluteUrl(coverImage) } : {}),
-            ...(props.work.links?.length ? { sameAs: props.work.links.map((link) => link.href) } : {}),
         },
     };
 });

@@ -44,10 +44,10 @@
             padding: 8px 0;
         }
         a:hover,
-        a[aria-current='page'] {
+        a[aria-current] {
             color: var(--color-primary);
         }
-        a[aria-current='page'] {
+        a[aria-current] {
             text-decoration: underline;
             text-underline-offset: 6px;
         }

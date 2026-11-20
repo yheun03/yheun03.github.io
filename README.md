@@ -48,6 +48,12 @@ npm run check:site
 npm run deploy
 ```
 
+`check:site`는 공개 페이지의 문서 언어, 제목, 본문 영역과 건너뛰기 링크, 이미지 대체 텍스트, canonical, 공유 이미지와 구조화 데이터를 확인합니다. 정적 404의 검색 제외와 JavaScript 없는 오류 안내도 검사합니다. 텍스트 이모지는 일반 요소에 `alt`를 붙이지 않으며, 장식용이면 `aria-hidden="true"`, 의미 전달용이면 `role="img"`와 `aria-label`을 사용합니다. 자동 검사와 별도로 스크린리더의 실제 낭독, 키보드 조작과 색상 대비를 확인해야 합니다.
+
+접근성, SEO, GEO, AEO 개선과 검증은 실제 Nuxt 화면을 대상으로 합니다. `public/` 전체는 작업과 검증 범위에서 제외하며, `pages/`, `components/`, 관련 SCSS와 SEO 설정을 기준으로 확인합니다.
+
+TypeScript 검사에서도 `public/`과 빌드 결과물을 제외합니다. 아카이브 JavaScript의 전역 선언이 현재 앱의 `$fetch` 타입에 간섭하지 않도록 하며, Nuxt가 생성한 타입 선언은 유지합니다.
+
 ### 분석 및 검색 인증 환경변수
 
 `.env.example`을 `.env`로 복사한 뒤 GTM ID, 네이버 애널리틱스 발급 ID, Google Search Console의 HTML 태그 인증값을 입력합니다. `.env`는 Git에 포함하지 않습니다. GA4 측정 ID는 GTM의 Google 태그에서 관리하므로 사이트에 별도로 중복 설치하지 않습니다.
@@ -63,6 +69,8 @@ npm run deploy
 ## 2026 초기 버전 보관
 
 기존 main 커밋 `6c47ccc7182529e466410058f91d7e8cfe00467d`의 정적 빌드를 `public/ver.2026/`에 보관합니다. 기존 2026 프로젝트의 본문과 캡처는 `/personal/portfolio-2026/`에서 관리하며, 사이트 보기 버튼은 `/ver.2026/`로 연결합니다. 이전 상세 주소 `/personal/jonsoft-framework-portfolio`는 새 상세 주소로 이동합니다. 일반 빌드에서 다시 렌더링하지 않는 고정 보관본이며 출처와 경로 조정 사항은 `public/ver.2026/archive.json`에 기록했습니다. 2025 버전은 기존 `/ver.2025/` 주소를 사용합니다.
+
+`public/ver.yyyy/` 경로는 당시 상태를 보존하는 아카이브이므로 접근성 개선을 포함한 수정 대상에서 제외합니다.
 
 ## GitHub Pages 검색 설정
 

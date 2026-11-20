@@ -2,5 +2,6 @@
     "extends": "./.nuxt/tsconfig.json",
     "compilerOptions": {
         "types": ["node"]
-    }
+    },
+    "exclude": ["public/**", "node_modules/**", ".nuxt-build/**", ".output/**", ".data/**", "dist/**"]
 }

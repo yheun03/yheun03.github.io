@@ -14,7 +14,7 @@
                 My work has expanded from web publishing to <strong>Vue components and an internal framework.</strong> I turn recurring UI into shared
                 components and document conventions and usage for the team.
             </p>
-            <NuxtLink class="home-text-link" to="/about">{{ copy('경력 자세히 보기', 'More about my experience') }} ↗</NuxtLink>
+            <NuxtLink class="home-text-link" to="/about">{{ copy('경력 자세히 보기', 'More about my experience') }} <span aria-hidden="true">↗</span></NuxtLink>
             <div class="home-stats">
                 <div v-for="stat in profile.stats" :key="stat.label">
                     <strong

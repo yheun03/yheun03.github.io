@@ -8,8 +8,8 @@
         </p>
         <a class="portfolio-footer__email" :href="`mailto:${contacts.email}`">{{ contacts.email }}</a>
         <div class="portfolio-footer__links">
-            <BaseLink :href="contacts.github" external>GitHub ↗</BaseLink>
-            <BaseLink :href="contacts.resume" external>{{ locale === 'ko' ? '이력서' : 'Résumé' }} ↗</BaseLink>
+            <BaseLink :href="contacts.github" external>GitHub <span aria-hidden="true">↗</span></BaseLink>
+            <BaseLink :href="contacts.resume" external>{{ locale === 'ko' ? '이력서' : 'Résumé' }} <span aria-hidden="true">↗</span></BaseLink>
         </div>
         <div class="portfolio-footer__bottom">
             <BaseLink class="portfolio-footer__brand" href="/" :aria-label="t('a11y.portfolioHome')">
@@ -21,7 +21,7 @@
                 <NuxtLink to="/projects">{{ t('footer.careerLink') }}</NuxtLink>
                 <NuxtLink to="/personal">{{ t('footer.personalLink') }}</NuxtLink>
             </nav>
-            <a href="#main-content">{{ locale === 'ko' ? '맨 위로 ↑' : 'Back to top ↑' }}</a>
+            <a href="#main-content">{{ locale === 'ko' ? '맨 위로' : 'Back to top' }} <span aria-hidden="true">↑</span></a>
         </div>
     </footer>
 </template>

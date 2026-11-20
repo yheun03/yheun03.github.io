@@ -135,7 +135,7 @@ html.app--menu-open {
     line-height: 1;
     transform-origin: 50% 58%;
     will-change: transform;
-    animation: emoji-float 3.2s ease-in-out infinite;
+    animation: emoji-float 3.2s ease-in-out 1;
 }
 
 .emoji--soft {

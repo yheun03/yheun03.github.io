@@ -8,18 +8,18 @@
                 v-for="link in links"
                 :key="link.href"
                 :href="link.href"
-                :aria-current="route.path === link.href || route.path.startsWith(`${link.href}/`) ? 'page' : undefined"
+                :aria-current="currentPath === link.href ? 'page' : currentPath.startsWith(`${link.href}/`) ? 'location' : undefined"
                 >{{ link.label }}</BaseLink
             >
         </nav>
         <div class="app-header__utilities">
             <BaseLink class="app-header__contact" href="#contact">Contact <span aria-hidden="true">↗</span></BaseLink>
             <div class="app-header__language" role="group" aria-label="Language">
-                <button type="button" lang="ko" aria-label="한국어" :aria-pressed="locale === 'ko'" :disabled="switching" @click="switchLocale('ko')">
+                <button type="button" lang="ko" aria-label="KO, 한국어" :aria-pressed="locale === 'ko'" :disabled="switching" @click="switchLocale('ko')">
                     KO
                 </button>
                 <span aria-hidden="true">/</span>
-                <button type="button" lang="en" aria-label="English" :aria-pressed="locale === 'en'" :disabled="switching" @click="switchLocale('en')">
+                <button type="button" lang="en" aria-label="EN, English" :aria-pressed="locale === 'en'" :disabled="switching" @click="switchLocale('en')">
                     EN
                 </button>
             </div>
@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 const route = useRoute();
+const currentPath = computed(() => route.path.replace(/\/+$/, '') || '/');
 const { resolveAppPath } = useAppPath();
 const { locale, setLocale, t } = useLocale();
 const switching = ref(false);

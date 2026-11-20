@@ -9,6 +9,11 @@
     transform: translateY(20px);
 }
 
+.reveal--pending:focus-within {
+    opacity: 1;
+    transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     [data-reveal] {
         opacity: 1;

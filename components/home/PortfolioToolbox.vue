@@ -25,7 +25,7 @@
                     <h3>
                         <button
                             type="button"
-                            :aria-pressed="activeApproach === index"
+                            :aria-expanded="activeApproach === index"
                             :aria-controls="`approach-description-${index}`"
                             @click="activeApproach = index"
                         >

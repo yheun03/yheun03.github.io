@@ -77,7 +77,9 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Ref<Wor
 
     const filteredWorks = computed(() => sortedWorks.value.filter((work) => matchesFilters(work, filterModes.value)));
 
-    const lead = computed(() => t(variant === 'career' ? 'gallery.careerLead' : 'gallery.personalLead').replace('{total}', String(works.value.length)));
+    const lead = computed(() =>
+        t(variant === 'career' ? 'gallery.careerLead' : 'gallery.personalLead').replace('{total}', String(works.value.length)),
+    );
 
     const sortLegend = computed(() => t('gallery.sortLegend'));
     const filterLegend = computed(() => t('gallery.filterLegend'));
@@ -101,8 +103,8 @@ export function useGalleryArchive(variant: GalleryArchiveVariant, works: Ref<Wor
         ],
         mainEntity: {
             '@type': 'ItemList',
-            numberOfItems: works.value.length,
-            itemListElement: works.value.map((work, index) => ({
+            numberOfItems: filteredWorks.value.length,
+            itemListElement: filteredWorks.value.map((work, index) => ({
                 '@type': 'ListItem',
                 position: index + 1,
                 name: work.title,

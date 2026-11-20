@@ -122,7 +122,7 @@ export function usePortfolioSeo(options: MaybeRefOrGetter<PortfolioSeoOptions>) 
                 contentUrl: image,
                 encodingFormat: getImageMimeType(imagePath),
                 caption: page.imageAlt ?? title,
-                inLanguage: page.locale,
+                inLanguage: page.ogLocale ?? page.locale,
                 ...(imageWidth && imageHeight ? { width: imageWidth, height: imageHeight } : {}),
             },
             webpage,

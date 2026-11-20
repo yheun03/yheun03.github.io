@@ -66,7 +66,7 @@ watch(filteredWorks, async () => {
     if (!import.meta.client || useReducedEffects()) return;
     await nextTick();
     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-    ScrollTrigger.refresh();
+    ScrollTrigger.refresh(true);
 }, { flush: 'post' });
 
 function closeSort(returnFocus = false) {

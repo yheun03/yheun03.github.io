@@ -115,6 +115,17 @@ export default defineNuxtConfig({
         dirs: ['~/composables', '~/composables/**'],
     },
 
+    hooks: {
+        'build:manifest': (manifest) => {
+            // Load decorative motion only after the client checks reduced effects.
+            for (const [id, chunk] of Object.entries(manifest)) {
+                if (!id.includes('node_modules/gsap/')) continue;
+                chunk.prefetch = false;
+                chunk.preload = false;
+            }
+        },
+    },
+
     components: [
         { path: '~/components/base', pathPrefix: false },
         { path: '~/components/work', pathPrefix: false },

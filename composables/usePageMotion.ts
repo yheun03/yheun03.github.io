@@ -15,19 +15,21 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
         const scope = root.value;
         // Capture the first viewport before GSAP changes any element positions.
         const initiallyVisible = new WeakSet<Element>();
+        const aboveViewport = new WeakSet<Element>();
         scope.querySelectorAll(`
             [data-reveal], .about-page__mark, .home-hero__heading, .home-hero,
-            .home-stats > div, .home-stats strong, .home-process__step,
+            .home-stats > div, .home-stats strong, .home-process__step, .home-works__more,
             .home-about__statement strong, .portfolio-footer__title,
             [data-parallax], .home-process__lead > span
         `).forEach((element) => {
             const bounds = element.getBoundingClientRect();
             if (bounds.top < window.innerHeight && bounds.bottom > 0) initiallyVisible.add(element);
+            if (bounds.bottom <= 0) aboveViewport.add(element);
         });
 
-        // First-viewport effects play on load; the rest wait for the 55% line.
+        // Keep first-viewport content painted; entrances below it wait for the 55% line.
         function motionTrigger(element: Element, options: { start?: string; end?: string; scrub?: number } = {}) {
-            if (initiallyVisible.has(element)) return undefined;
+            if (initiallyVisible.has(element) && options.scrub === undefined) return undefined;
             return {
                 trigger: element,
                 start: 'clamp(top 55%)',
@@ -49,9 +51,9 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                 const distance = desktop ? 28 : 18;
                 const reveals = new Map<HTMLElement, gsap.core.Tween>();
 
-                // Visible entrances play immediately; off-screen entrances wait for scrolling.
+                // Never hide content that has already painted in the first viewport.
                 scope.querySelectorAll<HTMLElement>('[data-reveal]').forEach((element) => {
-                    if (element.getBoundingClientRect().bottom <= 0) return;
+                    if (initiallyVisible.has(element) || aboveViewport.has(element)) return;
                     const mode = element.dataset.reveal;
                     const targets = mode === 'companies'
                         ? element.querySelectorAll('.home-companies__logos > li')
@@ -80,7 +82,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
 
                 // Print the wordmark in place, then finish with its accent dot.
                 const aboutMark = scope.querySelector('.about-page__mark');
-                if (aboutMark && aboutMark.getBoundingClientRect().bottom > 0) {
+                if (aboutMark && !initiallyVisible.has(aboutMark) && !aboveViewport.has(aboutMark)) {
                     const letters = aboutMark.querySelectorAll('.about-page__letter');
                     const dot = aboutMark.querySelector('.about-page__dot');
                     const logo = gsap.timeline({
@@ -105,7 +107,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
 
                 const lines = scope.querySelectorAll('.home-hero__line-inner');
                 const heroHeading = scope.querySelector('.home-hero__heading');
-                if (lines.length && heroHeading && heroHeading.getBoundingClientRect().bottom > 0) {
+                if (lines.length && heroHeading && !initiallyVisible.has(heroHeading) && !aboveViewport.has(heroHeading)) {
                     gsap.fromTo(lines, { yPercent: 115, rotation: 1.5 }, {
                         yPercent: 0,
                         rotation: 0,
@@ -136,6 +138,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                 });
 
                 scope.querySelectorAll('.home-stats strong').forEach((element) => {
+                    if (initiallyVisible.has(element) || aboveViewport.has(element)) return;
                     gsap.fromTo(element, { rotationX: -25, y: 16, opacity: 0, transformOrigin: 'center bottom', transformPerspective: 600 }, {
                         rotationX: 0,
                         y: 0,
@@ -203,7 +206,9 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
         let frame = 0;
         const refresh = () => {
             cancelAnimationFrame(frame);
-            frame = requestAnimationFrame(() => ScrollTrigger.refresh());
+            frame = requestAnimationFrame(() => {
+                if (!unmounted) ScrollTrigger.refresh(true);
+            });
         };
         const resizeObserver = new ResizeObserver(refresh);
         resizeObserver.observe(scope);

@@ -51,15 +51,16 @@ onMounted(async () => {
         reduce: '(prefers-reduced-motion: reduce)',
     }, (context) => {
         if (context.conditions?.reduce || useReducedEffects()) return;
-        const reveal = gsap.fromTo(card, { opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }, {
+        // Keep first-viewport cards visible for LCP; animate cards reached by scrolling.
+        const reveal = initiallyVisible || bounds.bottom <= 0 ? undefined : gsap.fromTo(card, { opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }, {
             opacity: 1,
             clipPath: 'inset(0% 0% 0% 0%)',
             duration: 1.15,
             ease: 'power3.out',
             clearProps: 'opacity,clipPath',
-            scrollTrigger: initiallyVisible ? undefined : { trigger: card, start: 'clamp(top 55%)', once: true },
+            scrollTrigger: { trigger: card, start: 'clamp(top 55%)', once: true },
         });
-        const revealFocused = () => reveal.progress(1);
+        const revealFocused = () => reveal?.progress(1);
         card.addEventListener('focusin', revealFocused);
         let removePointerListeners: (() => void) | undefined;
         const image = card.querySelector('.gallery-card__motion');
@@ -70,7 +71,7 @@ onMounted(async () => {
                 yPercent: -2,
                 duration: 0.85,
                 ease: 'none',
-                scrollTrigger: initiallyVisible ? undefined : {
+                scrollTrigger: {
                     trigger: card,
                     start: 'clamp(top 55%)',
                     end: 'clamp(bottom top)',
@@ -84,17 +85,29 @@ onMounted(async () => {
             const rotateY = gsap.quickTo(image, 'rotationY', { duration: 0.55, ease: 'power3.out' });
             const zoomX = gsap.quickTo(image, 'scaleX', { duration: 0.55, ease: 'power3.out' });
             const zoomY = gsap.quickTo(image, 'scaleY', { duration: 0.55, ease: 'power3.out' });
-            const move = (event: PointerEvent) => {
-                if (event.pointerType === 'touch') return;
+            let frame = 0;
+            let pointerX = 0;
+            let pointerY = 0;
+            const updateTilt = () => {
+                frame = 0;
                 const rect = card.getBoundingClientRect();
-                const x = gsap.utils.clamp(-0.5, 0.5, (event.clientX - rect.left) / rect.width - 0.5);
-                const y = gsap.utils.clamp(-0.5, 0.5, (event.clientY - rect.top) / rect.height - 0.5);
+                const x = gsap.utils.clamp(-0.5, 0.5, (pointerX - rect.left) / rect.width - 0.5);
+                const y = gsap.utils.clamp(-0.5, 0.5, (pointerY - rect.top) / rect.height - 0.5);
                 rotateX(-y * 5);
                 rotateY(x * 5);
                 zoomX(1.025);
                 zoomY(1.025);
             };
+            // Coalesce high-frequency pointer events into one layout read per frame.
+            const move = (event: PointerEvent) => {
+                if (event.pointerType === 'touch') return;
+                pointerX = event.clientX;
+                pointerY = event.clientY;
+                if (!frame) frame = requestAnimationFrame(updateTilt);
+            };
             const reset = () => {
+                cancelAnimationFrame(frame);
+                frame = 0;
                 rotateX(0);
                 rotateY(0);
                 zoomX(1);
@@ -104,6 +117,7 @@ onMounted(async () => {
             card.addEventListener('pointerleave', reset);
             card.addEventListener('pointercancel', reset);
             removePointerListeners = () => {
+                cancelAnimationFrame(frame);
                 card.removeEventListener('pointermove', move);
                 card.removeEventListener('pointerleave', reset);
                 card.removeEventListener('pointercancel', reset);
@@ -114,7 +128,8 @@ onMounted(async () => {
             removePointerListeners?.();
         };
     }, card);
-    ScrollTrigger.refresh();
+    // GSAP batches safe refresh requests from all cards into one delayed refresh.
+    ScrollTrigger.refresh(true);
     dispose = () => media.revert();
 });
 

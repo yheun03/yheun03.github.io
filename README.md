@@ -48,6 +48,16 @@ npm run check:site
 npm run deploy
 ```
 
+### 분석 및 검색 인증 환경변수
+
+`.env.example`을 `.env`로 복사한 뒤 GTM ID, 네이버 애널리틱스 발급 ID, Google Search Console의 HTML 태그 인증값을 입력합니다. `.env`는 Git에 포함하지 않습니다. GA4 측정 ID는 GTM의 Google 태그에서 관리하므로 사이트에 별도로 중복 설치하지 않습니다.
+
+`dev`에서는 분석을 수집하지 않습니다. `generate`에서는 기본으로 분석 태그를 포함하며, GTM이나 네이버 ID가 없으면 빌드를 중단합니다. 분석 없는 확인용 빌드는 `ANALYTICS_ENABLED=false npm run generate`로 실행합니다. 이 결과물은 운영 배포에 사용하지 않습니다.
+
+`npm run deploy`는 전체 공개 페이지의 GTM 로더와 noscript, 네이버 분석 코드, Google 인증 태그를 검사한 뒤 배포합니다. 이미 생성한 배포 파일은 `npm run check:site -- --analytics`로 검사할 수 있습니다. CI에는 같은 공개 ID와 인증값을 환경변수로 지정합니다. 서비스 ID를 변경하면 로컬 `.env`와 CI 설정을 함께 변경합니다.
+
+이메일 링크는 GTM의 `이메일 문의 링크 클릭` 트리거(`Click URL`에 `mailto:` 포함)로 `contact_click` 이벤트를 전송합니다. GA4에서는 같은 이름을 주요 이벤트로 등록하며, 별도 금액 없이 이벤트당 한 번 집계합니다. 매개변수는 `contact_method=email`이며 외부 메일 앱의 발송 완료 여부를 뜻하지 않습니다. 배포 후 GA4 실시간 보고서에서 수신 여부를 확인합니다.
+
 공개 이력서는 [`RESUME.md`](RESUME.md)에서 확인할 수 있으며, 2025년 포트폴리오는 `public/ver.2025/`에 보관되어 있습니다.
 
 ## 2026 초기 버전 보관

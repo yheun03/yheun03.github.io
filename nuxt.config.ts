@@ -14,9 +14,15 @@ const sitemapHref = joinURL(resolvedBaseURL, 'sitemap.xml');
 const rssHref = joinURL(resolvedBaseURL, 'rss.xml');
 const llmsHref = joinURL(resolvedBaseURL, 'llms.txt');
 const googleSiteVerification = process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ?? '';
-const isAnalyticsEnabled = process.env.ANALYTICS_ENABLED === 'true';
+// 개발 서버는 수집하지 않고, 정적 배포 빌드는 기본으로 분석 태그를 포함한다.
+const isAnalyticsEnabled = process.env.NODE_ENV === 'production' && process.env.ANALYTICS_ENABLED !== 'false';
 const naverAnalyticsId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_NAVER_ANALYTICS_ID?.trim() ?? '') : '';
 const googleTagManagerId = isAnalyticsEnabled ? (process.env.NUXT_PUBLIC_GOOGLE_TAG_MANAGER_ID?.trim() ?? '') : '';
+
+if (isAnalyticsEnabled) {
+    if (!/^GTM-[A-Z0-9]+$/.test(googleTagManagerId)) throw new Error('배포에 필요한 NUXT_PUBLIC_GOOGLE_TAG_MANAGER_ID를 .env에 설정해 주세요.');
+    if (!/^[a-f0-9]+$/i.test(naverAnalyticsId)) throw new Error('배포에 필요한 NUXT_PUBLIC_NAVER_ANALYTICS_ID를 .env에 설정해 주세요.');
+}
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-05-02',
@@ -71,7 +77,7 @@ export default defineNuxtConfig({
                 ...(naverAnalyticsId
                     ? [
                           {
-                              src: 'https://wcs.naver.net/wcslog.js',
+                              src: 'https://wcs.pstatic.net/wcslog.js',
                               tagPosition: 'bodyClose' as const,
                           },
                           {

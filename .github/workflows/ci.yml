@@ -24,6 +24,10 @@ jobs:
 
             - name: Generate static site
               run: npm run generate
+              env:
+                  NUXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: GTM-MDXBMRZD
+                  NUXT_PUBLIC_NAVER_ANALYTICS_ID: 18bfea2706f0240
+                  NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION: 6TaUTc9YGpUieeh3cuSfg7cXSuhVsdB8tZTs1FDlMMA
 
             - name: Check SEO and generated content
-              run: npm run check:site
+              run: npm run check:site -- --analytics

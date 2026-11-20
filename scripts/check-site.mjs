@@ -4,6 +4,7 @@ import { join } from 'node:path';
 
 const directory = '.output/public';
 const origin = 'https://yheun03.github.io';
+const checkAnalytics = process.argv.includes('--analytics');
 const sitemap = await readFile(join(directory, 'sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 assert.equal(new Set(urls).size, urls.length, 'Sitemap contains duplicate URLs');
@@ -11,6 +12,14 @@ const assets = new Set();
 for (const url of urls) {
     const pathname = new URL(url).pathname;
     const html = await readFile(join(directory, pathname, 'index.html'), 'utf8');
+    if (checkAnalytics) {
+        const gtm = /'dataLayer','(GTM-[A-Z0-9]+)'/.exec(html)?.[1];
+        assert.ok(gtm, `${pathname}: missing GTM loader`);
+        assert.ok(html.includes(`https://www.googletagmanager.com/ns.html?id=${gtm}`), `${pathname}: missing GTM noscript`);
+        assert.ok(html.includes('https://wcs.pstatic.net/wcslog.js'), `${pathname}: missing Naver Analytics loader`);
+        assert.ok(/wcs_add\.wa = '[a-f0-9]+'/i.test(html), `${pathname}: missing Naver Analytics ID`);
+        assert.ok(/<meta name="google-site-verification" content="[^"]+"/.test(html), `${pathname}: missing Google verification`);
+    }
     assert.equal((html.match(/<h1\b/g) ?? []).length, 1, `${pathname}: one h1 is required`);
     assert.ok(html.includes(`rel="canonical" href="${url}"`), `${pathname}: canonical mismatch`);
     assert.ok(!/<meta name="robots" content="noindex/.test(html), `${pathname}: public page is noindex`);

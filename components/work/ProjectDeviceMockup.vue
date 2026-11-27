@@ -72,9 +72,9 @@ const devices = computed(() => {
           : [{ type: fallbackType, src: props.src }];
 
     return captures.map((device) => {
-        let frameFile = 'macbook.png';
-        if (device.type === 'mobile') frameFile = 'iphone.png';
-        if (device.type === 'tablet') frameFile = isLandscape(device.src) ? 'ipad-landscape.png' : 'ipad-portrait.png';
+        let frameFile = 'macbook.webp';
+        if (device.type === 'mobile') frameFile = 'iphone.webp';
+        if (device.type === 'tablet') frameFile = isLandscape(device.src) ? 'ipad-landscape.webp' : 'ipad-portrait.webp';
         return { ...device, frame: `/assets/images/devices/${frameFile}` };
     });
 });

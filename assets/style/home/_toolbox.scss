@@ -1,7 +1,7 @@
 .home-approach {
     --approach-row-height: 148px;
     &__heading {
-        padding-left: 36%;
+        padding-left: calc(36% + 24px);
         margin-bottom: 56px;
         p {
             max-width: 460px;
@@ -12,25 +12,34 @@
         }
     }
     &__showcase {
-        position: relative;
+        display: grid;
+        grid-template-columns: 36% minmax(0, 1fr);
         isolation: isolate;
+    }
+    &__preview-area {
+        position: relative;
+        min-width: 0;
     }
     &__preview {
         position: absolute;
         z-index: 2;
         pointer-events: none;
-        left: 7%;
-        top: 0;
-        width: 25%;
-        height: 220px;
+        left: clamp(0px, calc(var(--preview-x, 50%) - var(--preview-width) / 2), calc(100% - var(--preview-width)));
+        top: clamp(0px, calc(var(--preview-y, 0px) - var(--preview-height) / 2), calc(100% - var(--preview-height)));
+        --preview-width: 69.444%;
+        --preview-height: 220px;
+        width: var(--preview-width);
+        height: var(--preview-height);
         overflow: hidden;
-        background: #dbe1e8;
+        opacity: 0;
         box-shadow: 0 18px 40px #0003;
-        transform: translateY(calc(var(--active-row) * var(--approach-row-height) + (var(--approach-row-height) - 220px) / 2));
         clip-path: inset(0 0 round 2px);
         transition:
-            transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+            left 0.12s ease-out, top 0.12s ease-out,
             clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        &.is-ready {
+            opacity: 1;
+        }
         &--square {
             clip-path: inset(0 7% round 18px);
         }
@@ -41,22 +50,21 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            filter: blur(5px);
-            transform: scale(1.08);
-            transition:
-                opacity 0.45s,
-                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                filter 0.45s;
+            transition: opacity 0.2s;
             &.is-active {
                 opacity: 1;
-                filter: blur(0);
-                transform: scale(1);
+                z-index: 1;
             }
         }
     }
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
     &__item {
-        height: var(--approach-row-height);
-        padding: 25px 28px 20px 36%;
+        min-height: var(--approach-row-height);
+        padding: 25px 28px 20px 24px;
         border-top: 1px solid #d0d0d0;
         transition:
             background-color 0.3s,
@@ -67,22 +75,10 @@
         h3 {
             margin: 0;
             color: inherit;
-        }
-        button {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            padding: 0;
-            border: 0;
-            background: none;
-            color: inherit;
             font-size: clamp(20px, 2.1vw, 32px);
             line-height: 1.2;
             letter-spacing: -0.04em;
             text-align: left;
-            cursor: pointer;
         }
         p {
             margin-top: 12px;
@@ -94,10 +90,6 @@
         &--active {
             background: var(--color-surface-inverse);
             color: var(--color-bg);
-
-            button:focus-visible {
-                outline-color: var(--color-bg);
-            }
         }
     }
 }

@@ -36,22 +36,25 @@
             color: inherit;
         }
         blockquote {
-            margin: 0 0 32px;
+            margin: 0;
             p {
                 color: #f3f3ef;
                 font-size: clamp(26px, 3vw, 44px);
                 line-height: 1.55;
             }
-            cite {
-                display: block;
-                margin-top: 20px;
-                font-size: 13px;
-                color: #b3bdca;
-            }
         }
         > div > p {
             color: #b3bdca;
             line-height: 1.9;
+        }
+    }
+    &__quote {
+        margin: 0 0 32px;
+        figcaption {
+            margin-top: 20px;
+            font-size: 13px;
+            font-style: italic;
+            color: #b3bdca;
         }
     }
     &__personality {

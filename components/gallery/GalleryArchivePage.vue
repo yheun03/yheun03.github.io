@@ -1,8 +1,8 @@
 <template>
     <AppLayout>
-        <article class="gallery-page">
+        <article class="gallery-page" aria-labelledby="gallery-title">
             <header class="page-heading" data-reveal="stagger">
-                <h1>
+                <h1 id="gallery-title">
                     <template v-for="(line, index) in titleLines" :key="index"><br v-if="index" />{{ line }}</template>
                 </h1>
                 <p>{{ lead }}</p>
@@ -37,9 +37,11 @@
                     </div>
                 </div>
             </div>
-            <div class="gallery-page__grid">
-                <ProjectGalleryCard v-for="(work, index) in filteredWorks" :priority="index === 0" :key="work.id" :work="work" :to="`${basePath}/${work.id}`" />
-            </div>
+            <ul class="gallery-page__grid" role="list">
+                <li v-for="(work, index) in filteredWorks" :key="work.id" class="gallery-page__item">
+                    <ProjectGalleryCard :priority="index === 0" :work="work" :to="`${basePath}/${work.id}`" />
+                </li>
+            </ul>
         </article>
     </AppLayout>
 </template>

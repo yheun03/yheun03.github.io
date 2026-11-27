@@ -1,6 +1,6 @@
 <template>
     <AppLayout>
-        <article class="gallery-detail section">
+        <article class="gallery-detail section" aria-labelledby="project-title">
             <nav class="gallery-detail__breadcrumb" data-reveal="up" :aria-label="t('gallery.breadcrumbLabel')">
                 <NuxtLink :to="config.basePath" class="gallery-detail__breadcrumb-link">
                     <svg
@@ -24,7 +24,7 @@
 
             <header class="gallery-detail__header gallery-detail__hero">
                 <div class="gallery-detail__hero-copy" data-reveal="right">
-                    <h1 class="gallery-detail__title">{{ work.title }}</h1>
+                    <h1 id="project-title" class="gallery-detail__title">{{ work.title }}</h1>
                     <p class="gallery-detail__intro">{{ work.introduction }}</p>
                     <p v-if="work.links?.length" class="gallery-detail__links">
                         <BaseButton
@@ -203,7 +203,7 @@
                             :aria-controls="capturePreviewId"
                             @click="selectCapture(index)"
                         >
-                            <BaseMediaImage v-if="!isPlaceholderCapture(capture)" :src="resolveAppPath(capture)" alt="" sizes="112px" />
+                            <BaseMediaImage v-if="!isPlaceholderCapture(capture)" :src="resolveAppPath(capture)" alt="" thumbnail />
                             <span class="gallery-detail__thumbnail-index" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
                         </button>
                     </li>

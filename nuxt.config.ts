@@ -32,6 +32,8 @@ export default defineNuxtConfig({
     },
     ignore: ['.nuxt-build/**'],
     devtools: { enabled: process.env.NODE_ENV !== 'production' },
+    // Shared styles are downloaded once and cached across page visits.
+    features: { inlineStyles: false },
     experimental: {
         appManifest: false,
         defaults: { nuxtLink: { prefetchOn: { visibility: false, interaction: true } } },
@@ -148,6 +150,8 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'static',
+        // Keep editable social-preview illustrations out of the deployed assets.
+        ignore: ['**/common/og/sources/**'],
         prerender: { ignore: ['/ver.2026'] },
         publicAssets: [
             { dir: imagesDir, baseURL: '/assets/images' },

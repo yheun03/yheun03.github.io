@@ -4,7 +4,7 @@
 
 ## 맥북
 
-- 프레임: `assets/images/devices/macbook.png`, 3306 × 1897 px
+- 프레임: `assets/images/devices/macbook.webp`, 3306 × 1897 px
 - 원본 화면: 2560 × 1600 px, 시작 좌표 x=373, y=123
 - 캡처 뷰포트: 1280 × 800 CSS px
 - 원본 화면과 캡처의 대응 배율: 2:1
@@ -12,14 +12,14 @@
 
 ## 아이패드 세로
 
-- 프레임: `assets/images/devices/ipad-portrait.png`, 2245 × 2930 px
+- 프레임: `assets/images/devices/ipad-portrait.webp`, 2245 × 2930 px
 - 원본 화면: 2048 × 2732 px, 시작 좌표 x=96, y=102
 - 캡처 뷰포트: 1024 × 1366 CSS px
 - 원본 화면과 캡처의 대응 배율: 2:1
 
 ## 아이패드 가로
 
-- 프레임: `assets/images/devices/ipad-landscape.png`, 2930 × 2245 px
+- 프레임: `assets/images/devices/ipad-landscape.webp`, 2930 × 2245 px
 - 원본 화면: 2732 × 2048 px, 시작 좌표 x=102, y=101
 - 캡처 뷰포트: 1366 × 1024 CSS px
 - 원본 화면과 캡처의 대응 배율: 2:1
@@ -27,7 +27,7 @@
 
 ## 아이폰
 
-- 프레임: `assets/images/devices/iphone.png`, 1470 × 3000 px
+- 프레임: `assets/images/devices/iphone.webp`, 1470 × 3000 px
 - 원본 화면: 1320 × 2868 px, 시작 좌표 x=75, y=66
 - 캡처 뷰포트: 440 × 956 CSS px
 - 원본 화면과 캡처의 대응 배율: 3:1

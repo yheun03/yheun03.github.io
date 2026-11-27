@@ -25,10 +25,8 @@
     .home-approach {
         --approach-row-height: 170px;
         &__preview {
-            left: 3%;
-            width: 29%;
-            height: 200px;
-            transform: translateY(calc(var(--active-row) * var(--approach-row-height) + (var(--approach-row-height) - 200px) / 2));
+            --preview-width: 80.555%;
+            --preview-height: 200px;
         }
         &__item {
             padding-right: 20px;
@@ -143,13 +141,18 @@
                 margin-top: 20px;
             }
         }
-        &__preview {
-            position: relative;
-            left: auto;
-            width: 100%;
-            height: auto;
+        &__showcase {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        &__preview-area {
             aspect-ratio: 16 / 9;
             margin-bottom: 28px;
+        }
+        &__preview {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             transform: none;
             &--square {
                 clip-path: inset(0 5% round 16px);
@@ -159,12 +162,8 @@
             height: auto;
             min-height: 82px;
             padding: 20px 16px;
-            button {
+            h3 {
                 font-size: 20px;
-                span {
-                    width: 32px;
-                    height: 32px;
-                }
             }
             p {
                 font-size: 14px;

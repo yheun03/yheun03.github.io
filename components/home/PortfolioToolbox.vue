@@ -1,41 +1,44 @@
 <template>
-    <section id="approach" class="home-approach home-section">
+    <section id="approach" class="home-approach home-section" aria-labelledby="approach-title">
         <div class="home-approach__heading" data-reveal="stagger">
-            <h2 class="home-title">What I do</h2>
+            <h2 id="approach-title" class="home-title">What I do</h2>
             <p>{{ copy('화면 구현부터 공통화와 운영까지 담당합니다.', 'From screen implementation to shared components and maintenance.') }}</p>
         </div>
-        <div class="home-approach__showcase" data-reveal="up" :style="{ '--active-row': activeApproach }">
-            <div class="home-approach__preview" :class="`home-approach__preview--${approachImages[activeApproach].shape}`">
-                <BaseMediaImage
-                    :key="activeApproach"
-                    :src="resolveAppPath(approachImages[activeApproach].src)"
-                    :alt="copy(approachImages[activeApproach].altKo, approachImages[activeApproach].altEn)"
-                    class="is-active"
-                    sizes="(min-width: 641px) 30vw, 90vw"
-                />
+        <div class="home-approach__showcase" data-reveal="up">
+            <div class="home-approach__preview-area" @pointermove="movePreview">
+                <div
+                    ref="preview"
+                    class="home-approach__preview"
+                    :class="[
+                        `home-approach__preview--${approachImages[visibleImage].shape}`,
+                        { 'is-ready': loadedImages.has(visibleImage) },
+                    ]"
+                >
+                    <BaseMediaImage
+                        v-for="(image, index) in approachImages"
+                        :key="image.src"
+                        :src="resolveAppPath(image.src)"
+                        :alt="copy(image.altKo, image.altEn)"
+                        :class="{ 'is-active': visibleImage === index }"
+                        :aria-hidden="visibleImage !== index"
+                        eager
+                        @load="markLoaded(index)"
+                        sizes="(min-width: 641px) 25vw, 90vw"
+                    />
+                </div>
             </div>
-            <div class="home-approach__list">
-                <article
+            <ul class="home-approach__list" role="list">
+                <li
                     v-for="(item, index) in approaches"
                     :key="item.title"
                     class="home-approach__item"
                     :class="{ 'home-approach__item--active': activeApproach === index }"
                     @pointerenter="previewApproach($event, index)"
-                    @focusin="activeApproach = index"
                 >
-                    <h3>
-                        <button
-                            type="button"
-                            :aria-expanded="activeApproach === index"
-                            :aria-controls="`approach-description-${index}`"
-                            @click="activeApproach = index"
-                        >
-                            {{ item.title }}
-                        </button>
-                    </h3>
-                    <p :id="`approach-description-${index}`" v-show="activeApproach === index">{{ item.description }}</p>
-                </article>
-            </div>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                </li>
+            </ul>
         </div>
     </section>
 </template>
@@ -47,30 +50,59 @@ const copy = (ko: string, en: string) => (locale.value === 'ko' ? ko : en);
 const activeApproach = ref(0);
 const approachImages = [
     {
-        src: '/assets/images/capabilities/publishing.jpg',
+        src: '/assets/images/capabilities/publishing.webp',
         altKo: '코드 에디터에서 웹 코드를 작성하는 화면',
         altEn: 'Web code in an editor',
         shape: 'wide',
     },
     {
-        src: '/assets/images/capabilities/ui-development.jpg',
+        src: '/assets/images/capabilities/ui-development.webp',
         altKo: '모바일 UI 흐름을 종이에 설계하는 모습',
         altEn: 'Sketching mobile UI flows',
         shape: 'square',
     },
     {
-        src: '/assets/images/capabilities/design-system.jpg',
+        src: '/assets/images/capabilities/design-system.webp',
         altKo: '색상 견본과 눈금자를 활용한 디자인 기준 정리',
         altEn: 'Color swatches and tools for design standards',
         shape: 'wide',
     },
     {
-        src: '/assets/images/capabilities/collaboration.jpg',
+        src: '/assets/images/capabilities/collaboration.webp',
         altKo: '팀이 함께 작업 내용을 정리하는 모습',
         altEn: 'A team planning work together',
         shape: 'square',
     },
 ];
+const preview = ref<HTMLElement | null>(null);
+const loadedImages = reactive(new Set<number>());
+const visibleImage = ref(0);
+
+async function markLoaded(index: number) {
+    const image = preview.value?.querySelectorAll('img')[index];
+    if (!image?.complete || !image.naturalWidth) return;
+    await image.decode().catch(() => {});
+    loadedImages.add(index);
+    if (index === activeApproach.value || !loadedImages.has(visibleImage.value)) visibleImage.value = index;
+}
+onMounted(() => {
+    preview.value?.querySelectorAll('img').forEach((image, index) => {
+        if (image.complete && image.naturalWidth) markLoaded(index);
+    });
+});
+watch(activeApproach, (index) => {
+    if (loadedImages.has(index)) visibleImage.value = index;
+});
+
+function movePreview(event: PointerEvent) {
+    if (event.pointerType === 'touch') return;
+    if (!window.matchMedia('(min-width: 641px) and (hover: hover) and (pointer: fine)').matches) return;
+    const area = event.currentTarget as HTMLElement;
+    const bounds = area.getBoundingClientRect();
+    area.style.setProperty('--preview-x', `${event.clientX - bounds.left}px`);
+    area.style.setProperty('--preview-y', `${event.clientY - bounds.top}px`);
+}
+
 function previewApproach(event: PointerEvent, index: number) {
     if (event.pointerType === 'mouse' || event.pointerType === 'pen') activeApproach.value = index;
 }

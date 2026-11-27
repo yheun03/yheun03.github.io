@@ -67,22 +67,3 @@
         -webkit-box-decoration-break: clone;
     }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-    .home-approach__preview img.is-active {
-        animation: approach-image-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-}
-@keyframes approach-image-reveal {
-    from {
-        clip-path: inset(0 0 100% 0);
-        transform: scale(1.12);
-    }
-    to {
-        clip-path: inset(0);
-        transform: scale(1);
-    }
-}
-.reduce-effects .home-approach__preview img.is-active {
-    animation: none;
-}

@@ -1,8 +1,8 @@
 <template>
     <AppLayout>
-        <article class="about-page">
+        <article class="about-page" aria-labelledby="about-page-title">
             <header class="page-heading" data-reveal="stagger">
-                <h1>About me</h1>
+                <h1 id="about-page-title">About me</h1>
                 <p>{{ t('aboutMe.intro') }}</p>
             </header>
             <section class="about-page__intro" data-reveal="stagger">
@@ -15,10 +15,12 @@
             <section class="about-page__mindset" data-reveal="stagger">
                 <h2>{{ t('aboutMe.beliefTitle') }}</h2>
                 <div>
-                    <blockquote>
-                        <p>{{ t('aboutMe.beliefLine1') }} {{ t('aboutMe.beliefLine2') }}</p>
-                        <cite>{{ t('aboutMe.beliefSource') }}</cite>
-                    </blockquote>
+                    <figure class="about-page__quote">
+                        <blockquote>
+                            <p>{{ t('aboutMe.beliefLine1') }} {{ t('aboutMe.beliefLine2') }}</p>
+                        </blockquote>
+                        <figcaption>{{ t('aboutMe.beliefSource') }}</figcaption>
+                    </figure>
                     <p>{{ t('aboutMe.beliefDescription') }}</p>
                     <div class="about-page__personality">
                         <h3>{{ t('aboutMe.personalityTitle') }}</h3>

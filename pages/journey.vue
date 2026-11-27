@@ -1,8 +1,8 @@
 <template>
     <AppLayout>
-        <article class="journey-page">
+        <article class="journey-page" aria-labelledby="journey-title">
             <header class="page-heading" data-reveal="stagger">
-                <h1>{{ t('journey.title') }}</h1>
+                <h1 id="journey-title">{{ t('journey.title') }}</h1>
                 <p>{{ t('journey.summary') }}</p>
             </header>
             <section v-for="block in affiliationBlocks" :key="block.summary.company + block.summary.period" class="journey-page__chapter">
@@ -16,7 +16,7 @@
                     <ul class="journey-page__roles">
                         <li v-for="role in block.summary.roles" :key="role">{{ role }}</li>
                     </ul>
-                    <ol class="journey-page__timeline" data-reveal="stagger">
+                    <ol role="list" class="journey-page__timeline" data-reveal="stagger">
                         <li v-for="item in block.timeline" :key="item.period + item.title">
                             <p>{{ item.period }}</p>
                             <div>

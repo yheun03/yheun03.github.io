@@ -1,6 +1,6 @@
 <template>
-    <section class="home-companies" data-reveal="companies" :aria-label="copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators')">
-        <h2 class="home-companies__title">{{ copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators') }}</h2>
+    <section class="home-companies" data-reveal="companies" aria-labelledby="companies-title">
+        <h2 id="companies-title" class="home-companies__title">{{ copy('참여 프로젝트 및 협업 기업', 'Project clients and collaborators') }}</h2>
         <div v-for="group in companyGroups" :key="group.id" class="home-companies__group">
             <h3>{{ group.title }}</h3>
             <ul class="home-companies__logos">
@@ -32,7 +32,7 @@ const companies = [
     { id: 'hanjinkal', group: 'web', name: '한진칼 HANJIN KAL', file: 'hanjinkal.svg', project: 'hanjinkal' },
     { id: 'spsamhwa', group: 'systems', name: 'SP SAMHWA', file: 'spsamhwa.svg', project: 'samhwa-eco-dashboard' },
     { id: 'orchem', group: 'systems', name: 'ORCHEM 오알켐', file: 'orchem.svg', project: 'orchem-mes' },
-    { id: 'kdone', group: 'web', name: '경동원', file: 'kdone.gif', project: 'kyungdongwon-cms' },
+    { id: 'kdone', group: 'web', name: '경동원', file: 'kdone.webp', project: 'kyungdongwon-cms' },
     { id: 'hanon', group: 'web', name: 'Hanon Systems 한온시스템', file: 'hanon.svg', project: 'hanon' },
     { id: 'kleannara', group: 'systems', name: '깨끗한나라', file: 'kleannara.webp', project: 'oms' },
     { id: 'jonsoft', group: 'collaboration', name: '조앤소프트', file: 'jonsoft.svg', project: 'framework' },

@@ -28,6 +28,16 @@ for (const file of files) {
         await mkdir(dirname(output), { recursive: true });
         await sharp(file).rotate().resize({ width: size, withoutEnlargement: true }).webp({ quality: 80, effort: 5 }).toFile(output);
     }
+    // The capture rail only displays the top of each screenshot at 112 x 63 CSS pixels.
+    if (name.startsWith('projects/')) {
+        const thumbnail = join(outputDir, `${name}-thumb.webp`);
+        expected.add(thumbnail);
+        const cached = await stat(thumbnail).catch(() => null);
+        if (!cached || cached.mtimeMs < modified) {
+            await mkdir(dirname(thumbnail), { recursive: true });
+            await sharp(file).rotate().resize(224, 126, { fit: 'cover', position: 'top' }).webp({ quality: 80, effort: 5 }).toFile(thumbnail);
+        }
+    }
     manifest[relative(sourceDir, file)] = [width, height];
 }
 for (const file of await collect(outputDir).catch(() => [])) {

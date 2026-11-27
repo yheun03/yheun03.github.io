@@ -15,12 +15,12 @@
 </template>
 
 <script setup lang="ts">
-import type { WorkSummary } from '@data/works';
+import type { WorkCard } from '@data/works';
 import { isPlaceholderCapture } from '~/composables/gallery/useGallery';
 
 const props = withDefaults(
     defineProps<{
-        work: WorkSummary;
+        work: WorkCard;
         to: string;
         headingTag?: 'h2' | 'h3';
     }>(),
@@ -34,8 +34,8 @@ let dispose: (() => void) | undefined;
 let unmounted = false;
 
 // Keep every card's motion here, including cards added by archive filters.
-onMounted(async () => {
-    if (useReducedEffects()) return;
+onNuxtReady(async () => {
+    if (unmounted || useReducedEffects()) return;
     const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
     if (unmounted || !cardRoot.value?.$el) return;
     gsap.registerPlugin(ScrollTrigger);

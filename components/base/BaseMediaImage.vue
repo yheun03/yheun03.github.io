@@ -2,7 +2,7 @@
     <img
         :src="imageSrc"
         :srcset="srcset"
-        :sizes="responsive && image ? sizes : undefined"
+        :sizes="responsive && image ? imageSizes : undefined"
         :alt="alt"
         :width="width ?? image?.width"
         :height="height ?? image?.height"
@@ -34,6 +34,7 @@ const sources = computed(() => {
     if (!props.responsive || !info) return [];
     return responsiveWidths(info.width).map((width: number) => ({ width, src: `${info.base}-${width}.webp` }));
 });
+const imageSizes = computed(() => props.priority ? props.sizes : `auto, ${props.sizes}`);
 const imageSrc = computed(() => sources.value.at(-1)?.src ?? props.src);
 const srcset = computed(() => sources.value.map(({ src, width }) => `${src} ${width}w`).join(', ') || undefined);
 </script>

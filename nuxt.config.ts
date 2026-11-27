@@ -78,10 +78,11 @@ export default defineNuxtConfig({
                     ? [
                           {
                               src: 'https://wcs.pstatic.net/wcslog.js',
+                              defer: true,
                               tagPosition: 'bodyClose' as const,
                           },
                           {
-                              innerHTML: `if (!wcs_add) var wcs_add = {}; wcs_add.wa = '${naverAnalyticsId}'; if (window.wcs) { wcs_do(); }`,
+                              innerHTML: `if (!wcs_add) var wcs_add = {}; wcs_add.wa = '${naverAnalyticsId}'; document.addEventListener('DOMContentLoaded', function () { if (window.wcs) wcs_do(); }, { once: true });`,
                               tagPosition: 'bodyClose' as const,
                           },
                       ]

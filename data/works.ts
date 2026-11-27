@@ -27,3 +27,5 @@ export type WorkItem = {
 };
 
 export type WorkSummary = Pick<WorkItem, 'id' | 'category' | 'title' | 'period' | 'type' | 'role' | 'tech' | 'pin' | 'languages' | 'captures' | 'thumbnail' | 'mockup' | 'captureDevices' | 'captureNotice'>;
+
+export type WorkCard = Pick<WorkSummary, 'id' | 'title' | 'role' | 'captures' | 'mockup' | 'captureDevices' | 'captureNotice'>;

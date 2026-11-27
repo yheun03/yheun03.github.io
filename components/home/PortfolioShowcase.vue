@@ -17,12 +17,14 @@
 </template>
 
 <script setup lang="ts">
+import type { WorkCard } from '@data/works';
+
 const { locale } = useLocale();
-const { data: works } = await useGalleryRouteWorks('career');
+const { resolveAppPath } = useAppPath();
 const copy = (ko: string, en: string) => (locale.value === 'ko' ? ko : en);
-const selectedWorks = computed(() =>
-    ['framework', 'orchem-mes', 'hanjinkal', 'samhwa-eco-dashboard', 'oms', 'company-renewal']
-        .map((id) => works.value.find((work) => work.id === id))
-        .filter((work) => work !== undefined),
+const { data: selectedWorks } = await useAsyncData(
+    () => `featured-${locale.value}`,
+    () => $fetch<WorkCard[]>(resolveAppPath(`/content/${locale.value}/featured.json`)),
+    { default: () => [], deep: false },
 );
 </script>

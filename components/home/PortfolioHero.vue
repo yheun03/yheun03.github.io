@@ -17,7 +17,8 @@
                 <ProjectDeviceMockup
                     src="/assets/images/projects/framework/captures/framework-dashboard.webp"
                     :alt="copy('조앤소프트 프레임워크 실제 화면', 'Jonsoft framework interface')"
-                    sizes="(min-width: 641px) 44vw, 70vw"
+                    sizes="(max-width: 640px) calc(77.4vw - 38px), (max-width: 1000px) calc(41.6vw - 60px), calc(43.8vw - 60px)"
+                    capture-sizes="(max-width: 640px) calc(60vw - 29px), (max-width: 1000px) calc(32.3vw - 47px), calc(34vw - 47px)"
                     priority
                 />
                 <span class="home-hero__visual-arrow" aria-hidden="true">↗</span>

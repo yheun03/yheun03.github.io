@@ -20,7 +20,7 @@
                     :draggable="false"
                     :src="resolveAppPath(device.src)"
                     :alt="device.type === devices[0].type ? alt : ''"
-                    :sizes="sizes"
+                    :sizes="captureSizes ?? sizes"
                     :priority="priority"
                 />
             </div>
@@ -46,6 +46,7 @@ const props = withDefaults(
         mockup?: WorkItem['mockup'];
         device?: CaptureDevice;
         sizes?: string;
+        captureSizes?: string;
         priority?: boolean;
         scrollable?: boolean;
     }>(),

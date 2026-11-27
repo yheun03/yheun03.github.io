@@ -1,3 +1,4 @@
+import { featuredWorks } from '~/data/featured-works.mjs';
 import type { WorkItem } from '@data/works';
 import ko from '~/data/works/ko.json';
 import en from '~/data/works/en.json';
@@ -7,6 +8,7 @@ export default defineEventHandler((event) => {
     const { locale, path } = getRouterParams(event);
     if (locale !== 'ko' && locale !== 'en') throw createError({ statusCode: 404 });
     const works = (locale === 'ko' ? ko : en) as Record<'career' | 'personal', WorkItem[]>;
+    if (path === 'featured.json') return featuredWorks(works.career);
     const archive = /^works-(career|personal)\.json$/.exec(path ?? '');
     if (archive) {
         return works[archive[1] as 'career' | 'personal'].map(({ id, category, title, period, type, role, tech, pin, languages, captures, thumbnail, mockup, captureNotice }) => ({

@@ -58,7 +58,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                     const targets = mode === 'companies'
                         ? element.querySelectorAll('.home-companies__logos > li')
                         : mode === 'stagger' ? Array.from(element.children) : element;
-                    const from: gsap.TweenVars = { opacity: 0, y: distance };
+                    const from: gsap.TweenVars = { y: distance };
                     if (mode === 'companies') Object.assign(from, { y: 24 });
                     if (mode === 'title') Object.assign(from, { y: 20, clipPath: 'inset(0% 0% 100% 0%)' });
                     if (mode === 'image') Object.assign(from, { y: 0, clipPath: 'inset(0% 0% 100% 0%)' });
@@ -66,7 +66,6 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                     if (mode === 'scale') Object.assign(from, { scale: 0.96, y: 0 });
 
                     const tween = gsap.fromTo(targets, from, {
-                        opacity: 1,
                         x: 0,
                         y: 0,
                         scale: 1,
@@ -74,7 +73,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                         duration: mode === 'companies' ? 0.65 : mode === 'image' ? 1.15 : 0.85,
                         stagger: mode === 'companies' ? 0.085 : mode === 'stagger' ? 0.1 : 0,
                         ease: 'power3.out',
-                        clearProps: 'opacity,transform,clipPath',
+                        clearProps: 'transform,clipPath',
                         scrollTrigger: motionTrigger(element),
                     });
                     reveals.set(element, tween);
@@ -139,13 +138,12 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
 
                 scope.querySelectorAll('.home-stats strong').forEach((element) => {
                     if (initiallyVisible.has(element) || aboveViewport.has(element)) return;
-                    gsap.fromTo(element, { rotationX: -25, y: 16, opacity: 0, transformOrigin: 'center bottom', transformPerspective: 600 }, {
+                    gsap.fromTo(element, { rotationX: -25, y: 16, transformOrigin: 'center bottom', transformPerspective: 600 }, {
                         rotationX: 0,
                         y: 0,
-                        opacity: 1,
                         duration: 0.9,
                         ease: 'power3.out',
-                        clearProps: 'transform,transformOrigin,opacity',
+                        clearProps: 'transform,transformOrigin',
                         scrollTrigger: motionTrigger(element),
                     });
                 });
@@ -161,13 +159,6 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
                             scrollTrigger: motionTrigger(hero, { end: 'clamp(bottom top)', scrub: 0.7 }),
                         });
                     }
-                    const footerTitle = scope.querySelector('.portfolio-footer__title a');
-                    if (footerTitle?.parentElement) gsap.fromTo(footerTitle, { y: 18 }, {
-                        y: 0,
-                        duration: 0.85,
-                        ease: 'none',
-                        scrollTrigger: motionTrigger(footerTitle.parentElement, { end: 'clamp(top 30%)', scrub: 0.7 }),
-                    });
                     scope.querySelectorAll<HTMLElement>('[data-parallax]').forEach((element) => {
                         const target = element.querySelector('.project-mockup');
                         if (!target) return;

@@ -4,9 +4,9 @@
         <div v-for="group in companyGroups" :key="group.id" class="home-companies__group">
             <h3>{{ group.title }}</h3>
             <ul class="home-companies__logos">
-                <li v-for="company in group.companies" :key="company.id">
-                    <NuxtLink :to="`/projects/${company.project}`" :aria-label="`${company.name} ${copy('프로젝트 보기', 'project')}`">
-                        <span class="home-companies__logo-frame">
+                <li v-for="[project, partners] in group.projects" :key="project" :class="{ 'home-companies__partners': partners.length > 1 }">
+                    <NuxtLink :to="`/projects/${project}`">
+                        <span v-for="company in partners" :key="company.id" class="home-companies__logo-frame">
                             <img
                                 :src="resolveAppPath(`/assets/images/companies/${company.file}`)"
                                 :alt="company.name"
@@ -16,6 +16,7 @@
                                 loading="lazy"
                             />
                         </span>
+                        <span class="visually-hidden">{{ copy('프로젝트 보기', 'View project') }}</span>
                     </NuxtLink>
                 </li>
             </ul>
@@ -46,6 +47,14 @@ const companyGroups = computed(() =>
         { id: 'web', title: copy('기업 웹사이트', 'Corporate websites') },
         { id: 'systems', title: copy('제조·물류 시스템', 'Manufacturing & logistics') },
         { id: 'collaboration', title: copy('사내 개발·기술 협업', 'In-house development & collaboration') },
-    ].map((group) => ({ ...group, companies: companies.filter((company) => company.group === group.id) })),
+    ].map((group) => {
+        const projects = new Map<string, typeof companies>();
+        for (const company of companies.filter((item) => item.group === group.id)) {
+            const partners = projects.get(company.project) ?? [];
+            partners.push(company);
+            projects.set(company.project, partners);
+        }
+        return { ...group, projects: Array.from(projects) };
+    }),
 );
 </script>

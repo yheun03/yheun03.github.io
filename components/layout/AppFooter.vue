@@ -1,7 +1,7 @@
 <template>
     <footer id="contact" class="portfolio-footer" aria-labelledby="footer-contact-title">
         <h2 id="footer-contact-title" class="portfolio-footer__title" data-reveal="title">
-            <a :href="`mailto:${contacts.email}`">Let’s talk<span aria-hidden="true">↗</span></a>
+            Let’s talk
         </h2>
         <p class="portfolio-footer__description" data-reveal="up">
             {{ locale === 'ko' ? '채용이나 프로젝트 제안은 이메일로 보내주세요.' : 'For roles or project enquiries, please get in touch by email.' }}
@@ -17,7 +17,6 @@
             </BaseLink>
             <p>{{ t('footer.copyright') }}</p>
             <nav :aria-label="t('footer.navLabel')">
-                <NuxtLink to="/">{{ t('footer.homeLink') }}</NuxtLink>
                 <NuxtLink to="/projects">{{ t('footer.careerLink') }}</NuxtLink>
                 <NuxtLink to="/personal">{{ t('footer.personalLink') }}</NuxtLink>
             </nav>

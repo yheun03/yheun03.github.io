@@ -53,12 +53,11 @@ onMounted(async () => {
         if (context.conditions?.reduce || useReducedEffects()) return;
         const revealStart = context.conditions?.desktop ? 'clamp(top 55%)' : 'clamp(top 65%)';
         // Keep first-viewport cards visible for LCP; animate cards reached by scrolling.
-        const reveal = initiallyVisible || bounds.bottom <= 0 ? undefined : gsap.fromTo(card, { opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }, {
-            opacity: 1,
+        const reveal = initiallyVisible || bounds.bottom <= 0 ? undefined : gsap.fromTo(card.querySelector('.gallery-card__stage'), { clipPath: 'inset(0% 0% 100% 0%)' }, {
             clipPath: 'inset(0% 0% 0% 0%)',
             duration: 1.15,
             ease: 'power3.out',
-            clearProps: 'opacity,clipPath',
+            clearProps: 'clipPath',
             scrollTrigger: { trigger: card, start: revealStart, once: true },
         });
         const revealFocused = () => reveal?.progress(1);

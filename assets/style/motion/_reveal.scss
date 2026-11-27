@@ -4,16 +4,13 @@
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-    .home-text-link > span,
-    .portfolio-footer__title span {
+    .home-text-link > span {
         display: inline-block;
         transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .home-text-link:hover > span,
-    .home-text-link:focus-visible > span,
-    .portfolio-footer__title a:hover span,
-    .portfolio-footer__title a:focus-visible span {
+    .home-text-link:focus-visible > span {
         translate: 4px -4px;
     }
 }

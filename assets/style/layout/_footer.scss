@@ -20,20 +20,7 @@
         font-size: clamp(72px, 13vw, 200px);
         line-height: 1;
         letter-spacing: -0.075em;
-        a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            color: var(--color-accent);
-        }
-        span {
-            font-size: 0.65em;
-            transition: transform 0.3s;
-        }
-        a:hover span {
-            transform: translate(6px, -6px);
-        }
+        color: var(--color-accent);
     }
     &__description {
         margin: 36px 0 40px;
@@ -115,10 +102,5 @@
                 width: 76px;
             }
         }
-    }
-}
-@media (prefers-reduced-motion: reduce) {
-    .portfolio-footer__title span {
-        transition: none;
     }
 }

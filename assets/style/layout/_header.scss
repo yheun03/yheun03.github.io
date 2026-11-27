@@ -87,7 +87,7 @@
             cursor: wait;
         }
         span {
-            color: var(--color-divider);
+            color: inherit;
         }
     }
     &__contact {

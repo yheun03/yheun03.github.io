@@ -5,6 +5,7 @@ https://github.com/bunlongheng/frames
 https://github.com/bunlongheng/frames/tree/main/public/assets/frames
 
 MacBook Air, iPad Pro (portrait and landscape), and iPhone PNG mockups frame actual project screenshots.
+The PNG source frames are distributed here as WebP copies.
 Screenshots are not generated or redrawn.
 
 MIT License

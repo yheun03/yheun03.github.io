@@ -257,7 +257,7 @@
 
 <script setup lang="ts">
 import type { CaptureDevice, WorkItem } from '@data/works';
-import { type GalleryArchiveVariant, getGalleryVariantConfig, isPlaceholderCapture, useGalleryRouteWorks } from '~/composables/gallery/useGallery';
+import { type GalleryArchiveVariant, getGalleryVariantConfig, isPlaceholderCapture } from '~/composables/gallery/useGallery';
 
 const props = defineProps<{
     variant: GalleryArchiveVariant;
@@ -331,7 +331,11 @@ function handleCaptureKeydown(event: KeyboardEvent) {
 }
 
 const coverCapture = computed(() => galleryCaptures.value[0] || '');
-const { data: works } = await useGalleryRouteWorks(props.variant);
+const { data: works } = await useAsyncData(
+    () => `navigation-${locale.value}-${props.variant}`,
+    () => $fetch<Pick<WorkItem, 'id' | 'title'>[]>(resolveAppPath(`/content/${locale.value}/navigation-${props.variant}.json`)),
+    { default: () => [], deep: false },
+);
 const currentWorkIndex = computed(() => works.value.findIndex((item) => item.id === props.work.id));
 const nextWorks = computed(() => {
     if (works.value.length < 2 || currentWorkIndex.value < 0) return [];

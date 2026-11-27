@@ -9,6 +9,8 @@ export default defineEventHandler((event) => {
     if (locale !== 'ko' && locale !== 'en') throw createError({ statusCode: 404 });
     const works = (locale === 'ko' ? ko : en) as Record<'career' | 'personal', WorkItem[]>;
     if (path === 'featured.json') return featuredWorks(works.career);
+    const navigation = /^navigation-(career|personal)\.json$/.exec(path ?? '');
+    if (navigation) return works[navigation[1] as 'career' | 'personal'].map(({ id, title }) => ({ id, title }));
     const archive = /^works-(career|personal)\.json$/.exec(path ?? '');
     if (archive) {
         return works[archive[1] as 'career' | 'personal'].map(({ id, category, title, period, type, role, tech, pin, languages, captures, thumbnail, mockup, captureNotice }) => ({

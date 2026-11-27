@@ -3,7 +3,15 @@
         <div class="gallery-card__stage" :class="{ 'gallery-card__stage--empty': isPlaceholderCover }">
             <GalleryEmptyCapture v-if="isPlaceholderCover" :description="work.captureNotice" />
             <div v-else class="gallery-card__motion">
-                <ProjectDeviceMockup :src="coverCapture" :mockup="work.mockup" :device="work.captureDevices?.[coverCapture]" alt="" sizes="(min-width: 641px) 45vw, 90vw" />
+                <ProjectDeviceMockup
+                    :priority="priority"
+                    :src="coverCapture"
+                    :mockup="work.mockup"
+                    :device="work.captureDevices?.[coverCapture]"
+                    alt=""
+                    sizes="(min-width: 641px) 36vw, 70vw"
+                    capture-sizes="(min-width: 641px) 28vw, 55vw"
+                />
             </div>
         </div>
         <div class="gallery-card__heading">
@@ -21,6 +29,7 @@ import { isPlaceholderCapture } from '~/composables/gallery/useGallery';
 const props = withDefaults(
     defineProps<{
         work: WorkCard;
+        priority?: boolean;
         to: string;
         headingTag?: 'h2' | 'h3';
     }>(),
@@ -34,7 +43,20 @@ let dispose: (() => void) | undefined;
 let unmounted = false;
 
 // Keep every card's motion here, including cards added by archive filters.
-onNuxtReady(async () => {
+let observer: IntersectionObserver | undefined;
+
+onNuxtReady(() => {
+    const card = cardRoot.value?.$el;
+    if (unmounted || !card || useReducedEffects()) return;
+    observer = new IntersectionObserver(([entry]) => {
+        if (!entry?.isIntersecting) return;
+        observer?.disconnect();
+        void initMotion();
+    }, { rootMargin: '400px 0px' });
+    observer.observe(card);
+});
+
+async function initMotion() {
     if (unmounted || useReducedEffects()) return;
     const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
     if (unmounted || !cardRoot.value?.$el) return;
@@ -131,10 +153,11 @@ onNuxtReady(async () => {
     // GSAP batches safe refresh requests from all cards into one delayed refresh.
     ScrollTrigger.refresh(true);
     dispose = () => media.revert();
-});
+}
 
 onBeforeUnmount(() => {
     unmounted = true;
+    observer?.disconnect();
     dispose?.();
 });
 </script>

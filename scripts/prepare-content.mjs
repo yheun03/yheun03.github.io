@@ -12,6 +12,8 @@ for (const locale of ['ko', 'en']) {
     await writeFile(join(directory, 'featured.json'), JSON.stringify(featuredWorks(works.career)));
     for (const [variant, items] of Object.entries(works)) {
         await mkdir(join(directory, 'works', variant), { recursive: true });
+        const navigation = items.map(({ id, title }) => ({ id, title }));
+        await writeFile(join(directory, `navigation-${variant}.json`), JSON.stringify(navigation));
         const summaries = items.map(({ id, category, title, period, type, role, tech, pin, languages, captures, thumbnail, mockup, captureDevices, captureNotice }) => ({
             id,
             category,

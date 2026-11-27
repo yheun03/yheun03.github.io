@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="gallery-page__grid">
-                <ProjectGalleryCard v-for="work in filteredWorks" :key="work.id" :work="work" :to="`${basePath}/${work.id}`" />
+                <ProjectGalleryCard v-for="(work, index) in filteredWorks" :priority="index === 0" :key="work.id" :work="work" :to="`${basePath}/${work.id}`" />
             </div>
         </article>
     </AppLayout>

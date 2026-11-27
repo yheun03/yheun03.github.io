@@ -1,5 +1,6 @@
 import { mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
+import { responsiveWidths } from '../data/responsive-widths.mjs';
 import sharp from 'sharp';
 
 const sourceDir = 'assets/images';
@@ -16,7 +17,7 @@ const files = (await collect(sourceDir)).filter((file) => /\.(?:webp|jpe?g|png)$
 for (const file of files) {
     const { width, height } = await sharp(file).metadata();
     if (!width || !height) continue;
-    const widths = [...new Set([160, 320, 480, 960, 1440].map((size) => Math.min(size, width)))];
+    const widths = responsiveWidths(width);
     const name = relative(sourceDir, file).replace(/\.[^.]+$/, '');
     const modified = (await stat(file)).mtimeMs;
     for (const size of widths) {
@@ -27,12 +28,13 @@ for (const file of files) {
         await mkdir(dirname(output), { recursive: true });
         await sharp(file).rotate().resize({ width: size, withoutEnlargement: true }).webp({ quality: 80, effort: 5 }).toFile(output);
     }
-    manifest[`/assets/images/${relative(sourceDir, file)}`] = { width, height, widths };
+    manifest[relative(sourceDir, file)] = [width, height];
 }
 for (const file of await collect(outputDir).catch(() => [])) {
     if (!expected.has(file)) await rm(file);
 }
-const content = `${JSON.stringify(manifest, null, 2)}\n`;
+const rows = Object.entries(manifest).map(([path, size]) => `  ${JSON.stringify(path)}: ${JSON.stringify(size)}`);
+const content = `{\n${rows.join(',\n')}\n}\n`;
 const manifestPath = 'data/media.json';
 if ((await readFile(manifestPath, 'utf8').catch(() => '')) !== content) await writeFile(manifestPath, content);
 console.log(`Prepared responsive images for ${files.length} sources.`);

@@ -56,21 +56,9 @@
             </header>
 
             <dl class="gallery-detail__hero-meta" data-reveal="stagger">
-                <div>
-                    <dt>{{ t('gallery.type') }}</dt>
-                    <dd>{{ work.type }}</dd>
-                </div>
-                <div v-if="work.period">
-                    <dt>{{ t('gallery.period') }}</dt>
-                    <dd>{{ work.period }}</dd>
-                </div>
-                <div v-if="work.duration">
-                    <dt>{{ t('gallery.duration') }}</dt>
-                    <dd>{{ work.duration }}</dd>
-                </div>
-                <div>
-                    <dt>{{ t('gallery.role') }}</dt>
-                    <dd>{{ work.role }}</dd>
+                <div v-for="field in metaFields" :key="field">
+                    <dt>{{ t(`gallery.${field}`) }}</dt>
+                    <dd>{{ work[field] }}</dd>
                 </div>
             </dl>
 
@@ -80,22 +68,10 @@
                 </header>
 
                 <div class="gallery-detail__brief-grid">
-                    <section class="gallery-detail__brief-card" data-reveal="up">
-                        <h3 class="gallery-detail__brief-label">{{ t('gallery.solutionLabel') }}</h3>
+                    <section v-for="group in briefGroups" :key="group.key" class="gallery-detail__brief-card" data-reveal="up">
+                        <h3 class="gallery-detail__brief-label">{{ t(`gallery.${group.key}`) }}</h3>
                         <ul>
-                            <li v-for="item in work.myWorks" :key="item">{{ item }}</li>
-                        </ul>
-                    </section>
-                    <section v-if="work.achievements.length" class="gallery-detail__brief-card" data-reveal="up">
-                        <h3 class="gallery-detail__brief-label">{{ t('gallery.results') }}</h3>
-                        <ul>
-                            <li v-for="item in work.achievements" :key="item">{{ item }}</li>
-                        </ul>
-                    </section>
-                    <section class="gallery-detail__brief-card" data-reveal="up">
-                        <h3 class="gallery-detail__brief-label">{{ t('gallery.points') }}</h3>
-                        <ul>
-                            <li v-for="item in work.points" :key="item">{{ item }}</li>
+                            <li v-for="item in group.items" :key="item">{{ item }}</li>
                         </ul>
                     </section>
                 </div>
@@ -179,10 +155,10 @@
                         :key="`${activeCapture}-${captureView}`"
                         class="gallery-detail__preview-stage"
                         :class="{ 'gallery-detail__preview-stage--image': captureView === 'image' }"
-                        :data-drag-scroll="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? '' : undefined"
-                        :tabindex="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? 0 : undefined"
-                        :role="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? 'region' : undefined"
-                        :aria-label="captureView === 'image' && !isPlaceholderCapture(activeCapture) ? t('gallery.captureScrollRegion') : undefined"
+                        :data-drag-scroll="canScrollImage ? '' : undefined"
+                        :tabindex="canScrollImage ? 0 : undefined"
+                        :role="canScrollImage ? 'region' : undefined"
+                        :aria-label="canScrollImage ? t('gallery.captureScrollRegion') : undefined"
                     >
                         <GalleryEmptyCapture v-if="isPlaceholderCapture(activeCapture)" :description="work.captureNotice" />
                         <BaseMediaImage
@@ -302,6 +278,14 @@ const briefTitleId = `gallery-${props.variant}-brief`;
 const techTitleId = `gallery-${props.variant}-technologies`;
 const capturePreviewId = `gallery-${props.variant}-preview`;
 
+const metaFields = computed(() => (['type', 'period', 'duration', 'role'] as const)
+    .filter((field) => field === 'type' || field === 'role' || props.work[field]));
+const briefGroups = computed(() => [
+    { key: 'solutionLabel', items: props.work.myWorks },
+    ...(props.work.achievements.length ? [{ key: 'results', items: props.work.achievements }] : []),
+    { key: 'points', items: props.work.points },
+]);
+
 const detailEndCtaKey = computed(() => (props.variant === 'career' ? 'gallery.detailEndBackCareer' : 'gallery.detailEndBackPersonal'));
 const galleryCaptures = computed(() => (props.work.captures.length ? props.work.captures : ['']));
 const activeCaptureIndex = ref(0);
@@ -310,6 +294,7 @@ const captureFigureRef = ref<HTMLElement | null>(null);
 useDragScroll(captureFigureRef);
 const captureThumbnailsRef = ref<HTMLOListElement | null>(null);
 const activeCapture = computed(() => galleryCaptures.value[activeCaptureIndex.value] ?? galleryCaptures.value[0] ?? '');
+const canScrollImage = computed(() => captureView.value === 'image' && !isPlaceholderCapture(activeCapture.value));
 
 watch(
     () => props.work.id,

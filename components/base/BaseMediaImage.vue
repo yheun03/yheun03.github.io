@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import media from '@data/media.json';
+import { responsiveWidths } from '@data/responsive-widths.mjs';
 
 const props = withDefaults(
     defineProps<{
@@ -28,11 +28,12 @@ const props = withDefaults(
     { sizes: '(min-width: 1024px) 45vw, 90vw', priority: false, responsive: true },
 );
 
-const sourceIndex = computed(() => props.src.indexOf('/assets/images/'));
-const sourcePath = computed(() => (sourceIndex.value >= 0 ? props.src.slice(sourceIndex.value) : props.src));
-const image = computed(() => (media as Record<string, { width: number; height: number; widths: number[] }>)[sourcePath.value]);
-const responsivePath = (width: number) =>
-    `${props.src.slice(0, sourceIndex.value)}/assets/media/${sourcePath.value.slice('/assets/images/'.length).replace(/\.[^.]+$/, '')}-${width}.webp`;
-const imageSrc = computed(() => (props.responsive && image.value ? responsivePath(image.value.widths.at(-1)!) : props.src));
-const srcset = computed(() => (props.responsive ? image.value?.widths.map((width) => `${responsivePath(width)} ${width}w`).join(', ') : undefined));
+const image = computed(() => getMediaImage(props.src));
+const sources = computed(() => {
+    const info = image.value;
+    if (!props.responsive || !info) return [];
+    return responsiveWidths(info.width).map((width: number) => ({ width, src: `${info.base}-${width}.webp` }));
+});
+const imageSrc = computed(() => sources.value.at(-1)?.src ?? props.src);
+const srcset = computed(() => sources.value.map(({ src, width }) => `${src} ${width}w`).join(', ') || undefined);
 </script>

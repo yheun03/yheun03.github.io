@@ -37,7 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import media from '@data/media.json';
 import type { CaptureDevice, WorkItem } from '@data/works';
 
 const props = withDefaults(
@@ -54,9 +53,8 @@ const props = withDefaults(
 );
 const { resolveAppPath } = useAppPath();
 const { t } = useLocale();
-const imageInfo = (src: string) => (media as Record<string, { width: number; height: number }>)[src];
 const isLandscape = (src: string) => {
-    const image = imageInfo(src);
+    const image = getMediaImage(src);
     return image && image.width > image.height;
 };
 const devices = computed(() => {
@@ -82,6 +80,18 @@ const devices = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:list';
+
+@mixin viewport($left, $top, $width, $height, $radius: null) {
+    .project-mockup__viewport {
+        left: $left;
+        top: $top;
+        width: $width;
+        height: $height;
+        border-radius: $radius;
+    }
+}
+
 .project-mockup {
     position: relative;
     width: 100%;
@@ -138,12 +148,7 @@ const devices = computed(() => {
         aspect-ratio: 3306 / 1897;
 
         // MacBook Air 원본 3306 × 1897, 화면 (373, 123), 2560 × 1600.
-        .project-mockup__viewport {
-            left: 11.2825%;
-            top: 6.484%;
-            width: 77.4349%;
-            height: 84.3437%;
-        }
+        @include viewport(11.2825%, 6.484%, 77.4349%, 84.3437%);
     }
 
     &__device--tablet {
@@ -153,13 +158,7 @@ const devices = computed(() => {
         aspect-ratio: 2245 / 2930;
 
         // iPad Pro 세로 원본 2245 × 2930, 화면 (96, 102), 2048 × 2732.
-        .project-mockup__viewport {
-            left: 4.2762%;
-            top: 3.4812%;
-            width: 91.2249%;
-            height: 93.2423%;
-            border-radius: 2.2% / 1.65%;
-        }
+        @include viewport(4.2762%, 3.4812%, 91.2249%, 93.2423%, list.slash(2.2%, 1.65%));
     }
 
     &__device--tablet.project-mockup__device--landscape {
@@ -168,13 +167,7 @@ const devices = computed(() => {
         aspect-ratio: 2930 / 2245;
 
         // iPad Pro 가로 원본 2930 × 2245, 화면 (102, 101), 2732 × 2048.
-        .project-mockup__viewport {
-            left: 3.4812%;
-            top: 4.4989%;
-            width: 93.2423%;
-            height: 91.2249%;
-            border-radius: 1.65% / 2.2%;
-        }
+        @include viewport(3.4812%, 4.4989%, 93.2423%, 91.2249%, list.slash(1.65%, 2.2%));
     }
 
     &__device--mobile {
@@ -184,13 +177,7 @@ const devices = computed(() => {
         aspect-ratio: 1470 / 3000;
 
         // iPhone 원본 1470 × 3000, 화면 (75, 66), 1320 × 2868.
-        .project-mockup__viewport {
-            left: 5.102%;
-            top: 2.2%;
-            width: 89.7959%;
-            height: 95.6%;
-            border-radius: 16.5% / 7.6%;
-        }
+        @include viewport(5.102%, 2.2%, 89.7959%, 95.6%, list.slash(16.5%, 7.6%));
     }
 
     &--multiple &__device--desktop {

@@ -27,23 +27,6 @@
         text-wrap: balance;
     }
 
-    &__spark {
-        margin-left: $space-2;
-        color: color-mix(in srgb, $primary-600 64%, $grayscale-0);
-        width: 0.65em;
-        height: 0.65em;
-        vertical-align: super;
-    }
-
-    &__description {
-        max-width: 52ch;
-        margin-top: var(--space-6);
-        color: var(--color-text-muted);
-        @include font(body-1, $line-height: $line-height-body);
-        font-size: $font-size-lg;
-        line-height: var(--line-height-body);
-    }
-
     &--minimal &__eyebrow::after {
         display: none;
     }

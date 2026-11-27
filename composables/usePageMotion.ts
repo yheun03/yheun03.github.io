@@ -5,7 +5,7 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
     let dispose: (() => void) | undefined;
     let unmounted = false;
 
-    onNuxtReady(async () => {
+    onMotionReady(async () => {
         if (unmounted || !root.value || useReducedEffects()) return;
 
         const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);

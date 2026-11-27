@@ -37,4 +37,11 @@ const sources = computed(() => {
 const imageSizes = computed(() => props.priority ? props.sizes : `auto, ${props.sizes}`);
 const imageSrc = computed(() => sources.value.at(-1)?.src ?? props.src);
 const srcset = computed(() => sources.value.map(({ src, width }) => `${src} ${width}w`).join(', ') || undefined);
+// The preload uses the same candidates as the image so the browser issues one request.
+if (import.meta.server && props.priority && srcset.value) {
+    useHead({ link: [{
+        rel: 'preload', as: 'image', imagesrcset: srcset.value, imagesizes: imageSizes.value,
+        fetchpriority: 'high',
+    }] });
+}
 </script>

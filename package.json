@@ -15,7 +15,7 @@
         "clean": "rm -rf .nuxt .nuxt-build .output .nitro node_modules/.vite node_modules/.cache",
         "dev": "nuxt dev --host 0.0.0.0",
         "generate": "npm run prepare:assets && nuxt prepare --envName development && nuxt generate",
-        "postgenerate": "node scripts/generate-legacy-redirects.mjs",
+        "postgenerate": "node scripts/dedupe-inline-styles.mjs && node scripts/generate-legacy-redirects.mjs",
         "deploy": "ANALYTICS_ENABLED=true npm run generate && npm run check:site -- --analytics && gh-pages -d .output/public -b gh-pages --nojekyll",
         "postinstall": "npm run prepare:assets && nuxt prepare",
         "prepare:assets": "node scripts/prepare-content.mjs && node scripts/prepare-media.mjs && node scripts/generate-search-assets.mjs",

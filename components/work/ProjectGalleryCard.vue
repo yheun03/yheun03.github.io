@@ -45,7 +45,7 @@ let unmounted = false;
 // Keep every card's motion here, including cards added by archive filters.
 let observer: IntersectionObserver | undefined;
 
-onNuxtReady(() => {
+onMotionReady(() => {
     const card = cardRoot.value?.$el;
     if (unmounted || !card || useReducedEffects()) return;
     observer = new IntersectionObserver(([entry]) => {

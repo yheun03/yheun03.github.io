@@ -1,7 +1,7 @@
 .home-approach {
     --approach-row-height: 148px;
     &__heading {
-        padding-left: calc(36% + 24px);
+        padding-left: 36%;
         margin-bottom: 56px;
         p {
             max-width: 460px;
@@ -12,21 +12,16 @@
         }
     }
     &__showcase {
-        display: grid;
-        grid-template-columns: 36% minmax(0, 1fr);
-        isolation: isolate;
-    }
-    &__preview-area {
         position: relative;
-        min-width: 0;
+        isolation: isolate;
     }
     &__preview {
         position: absolute;
+        left: 7%;
+        top: 0;
         z-index: 2;
         pointer-events: none;
-        left: clamp(0px, calc(var(--preview-x, 50%) - var(--preview-width) / 2), calc(100% - var(--preview-width)));
-        top: clamp(0px, calc(var(--preview-y, 0px) - var(--preview-height) / 2), calc(100% - var(--preview-height)));
-        --preview-width: 69.444%;
+        --preview-width: 25%;
         --preview-height: 220px;
         width: var(--preview-width);
         height: var(--preview-height);
@@ -35,8 +30,8 @@
         box-shadow: 0 18px 40px #0003;
         clip-path: inset(0 0 round 2px);
         transition:
-            left 0.12s ease-out, top 0.12s ease-out,
-            clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity 0.2s,
+            clip-path 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         &.is-ready {
             opacity: 1;
         }
@@ -57,6 +52,21 @@
             }
         }
     }
+    &__showcase--interactive &__preview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        clip-path: inset(50% 0 round 2px);
+        will-change: transform;
+    }
+    &__showcase--following &__preview.is-ready {
+        opacity: 1;
+        clip-path: inset(0 0 round 2px);
+    }
+    &__showcase--following &__preview--square.is-ready {
+        clip-path: inset(0 7% round 18px);
+    }
     &__list {
         margin: 0;
         padding: 0;
@@ -64,7 +74,7 @@
     }
     &__item {
         min-height: var(--approach-row-height);
-        padding: 25px 28px 20px 24px;
+        padding: 25px 28px 20px 36%;
         border-top: 1px solid #d0d0d0;
         transition:
             background-color 0.3s,

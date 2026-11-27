@@ -4,28 +4,35 @@
             <h2 id="approach-title" class="home-title">What I do</h2>
             <p>{{ copy('화면 구현부터 공통화와 운영까지 담당합니다.', 'From screen implementation to shared components and maintenance.') }}</p>
         </div>
-        <div class="home-approach__showcase" data-reveal="up">
-            <div class="home-approach__preview-area" @pointermove="movePreview">
-                <div
-                    ref="preview"
-                    class="home-approach__preview"
-                    :class="[
-                        `home-approach__preview--${approachImages[visibleImage].shape}`,
-                        { 'is-ready': loadedImages.has(visibleImage) },
-                    ]"
-                >
-                    <BaseMediaImage
-                        v-for="(image, index) in approachImages"
-                        :key="image.src"
-                        :src="resolveAppPath(image.src)"
-                        :alt="copy(image.altKo, image.altEn)"
-                        :class="{ 'is-active': visibleImage === index }"
-                        :aria-hidden="visibleImage !== index"
-                        eager
-                        @load="markLoaded(index)"
-                        sizes="(min-width: 641px) 25vw, 90vw"
-                    />
-                </div>
+        <div
+            ref="showcase"
+            class="home-approach__showcase"
+            :class="{ 'home-approach__showcase--interactive': interactive, 'home-approach__showcase--following': following }"
+            data-reveal="up"
+            @pointerenter="enterPreview"
+            @pointermove="movePreview"
+            @pointerleave="leavePreview"
+            @pointercancel="leavePreview"
+        >
+            <div
+                ref="preview"
+                class="home-approach__preview"
+                :class="[
+                    `home-approach__preview--${approachImages[visibleImage].shape}`,
+                    { 'is-ready': loadedImages.has(visibleImage) },
+                ]"
+            >
+                <BaseMediaImage
+                    v-for="(image, index) in approachImages"
+                    :key="image.src"
+                    :src="resolveAppPath(image.src)"
+                    :alt="copy(image.altKo, image.altEn)"
+                    :class="{ 'is-active': visibleImage === index }"
+                    :aria-hidden="visibleImage !== index"
+                    eager
+                    @load="markLoaded(index)"
+                    sizes="(min-width: 641px) 25vw, 90vw"
+                />
             </div>
             <ul class="home-approach__list" role="list">
                 <li
@@ -74,7 +81,17 @@ const approachImages = [
         shape: 'square',
     },
 ];
+const showcase = ref<HTMLElement | null>(null);
 const preview = ref<HTMLElement | null>(null);
+const interactive = ref(false);
+const following = ref(false);
+let moveX: ((value: number, start?: number) => void) | undefined;
+let moveY: ((value: number, start?: number) => void) | undefined;
+let pointerInside = false;
+let pointerX = 0;
+let pointerY = 0;
+let dispose: (() => void) | undefined;
+let unmounted = false;
 const loadedImages = reactive(new Set<number>());
 const visibleImage = ref(0);
 
@@ -94,14 +111,59 @@ watch(activeApproach, (index) => {
     if (loadedImages.has(index)) visibleImage.value = index;
 });
 
-function movePreview(event: PointerEvent) {
+// Reuse the site's deferred GSAP loading for a cursor-centred preview.
+onMotionReady(async () => {
+    if (unmounted || useReducedEffects() || !window.matchMedia('(min-width: 641px) and (hover: hover) and (pointer: fine)').matches) return;
+    const { gsap } = await import('gsap');
+    if (unmounted || !preview.value) return;
+    const media = gsap.matchMedia();
+    media.add('(min-width: 641px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', () => {
+        const image = preview.value!;
+        gsap.set(image, { xPercent: -50, yPercent: -50 });
+        moveX = gsap.quickTo(image, 'x', { duration: 0.45, ease: 'power3.out' });
+        moveY = gsap.quickTo(image, 'y', { duration: 0.45, ease: 'power3.out' });
+        interactive.value = true;
+        if (pointerInside) {
+            moveX(pointerX, pointerX);
+            moveY(pointerY, pointerY);
+            following.value = true;
+        }
+        return () => {
+            interactive.value = false;
+            following.value = false;
+            moveX = undefined;
+            moveY = undefined;
+        };
+    });
+    dispose = () => media.revert();
+});
+
+function enterPreview(event: PointerEvent) {
     if (event.pointerType === 'touch') return;
-    if (!window.matchMedia('(min-width: 641px) and (hover: hover) and (pointer: fine)').matches) return;
-    const area = event.currentTarget as HTMLElement;
-    const bounds = area.getBoundingClientRect();
-    area.style.setProperty('--preview-x', `${event.clientX - bounds.left}px`);
-    area.style.setProperty('--preview-y', `${event.clientY - bounds.top}px`);
+    pointerInside = true;
+    movePreview(event, true);
+    following.value = interactive.value;
 }
+
+function movePreview(event: PointerEvent, snap = false) {
+    if (event.pointerType === 'touch') return;
+    const bounds = showcase.value?.getBoundingClientRect();
+    if (!bounds) return;
+    pointerX = event.clientX - bounds.left;
+    pointerY = event.clientY - bounds.top;
+    moveX?.(pointerX, snap ? pointerX : undefined);
+    moveY?.(pointerY, snap ? pointerY : undefined);
+}
+
+function leavePreview() {
+    pointerInside = false;
+    following.value = false;
+}
+
+onBeforeUnmount(() => {
+    unmounted = true;
+    dispose?.();
+});
 
 function previewApproach(event: PointerEvent, index: number) {
     if (event.pointerType === 'mouse' || event.pointerType === 'pen') activeApproach.value = index;

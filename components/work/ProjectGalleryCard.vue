@@ -51,6 +51,7 @@ onMounted(async () => {
         reduce: '(prefers-reduced-motion: reduce)',
     }, (context) => {
         if (context.conditions?.reduce || useReducedEffects()) return;
+        const revealStart = context.conditions?.desktop ? 'clamp(top 55%)' : 'clamp(top 65%)';
         // Keep first-viewport cards visible for LCP; animate cards reached by scrolling.
         const reveal = initiallyVisible || bounds.bottom <= 0 ? undefined : gsap.fromTo(card, { opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }, {
             opacity: 1,
@@ -58,7 +59,7 @@ onMounted(async () => {
             duration: 1.15,
             ease: 'power3.out',
             clearProps: 'opacity,clipPath',
-            scrollTrigger: { trigger: card, start: 'clamp(top 55%)', once: true },
+            scrollTrigger: { trigger: card, start: revealStart, once: true },
         });
         const revealFocused = () => reveal?.progress(1);
         card.addEventListener('focusin', revealFocused);

@@ -27,16 +27,6 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
             if (bounds.bottom <= 0) aboveViewport.add(element);
         });
 
-        // Keep first-viewport content painted; entrances below it wait for the 55% line.
-        function motionTrigger(element: Element, options: { start?: string; end?: string; scrub?: number } = {}) {
-            if (initiallyVisible.has(element) && options.scrub === undefined) return undefined;
-            return {
-                trigger: element,
-                start: 'clamp(top 55%)',
-                once: options.scrub === undefined,
-                ...options,
-            };
-        }
         const media = gsap.matchMedia();
 
         media.add(
@@ -48,6 +38,16 @@ export function usePageMotion(root: Ref<HTMLElement | null>) {
             (context) => {
                 if (context.conditions?.reduce || useReducedEffects()) return;
                 const desktop = context.conditions?.desktop;
+                function motionTrigger(element: Element, options: { start?: string; end?: string; scrub?: number } = {}) {
+                    if (initiallyVisible.has(element) && options.scrub === undefined) return undefined;
+                    return {
+                        trigger: element,
+                        once: options.scrub === undefined,
+                        ...options,
+                        start: desktop ? (options.start ?? 'clamp(top 55%)') : 'clamp(top 65%)',
+                    };
+                }
+
                 const distance = desktop ? 28 : 18;
                 const reveals = new Map<HTMLElement, gsap.core.Tween>();
 
